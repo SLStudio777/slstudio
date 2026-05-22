@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #1b1b1b;
+  font-family: Arial, sans-serif;
+  color: rgba(255, 255, 255, 0.80);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* .text-gold2 {
+  color: #f5b942;
+} */
+
+@layer components {
+  .container {
+    width: 100%;
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@layer utilities {
+  .text-gold2 {
+    color: #f5b942;
+  }
+
+  .hover\:text-gold2:hover {
+    color: #f5b942;
+  }
+}
