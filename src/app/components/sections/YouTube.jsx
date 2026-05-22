@@ -9,6 +9,7 @@ export default async function YouTube() {
     const [videos] = await pool.query(`
         SELECT *
         FROM videos
+        WHERE is_active = 1
         ORDER BY created_at DESC
     `);
 
