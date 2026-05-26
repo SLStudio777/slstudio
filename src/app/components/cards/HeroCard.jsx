@@ -22,7 +22,6 @@ export default function HeroCard({ icon: Icon, title, description, href }) {
             <p className="text-white/60 text-sm leading-relaxed max-w-[520px]">
                 {description}
             </p>
-            {/*
             <Link
                 href={href}
                 className="
@@ -34,7 +33,6 @@ export default function HeroCard({ icon: Icon, title, description, href }) {
                 <span>Learn More</span>
                 <ArrowRight size={14} />
             </Link>
-             */}
         </div>
     )
 }

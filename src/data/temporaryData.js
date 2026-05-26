@@ -21,7 +21,7 @@ export const servicesData = [
         icon: Shuffle, 
         title: "Mixing & Mastering",
         description: "From raw multi-tracks to a finished, radio-ready sound. Every element placed, balanced, and polished to compete on any platform.",
-        href: "#"
+        href: "/mixing-mastering"
     },
     {
         id: 2,
