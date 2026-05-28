@@ -1,4 +1,7 @@
+"use client";
 import BeforeAfterCard from "../../cards/BeforeAfterCard";
+import { ChevronRight, HelpCircle } from "lucide-react";
+import { useState } from "react";
 
 const faqs = [
     {
@@ -32,6 +35,8 @@ const faqs = [
 ];
 
 export default function Section2() {
+    const [openIndex, setOpenIndex] = useState(null);
+
     return (
         <section className="mt-20 flex flex-col gap-16">
 
@@ -61,23 +66,38 @@ export default function Section2() {
 
             {/* FAQ */}
             <div className="flex flex-col gap-6">
-                <div className="flex flex-col gap-2">
-                    <span className="text-white/30 text-xs uppercase tracking-[0.3em]">
-                        FAQ
-                    </span>
-                    <h2 className="text-2xl md:text-3xl font-semibold tracking-wide">
-                        Frequently Asked Questions
-                    </h2>
+                <div className="flex items-center gap-3">
+                    <HelpCircle className="text-gold2 w-6 h-6" />
+                    <div className="flex flex-col">
+                        <span className="text-white/30 text-xs uppercase tracking-[0.3em]">
+                            FAQ
+                        </span>
+                        <h2 className="text-2xl md:text-3xl font-semibold tracking-wide">
+                            Frequently Asked Questions
+                        </h2>
+                    </div>
                 </div>
-                <div className="flex flex-col divide-y divide-white/5">
+
+                <div className="flex flex-col divide-y divide-white/5 max-w-3xl">
                     {faqs.map((item, i) => (
-                        <div key={i} className="py-6 flex flex-col gap-3">
-                            <p className="text-white/90 font-medium text-base">
-                                {item.q}
-                            </p>
-                            <p className="text-white/60 text-[15px] leading-relaxed">
-                                {item.a}
-                            </p>
+                        <div
+                            key={i}
+                            className="py-5 flex flex-col gap-2 cursor-pointer"
+                            onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                        >
+                            <div className="flex items-start gap-3">
+                                <ChevronRight
+                                    className={`w-4 h-4 mt-1 flex-shrink-0 text-gold2 transition-transform duration-200 ${openIndex === i ? "rotate-90" : ""}`}
+                                />
+                                <p className="text-white/90 font-medium text-base leading-snug">
+                                    {item.q}
+                                </p>
+                            </div>
+                            {openIndex === i && (
+                                <p className="text-white/60 text-[15px] leading-relaxed pl-7">
+                                    {item.a}
+                                </p>
+                            )}
                         </div>
                     ))}
                 </div>
