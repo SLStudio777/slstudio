@@ -1,18 +1,6 @@
 export default function Section1() {
     return (
         <section className="mt-20">
-            <div className="flex flex-col gap-3 mb-10">
-                <span className="text-white/30 text-xs uppercase tracking-[0.3em]">
-                    Professional Mixing & Mastering Service
-                </span>
-                <h2 className="text-2xl md:text-3xl font-semibold tracking-wide">
-                    Online Mixing and Mastering for Independent Artists Worldwide
-                </h2>
-                <p className="text-white/50 text-[15px] leading-relaxed max-w-2xl">
-                    Send your stems, rough mix, or demo — I return a polished, release-ready track. Remote workflow, any genre, fast turnaround.
-                </p>
-            </div>
-
             <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 items-stretch">
                 <div className="rounded-2xl border border-white/5 bg-white/[0.03] p-8 md:p-10 flex flex-col gap-6">
                     <span className="text-white/30 text-xs uppercase tracking-[0.3em]">

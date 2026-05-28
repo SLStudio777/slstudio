@@ -48,8 +48,8 @@ export default function MixingMasteringPage() {
     return (
         <>
             <Hero />
-            <Section1 />
             <Section2 />
+            <Section1 />
         </>
     )
 }

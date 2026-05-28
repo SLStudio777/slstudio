@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Hero() {
     return (
@@ -33,10 +34,23 @@ export default function Hero() {
                         ">
                             When every instrument finally finds its place
                         </p>
-                        <p className="mt-6">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim maxime sequi quia, vel excepturi impedit perspiciatis veritatis rerum neque itaque, consequuntur beatae obcaecati laboriosam accusamus ducimus facere ipsam expedita commodi!
+                        <p className="mt-4 text-white/50 text-[15px] leading-relaxed max-w-xl">
+                            Send your stems, rough mix, or old studio recording — I return a polished, release-ready track. Remote workflow, any genre, fast turnaround.
                         </p>
-
+                        <div className="mt-4">
+                            <Link
+                                href="/contact"
+                                className="
+                                    inline-flex items-center gap-2
+                                    bg-gold2 text-black
+                                    px-6 py-3 rounded-xl
+                                    font-medium text-sm
+                                    hover:opacity-90 transition
+                                "
+                            >
+                                Send Your Track →
+                            </Link>
+                        </div>
                     </div>
                 </div>
                 <div className="w-full aspect-[16/9] relative rounded-xl overflow-hidden">
