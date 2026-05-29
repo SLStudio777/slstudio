@@ -21,7 +21,7 @@ export default function BeforeAfterCard({title, before, after}) {
         beforeWS.current = WaveSurfer.create({
             container: beforeRef.current,
             waveColor: "rgba(255,255,255,0.2)",
-            progressColor: "#fff",
+            progressColor: "#C9A84C",
             height: 60,
             barWidth: 2,
             barGap: 2,
@@ -30,7 +30,7 @@ export default function BeforeAfterCard({title, before, after}) {
         afterWS.current = WaveSurfer.create({
             container: afterRef.current,
             waveColor: "rgba(255,255,255,0.2)",
-            progressColor: "#fff",
+            progressColor: "#C9A84C",
             height: 60,
             barWidth: 2,
             barGap: 2,
@@ -45,15 +45,6 @@ export default function BeforeAfterCard({title, before, after}) {
                 afterWS.current?.destroy();
             }, 0);
         };
-
-        // return () => {
-        //     try {
-        //         beforeWS.current?.destroy();
-        //     } catch (e) {}
-        //     try {
-        //         afterWS.current?.destroy();
-        //     } catch (e) {}
-        // }
     }, []);
 
     const getActive = () => {
@@ -63,7 +54,6 @@ export default function BeforeAfterCard({title, before, after}) {
     const togglePlay = () => {
         const active = getActive();
         const inactive = mode === "before" ? afterWS.current : beforeWS.current;
-
         inactive.pause();
         active.playPause();
         setIsPlaying(active.isPlaying());
@@ -71,31 +61,25 @@ export default function BeforeAfterCard({title, before, after}) {
 
     return (
         <div className="p-5 rounded-xl border border-white/10 bg-white/5 flex flex-col gap-4">
-            <div>
-                <h3 className="font-semibold">
-                    {title}
-                </h3>
-                <span className="text-white/40 text-xs">
-                    Before / After Processing
-                </span>
+            <div className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-lg bg-gold2/10 flex items-center justify-center flex-shrink-0">
+                    <Play size={14} className="text-gold2" />
+                </div>
+                <div>
+                    <h3 className="font-semibold text-sm">{title}</h3>
+                    <span className="text-white/40 text-xs">Before / After</span>
+                </div>
             </div>
 
             <div className="relative">
-                <div
-                    ref={beforeRef}
-                    className={mode === "before" ? "block" : "hidden"}
-                />
-                <div
-                    ref={afterRef}
-                    className={mode === "after" ? "block" : "hidden"}
-                />
+                <div ref={beforeRef} className={mode === "before" ? "block" : "hidden"} />
+                <div ref={afterRef} className={mode === "after" ? "block" : "hidden"} />
             </div>
 
             <div className="flex items-center justify-between">
                 <button
                     onClick={togglePlay}
-                    className="w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 
-                        flex items-center justify-center"
+                    className="w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center"
                 >
                     {isPlaying ? <Pause size={18}/> : <Play size={18}/>}
                 </button>
@@ -106,24 +90,21 @@ export default function BeforeAfterCard({title, before, after}) {
                         disabled={isPlaying}
                         className={`px-3 py-1 rounded-full transition 
                             ${mode === "before" ? "bg-white/10 text-white" : "text-white/60"} 
-                            ${isPlaying ? "opacity-75 cursor-not-allowed" : ""}
-                        `}
+                            ${isPlaying ? "opacity-75 cursor-not-allowed" : ""}`}
                     >
                         Before
                     </button>
-
                     <button
                         onClick={() => !isPlaying && setMode("after")}
                         disabled={isPlaying}
                         className={`px-3 py-1 rounded-full transition 
                             ${mode === "after" ? "bg-white/10 text-white" : "text-white/60"} 
-                            ${isPlaying ? "opacity-75 cursor-not-allowed" : ""}
-                        `}
+                            ${isPlaying ? "opacity-75 cursor-not-allowed" : ""}`}
                     >
                         After
                     </button>
                 </div>
             </div>
         </div>
-    )
+    );
 }

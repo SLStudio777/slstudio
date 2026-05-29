@@ -1,10 +1,10 @@
 import { AudioLines, AudioWaveform, Shuffle } from "lucide-react";
 
 export const enhancements = [
-    {id: 1, title: "Example 1", file_before: "01-before.mp3", file_after: "01-after.wav"},
-    {id: 2, title: "Example 2", file_before: "02-before.mp3", file_after: "02-after.wav"},
-    {id: 3, title: "Example 3", file_before: "03-before.mp3", file_after: "03-after.wav"},
-    {id: 4, title: "Example 4", file_before: "01-before.mp3", file_after: "01-after.wav"},
+    {id: 1, title: "Blues Rock Guitar", file_before: "01-before.mp3", file_after: "01-after.wav"},
+    {id: 2, title: "Vocal Session", file_before: "02-before.mp3", file_after: "02-after.wav"},
+    {id: 3, title: "Metal Track", file_before: "03-before.mp3", file_after: "03-after.wav"},
+    {id: 4, title: "Folk Acoustic", file_before: "04-before.mp3", file_after: "04-after.wav"},
 ];
 
 export const youTubeData = [
