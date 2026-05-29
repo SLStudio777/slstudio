@@ -3,6 +3,8 @@ import BeforeAfter from "./components/sections/BeforeAfter";
 import YouTube from "./components/sections/YouTube";
 import HowItWorks from "./components/sections/HowItWorks";
 import Testimonials from "./components/sections/Testimonials";
+import WhyChoose from "./components/sections/WhyChoose";
+import FinalCTA from "./components/sections/FinalCTA";
 
 export const metadata = {
   title: "SL Studio | Mixing, Mastering & Music Production",
@@ -50,6 +52,8 @@ export default function Home() {
       <YouTube />
       <HowItWorks />
       <Testimonials />
+      <WhyChoose />
+      <FinalCTA />
     </>
   );
 }
