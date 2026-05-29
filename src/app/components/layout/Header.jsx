@@ -18,7 +18,7 @@ export default function Header() {
                     SL STUDIO
                 </Link>
                 {/* Nav */}
-                <ul className="flex items-center gap-6 text-white/70 text-sm">
+                <ul className="flex items-center gap-8 text-white/70 text-[15px] font-medium tracking-wide">
                     <li>
                         <Link
                             href="/" 
@@ -46,7 +46,11 @@ export default function Header() {
                     <li>
                         <Link
                             href="/contact"
-                            className="hover:text-gold2 transition"
+                            className="
+                                px-4 py-2 rounded-lg
+                                text-black font-semibold
+                                hover:opacity-90 transition"
+                            style={{backgroundColor: "#C9A84C"}}
                         >
                             Contact
                         </Link>
@@ -55,4 +59,4 @@ export default function Header() {
             </div>
         </nav>
     )
-}
+}ы
