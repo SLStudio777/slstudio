@@ -4,6 +4,7 @@ import YouTube from "./components/sections/YouTube";
 import HowItWorks from "./components/sections/HowItWorks";
 import Testimonials from "./components/sections/Testimonials";
 import WhyChoose from "./components/sections/WhyChoose";
+import Pricing from "./components/sections/Pricing";
 import FinalCTA from "./components/sections/FinalCTA";
 
 export const metadata = {
@@ -53,6 +54,7 @@ export default function Home() {
       <HowItWorks />
       <Testimonials />
       <WhyChoose />
+      <Pricing />
       <FinalCTA />
     </>
   );

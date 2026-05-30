@@ -3,23 +3,23 @@ import { User, RefreshCw, Zap, Heart } from "lucide-react";
 const reasons = [
     {
         icon: User,
-        title: "You Work With Me Directly",
-        description: "Your track doesn't get passed to an assistant or an automated tool. I personally listen, analyze, and handle every project from start to finish. When you write to me — you get me."
+        title: "Direct Access to a Real Producer",
+        description: "When you contact SL Studio, your track doesn't get passed around. Serhii personally handles every project — listening, mixing, mastering, communicating. No surprises."
     },
     {
         icon: RefreshCw,
-        title: "Revisions Until It's Right",
-        description: "Up to 3 rounds of revisions included in every project. In practice, we usually nail it in one or two — because we align on the vision before I even start."
+        title: "Revisions Until You're Happy",
+        description: "Every project includes multiple revision rounds at no extra cost. We keep adjusting until the track sounds exactly the way you want it — no pressure to sign off before you're ready."
     },
     {
         icon: Zap,
-        title: "Fast Turnaround",
-        description: "Most projects delivered in 3 to 5 business days. I know how it feels to wait weeks for a mix — so I built my workflow around speed without sacrificing quality."
+        title: "Delivered in 3–5 Business Days",
+        description: "Once your files are in, work starts immediately. Most projects are back with you within 3–5 business days. Revisions typically turned around within 24 hours."
     },
     {
         icon: Heart,
-        title: "Any Source, Any Genre",
-        description: "Phone recording, rehearsal take, old demo from ten years ago — send what you have. Blues-rock, metal, pop, jazz, folk, electronic — no genre limitations, no judgment."
+        title: "Any Source Material, Any Genre",
+        description: "Stems, rough mix, rehearsal recording, phone demo, decade-old archive — whatever you have works as a starting point. Blues, rock, metal, pop, jazz, electronic, folk — every genre gets the same level of attention."
     },
 ];
 
