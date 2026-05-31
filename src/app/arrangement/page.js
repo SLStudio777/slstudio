@@ -1,6 +1,7 @@
 import Hero from "../components/pages/arrangement/Hero";
 import Section1 from "../components/pages/arrangement/Section1";
 import Section2 from "../components/pages/arrangement/Section2";
+import BeforeAfterArrangement from "../components/sections/BeforeAfterArrangement";
 
 export const metadata = {
     title: "Arrangement & Production | SL Studio",
@@ -25,14 +26,6 @@ export const metadata = {
             "From a raw idea to a full track. Professional arrangement and production for independent artists worldwide.",
         type: "website",
         url: "https://www.slstudio.pro/arrangement",
-        images: [
-            {
-                url: "/images/og-mixing-mastering.jpg",
-                width: 1200,
-                height: 630,
-                alt: "Arrangement & Production Studio",
-            },
-        ],
     },
     twitter: {
         card: "summary_large_image",
@@ -46,6 +39,7 @@ export default function ArrangementPage() {
     return (
         <>
             <Hero />
+            <BeforeAfterArrangement />
             <Section2 />
             <Section1 />
         </>

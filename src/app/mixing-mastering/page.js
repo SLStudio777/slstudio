@@ -1,6 +1,7 @@
 import Hero from "../components/pages/mixing-mastering/Hero";
 import Section1 from "../components/pages/mixing-mastering/Section1";
 import Section2 from "../components/pages/mixing-mastering/Section2";
+import BeforeAfterMixing from "../components/sections/BeforeAfterMixing";
 
 export const metadata = {
     title: "Mixing & Mastering | SL Studio",
@@ -26,21 +27,12 @@ export const metadata = {
             "When every instrument finally finds its place. Professional mixing and mastering for modern music production.",
         type: "website",
         url: "https://www.slstudio.pro/mixing-mastering",
-        images: [
-            {
-                url: "/images/og-mixing-mastering.jpg",
-                width: 1200,
-                height: 630,
-                alt: "Mixing & Mastering Studio",
-            },
-        ],
     },
     twitter: {
         card: "summary_large_image",
         title: "Mixing & Mastering | SL Studio",
         description:
             "Professional mixing and mastering services focused on clarity, depth, and emotion.",
-        // images: ["/images/og-mixing-mastering.jpg"],
     },
 };
 
@@ -48,6 +40,7 @@ export default function MixingMasteringPage() {
     return (
         <>
             <Hero />
+            <BeforeAfterMixing />
             <Section2 />
             <Section1 />
         </>

@@ -2,15 +2,17 @@ export const dynamic = "force-dynamic";
 import pool from "@/settings/db";
 
 import { AudioWaveform } from "lucide-react";
-import BeforeAfterCard from "../cards/BeforeAfterCard";
+import BeforeAfterCard from "../../components/cards/BeforeAfterCard";
 
-export default async function BeforeAfter() {
+export default async function BeforeAfterArrangement() {
     const [enhancements] = await pool.query(`
         SELECT *
         FROM enhancements
-        WHERE is_active = 1 AND section = 'home'
+        WHERE is_active = 1 AND section = 'arrangement'
         ORDER BY created_at DESC
     `);
+
+    if (enhancements.length === 0) return null;
 
     return (
         <section className="py-10">
@@ -18,14 +20,14 @@ export default async function BeforeAfter() {
                 <div className="text-white/40 mb-4 flex items-center gap-2">
                     <AudioWaveform size={16} />
                     <span className="text-xs uppercase tracking-widest">
-                        Audio Enhancement
+                        Before & After
                     </span>
                 </div>
                 <h2 className="text-2xl md:text-3xl font-semibold tracking-wide">
-                    Transform Low-Quality Recordings Into Professional Studio Sound
+                    Hear the Difference
                 </h2>
-                <p className="mt-4 max-w-2/3 text-sm md:text-base leading-relaxed">
-                    Have a rough demo, rehearsal take, or poorly recorded track? I specialize in audio enhancement, restoring clarity, balance, and depth to your recordings. Using professional mixing and mastering techniques, I turn raw material into polished, release-ready sound.
+                <p className="mt-4 text-sm md:text-base leading-relaxed text-white/60">
+                    Real sessions — before and after professional arrangement and production.
                 </p>
             </div>
 

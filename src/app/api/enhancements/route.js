@@ -15,13 +15,8 @@ export async function GET() {
 
     } catch (error) {
         return Response.json(
-            {
-                success: false,
-                message: error.message,
-            },
-            {
-                status: 500,
-            }
+            { success: false, message: error.message },
+            { status: 500 }
         )
     }
 }
@@ -29,47 +24,31 @@ export async function GET() {
 export async function POST(req) {
     try {
         const body = await req.json();
-        const { title, file_before, file_after, is_active = 1 } = body;
+        const { title, file_before, file_after, is_active = 1, section = "home" } = body;
 
         if (!title || !file_before || !file_after) {
             return Response.json(
-                {
-                    success: false,
-                    message: "Data are required",
-                },
-                {
-                    status: 400,
-                }
+                { success: false, message: "Data are required" },
+                { status: 400 }
             )
         }
 
         const [result] = await pool.query(
-            `
-                INSERT INTO enhancements (
-                    title,
-                    file_before,
-                    file_after,
-                    is_active
-                )
-                VALUES (?, ?, ?, ?)
-            `, [title, file_before, file_after, is_active]
+            `INSERT INTO enhancements (title, file_before, file_after, is_active, section)
+             VALUES (?, ?, ?, ?, ?)`,
+            [title, file_before, file_after, is_active, section]
         )
 
         return Response.json({
             success: true,
-            message: "Enhancement was created successfull",
+            message: "Enhancement was created successfully",
             id: result.insertId,
         })
 
     } catch (error) {
         return Response.json(
-            {
-                success: false,
-                message: error.message,
-            },
-            {
-                status: 500,
-            }
+            { success: false, message: error.message },
+            { status: 500 }
         )
     }
-}    
+}

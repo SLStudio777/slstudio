@@ -13,6 +13,7 @@ export default function UpdateEnhancementPage({ params }) {
     const [fileBefore, setFileBefore] = useState("");
     const [fileAfter, setFileAfter] = useState("");
     const [isActive, setIsActive] = useState(true);
+    const [section, setSection] = useState("home");
 
     const [loading, setLoading] = useState(false);
     const [fetching, setFetching] = useState(true);
@@ -31,6 +32,7 @@ export default function UpdateEnhancementPage({ params }) {
                 setFileBefore(data.enhancement.file_before);
                 setFileAfter(data.enhancement.file_after);
                 setIsActive(!!data.enhancement.is_active);
+                setSection(data.enhancement.section || "home");
             } catch (err) {
                 setError("Error loading enhancement");
             } finally {
@@ -47,14 +49,13 @@ export default function UpdateEnhancementPage({ params }) {
         try {
             const res = await fetch(`/api/enhancements/${id}`, {
                 method: "PUT",
-                headers: {
-                    "Content-Type": "application/json",
-                },
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     title,
                     file_before: fileBefore,
                     file_after: fileAfter,
                     is_active: isActive ? 1 : 0,
+                    section,
                 }),
             });
 
@@ -74,16 +75,11 @@ export default function UpdateEnhancementPage({ params }) {
     }
 
     if (fetching) {
-        return (
-            <div className="py-20 text-white/40">
-                Loading...
-            </div>
-        );
+        return <div className="py-20 text-white/40">Loading...</div>;
     }
 
     return (
         <section className="py-10 flex flex-col gap-10">
-
             <div className="flex flex-col gap-2">
                 <Link
                     href="/admin/enhancements"
@@ -105,70 +101,50 @@ export default function UpdateEnhancementPage({ params }) {
             <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-8">
                 <form
                     onSubmit={handleUpdate}
-                    className="
-                        p-8 rounded-2xl
-                        border border-white/5
-                        bg-white/[0.03]
-                        flex flex-col gap-6
-                    "
+                    className="p-8 rounded-2xl border border-white/5 bg-white/[0.03] flex flex-col gap-6"
                 >
                     <div className="flex flex-col gap-2">
-                        <label className="text-sm text-white/60">
-                            Title
-                        </label>
+                        <label className="text-sm text-white/60">Title</label>
                         <input
                             type="text"
                             value={title}
                             onChange={(e) => setTitle(e.target.value)}
-                            className="
-                                h-12 px-4 rounded-xl
-                                bg-white/5
-                                border border-white/5
-                                outline-none
-                                text-white/80
-                                focus:border-white/15
-                            "
+                            className="h-12 px-4 rounded-xl bg-white/5 border border-white/5 outline-none text-white/80 focus:border-white/15"
                         />
                     </div>
 
                     <div className="flex flex-col gap-2">
-                        <label className="text-sm text-white/60">
-                            File Before
-                        </label>
-
+                        <label className="text-sm text-white/60">File Before</label>
                         <input
                             type="text"
                             value={fileBefore}
                             onChange={(e) => setFileBefore(e.target.value)}
-                            className="
-                                h-12 px-4 rounded-xl
-                                bg-white/5
-                                border border-white/5
-                                outline-none
-                                text-white/80
-                                focus:border-white/15
-                            "
+                            className="h-12 px-4 rounded-xl bg-white/5 border border-white/5 outline-none text-white/80 focus:border-white/15"
                         />
                     </div>
 
                     <div className="flex flex-col gap-2">
-                        <label className="text-sm text-white/60">
-                            File After
-                        </label>
-
+                        <label className="text-sm text-white/60">File After</label>
                         <input
                             type="text"
                             value={fileAfter}
                             onChange={(e) => setFileAfter(e.target.value)}
-                            className="
-                                h-12 px-4 rounded-xl
-                                bg-white/5
-                                border border-white/5
-                                outline-none
-                                text-white/80
-                                focus:border-white/15
-                            "
+                            className="h-12 px-4 rounded-xl bg-white/5 border border-white/5 outline-none text-white/80 focus:border-white/15"
                         />
+                    </div>
+
+                    <div className="flex flex-col gap-2">
+                        <label className="text-sm text-white/60">Section</label>
+                        <select
+                            value={section}
+                            onChange={(e) => setSection(e.target.value)}
+                            style={{colorScheme: "dark"}}
+                            className="h-12 px-4 rounded-xl bg-[#1b1b1b] border border-white/5 outline-none text-white/80 focus:border-white/15 transition"
+                        >
+                            <option value="home">Home</option>
+                            <option value="mixing">Mixing & Mastering</option>
+                            <option value="arrangement">Arrangement</option>
+                        </select>
                     </div>
 
                     <label className="flex items-center gap-3 text-white/70 text-sm cursor-pointer">
@@ -181,23 +157,11 @@ export default function UpdateEnhancementPage({ params }) {
                         Active on website
                     </label>
 
-                    {error && (
-                        <p className="text-red-400 text-sm">
-                            {error}
-                        </p>
-                    )}
+                    {error && <p className="text-red-400 text-sm">{error}</p>}
 
                     <button
                         disabled={loading}
-                        className="
-                            h-12 rounded-xl
-                            bg-white/5
-                            border border-white/5
-                            hover:bg-white/[0.08]
-                            hover:border-white/10
-                            transition
-                            flex items-center justify-center gap-2
-                        "
+                        className="h-12 rounded-xl bg-white/5 border border-white/5 hover:bg-white/[0.08] hover:border-white/10 transition flex items-center justify-center gap-2"
                     >
                         <Save size={18} />
                         {loading ? "Saving..." : "Save Changes"}

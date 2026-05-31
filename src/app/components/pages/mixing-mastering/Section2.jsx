@@ -1,5 +1,4 @@
 "use client";
-import BeforeAfterCard from "../../cards/BeforeAfterCard";
 import { ChevronRight, HelpCircle } from "lucide-react";
 import { useState } from "react";
 
@@ -39,32 +38,6 @@ export default function Section2() {
 
     return (
         <section className="mt-20 flex flex-col gap-16">
-
-            {/* Before / After */}
-            <div className="flex flex-col gap-6">
-                <div className="flex flex-col gap-2">
-                    <span className="text-white/30 text-xs uppercase tracking-[0.3em]">
-                        Before & After
-                    </span>
-                    <h2 className="text-2xl md:text-3xl font-semibold tracking-wide">
-                        Hear the Difference
-                    </h2>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <BeforeAfterCard
-                        title="Rock Fragment — Mixing & Mastering"
-                        before="01-before.mp3"
-                        after="01-after.mp3"
-                    />
-                    <BeforeAfterCard
-                        title="Folk Session — Sound Enhancement"
-                        before="02-before.mp3"
-                        after="02-after.mp3"
-                    />
-                </div>
-            </div>
-
-            {/* FAQ */}
             <div className="flex flex-col gap-6">
                 <div className="flex items-center gap-3">
                     <HelpCircle className="text-gold2 w-6 h-6" />
@@ -102,7 +75,6 @@ export default function Section2() {
                     ))}
                 </div>
             </div>
-
         </section>
     )
 }

@@ -11,6 +11,7 @@ export default function CreateEnhancementPage() {
     const [fileBefore, setFileBefore] = useState("");
     const [fileAfter, setFileAfter] = useState("");
     const [isActive, setIsActive] = useState(true);
+    const [section, setSection] = useState("home");
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
 
@@ -30,6 +31,7 @@ export default function CreateEnhancementPage() {
                     file_before: fileBefore,
                     file_after: fileAfter,
                     is_active: isActive ? 1 : 0,
+                    section,
                 }),
             });
 
@@ -56,10 +58,7 @@ export default function CreateEnhancementPage() {
                 <div className="flex flex-col gap-2">
                     <Link
                         href="/admin/enhancements"
-                        className="
-                            text-sm hover:text-gold2 transition
-                            flex items-center gap-2
-                        "
+                        className="text-sm hover:text-gold2 transition flex items-center gap-2"
                     >
                         <ArrowLeft size={16} />
                         Back to enhancements
@@ -78,85 +77,56 @@ export default function CreateEnhancementPage() {
             <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-8">
                 <form
                     onSubmit={handleCreate}
-                    className="
-                        p-8 rounded-2xl
-                        border border-white/5
-                        bg-white/[0.03]
-                        flex flex-col gap-6
-                    "
+                    className="p-8 rounded-2xl border border-white/5 bg-white/[0.03] flex flex-col gap-6"
                 >
                     <div className="flex flex-col gap-2">
-                        <label className="text-sm text-white/60">
-                            Enhancement Title
-                        </label>
+                        <label className="text-sm text-white/60">Enhancement Title</label>
                         <input
                             type="text"
                             placeholder="Enter enhancement title"
                             value={title}
                             onChange={(e) => setTitle(e.target.value)}
-                            className="
-                                h-12 px-4 rounded-xl
-                                bg-white/5
-                                border border-white/5
-                                outline-none
-                                text-white/80
-                                placeholder:text-white/20
-                                focus:border-white/15
-                                transition
-                            "
+                            className="h-12 px-4 rounded-xl bg-white/5 border border-white/5 outline-none text-white/80 placeholder:text-white/20 focus:border-white/15 transition"
                         />
                     </div>
 
                     <div className="flex flex-col gap-2">
-                        <label className="text-sm text-white/60">
-                            File Before
-                        </label>
+                        <label className="text-sm text-white/60">File Before</label>
                         <input
                             type="text"
                             placeholder="File Before"
                             value={fileBefore}
                             onChange={(e) => setFileBefore(e.target.value)}
-                            className="
-                                h-12 px-4 rounded-xl
-                                bg-white/5
-                                border border-white/5
-                                outline-none
-                                text-white/80
-                                placeholder:text-white/20
-                                focus:border-white/15
-                                transition
-                            "
+                            className="h-12 px-4 rounded-xl bg-white/5 border border-white/5 outline-none text-white/80 placeholder:text-white/20 focus:border-white/15 transition"
                         />
                     </div>
 
                     <div className="flex flex-col gap-2">
-                        <label className="text-sm text-white/60">
-                            File After
-                        </label>
+                        <label className="text-sm text-white/60">File After</label>
                         <input
                             type="text"
                             placeholder="File After"
                             value={fileAfter}
                             onChange={(e) => setFileAfter(e.target.value)}
-                            className="
-                                h-12 px-4 rounded-xl
-                                bg-white/5
-                                border border-white/5
-                                outline-none
-                                text-white/80
-                                placeholder:text-white/20
-                                focus:border-white/15
-                                transition
-                            "
+                            className="h-12 px-4 rounded-xl bg-white/5 border border-white/5 outline-none text-white/80 placeholder:text-white/20 focus:border-white/15 transition"
                         />
                     </div>
 
-                    <label className="
-                        flex items-center gap-3
-                        text-white/70 text-sm
-                        cursor-pointer
-                        select-none
-                    ">
+                    <div className="flex flex-col gap-2">
+                        <label className="text-sm text-white/60">Section</label>
+                        <select
+                            value={section}
+                            onChange={(e) => setSection(e.target.value)}
+                            style={{colorScheme: "dark"}}
+                            className="h-12 px-4 rounded-xl bg-[#1b1b1b] border border-white/5 outline-none text-white/80 focus:border-white/15 transition"
+                        >
+                            <option value="home">Home</option>
+                            <option value="mixing">Mixing & Mastering</option>
+                            <option value="arrangement">Arrangement</option>
+                        </select>
+                    </div>
+
+                    <label className="flex items-center gap-3 text-white/70 text-sm cursor-pointer select-none">
                         <input
                             type="checkbox"
                             checked={isActive}
@@ -165,25 +135,12 @@ export default function CreateEnhancementPage() {
                         />
                         Active on website
                     </label>
-                    {error && (
-                        <p className="text-red-400 text-sm">
-                            {error}
-                        </p>
-                    )}
+
+                    {error && <p className="text-red-400 text-sm">{error}</p>}
 
                     <button
                         disabled={loading}
-                        className="
-                            h-12 rounded-xl
-                            bg-white/5
-                            border border-white/5
-                            hover:bg-white/[0.08]
-                            hover:border-white/10
-                            transition
-                            disabled:opacity-50
-                            flex items-center justify-center gap-2
-                            text-white/80
-                        "
+                        className="h-12 rounded-xl bg-white/5 border border-white/5 hover:bg-white/[0.08] hover:border-white/10 transition disabled:opacity-50 flex items-center justify-center gap-2 text-white/80"
                     >
                         <Save size={18} />
                         {loading ? "Creating..." : "Create Enhancement"}
