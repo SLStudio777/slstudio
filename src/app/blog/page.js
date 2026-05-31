@@ -3,6 +3,14 @@ import { useState } from "react";
 
 const posts = [
     {
+        href: "/blog/izotope-fxeq-review",
+        image: "/images/blog-fxeq-cover.png",
+        category: "Review",
+        date: "October 5, 2025",
+        title: "iZotope FXEQ Review — Frequency-Specific Effects for Mixing",
+        excerpt: "A plugin that lets you apply reverb, delay, saturation and modulation at specific frequencies. A genuinely new approach to effects processing."
+    },
+    {
         href: "/blog/is-online-mixing-mastering-worth-it",
         image: "/images/blog-online-mix-cover.jpg",
         category: "Tutorials",
