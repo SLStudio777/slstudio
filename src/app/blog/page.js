@@ -3,6 +3,14 @@ import { useState } from "react";
 
 const posts = [
     {
+        href: "/blog/how-long-does-mastering-take",
+        image: "/images/blog-mastering-time-cover.jpg",
+        category: "Mixing & Mastering",
+        date: "November 10, 2025",
+        title: "How Long Does It Take to Master a Song?",
+        excerpt: "From one hour of focused work to a 3-5 day turnaround — an honest breakdown of what happens during mastering and how to get the fastest result without sacrificing quality."
+    },
+    {
         href: "/blog/izotope-fxeq-review",
         image: "/images/blog-fxeq-cover.png",
         category: "Review",
