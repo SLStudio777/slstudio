@@ -1,5 +1,29 @@
 export const posts = [
     {
+        href: "/blog/suno-guide-2026",
+        image: "/images/blog-suno-cover.png",
+        category: "Tutorials",
+        date: "April 10, 2026",
+        title: "How to Use Suno AI Like a Pro — Genre & Tag Guide 2026",
+        excerpt: "Stop gambling with AI music. A complete practical guide to Suno AI — prompts, structure, tags, settings, and workflow that actually produces results."
+    },
+    {
+        href: "/blog/best-mixing-plugins-2026",
+        image: "/images/blog-plugins-cover.png",
+        category: "Technics",
+        date: "March 12, 2026",
+        title: "10 Mixing Plugins Worth Every Dollar in 2026",
+        excerpt: "Not a list of popular plugins. These are the 10 tools that actually show up on every session — from Plugin Alliance and Slate Digital to FabFilter and Valhalla."
+    },
+    {
+        href: "/blog/ai-mixing-mastering-review",
+        image: "/images/blog-ai-mixing-cover.jpg",
+        category: "Industry Insights",
+        date: "February 18, 2026",
+        title: "I Tested an AI Mixing Service. Here Is What Happened.",
+        excerpt: "AI mixing platforms promise studio-quality results in minutes. I uploaded a real 30-track session to find out. Spoiler: it crashed twice."
+    },
+    {
         href: "/blog/vovious-review",
         image: "/images/blog-vovious-cover.jpg",
         category: "Review",

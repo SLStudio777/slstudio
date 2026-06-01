@@ -3,8 +3,7 @@ import { useState } from "react";
 import { posts } from "@/data/posts";
 import PostCard from "@/app/components/blog/PostCard";
 import NumberBtn from "@/app/components/pagination/NumberBtn";
-
-const categories = ["All", "Technics", "Review", "Tutorials", "Mixing & Mastering"];
+const categories = ["All", "Technics", "Review", "Tutorials", "Mixing & Mastering", "Industry Insights"];
 const PER_PAGE = 6;
 
 export default function BlogPage() {
