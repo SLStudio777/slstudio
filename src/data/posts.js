@@ -1,5 +1,21 @@
 export const posts = [
     {
+        href: "/blog/suno-studio-guide-2026",
+        image: "/images/blog-suno-studio-cover-ru.png",
+        category: "Tutorials",
+        date: "July 2, 2026",
+        title: "Suno AI Часть 2: Suno Studio — полный гайд для музыкантов",
+        excerpt: "Таймлайн, Extend, Cover, Replace, формула G.M.I.V. и экспорт стемов. От демки до чистового проекта для DAW — пошагово."
+    },
+    {
+    href: "/blog/suno-studio-guide-en-2026",
+    image: "/images/blog-suno-studio-cover.png",
+    category: "Tutorials",
+    date: "June 1, 2026",
+    title: "Suno AI Part 2: Suno Studio — Complete Guide for Musicians",
+    excerpt: "Timeline, Extend, Cover, Replace, the G.M.I.V. prompt formula, and stem export. From first idea to a DAW-ready project — step by step."
+},
+    {
         href: "/blog/suno-guide-2026-ru",
         image: "/images/blog-suno-cover-ru.png",
         category: "Tutorials",

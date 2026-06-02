@@ -81,7 +81,7 @@ export default function SunoGuidePageRu() {
                 <BlogHeader
                     topic="Уроки"
                     date="1 мая 2026"
-                    title="Как использовать Suno AI как профессионал — Гайд по жанрам и тегам 2026"
+                    title="Suno AI: полный гайд для музыкантов — жанры, теги и промпты 2026"
                     description="Если твой рабочий процесс сейчас — открыть Suno, написать что попало, нажать Generate и надеяться на чудо — у меня плохие новости. Ты не работаешь с инструментом. Ты играешь в лотерею."
                 />
                 <div className="flex flex-col gap-14 text-white/70 text-[15px] leading-relaxed">
