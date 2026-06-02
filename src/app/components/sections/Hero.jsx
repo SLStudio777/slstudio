@@ -3,9 +3,9 @@ import HeroCard from "../cards/HeroCard";
 import { servicesData } from "@/data/temporaryData";
 
 const stats = [
-    { value: "15+", label: "Projects Delivered" },
-    { value: "10+", label: "Years of Experience" },
-    { value: "100%", label: "Remote Workflow" },
+    { value: "200+", label: "Tracks Mixed & Mastered" },
+    { value: "10+", label: "Years Behind the Board" },
+    { value: "Any Genre", label: "From Blues to Electronic" },
 ];
 
 export default function Hero() {

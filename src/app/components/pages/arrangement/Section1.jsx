@@ -1,3 +1,16 @@
+function ProTip({ children }) {
+    return (
+        <div className="rounded-xl p-5 flex gap-3 items-start"
+            style={{ background: "rgba(201,168,76,0.07)", border: "1px solid rgba(201,168,76,0.25)" }}>
+            <span className="text-base flex-shrink-0 font-bold" style={{ color: "#C9A84C" }}>★</span>
+            <div>
+                <p className="text-xs font-bold uppercase tracking-widest mb-1.5" style={{ color: "#C9A84C" }}>Pro Tip</p>
+                <p className="text-white/70 text-sm leading-relaxed">{children}</p>
+            </div>
+        </div>
+    );
+}
+
 export default function Section1() {
     return (
         <section className="mt-20">
@@ -20,6 +33,9 @@ export default function Section1() {
                             Arrangement for me is translation. You hear something inside, and I help that something come out as real music. I don't impose my taste — I listen to what you want to say and find the instruments that say it best.
                         </p>
                     </div>
+                    <ProTip>
+                        Don't worry about the quality of what you send. A voice memo with a tap in the background is a perfectly valid starting point — the performance and the idea are what matter. Everything else is my job.
+                    </ProTip>
                 </div>
 
                 <div className="rounded-2xl border border-white/5 bg-white/[0.03] p-8 md:p-10 flex flex-col gap-6">
@@ -37,6 +53,9 @@ export default function Section1() {
                             Whether you want to add one instrument or create a full orchestral sound — I work with your vision and bring it to life.
                         </p>
                     </div>
+                    <ProTip>
+                        References are gold. Find two or three songs that have the feel, the instrumentation, or the energy you're going for — and share them. It gets us to the right direction faster than any description.
+                    </ProTip>
                 </div>
             </div>
         </section>

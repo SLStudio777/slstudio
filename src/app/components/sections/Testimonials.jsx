@@ -5,19 +5,19 @@ const testimonials = [
         name: "Andrei Malinowski",
         role: "Guitarist & Musician",
         photo: "/images/review-andrei.png",
-        text: "I sat in front of my speakers and couldn't move. The emotions just hit me — I had no words. Serhii took my rough recordings and turned them into something I'm genuinely proud of. This is exactly the sound I heard in my head but couldn't reach on my own."
+        text: "Brought Serhii recordings I was honestly embarrassed to share — heavy stuff tracked in pretty rough conditions. Got back something I actually want to listen to. The arrangements came out so good that me and my friend kept replaying them just for fun."
     },
     {
         name: "Luis Mesquita",
         role: "Singer & Songwriter",
         photo: "/images/review-luis.png",
-        text: "I'm not exaggerating when I say I had tears in my eyes. The final mix was so alive, so emotional — I just wanted to keep listening on repeat. Serhii has a rare gift for understanding what a song needs to breathe."
+        text: "I had songs recorded in an old studio — tracks I'd kind of grown cold to. After Serhii reworked them, I found myself listening differently. Same words, same melody — but they started hitting harder than when I first wrote them."
     },
     {
         name: "Anna Kowalska",
         role: "Vocalist & Composer",
         photo: "/images/review-anna.png",
-        text: "I have never worked with a more attentive and professional producer. Serhii is a true perfectionist — he hears every detail and doesn't stop until everything feels exactly right. My vocals never sounded this good."
+        text: "I write songs on guitar and honestly didn't expect them to end up sounding like a full band. Serhii catches details I miss myself — and doesn't stop until everything falls into place. My vocal parts finally sound the way I always heard them in my head."
     },
 ];
 
