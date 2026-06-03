@@ -17,7 +17,7 @@ const services = [
     {
         icon: Guitar,
         title: "Arrangement & Production",
-        price: "from $120",
+        price: "from $110",
         description: "From idea to finished track. Instruments, structure, mix and master. Final price depends on the scope."
     },
 ];
