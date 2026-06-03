@@ -61,7 +61,16 @@ export default function BeforeAfterCard({title, before, after}) {
     };
 
     const switchMode = (newMode) => {
-        if (isPlaying) return;
+        if (newMode === mode) return;
+        const current = mode === "before" ? beforeWS.current : afterWS.current;
+        const next = newMode === "before" ? beforeWS.current : afterWS.current;
+        const currentTime = current.getCurrentTime();
+        const duration = next.getDuration();
+        current.pause();
+        if (duration > 0) {
+            next.seekTo(Math.min(currentTime / duration, 1));
+        }
+        if (isPlaying) next.play();
         setMode(newMode);
     };
 
@@ -87,10 +96,10 @@ export default function BeforeAfterCard({title, before, after}) {
                 .mode-btn {
                     transition: transform 0.15s ease, background-color 0.15s ease;
                 }
-                .mode-btn:not(:disabled):hover {
+                .mode-btn:hover {
                     transform: scale(1.05);
                 }
-                .mode-btn:not(:disabled):active {
+                .mode-btn:active {
                     transform: scale(0.96);
                 }
                 .play-btn {
@@ -126,10 +135,8 @@ export default function BeforeAfterCard({title, before, after}) {
                 <div className="flex bg-white/5 rounded-lg p-1 text-xs border border-white/5">
                     <button
                         onClick={() => switchMode("before")}
-                        disabled={isPlaying}
-                        className={`mode-btn px-3 py-1 rounded-md font-medium
-                            ${mode === "before" ? "text-black" : "text-white/40"}
-                            ${isPlaying ? "cursor-not-allowed" : "cursor-pointer"}`}
+                        className={`mode-btn px-3 py-1 rounded-md font-medium cursor-pointer
+                            ${mode === "before" ? "text-black" : "text-white/40"}`}
                         style={mode === "before"
                             ? { backgroundColor: "#C9A84C", boxShadow: "0 0 8px rgba(201,168,76,0.4)" }
                             : {}}
@@ -138,10 +145,8 @@ export default function BeforeAfterCard({title, before, after}) {
                     </button>
                     <button
                         onClick={() => switchMode("after")}
-                        disabled={isPlaying}
-                        className={`mode-btn px-3 py-1 rounded-md font-medium
-                            ${mode === "after" ? "text-black" : "text-white/40"}
-                            ${isPlaying ? "cursor-not-allowed" : "cursor-pointer"}`}
+                        className={`mode-btn px-3 py-1 rounded-md font-medium cursor-pointer
+                            ${mode === "after" ? "text-black" : "text-white/40"}`}
                         style={mode === "after"
                             ? { backgroundColor: "#C9A84C", boxShadow: "0 0 8px rgba(201,168,76,0.4)" }
                             : {}}

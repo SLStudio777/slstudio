@@ -66,16 +66,17 @@ export default function BlogPreview() {
                         }}
                     >
                         {/* Image */}
-                        <div className="aspect-[16/9] overflow-hidden">
+                        <div className="overflow-hidden">
                             <img
                                 src={post.image}
                                 alt={post.title}
-                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                style={{ height: "140px", objectPosition: "top" }}
                             />
                         </div>
 
                         {/* Content */}
-                        <div className="p-4 flex flex-col gap-2.5 flex-1">
+                        <div className="p-3.5 flex flex-col gap-2 flex-1">
                             <div className="flex items-center gap-2">
                                 <span className="text-xs uppercase tracking-widest font-medium"
                                     style={{ color: "#C9A84C" }}>
@@ -87,10 +88,7 @@ export default function BlogPreview() {
                             <h3 className="text-white font-semibold text-sm leading-snug line-clamp-2 group-hover:text-gold2 transition">
                                 {post.title}
                             </h3>
-                            <p className="text-white/40 text-xs leading-relaxed line-clamp-2 flex-1">
-                                {post.excerpt}
-                            </p>
-                            <div className="flex items-center gap-1 mt-1 text-xs font-medium"
+                            <div className="flex items-center gap-1 mt-auto pt-1 text-xs font-medium"
                                 style={{ color: "#C9A84C" }}>
                                 Read more
                                 <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
