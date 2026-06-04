@@ -55,7 +55,7 @@ export default function Hero() {
                             src="/images/Serhii-Lazariev.JPG"
                             alt="Serhii Lazariev"
                             fill
-                            className="object-cover"
+                            className="object-cover object-top"
                             sizes="(max-width: 768px) 100vw, 1024px"
                             loading="eager"
                         />
