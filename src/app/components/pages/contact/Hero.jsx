@@ -46,11 +46,11 @@ const contacts = [
         highlight: false,
     },
     {
-        href: "mailto:serhiiguitarlessons@gmail.com",
+        href: "mailto:serhii@slstudio.pro",
         icon: <Mail className="w-5 h-5" />,
         label: "Email",
         sub: null,
-        handle: "serhiiguitarlessons@gmail.com",
+        handle: "serhii@slstudio.pro",
         highlight: false,
     },
 ];
