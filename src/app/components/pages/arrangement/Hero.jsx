@@ -59,7 +59,7 @@ style={{backgroundColor: "#C9A84C"}}
                         src="/images/Serhii-Lazariev-03.png"
                         alt="Serhii Lazariev"
                         fill
-                        className="object-cover"
+                        className="object-cover object-top"
                         sizes="(max-width: 768px) 100vw, 1024px"
                         loading="eager"
                     />

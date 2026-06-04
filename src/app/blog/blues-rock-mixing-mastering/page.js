@@ -107,7 +107,7 @@ export default function BluesRockPage() {
                             src="/images/blog-blues-rock.jpg"
                             alt="Blues rock guitar recording and mixing"
                             fill
-                            className="object-cover"
+                            className="object-cover object-top"
                             sizes="(max-width: 768px) 100vw, 768px"
                         />
                     </div>
