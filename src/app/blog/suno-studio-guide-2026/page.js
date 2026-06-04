@@ -1,4 +1,5 @@
 import BlogHeader from "@/app/components/blog/BlogHeader";
+import ReadingProgress from "@/app/components/blog/ReadingProgress";
 
 
 export const metadata = {
@@ -71,6 +72,7 @@ function TableOfContents() {
 export default function SunoStudioGuidePage() {
     return (
         <div id="top" className="mt-16 mb-20">
+            <ReadingProgress />
             <div className="max-w-3xl mx-auto">
 
                 <BlogHeader

@@ -1,6 +1,6 @@
 function ProTip({ children }) {
     return (
-        <div className="rounded-xl p-5 flex gap-3 items-start"
+        <div className="rounded-xl p-5 flex gap-3 items-start mt-auto"
             style={{ background: "rgba(201,168,76,0.07)", border: "1px solid rgba(201,168,76,0.25)" }}>
             <span className="text-base flex-shrink-0 font-bold" style={{ color: "#C9A84C" }}>★</span>
             <div>
@@ -13,7 +13,7 @@ function ProTip({ children }) {
 
 export default function Section1() {
     return (
-        <section className="mt-20">
+        <section className="mt-6">
             <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 items-stretch">
                 <div className="rounded-2xl border border-white/5 bg-white/[0.03] p-8 md:p-10 flex flex-col gap-6">
                     <span className="text-white/30 text-xs uppercase tracking-[0.3em]">

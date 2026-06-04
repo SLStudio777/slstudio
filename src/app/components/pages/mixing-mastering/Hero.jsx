@@ -40,14 +40,14 @@ export default function Hero() {
                         <div className="mt-4">
                             <Link
                                 href="/contact"
-                              className="
-    inline-flex items-center gap-2
-    text-black
-    px-6 py-3 rounded-xl
-    font-medium text-sm
-    hover:opacity-90 transition
-"
-style={{backgroundColor: "#C9A84C"}}
+                                className="
+                                    inline-flex items-center gap-2
+                                    text-black
+                                    px-6 py-3 rounded-xl
+                                    font-medium text-sm
+                                    hover:opacity-90 transition
+                                "
+                                style={{backgroundColor: "#C9A84C"}}
                             >
                                 Send Your Track →
                             </Link>
@@ -61,7 +61,7 @@ style={{backgroundColor: "#C9A84C"}}
                         fill
                         className="object-cover"
                         sizes="(max-width: 768px) 100vw, 1024px"
-                        loading="eager" 
+                        loading="eager"
                     />
                 </div>
             </div>

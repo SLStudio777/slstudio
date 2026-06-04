@@ -1,5 +1,6 @@
 import BlogHeader from "@/app/components/blog/BlogHeader";
 import InteractiveChecklist from "./InteractiveChecklist";
+import ReadingProgress from "@/app/components/blog/ReadingProgress";
 
 export const metadata = {
     title: "Suno AI: Complete Guide for Musicians — Genres, Tags & Prompts 2026 | SL Studio",
@@ -96,6 +97,7 @@ function TableOfContents() {
 export default function SunoGuidePage() {
     return (
         <div id="top" className="mt-16 mb-20">
+            <ReadingProgress />
             <div className="max-w-3xl mx-auto">
 
                 <BlogHeader
