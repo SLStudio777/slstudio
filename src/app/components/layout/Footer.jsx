@@ -52,8 +52,8 @@ export default function Footer() {
                     <a href="https://t.me/serhii_lazariev" target="_blank" className="text-white/60 text-sm hover:text-gold2 transition">
                         Telegram — @serhii_lazariev
                     </a>
-                    <a href="mailto:serhiiguitarlessons@gmail.com" className="text-white/60 text-sm hover:text-gold2 transition">
-                        serhiiguitarlessons@gmail.com
+                    <a href="mailto:serhii@slstudio.pro" className="text-white/60 text-sm hover:text-gold2 transition">
+                        serhii@slstudio.pro
                     </a>
                     <p className="text-white/30 text-sm mt-2">Warsaw, Poland</p>
                     <p className="text-white/30 text-sm">Worldwide Remote</p>
