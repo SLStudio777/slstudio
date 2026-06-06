@@ -49,6 +49,7 @@ export default function Hero() {
                         ))}
                     </div>
                 </div>
+
                 {/* Right */}
                 <div className="flex flex-col gap-6">
                     <div className="w-full aspect-[16/9] relative rounded-xl overflow-hidden">
@@ -61,8 +62,12 @@ export default function Hero() {
                             loading="eager"
                         />
                     </div>
-                    {/* Description */}
-                    <div className="mt-6 flex flex-col gap-4 text-md leading-relaxed">
+
+                    {/* About me */}
+                    <div className="flex flex-col gap-3 pt-2 border-t border-white/5">
+                        <span className="text-white/30 text-xs uppercase tracking-[0.3em]">
+                            Guitarist · Producer · Engineer
+                        </span>
                         <h2 className="text-xl md:text-2xl font-semibold tracking-wide">
                             About me
                         </h2>
@@ -79,5 +84,5 @@ export default function Hero() {
                 </div>
             </div>
         </section>
-    )
+    );
 }
