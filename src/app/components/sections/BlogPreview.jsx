@@ -84,7 +84,7 @@ export default function BlogPreview() {
                     <Link
                         key={i}
                         href={post.href}
-                        className="group flex flex-col rounded-xl overflow-hidden transition-all duration-300 relative"
+                        className="group flex flex-col rounded-xl overflow-hidden transition-all duration-300"
                         style={{
                             background: "rgba(255,255,255,0.02)",
                             border: "1px solid rgba(255,255,255,0.06)",

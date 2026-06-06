@@ -7,28 +7,41 @@ export default function HeroCard({ icon: Icon, title, description, href }) {
     const [hovered, setHovered] = useState(false);
 
     return (
-        <div
-            className="p-5 rounded-xl flex flex-col gap-4 transition-all duration-300 cursor-pointer"
+        <Link
+            href={href}
+            className="hero-card p-5 rounded-xl flex flex-col gap-4 transition-all duration-300 cursor-pointer relative overflow-hidden"
             style={{
-                background: hovered ? "rgba(201,168,76,0.06)" : "rgba(255,255,255,0.02)",
-                border: hovered ? "1px solid rgba(201,168,76,0.4)" : "1px solid rgba(255,255,255,0.05)",
-                boxShadow: hovered ? "0 8px 32px rgba(201,168,76,0.1)" : "none",
+                background: hovered
+                    ? "rgba(201,168,76,0.07)"
+                    : "rgba(255,255,255,0.02)",
+                border: hovered
+                    ? "1px solid rgba(201,168,76,0.35)"
+                    : "1px solid rgba(255,255,255,0.05)",
                 transform: hovered ? "translateY(-3px)" : "translateY(0)",
+                textDecoration: "none",
             }}
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
         >
-            <div className="w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300"
+            {/* Угловой блик — статичный отсвет сверху слева */}
+            <div style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "60%",
+                height: "60%",
+                background: "radial-gradient(ellipse at 0% 0%, rgba(201,168,76,0.1) 0%, transparent 70%)",
+                pointerEvents: "none",
+            }}/>
+
+            <div className="w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 relative z-10"
                 style={{ backgroundColor: hovered ? "rgba(201,168,76,0.2)" : "rgba(201,168,76,0.1)" }}>
                 <Icon className="w-5 h-5" style={{ color: "#C9A84C" }} />
             </div>
-            <h2 className="text-base font-semibold text-white">{title}</h2>
-            <p className="text-white/55 text-sm leading-relaxed flex-1">{description}</p>
-            <Link
-                href={href}
-                className="mt-auto inline-flex items-center gap-2 text-black text-sm font-semibold px-4 py-2 rounded-lg hover:opacity-90 transition w-fit"
-                style={{ backgroundColor: "#C9A84C" }}
-            >
+            <h2 className="text-base font-semibold text-white relative z-10">{title}</h2>
+            <p className="text-white/55 text-sm leading-relaxed flex-1 relative z-10">{description}</p>
+            <div className="mt-auto inline-flex items-center gap-2 text-black text-sm font-semibold px-4 py-2 rounded-lg w-fit relative z-10"
+                style={{ backgroundColor: "#C9A84C" }}>
                 Learn More
                 <ArrowRight
                     size={14}
@@ -37,7 +50,7 @@ export default function HeroCard({ icon: Icon, title, description, href }) {
                         transition: "transform 0.2s ease",
                     }}
                 />
-            </Link>
-        </div>
+            </div>
+        </Link>
     );
 }

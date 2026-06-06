@@ -60,3 +60,10 @@ h1, h2, h3 {
 .animate-on-scroll.is-visible {
   animation: fadeInUp 0.5s ease forwards;
 }
+@keyframes cardGlow {
+  0%, 100% { box-shadow: 0 0 12px rgba(201,168,76,0.07); }
+  50% { box-shadow: 0 0 28px rgba(201,168,76,0.18); }
+}
+.hero-card {
+  animation: cardGlow 4s ease-in-out infinite;
+}
