@@ -11,7 +11,7 @@ export async function POST(req) {
         }
 
         await resend.emails.send({
-            from: 'SL Studio <onboarding@resend.dev>',
+            from: 'SL Studio <noreply@slstudio.pro>',
             to: 'serhii@slstudio.pro',
             replyTo: email,
             subject: `New inquiry from ${name} — ${service}`,
