@@ -13,7 +13,7 @@ export default function Header() {
                     <img
                         src="/images/logo-animated.svg"
                         alt="SL Studio"
-                        style={{ height: "27px"}}
+                        style={{ height: "24px"}}
                     />
                 </Link>
                 <ul className="flex items-center gap-8 text-white/70 text-[15px] font-medium tracking-wide max-[768px]:hidden">
