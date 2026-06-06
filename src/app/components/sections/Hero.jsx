@@ -14,13 +14,13 @@ export default function Hero() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
                 {/* Left */}
                 <div className="flex flex-col gap-10">
-                    <h1 className="text-3xl md:text-5xl font-semibold leading-tight tracking-wide">
+                    <h1 className="text-3xl md:text-5xl font-semibold leading-tight">
                         Your Sound, <span className="text-[#f5b942]">Elevated.</span>
                     </h1>
                     <p className="text-white/70 text-md md:text-lg leading-relaxed max-w-lg">
                         I take rough recordings and transform them into polished, professional tracks - mixing, mastering, arrangement, and production from Warsaw to the world.
                     </p>
-                    <h2 className="text-2xl md:text-3xl font-semibold tracking-wide">
+                    <h2 className="text-2xl md:text-3xl font-semibold">
                         Professional Audio Services
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
