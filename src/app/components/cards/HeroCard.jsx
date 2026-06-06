@@ -12,7 +12,6 @@ export default function HeroCard({ icon: Icon, title, description, href }) {
             style={{
                 background: hovered ? "rgba(201,168,76,0.06)" : "rgba(255,255,255,0.02)",
                 border: hovered ? "1px solid rgba(201,168,76,0.4)" : "1px solid rgba(255,255,255,0.05)",
-                borderLeft: "3px solid #C9A84C",
                 boxShadow: hovered ? "0 8px 32px rgba(201,168,76,0.1)" : "none",
                 transform: hovered ? "translateY(-3px)" : "translateY(0)",
             }}
