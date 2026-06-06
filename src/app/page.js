@@ -3,7 +3,7 @@ import BeforeAfter from "./components/sections/BeforeAfter";
 import YouTube from "./components/sections/YouTube";
 import HowItWorks from "./components/sections/HowItWorks";
 import Testimonials from "./components/sections/Testimonials";
-import WhyChoose from "./components/sections/WhyChoose";
+
 import Pricing from "./components/sections/Pricing";
 import FinalCTA from "./components/sections/FinalCTA";
 import BlogPreview from "./components/sections/BlogPreview";
@@ -54,7 +54,7 @@ export default function Home() {
       <YouTube />
       <HowItWorks />
       <Testimonials />
-      <WhyChoose />
+      
       <BlogPreview />
       <Pricing />
       <FinalCTA />

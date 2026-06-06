@@ -7,7 +7,7 @@ html, body {
 
 body {
   background: #1b1b1b;
-  font-family: Arial, sans-serif;
+  font-family: inherit;
   color: rgba(255, 255, 255, 0.80);
 }
 
@@ -41,4 +41,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 h1, h2, h3 {
   font-family: var(--font-playfair), serif;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-on-scroll {
+  opacity: 0;
+}
+
+.animate-on-scroll.is-visible {
+  animation: fadeInUp 0.5s ease forwards;
 }
