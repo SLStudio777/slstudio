@@ -4,11 +4,11 @@ import CheatsheetCopy from "@/app/components/blog/CheatsheetCopy";
 import ReadingProgress from "@/app/components/blog/ReadingProgress";
 
 export const metadata = {
-    title: "Suno AI Part 2: Suno Studio — Complete Guide for Musicians 2026 | SL Studio",
+    title: "Suno Studio Guide 2026: Timeline, Extend & G.M.I.V.",
     alternates: {
-        canonical: "https://www.slstudio.pro/blog/suno-studio-guide-2026"
+        canonical: "https://www.slstudio.pro/blog/suno-studio-guide-en-2026"
     },
-    description: "A deep dive into Suno Studio — timeline, Extend, Cover, Replace, the G.M.I.V. prompt formula, and stem export. From first idea to a DAW-ready project.",
+    description: "Most Suno users generate and hope for the best. This guide shows you how to actually control it — timeline, Extend timestamps, G.M.I.V. prompts, stem export.",
     keywords: [
         "suno studio guide 2026",
         "how to use suno studio",

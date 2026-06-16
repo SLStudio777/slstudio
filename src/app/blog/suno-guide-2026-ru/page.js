@@ -3,11 +3,11 @@ import InteractiveChecklist from "./InteractiveChecklist";
 import ReadingProgress from "@/app/components/blog/ReadingProgress";
 
 export const metadata = {
-    title: "Suno AI: полный гайд для музыкантов — жанры, теги и промпты 2026 | SL Studio",
+    title: "Почему Suno выдаёт рандом — и как это исправить. Гайд 2026",
     alternates: {
         canonical: "https://www.slstudio.pro/blog/suno-guide-2026-ru"
     },
-    description: "Хватит играть в рулетку с AI-музыкой. Полный практический гайд по Suno — промпты, структура, теги, настройки и рабочий процесс, который реально работает.",
+    description: "Большинство жмёт Generate и надеется на удачу. Этот гайд — про другой подход: промпты, структура, Extend, скобки и рабочий процесс который даёт предсказуемый результат.",
     keywords: [
         "suno ai гайд 2026",
         "как использовать suno ai",

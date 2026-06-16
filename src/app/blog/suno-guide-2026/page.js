@@ -1,13 +1,13 @@
-import BlogHeader from "@/app/components/blog/BlogHeader";
+ import BlogHeader from "@/app/components/blog/BlogHeader";
 import InteractiveChecklist from "./InteractiveChecklist";
 import ReadingProgress from "@/app/components/blog/ReadingProgress";
 
 export const metadata = {
-    title: "Suno AI: Complete Guide for Musicians — Genres, Tags & Prompts 2026 | SL Studio",
+    title: "Suno Studio Guide 2026: Stop Gambling and Take Control",
     alternates: {
         canonical: "https://www.slstudio.pro/blog/suno-guide-2026"
     },
-    description: "Stop gambling with AI music. A complete practical guide to Suno AI — prompts, structure, tags, settings, and workflow that actually produces results.",
+    description: "Most Suno users generate and hope for the best. Learn how producers actually use Studio — Extend, Replace, Cover, G.M.I.V. prompts, WAV stems. From random noise to finished track.",
     keywords: [
         "suno ai guide 2026",
         "how to use suno ai",
