@@ -3,11 +3,11 @@ import ReadingProgress from "@/app/components/blog/ReadingProgress";
 
 
 export const metadata = {
-    title: "Suno AI Часть 2: Suno Studio — полный гайд для музыкантов 2026 | SL Studio",
+    title: "Suno Studio: полный гайд 2026 — таймлайн, Extend, формула G.M.I.V.",
     alternates: {
         canonical: "https://www.slstudio.pro/blog/suno-studio-guide-2026"
     },
-    description: "Подробный разбор Suno Studio — таймлайн, Extend, Cover, Replace, формула G.M.I.V., экспорт стемов. От демки до чистового проекта для DAW.",
+    description: "Большинство пользователей Suno просто жмут Generate и надеются на удачу. Этот гайд — про то, как взять контроль: таймлайн, точки Extend, формула G.M.I.V., экспорт стемов.",
     keywords: [
         "suno studio гайд 2026",
         "suno studio как пользоваться",
