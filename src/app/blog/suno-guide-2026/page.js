@@ -3,11 +3,16 @@ import InteractiveChecklist from "./InteractiveChecklist";
 import ReadingProgress from "@/app/components/blog/ReadingProgress";
 
 export const metadata = {
-    title: "Suno Studio Guide 2026: Stop Gambling and Take Control",
+    title: "How to Use Suno AI in 2026: Prompts, Custom Mode & Personas",
     alternates: {
-        canonical: "https://www.slstudio.pro/blog/suno-guide-2026"
+        canonical: "https://www.slstudio.pro/blog/suno-guide-2026",
+        languages: {
+            "en": "https://www.slstudio.pro/blog/suno-guide-2026",
+            "ru": "https://www.slstudio.pro/blog/suno-guide-2026-ru",
+            "x-default": "https://www.slstudio.pro/blog/suno-guide-2026",
+        },
     },
-    description: "Most Suno users generate and hope for the best. Learn how producers actually use Studio — Extend, Replace, Cover, G.M.I.V. prompts, WAV stems. From random noise to finished track.",
+    description: "Stop gambling with Generate. How producers actually use Suno — prompt structure, brackets, Custom Mode, Personas, and the v5.5 features that changed the workflow.",
     keywords: [
         "suno ai guide 2026",
         "how to use suno ai",

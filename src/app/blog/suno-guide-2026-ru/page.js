@@ -5,7 +5,12 @@ import ReadingProgress from "@/app/components/blog/ReadingProgress";
 export const metadata = {
     title: "Почему Suno выдаёт рандом — и как это исправить. Гайд 2026",
     alternates: {
-        canonical: "https://www.slstudio.pro/blog/suno-guide-2026-ru"
+        canonical: "https://www.slstudio.pro/blog/suno-guide-2026-ru",
+        languages: {
+            "en": "https://www.slstudio.pro/blog/suno-guide-2026",
+            "ru": "https://www.slstudio.pro/blog/suno-guide-2026-ru",
+            "x-default": "https://www.slstudio.pro/blog/suno-guide-2026",
+        },
     },
     description: "Большинство жмёт Generate и надеется на удачу. Этот гайд — про другой подход: промпты, структура, Extend, скобки и рабочий процесс который даёт предсказуемый результат.",
     keywords: [

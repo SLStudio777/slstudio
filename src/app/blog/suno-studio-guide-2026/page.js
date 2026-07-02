@@ -5,7 +5,12 @@ import ReadingProgress from "@/app/components/blog/ReadingProgress";
 export const metadata = {
     title: "Suno Studio: полный гайд 2026 — таймлайн, Extend, формула G.M.I.V.",
     alternates: {
-        canonical: "https://www.slstudio.pro/blog/suno-studio-guide-2026"
+        canonical: "https://www.slstudio.pro/blog/suno-studio-guide-2026",
+        languages: {
+            "en": "https://www.slstudio.pro/blog/suno-studio-guide-en-2026",
+            "ru": "https://www.slstudio.pro/blog/suno-studio-guide-2026",
+            "x-default": "https://www.slstudio.pro/blog/suno-studio-guide-en-2026",
+        },
     },
     description: "Большинство пользователей Suno просто жмут Generate и надеются на удачу. Этот гайд — про то, как взять контроль: таймлайн, точки Extend, формула G.M.I.V., экспорт стемов.",
     keywords: [

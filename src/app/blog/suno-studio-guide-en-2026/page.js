@@ -4,13 +4,18 @@ import CheatsheetCopy from "@/app/components/blog/CheatsheetCopy";
 import ReadingProgress from "@/app/components/blog/ReadingProgress";
 
 export const metadata = {
-    title: "Suno Studio Guide 2026: Timeline, Extend & G.M.I.V.",
+    title: "How to Use Suno Studio in 2026: Timeline, Extend & Stem Export",
     alternates: {
-        canonical: "https://www.slstudio.pro/blog/suno-studio-guide-en-2026"
+        canonical: "https://www.slstudio.pro/blog/suno-studio-guide-en-2026",
+        languages: {
+            "en": "https://www.slstudio.pro/blog/suno-studio-guide-en-2026",
+            "ru": "https://www.slstudio.pro/blog/suno-studio-guide-2026",
+            "x-default": "https://www.slstudio.pro/blog/suno-studio-guide-en-2026",
+        },
     },
-    description: "Most Suno users generate and hope for the best. This guide shows you how to actually control it — timeline, Extend timestamps, G.M.I.V. prompts, stem export.",
+    description: "Step-by-step Suno Studio tutorial — control the timeline, extend tracks at the exact timestamp, fix weak sections with Cover & Replace, and export clean WAV stems for mixing.",
     keywords: [
-        "suno studio guide 2026",
+        "suno studio tutorial 2026",
         "how to use suno studio",
         "suno extend timestamp",
         "suno gmiv prompt formula",

@@ -1,11 +1,11 @@
 import BlogHeader from "@/app/components/blog/BlogHeader";
 
 export const metadata = {
-    title: "Vovious Review 2026: Better Than Melodyne? Real Session Test",
+    title: "Vovious Review 2026: $229 vs Melodyne $699 — Real Session Test",
     alternates: {
         canonical: "https://www.slstudio.pro/blog/vovious-review"
     },
-    description: "Vovious vs Melodyne vs RePitch 2 — tested on real vocal sessions. Sound quality, workflow speed, ARA2 compatibility, known bugs and who should actually buy it.",
+    description: "Vovious costs $229 flat — no tiers, no upsells. Tested against Melodyne Studio and RePitch 2 on real vocal sessions: sound quality, ARA2 workflow, known bugs, verdict.",
     keywords: [
         "vovious review 2026",
         "vovious vs melodyne",
@@ -38,7 +38,7 @@ export default function VoviousReviewPage() {
                     {/* Intro */}
                     <div className="flex flex-col gap-4">
                         <p><a href="https://www.celemony.com" target="_blank" style={{color: "#C9A84C", textDecoration: "underline"}}>Melodyne</a> has been the industry standard for vocal pitch correction for so long that the question "what are you using for tuning?" has basically had one answer for a decade. Then <a href="https://www.vovious.com" target="_blank" style={{color: "#C9A84C", textDecoration: "underline"}}>Vovious</a> arrived in December 2025 — and after running it against Melodyne, RePitch 2 and VariAudio on real sessions, I found myself reaching for it more often than I expected. Not because it replaces everything. But because in daily workflow terms, it is faster and more pleasant to use — and it costs $470 less than Melodyne Studio.</p>
-                        <p>This is a real test, not a sponsored post. I will cover the technology, sound quality, direct comparisons with competitors, known bugs, and who should actually buy it.</p>
+                        <p>This is a real test, not a sponsored post. I will cover the technology, sound quality, direct comparisons with competitors, known bugs, and who should actually buy it. (And yes — it is Vovious, often misspelled as "Vicious" or "Vovius". Same plugin.)</p>
                     </div>
 
                     {/* Quick comparison table */}

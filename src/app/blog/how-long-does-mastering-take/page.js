@@ -1,9 +1,9 @@
 export const metadata = {
-    title: "How Long Does It Take to Master a Song? | SL Studio",
+    title: "How Long Does It Take to Master a Song? (1 Hour vs 3–5 Days)",
     alternates: {
         canonical: "https://www.slstudio.pro/blog/how-long-does-mastering-take"
     },
-    description: "From one hour of focused work to a 3-5 day turnaround — here is an honest breakdown of how long mastering actually takes and what happens during that time.",
+    description: "Mastering one track takes about an hour of focused work — but professional turnaround is 3–5 days. What actually happens in a session, what slows it down, and how to speed it up.",
     keywords: [
         "how long does mastering take",
         "mastering turnaround time",
