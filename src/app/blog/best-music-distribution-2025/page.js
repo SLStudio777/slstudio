@@ -1,11 +1,25 @@
+import BlogJsonLd from "@/app/components/blog/BlogJsonLd";
 import BlogHeader from "@/app/components/blog/BlogHeader";
 
 export const metadata = {
-    title: "Best Music Distribution Services in 2025 — Honest Comparison | SL Studio",
+    title: "Best Music Distribution Services in 2025 — Honest Comparison",
     alternates: {
         canonical: "https://www.slstudio.pro/blog/best-music-distribution-2025"
     },
     description: "TuneCore, DistroKid, LANDR, CD Baby — which music distributor is actually worth it in 2025? An honest comparison from an engineer who has worked with all of them.",
+    openGraph: {
+        title: "Best Music Distribution Services in 2025 — Honest Comparison",
+        description: "TuneCore, DistroKid, LANDR, CD Baby — which music distributor is actually worth it in 2025? An honest comparison from an engineer who has worked with all of them.",
+        type: "article",
+        url: "https://www.slstudio.pro/blog/best-music-distribution-2025",
+        siteName: "SL Studio",
+        images: ["/images/blog-distribution-cover.png"],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Best Music Distribution Services in 2025 — Honest Comparison",
+        description: "TuneCore, DistroKid, LANDR, CD Baby — which music distributor is actually worth it in 2025? An honest comparison from an engineer who has worked with all of them.",
+    },
     keywords: [
         "best music distribution 2025",
         "tunecore vs distrokid",
@@ -21,6 +35,7 @@ export const metadata = {
 export default function MusicDistributionPage() {
     return (
         <div className="mt-16 mb-20">
+            <BlogJsonLd slug="best-music-distribution-2025" />
             <div className="max-w-3xl mx-auto">
                 
                 <BlogHeader 

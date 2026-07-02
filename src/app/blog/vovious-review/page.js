@@ -1,3 +1,4 @@
+import BlogJsonLd from "@/app/components/blog/BlogJsonLd";
 import BlogHeader from "@/app/components/blog/BlogHeader";
 
 export const metadata = {
@@ -6,6 +7,19 @@ export const metadata = {
         canonical: "https://www.slstudio.pro/blog/vovious-review"
     },
     description: "Vovious costs $229 flat — no tiers, no upsells. Tested against Melodyne Studio and RePitch 2 on real vocal sessions: sound quality, ARA2 workflow, known bugs, verdict.",
+    openGraph: {
+        title: "Vovious Review 2026: $229 vs Melodyne $699 — Real Session Test",
+        description: "Vovious costs $229 flat — no tiers, no upsells. Tested against Melodyne Studio and RePitch 2 on real vocal sessions: sound quality, ARA2 workflow, known bugs, verdict.",
+        type: "article",
+        url: "https://www.slstudio.pro/blog/vovious-review",
+        siteName: "SL Studio",
+        images: ["/images/blog-vovious-cover.jpg"],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Vovious Review 2026: $229 vs Melodyne $699 — Real Session Test",
+        description: "Vovious costs $229 flat — no tiers, no upsells. Tested against Melodyne Studio and RePitch 2 on real vocal sessions: sound quality, ARA2 workflow, known bugs, verdict.",
+    },
     keywords: [
         "vovious review 2026",
         "vovious vs melodyne",
@@ -24,6 +38,7 @@ export const metadata = {
 export default function VoviousReviewPage() {
     return (
         <div className="mt-16 mb-20">
+            <BlogJsonLd slug="vovious-review" />
             <div className="max-w-3xl mx-auto">
 
                 <BlogHeader

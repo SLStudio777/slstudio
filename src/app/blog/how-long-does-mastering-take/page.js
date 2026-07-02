@@ -1,9 +1,23 @@
+import BlogJsonLd from "@/app/components/blog/BlogJsonLd";
 export const metadata = {
     title: "How Long Does It Take to Master a Song? (1 Hour vs 3–5 Days)",
     alternates: {
         canonical: "https://www.slstudio.pro/blog/how-long-does-mastering-take"
     },
     description: "Mastering one track takes about an hour of focused work — but professional turnaround is 3–5 days. What actually happens in a session, what slows it down, and how to speed it up.",
+    openGraph: {
+        title: "How Long Does It Take to Master a Song? (1 Hour vs 3–5 Days)",
+        description: "Mastering one track takes about an hour of focused work — but professional turnaround is 3–5 days. What actually happens in a session, what slows it down, and how to speed it up.",
+        type: "article",
+        url: "https://www.slstudio.pro/blog/how-long-does-mastering-take",
+        siteName: "SL Studio",
+        images: ["/images/blog-mastering-time-cover.jpg"],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "How Long Does It Take to Master a Song? (1 Hour vs 3–5 Days)",
+        description: "Mastering one track takes about an hour of focused work — but professional turnaround is 3–5 days. What actually happens in a session, what slows it down, and how to speed it up.",
+    },
     keywords: [
         "how long does mastering take",
         "mastering turnaround time",
@@ -16,9 +30,43 @@ export const metadata = {
     },
 };
 
+const faqItems = [
+    {
+        q: "How long does it take to master one song?",
+        a: "One to three hours of actual work for a single track. The full turnaround — from sending files to receiving the final master — is typically 3–5 business days, which includes quality control, ear rest between sessions, and your review time.",
+    },
+    {
+        q: "Why does mastering take 3–5 days if the work itself takes a few hours?",
+        a: "Because the timeline includes more than processing: scheduling, focused listening sessions with breaks (fresh ears catch more problems), quality control on multiple playback systems, your own review period, and a revision round if needed.",
+    },
+    {
+        q: "How long does it take to mix a song?",
+        a: "Mixing is a separate stage and usually takes longer than mastering — from several hours to a few days per song, depending on the track count and the state of the recordings. A clean, well-mixed track is also the single biggest factor in fast mastering.",
+    },
+    {
+        q: "How long do mastering revisions take?",
+        a: "Revision adjustments are usually completed within 24 hours of your feedback. Most projects finalise after the first revision round.",
+    },
+];
+
+const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((item) => ({
+        "@type": "Question",
+        name: item.q,
+        acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+};
+
 export default function MasteringTimePage() {
     return (
         <div className="mt-16 mb-20">
+            <BlogJsonLd slug="how-long-does-mastering-take" />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+            />
             <div className="max-w-3xl mx-auto">
 
                 {/* Header */}
@@ -123,6 +171,19 @@ export default function MasteringTimePage() {
                             <li>→ <strong className="text-white">Communicate the goal upfront</strong> — streaming release, vinyl, sync licensing. Different formats require different preparation.</li>
                             <li>→ <strong className="text-white">Take your review time seriously</strong> — listen on multiple systems before approving. Catching issues during review is faster than catching them after release.</li>
                         </ul>
+                    </div>
+
+                    <div className="flex flex-col gap-4">
+                        <h2 className="text-xl md:text-2xl font-semibold text-white">FAQ: Mastering Timelines</h2>
+                        <div className="flex flex-col gap-3">
+                            {faqItems.map((item, i) => (
+                                <div key={i} className="rounded-xl p-5 flex flex-col gap-2"
+                                     style={{background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)"}}>
+                                    <p className="text-white font-medium text-sm">{item.q}</p>
+                                    <p className="text-white/50 text-sm leading-relaxed">{item.a}</p>
+                                </div>
+                            ))}
+                        </div>
                     </div>
 
                     <div className="rounded-2xl p-6 flex flex-col gap-3"

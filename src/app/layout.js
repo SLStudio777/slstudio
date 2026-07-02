@@ -1,4 +1,4 @@
-// import Script from 'next/script';
+import Script from 'next/script';
 import { Outfit, Playfair_Display } from 'next/font/google'
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
@@ -16,6 +16,11 @@ const playfair = Playfair_Display({
 })
 
 export const metadata = {
+    metadataBase: new URL('https://www.slstudio.pro'),
+    title: {
+        default: 'SL Studio | Mixing, Mastering & Music Production',
+        template: '%s | SL Studio',
+    },
     icons: {
         icon: '/favicon.svg',
     },
@@ -24,22 +29,19 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
-            <head>
-                {/* <Script
-                    src="https://www.googletagmanager.com/gtag/js?id=G-4N695F98F0" 
+            <body className={`${outfit.className} ${playfair.variable} min-h-screen flex flex-col`}>
+                <Script
+                    src="https://www.googletagmanager.com/gtag/js?id=G-4N695F98F0"
                     strategy="afterInteractive"
-                /> */}
-                <script async src="https://www.googletagmanager.com/gtag/js?id=G-4N695F98F0"></script>
-                <script>
+                />
+                <Script id="ga-init" strategy="afterInteractive">
                     {`
                         window.dataLayer = window.dataLayer || [];
                         function gtag(){dataLayer.push(arguments);}
                         gtag('js', new Date());
                         gtag('config', 'G-4N695F98F0');
                     `}
-                </script>
-            </head>
-            <body className={`${outfit.className} ${playfair.variable} min-h-screen flex flex-col`}>
+                </Script>
                 <Header />
                 <main className="container flex-1">
                     {children}

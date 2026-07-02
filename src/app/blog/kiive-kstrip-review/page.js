@@ -1,9 +1,23 @@
+import BlogJsonLd from "@/app/components/blog/BlogJsonLd";
 export const metadata = {
-    title: "Kiive Audio KStrip Review — Three Console Flavors in One Plugin | SL Studio",
+    title: "Kiive Audio KStrip Review — Three Console Flavors in One Plugin",
     alternates: {
         canonical: "https://www.slstudio.pro/blog/kiive-kstrip-review"
     },
     description: "Kiive Audio KStrip review — Neve, API, and SSL emulations in one channel strip. A detailed look at the EQ, compression, saturation, and whether it holds up in real mixing sessions.",
+    openGraph: {
+        title: "Kiive Audio KStrip Review — Three Console Flavors in One Plugin",
+        description: "Kiive Audio KStrip review — Neve, API, and SSL emulations in one channel strip. A detailed look at the EQ, compression, saturation, and whether it holds up in real mixing sessions.",
+        type: "article",
+        url: "https://www.slstudio.pro/blog/kiive-kstrip-review",
+        siteName: "SL Studio",
+        images: ["/images/blog-kstrip-cover.png"],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Kiive Audio KStrip Review — Three Console Flavors in One Plugin",
+        description: "Kiive Audio KStrip review — Neve, API, and SSL emulations in one channel strip. A detailed look at the EQ, compression, saturation, and whether it holds up in real mixing sessions.",
+    },
     keywords: [
         "kiive audio kstrip review",
         "best channel strip plugin",
@@ -19,6 +33,7 @@ export const metadata = {
 export default function KStripReviewPage() {
     return (
         <div className="mt-16 mb-20">
+            <BlogJsonLd slug="kiive-kstrip-review" />
             <div className="max-w-3xl mx-auto">
 
                 {/* Header */}

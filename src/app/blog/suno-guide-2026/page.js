@@ -1,3 +1,4 @@
+import BlogJsonLd from "@/app/components/blog/BlogJsonLd";
  import BlogHeader from "@/app/components/blog/BlogHeader";
 import InteractiveChecklist from "./InteractiveChecklist";
 import ReadingProgress from "@/app/components/blog/ReadingProgress";
@@ -13,6 +14,19 @@ export const metadata = {
         },
     },
     description: "Stop gambling with Generate. How producers actually use Suno — prompt structure, brackets, Custom Mode, Personas, and the v5.5 features that changed the workflow.",
+    openGraph: {
+        title: "How to Use Suno AI in 2026: Prompts, Custom Mode & Personas",
+        description: "Stop gambling with Generate. How producers actually use Suno — prompt structure, brackets, Custom Mode, Personas, and the v5.5 features that changed the workflow.",
+        type: "article",
+        url: "https://www.slstudio.pro/blog/suno-guide-2026",
+        siteName: "SL Studio",
+        images: ["/images/blog-suno-cover.png"],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "How to Use Suno AI in 2026: Prompts, Custom Mode & Personas",
+        description: "Stop gambling with Generate. How producers actually use Suno — prompt structure, brackets, Custom Mode, Personas, and the v5.5 features that changed the workflow.",
+    },
     keywords: [
         "suno ai guide 2026",
         "how to use suno ai",
@@ -102,6 +116,7 @@ function TableOfContents() {
 export default function SunoGuidePage() {
     return (
         <div id="top" className="mt-16 mb-20">
+            <BlogJsonLd slug="suno-guide-2026" />
             <ReadingProgress />
             <div className="max-w-3xl mx-auto">
 

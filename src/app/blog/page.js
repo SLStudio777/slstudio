@@ -1,7 +1,7 @@
 import BlogClient from "./BlogClient";
 
 export const metadata = {
-    title: "Blog — Mixing, Mastering & Music Production | SL Studio",
+    title: "Blog — Mixing, Mastering & Music Production",
     alternates: {
         canonical: "https://www.slstudio.pro/blog"
     },

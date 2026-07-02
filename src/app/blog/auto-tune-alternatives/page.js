@@ -1,3 +1,4 @@
+import BlogJsonLd from "@/app/components/blog/BlogJsonLd";
 import BlogHeader from "@/app/components/blog/BlogHeader";
 
 export const metadata = {
@@ -6,6 +7,19 @@ export const metadata = {
         canonical: "https://www.slstudio.pro/blog/auto-tune-alternatives"
     },
     description: "Auto-Tune's reliability problems are pushing engineers to switch. An honest comparison of the best pitch correction alternatives — and which tool fits your workflow.",
+    openGraph: {
+        title: "Best Auto-Tune Alternatives in 2026: MetaTune, Melodyne & More",
+        description: "Auto-Tune's reliability problems are pushing engineers to switch. An honest comparison of the best pitch correction alternatives — and which tool fits your workflow.",
+        type: "article",
+        url: "https://www.slstudio.pro/blog/auto-tune-alternatives",
+        siteName: "SL Studio",
+        images: ["/images/blog-autotune-cover.png"],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Best Auto-Tune Alternatives in 2026: MetaTune, Melodyne & More",
+        description: "Auto-Tune's reliability problems are pushing engineers to switch. An honest comparison of the best pitch correction alternatives — and which tool fits your workflow.",
+    },
     keywords: [
         "auto-tune alternative",
         "metatune vs auto-tune",
@@ -22,6 +36,7 @@ export const metadata = {
 export default function AutoTunePage() {
     return (
         <div className="mt-16 mb-20">
+            <BlogJsonLd slug="auto-tune-alternatives" />
             <div className="max-w-3xl mx-auto">
 
                 <BlogHeader

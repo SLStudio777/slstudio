@@ -1,11 +1,25 @@
+import BlogJsonLd from "@/app/components/blog/BlogJsonLd";
 import BlogHeader from "@/app/components/blog/BlogHeader";
 
 export const metadata = {
-    title: "Will Generative AI Destroy Music and the Music Industry? | SL Studio",
+    title: "Will Generative AI Destroy Music and the Music Industry?",
     alternates: {
         canonical: "https://www.slstudio.pro/blog/will-ai-destroy-music"
     },
     description: "Generative AI is changing music faster than any technology since the synthesizer. Here is an honest look at what it will and will not do to the music industry.",
+    openGraph: {
+        title: "Will Generative AI Destroy Music and the Music Industry?",
+        description: "Generative AI is changing music faster than any technology since the synthesizer. Here is an honest look at what it will and will not do to the music industry.",
+        type: "article",
+        url: "https://www.slstudio.pro/blog/will-ai-destroy-music",
+        siteName: "SL Studio",
+        images: ["/images/blog-ai-music-cover.jpg"],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Will Generative AI Destroy Music and the Music Industry?",
+        description: "Generative AI is changing music faster than any technology since the synthesizer. Here is an honest look at what it will and will not do to the music industry.",
+    },
     keywords: [
         "generative AI music",
         "will AI replace musicians",
@@ -21,6 +35,7 @@ export const metadata = {
 export default function AIDestroyMusicPage() {
     return (
         <div className="mt-16 mb-20">
+            <BlogJsonLd slug="will-ai-destroy-music" />
             <div className="max-w-3xl mx-auto">
 
                 <BlogHeader

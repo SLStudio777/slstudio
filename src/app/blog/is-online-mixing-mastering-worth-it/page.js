@@ -1,9 +1,23 @@
+import BlogJsonLd from "@/app/components/blog/BlogJsonLd";
 export const metadata = {
-    title: "Is Online Mixing and Mastering Worth It in 2026? | SL Studio",
+    title: "Is Online Mixing and Mastering Worth It in 2026?",
     alternates: {
         canonical: "https://www.slstudio.pro/blog/is-online-mixing-mastering-worth-it"
     },
     description: "Between AI mastering bots and $15 Fiverr gigs, it is hard to know what is legit. Here is an honest look at whether online mixing and mastering is worth it — and what to look for.",
+    openGraph: {
+        title: "Is Online Mixing and Mastering Worth It in 2026?",
+        description: "Between AI mastering bots and $15 Fiverr gigs, it is hard to know what is legit. Here is an honest look at whether online mixing and mastering is worth it — and what to look for.",
+        type: "article",
+        url: "https://www.slstudio.pro/blog/is-online-mixing-mastering-worth-it",
+        siteName: "SL Studio",
+        images: ["/images/blog-online-mix-cover.jpg"],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Is Online Mixing and Mastering Worth It in 2026?",
+        description: "Between AI mastering bots and $15 Fiverr gigs, it is hard to know what is legit. Here is an honest look at whether online mixing and mastering is worth it — and what to look for.",
+    },
     keywords: [
         "online mixing and mastering",
         "is online mixing worth it",
@@ -19,6 +33,7 @@ export const metadata = {
 export default function OnlineMixingPage() {
     return (
         <div className="mt-16 mb-20">
+            <BlogJsonLd slug="is-online-mixing-mastering-worth-it" />
             <div className="max-w-3xl mx-auto">
 
                 {/* Header */}

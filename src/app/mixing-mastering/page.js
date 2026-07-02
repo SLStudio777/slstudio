@@ -4,7 +4,7 @@ import Section2 from "../components/pages/mixing-mastering/Section2";
 import BeforeAfterMixing from "../components/sections/BeforeAfterMixing";
 
 export const metadata = {
-    title: "Mixing & Mastering | SL Studio",
+    title: "Mixing & Mastering",
     alternates: {
         canonical: "https://www.slstudio.pro/mixing-mastering"
     },

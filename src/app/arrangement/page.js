@@ -4,7 +4,7 @@ import Section2 from "../components/pages/arrangement/Section2";
 import BeforeAfterArrangement from "../components/sections/BeforeAfterArrangement";
 
 export const metadata = {
-    title: "Arrangement & Production | SL Studio",
+    title: "Arrangement & Production",
     alternates: {
         canonical: "https://www.slstudio.pro/arrangement"
     },

@@ -1,11 +1,25 @@
+import BlogJsonLd from "@/app/components/blog/BlogJsonLd";
 import BlogHeader from "@/app/components/blog/BlogHeader";
 
 export const metadata = {
-    title: "I Tested an AI Mixing Service. Here Is What Happened. | SL Studio",
+    title: "I Tested an AI Mixing Service. Here Is What Happened.",
     alternates: {
         canonical: "https://www.slstudio.pro/blog/ai-mixing-mastering-review"
     },
     description: "AI mixing and mastering services are everywhere. I uploaded a real track to one of the most popular platforms to see if the hype is real. Spoiler: it crashed twice.",
+    openGraph: {
+        title: "I Tested an AI Mixing Service. Here Is What Happened.",
+        description: "AI mixing and mastering services are everywhere. I uploaded a real track to one of the most popular platforms to see if the hype is real. Spoiler: it crashed twice.",
+        type: "article",
+        url: "https://www.slstudio.pro/blog/ai-mixing-mastering-review",
+        siteName: "SL Studio",
+        images: ["/images/blog-ai-mixing-cover.jpg"],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "I Tested an AI Mixing Service. Here Is What Happened.",
+        description: "AI mixing and mastering services are everywhere. I uploaded a real track to one of the most popular platforms to see if the hype is real. Spoiler: it crashed twice.",
+    },
     keywords: [
         "ai mixing mastering review",
         "ai mixing service test",
@@ -21,6 +35,7 @@ export const metadata = {
 export default function AIMixingReviewPage() {
     return (
         <div className="mt-16 mb-20">
+            <BlogJsonLd slug="ai-mixing-mastering-review" />
             <div className="max-w-3xl mx-auto">
 
                 <BlogHeader

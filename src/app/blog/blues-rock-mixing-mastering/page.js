@@ -1,12 +1,26 @@
+import BlogJsonLd from "@/app/components/blog/BlogJsonLd";
 import Image from "next/image";
 import BlogHeader from "@/app/components/blog/BlogHeader";
 
 export const metadata = {
-    title: "Blues Rock Mixing and Mastering — How I Hear This Genre | SL Studio",
+    title: "Blues Rock Mixing and Mastering — How I Hear This Genre",
     alternates: {
         canonical: "https://www.slstudio.pro/blog/blues-rock-mixing-mastering"
     },
     description: "A blues rock guitarist on mixing the genre he knows from the inside. Real workflow, real tools, real professional techniques — from someone who has played these songs, not just processed them.",
+    openGraph: {
+        title: "Blues Rock Mixing and Mastering — How I Hear This Genre",
+        description: "A blues rock guitarist on mixing the genre he knows from the inside. Real workflow, real tools, real professional techniques — from someone who has played these songs, not just processed them.",
+        type: "article",
+        url: "https://www.slstudio.pro/blog/blues-rock-mixing-mastering",
+        siteName: "SL Studio",
+        images: ["/images/blog-blues-rock_1.jpg"],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Blues Rock Mixing and Mastering — How I Hear This Genre",
+        description: "A blues rock guitarist on mixing the genre he knows from the inside. Real workflow, real tools, real professional techniques — from someone who has played these songs, not just processed them.",
+    },
     other: {
         "article:published_time": "2025-01-21"
     },
@@ -47,6 +61,7 @@ const faqs = [
 export default function BluesRockPage() {
     return (
         <div className="mt-16 mb-20">
+            <BlogJsonLd slug="blues-rock-mixing-mastering" />
             <div className="max-w-3xl mx-auto">
 
                 <BlogHeader

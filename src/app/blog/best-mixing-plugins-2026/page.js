@@ -1,11 +1,25 @@
+import BlogJsonLd from "@/app/components/blog/BlogJsonLd";
 import BlogHeader from "@/app/components/blog/BlogHeader";
 
 export const metadata = {
-    title: "10 Mixing Plugins Worth Every Dollar in 2026 | SL Studio",
+    title: "10 Mixing Plugins Worth Every Dollar in 2026",
     alternates: {
         canonical: "https://www.slstudio.pro/blog/best-mixing-plugins-2026"
     },
     description: "Not a list of popular plugins. These are the 10 tools that actually show up on every session — from Plugin Alliance and Slate Digital to SPL and Brainworx.",
+    openGraph: {
+        title: "10 Mixing Plugins Worth Every Dollar in 2026",
+        description: "Not a list of popular plugins. These are the 10 tools that actually show up on every session — from Plugin Alliance and Slate Digital to SPL and Brainworx.",
+        type: "article",
+        url: "https://www.slstudio.pro/blog/best-mixing-plugins-2026",
+        siteName: "SL Studio",
+        images: ["/images/blog-plugins-cover.png"],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "10 Mixing Plugins Worth Every Dollar in 2026",
+        description: "Not a list of popular plugins. These are the 10 tools that actually show up on every session — from Plugin Alliance and Slate Digital to SPL and Brainworx.",
+    },
     keywords: [
         "best mixing plugins 2026",
         "plugin alliance review",
@@ -21,6 +35,7 @@ export const metadata = {
 export default function BestMixingPluginsPage() {
     return (
         <div className="mt-16 mb-20">
+            <BlogJsonLd slug="best-mixing-plugins-2026" />
             <div className="max-w-3xl mx-auto">
 
                 <BlogHeader

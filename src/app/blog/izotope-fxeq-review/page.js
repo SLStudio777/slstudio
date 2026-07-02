@@ -1,9 +1,23 @@
+import BlogJsonLd from "@/app/components/blog/BlogJsonLd";
 export const metadata = {
-    title: "iZotope FXEQ Review — Frequency-Specific Effects for Mixing | SL Studio",
+    title: "iZotope FXEQ Review — Frequency-Specific Effects for Mixing",
     alternates: {
         canonical: "https://www.slstudio.pro/blog/izotope-fxeq-review"
     },
     description: "iZotope FXEQ review — a plugin that lets you apply reverb, delay, saturation and modulation at specific frequencies. A detailed look at how it works in real mixing sessions.",
+    openGraph: {
+        title: "iZotope FXEQ Review — Frequency-Specific Effects for Mixing",
+        description: "iZotope FXEQ review — a plugin that lets you apply reverb, delay, saturation and modulation at specific frequencies. A detailed look at how it works in real mixing sessions.",
+        type: "article",
+        url: "https://www.slstudio.pro/blog/izotope-fxeq-review",
+        siteName: "SL Studio",
+        images: ["/images/blog-fxeq-cover.png"],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "iZotope FXEQ Review — Frequency-Specific Effects for Mixing",
+        description: "iZotope FXEQ review — a plugin that lets you apply reverb, delay, saturation and modulation at specific frequencies. A detailed look at how it works in real mixing sessions.",
+    },
     keywords: [
         "izotope fxeq review",
         "frequency specific effects plugin",
@@ -19,6 +33,7 @@ export const metadata = {
 export default function FXEQReviewPage() {
     return (
         <div className="mt-16 mb-20">
+            <BlogJsonLd slug="izotope-fxeq-review" />
             <div className="max-w-3xl mx-auto">
 
                 {/* Header */}

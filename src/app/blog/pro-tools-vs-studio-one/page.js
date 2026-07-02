@@ -1,9 +1,23 @@
+import BlogJsonLd from "@/app/components/blog/BlogJsonLd";
 export const metadata = {
-    title: "Pro Tools vs Studio One: Which DAW is Better for Mixing? | SL Studio",
+    title: "Pro Tools vs Studio One: Which DAW is Better for Mixing?",
     alternates: {
         canonical: "https://www.slstudio.pro/blog/pro-tools-vs-studio-one"
     },
     description: "Pro Tools vs Studio One — a detailed comparison for mixing and mastering engineers. Workflow, features, stability, and which one actually makes your work faster.",
+    openGraph: {
+        title: "Pro Tools vs Studio One: Which DAW is Better for Mixing?",
+        description: "Pro Tools vs Studio One — a detailed comparison for mixing and mastering engineers. Workflow, features, stability, and which one actually makes your work faster.",
+        type: "article",
+        url: "https://www.slstudio.pro/blog/pro-tools-vs-studio-one",
+        siteName: "SL Studio",
+        images: ["/images/blog-pt-cover.png"],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Pro Tools vs Studio One: Which DAW is Better for Mixing?",
+        description: "Pro Tools vs Studio One — a detailed comparison for mixing and mastering engineers. Workflow, features, stability, and which one actually makes your work faster.",
+    },
     keywords: [
         "pro tools vs studio one",
         "best daw for mixing",
@@ -19,6 +33,7 @@ export const metadata = {
 export default function ProToolsVsStudioOnePage() {
     return (
         <div className="mt-16 mb-20">
+            <BlogJsonLd slug="pro-tools-vs-studio-one" />
             <div className="max-w-3xl mx-auto">
 
                 {/* Header */}

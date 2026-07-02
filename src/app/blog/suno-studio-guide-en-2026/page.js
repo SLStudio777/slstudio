@@ -1,3 +1,4 @@
+import BlogJsonLd from "@/app/components/blog/BlogJsonLd";
 import BlogHeader from "@/app/components/blog/BlogHeader";
 import GmivBuilder from "@/app/components/blog/GmivBuilder";
 import CheatsheetCopy from "@/app/components/blog/CheatsheetCopy";
@@ -14,6 +15,19 @@ export const metadata = {
         },
     },
     description: "Step-by-step Suno Studio tutorial — control the timeline, extend tracks at the exact timestamp, fix weak sections with Cover & Replace, and export clean WAV stems for mixing.",
+    openGraph: {
+        title: "How to Use Suno Studio in 2026: Timeline, Extend & Stem Export",
+        description: "Step-by-step Suno Studio tutorial — control the timeline, extend tracks at the exact timestamp, fix weak sections with Cover & Replace, and export clean WAV stems for mixing.",
+        type: "article",
+        url: "https://www.slstudio.pro/blog/suno-studio-guide-en-2026",
+        siteName: "SL Studio",
+        images: ["/images/blog-suno-studio-cover.png"],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "How to Use Suno Studio in 2026: Timeline, Extend & Stem Export",
+        description: "Step-by-step Suno Studio tutorial — control the timeline, extend tracks at the exact timestamp, fix weak sections with Cover & Replace, and export clean WAV stems for mixing.",
+    },
     keywords: [
         "suno studio tutorial 2026",
         "how to use suno studio",
@@ -78,6 +92,7 @@ function TableOfContents() {
 export default function SunoStudioGuidePage() {
     return (
         <div id="top" className="mt-16 mb-20">
+            <BlogJsonLd slug="suno-studio-guide-en-2026" />
             <ReadingProgress />
             <div className="max-w-3xl mx-auto">
 

@@ -1,3 +1,4 @@
+import BlogJsonLd from "@/app/components/blog/BlogJsonLd";
 import BlogHeader from "@/app/components/blog/BlogHeader";
 import InteractiveChecklist from "./InteractiveChecklist";
 import ReadingProgress from "@/app/components/blog/ReadingProgress";
@@ -13,6 +14,19 @@ export const metadata = {
         },
     },
     description: "Большинство жмёт Generate и надеется на удачу. Этот гайд — про другой подход: промпты, структура, Extend, скобки и рабочий процесс который даёт предсказуемый результат.",
+    openGraph: {
+        title: "Почему Suno выдаёт рандом — и как это исправить. Гайд 2026",
+        description: "Большинство жмёт Generate и надеется на удачу. Этот гайд — про другой подход: промпты, структура, Extend, скобки и рабочий процесс который даёт предсказуемый результат.",
+        type: "article",
+        url: "https://www.slstudio.pro/blog/suno-guide-2026-ru",
+        siteName: "SL Studio",
+        images: ["/images/blog-suno-cover-ru.png"],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Почему Suno выдаёт рандом — и как это исправить. Гайд 2026",
+        description: "Большинство жмёт Generate и надеется на удачу. Этот гайд — про другой подход: промпты, структура, Extend, скобки и рабочий процесс который даёт предсказуемый результат.",
+    },
     keywords: [
         "suno ai гайд 2026",
         "как использовать suno ai",
@@ -83,6 +97,7 @@ function TableOfContents() {
 export default function SunoGuidePageRu() {
     return (
         <div id="top" className="mt-16 mb-20">
+            <BlogJsonLd slug="suno-guide-2026-ru" />
             <ReadingProgress />
             <div className="max-w-3xl mx-auto">
                 <BlogHeader

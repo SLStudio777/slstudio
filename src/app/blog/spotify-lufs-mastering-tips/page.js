@@ -1,9 +1,23 @@
+import BlogJsonLd from "@/app/components/blog/BlogJsonLd";
 export const metadata = {
-    title: "Why Your Master Sounds Quiet on Spotify — 4 Tips for Competitive Loudness | SL Studio",
+    title: "Why Your Master Sounds Quiet on Spotify — 4 Tips for Competitive Loudness",
     alternates: {
         canonical: "https://www.slstudio.pro/blog/spotify-lufs-mastering-tips"
     },
     description: "Spotify normalizes to -14 LUFS — but commercial masters are still hitting -8 to -9. Here is why, and how to achieve competitive loudness without destroying your dynamics.",
+    openGraph: {
+        title: "Why Your Master Sounds Quiet on Spotify — 4 Tips for Competitive Loudness",
+        description: "Spotify normalizes to -14 LUFS — but commercial masters are still hitting -8 to -9. Here is why, and how to achieve competitive loudness without destroying your dynamics.",
+        type: "article",
+        url: "https://www.slstudio.pro/blog/spotify-lufs-mastering-tips",
+        siteName: "SL Studio",
+        images: ["/images/blog-lufs-cover.png"],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Why Your Master Sounds Quiet on Spotify — 4 Tips for Competitive Loudness",
+        description: "Spotify normalizes to -14 LUFS — but commercial masters are still hitting -8 to -9. Here is why, and how to achieve competitive loudness without destroying your dynamics.",
+    },
     keywords: [
         "spotify lufs mastering",
         "master loud spotify",
@@ -19,6 +33,7 @@ export const metadata = {
 export default function SpotifyLufsPage() {
     return (
         <div className="mt-16 mb-20">
+            <BlogJsonLd slug="spotify-lufs-mastering-tips" />
             <div className="max-w-3xl mx-auto">
 
                 {/* Header */}

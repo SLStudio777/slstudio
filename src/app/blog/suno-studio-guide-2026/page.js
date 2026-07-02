@@ -1,3 +1,4 @@
+import BlogJsonLd from "@/app/components/blog/BlogJsonLd";
 import BlogHeader from "@/app/components/blog/BlogHeader";
 import ReadingProgress from "@/app/components/blog/ReadingProgress";
 
@@ -13,6 +14,19 @@ export const metadata = {
         },
     },
     description: "Большинство пользователей Suno просто жмут Generate и надеются на удачу. Этот гайд — про то, как взять контроль: таймлайн, точки Extend, формула G.M.I.V., экспорт стемов.",
+    openGraph: {
+        title: "Suno Studio: полный гайд 2026 — таймлайн, Extend, формула G.M.I.V.",
+        description: "Большинство пользователей Suno просто жмут Generate и надеются на удачу. Этот гайд — про то, как взять контроль: таймлайн, точки Extend, формула G.M.I.V., экспорт стемов.",
+        type: "article",
+        url: "https://www.slstudio.pro/blog/suno-studio-guide-2026",
+        siteName: "SL Studio",
+        images: ["/images/blog-suno-studio-cover-ru.png"],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Suno Studio: полный гайд 2026 — таймлайн, Extend, формула G.M.I.V.",
+        description: "Большинство пользователей Suno просто жмут Generate и надеются на удачу. Этот гайд — про то, как взять контроль: таймлайн, точки Extend, формула G.M.I.V., экспорт стемов.",
+    },
     keywords: [
         "suno studio гайд 2026",
         "suno studio как пользоваться",
@@ -77,6 +91,7 @@ function TableOfContents() {
 export default function SunoStudioGuidePage() {
     return (
         <div id="top" className="mt-16 mb-20">
+            <BlogJsonLd slug="suno-studio-guide-2026" />
             <ReadingProgress />
             <div className="max-w-3xl mx-auto">
 

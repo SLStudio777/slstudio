@@ -1,11 +1,25 @@
+import BlogJsonLd from "@/app/components/blog/BlogJsonLd";
 import BlogHeader from "@/app/components/blog/BlogHeader";
 
 export const metadata = {
-    title: "My Reverb & Delay Chain for Vocals — The Setup I Use on Every Mix | SL Studio",
+    title: "My Reverb & Delay Chain for Vocals — The Setup I Use on Every Mix",
     alternates: {
         canonical: "https://www.slstudio.pro/blog/vocal-reverb-delay-chain"
     },
     description: "Five sends, zero guesswork. The exact reverb and delay chain I use on vocal mixes — room, plate, microshift, delay, chamber. How it works and why.",
+    openGraph: {
+        title: "My Reverb & Delay Chain for Vocals — The Setup I Use on Every Mix",
+        description: "Five sends, zero guesswork. The exact reverb and delay chain I use on vocal mixes — room, plate, microshift, delay, chamber. How it works and why.",
+        type: "article",
+        url: "https://www.slstudio.pro/blog/vocal-reverb-delay-chain",
+        siteName: "SL Studio",
+        images: ["/images/blog-vocal-fx-cover.jpg"],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "My Reverb & Delay Chain for Vocals — The Setup I Use on Every Mix",
+        description: "Five sends, zero guesswork. The exact reverb and delay chain I use on vocal mixes — room, plate, microshift, delay, chamber. How it works and why.",
+    },
     keywords: [
         "vocal reverb delay chain",
         "reverb delay vocals mixing",
@@ -21,6 +35,7 @@ export const metadata = {
 export default function VocalReverbDelayPage() {
     return (
         <div className="mt-16 mb-20">
+            <BlogJsonLd slug="vocal-reverb-delay-chain" />
             <div className="max-w-3xl mx-auto">
 
                 <BlogHeader

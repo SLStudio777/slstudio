@@ -1,9 +1,23 @@
+import BlogJsonLd from "@/app/components/blog/BlogJsonLd";
 export const metadata = {
-    title: "Can You Mix a Professional Track with Free Plugins Only? | SL Studio",
+    title: "Can You Mix a Professional Track with Free Plugins Only?",
     alternates: {
         canonical: "https://www.slstudio.pro/blog/mixing-with-free-plugins"
     },
     description: "A practical test — mixing a full track using only free plugins. What works, what doesn't, and how far free tools can actually take you in 2025.",
+    openGraph: {
+        title: "Can You Mix a Professional Track with Free Plugins Only?",
+        description: "A practical test — mixing a full track using only free plugins. What works, what doesn't, and how far free tools can actually take you in 2025.",
+        type: "article",
+        url: "https://www.slstudio.pro/blog/mixing-with-free-plugins",
+        siteName: "SL Studio",
+        images: ["/images/blog-free-plugins-cover.jpg"],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Can You Mix a Professional Track with Free Plugins Only?",
+        description: "A practical test — mixing a full track using only free plugins. What works, what doesn't, and how far free tools can actually take you in 2025.",
+    },
     keywords: [
         "free mixing plugins 2025",
         "mix with free plugins",
@@ -19,6 +33,7 @@ export const metadata = {
 export default function FreeMixingPluginsPage() {
     return (
         <div className="mt-16 mb-20">
+            <BlogJsonLd slug="mixing-with-free-plugins" />
             <div className="max-w-3xl mx-auto">
 
                 {/* Header */}

@@ -1,9 +1,23 @@
+import BlogJsonLd from "@/app/components/blog/BlogJsonLd";
 export const metadata = {
-    title: "iZotope Ozone 11 Review: The Best Mastering Plugin Gets Better | SL Studio",
+    title: "iZotope Ozone 11 Review: The Best Mastering Plugin Gets Better",
     alternates: {
         canonical: "https://www.slstudio.pro/blog/izotope-ozone-11-review"
     },
     description: "iZotope Ozone 11 review — new features, Stabilizer module, improved mastering assistant, and whether it is worth upgrading from Ozone 10.",
+    openGraph: {
+        title: "iZotope Ozone 11 Review: The Best Mastering Plugin Gets Better",
+        description: "iZotope Ozone 11 review — new features, Stabilizer module, improved mastering assistant, and whether it is worth upgrading from Ozone 10.",
+        type: "article",
+        url: "https://www.slstudio.pro/blog/izotope-ozone-11-review",
+        siteName: "SL Studio",
+        images: ["/images/blog-ozone11-cover.png"],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "iZotope Ozone 11 Review: The Best Mastering Plugin Gets Better",
+        description: "iZotope Ozone 11 review — new features, Stabilizer module, improved mastering assistant, and whether it is worth upgrading from Ozone 10.",
+    },
     keywords: [
         "izotope ozone 11 review",
         "best mastering plugin",
@@ -19,6 +33,7 @@ export const metadata = {
 export default function OzoneReviewPage() {
     return (
         <div className="mt-16 mb-20">
+            <BlogJsonLd slug="izotope-ozone-11-review" />
             <div className="max-w-3xl mx-auto">
 
                 {/* Header */}

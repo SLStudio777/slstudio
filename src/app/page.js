@@ -9,7 +9,7 @@ import FinalCTA from "./components/sections/FinalCTA";
 import BlogPreview from "./components/sections/BlogPreview";
 
 export const metadata = {
-  title: "SL Studio | Mixing, Mastering & Music Production",
+  title: { absolute: "SL Studio | Mixing, Mastering & Music Production" },
   description:
     "Professional mixing, mastering and music production services. I help artists turn rough recordings into polished, release-ready tracks with clarity, depth and emotion.",
   keywords: [

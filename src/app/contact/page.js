@@ -1,7 +1,7 @@
 import Hero from "../components/pages/contact/Hero";
 
 export const metadata = {
-    title: "Contact | SL Studio",
+    title: "Contact",
     alternates: {
         canonical: "https://www.slstudio.pro/contact"
     },
