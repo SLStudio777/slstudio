@@ -4,7 +4,10 @@ const SITE = "https://www.slstudio.pro";
 
 function toIsoDate(dateString) {
     const parsed = new Date(dateString);
-    return isNaN(parsed) ? undefined : parsed.toISOString().split("T")[0];
+    if (isNaN(parsed)) return undefined;
+    const pad = (n) => String(n).padStart(2, "0");
+    // full ISO 8601 with Warsaw offset, as required for Article rich results
+    return `${parsed.getFullYear()}-${pad(parsed.getMonth() + 1)}-${pad(parsed.getDate())}T10:00:00+01:00`;
 }
 
 export default function BlogJsonLd({ slug }) {

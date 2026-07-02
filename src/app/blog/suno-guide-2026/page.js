@@ -86,7 +86,38 @@ const TOC = [
     { id: "demo-machine",         label: "Suno Is a Demo Machine" },
     { id: "v55-update",           label: "What's New in v5.5" },
     { id: "checklist",            label: "Pre-Generation Checklist" },
+    { id: "faq",                  label: "FAQ: Instrumental & No Vocals" },
 ];
+
+// ─── FAQ: instrumental / no vocals ───────────────────────────────────────────
+const faqItems = [
+    {
+        q: "How do I force Suno to make an instrumental track — no vocals at all?",
+        a: "Use all three levers at once: switch on the Instrumental toggle in Custom Mode, add the word “instrumental” to your style description (for example: “jazz rock fusion, smooth and sophisticated, instrumental”), and leave the lyrics field empty. If you want to control the arrangement, fill the lyrics field only with bracketed structure tags like [Intro], [Instrumental], [Guitar Solo], [Outro] — brackets are commands, not lyrics.",
+    },
+    {
+        q: "Why does Suno still add vocals when my prompt says “instrumental”?",
+        a: "Almost always because there is text outside square brackets. Suno treats anything outside brackets as lyrics to be performed out loud — even the words “no vocals”. Remove all unbracketed text from the lyrics field, keep “instrumental” in the style description, and the vocals disappear.",
+    },
+    {
+        q: "How do I make longer instrumental tracks in Suno?",
+        a: "Generate a strong base first, then use Extend to grow the track section by section instead of hoping for one long generation. Inside the lyrics field, chain instrumental structure tags — [Intro], [Instrumental], [Guitar Solo], [Outro] — so every extended section stays vocal-free.",
+    },
+    {
+        q: "How do I get spoken word or narration instead of singing?",
+        a: "Describe the vocal delivery explicitly in the style prompt — “spoken word, narration, no singing”. If you leave the vocal undescribed, Suno decides for you. Reinforce it with bracketed production notes like [spoken word] placed before the lines you want narrated.",
+    },
+];
+
+const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((item) => ({
+        "@type": "Question",
+        name: item.q,
+        acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+};
 
 function TableOfContents() {
     return (
@@ -117,6 +148,10 @@ export default function SunoGuidePage() {
     return (
         <div id="top" className="mt-16 mb-20">
             <BlogJsonLd slug="suno-guide-2026" />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+            />
             <ReadingProgress />
             <div className="max-w-3xl mx-auto">
 
@@ -643,6 +678,25 @@ export default function SunoGuidePage() {
                             <img src="/images/suno-15.png" alt="Checklist" className="w-full object-cover" />
                         </div>
                         <InteractiveChecklist />
+                        <BackToTop />
+                    </div>
+
+                    {/* ── FAQ ── */}
+                    <div id="faq" className="flex flex-col gap-5">
+                        <div className="flex items-center gap-3">
+                            <span className="w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold flex-shrink-0" style={{ background: "rgba(201,168,76,0.15)", color: "#C9A84C" }}>?</span>
+                            <h2 className="text-xl md:text-2xl font-semibold text-white">FAQ: Instrumental Tracks & No Vocals</h2>
+                        </div>
+                        <p>The questions people ask most often about keeping Suno purely instrumental — answered with the same logic covered above: Custom Mode, the style prompt, and the bracket rule.</p>
+                        <div className="flex flex-col gap-3">
+                            {faqItems.map((item, i) => (
+                                <div key={i} className="rounded-xl p-5 flex flex-col gap-2"
+                                     style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}>
+                                    <p className="text-white font-medium text-sm">{item.q}</p>
+                                    <p className="text-white/50 text-sm leading-relaxed">{item.a}</p>
+                                </div>
+                            ))}
+                        </div>
                         <BackToTop />
                     </div>
 

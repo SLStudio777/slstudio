@@ -1,13 +1,13 @@
 import BlogJsonLd from "@/app/components/blog/BlogJsonLd";
 export const metadata = {
-    title: "iZotope Ozone 11 Review: The Best Mastering Plugin Gets Better",
+    title: "iZotope Ozone 11 Review: Stabilizer, Standard vs Advanced & Verdict",
     alternates: {
         canonical: "https://www.slstudio.pro/blog/izotope-ozone-11-review"
     },
-    description: "iZotope Ozone 11 review — new features, Stabilizer module, improved mastering assistant, and whether it is worth upgrading from Ozone 10.",
+    description: "Ozone 11 tested on real masters: how the Stabilizer module actually sounds, what Standard vs Advanced really gets you, and whether upgrading from Ozone 10 is worth it.",
     openGraph: {
-        title: "iZotope Ozone 11 Review: The Best Mastering Plugin Gets Better",
-        description: "iZotope Ozone 11 review — new features, Stabilizer module, improved mastering assistant, and whether it is worth upgrading from Ozone 10.",
+        title: "iZotope Ozone 11 Review: Stabilizer, Standard vs Advanced & Verdict",
+        description: "Ozone 11 tested on real masters: how the Stabilizer module actually sounds, what Standard vs Advanced really gets you, and whether upgrading from Ozone 10 is worth it.",
         type: "article",
         url: "https://www.slstudio.pro/blog/izotope-ozone-11-review",
         siteName: "SL Studio",
@@ -15,11 +15,13 @@ export const metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "iZotope Ozone 11 Review: The Best Mastering Plugin Gets Better",
-        description: "iZotope Ozone 11 review — new features, Stabilizer module, improved mastering assistant, and whether it is worth upgrading from Ozone 10.",
+        title: "iZotope Ozone 11 Review: Stabilizer, Standard vs Advanced & Verdict",
+        description: "Ozone 11 tested on real masters: how the Stabilizer module actually sounds, what Standard vs Advanced really gets you, and whether upgrading from Ozone 10 is worth it.",
     },
     keywords: [
         "izotope ozone 11 review",
+        "ozone 11 stabilizer",
+        "ozone 11 standard vs advanced",
         "best mastering plugin",
         "ozone 11 features",
         "mastering plugin review",
@@ -88,6 +90,49 @@ export default function OzoneReviewPage() {
                         <p>The Stabilizer is the feature most engineers will reach for first, and it delivers on its promise. Applied to a mix with a slightly uneven mid-range — a common issue when clients send rough mixes for <a href="/mixing-mastering" style={{color: "#C9A84C", textDecoration: "underline"}}>mastering</a> — the Stabilizer identifies the problem areas and applies smooth, musical correction without the harshness that static EQ can introduce.</p>
                         <p>The <strong className="text-white">Threshold control</strong> determines how aggressively the module responds to deviations from the target curve. Lower thresholds allow for subtle, transparent correction. Higher thresholds produce more pronounced tonal shaping. For most mastering work, a threshold in the lower to middle range produces the most natural result.</p>
                         <p>The ability to choose from preset target curves — or to define a custom target based on a reference track — gives the Stabilizer real flexibility. Matching a client's reference becomes significantly more efficient when the Stabilizer is handling the broad tonal shaping, leaving the Equalizer free for more surgical work.</p>
+                        <div className="rounded-xl p-4 flex gap-3 items-start" style={{background: "rgba(255,100,80,0.06)", border: "1px solid rgba(255,100,80,0.2)"}}>
+                            <span className="text-lg flex-shrink-0">⚠️</span>
+                            <p className="text-white/60 text-sm leading-relaxed">One important caveat before you buy: <strong className="text-white">the Stabilizer is exclusive to Ozone 11 Advanced</strong>. It is not included in the Standard edition — details in the comparison below.</p>
+                        </div>
+                    </div>
+
+                    <div className="flex flex-col gap-4">
+                        <h2 className="text-xl md:text-2xl font-semibold text-white">Ozone 11 Standard vs Advanced — Which One Do You Need?</h2>
+                        <p>This is where most buyers get caught. The two main editions share the same core, but the features that headline this release — including the Stabilizer — live only in Advanced. Here is the honest breakdown:</p>
+                        <div className="overflow-x-auto">
+                            <table className="w-full text-sm" style={{borderCollapse: "collapse"}}>
+                                <thead>
+                                    <tr style={{borderBottom: "1px solid rgba(255,255,255,0.1)"}}>
+                                        <th className="text-left py-3 pr-6 text-white/40 text-xs uppercase tracking-widest font-medium">Feature</th>
+                                        <th className="text-left py-3 pr-6 text-white/40 text-xs uppercase tracking-widest font-medium">Standard</th>
+                                        <th className="text-left py-3 text-white/40 text-xs uppercase tracking-widest font-medium">Advanced</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {[
+                                        {f: "Core mastering chain (EQ, Dynamics, Imager, Exciter, Maximizer, Vintage modules)", s: "✓", a: "✓"},
+                                        {f: "Mastering Assistant", s: "✓", a: "✓"},
+                                        {f: "Match EQ", s: "✓", a: "✓"},
+                                        {f: "Stabilizer (dynamic tonal balance)", s: "—", a: "✓"},
+                                        {f: "Clarity (spectral contrast)", s: "—", a: "✓"},
+                                        {f: "Impact (micro-dynamics)", s: "—", a: "✓"},
+                                        {f: "Master Rebalance & Low End Focus", s: "—", a: "✓"},
+                                        {f: "Modules as separate component plugins", s: "—", a: "✓"},
+                                        {f: "Tonal Balance Control 2", s: "—", a: "✓"},
+                                        {f: "List price (watch for frequent sales)", s: "$249", a: "$499"},
+                                    ].map((row, i) => (
+                                        <tr key={i} style={{borderBottom: "1px solid rgba(255,255,255,0.05)"}}>
+                                            <td className="py-3 pr-6 text-white/70">{row.f}</td>
+                                            <td className="py-3 pr-6" style={{color: row.s === "—" ? "rgba(255,255,255,0.25)" : "#C9A84C"}}>{row.s}</td>
+                                            <td className="py-3" style={{color: "#C9A84C"}}>{row.a}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                        <p><strong className="text-white">Choose Standard</strong> if you want the classic Ozone chain with the Assistant as a starting point and you already own a dynamic EQ you trust. It is a complete, professional mastering suite on its own — nothing about it feels crippled.</p>
+                        <p><strong className="text-white">Choose Advanced</strong> if the Stabilizer is the reason you are reading this review — there is no other way to get it. Advanced also makes sense if you master regularly and want the component plugins, which let you slot individual Ozone modules into a custom chain alongside third-party tools instead of running everything inside the mothership.</p>
+                        <p>The trap to avoid: buying Standard expecting the features from the marketing page. Almost everything iZotope showcases for Ozone 11 — Stabilizer, Clarity, the AI-adjacent processing — is Advanced-only. If those demos sold you, budget for Advanced or wait for a sale.</p>
                     </div>
 
                     <div className="flex flex-col gap-4">
@@ -114,7 +159,8 @@ export default function OzoneReviewPage() {
                          style={{background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.2)"}}>
                         <h3 className="text-white font-semibold">Key Takeaways</h3>
                         <ul className="flex flex-col gap-2 text-white/60 text-sm">
-                            <li>→ <strong className="text-white">Stabilizer</strong> is the standout new module — dynamic tonal correction that sounds musical rather than processed</li>
+                            <li>→ <strong className="text-white">Stabilizer</strong> is the standout new module — dynamic tonal correction that sounds musical rather than processed. Advanced edition only</li>
+                            <li>→ <strong className="text-white">Standard vs Advanced</strong> — Standard ($249) covers the classic chain; Stabilizer, Clarity, Impact and component plugins require Advanced ($499)</li>
                             <li>→ <strong className="text-white">Mastering Assistant</strong> is more accurate on complex mixes — better starting points, less manual correction needed</li>
                             <li>→ <strong className="text-white">Limiter</strong> improvements are real — more transparent at competitive loudness, better transient handling</li>
                             <li>→ <strong className="text-white">Upgrade from Ozone 10</strong> — worth it if the Stabilizer solves a problem in your current workflow</li>
