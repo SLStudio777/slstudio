@@ -1,3 +1,4 @@
+import RelatedPosts from "@/app/components/blog/RelatedPosts";
 import BlogJsonLd from "@/app/components/blog/BlogJsonLd";
 export const metadata = {
     title: "Can You Mix a Professional Track with Free Plugins Only?",
@@ -90,8 +91,8 @@ export default function FreeMixingPluginsPage() {
 
                     {/* Image */}
                     <div className="rounded-2xl overflow-hidden w-full">
-                        <img
-                            src="/images/blog-free-plugins.png"
+                        <img loading="lazy" decoding="async"
+                            src="/images/blog-free-plugins.webp"
                             alt="Free mixing plugins session 2025"
                             className="w-full object-cover"
                             style={{maxHeight: "400px"}}
@@ -143,6 +144,8 @@ export default function FreeMixingPluginsPage() {
                             Get in Touch →
                         </a>
                     </div>
+
+                    <RelatedPosts slug="mixing-with-free-plugins" />
 
                 </div>
             </div>

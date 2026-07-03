@@ -1,3 +1,4 @@
+import RelatedPosts from "@/app/components/blog/RelatedPosts";
 import BlogJsonLd from "@/app/components/blog/BlogJsonLd";
 import BlogHeader from "@/app/components/blog/BlogHeader";
 
@@ -124,6 +125,8 @@ export default function AIDestroyMusicPage() {
                             Get in Touch →
                         </a>
                     </div>
+
+                    <RelatedPosts slug="will-ai-destroy-music" />
 
                 </div>
             </div>

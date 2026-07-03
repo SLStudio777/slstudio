@@ -1,5 +1,6 @@
 import pool from "@/settings/db";
 import bcrypt from "bcrypt";
+import crypto from "crypto";
 import { cookies } from "next/headers";
 
 export async function POST(req) {
@@ -38,7 +39,13 @@ export async function POST(req) {
 
         const cookieStore = await cookies();
 
-        cookieStore.set("auth", String(user.id), {
+        // Signed token: "<userId>.<expiresMs>.<hmac>" — verified in src/proxy.js
+        const secret = process.env.AUTH_SECRET || process.env.DB_PASSWORD || "";
+        const expires = Date.now() + 60 * 60 * 24 * 7 * 1000;
+        const payload = `${user.id}.${expires}`;
+        const signature = crypto.createHmac("sha256", secret).update(payload).digest("hex");
+
+        cookieStore.set("auth", `${payload}.${signature}`, {
             httpOnly: true,
             secure: true,
             sameSite: "strict",

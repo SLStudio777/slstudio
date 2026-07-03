@@ -1,3 +1,4 @@
+import RelatedPosts from "@/app/components/blog/RelatedPosts";
 import BlogJsonLd from "@/app/components/blog/BlogJsonLd";
 import Image from "next/image";
 import BlogHeader from "@/app/components/blog/BlogHeader";
@@ -234,6 +235,8 @@ export default function BluesRockPage() {
                             Get in Touch →
                         </a>
                     </div>
+
+                    <RelatedPosts slug="blues-rock-mixing-mastering" />
 
                 </div>
             </div>

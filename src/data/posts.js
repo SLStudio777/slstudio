@@ -1,7 +1,7 @@
 export const posts = [
     {
         href: "/blog/suno-studio-guide-2026",
-        image: "/images/blog-suno-studio-cover-ru.png",
+        image: "/images/blog-suno-studio-cover-ru.webp",
         category: "Tutorials",
         date: "July 2, 2026",
         title: "Suno AI Часть 2: Suno Studio — полный гайд для музыкантов",
@@ -9,15 +9,15 @@ export const posts = [
     },
     {
     href: "/blog/suno-studio-guide-en-2026",
-    image: "/images/blog-suno-studio-cover.png",
+    image: "/images/blog-suno-studio-cover.webp",
     category: "Tutorials",
-    date: "June 1, 2026",
+    date: "July 2, 2026",
     title: "Suno AI Part 2: Suno Studio — Complete Guide for Musicians",
     excerpt: "Timeline, Extend, Cover, Replace, the G.M.I.V. prompt formula, and stem export. From first idea to a DAW-ready project — step by step."
 },
     {
         href: "/blog/suno-guide-2026-ru",
-        image: "/images/blog-suno-cover-ru.png",
+        image: "/images/blog-suno-cover-ru.webp",
         category: "Tutorials",
         date: "May 1, 2026",
         title: "Suno AI: полный гайд для музыкантов — жанры, теги и промпты 2026",
@@ -25,7 +25,7 @@ export const posts = [
     },
     {
         href: "/blog/suno-guide-2026",
-        image: "/images/blog-suno-cover.png",
+        image: "/images/blog-suno-cover.webp",
         category: "Tutorials",
         date: "April 10, 2026",
         title: "Suno AI: Complete Guide for Musicians — Genres, Tags & Prompts 2026",
@@ -41,7 +41,7 @@ export const posts = [
     },
     {
         href: "/blog/best-mixing-plugins-2026",
-        image: "/images/blog-plugins-cover.png",
+        image: "/images/blog-plugins-cover.webp",
         category: "Technics",
         date: "March 12, 2026",
         title: "10 Mixing Plugins Worth Every Dollar in 2026",
@@ -81,7 +81,7 @@ export const posts = [
     },
     {
         href: "/blog/izotope-fxeq-review",
-        image: "/images/blog-fxeq-cover.png",
+        image: "/images/blog-fxeq-cover.webp",
         category: "Review",
         date: "October 5, 2025",
         title: "iZotope FXEQ Review — Frequency-Specific Effects for Mixing",
@@ -105,7 +105,7 @@ export const posts = [
     },
     {
         href: "/blog/kiive-kstrip-review",
-        image: "/images/blog-kstrip-cover.png",
+        image: "/images/blog-kstrip-cover.webp",
         category: "Review",
         date: "July 15, 2025",
         title: "Kiive Audio KStrip Review — Three Console Flavors in One Plugin",
@@ -121,7 +121,7 @@ export const posts = [
     },
     {
         href: "/blog/best-music-distribution-2025",
-        image: "/images/blog-distribution-cover.png",
+        image: "/images/blog-distribution-cover.webp",
         category: "Tutorials",
         date: "May 2, 2025",
         title: "Best Music Distribution Services in 2025 — The Good, The Bad & The Ugly",
@@ -145,7 +145,7 @@ export const posts = [
     },
     {
         href: "/blog/pro-tools-vs-studio-one",
-        image: "/images/blog-pt-cover.png",
+        image: "/images/blog-pt-cover.webp",
         category: "Tutorials",
         date: "February 10, 2025",
         title: "Pro Tools vs Studio One — Which DAW Is Better for Mixing?",

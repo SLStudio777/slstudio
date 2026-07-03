@@ -1,3 +1,4 @@
+import RelatedPosts from "@/app/components/blog/RelatedPosts";
 import BlogJsonLd from "@/app/components/blog/BlogJsonLd";
 export const metadata = {
     title: "iZotope Ozone 11 Review: Stabilizer, Standard vs Advanced & Verdict",
@@ -77,7 +78,7 @@ export default function OzoneReviewPage() {
 
                     {/* Image */}
                     <div className="rounded-2xl overflow-hidden w-full">
-                        <img
+                        <img loading="lazy" decoding="async"
                             src="/images/blog-ozone11.png"
                             alt="iZotope Ozone 11 mastering plugin interface"
                             className="w-full object-cover"
@@ -179,6 +180,8 @@ export default function OzoneReviewPage() {
                             Get in Touch →
                         </a>
                     </div>
+
+                    <RelatedPosts slug="izotope-ozone-11-review" />
 
                 </div>
             </div>

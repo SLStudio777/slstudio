@@ -5,9 +5,9 @@ import ScrollReveal from "../common/ScrollReveal";
 import { useState } from "react";
 
 const services = [
-    { icon: Sliders, title: "Mastering Only", price: "from $25", description: "Final processing of your ready mix. Optimized for streaming, competitive loudness, delivered in WAV and MP3.", featured: false },
-    { icon: Music, title: "Mixing & Mastering", price: "from $60", description: "Full mix of all your tracks plus mastering. Works with stems or a rough mix you want taken to release level.", featured: true },
-    { icon: Guitar, title: "Arrangement & Production", price: "from $110", description: "From idea to finished track. Instruments, structure, mix and master. Final price depends on the scope.", featured: false },
+    { icon: Sliders, title: "Mastering Only", price: "from $25", description: "Final processing of your ready mix. Optimized for streaming, competitive loudness, delivered in WAV and MP3.", featured: false, service: "mastering" },
+    { icon: Music, title: "Mixing & Mastering", price: "from $60", description: "Full mix of all your tracks plus mastering. Works with stems or a rough mix you want taken to release level.", featured: true, service: "mixing-mastering" },
+    { icon: Guitar, title: "Arrangement & Production", price: "from $110", description: "From idea to finished track. Instruments, structure, mix and master. Final price depends on the scope.", featured: false, service: "arrangement" },
 ];
 
 const payment = [
@@ -16,16 +16,23 @@ const payment = [
     { icon: CreditCard, title: "PayPal & bank transfer", description: "Working with clients worldwide. No location limitations." },
 ];
 
-function ServiceCard({ icon: Icon, title, price, description, featured }) {
+function ServiceCard({ icon: Icon, title, price, description, featured, service }) {
     const [hovered, setHovered] = useState(false);
     return (
         <div
             className="rounded-2xl p-5 flex flex-col gap-3 h-full"
             style={{
                 background: featured ? "rgba(201,168,76,0.08)" : "rgba(255,255,255,0.03)",
-                border: featured ? "1px solid rgba(201,168,76,0.35)" : "1px solid rgba(255,255,255,0.05)",
-                boxShadow: featured ? "0 0 40px rgba(201,168,76,0.07)" : "none",
+                border: hovered
+                    ? "1px solid rgba(201,168,76,0.5)"
+                    : featured ? "1px solid rgba(201,168,76,0.35)" : "1px solid rgba(255,255,255,0.05)",
+                boxShadow: hovered
+                    ? "0 0 40px rgba(201,168,76,0.12)"
+                    : featured ? "0 0 40px rgba(201,168,76,0.07)" : "none",
+                transition: "border 0.2s ease, box-shadow 0.2s ease",
             }}
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
         >
             {/* Icon + badge row */}
             <div className="flex items-center justify-between">
@@ -35,8 +42,6 @@ function ServiceCard({ icon: Icon, title, price, description, featured }) {
                         backgroundColor: "rgba(201,168,76,0.1)",
                         transform: hovered ? "scale(1.15)" : "scale(1)",
                     }}
-                    onMouseEnter={() => setHovered(true)}
-                    onMouseLeave={() => setHovered(false)}
                 >
                     <Icon className="w-4 h-4" style={{ color: "#C9A84C" }} />
                 </div>
@@ -59,7 +64,7 @@ function ServiceCard({ icon: Icon, title, price, description, featured }) {
 
             {/* Button */}
             <Link
-                href="/contact"
+                href={`/contact?service=${service}`}
                 className="py-2 px-5 rounded-xl text-xs font-semibold text-center transition hover:opacity-90 w-full mt-1"
                 style={featured
                     ? { background: "#C9A84C", color: "#161616" }

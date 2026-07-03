@@ -6,19 +6,19 @@ const testimonials = [
     {
         name: "Andrii Holikov",
         role: "Guitarist & Musician",
-        photo: "/images/review-andrei3.png",
+        photo: "/images/review-andrei3.webp",
         text: "Total bomb. Keep this one, don't change a thing. I keep hitting replay. Maestro, bravo."
     },
     {
         name: "Oleg Volos",
         role: "Singer & Songwriter",
-        photo: "/images/review-luis2.png",
+        photo: "/images/review-luis2.webp",
         text: "Sitting alone in front of the speakers, celebrating my son's 30th birthday — listening to what we made together. Feelings just hit me. No words. Thank you."
     },
     {
         name: "Olga Lalum",
         role: "Vocalist & Composer",
-        photo: "/images/review-anna2.png",
+        photo: "/images/review-anna2.webp",
         text: "Beautiful music — it just gives you wings. ❤️❤️❤️❤️❤️❤️❤️"
     },
 ];

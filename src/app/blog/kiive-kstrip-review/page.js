@@ -1,3 +1,4 @@
+import RelatedPosts from "@/app/components/blog/RelatedPosts";
 import BlogJsonLd from "@/app/components/blog/BlogJsonLd";
 export const metadata = {
     title: "Kiive Audio KStrip Review — Three Console Flavors in One Plugin",
@@ -11,7 +12,7 @@ export const metadata = {
         type: "article",
         url: "https://www.slstudio.pro/blog/kiive-kstrip-review",
         siteName: "SL Studio",
-        images: ["/images/blog-kstrip-cover.png"],
+        images: ["/images/blog-kstrip-cover.webp"],
     },
     twitter: {
         card: "summary_large_image",
@@ -63,7 +64,7 @@ export default function KStripReviewPage() {
                     {/* CTA Banner */}
                     <a href="/mixing-mastering"
                        className="rounded-xl overflow-hidden block hover:opacity-90 transition">
-                        <img
+                        <img loading="lazy" decoding="async"
                             src="/images/blog-kstrip-cover.jpg"
                             alt="Professional Mixing and Mastering Services"
                             className="w-full object-cover"
@@ -90,7 +91,7 @@ export default function KStripReviewPage() {
                                 <p>Built-in sidechain filters prevent the low end from hitting the saturation circuit too hard — practical when driving something without muddying the bottom. A detail that saves a separate high-pass insert on many tracks.</p>
                             </div>
                             <div className="flex-shrink-0" style={{width: "120px"}}>
-                                <img
+                                <img loading="lazy" decoding="async"
                                     src="/images/blog-kstrip-1.png"
                                     alt="KStrip API EQ Section"
                                     className="rounded-xl w-full object-cover"
@@ -125,8 +126,8 @@ export default function KStripReviewPage() {
                         {/* Image LEFT */}
                         <div className="flex gap-6 items-start">
                             <div className="flex-shrink-0" style={{width: "120px"}}>
-                                <img
-                                    src="/images/blog-kstrip-2.png"
+                                <img loading="lazy" decoding="async"
+                                    src="/images/blog-kstrip-2.webp"
                                     alt="KStrip Compressor Section"
                                     className="rounded-xl w-full object-cover"
                                     style={{maxHeight: "300px"}}
@@ -182,6 +183,8 @@ export default function KStripReviewPage() {
                             Get in Touch →
                         </a>
                     </div>
+
+                    <RelatedPosts slug="kiive-kstrip-review" />
 
                 </div>
             </div>

@@ -56,7 +56,7 @@ export default function Hero() {
                 </div>
                 <div className="w-full aspect-[16/9] relative rounded-xl overflow-hidden">
                     <Image
-                        src="/images/Serhii-Lazariev-02.JPG"
+                        src="/images/Serhii-Lazariev-02.webp"
                         alt="Serhii Lazariev"
                         fill
                         className="object-cover object-top"

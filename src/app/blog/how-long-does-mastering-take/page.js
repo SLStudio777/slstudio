@@ -1,3 +1,4 @@
+import RelatedPosts from "@/app/components/blog/RelatedPosts";
 import BlogJsonLd from "@/app/components/blog/BlogJsonLd";
 export const metadata = {
     title: "How Long Does It Take to Master a Song? (1 Hour vs 3–5 Days)",
@@ -100,7 +101,7 @@ export default function MasteringTimePage() {
 
                     {/* Image */}
                     <div className="rounded-2xl overflow-hidden w-full">
-                        <img
+                        <img loading="lazy" decoding="async"
                             src="/images/blog-mastering-time.png"
                             alt="Professional mastering studio session"
                             className="w-full object-cover"
@@ -204,6 +205,8 @@ export default function MasteringTimePage() {
                             Get in Touch →
                         </a>
                     </div>
+
+                    <RelatedPosts slug="how-long-does-mastering-take" />
 
                 </div>
             </div>

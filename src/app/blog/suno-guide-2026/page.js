@@ -1,3 +1,4 @@
+import RelatedPosts from "@/app/components/blog/RelatedPosts";
 import BlogJsonLd from "@/app/components/blog/BlogJsonLd";
  import BlogHeader from "@/app/components/blog/BlogHeader";
 import InteractiveChecklist from "./InteractiveChecklist";
@@ -20,7 +21,7 @@ export const metadata = {
         type: "article",
         url: "https://www.slstudio.pro/blog/suno-guide-2026",
         siteName: "SL Studio",
-        images: ["/images/blog-suno-cover.png"],
+        images: ["/images/blog-suno-cover.webp"],
     },
     twitter: {
         card: "summary_large_image",
@@ -197,7 +198,7 @@ export default function SunoGuidePage() {
                         <p><strong className="text-white">Suno does not make music for you.</strong> It amplifies what you already bring to the table — your ideas, your taste, your sense of direction. No input, no output. Garbage in, garbage out. Vibe in... well, sometimes vibe out. But only if you know what you are doing.</p>
                         <p>This guide is for musicians, producers, and curious creators who want predictable results instead of random noise. We are going to cover the interface, the logic, the settings, and the workflow — so you can stop gambling and start actually making music.</p>
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-1.png" alt="Working with Suno: It's a Skill, Not Just AI Knowledge" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-1.webp" alt="Working with Suno: It's a Skill, Not Just AI Knowledge" className="w-full object-cover" />
                         </div>
                         <BackToTop />
                     </div>
@@ -227,7 +228,7 @@ export default function SunoGuidePage() {
                         </div>
                         <p>Suno has three areas you need to know. Master these and you will never feel lost again. More importantly, you will stop accidentally losing work you actually liked.</p>
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-2.png" alt="Create & Library" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-2.webp" alt="Create & Library" className="w-full object-cover" />
                         </div>
                         <div className="flex flex-col gap-4">
                             <div className="rounded-xl p-5 flex gap-4 items-start" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderLeft: "3px solid #C9A84C" }}>
@@ -251,7 +252,7 @@ export default function SunoGuidePage() {
                             </div>
                         </div>
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-3.png" alt="Workspace" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-3.webp" alt="Workspace" className="w-full object-cover" />
                         </div>
                         <div className="rounded-xl p-5 flex gap-4 items-start" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderLeft: "3px solid #C9A84C" }}>
                             <span className="text-xl flex-shrink-0">📁</span>
@@ -273,7 +274,7 @@ export default function SunoGuidePage() {
                         <p>The moment you open Suno, you see two modes. And almost everyone immediately clicks into <strong className="text-white">Custom Mode</strong> because it seems more powerful. More options, more control, more professional-looking interface.</p>
                         <p>This is a trap.</p>
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-4.png" alt="Simple vs Custom Mode" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-4.webp" alt="Simple vs Custom Mode" className="w-full object-cover" />
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="rounded-xl p-5 flex flex-col gap-3" style={{ background: "rgba(100,200,100,0.05)", border: "1px solid rgba(100,200,100,0.15)" }}>
@@ -304,7 +305,7 @@ export default function SunoGuidePage() {
                         <p>A prompt is not a description. It is an instruction.</p>
                         <p>Suno does not read between the lines. It does not guess what you meant. It works with exactly what you gave it — no more, no less. If your prompt is contradictory, Suno will improvise. And Suno improvising is not always a compliment.</p>
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-5.png" alt="Structure Your Prompt" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-5.webp" alt="Structure Your Prompt" className="w-full object-cover" />
                         </div>
                         <p>The most common mistake is what we will call the <strong className="text-white">salad prompt</strong>: genre, mood, another genre, an era, an instrument, an emotion, some vibes, maybe a reference — all thrown together with no hierarchy. Suno does not know what you care about most, so it starts guessing. And when AI guesses, you get something technically impressive that sounds like nobody's music in particular.</p>
                         <div className="rounded-xl p-5 flex flex-col gap-3" style={{ background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.2)" }}>
@@ -331,7 +332,7 @@ export default function SunoGuidePage() {
                         </div>
                         <p>Notice what is <em>not</em> in these prompts: five adjectives per word, Wikipedia-style genre histories, and a list of every instrument known to humanity. Keep it clean. The simpler your source material, the easier it is to work with later.</p>
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-6.png" alt="Suno Prioritizes Structure, Not Just Words" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-6.webp" alt="Suno Prioritizes Structure, Not Just Words" className="w-full object-cover" />
                         </div>
                         <div className="rounded-xl p-4 flex gap-3 items-start" style={{ background: "rgba(255,100,100,0.05)", border: "1px solid rgba(255,100,100,0.15)" }}>
                             <span className="text-lg flex-shrink-0">🚨</span>
@@ -352,7 +353,7 @@ export default function SunoGuidePage() {
                         </div>
                         <p>This one rule will save you enormous frustration. Write it down. Tattoo it somewhere. Put it on your monitor.</p>
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-7.png" alt="Brackets Are Instructions" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-7.webp" alt="Brackets Are Instructions" className="w-full object-cover" />
                         </div>
                         <div className="rounded-xl p-5" style={{ background: "rgba(201,168,76,0.08)", border: "1px solid rgba(201,168,76,0.25)" }}>
                             <p className="text-white font-semibold mb-2 text-center">The One Rule That Saves Everything</p>
@@ -387,11 +388,11 @@ export default function SunoGuidePage() {
                         <p>If you do not give Suno a structure, it will invent one. Sometimes that works out beautifully. Often it does not — especially if you need the track to be a specific length, or if you are planning to edit it in a DAW afterward.</p>
                         <p>The underlying logic here is important: every song is built from <strong className="text-white">repeating and contrasting sections</strong>. Verses build the story, choruses deliver the emotional payload, bridges shift the perspective, and instrumental sections control the energy flow. When you understand this, you stop thinking of a song as "a bunch of parts" and start thinking of it as a designed emotional experience.</p>
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-8.png" alt="Song Structure visual" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-8.webp" alt="Song Structure visual" className="w-full object-cover" />
                         </div>
                         <p>Understanding the theory is one thing — seeing it mapped to real production formats is another. Here is how these structures actually look when you translate them into Suno-ready templates:</p>
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-9.png" alt="Music Production: Song Structure" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-9.webp" alt="Music Production: Song Structure" className="w-full object-cover" />
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="rounded-xl p-5 flex flex-col gap-3" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}>
@@ -421,7 +422,7 @@ export default function SunoGuidePage() {
                         </div>
                         <p>Two settings that most people either ignore entirely or crank to the extreme. Both are mistakes, and both will cost you credits.</p>
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-10.png" alt="Find the Sweet Spot" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-10.webp" alt="Find the Sweet Spot" className="w-full object-cover" />
                         </div>
                         <div className="flex flex-col gap-4">
                             <div className="rounded-xl p-5 flex flex-col gap-3" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}>
@@ -471,7 +472,7 @@ export default function SunoGuidePage() {
                             <p className="text-white/60 text-sm font-mono leading-relaxed">Generate → do not like it → close → generate again → repeat until frustrated → conclude that Suno is bad → open it again tomorrow anyway</p>
                         </div>
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-11.png" alt="Don't Start from Scratch Every Time" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-11.webp" alt="Don't Start from Scratch Every Time" className="w-full object-cover" />
                         </div>
                         <p>Every time you throw away a generated track and start fresh, you are also throwing away the idea that shaped it. And sometimes that idea was good — the execution just was not there yet.</p>
                         <p>This is one of the most important mindset shifts when working with generative AI: you are not searching for the perfect output. You are developing material. The first generation is a draft. The second is a refinement. The third might be the one.</p>
@@ -487,7 +488,7 @@ export default function SunoGuidePage() {
                         </div>
                         <p>Three tools. Learn them, use them constantly. These are the features that separate casual Suno users from people who actually finish tracks.</p>
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-12.png" alt="Extend · Cover · Upload" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-12.webp" alt="Extend · Cover · Upload" className="w-full object-cover" />
                         </div>
                         <div className="flex flex-col gap-4">
                             <div className="rounded-xl p-5 flex gap-4 items-start" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderLeft: "3px solid #C9A84C" }}>
@@ -526,7 +527,7 @@ export default function SunoGuidePage() {
                         </div>
                         <p>Once you have found a sound you like — a particular character, a specific feel that works for your project — you can save it as a <strong className="text-white">Persona</strong>.</p>
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-13.png" alt="Personas: Saving Your Sound" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-13.webp" alt="Personas: Saving Your Sound" className="w-full object-cover" />
                         </div>
                         <p>A Persona is not a copy. It is a reference point. A saved sonic identity that you can return to across multiple tracks, ensuring consistency without having to reinvent the wheel every session.</p>
                         <p>Think about what this means in practice: you have been working on an album. Every track needs to sound like it belongs to the same world — same vocal character, same sonic palette, same energy. Without Personas, every session starts from zero. With Personas, you anchor the sound and build from there.</p>
@@ -546,7 +547,7 @@ export default function SunoGuidePage() {
                         <p>Let us be completely honest about something.</p>
                         <p>No matter how good your Suno track sounds in the player, it is still a demo. A good demo — sometimes a great demo — but a demo. The final result, the one people actually listen to and remember, is born in post-production.</p>
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-14.png" alt="Suno = Demo, Not a Release" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-14.webp" alt="Suno = Demo, Not a Release" className="w-full object-cover" />
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="rounded-xl p-5 flex flex-col gap-2" style={{ background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.15)" }}>
@@ -592,7 +593,7 @@ export default function SunoGuidePage() {
                             <p>For singers, this means demoing new songs without setting up a mic session — just hum an idea into Suno and hear yourself in a full production. For non-singers, it is a chance to hear your own voice in music for the first time, which is a genuinely surprising experience.</p>
 
                             <div className="rounded-2xl overflow-hidden border border-white/5">
-                                <img src="/images/suno-16.png" alt="Voices in Suno v5.5 — voice cloning" className="w-full object-cover" />
+                                <img loading="lazy" decoding="async" src="/images/suno-16.webp" alt="Voices in Suno v5.5 — voice cloning" className="w-full object-cover" />
                             </div>
 
                             <p><strong className="text-white">How to activate:</strong></p>
@@ -675,7 +676,7 @@ export default function SunoGuidePage() {
                         </div>
                         <p>Before you hit Generate, run through this. Every time. It takes thirty seconds and saves you from generating tracks you will immediately discard.</p>
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-15.png" alt="Checklist" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-15.webp" alt="Checklist" className="w-full object-cover" />
                         </div>
                         <InteractiveChecklist />
                         <BackToTop />
@@ -727,6 +728,8 @@ export default function SunoGuidePage() {
                             Get in Touch →
                         </a>
                     </div>
+
+                    <RelatedPosts slug="suno-guide-2026" />
 
                 </div>
             </div>

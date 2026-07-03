@@ -1,3 +1,4 @@
+import RelatedPosts from "@/app/components/blog/RelatedPosts";
 import BlogJsonLd from "@/app/components/blog/BlogJsonLd";
 import BlogHeader from "@/app/components/blog/BlogHeader";
 import ReadingProgress from "@/app/components/blog/ReadingProgress";
@@ -20,7 +21,7 @@ export const metadata = {
         type: "article",
         url: "https://www.slstudio.pro/blog/suno-studio-guide-2026",
         siteName: "SL Studio",
-        images: ["/images/blog-suno-studio-cover-ru.png"],
+        images: ["/images/blog-suno-studio-cover-ru.webp"],
     },
     twitter: {
         card: "summary_large_image",
@@ -152,7 +153,7 @@ export default function SunoStudioGuidePage() {
                         <p>Давайте сразу расставим точки над «ё», чтобы потом не было разочарований. Suno Studio — это не продолжение кнопки Generate и не её замена. Это отдельный рабочий этап, который живёт ровно между «нажал — получил» и «открыл в профессиональном редакторе».</p>
 
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-studio-ru-1.png" alt="Studio решает задачу организации и развития идеи" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-studio-ru-1.webp" alt="Studio решает задачу организации и развития идеи" className="w-full object-cover" />
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -183,7 +184,7 @@ export default function SunoStudioGuidePage() {
                         <p>В центре Suno Studio находится таймлайн. Не кнопки, не меню — именно он. Это полоса времени, на которой разворачивается вся твоя музыка.</p>
 
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-studio-ru-2.png" alt="Таймлайн — главный инструмент контроля в Suno Studio" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-studio-ru-2.webp" alt="Таймлайн — главный инструмент контроля в Suno Studio" className="w-full object-cover" />
                         </div>
 
                         <p>Что ты на нём видишь: форму трека целиком, дорожки и клипы, переходы между частями. <strong className="text-white">Самое важное открытие</strong> — ты перестаёшь воспринимать трек как один сплошной файл. Ты начинаешь видеть набор частей, которые можно анализировать и развивать по отдельности.</p>
@@ -221,7 +222,7 @@ export default function SunoStudioGuidePage() {
                         </div>
 
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-studio-ru-3.png" alt="Extend работает с контекстом — главное правило это точка входа" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-studio-ru-3.webp" alt="Extend работает с контекстом — главное правило это точка входа" className="w-full object-cover" />
                         </div>
 
                         <h3 className="text-lg font-semibold text-white">Главное правило: точка входа (Timestamp)</h3>
@@ -252,7 +253,7 @@ export default function SunoStudioGuidePage() {
                         <p>В Studio ты видишь цепочку: Part 1 → Extend → Part 2. Запомни важное правило:</p>
 
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-studio-ru-4.png" alt="Studio — это конструктор: не нравится Part 2 — удали и сгенерируй заново" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-studio-ru-4.webp" alt="Studio — это конструктор: не нравится Part 2 — удали и сгенерируй заново" className="w-full object-cover" />
                         </div>
 
                         <div className="rounded-xl p-5" style={{ background: "rgba(201,168,76,0.08)", border: "1px solid rgba(201,168,76,0.25)" }}>
@@ -369,7 +370,7 @@ export default function SunoStudioGuidePage() {
                         </div>
 
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-studio-ru-5.png" alt="Suno работает с тегами: sad violin — рандом, melancholic violin solo — попадание" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-studio-ru-5.webp" alt="Suno работает с тегами: sad violin — рандом, melancholic violin solo — попадание" className="w-full object-cover" />
                         </div>
 
                         <div className="rounded-2xl p-6 flex flex-col gap-5" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.07)" }}>
@@ -402,7 +403,7 @@ export default function SunoStudioGuidePage() {
                                 </div>
 
                                 <div className="rounded-2xl overflow-hidden border border-white/5">
-                                    <img src="/images/suno-studio-ru-6.png" alt="Поджанры — тем точнее жанр, тем стабильнее результат" className="w-full object-cover" />
+                                    <img loading="lazy" decoding="async" src="/images/suno-studio-ru-6.webp" alt="Поджанры — тем точнее жанр, тем стабильнее результат" className="w-full object-cover" />
                                 </div>
 
                                 <div className="flex flex-col gap-2">
@@ -485,7 +486,7 @@ export default function SunoStudioGuidePage() {
                         <p>Классный трек, но в середине вокалист проглотил слово или барабаны сбились с ритма. Раньше выход был один — генерировать всё заново. В Studio это чинится точечно. Два инструмента под две разные задачи.</p>
 
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-studio-ru-7.png" alt="Cover и Replace — два разных инструмента под две разные задачи" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-studio-ru-7.webp" alt="Cover и Replace — два разных инструмента под две разные задачи" className="w-full object-cover" />
                         </div>
 
                         <div className="flex flex-col gap-4">
@@ -508,7 +509,7 @@ export default function SunoStudioGuidePage() {
                         </div>
 
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-studio-ru-8.png" alt="Исправляем только ошибку — не весь трек" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-studio-ru-8.webp" alt="Исправляем только ошибку — не весь трек" className="w-full object-cover" />
                         </div>
 
                         <h3 className="text-lg font-semibold text-white">Как исправлять галлюцинации</h3>
@@ -532,7 +533,7 @@ export default function SunoStudioGuidePage() {
                         </div>
 
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-studio-ru-9.png" alt="Solo Hack — убираем голос и вставляем соло в три шага" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-studio-ru-9.webp" alt="Solo Hack — убираем голос и вставляем соло в три шага" className="w-full object-cover" />
                         </div>
 
                         <h3 className="text-lg font-semibold text-white">Solo Hack: убираем вокал и вставляем инструментал</h3>
@@ -568,7 +569,7 @@ export default function SunoStudioGuidePage() {
                         <p>Многие видят в Studio ручки громкости и думают: «О, сейчас я сведу трек прямо здесь». Сразу снимаем розовые очки: встроенный микшер — это инструмент для проверки идеи, а не финального качества. Но кое-что полезное тут всё-таки сделать можно.</p>
 
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-studio-ru-10.png" alt="Центр — для голоса и баса. Ширина появляется когда центр свободен" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-studio-ru-10.webp" alt="Центр — для голоса и баса. Ширина появляется когда центр свободен" className="w-full object-cover" />
                         </div>
 
                         <div className="flex flex-col gap-4">
@@ -602,7 +603,7 @@ export default function SunoStudioGuidePage() {
                         <p>Дошли до финала. Здесь несколько правил, нарушение которых стоит тебе качества — иногда очень дорого.</p>
 
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-studio-ru-11.png" alt="Full Song — это уже испечённый пирог. Чистые исходники — чистый результат" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-studio-ru-11.webp" alt="Full Song — это уже испечённый пирог. Чистые исходники — чистый результат" className="w-full object-cover" />
                         </div>
 
                         <div className="rounded-xl p-5 flex flex-col gap-3" style={{ background: "rgba(255,80,80,0.06)", border: "1px solid rgba(255,80,80,0.2)" }}>
@@ -693,6 +694,8 @@ export default function SunoStudioGuidePage() {
                             Написать →
                         </a>
                     </div>
+
+                    <RelatedPosts slug="suno-studio-guide-2026" />
 
                 </div>
             </div>

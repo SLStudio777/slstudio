@@ -1,3 +1,4 @@
+import RelatedPosts from "@/app/components/blog/RelatedPosts";
 import BlogJsonLd from "@/app/components/blog/BlogJsonLd";
 import BlogHeader from "@/app/components/blog/BlogHeader";
 
@@ -13,7 +14,7 @@ export const metadata = {
         type: "article",
         url: "https://www.slstudio.pro/blog/best-music-distribution-2025",
         siteName: "SL Studio",
-        images: ["/images/blog-distribution-cover.png"],
+        images: ["/images/blog-distribution-cover.webp"],
     },
     twitter: {
         card: "summary_large_image",
@@ -62,7 +63,7 @@ export default function MusicDistributionPage() {
 
                     {/* Image */}
                     <div className="rounded-2xl overflow-hidden w-full">
-                        <img
+                        <img loading="lazy" decoding="async"
                             src="/images/blog-distribution.jpg"
                             alt="Music distribution services comparison 2025"
                             className="w-full object-cover"
@@ -165,6 +166,8 @@ export default function MusicDistributionPage() {
                             Get in Touch →
                         </a>
                     </div>
+
+                    <RelatedPosts slug="best-music-distribution-2025" />
 
                 </div>
             </div>

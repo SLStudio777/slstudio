@@ -56,7 +56,7 @@ style={{backgroundColor: "#C9A84C"}}
                 </div>
                 <div className="w-full aspect-[16/9] relative rounded-xl overflow-hidden">
                     <Image
-                        src="/images/Serhii-Lazariev-03.png"
+                        src="/images/Serhii-Lazariev-03.webp"
                         alt="Serhii Lazariev"
                         fill
                         className="object-cover object-top"

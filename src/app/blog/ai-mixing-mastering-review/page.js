@@ -1,3 +1,4 @@
+import RelatedPosts from "@/app/components/blog/RelatedPosts";
 import BlogJsonLd from "@/app/components/blog/BlogJsonLd";
 import BlogHeader from "@/app/components/blog/BlogHeader";
 
@@ -256,6 +257,8 @@ export default function AIMixingReviewPage() {
                             Get in Touch →
                         </a>
                     </div>
+
+                    <RelatedPosts slug="ai-mixing-mastering-review" />
 
                 </div>
             </div>

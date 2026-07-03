@@ -1,3 +1,4 @@
+import RelatedPosts from "@/app/components/blog/RelatedPosts";
 import BlogJsonLd from "@/app/components/blog/BlogJsonLd";
 import BlogHeader from "@/app/components/blog/BlogHeader";
 import GmivBuilder from "@/app/components/blog/GmivBuilder";
@@ -21,7 +22,7 @@ export const metadata = {
         type: "article",
         url: "https://www.slstudio.pro/blog/suno-studio-guide-en-2026",
         siteName: "SL Studio",
-        images: ["/images/blog-suno-studio-cover.png"],
+        images: ["/images/blog-suno-studio-cover.webp"],
     },
     twitter: {
         card: "summary_large_image",
@@ -153,7 +154,7 @@ export default function SunoStudioGuidePage() {
                         <p>Let's get one thing straight before any disappointment sets in. Suno Studio is not a continuation of the Generate button, and it's not a replacement for it either. It's a separate working stage — one that lives exactly between "hit Generate, get something" and "open it in a real editor."</p>
 
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-studio-1.png" alt="Studio handles one job: organizing and developing your idea" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-studio-1.webp" alt="Studio handles one job: organizing and developing your idea" className="w-full object-cover" />
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -184,7 +185,7 @@ export default function SunoStudioGuidePage() {
                         <p>At the heart of Suno Studio is the timeline. Not the buttons, not the menus — the timeline. It's the strip of time where all your music unfolds.</p>
 
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-studio-2.png" alt="The timeline is your main instrument of control in Suno Studio" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-studio-2.webp" alt="The timeline is your main instrument of control in Suno Studio" className="w-full object-cover" />
                         </div>
 
                         <p>What you see on it: the shape of the whole track, the clips and layers, the transitions between sections. <strong className="text-white">The most important shift</strong> — you stop perceiving the track as one big audio file. You start seeing a collection of parts that can be analyzed and developed individually.</p>
@@ -222,7 +223,7 @@ export default function SunoStudioGuidePage() {
                         </div>
 
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-studio-3.png" alt="Extend reads context — the timestamp is everything" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-studio-3.webp" alt="Extend reads context — the timestamp is everything" className="w-full object-cover" />
                         </div>
 
                         <h3 className="text-lg font-semibold text-white">The one rule: the timestamp</h3>
@@ -253,7 +254,7 @@ export default function SunoStudioGuidePage() {
                         <p>In Studio you see a chain: Part 1 → Extend → Part 2. One rule to remember:</p>
 
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-studio-4.png" alt="Studio is a block system: don't like Part 2? Delete and regenerate" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-studio-4.webp" alt="Studio is a block system: don't like Part 2? Delete and regenerate" className="w-full object-cover" />
                         </div>
 
                         <div className="rounded-xl p-5" style={{ background: "rgba(201,168,76,0.08)", border: "1px solid rgba(201,168,76,0.25)" }}>
@@ -344,7 +345,7 @@ export default function SunoStudioGuidePage() {
                         </div>
 
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-studio-5.png" alt="Suno works with tags: sad violin is a lottery, melancholic violin solo is a target" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-studio-5.webp" alt="Suno works with tags: sad violin is a lottery, melancholic violin solo is a target" className="w-full object-cover" />
                         </div>
 
                         <div className="rounded-2xl p-6 flex flex-col gap-5" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.07)" }}>
@@ -377,7 +378,7 @@ export default function SunoStudioGuidePage() {
                                 </div>
 
                                 <div className="rounded-2xl overflow-hidden border border-white/5">
-                                    <img src="/images/suno-studio-6.png" alt="Subgenres — the more specific the genre, the more stable the result" className="w-full object-cover" />
+                                    <img loading="lazy" decoding="async" src="/images/suno-studio-6.webp" alt="Subgenres — the more specific the genre, the more stable the result" className="w-full object-cover" />
                                 </div>
 
                                 <div className="flex flex-col gap-2">
@@ -463,7 +464,7 @@ export default function SunoStudioGuidePage() {
                         <p>Great track, but the vocalist swallowed a word in the middle or the drums drifted off-beat. The old answer was to regenerate everything from scratch. In Studio, you fix it precisely. Two tools, two different jobs.</p>
 
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-studio-7.png" alt="Cover and Replace — two different tools for two different problems" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-studio-7.webp" alt="Cover and Replace — two different tools for two different problems" className="w-full object-cover" />
                         </div>
 
                         <div className="flex flex-col gap-4">
@@ -486,7 +487,7 @@ export default function SunoStudioGuidePage() {
                         </div>
 
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-studio-8.png" alt="Fix only the mistake — not the whole track" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-studio-8.webp" alt="Fix only the mistake — not the whole track" className="w-full object-cover" />
                         </div>
 
                         <h3 className="text-lg font-semibold text-white">How to fix hallucinations</h3>
@@ -510,7 +511,7 @@ export default function SunoStudioGuidePage() {
                         </div>
 
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-studio-9.png" alt="Solo Hack — remove the vocals and drop in a solo in three steps" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-studio-9.webp" alt="Solo Hack — remove the vocals and drop in a solo in three steps" className="w-full object-cover" />
                         </div>
 
                         <h3 className="text-lg font-semibold text-white">Solo Hack: pull the vocals and drop in an instrumental</h3>
@@ -546,7 +547,7 @@ export default function SunoStudioGuidePage() {
                         <p>A lot of people see the volume faders in Studio and think: "finally, I'll mix the track right here." Let's take the rose-tinted glasses off: the built-in mixer is a tool for checking your idea, not for achieving final quality. But there are a few genuinely useful things you can do with it.</p>
 
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-studio-10.png" alt="Center channel is for vocals and bass. Width comes from clearing the center" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-studio-10.webp" alt="Center channel is for vocals and bass. Width comes from clearing the center" className="w-full object-cover" />
                         </div>
 
                         <div className="flex flex-col gap-4">
@@ -580,7 +581,7 @@ export default function SunoStudioGuidePage() {
                         <p>We made it to the end. A few rules here that, if broken, cost you quality — sometimes significantly.</p>
 
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-studio-11.png" alt="Full Song is the baked cake. Clean stems mean a clean result." className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-studio-11.webp" alt="Full Song is the baked cake. Clean stems mean a clean result." className="w-full object-cover" />
                         </div>
 
                         <div className="rounded-xl p-5 flex flex-col gap-3" style={{ background: "rgba(255,80,80,0.06)", border: "1px solid rgba(255,80,80,0.2)" }}>
@@ -670,6 +671,8 @@ export default function SunoStudioGuidePage() {
                             Get in touch →
                         </a>
                     </div>
+
+                    <RelatedPosts slug="suno-studio-guide-en-2026" />
 
                 </div>
             </div>

@@ -1,3 +1,4 @@
+import RelatedPosts from "@/app/components/blog/RelatedPosts";
 import BlogJsonLd from "@/app/components/blog/BlogJsonLd";
 import BlogHeader from "@/app/components/blog/BlogHeader";
 
@@ -13,7 +14,7 @@ export const metadata = {
         type: "article",
         url: "https://www.slstudio.pro/blog/best-mixing-plugins-2026",
         siteName: "SL Studio",
-        images: ["/images/blog-plugins-cover.png"],
+        images: ["/images/blog-plugins-cover.webp"],
     },
     twitter: {
         card: "summary_large_image",
@@ -167,6 +168,8 @@ export default function BestMixingPluginsPage() {
                             Get in Touch →
                         </a>
                     </div>
+
+                    <RelatedPosts slug="best-mixing-plugins-2026" />
 
                 </div>
             </div>

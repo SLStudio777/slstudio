@@ -1,3 +1,4 @@
+import RelatedPosts from "@/app/components/blog/RelatedPosts";
 import BlogJsonLd from "@/app/components/blog/BlogJsonLd";
 export const metadata = {
     title: "iZotope FXEQ Review — Frequency-Specific Effects for Mixing",
@@ -11,7 +12,7 @@ export const metadata = {
         type: "article",
         url: "https://www.slstudio.pro/blog/izotope-fxeq-review",
         siteName: "SL Studio",
-        images: ["/images/blog-fxeq-cover.png"],
+        images: ["/images/blog-fxeq-cover.webp"],
     },
     twitter: {
         card: "summary_large_image",
@@ -61,8 +62,8 @@ export default function FXEQReviewPage() {
 
                     {/* YouTube embed replaced with image */}
                     <div className="rounded-2xl overflow-hidden w-full">
-                        <img
-                            src="/images/blog-fxeq.png"
+                        <img loading="lazy" decoding="async"
+                            src="/images/blog-fxeq.webp"
                             alt="iZotope FXEQ plugin interface — frequency specific effects"
                             className="w-full object-cover"
                             style={{maxHeight: "400px"}}
@@ -144,6 +145,8 @@ export default function FXEQReviewPage() {
                             Get in Touch →
                         </a>
                     </div>
+
+                    <RelatedPosts slug="izotope-fxeq-review" />
 
                 </div>
             </div>

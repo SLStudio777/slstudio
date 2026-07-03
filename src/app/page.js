@@ -33,8 +33,9 @@ export const metadata = {
     url: "https://www.slstudio.pro",
     images: [
       {
-        width: 1200,
-        height: 630,
+        url: "/images/SL-logo-mark-1024.png",
+        width: 1024,
+        height: 1024,
         alt: "SL Studio - Mixing & Mastering",
       },
     ],

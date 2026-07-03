@@ -1,3 +1,4 @@
+import RelatedPosts from "@/app/components/blog/RelatedPosts";
 import BlogJsonLd from "@/app/components/blog/BlogJsonLd";
 export const metadata = {
     title: "Pro Tools vs Studio One: Which DAW is Better for Mixing?",
@@ -11,7 +12,7 @@ export const metadata = {
         type: "article",
         url: "https://www.slstudio.pro/blog/pro-tools-vs-studio-one",
         siteName: "SL Studio",
-        images: ["/images/blog-pt-cover.png"],
+        images: ["/images/blog-pt-cover.webp"],
     },
     twitter: {
         card: "summary_large_image",
@@ -82,7 +83,7 @@ export default function ProToolsVsStudioOnePage() {
 
                     {/* Image 1 */}
                     <div className="rounded-2xl overflow-hidden w-full">
-                        <img
+                        <img loading="lazy" decoding="async"
                             src="/images/blog-pt-stems.png"
                             alt="Exporting stems in Studio One vs Pro Tools"
                             className="w-full object-cover"
@@ -105,7 +106,7 @@ export default function ProToolsVsStudioOnePage() {
 
                     {/* Image 2 */}
                     <div className="rounded-2xl overflow-hidden w-full">
-                        <img
+                        <img loading="lazy" decoding="async"
                             src="/images/blog-pt-macros.png"
                             alt="Macros in Studio One for faster mixing workflow"
                             className="w-full object-cover"
@@ -127,8 +128,8 @@ export default function ProToolsVsStudioOnePage() {
 
                     {/* Image 3 */}
                     <div className="rounded-2xl overflow-hidden w-full">
-                        <img
-                            src="/images/blog-pt-atmos.png"
+                        <img loading="lazy" decoding="async"
+                            src="/images/blog-pt-atmos.webp"
                             alt="Dolby Atmos mixing in Studio One"
                             className="w-full object-cover"
                             style={{maxHeight: "400px"}}
@@ -160,6 +161,8 @@ export default function ProToolsVsStudioOnePage() {
                             Get in Touch →
                         </a>
                     </div>
+
+                    <RelatedPosts slug="pro-tools-vs-studio-one" />
 
                 </div>
             </div>

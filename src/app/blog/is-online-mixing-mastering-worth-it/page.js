@@ -1,3 +1,4 @@
+import RelatedPosts from "@/app/components/blog/RelatedPosts";
 import BlogJsonLd from "@/app/components/blog/BlogJsonLd";
 export const metadata = {
     title: "Is Online Mixing and Mastering Worth It in 2026?",
@@ -67,8 +68,8 @@ export default function OnlineMixingPage() {
 
                     {/* Image */}
                     <div className="rounded-2xl overflow-hidden w-full">
-                        <img
-                            src="/images/blog-online-mix.jpg"
+                        <img loading="lazy" decoding="async"
+                            src="/images/blog-online-mix.webp"
                             alt="Professional online mixing and mastering studio"
                             className="w-full object-cover"
                             style={{maxHeight: "400px"}}
@@ -161,6 +162,8 @@ export default function OnlineMixingPage() {
                             Get in Touch →
                         </a>
                     </div>
+
+                    <RelatedPosts slug="is-online-mixing-mastering-worth-it" />
 
                 </div>
             </div>

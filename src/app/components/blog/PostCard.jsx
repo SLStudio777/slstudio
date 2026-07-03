@@ -7,7 +7,7 @@ export default function PostCard({ post }) {
             className="group rounded-xl border border-white/5 bg-white/[0.03] overflow-hidden hover:border-white/10 transition flex flex-col"
             style={{borderLeft: "3px solid #C9A84C"}}
         >
-            <img
+            <img loading="lazy" decoding="async"
                 src={post.image}
                 alt={post.title}
                 style={{width: "100%", height: "260px", objectFit: "cover"}}

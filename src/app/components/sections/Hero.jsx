@@ -21,6 +21,18 @@ export default function Hero() {
                     <p className="text-white/70 text-md md:text-lg leading-relaxed max-w-lg">
                         I take rough recordings and transform them into polished, professional tracks - mixing, mastering, arrangement, and production from Warsaw to the world.
                     </p>
+                    <div>
+                        <a
+                            href="/contact"
+                            className="inline-flex items-center gap-2 text-black font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition text-sm"
+                            style={{
+                                backgroundColor: "#C9A84C",
+                                boxShadow: "0 0 24px rgba(201,168,76,0.25)",
+                            }}
+                        >
+                            Get a Free Consultation →
+                        </a>
+                    </div>
                     <h2 className="text-2xl md:text-3xl font-semibold">
                         Professional Audio Services
                     </h2>
@@ -54,8 +66,8 @@ export default function Hero() {
                 <div className="flex flex-col gap-6">
                     <div className="w-full aspect-[16/9] relative rounded-xl overflow-hidden">
                         <Image
-                            src="/images/Serhii-Lazariev.JPG"
-                            alt="Serhii Lazariev"
+                            src="/images/Serhii-Lazariev.webp"
+                            alt="Serhii Lazariev — mixing and mastering engineer in his Warsaw studio"
                             fill
                             className="object-cover object-top"
                             sizes="(max-width: 768px) 100vw, 1024px"

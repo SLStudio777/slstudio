@@ -1,15 +1,25 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { Play, Pause } from "lucide-react";
+import { Play, Pause, Loader2 } from "lucide-react";
 import WaveSurfer from "wavesurfer.js";
 
 const STOP_EVENT = "slstudio:stop-all";
+
+// Deterministic decorative bars shown before the real waveform is loaded —
+// audio files are only fetched on the first Play click (they are multi-MB).
+const PLACEHOLDER_BARS = Array.from({ length: 64 }, (_, i) => {
+    const h = 12 + Math.abs(Math.sin(i * 0.55) * 34) + ((i * 13) % 9);
+    return Math.round(h);
+});
 
 export default function BeforeAfterCard({title, before, after}) {
     const [mode, setMode] = useState("before");
     const [isPlaying, setIsPlaying] = useState(false);
     const [hovered, setHovered] = useState(false);
+    const [ready, setReady] = useState(false);
+    const [audioLoading, setAudioLoading] = useState(false);
     const cardId = useRef(Math.random().toString(36).slice(2));
+    const initialized = useRef(false);
 
     const beforeRef = useRef(null);
     const afterRef = useRef(null);
@@ -21,30 +31,30 @@ export default function BeforeAfterCard({title, before, after}) {
         after: `/sound/demo/before-after/${after}`,
     };
 
-    useEffect(() => {
-        beforeWS.current = WaveSurfer.create({
-            container: beforeRef.current,
-            waveColor: "rgba(255,255,255,0.15)",
-            progressColor: "#C9A84C",
-            height: 60,
-            barWidth: 2,
-            barGap: 2,
-            barRadius: 2,
-        });
+    const createInstances = () => {
+        if (initialized.current) return;
+        initialized.current = true;
 
-        afterWS.current = WaveSurfer.create({
-            container: afterRef.current,
+        const opts = {
             waveColor: "rgba(255,255,255,0.15)",
             progressColor: "#C9A84C",
             height: 60,
             barWidth: 2,
             barGap: 2,
             barRadius: 2,
-        });
+        };
+        beforeWS.current = WaveSurfer.create({ ...opts, container: beforeRef.current });
+        afterWS.current = WaveSurfer.create({ ...opts, container: afterRef.current });
+
+        beforeWS.current.on("finish", () => setIsPlaying(false));
+        afterWS.current.on("finish", () => setIsPlaying(false));
 
         beforeWS.current.load(sources.before);
         afterWS.current.load(sources.after);
+        setReady(true);
+    };
 
+    useEffect(() => {
         // Слушаем событие остановки от других карточек
         const handleStopAll = (e) => {
             if (e.detail.id !== cardId.current) {
@@ -67,6 +77,20 @@ export default function BeforeAfterCard({title, before, after}) {
     const getActive = () => mode === "before" ? beforeWS.current : afterWS.current;
 
     const togglePlay = () => {
+        // Первый клик: создаём инстансы, грузим аудио и играем когда готово
+        if (!initialized.current) {
+            setAudioLoading(true);
+            createInstances();
+            const active = getActive();
+            active.once("ready", () => {
+                setAudioLoading(false);
+                window.dispatchEvent(new CustomEvent(STOP_EVENT, { detail: { id: cardId.current } }));
+                active.play();
+                setIsPlaying(true);
+            });
+            return;
+        }
+
         const active = getActive();
         const inactive = mode === "before" ? afterWS.current : beforeWS.current;
 
@@ -82,6 +106,10 @@ export default function BeforeAfterCard({title, before, after}) {
 
     const switchMode = (newMode) => {
         if (newMode === mode) return;
+        if (!initialized.current) {
+            setMode(newMode);
+            return;
+        }
         const current = mode === "before" ? beforeWS.current : afterWS.current;
         const next = newMode === "before" ? beforeWS.current : afterWS.current;
         const currentTime = current.getCurrentTime();
@@ -178,8 +206,16 @@ export default function BeforeAfterCard({title, before, after}) {
 
             {/* Waveform */}
             <div className="px-5 py-2">
-                <div ref={beforeRef} className={mode === "before" ? "block" : "hidden"} />
-                <div ref={afterRef} className={mode === "after" ? "block" : "hidden"} />
+                {!ready && (
+                    <div className="flex items-end gap-[2px]" style={{ height: 60 }} aria-hidden="true">
+                        {PLACEHOLDER_BARS.map((h, i) => (
+                            <span key={i} className="flex-1 rounded-[2px]"
+                                  style={{ height: `${h}px`, background: "rgba(255,255,255,0.12)" }} />
+                        ))}
+                    </div>
+                )}
+                <div ref={beforeRef} className={ready && mode === "before" ? "block" : "hidden"} />
+                <div ref={afterRef} className={ready && mode === "after" ? "block" : "hidden"} />
             </div>
 
             {/* Controls */}
@@ -198,20 +234,25 @@ export default function BeforeAfterCard({title, before, after}) {
                     )}
                     <button
                         onClick={togglePlay}
+                        disabled={audioLoading}
+                        aria-label={isPlaying ? "Pause" : "Play"}
                         className="play-btn w-10 h-10 rounded-full flex items-center justify-center"
                         style={{
                             backgroundColor: isPlaying ? "rgba(201,168,76,0.2)" : "rgba(255,255,255,0.08)",
                             border: "1px solid rgba(201,168,76,0.3)",
+                            opacity: audioLoading ? 0.7 : 1,
                         }}
                     >
-                        {isPlaying
-                            ? <Pause size={16} style={{color: "#C9A84C"}} />
-                            : <Play  size={16} style={{color: "#C9A84C"}} />
+                        {audioLoading
+                            ? <Loader2 size={16} className="animate-spin" style={{color: "#C9A84C"}} />
+                            : isPlaying
+                                ? <Pause size={16} style={{color: "#C9A84C"}} />
+                                : <Play  size={16} style={{color: "#C9A84C"}} />
                         }
                     </button>
                 </div>
                 <span className="text-white/25 text-xs">
-                    {mode === "before" ? "Playing raw" : "Playing final mix"}
+                    {audioLoading ? "Loading audio..." : mode === "before" ? "Playing raw" : "Playing final mix"}
                 </span>
             </div>
         </div>

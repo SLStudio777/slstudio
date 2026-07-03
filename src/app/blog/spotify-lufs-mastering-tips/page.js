@@ -1,3 +1,4 @@
+import RelatedPosts from "@/app/components/blog/RelatedPosts";
 import BlogJsonLd from "@/app/components/blog/BlogJsonLd";
 export const metadata = {
     title: "Why Your Master Sounds Quiet on Spotify — 4 Tips for Competitive Loudness",
@@ -79,7 +80,7 @@ export default function SpotifyLufsPage() {
                             <p>Having a proper balance between kick and bass is essential before touching the limiter. Pull the bass fader all the way down, then slowly bring it back up until it sits where it needs to be. This gives a much more accurate reading of the level required — rather than relying on whatever the synth or plugin was set to. Nine times out of ten, the bass does not need to be as loud as it initially was.</p>
                         </div>
                         <div className="flex-shrink-0" style={{width: "130px"}}>
-                            <img
+                            <img loading="lazy" decoding="async"
                                 src="/images/blog-lufs-1.png"
                                 alt="Clipping and saturation for mastering loudness"
                                 className="rounded-xl w-full object-cover"
@@ -136,6 +137,8 @@ export default function SpotifyLufsPage() {
                             Get in Touch →
                         </a>
                     </div>
+
+                    <RelatedPosts slug="spotify-lufs-mastering-tips" />
 
                 </div>
             </div>

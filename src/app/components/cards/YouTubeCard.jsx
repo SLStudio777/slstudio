@@ -21,7 +21,7 @@ export default function YouTubeCard({ videoId, title }) {
             <div className="relative aspect-video bg-black">
                 {!isLoaded ? (
                     <div className="relative w-full h-full cursor-pointer" onClick={() => setIsLoaded(true)}>
-                        <img
+                        <img loading="lazy" decoding="async"
                             src={thumbnail}
                             alt={title}
                             className="w-full h-full object-cover transition-all duration-300"

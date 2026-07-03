@@ -1,3 +1,4 @@
+import RelatedPosts from "@/app/components/blog/RelatedPosts";
 import BlogJsonLd from "@/app/components/blog/BlogJsonLd";
 import BlogHeader from "@/app/components/blog/BlogHeader";
 
@@ -99,8 +100,8 @@ export default function AutoTunePage() {
 
                     {/* Image */}
                     <div className="rounded-2xl overflow-hidden w-full">
-                        <img
-                            src="/images/blog-autotune.png"
+                        <img loading="lazy" decoding="async"
+                            src="/images/blog-autotune.webp"
                             alt="Pitch correction plugins comparison 2025"
                             className="w-full object-cover"
                             style={{maxHeight: "400px"}}
@@ -252,6 +253,8 @@ export default function AutoTunePage() {
                             Get in Touch →
                         </a>
                     </div>
+
+                    <RelatedPosts slug="auto-tune-alternatives" />
 
                 </div>
             </div>

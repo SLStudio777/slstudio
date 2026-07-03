@@ -1,3 +1,4 @@
+import RelatedPosts from "@/app/components/blog/RelatedPosts";
 import BlogJsonLd from "@/app/components/blog/BlogJsonLd";
 import BlogHeader from "@/app/components/blog/BlogHeader";
 
@@ -96,8 +97,8 @@ export default function VocalReverbDelayPage() {
 
                     {/* Image 1 — after Plate section */}
                     <div className="rounded-2xl overflow-hidden w-full">
-                        <img
-                            src="/images/blog-vocal-fx-1.png"
+                        <img loading="lazy" decoding="async"
+                            src="/images/blog-vocal-fx-1.webp"
                             alt="Lustrous Plates reverb plugin — vocal plate send settings"
                             className="w-full object-cover"
                             style={{maxHeight: "400px"}}
@@ -133,8 +134,8 @@ export default function VocalReverbDelayPage() {
 
                     {/* Image 2 — after Chamber section */}
                     <div className="rounded-2xl overflow-hidden w-full">
-                        <img
-                            src="/images/blog-vocal-fx-2.png"
+                        <img loading="lazy" decoding="async"
+                            src="/images/blog-vocal-fx-2.webp"
                             alt="Seventh Heaven reverb plugin — room and chamber settings for vocals"
                             className="w-full object-cover"
                             style={{maxHeight: "400px"}}
@@ -193,6 +194,8 @@ export default function VocalReverbDelayPage() {
                             Get in Touch →
                         </a>
                     </div>
+
+                    <RelatedPosts slug="vocal-reverb-delay-chain" />
 
                 </div>
             </div>

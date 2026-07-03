@@ -1,3 +1,4 @@
+import RelatedPosts from "@/app/components/blog/RelatedPosts";
 import BlogJsonLd from "@/app/components/blog/BlogJsonLd";
 import BlogHeader from "@/app/components/blog/BlogHeader";
 
@@ -101,7 +102,7 @@ export default function VoviousReviewPage() {
 
                     {/* Image */}
                     <div className="rounded-2xl overflow-hidden w-full">
-                        <img
+                        <img loading="lazy" decoding="async"
                             src="/images/blog-vovious.jpg"
                             alt="Vovious vocal pitch correction plugin interface"
                             className="w-full object-cover"
@@ -263,6 +264,8 @@ export default function VoviousReviewPage() {
                             First consultation is free →
                         </a>
                     </div>
+
+                    <RelatedPosts slug="vovious-review" />
 
                 </div>
             </div>

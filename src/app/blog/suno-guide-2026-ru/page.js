@@ -1,3 +1,4 @@
+import RelatedPosts from "@/app/components/blog/RelatedPosts";
 import BlogJsonLd from "@/app/components/blog/BlogJsonLd";
 import BlogHeader from "@/app/components/blog/BlogHeader";
 import InteractiveChecklist from "./InteractiveChecklist";
@@ -20,7 +21,7 @@ export const metadata = {
         type: "article",
         url: "https://www.slstudio.pro/blog/suno-guide-2026-ru",
         siteName: "SL Studio",
-        images: ["/images/blog-suno-cover-ru.png"],
+        images: ["/images/blog-suno-cover-ru.webp"],
     },
     twitter: {
         card: "summary_large_image",
@@ -135,7 +136,7 @@ export default function SunoGuidePageRu() {
                         <p><strong className="text-white">Suno не делает музыку вместо тебя.</strong> Он работает с тем, что ты ему даёшь — с идеями, со вкусом, с направлением. Нет входящего материала — на выходе будет технически впечатляющий звуковой суп, который звучит как музыка, но не является ей. Как кофемашина, которая сделает эспрессо из чего угодно — но если засыпать туда сахарный песок, результат будет соответствующим.</p>
                         <p>Этот гайд о том, как перестать гадать и начать управлять. Разберём интерфейс, логику, настройки и рабочий процесс — пошагово, с примерами и без воды.</p>
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-ru-1.png" alt="Работа с Suno — это навык" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-ru-1.webp" alt="Работа с Suno — это навык" className="w-full object-cover" />
                         </div>
                         <BackToTop />
                     </div>
@@ -163,7 +164,7 @@ export default function SunoGuidePageRu() {
                         </div>
                         <p>В Suno есть три основные области. Разберись с ними один раз — и больше никогда не будешь теряться. Плюс перестанешь случайно терять треки, которые тебе понравились.</p>
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-ru-2.png" alt="Create и Library в Suno" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-ru-2.webp" alt="Create и Library в Suno" className="w-full object-cover" />
                         </div>
                         <div className="flex flex-col gap-4">
                             <div className="rounded-xl p-5 flex gap-4 items-start" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderLeft: "3px solid #C9A84C" }}>
@@ -187,7 +188,7 @@ export default function SunoGuidePageRu() {
                             </div>
                         </div>
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-ru-3.png" alt="Workspace в Suno" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-ru-3.webp" alt="Workspace в Suno" className="w-full object-cover" />
                         </div>
                         <div className="rounded-xl p-5 flex gap-4 items-start" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderLeft: "3px solid #C9A84C" }}>
                             <span className="text-xl flex-shrink-0">📁</span>
@@ -207,7 +208,7 @@ export default function SunoGuidePageRu() {
                         <p>Открываешь Suno — и сразу видишь два режима. И почти все сразу тянутся к <strong className="text-white">Custom Mode</strong>. Больше опций, больше контроля, выглядит профессиональнее. Сразу виден серьёзный подход.</p>
                         <p>Это ловушка.</p>
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-ru-4.png" alt="Simple vs Custom Mode в Suno" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-ru-4.webp" alt="Simple vs Custom Mode в Suno" className="w-full object-cover" />
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="rounded-xl p-5 flex flex-col gap-3" style={{ background: "rgba(100,200,100,0.05)", border: "1px solid rgba(100,200,100,0.15)" }}>
@@ -237,7 +238,7 @@ export default function SunoGuidePageRu() {
                         <p>Промпт — это не описание. Это инструкция.</p>
                         <p>Suno не читает между строк. Не угадывает, что ты имел в виду. Работает с тем, что написано — без домыслов, без контекста. Если в промпте есть противоречие — он начнёт импровизировать. А импровизация Suno — это не всегда подарок.</p>
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-ru-5.png" alt="Структура промпта в Suno" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-ru-5.webp" alt="Структура промпта в Suno" className="w-full object-cover" />
                         </div>
                         <p>Самая частая ошибка — <strong className="text-white">промпт-салат</strong>: жанр, настроение, ещё один жанр, эпоха, три инструмента, пара эмоций — всё в кучу, без порядка приоритетов. Suno не знает, что здесь главное, и начинает гадать. Когда AI гадает — получаешь что-то технически впечатляющее, звучащее как ничья музыка. Технически правильно. Эмоционально пусто.</p>
                         <div className="rounded-xl p-5 flex flex-col gap-3" style={{ background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.2)" }}>
@@ -264,7 +265,7 @@ export default function SunoGuidePageRu() {
                         </div>
                         <p>Заметь, чего нет в этих промптах: пять прилагательных на каждое слово, история жанра, и список всех инструментов, которые ты когда-либо слышал. Чисто и конкретно. Чем проще исходный материал — тем легче с ним работать потом.</p>
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-ru-6.png" alt="Suno приоритизирует структуру" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-ru-6.webp" alt="Suno приоритизирует структуру" className="w-full object-cover" />
                         </div>
                         <div className="rounded-xl p-4 flex gap-3 items-start" style={{ background: "rgba(255,100,100,0.05)", border: "1px solid rgba(255,100,100,0.15)" }}>
                             <span className="text-lg flex-shrink-0">🚨</span>
@@ -283,7 +284,7 @@ export default function SunoGuidePageRu() {
                         </div>
                         <p>Это одно правило сохранит тебе массу нервов. Запиши, запомни, вытатуируй на запястье — на твоё усмотрение.</p>
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-ru-7.png" alt="Скобки — инструкции для Suno" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-ru-7.webp" alt="Скобки — инструкции для Suno" className="w-full object-cover" />
                         </div>
                         <div className="rounded-xl p-5" style={{ background: "rgba(201,168,76,0.08)", border: "1px solid rgba(201,168,76,0.25)" }}>
                             <p className="text-white font-semibold mb-2 text-center">Единственное правило, которое всё меняет</p>
@@ -311,10 +312,10 @@ export default function SunoGuidePageRu() {
                         <p>Не дашь Suno структуру — он придумает сам. Иногда выходит интересно. Чаще — непредсказуемо, особенно если нужна конкретная длина или потом планируется работа в DAW.</p>
                         <p>Базовая логика: каждая песня строится из <strong className="text-white">повторяющихся и контрастных секций</strong>. Куплеты рассказывают историю, припевы несут эмоцию, бриджи меняют угол, инструментальные секции управляют энергией. Когда это понимаешь — перестаёшь воспринимать трек как набор случайных кусков и начинаешь проектировать эмоциональный путь слушателя. Разница между демо и релизом часто именно здесь.</p>
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-ru-9.png" alt="Музыкальная структура" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-ru-9.webp" alt="Музыкальная структура" className="w-full object-cover" />
                         </div>
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-ru-8.png" alt="Шаблоны структуры треков" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-ru-8.webp" alt="Шаблоны структуры треков" className="w-full object-cover" />
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="rounded-xl p-5 flex flex-col gap-3" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}>
@@ -343,7 +344,7 @@ export default function SunoGuidePageRu() {
                         </div>
                         <p>Две настройки, которые большинство либо полностью игнорирует, либо сразу выкручивает в максимум. Оба варианта — ошибки, и оба стоят кредитов.</p>
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-ru-10.png" alt="Weirdness и Style Influence в Suno" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-ru-10.webp" alt="Weirdness и Style Influence в Suno" className="w-full object-cover" />
                         </div>
                         <div className="flex flex-col gap-4">
                             <div className="rounded-xl p-5 flex flex-col gap-3" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}>
@@ -392,7 +393,7 @@ export default function SunoGuidePageRu() {
                             <p className="text-white/60 text-sm font-mono leading-relaxed">Generate → не нравится → закрыл → снова Generate → не нравится → ещё час → Suno плохой → закрыл → завтра открыл снова</p>
                         </div>
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-ru-11.png" alt="Не начинай с нуля каждый раз" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-ru-11.webp" alt="Не начинай с нуля каждый раз" className="w-full object-cover" />
                         </div>
                         <p>Каждый раз, когда выбрасываешь результат и начинаешь с чистого листа — выбрасываешь вместе с ним и идею, которая его породила. А идея иногда была хорошей. Просто исполнение не зашло.</p>
                         <p>Важный сдвиг в голове при работе с генеративным AI: ты не ищешь идеальный результат. Ты <em>развиваешь материал</em>. Первая генерация — черновик. Вторая — доработка. Третья может оказаться той самой.</p>
@@ -407,7 +408,7 @@ export default function SunoGuidePageRu() {
                         </div>
                         <p>Именно они отделяют тех, кто случайно нажимает Generate в надежде на удачу, от тех, кто доводит треки до конца.</p>
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-ru-12.png" alt="Extend, Cover и Upload в Suno" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-ru-12.webp" alt="Extend, Cover и Upload в Suno" className="w-full object-cover" />
                         </div>
                         <div className="flex flex-col gap-4">
                             <div className="rounded-xl p-5 flex gap-4 items-start" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderLeft: "3px solid #C9A84C" }}>
@@ -445,7 +446,7 @@ export default function SunoGuidePageRu() {
                         </div>
                         <p>Нашёл звук, который работает — определённый характер, конкретное ощущение — его можно сохранить как <strong className="text-white">Persona</strong>.</p>
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-ru-13.png" alt="Personas в Suno" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-ru-13.webp" alt="Personas в Suno" className="w-full object-cover" />
                         </div>
                         <p>Persona — не копия трека. Это точка отсчёта. Сохранённый звуковой характер, к которому можно возвращаться от сессии к сессии, без необходимости заново его нащупывать каждый раз.</p>
                         <p>Представь: ты работаешь над альбомом. Нужно, чтобы каждый трек звучал как часть одного мира — тот же вокальный характер, та же звуковая палитра, та же энергия. Без Personas каждая сессия начинается с нуля. С Personas — закрепляешь звук и строишь от него. Разница между «похоже на альбом» и «это случайная подборка треков».</p>
@@ -464,7 +465,7 @@ export default function SunoGuidePageRu() {
                         <p>Скажем прямо, без прикрас.</p>
                         <p>Как бы хорошо трек ни звучал в плеере Suno — это демо. Хорошее демо, иногда отличное — но демо. То, что люди слышат, скачивают и запоминают, рождается в пост-продакшне.</p>
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-ru-14.png" alt="Suno = демо, не релиз" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-ru-14.webp" alt="Suno = демо, не релиз" className="w-full object-cover" />
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="rounded-xl p-5 flex flex-col gap-2" style={{ background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.15)" }}>
@@ -509,7 +510,7 @@ export default function SunoGuidePageRu() {
                             <p>Для певцов это означает: можно набросать демо новой песни без микрофона и студии — просто напеть в Suno и услышать себя в полноценном треке. Для непевцов — впервые услышать свой голос в реальной музыке, что само по себе довольно неожиданный опыт.</p>
 
                             <div className="rounded-2xl overflow-hidden border border-white/5">
-                                <img src="/images/suno-ru-16.png" alt="Voices в Suno v5.5 — клонирование голоса" className="w-full object-cover" />
+                                <img loading="lazy" decoding="async" src="/images/suno-ru-16.webp" alt="Voices в Suno v5.5 — клонирование голоса" className="w-full object-cover" />
                             </div>
 
                             <p><strong className="text-white">Как активировать:</strong></p>
@@ -595,7 +596,7 @@ export default function SunoGuidePageRu() {
                         </div>
                         <p>Перед тем как жать Generate — пройдись по этому. Каждый раз. Тридцать секунд, которые спасают от получаса генерации в никуда. Кликабельный — можешь ставить галочки прямо здесь.</p>
                         <div className="rounded-2xl overflow-hidden border border-white/5">
-                            <img src="/images/suno-ru-15.png" alt="Чеклист перед генерацией" className="w-full object-cover" />
+                            <img loading="lazy" decoding="async" src="/images/suno-ru-15.webp" alt="Чеклист перед генерацией" className="w-full object-cover" />
                         </div>
                         <InteractiveChecklist />
                         <BackToTop />
@@ -621,6 +622,8 @@ export default function SunoGuidePageRu() {
                             Написать →
                         </a>
                     </div>
+
+                    <RelatedPosts slug="suno-guide-2026-ru" />
 
                 </div>
             </div>

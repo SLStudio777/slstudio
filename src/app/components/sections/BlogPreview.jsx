@@ -110,7 +110,7 @@ export default function BlogPreview() {
 
 
                         <div className="overflow-hidden">
-                            <img
+                            <img loading="lazy" decoding="async"
                                 src={post.image}
                                 alt={post.title}
                                 className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
