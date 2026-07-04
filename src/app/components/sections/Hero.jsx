@@ -18,11 +18,11 @@ export default function Hero() {
                     {/* Headline block — tight rhythm, no dead gaps */}
                     <div className="flex flex-col gap-6">
                         <h1 className="text-3xl md:text-5xl font-semibold leading-tight">
-                            Your Sound, <span className="text-[#f5b942]">Elevated.</span>
+                            Welcome to the <span className="text-[#f5b942]">Creative Studio.</span>
                         </h1>
                         {/* Living waveform — mirrored around a center line like a real DAW
                             waveform, trailing off toward the photo on desktop */}
-                        <div className="hero-wave relative flex items-center gap-[3px] w-full md:-mr-12" style={{ height: "56px" }} aria-hidden="true">
+                        <div className="hero-wave relative flex items-center gap-[3px] w-full md:-mr-24" style={{ height: "56px" }} aria-hidden="true">
                             {Array.from({ length: 72 }).map((_, i) => {
                                 const organic =
                                     Math.abs(Math.sin(i * 0.35)) * 55 +
@@ -48,7 +48,7 @@ export default function Hero() {
                             }}
                         >
                             <p className="text-white/70 text-md md:text-lg leading-relaxed">
-                                A Warsaw studio for mixing, mastering, arrangement and production — for artists who can hear the difference.
+                                A Warsaw studio for mixing, mastering, arrangement and production — where your music reaches its full potential.
                             </p>
                         </div>
                         <div className="flex items-center gap-6 flex-wrap">
