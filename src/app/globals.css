@@ -12,8 +12,8 @@ html {
 /* Hero: living gold waveform — mirrored around a center line, fading out
    toward the photo like a track trailing off */
 .hero-wave {
-  mask-image: linear-gradient(to right, black 75%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, black 75%, transparent 100%);
+  mask-image: linear-gradient(to right, black 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, black 80%, transparent 100%);
 }
 
 .hero-wave::before {
@@ -43,11 +43,6 @@ html {
 @keyframes heroWave {
   0%   { transform: scaleY(0.4); opacity: 0.6; }
   100% { transform: scaleY(1);   opacity: 1; }
-}
-
-.hero-wave span {
-  transition: transform 0.3s ease;
-  will-change: transform;
 }
 
 @media (prefers-reduced-motion: reduce) {
