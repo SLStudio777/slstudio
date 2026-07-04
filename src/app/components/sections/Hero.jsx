@@ -15,44 +15,47 @@ export default function Hero() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-end">
                 {/* Left */}
                 <div className="flex flex-col gap-10">
-                    <h1 className="text-3xl md:text-5xl font-semibold leading-tight">
-                        Your Sound, <span className="text-[#f5b942]">Elevated.</span>
-                    </h1>
-                    {/* Living waveform — the site is about sound, so show sound */}
-                    <div className="hero-wave flex items-end gap-[3px]" style={{ height: "44px" }} aria-hidden="true">
-                        {Array.from({ length: 56 }).map((_, i) => {
-                            const base = 20 + Math.abs(Math.sin(i * 0.45)) * 70;
-                            return (
-                                <span
-                                    key={i}
-                                    style={{
-                                        height: `${Math.round(base)}%`,
-                                        animationDelay: `${(i % 14) * 0.18}s`,
-                                    }}
-                                />
-                            );
-                        })}
-                    </div>
-                    <p className="text-white/70 text-md md:text-lg leading-relaxed max-w-lg">
-                        I take rough recordings and transform them into polished, professional tracks - mixing, mastering, arrangement, and production from Warsaw to the world.
-                    </p>
-                    <div className="flex items-center gap-6 flex-wrap">
-                        <a
-                            href="#demos"
-                            className="inline-flex items-center gap-2 text-black font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition text-sm"
-                            style={{
-                                backgroundColor: "#C9A84C",
-                                boxShadow: "0 0 24px rgba(201,168,76,0.25)",
-                            }}
-                        >
-                            Hear the Difference ↓
-                        </a>
-                        <a
-                            href="/contact"
-                            className="text-white/40 hover:text-[#f5b942] transition text-sm"
-                        >
-                            or get in touch →
-                        </a>
+                    {/* Headline block — tight rhythm, no dead gaps */}
+                    <div className="flex flex-col gap-6">
+                        <h1 className="text-3xl md:text-5xl font-semibold leading-tight">
+                            Your Sound, <span className="text-[#f5b942]">Elevated.</span>
+                        </h1>
+                        {/* Living waveform — the site is about sound, so show sound */}
+                        <div className="hero-wave flex items-end gap-[3px]" style={{ height: "44px" }} aria-hidden="true">
+                            {Array.from({ length: 56 }).map((_, i) => {
+                                const base = 20 + Math.abs(Math.sin(i * 0.45)) * 70;
+                                return (
+                                    <span
+                                        key={i}
+                                        style={{
+                                            height: `${Math.round(base)}%`,
+                                            animationDelay: `${(i % 14) * 0.18}s`,
+                                        }}
+                                    />
+                                );
+                            })}
+                        </div>
+                        <p className="text-white/70 text-md md:text-lg leading-relaxed max-w-lg">
+                            A Warsaw-based studio for mixing, mastering, arrangement and production. Rough recordings come in — polished, release-ready tracks come out.
+                        </p>
+                        <div className="flex items-center gap-6 flex-wrap">
+                            <a
+                                href="#demos"
+                                className="inline-flex items-center gap-2 text-black font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition text-sm"
+                                style={{
+                                    backgroundColor: "#C9A84C",
+                                    boxShadow: "0 0 24px rgba(201,168,76,0.25)",
+                                }}
+                            >
+                                Hear the Difference ↓
+                            </a>
+                            <a
+                                href="/contact"
+                                className="text-white/40 hover:text-[#f5b942] transition text-sm"
+                            >
+                                or get in touch →
+                            </a>
+                        </div>
                     </div>
                     <h2 className="text-2xl md:text-3xl font-semibold">
                         Professional Audio Services
@@ -85,7 +88,7 @@ export default function Hero() {
 
                 {/* Right */}
                 <div className="flex flex-col gap-6">
-                    <div className="w-full aspect-[16/9] relative rounded-xl overflow-hidden">
+                    <div className="w-full aspect-[16/9] md:aspect-[4/3] relative rounded-xl overflow-hidden">
                         <Image
                             src="/images/Serhii-Lazariev.webp"
                             alt="Serhii Lazariev — mixing and mastering engineer in his Warsaw studio"
