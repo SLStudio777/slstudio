@@ -134,6 +134,21 @@ export default function BeforeAfterCard({title, before, after}) {
             onMouseLeave={() => setHovered(false)}
         >
             <style>{`
+                .demo-wave span {
+                    background: linear-gradient(to bottom,
+                        rgba(201,168,76,0.08),
+                        rgba(201,168,76,0.45) 50%,
+                        rgba(201,168,76,0.08));
+                    transform-origin: center;
+                    animation: demo-wave-pulse 5s ease-in-out infinite;
+                }
+                @keyframes demo-wave-pulse {
+                    0%, 100% { transform: scaleY(0.45); opacity: 0.55; }
+                    50%      { transform: scaleY(1);    opacity: 0.95; }
+                }
+                @media (prefers-reduced-motion: reduce) {
+                    .demo-wave span { animation: none; }
+                }
                 @keyframes ring-pulse {
                     0%   { transform: scale(1);   opacity: 0.6; }
                     100% { transform: scale(1.9); opacity: 0; }
@@ -207,10 +222,13 @@ export default function BeforeAfterCard({title, before, after}) {
             {/* Waveform */}
             <div className="px-5 py-2">
                 {!ready && (
-                    <div className="flex items-end gap-[2px]" style={{ height: 60 }} aria-hidden="true">
+                    <div className="demo-wave flex items-center gap-[2px]" style={{ height: 60 }} aria-hidden="true">
                         {PLACEHOLDER_BARS.map((h, i) => (
                             <span key={i} className="flex-1 rounded-[2px]"
-                                  style={{ height: `${h}px`, background: "rgba(255,255,255,0.12)" }} />
+                                  style={{
+                                      height: `${h}px`,
+                                      animationDelay: `${(-i * 0.11).toFixed(2)}s`,
+                                  }} />
                         ))}
                     </div>
                 )}

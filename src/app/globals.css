@@ -34,7 +34,8 @@ html {
 
 .hero-wave span {
   flex: 1;
-  max-width: 6px;
+  /* no max-width cap: bars must fill the row on any screen width */
+  min-width: 1px;
   border-radius: 3px;
   background: linear-gradient(
     to bottom,

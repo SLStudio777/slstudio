@@ -22,11 +22,11 @@ export default function Hero() {
                         </h1>
                         {/* Living waveform — mirrored around a center line like a real DAW
                             waveform, trailing off toward the photo on desktop */}
-                        <div className="hero-wave relative flex items-center gap-[3px] w-full md:w-[calc(100%+3rem)] md:-mr-12" style={{ height: "56px" }} aria-hidden="true">
-                            {Array.from({ length: 72 }).map((_, i) => {
+                        <div className="hero-wave relative flex items-center gap-[2px] w-full md:w-[calc(100%+3rem)] md:-mr-12" style={{ height: "56px" }} aria-hidden="true">
+                            {Array.from({ length: 120 }).map((_, i) => {
                                 const organic =
-                                    Math.abs(Math.sin(i * 0.35)) * 55 +
-                                    Math.abs(Math.sin(i * 1.7)) * 30 +
+                                    Math.abs(Math.sin(i * 0.22)) * 55 +
+                                    Math.abs(Math.sin(i * 1.1)) * 30 +
                                     ((i * 7) % 13);
                                 return (
                                     <span
@@ -35,7 +35,7 @@ export default function Hero() {
                                             height: `${Math.round(16 + Math.min(organic, 82))}%`,
                                             // negative phase shift => one smooth crest travels
                                             // left-to-right, no per-bar jitter
-                                            animationDelay: `${(-i * 0.12).toFixed(2)}s`,
+                                            animationDelay: `${(-i * 0.075).toFixed(3)}s`,
                                         }}
                                     />
                                 );
@@ -49,7 +49,7 @@ export default function Hero() {
                             }}
                         >
                             <p className="text-white/70 text-md md:text-lg leading-relaxed">
-                                A Warsaw studio for mixing, mastering, arrangement and production — where your music comes alive.
+                                A Warsaw studio for mixing, mastering, arrangement and production — a place where your music comes alive.
                             </p>
                         </div>
                         <div className="flex items-center gap-6 flex-wrap">
