@@ -32,7 +32,7 @@ export default function Hero() {
                                     <span
                                         key={i}
                                         style={{
-                                            height: `${Math.round(10 + Math.min(organic, 88))}%`,
+                                            height: `${Math.round(16 + Math.min(organic, 82))}%`,
                                             // negative phase shift => one smooth crest travels
                                             // left-to-right, no per-bar jitter
                                             animationDelay: `${(-i * 0.12).toFixed(2)}s`,
