@@ -184,7 +184,7 @@ export default function BeforeAfterCard({title, before, after}) {
                     <button
                         onClick={() => switchMode("before")}
                         className={`mode-btn px-3 py-1 rounded-md font-medium cursor-pointer
-                            ${mode === "before" ? "text-black" : "text-white/40"}`}
+                            ${mode === "before" ? "text-black" : "text-white/55"}`}
                         style={mode === "before"
                             ? { backgroundColor: "#C9A84C", boxShadow: "0 0 8px rgba(201,168,76,0.4)" }
                             : {}}
@@ -194,7 +194,7 @@ export default function BeforeAfterCard({title, before, after}) {
                     <button
                         onClick={() => switchMode("after")}
                         className={`mode-btn px-3 py-1 rounded-md font-medium cursor-pointer
-                            ${mode === "after" ? "text-black" : "text-white/40"}`}
+                            ${mode === "after" ? "text-black" : "text-white/55"}`}
                         style={mode === "after"
                             ? { backgroundColor: "#C9A84C", boxShadow: "0 0 8px rgba(201,168,76,0.4)" }
                             : {}}

@@ -112,7 +112,7 @@ export default function HowItWorks() {
                                     style={{ backgroundColor: "rgba(201,168,76,0.1)" }}>
                                     <Icon className="w-5 h-5" style={{ color: "#C9A84C" }} />
                                 </div>
-                                <span className="text-3xl font-bold"
+                                <span className="step-number text-3xl font-bold"
                                     style={{ color: highlight ? "rgba(201,168,76,0.5)" : "rgba(201,168,76,0.25)" }}>
                                     {step}
                                 </span>
@@ -130,7 +130,7 @@ export default function HowItWorks() {
                                         {time}
                                     </span>
                                 </div>
-                                <p className="text-white/50 text-[15px] leading-relaxed">{description}</p>
+                                <p className="text-white/65 text-[15px] leading-relaxed">{description}</p>
                             </div>
                         </div>
                     </ScrollReveal>

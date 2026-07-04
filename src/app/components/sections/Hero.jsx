@@ -49,7 +49,7 @@ export default function Hero() {
                         <div className="flex items-center gap-6 flex-wrap">
                             <a
                                 href="#demos"
-                                className="inline-flex items-center gap-2 text-black font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition text-sm"
+                                className="btn-gold inline-flex items-center gap-2 text-black font-semibold px-8 py-4 rounded-xl text-sm"
                                 style={{
                                     backgroundColor: "#C9A84C",
                                     boxShadow: "0 0 24px rgba(201,168,76,0.25)",
@@ -59,7 +59,7 @@ export default function Hero() {
                             </a>
                             <a
                                 href="/contact"
-                                className="text-white/40 hover:text-[#f5b942] transition text-sm"
+                                className="text-white/55 hover:text-[#f5b942] transition text-sm"
                             >
                                 or get in touch →
                             </a>
@@ -86,7 +86,7 @@ export default function Hero() {
                                 <span className="text-2xl md:text-3xl font-semibold text-[#f5b942]">
                                     {s.value}
                                 </span>
-                                <span className="text-white/40 text-xs uppercase tracking-widest">
+                                <span className="text-white/55 text-xs uppercase tracking-widest">
                                     {s.label}
                                 </span>
                             </div>

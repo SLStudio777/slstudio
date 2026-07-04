@@ -29,7 +29,7 @@ export default function WhyChoose() {
                         </div>
                         <div className="flex flex-col gap-1.5">
                             <h3 className="font-semibold text-base text-white">{title}</h3>
-                            <p className="text-white/50 text-[15px] leading-relaxed">{description}</p>
+                            <p className="text-white/65 text-[15px] leading-relaxed">{description}</p>
                         </div>
                     </div>
                 ))}

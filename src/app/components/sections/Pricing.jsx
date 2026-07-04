@@ -55,17 +55,17 @@ function ServiceCard({ icon: Icon, title, price, description, featured, service 
 
             {/* Title + price */}
             <div>
-                <p className="text-white/40 text-xs uppercase tracking-widest mb-0.5">{title}</p>
+                <p className="text-white/55 text-xs uppercase tracking-widest mb-0.5">{title}</p>
                 <p className="text-xl font-semibold" style={{ color: "#C9A84C" }}>{price}</p>
             </div>
 
             {/* Description */}
-            <p className="text-white/50 text-sm leading-relaxed flex-1">{description}</p>
+            <p className="text-white/65 text-sm leading-relaxed flex-1">{description}</p>
 
             {/* Button */}
             <Link
                 href={`/contact?service=${service}`}
-                className="py-2 px-5 rounded-xl text-xs font-semibold text-center transition hover:opacity-90 w-full mt-1"
+                className="btn-gold py-2 px-5 rounded-xl text-xs font-semibold text-center w-full mt-1"
                 style={featured
                     ? { background: "#C9A84C", color: "#161616" }
                     : { background: "rgba(201,168,76,0.08)", color: "#C9A84C", border: "1px solid rgba(201,168,76,0.25)" }
@@ -83,7 +83,7 @@ export default function Pricing() {
             <div className="mb-8">
                 <span className="text-white/30 text-xs uppercase tracking-[0.3em]">Pricing</span>
                 <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mt-2">Simple, Transparent Pricing</h2>
-                <p className="text-white/40 text-sm mt-2">No hidden fees. Exact price confirmed after discussing your project.</p>
+                <p className="text-white/55 text-sm mt-2">No hidden fees. Exact price confirmed after discussing your project.</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
@@ -105,7 +105,7 @@ export default function Pricing() {
                             </div>
                             <div>
                                 <p className="font-medium text-sm text-white mb-0.5">{title}</p>
-                                <p className="text-white/40 text-xs leading-relaxed">{description}</p>
+                                <p className="text-white/55 text-xs leading-relaxed">{description}</p>
                             </div>
                         </div>
                     </ScrollReveal>

@@ -15,12 +15,12 @@ export default function FinalCTA() {
                 <h2 className="text-3xl md:text-4xl font-semibold tracking-wide relative z-10">
                     Ready to transform your sound?
                 </h2>
-                <p className="text-white/50 text-[15px] relative z-10">
+                <p className="text-white/65 text-[15px] relative z-10">
                     First listen is always free. No commitment.
                 </p>
                 <Link
                     href="/contact"
-                    className="relative z-10 inline-flex items-center gap-2 font-semibold px-10 py-4 rounded-xl hover:opacity-90 transition text-sm"
+                    className="btn-gold relative z-10 inline-flex items-center gap-2 font-semibold px-10 py-4 rounded-xl text-sm"
                     style={{
                         background: "linear-gradient(135deg, #C9A84C 0%, #e8c97a 50%, #C9A84C 100%)",
                         backgroundSize: "200% auto",

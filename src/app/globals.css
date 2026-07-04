@@ -28,6 +28,36 @@ html {
   .hero-wave span { animation: none; }
 }
 
+/* How It Works: step numbers flare up one by one as cards reveal */
+.animate-on-scroll.is-visible .step-number {
+  animation: stepFlare 0.9s ease-out 0.15s both;
+}
+
+@keyframes stepFlare {
+  0%   { text-shadow: none; }
+  45%  { color: #f5b942; text-shadow: 0 0 18px rgba(245, 185, 66, 0.75); }
+  100% { color: rgba(201, 168, 76, 0.6); text-shadow: 0 0 6px rgba(201, 168, 76, 0.25); }
+}
+
+/* Gold CTA buttons: lift + glow on hover, press on click */
+.btn-gold {
+  transition: transform 0.15s ease, box-shadow 0.25s ease, opacity 0.2s ease;
+}
+
+.btn-gold:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 28px rgba(201, 168, 76, 0.45);
+}
+
+.btn-gold:active {
+  transform: translateY(0) scale(0.97);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-on-scroll.is-visible .step-number { animation: none; }
+  .btn-gold, .btn-gold:hover, .btn-gold:active { transform: none; }
+}
+
 body {
   background: #1b1b1b;
   font-family: inherit;

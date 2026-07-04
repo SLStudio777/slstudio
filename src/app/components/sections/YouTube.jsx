@@ -15,7 +15,7 @@ export default async function YouTube() {
         <section className="py-12 border-t border-white/5">
             <div className="mb-10">
                 <div className="flex items-center gap-2 mb-2">
-                    <YouTubeIcon size={16} className="text-white/50" />
+                    <YouTubeIcon size={16} className="text-white/65" />
                     <span className="text-white/30 text-xs uppercase tracking-[0.3em]">
                         YouTube Projects
                     </span>
@@ -28,13 +28,13 @@ export default async function YouTube() {
                         href="https://www.youtube.com/@SLStudio_Guitar"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-sm text-white/40 hover:text-white transition flex-shrink-0"
+                        className="flex items-center gap-2 text-sm text-white/55 hover:text-white transition flex-shrink-0"
                     >
                         <YouTubeRedIcon size={16} />
                         <span>@SLStudio_Guitar</span>
                     </a>
                 </div>
-                <p className="mt-3 text-white/50 text-sm leading-relaxed max-w-xl">
+                <p className="mt-3 text-white/65 text-sm leading-relaxed max-w-xl">
                     A selection of my music production and arrangement work, featuring original tracks and projects from my YouTube channel.
                 </p>
             </div>

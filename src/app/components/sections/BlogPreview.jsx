@@ -36,7 +36,7 @@ export default function BlogPreview() {
                     <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mt-2">
                         Guides & Insights
                     </h2>
-                    <p className="text-white/40 text-sm mt-2 max-w-lg">
+                    <p className="text-white/55 text-sm mt-2 max-w-lg">
                         Practical guides on Suno AI, mixing, mastering and music production — written from real studio experience.
                     </p>
                 </div>
