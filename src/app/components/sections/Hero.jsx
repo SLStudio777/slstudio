@@ -20,16 +20,21 @@ export default function Hero() {
                         <h1 className="text-3xl md:text-5xl font-semibold leading-tight">
                             Your Sound, <span className="text-[#f5b942]">Elevated.</span>
                         </h1>
-                        {/* Living waveform — the site is about sound, so show sound */}
-                        <div className="hero-wave flex items-end gap-[3px]" style={{ height: "44px" }} aria-hidden="true">
-                            {Array.from({ length: 56 }).map((_, i) => {
-                                const base = 20 + Math.abs(Math.sin(i * 0.45)) * 70;
+                        {/* Living waveform — mirrored around a center line like a real DAW
+                            waveform, trailing off toward the photo on desktop */}
+                        <div className="hero-wave relative flex items-center gap-[3px] w-full md:-mr-12" style={{ height: "56px" }} aria-hidden="true">
+                            {Array.from({ length: 72 }).map((_, i) => {
+                                const organic =
+                                    Math.abs(Math.sin(i * 0.35)) * 55 +
+                                    Math.abs(Math.sin(i * 1.7)) * 30 +
+                                    ((i * 7) % 13);
                                 return (
                                     <span
                                         key={i}
                                         style={{
-                                            height: `${Math.round(base)}%`,
-                                            animationDelay: `${(i % 14) * 0.18}s`,
+                                            height: `${Math.round(10 + Math.min(organic, 88))}%`,
+                                            animationDelay: `${(i % 9) * 0.22}s`,
+                                            animationDuration: `${2.2 + (i % 5) * 0.35}s`,
                                         }}
                                     />
                                 );

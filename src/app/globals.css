@@ -9,18 +9,39 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Hero: living gold waveform */
+/* Hero: living gold waveform — mirrored around a center line, fading out
+   toward the photo like a track trailing off */
+.hero-wave {
+  mask-image: linear-gradient(to right, black 55%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, black 55%, transparent 100%);
+}
+
+.hero-wave::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: rgba(201, 168, 76, 0.18);
+}
+
 .hero-wave span {
   flex: 1;
-  max-width: 7px;
-  border-radius: 2px;
-  background: linear-gradient(to top, rgba(201, 168, 76, 0.55), rgba(201, 168, 76, 0.10));
-  transform-origin: bottom;
+  max-width: 6px;
+  border-radius: 3px;
+  background: linear-gradient(
+    to bottom,
+    rgba(201, 168, 76, 0.10),
+    rgba(233, 196, 106, 0.85) 50%,
+    rgba(201, 168, 76, 0.10)
+  );
+  transform-origin: center;
   animation: heroWave 2.6s ease-in-out infinite alternate;
 }
 
 @keyframes heroWave {
-  0%   { transform: scaleY(0.30); opacity: 0.5; }
+  0%   { transform: scaleY(0.35); opacity: 0.55; }
   100% { transform: scaleY(1);    opacity: 1; }
 }
 
