@@ -22,7 +22,7 @@ export default function Hero() {
                         </h1>
                         {/* Living waveform — mirrored around a center line like a real DAW
                             waveform, trailing off toward the photo on desktop */}
-                        <div className="hero-wave relative flex items-center gap-[2px] w-full md:w-[calc(100%+3rem)] md:-mr-12" style={{ height: "56px" }} aria-hidden="true">
+                        <div className="hero-wave relative flex items-center gap-[2px] w-full" style={{ height: "56px" }} aria-hidden="true">
                             {Array.from({ length: 120 }).map((_, i) => {
                                 const organic =
                                     Math.abs(Math.sin(i * 0.22)) * 55 +
