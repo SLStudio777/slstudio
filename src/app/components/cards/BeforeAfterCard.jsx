@@ -219,8 +219,9 @@ export default function BeforeAfterCard({title, before, after}) {
                 </div>
             </div>
 
-            {/* Waveform */}
-            <div className="px-5 py-2">
+            {/* Waveform — mt-auto pins wave+controls to the card bottom so Play
+                buttons align across cards even when titles wrap differently */}
+            <div className="px-5 py-2 mt-auto">
                 {!ready && (
                     <div className="demo-wave flex items-center gap-[2px]" style={{ height: 60 }} aria-hidden="true">
                         {PLACEHOLDER_BARS.map((h, i) => (
