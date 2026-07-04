@@ -35,9 +35,17 @@ export default function Hero() {
                                 );
                             })}
                         </div>
-                        <p className="text-white/70 text-md md:text-lg leading-relaxed max-w-lg">
-                            A Warsaw-based studio for mixing, mastering, arrangement and production. Rough recordings come in — polished, release-ready tracks come out.
-                        </p>
+                        <div
+                            className="w-full rounded-xl p-5"
+                            style={{
+                                background: "rgba(201,168,76,0.05)",
+                                borderLeft: "3px solid #C9A84C",
+                            }}
+                        >
+                            <p className="text-white/70 text-md md:text-lg leading-relaxed">
+                                A Warsaw studio for mixing, mastering, arrangement and production — where your track gets real ears, honest taste, and the time it deserves.
+                            </p>
+                        </div>
                         <div className="flex items-center gap-6 flex-wrap">
                             <a
                                 href="#demos"
@@ -86,9 +94,9 @@ export default function Hero() {
                     </div>
                 </div>
 
-                {/* Right */}
-                <div className="flex flex-col gap-6">
-                    <div className="w-full aspect-[16/9] md:aspect-[4/3] relative rounded-xl overflow-hidden">
+                {/* Right — stretches to match the left column, photo absorbs the height */}
+                <div className="flex flex-col gap-6 md:self-stretch">
+                    <div className="w-full aspect-[16/9] md:aspect-auto md:flex-1 md:min-h-[320px] relative rounded-xl overflow-hidden">
                         <Image
                             src="/images/Serhii-Lazariev.webp"
                             alt="Serhii Lazariev — mixing and mastering engineer in his Warsaw studio"

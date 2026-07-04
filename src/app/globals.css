@@ -12,7 +12,7 @@ html {
 /* Hero: living gold waveform */
 .hero-wave span {
   flex: 1;
-  max-width: 5px;
+  max-width: 7px;
   border-radius: 2px;
   background: linear-gradient(to top, rgba(201, 168, 76, 0.55), rgba(201, 168, 76, 0.10));
   transform-origin: bottom;
