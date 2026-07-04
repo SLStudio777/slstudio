@@ -5,6 +5,29 @@ html, body {
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hero: living gold waveform */
+.hero-wave span {
+  flex: 1;
+  max-width: 5px;
+  border-radius: 2px;
+  background: linear-gradient(to top, rgba(201, 168, 76, 0.55), rgba(201, 168, 76, 0.10));
+  transform-origin: bottom;
+  animation: heroWave 2.6s ease-in-out infinite alternate;
+}
+
+@keyframes heroWave {
+  0%   { transform: scaleY(0.30); opacity: 0.5; }
+  100% { transform: scaleY(1);    opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-wave span { animation: none; }
+}
+
 body {
   background: #1b1b1b;
   font-family: inherit;

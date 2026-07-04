@@ -13,7 +13,7 @@ export default async function BeforeAfter() {
     `);
 
     return (
-        <section className="py-10">
+        <section id="demos" className="py-10" style={{ scrollMarginTop: "80px" }}>
             <div className="mb-10">
                 <div className="text-white/40 mb-4 flex items-center gap-2">
                     <AudioWaveform size={16} />
