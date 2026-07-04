@@ -33,8 +33,9 @@ export default function Hero() {
                                         key={i}
                                         style={{
                                             height: `${Math.round(10 + Math.min(organic, 88))}%`,
-                                            animationDelay: `${(i % 9) * 0.22}s`,
-                                            animationDuration: `${2.2 + (i % 5) * 0.35}s`,
+                                            // negative phase shift => one smooth crest travels
+                                            // left-to-right, no per-bar jitter
+                                            animationDelay: `${(-i * 0.12).toFixed(2)}s`,
                                         }}
                                     />
                                 );
