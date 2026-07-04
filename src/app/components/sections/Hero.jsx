@@ -17,7 +17,7 @@ export default function Hero() {
                 <div className="flex flex-col gap-10">
                     {/* Headline block — tight rhythm, no dead gaps */}
                     <div className="flex flex-col gap-6">
-                        <h1 className="text-3xl md:text-5xl font-semibold leading-tight">
+                        <h1 className="text-3xl md:text-5xl font-semibold leading-tight tracking-wide">
                             Welcome to the <span className="text-[#f5b942]">Creative Studio</span>
                         </h1>
                         {/* Living waveform — mirrored around a center line like a real DAW
