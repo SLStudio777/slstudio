@@ -11,8 +11,8 @@ export default function YouTubeCard({ videoId, title }) {
         <div
             className="rounded-xl overflow-hidden border transition-all duration-300"
             style={{
-                border: hovered ? "1px solid rgba(201,168,76,0.4)" : "1px solid rgba(255,255,255,0.12)",
-                background: "rgba(255,255,255,0.02)",
+                border: hovered ? "1px solid rgba(201,168,76,0.4)" : "1px solid rgba(255,255,255,0.1)",
+                background: "rgba(255,255,255,0.05)",
                 boxShadow: hovered ? "0 8px 32px rgba(201,168,76,0.1)" : "none",
                 transform: hovered ? "translateY(-2px)" : "translateY(0)",
             }}
