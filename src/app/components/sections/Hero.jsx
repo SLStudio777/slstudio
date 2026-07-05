@@ -52,10 +52,11 @@ export default function Hero() {
                                 A Warsaw studio for mixing, mastering, arrangement and production — a place where your music comes alive.
                             </p>
                         </div>
-                        <div className="flex items-center gap-6 flex-wrap">
+                        {/* CTA row mirrors the two service-card columns below */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <a
                                 href="#demos"
-                                className="btn-gold inline-flex items-center gap-2 text-black font-semibold px-8 py-4 rounded-xl text-sm"
+                                className="btn-gold inline-flex items-center justify-center gap-2 text-black font-semibold px-8 py-4 rounded-xl text-sm"
                                 style={{
                                     backgroundColor: "#C9A84C",
                                     boxShadow: "0 0 24px rgba(201,168,76,0.25)",
@@ -65,9 +66,14 @@ export default function Hero() {
                             </a>
                             <a
                                 href="/contact"
-                                className="text-white/55 hover:text-[#f5b942] transition text-sm"
+                                className="btn-gold inline-flex items-center justify-center gap-2 font-semibold px-8 py-4 rounded-xl text-sm"
+                                style={{
+                                    color: "#C9A84C",
+                                    border: "1px solid rgba(201,168,76,0.35)",
+                                    background: "rgba(201,168,76,0.06)",
+                                }}
                             >
-                                or get in touch →
+                                Get in Touch →
                             </a>
                         </div>
                     </div>

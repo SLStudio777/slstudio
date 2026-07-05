@@ -20,14 +20,14 @@ export const servicesData = [
         id: 1,
         icon: Shuffle,
         title: "Mixing & Mastering",
-        description: "You recorded something. Maybe it's rough, maybe it's almost there — but it doesn't yet sound the way you hear it in your head. I balance every instrument, shape the frequencies, control the dynamics, and master the result so it competes on any platform. Stems, rough mix, or old studio recording — send what you have.",
+        description: "Your track — balanced, polished and mastered until it sounds the way you hear it in your head and competes on any platform. Stems, rough mix or an old recording: send what you have.",
         href: "/mixing-mastering"
     },
     {
         id: 2,
         icon: AudioLines,
         title: "Arrangement & Production",
-        description: "A guitar riff, a voice memo, a rehearsal recording — that's enough to start. I build complete arrangements around your ideas: guitars, bass, keys, drums, strings, any genre. Whether you want to add one instrument or create a full orchestral sound, I work with your vision and bring it to life.",
+        description: "A riff, a voice memo, a rehearsal take — that's enough to start. I build full arrangements around your idea: guitars, bass, keys, drums, strings. Any genre, from one added instrument to a complete production.",
         href: "/arrangement"
     },
 ];
