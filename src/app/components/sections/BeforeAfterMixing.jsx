@@ -15,7 +15,7 @@ export default async function BeforeAfterMixing() {
     if (enhancements.length === 0) return null;
 
     return (
-        <section className="pb-10">
+        <section id="demos" className="py-10" style={{ scrollMarginTop: "80px" }}>
             <div className="mb-10">
                 <div className="text-white/55 mb-4 flex items-center gap-2">
                     <AudioWaveform size={16} />

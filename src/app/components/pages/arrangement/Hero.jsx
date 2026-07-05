@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Hero() {
     return (
-        <section className="mt-16">
+        <section className="mt-16 mb-10">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
                 <div className="flex flex-col gap-6">
                     <span className="
@@ -37,22 +37,19 @@ export default function Hero() {
                     ">
                         From a raw idea to a full professional track
                     </p>
-                    <p className="text-white/65 text-[16px] leading-relaxed max-w-xl">
+                    <p className="text-white/65 text-[16px] leading-relaxed max-w-2xl">
                         A guitar riff, a voice memo, a rehearsal recording — that's enough to start. I build complete arrangements around your ideas. Any genre, remote workflow, worldwide.
                     </p>
-                    <div>
-                        <Link
-                            href="/contact"
-                            className="
-                                inline-flex items-center gap-2
-                                text-black
-                                px-6 py-3 rounded-xl
-                                font-medium text-sm
-                                hover:opacity-90 transition
-                            "
-                            style={{backgroundColor: "#C9A84C"}}
+                    <div className="flex items-center gap-6 flex-wrap">
+                        <a
+                            href="#demos"
+                            className="btn-gold inline-flex items-center gap-2 text-black font-semibold px-6 py-3 rounded-xl text-sm"
+                            style={{ backgroundColor: "#C9A84C", boxShadow: "0 0 24px rgba(201,168,76,0.25)" }}
                         >
-                            Send Your Idea →
+                            Hear the Difference ↓
+                        </a>
+                        <Link href="/contact" className="text-white/55 hover:text-[#f5b942] transition text-sm">
+                            or send your idea directly →
                         </Link>
                     </div>
                     {/* Trust strip — real numbers, visible to visitors who land
