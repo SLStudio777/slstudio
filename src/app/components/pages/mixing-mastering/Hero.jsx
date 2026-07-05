@@ -4,75 +4,73 @@ import Link from "next/link";
 export default function Hero() {
     return (
         <section className="mt-16">
-            <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 items-stretch">
-                <div className="flex flex-col gap-8">
-                    <div className="flex flex-col gap-4">
-                        <span className="
-                            text-white/40
-                            text-xs
-                            uppercase
-                            tracking-[0.3em]
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+                <div className="flex flex-col gap-6">
+                    <span className="
+                        text-white/40
+                        text-xs
+                        uppercase
+                        tracking-[0.3em]
+                    ">
+                        Mixing Service
+                    </span>
+                    <div className="relative">
+                        <div className="hero-title-glow" aria-hidden="true" />
+                        <h1 className="
+                            relative
+                            text-4xl md:text-6xl
+                            font-semibold
+                            leading-tight
+                            tracking-wide
                         ">
-                            Mixing Service
-                        </span>
-                        <div className="relative">
-                            <div className="hero-title-glow" aria-hidden="true" />
-                            <h1 className="
-                                relative
-                                text-4xl md:text-6xl
-                                font-semibold
-                                leading-tight
-                                tracking-wide
-                            ">
-                                Mixing &{" "}
-                                <span className="text-gold2">
-                                    Mastering
-                                </span>
-                            </h1>
-                        </div>
-                        <p className="
-                            text-xl md:text-2xl
-                            text-white/60
-                            leading-relaxed
-                            max-w-2xl
-                        ">
-                            When every instrument finally finds its place
-                        </p>
-                        <p className="mt-4 text-white/50 text-[15px] leading-relaxed max-w-xl">
-                            Send your stems, rough mix, or old studio recording — I return a polished, release-ready track. Remote workflow, any genre, fast turnaround.
-                        </p>
-                        <div className="mt-4">
-                            <Link
-                                href="/contact"
-                                className="
-                                    inline-flex items-center gap-2
-                                    text-black
-                                    px-6 py-3 rounded-xl
-                                    font-medium text-sm
-                                    hover:opacity-90 transition
-                                "
-                                style={{backgroundColor: "#C9A84C"}}
-                            >
-                                Send Your Track →
-                            </Link>
-                        </div>
-                        {/* Trust strip — real numbers, visible to visitors who land
-                            here directly from search, without ever seeing the homepage */}
-                        <div className="flex items-center gap-6 flex-wrap mt-2 pt-4 border-t border-white/5">
-                            {[
-                                { value: "300+", label: "Tracks Mixed & Mastered" },
-                                { value: "10+", label: "Years Behind the Board" },
-                                { value: "3–5 Days", label: "Typical Turnaround" },
-                            ].map((s, i) => (
-                                <div key={i} className="flex items-baseline gap-1.5">
-                                    <span className="text-lg font-semibold text-[#f5b942]">{s.value}</span>
-                                    <span className="text-white/40 text-xs uppercase tracking-widest">{s.label}</span>
-                                </div>
-                            ))}
-                        </div>
+                            Mixing &{" "}
+                            <span className="text-gold2">
+                                Mastering
+                            </span>
+                        </h1>
+                    </div>
+                    <p className="
+                        text-xl md:text-2xl
+                        text-white/60
+                        leading-relaxed
+                        max-w-2xl
+                    ">
+                        When every instrument finally finds its place
+                    </p>
+                    <p className="text-white/65 text-[16px] leading-relaxed max-w-xl">
+                        Send your stems, rough mix, or old studio recording — I return a polished, release-ready track. Remote workflow, any genre, fast turnaround.
+                    </p>
+                    <div>
+                        <Link
+                            href="/contact"
+                            className="
+                                inline-flex items-center gap-2
+                                text-black
+                                px-6 py-3 rounded-xl
+                                font-medium text-sm
+                                hover:opacity-90 transition
+                            "
+                            style={{backgroundColor: "#C9A84C"}}
+                        >
+                            Send Your Track →
+                        </Link>
+                    </div>
+                    {/* Trust strip — real numbers, visible to visitors who land
+                        here directly from search, without ever seeing the homepage */}
+                    <div className="grid grid-cols-3 gap-4 border-t border-white/5 pt-6">
+                        {[
+                            { value: "300+", label: "Tracks Mixed & Mastered" },
+                            { value: "10+", label: "Years Behind the Board" },
+                            { value: "3–5 Days", label: "Typical Turnaround" },
+                        ].map((s, i) => (
+                            <div key={i} className="flex flex-col gap-1">
+                                <span className="text-xl md:text-2xl font-semibold text-[#f5b942]">{s.value}</span>
+                                <span className="text-white/55 text-xs uppercase tracking-widest">{s.label}</span>
+                            </div>
+                        ))}
                     </div>
                 </div>
-                <div className="w-full aspect-[16/9] relative rounded-xl overflow-hidden">
+                <div className="w-full aspect-[16/9] md:aspect-auto md:h-full md:min-h-[320px] relative rounded-xl overflow-hidden">
                     <Image
                         src="/images/Serhii-Lazariev-02.webp"
                         alt="Serhii Lazariev"
