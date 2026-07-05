@@ -19,7 +19,15 @@ export default function YouTubeCard({ videoId, title }) {
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
         >
-            <div className="relative aspect-video bg-black">
+            {/* Header — title lives here, not as a cheap overlay on the thumbnail;
+                mirrors BeforeAfterCard's header-then-content structure */}
+            <div className="px-4 pt-4 pb-3">
+                <p className="text-white text-sm font-medium leading-snug line-clamp-2">
+                    {title}
+                </p>
+            </div>
+
+            <div className="relative aspect-video bg-black mx-4 mb-4 rounded-lg overflow-hidden">
                 {!isLoaded ? (
                     <div className="relative w-full h-full cursor-pointer" onClick={() => setIsLoaded(true)}>
                         <img loading="lazy" decoding="async"
@@ -28,10 +36,6 @@ export default function YouTubeCard({ videoId, title }) {
                             className="w-full h-full object-cover transition-all duration-300"
                             style={{ opacity: hovered ? 1 : 0.85 }}
                         />
-                        {/* Gradient overlay */}
-                        <div className="absolute inset-0" style={{
-                            background: "linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 50%)"
-                        }} />
                         {/* Play button */}
                         <div className="absolute inset-0 flex items-center justify-center">
                             <div
@@ -53,13 +57,6 @@ export default function YouTubeCard({ videoId, title }) {
                                     }}
                                 />
                             </div>
-                        </div>
-                        {/* Title overlay */}
-                        <div className="absolute bottom-0 left-0 right-0 p-3">
-                            <p className="text-white text-xs font-medium leading-snug line-clamp-2"
-                                style={{ textShadow: "0 1px 4px rgba(0,0,0,0.8)" }}>
-                                {title}
-                            </p>
                         </div>
                     </div>
                 ) : (

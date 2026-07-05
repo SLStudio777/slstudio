@@ -15,17 +15,21 @@ export default function Hero() {
                         ">
                             Mixing Service
                         </span>
-                        <h1 className="
-                            text-4xl md:text-6xl
-                            font-semibold
-                            leading-tight
-                            tracking-wide
-                        ">
-                            Mixing &{" "}
-                            <span className="text-gold2">
-                                Mastering
-                            </span>
-                        </h1>
+                        <div className="relative">
+                            <div className="hero-title-glow" aria-hidden="true" />
+                            <h1 className="
+                                relative
+                                text-4xl md:text-6xl
+                                font-semibold
+                                leading-tight
+                                tracking-wide
+                            ">
+                                Mixing &{" "}
+                                <span className="text-gold2">
+                                    Mastering
+                                </span>
+                            </h1>
+                        </div>
                         <p className="
                             text-xl md:text-2xl
                             text-white/60

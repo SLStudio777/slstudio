@@ -76,9 +76,12 @@ export default function Hero() {
                 {/* LEFT */}
                 <div className="flex flex-col gap-3">
                     <span className="text-white/30 text-xs uppercase tracking-[0.3em]">Get In Touch</span>
-                    <h1 className="text-4xl md:text-6xl font-semibold tracking-wide">
-                        {"Let's "}<span className="text-gold2">Work.</span>
-                    </h1>
+                    <div className="relative">
+                        <div className="hero-title-glow" aria-hidden="true" />
+                        <h1 className="relative text-4xl md:text-6xl font-semibold tracking-wide">
+                            {"Let's "}<span className="text-gold2">Work.</span>
+                        </h1>
+                    </div>
                     <p className="text-white/50 text-[15px] leading-relaxed max-w-sm">
                         Send me your track. Tell me what you are going for, and I will tell you what I can do with it.
                     </p>
