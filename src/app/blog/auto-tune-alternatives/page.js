@@ -47,7 +47,7 @@ export default function AutoTunePage() {
                     description="Auto-Tune has been the go-to pitch correction tool for decades. But reliability issues, licensing problems, and strong competition have changed the conversation — here is an honest look at where things stand."
                 />
 
-                <div className="flex flex-col gap-10 text-white/70 text-[15px] leading-relaxed">
+                <div className="flex flex-col gap-10 text-white/70 text-[16px] leading-relaxed">
 
                     {/* Origin story */}
                     <div className="flex flex-col gap-4">

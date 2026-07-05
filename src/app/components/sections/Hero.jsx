@@ -14,16 +14,16 @@ export default function Hero() {
         <section className="mt-16 mb-10">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-end">
                 {/* Left */}
-                <div className="flex flex-col gap-10">
+                <div className="flex flex-col gap-10 mobile-reflow">
                     {/* Headline block — tight rhythm, no dead gaps */}
-                    <div className="flex flex-col gap-6">
+                    <div className="flex flex-col gap-6 [@media(max-width:767px)]:order-1">
                         <div>
                             <span className="text-white/40 text-xs uppercase tracking-[0.3em]">
                                 Warsaw, Poland
                             </span>
                             <div className="relative mt-3">
                                 <div className="hero-title-glow" aria-hidden="true" />
-                                <h1 className="relative text-3xl md:text-5xl font-semibold leading-tight tracking-wide">
+                                <h1 className="relative text-4xl md:text-6xl font-semibold leading-tight tracking-wide">
                                     Welcome to the <span className="text-[#f5b942]">Creative Studio</span>
                                 </h1>
                             </div>
@@ -84,11 +84,15 @@ export default function Hero() {
                                 Get in Touch →
                             </a>
                         </div>
+                        {/* Audience + price clarifier — answers "is this for me?" in one line */}
+                        <p className="text-white/45 text-xs uppercase tracking-widest">
+                            For independent artists · from $25 per track · remote, worldwide
+                        </p>
                     </div>
-                    <h2 className="text-2xl md:text-3xl font-semibold">
+                    <h2 className="text-2xl md:text-3xl font-semibold [@media(max-width:767px)]:order-3">
                         Professional Audio Services
                     </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch [@media(max-width:767px)]:order-4">
                         {servicesData.map(el => (
                             <HeroCard
                                 key={el.id}
@@ -100,7 +104,7 @@ export default function Hero() {
                         ))}
                     </div>
                     {/* Stats */}
-                    <div className="grid grid-cols-3 gap-4 border-t border-white/5 pt-8">
+                    <div className="grid grid-cols-3 gap-4 border-t border-white/5 pt-8 [@media(max-width:767px)]:order-5">
                         {stats.map((s, i) => (
                             <div key={i} className="flex flex-col gap-1">
                                 <span className="text-2xl md:text-3xl font-semibold text-[#f5b942]">
@@ -115,8 +119,8 @@ export default function Hero() {
                 </div>
 
                 {/* Right — stretches to match the left column, photo absorbs the height */}
-                <div className="flex flex-col gap-6 md:self-stretch">
-                    <div className="w-full aspect-[16/9] md:aspect-auto md:flex-1 md:min-h-[320px] relative rounded-xl overflow-hidden">
+                <div className="flex flex-col gap-6 md:self-stretch mobile-reflow">
+                    <div className="w-full aspect-[16/9] md:aspect-auto md:flex-1 md:min-h-[320px] relative rounded-xl overflow-hidden [@media(max-width:767px)]:order-2">
                         <Image
                             src="/images/Serhii-Lazariev.webp"
                             alt="Serhii Lazariev — mixing and mastering engineer in his Warsaw studio"
@@ -128,7 +132,7 @@ export default function Hero() {
                     </div>
 
                     {/* About me */}
-                    <div className="flex flex-col gap-3 pt-2 border-t border-white/5">
+                    <div className="flex flex-col gap-3 pt-2 border-t border-white/5 [@media(max-width:767px)]:order-6">
                         <span className="text-white/30 text-xs uppercase tracking-[0.3em]">
                             Guitarist · Producer · Engineer
                         </span>

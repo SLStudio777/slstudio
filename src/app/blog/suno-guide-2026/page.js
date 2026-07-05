@@ -163,7 +163,7 @@ export default function SunoGuidePage() {
                     description="If your current workflow is: open Suno → type something → hit Generate → hope for the best — you are not using this tool. You are playing a slot machine with audio. This guide fixes that."
                 />
 
-                <div className="flex flex-col gap-14 text-white/70 text-[15px] leading-relaxed">
+                <div className="flex flex-col gap-14 text-white/70 text-[16px] leading-relaxed">
 
                     {/* Intro callout */}
                     <div className="rounded-2xl p-6 flex gap-4 items-start" style={{ background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.2)" }}>

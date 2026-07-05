@@ -46,7 +46,7 @@ export default function BestMixingPluginsPage() {
                     description="Every engineer has a graveyard of plugins bought, tried once, and never opened again. This is the opposite list — the tools that actually earn their place in every session."
                 />
 
-                <div className="flex flex-col gap-10 text-white/70 text-[15px] leading-relaxed">
+                <div className="flex flex-col gap-10 text-white/70 text-[16px] leading-relaxed">
 
                     <div className="flex flex-col gap-4">
                         <p>The plugin market never stops growing. Between subscription bundles, flash sales, and endless YouTube recommendations, it is easy to accumulate hundreds of processors that never actually improve your mixes. The tools on this list are different — each one solves a real problem, sounds genuinely good, and has earned a permanent spot in the workflow.</p>

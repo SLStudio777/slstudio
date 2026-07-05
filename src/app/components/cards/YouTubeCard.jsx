@@ -9,12 +9,12 @@ export default function YouTubeCard({ videoId, title }) {
 
     return (
         <div
-            className="rounded-xl overflow-hidden border transition-all duration-300"
+            className="rounded-2xl overflow-hidden border transition-all duration-300"
             style={{
                 border: hovered ? "1px solid rgba(201,168,76,0.4)" : "1px solid rgba(255,255,255,0.1)",
                 background: "rgba(255,255,255,0.05)",
-                boxShadow: hovered ? "0 8px 32px rgba(201,168,76,0.1)" : "none",
-                transform: hovered ? "translateY(-2px)" : "translateY(0)",
+                boxShadow: hovered ? "0 8px 28px rgba(201,168,76,0.10)" : "none",
+                transform: hovered ? "translateY(-3px)" : "translateY(0)",
             }}
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
@@ -34,7 +34,7 @@ export default function YouTubeCard({ videoId, title }) {
                             src={thumbnail}
                             alt={title}
                             className="w-full h-full object-cover transition-all duration-300"
-                            style={{ opacity: hovered ? 1 : 0.85 }}
+                            style={{ opacity: hovered ? 1 : 0.85, filter: "saturate(0.82) contrast(1.04)" }}
                         />
                         {/* Play button */}
                         <div className="absolute inset-0 flex items-center justify-center">

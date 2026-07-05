@@ -47,12 +47,12 @@ export default function FreeMixingPluginsPage() {
                     <h1 className="text-3xl md:text-5xl font-semibold tracking-wide leading-tight mb-6">
                         Can You Mix a Professional Track with Free Plugins Only?
                     </h1>
-                    <p className="text-white/50 text-lg leading-relaxed">
+                    <p className="text-white/65 text-lg leading-relaxed">
                         A practical test — one full track, only free plugins, honest results. Here is what actually works and where the limitations start to show.
                     </p>
                 </div>
 
-                <div className="flex flex-col gap-10 text-white/70 text-[15px] leading-relaxed">
+                <div className="flex flex-col gap-10 text-white/70 text-[16px] leading-relaxed">
 
                     <div className="flex flex-col gap-4">
                         <h2 className="text-xl md:text-2xl font-semibold text-white">The Question Worth Asking</h2>

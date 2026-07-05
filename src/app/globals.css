@@ -9,6 +9,16 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Home hero: on mobile, unwrap the two desktop columns so their children
+   become direct siblings and can be reordered via order-* utilities —
+   lets the portrait photo surface right after the pitch instead of after
+   the full services+stats block. Desktop layout (md:) is untouched. */
+@media (max-width: 767px) {
+  .mobile-reflow {
+    display: contents;
+  }
+}
+
 /* Soft ambient bloom behind hero H1s — same warm-glow language as the
    button hovers, FinalCTA and hero-card corner glow, so the headline
    doesn't land as a flat, hard-edged block of text */

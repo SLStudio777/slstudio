@@ -82,8 +82,8 @@ export default function Hero() {
                             {"Let's "}<span className="text-gold2">Work.</span>
                         </h1>
                     </div>
-                    <p className="text-white/50 text-[15px] leading-relaxed max-w-sm">
-                        Send me your track. Tell me what you are going for, and I will tell you what I can do with it.
+                    <p className="text-white/65 text-[15px] leading-relaxed max-w-sm">
+                        Send me your track. Tell me what you are going for, and I will tell you what I can do with it — no charge, no obligation, just an honest listen.
                     </p>
 
                     <p className="text-white/25 text-xs uppercase tracking-widest mt-4 mb-1">Connect directly</p>

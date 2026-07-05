@@ -47,12 +47,12 @@ export default function ProToolsVsStudioOnePage() {
                     <h1 className="text-3xl md:text-5xl font-semibold tracking-wide leading-tight mb-6">
                         Pro Tools vs Studio One
                     </h1>
-                    <p className="text-white/50 text-lg leading-relaxed">
+                    <p className="text-white/65 text-lg leading-relaxed">
                         Which DAW is actually better for mixing and mastering? A detailed comparison from someone who has used both extensively — and switched between them more than once.
                     </p>
                 </div>
 
-                <div className="flex flex-col gap-10 text-white/70 text-[15px] leading-relaxed">
+                <div className="flex flex-col gap-10 text-white/70 text-[16px] leading-relaxed">
 
                     <div className="flex flex-col gap-4">
                         <h2 className="text-xl md:text-2xl font-semibold text-white">Pro Tools vs Studio One: The Overview</h2>

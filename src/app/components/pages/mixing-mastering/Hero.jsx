@@ -56,6 +56,20 @@ export default function Hero() {
                                 Send Your Track →
                             </Link>
                         </div>
+                        {/* Trust strip — real numbers, visible to visitors who land
+                            here directly from search, without ever seeing the homepage */}
+                        <div className="flex items-center gap-6 flex-wrap mt-2 pt-4 border-t border-white/5">
+                            {[
+                                { value: "300+", label: "Tracks Mixed & Mastered" },
+                                { value: "10+", label: "Years Behind the Board" },
+                                { value: "3–5 Days", label: "Typical Turnaround" },
+                            ].map((s, i) => (
+                                <div key={i} className="flex items-baseline gap-1.5">
+                                    <span className="text-lg font-semibold text-[#f5b942]">{s.value}</span>
+                                    <span className="text-white/40 text-xs uppercase tracking-widest">{s.label}</span>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
                 <div className="w-full aspect-[16/9] relative rounded-xl overflow-hidden">

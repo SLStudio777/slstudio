@@ -38,7 +38,7 @@ export default function BlogHeader({topic, date, title, description}) {
             <h1 className="text-3xl md:text-5xl font-semibold tracking-wide leading-tight mb-6">
                 {title}
             </h1>
-            <p className="text-white/50 text-lg leading-relaxed">
+            <p className="text-white/65 text-lg leading-relaxed">
                 {description}
             </p>
         </div>

@@ -124,11 +124,12 @@ export default function BeforeAfterCard({title, before, after}) {
 
     return (
         <div
-            className="rounded-xl border border-white/10 bg-white/5 overflow-hidden flex flex-col"
+            className="rounded-2xl border border-white/10 bg-white/5 overflow-hidden flex flex-col"
             style={{
                 borderLeft: "3px solid #C9A84C",
-                transition: "box-shadow 0.3s ease",
-                boxShadow: hovered ? "0 0 0 1px rgba(201,168,76,0.15), 0 4px 24px rgba(201,168,76,0.07)" : "none"
+                transition: "transform 0.2s ease, box-shadow 0.3s ease",
+                transform: hovered ? "translateY(-3px)" : "translateY(0)",
+                boxShadow: hovered ? "0 0 0 1px rgba(201,168,76,0.18), 0 8px 28px rgba(201,168,76,0.10)" : "none"
             }}
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}

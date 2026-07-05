@@ -47,12 +47,12 @@ export default function FXEQReviewPage() {
                     <h1 className="text-3xl md:text-5xl font-semibold tracking-wide leading-tight mb-6">
                         iZotope FXEQ Review — Frequency-Specific Effects for Mixing
                     </h1>
-                    <p className="text-white/50 text-lg leading-relaxed">
+                    <p className="text-white/65 text-lg leading-relaxed">
                         Every now and then a plugin drops that makes you stop and say — that is genuinely new. iZotope FXEQ is one of those. It takes tone-shaping and flips it entirely, letting you boost effects at specific frequencies rather than the audio signal itself.
                     </p>
                 </div>
 
-                <div className="flex flex-col gap-10 text-white/70 text-[15px] leading-relaxed">
+                <div className="flex flex-col gap-10 text-white/70 text-[16px] leading-relaxed">
 
                     <div className="flex flex-col gap-4">
                         <h2 className="text-xl md:text-2xl font-semibold text-white">What Is iZotope FXEQ?</h2>

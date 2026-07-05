@@ -80,12 +80,12 @@ export default function MasteringTimePage() {
                     <h1 className="text-3xl md:text-5xl font-semibold tracking-wide leading-tight mb-6">
                         How Long Does It Take to Master a Song?
                     </h1>
-                    <p className="text-white/50 text-lg leading-relaxed">
+                    <p className="text-white/65 text-lg leading-relaxed">
                         Every artist wants to know this before they send their files. The honest answer is: it depends — but here is exactly what it depends on, and what a realistic timeline looks like.
                     </p>
                 </div>
 
-                <div className="flex flex-col gap-10 text-white/70 text-[15px] leading-relaxed">
+                <div className="flex flex-col gap-10 text-white/70 text-[16px] leading-relaxed">
 
                     <div className="flex flex-col gap-4">
                         <p>Professional <a href="/mixing-mastering" style={{color: "#C9A84C", textDecoration: "underline"}}>mastering</a> typically takes one to three hours of focused work per song. The total timeline from sending files to receiving the finished master is usually three to five business days. This might seem longer than expected, but there are specific reasons why rushing the process almost always compromises the result.</p>

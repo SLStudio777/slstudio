@@ -104,7 +104,7 @@ export default function SunoStudioGuidePage() {
                     description="Part one was about not gambling with generation. This one is about what you do after. Suno Studio is the working layer between hitting Generate and opening your DAW. We're going through all of it."
                 />
 
-                <div className="flex flex-col gap-14 text-white/70 text-[15px] leading-relaxed">
+                <div className="flex flex-col gap-14 text-white/70 text-[16px] leading-relaxed">
 
                     {/* Intro */}
                     <div className="rounded-2xl p-6 flex gap-4 items-start" style={{ background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.2)" }}>

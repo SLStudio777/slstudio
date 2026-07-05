@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
 import { posts } from "../../../data/posts.js";
 
 const FEATURED_SLUGS = [
@@ -12,23 +11,11 @@ const FEATURED_SLUGS = [
 const featured = FEATURED_SLUGS.map(slug => posts.find(p => p.href === slug)).filter(Boolean);
 
 export default function BlogPreview() {
-    const sectionRef = useRef(null);
-    const [lineActive, setLineActive] = useState(false);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => { if (entry.isIntersecting) setLineActive(true); },
-            { threshold: 0.2 }
-        );
-        if (sectionRef.current) observer.observe(sectionRef.current);
-        return () => observer.disconnect();
-    }, []);
-
     return (
-        <section ref={sectionRef} className="py-12 border-t border-white/5">
+        <section className="py-12 border-t border-white/5">
 
             {/* Header row */}
-            <div className="flex items-end justify-between mb-4 gap-4 flex-wrap">
+            <div className="flex items-end justify-between mb-8 gap-4 flex-wrap">
                 <div>
                     <span className="text-white/30 text-xs uppercase tracking-[0.3em]">
                         From the Studio
@@ -42,40 +29,15 @@ export default function BlogPreview() {
                 </div>
                 <Link
                     href="/blog"
-                    className="flex-shrink-0 text-sm font-semibold px-6 py-3 rounded-xl transition-all duration-200 hover:opacity-100"
+                    className="btn-gold flex-shrink-0 text-sm font-semibold px-6 py-3 rounded-xl"
                     style={{
-                        background: "rgba(201,168,76,0.12)",
                         color: "#C9A84C",
-                        border: "1px solid rgba(201,168,76,0.55)",
-                        boxShadow: "0 0 16px rgba(201,168,76,0.14), inset 0 0 12px rgba(201,168,76,0.04)",
-                        opacity: 0.92,
-                    }}
-                    onMouseEnter={e => {
-                        e.currentTarget.style.background = "rgba(201,168,76,0.18)";
-                        e.currentTarget.style.border = "1px solid rgba(201,168,76,0.75)";
-                        e.currentTarget.style.boxShadow = "0 0 24px rgba(201,168,76,0.22), inset 0 0 16px rgba(201,168,76,0.06)";
-                        e.currentTarget.style.opacity = "1";
-                    }}
-                    onMouseLeave={e => {
-                        e.currentTarget.style.background = "rgba(201,168,76,0.12)";
-                        e.currentTarget.style.border = "1px solid rgba(201,168,76,0.55)";
-                        e.currentTarget.style.boxShadow = "0 0 16px rgba(201,168,76,0.14), inset 0 0 12px rgba(201,168,76,0.04)";
-                        e.currentTarget.style.opacity = "0.92";
+                        border: "1px solid rgba(201,168,76,0.35)",
+                        background: "rgba(201,168,76,0.06)",
                     }}
                 >
                     All Articles →
                 </Link>
-            </div>
-
-            {/* Animated gold divider */}
-            <div className="relative mb-8" style={{ height: "2px", background: "rgba(255,255,255,0.05)", borderRadius: "2px", overflow: "hidden" }}>
-                <div style={{
-                    position: "absolute", top: 0, left: 0, height: "100%",
-                    background: "linear-gradient(90deg, #C9A84C, #e8c97a, #C9A84C)",
-                    borderRadius: "2px",
-                    width: lineActive ? "100%" : "0%",
-                    transition: lineActive ? "width 1s cubic-bezier(0.4,0,0.2,1)" : "none",
-                }} />
             </div>
 
             {/* Cards */}
@@ -84,7 +46,7 @@ export default function BlogPreview() {
                     <Link
                         key={i}
                         href={post.href}
-                        className="group flex flex-col rounded-xl overflow-hidden transition-all duration-300"
+                        className="group flex flex-col rounded-2xl overflow-hidden transition-all duration-300"
                         style={{
                             background: "rgba(255,255,255,0.05)",
                             border: "1px solid rgba(255,255,255,0.1)",
@@ -92,8 +54,8 @@ export default function BlogPreview() {
                         onMouseEnter={e => {
                             e.currentTarget.style.background = "rgba(201,168,76,0.04)";
                             e.currentTarget.style.border = "1px solid rgba(201,168,76,0.3)";
-                            e.currentTarget.style.transform = "translateY(-4px)";
-                            e.currentTarget.style.boxShadow = "0 8px 32px rgba(201,168,76,0.08)";
+                            e.currentTarget.style.transform = "translateY(-3px)";
+                            e.currentTarget.style.boxShadow = "0 8px 28px rgba(201,168,76,0.10)";
                         }}
                         onMouseLeave={e => {
                             e.currentTarget.style.background = "rgba(255,255,255,0.05)";

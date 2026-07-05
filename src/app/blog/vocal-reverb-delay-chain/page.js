@@ -46,7 +46,7 @@ export default function VocalReverbDelayPage() {
                     description="Most vocal mixes sound washed out for one reason: reverb stacked on reverb with no system behind it. Here is the five-send chain that fixed that for me — and how I actually use it."
                 />
 
-                <div className="flex flex-col gap-10 text-white/70 text-[15px] leading-relaxed">
+                <div className="flex flex-col gap-10 text-white/70 text-[16px] leading-relaxed">
 
                     <div className="flex flex-col gap-4">
                         <h2 className="text-xl md:text-2xl font-semibold text-white">Why Most Vocal Mixes Sound Washed Out</h2>

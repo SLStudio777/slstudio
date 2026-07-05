@@ -46,7 +46,7 @@ export default function MusicDistributionPage() {
                     description="Not all music distributors are equal. Some take a cut of your earnings, some limit your audio quality, and only a few are genuinely transparent about what you are getting. Here is an honest breakdown."
                 />
 
-                <div className="flex flex-col gap-10 text-white/70 text-[15px] leading-relaxed">
+                <div className="flex flex-col gap-10 text-white/70 text-[16px] leading-relaxed">
 
                     <div className="flex flex-col gap-4">
                         <h2 className="text-xl md:text-2xl font-semibold text-white">Why Your Choice of Distributor Matters More Than You Think</h2>

@@ -49,12 +49,12 @@ export default function OzoneReviewPage() {
                     <h1 className="text-3xl md:text-5xl font-semibold tracking-wide leading-tight mb-6">
                         iZotope Ozone 11 Review: The Best Mastering Plugin Gets Better
                     </h1>
-                    <p className="text-white/50 text-lg leading-relaxed">
+                    <p className="text-white/65 text-lg leading-relaxed">
                         Ozone has been the industry standard for mastering for years. Version 11 adds new modules and refines existing ones — here is what actually matters for real-world mastering work.
                     </p>
                 </div>
 
-                <div className="flex flex-col gap-10 text-white/70 text-[15px] leading-relaxed">
+                <div className="flex flex-col gap-10 text-white/70 text-[16px] leading-relaxed">
 
                     <div className="flex flex-col gap-4">
                         <h2 className="text-xl md:text-2xl font-semibold text-white">Introduction</h2>

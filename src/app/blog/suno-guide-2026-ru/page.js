@@ -107,7 +107,7 @@ export default function SunoGuidePageRu() {
                     title="Suno AI: полный гайд для музыкантов — жанры, теги и промпты 2026"
                     description="Если твой рабочий процесс сейчас — открыть Suno, написать что попало, нажать Generate и надеяться на чудо — у меня плохие новости. Ты не работаешь с инструментом. Ты играешь в лотерею."
                 />
-                <div className="flex flex-col gap-14 text-white/70 text-[15px] leading-relaxed">
+                <div className="flex flex-col gap-14 text-white/70 text-[16px] leading-relaxed">
 
                     <div className="rounded-2xl p-6 flex gap-4 items-start" style={{ background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.2)" }}>
                         <span className="text-2xl flex-shrink-0">🎯</span>

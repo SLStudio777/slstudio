@@ -47,12 +47,12 @@ export default function OnlineMixingPage() {
                     <h1 className="text-3xl md:text-5xl font-semibold tracking-wide leading-tight mb-6">
                         Is Online Mixing and Mastering Worth It in 2026?
                     </h1>
-                    <p className="text-white/50 text-lg leading-relaxed">
+                    <p className="text-white/65 text-lg leading-relaxed">
                         Between AI mastering bots, cheap Fiverr gigs, and social media engineers promising industry quality — it is hard to know what is legit and what is just well-marketed noise. Here is an honest answer.
                     </p>
                 </div>
 
-                <div className="flex flex-col gap-10 text-white/70 text-[15px] leading-relaxed">
+                <div className="flex flex-col gap-10 text-white/70 text-[16px] leading-relaxed">
 
                     <div className="flex flex-col gap-4">
                         <p>Online <a href="/mixing-mastering" style={{color: "#C9A84C", textDecoration: "underline"}}>mixing and mastering</a> is not a trend anymore. It is the way most music gets finished — whether you are an independent artist releasing from your bedroom or a signed act sending files across continents. The workflow has shifted permanently, and for good reasons.</p>

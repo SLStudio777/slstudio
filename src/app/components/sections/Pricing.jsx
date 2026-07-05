@@ -84,6 +84,7 @@ export default function Pricing() {
                 <span className="text-white/30 text-xs uppercase tracking-[0.3em]">Pricing</span>
                 <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mt-2">Simple, Transparent Pricing</h2>
                 <p className="text-white/55 text-sm mt-2">No hidden fees. Exact price confirmed after discussing your project.</p>
+                <p className="text-white/55 text-sm mt-1">Solo studio — every project gets my personal, full attention. No handoffs, no junior engineers.</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">

@@ -46,7 +46,7 @@ export default function AIDestroyMusicPage() {
                     description="Every disruptive technology in music history was supposed to end live performance, kill the session musician, or make producers obsolete. None of them did. But generative AI is different enough to take seriously."
                 />
 
-                <div className="flex flex-col gap-10 text-white/70 text-[15px] leading-relaxed">
+                <div className="flex flex-col gap-10 text-white/70 text-[16px] leading-relaxed">
 
                     <div className="flex flex-col gap-4">
                         <h2 className="text-xl md:text-2xl font-semibold text-white">We Have Been Here Before</h2>

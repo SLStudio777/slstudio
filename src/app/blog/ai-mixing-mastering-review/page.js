@@ -80,7 +80,7 @@ export default function AIMixingReviewPage() {
                     description="AI mixing platforms are flooding Google with promises of studio-quality results in minutes. So I uploaded a real 30-track session to one of the most popular services — and then mapped what the whole AI mixing and mastering landscape actually offers in 2026."
                 />
 
-                <div className="flex flex-col gap-10 text-white/70 text-[15px] leading-relaxed">
+                <div className="flex flex-col gap-10 text-white/70 text-[16px] leading-relaxed">
 
                     <div className="flex flex-col gap-4">
                         <p>Let me set the scene. The ads are everywhere. Upload your stems, get a professional mix in minutes, sounds just like the radio. Bold claims. Reasonable price. And honestly — after years of spending late nights nudging faders and arguing with compressors — part of me wanted it to work.</p>

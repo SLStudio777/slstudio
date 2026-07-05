@@ -1,11 +1,5 @@
 import Link from "next/link";
-import { Bebas_Neue } from "next/font/google";
 import {FacebookIcon, InstagramIcon, TelegramIcon, YouTubeIcon} from "../common/SVGIcons";
-
-const bebasNeue = Bebas_Neue({
-    weight: "400",
-    subsets: ["latin"],
-})
 
 export default function Footer() {
     return (
@@ -13,9 +7,9 @@ export default function Footer() {
             <div className="container py-12 grid grid-cols-1 md:grid-cols-3 gap-10">
                 {/* Left — Brand */}
                 <div className="flex flex-col gap-4">
-                    <span className={`${bebasNeue.className} text-gold2 text-2xl tracking-widest`}>
-                        SL STUDIO
-                    </span>
+                    <Link href="/" className="w-fit">
+                        <img src="/images/logo-animated.svg" alt="SL Studio" style={{ height: "32px" }} />
+                    </Link>
                     <p className="text-white/50 text-sm leading-relaxed">
                         Music production, mixing, mastering and arrangement.
                         Transforming raw recordings into polished, release-ready tracks — remotely, worldwide.

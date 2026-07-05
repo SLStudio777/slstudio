@@ -72,7 +72,7 @@ export default function BluesRockPage() {
                     description="Blues rock is not a genre you can fake. You either grew up with it, played it, felt it — or you didn't. Here is how I approach the genre I know from the inside."
                 />
 
-                <div className="flex flex-col gap-10 text-white/70 text-[15px] leading-relaxed">
+                <div className="flex flex-col gap-10 text-white/70 text-[16px] leading-relaxed">
 
                     {/* Personal intro */}
                     <div className="flex flex-col gap-4">

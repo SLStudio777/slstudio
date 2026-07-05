@@ -81,12 +81,12 @@ export default function HowItWorks() {
                             style={highlight ? {
                                 border: "1px solid rgba(201,168,76,0.4)",
                                 background: "rgba(255,255,255,0.03)",
-                                borderTop: "2px solid #C9A84C",
+                                borderLeft: "3px solid #C9A84C",
                                 boxShadow: "0 0 20px rgba(201,168,76,0.06)",
                             } : {
                                 border: "1px solid rgba(255,255,255,0.05)",
                                 background: "rgba(255,255,255,0.03)",
-                                borderTop: "2px solid rgba(201,168,76,0.4)",
+                                borderLeft: "3px solid rgba(201,168,76,0.4)",
                             }}>
 
                             {badge && (

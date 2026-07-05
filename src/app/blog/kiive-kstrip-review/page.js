@@ -47,12 +47,12 @@ export default function KStripReviewPage() {
                     <h1 className="text-3xl md:text-5xl font-semibold tracking-wide leading-tight mb-6">
                         Kiive Audio KStrip Review — Three Console Flavors in One Plugin
                     </h1>
-                    <p className="text-white/50 text-lg leading-relaxed">
+                    <p className="text-white/65 text-lg leading-relaxed">
                         Neve warmth, API punch, SSL precision — all inside a single channel strip plugin. Here is how KStrip holds up in real <a href="/mixing-mastering" style={{color: "#C9A84C", textDecoration: "underline"}}>mixing</a> sessions.
                     </p>
                 </div>
 
-                <div className="flex flex-col gap-10 text-white/70 text-[15px] leading-relaxed">
+                <div className="flex flex-col gap-10 text-white/70 text-[16px] leading-relaxed">
 
                     <div className="flex flex-col gap-4">
                         <h2 className="text-xl md:text-2xl font-semibold text-white">Introduction: Classic Console DNA, Modern Plugin Mindset</h2>
