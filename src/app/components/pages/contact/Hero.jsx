@@ -71,7 +71,7 @@ export default function Hero() {
                 <style>{`@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.15);opacity:0.6}}`}</style>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
 
                 {/* LEFT */}
                 <div className="flex flex-col gap-3">
@@ -119,8 +119,9 @@ export default function Hero() {
                     </div>
                 </div>
 
-                {/* RIGHT */}
-                <div className="flex flex-col gap-4">
+                {/* RIGHT — stretched to match the left column's height (5 contact
+                    cards make it taller); logo pinned top, form pinned bottom */}
+                <div className="flex flex-col gap-4 md:justify-between">
                     <img
                         src="/images/logo-animated.svg"
                         alt="SL Studio"
