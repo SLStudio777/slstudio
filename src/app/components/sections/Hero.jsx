@@ -12,9 +12,11 @@ const stats = [
 export default function Hero() {
     return (
         <section className="mt-16 mb-10">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-end">
-                {/* Left */}
-                <div className="flex flex-col gap-10 mobile-reflow">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch">
+                {/* Left — stretched to match the (now taller) right column;
+                    justify-between pins the pitch to the top and the services
+                    block to the bottom instead of leaving dead space below it */}
+                <div className="flex flex-col gap-10 md:self-stretch md:justify-between mobile-reflow">
                     {/* Headline block — tight rhythm, no dead gaps */}
                     <div className="flex flex-col gap-6 [@media(max-width:767px)]:order-1">
                         <div>
@@ -49,72 +51,28 @@ export default function Hero() {
                                 );
                             })}
                         </div>
-                        <div
-                            className="w-full rounded-xl p-5"
-                            style={{
-                                background: "rgba(201,168,76,0.05)",
-                                borderLeft: "3px solid #C9A84C",
-                            }}
-                        >
-                            <p className="text-white/70 text-md md:text-lg leading-relaxed">
-                                A Warsaw studio for mixing, mastering, arrangement and production — a place where your music comes alive.
-                            </p>
-                        </div>
-                        {/* CTA row mirrors the two service-card columns below */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            <a
-                                href="#demos"
-                                className="btn-gold inline-flex items-center justify-center gap-2 text-black font-semibold px-8 py-4 rounded-xl text-sm"
-                                style={{
-                                    backgroundColor: "#C9A84C",
-                                    boxShadow: "0 0 24px rgba(201,168,76,0.25)",
-                                }}
-                            >
-                                Hear the Difference ↓
-                            </a>
-                            <a
-                                href="/contact"
-                                className="btn-gold inline-flex items-center justify-center gap-2 font-semibold px-8 py-4 rounded-xl text-sm"
-                                style={{
-                                    color: "#C9A84C",
-                                    border: "1px solid rgba(201,168,76,0.35)",
-                                    background: "rgba(201,168,76,0.06)",
-                                }}
-                            >
-                                Get in Touch →
-                            </a>
-                        </div>
-                        {/* Audience + price clarifier — answers "is this for me?" in one line */}
-                        <p className="text-white/45 text-xs uppercase tracking-widest">
-                            For independent artists · from $25 per track · remote, worldwide
+                        <p className="text-white/70 text-md md:text-lg leading-relaxed">
+                            A Warsaw studio for mixing, mastering, arrangement and production — a place where your music comes alive.
                         </p>
                     </div>
-                    <h2 className="text-2xl md:text-3xl font-semibold [@media(max-width:767px)]:order-3">
-                        Professional Audio Services
-                    </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch [@media(max-width:767px)]:order-4">
-                        {servicesData.map(el => (
-                            <HeroCard
-                                key={el.id}
-                                icon={el.icon}
-                                title={el.title}
-                                description={el.description}
-                                href={el.href}
-                            />
-                        ))}
-                    </div>
-                    {/* Stats */}
-                    <div className="grid grid-cols-3 gap-4 border-t border-white/5 pt-8 [@media(max-width:767px)]:order-5">
-                        {stats.map((s, i) => (
-                            <div key={i} className="flex flex-col gap-1">
-                                <span className="text-2xl md:text-3xl font-semibold text-[#f5b942]">
-                                    {s.value}
-                                </span>
-                                <span className="text-white/55 text-xs uppercase tracking-widest">
-                                    {s.label}
-                                </span>
-                            </div>
-                        ))}
+                    {/* Services block — promoted right under the pitch, doing the
+                        job the old CTA buttons used to do (each card is its own
+                        call to action) */}
+                    <div className="flex flex-col gap-6 [@media(max-width:767px)]:order-3">
+                        <h2 className="text-2xl md:text-3xl font-semibold">
+                            Professional Audio Services
+                        </h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+                            {servicesData.map(el => (
+                                <HeroCard
+                                    key={el.id}
+                                    icon={el.icon}
+                                    title={el.title}
+                                    description={el.description}
+                                    href={el.href}
+                                />
+                            ))}
+                        </div>
                     </div>
                 </div>
 
@@ -131,8 +89,28 @@ export default function Hero() {
                         />
                     </div>
 
+                    {/* Audience/price clarifier + stats — now living under the photo
+                        instead of under the (removed) hero buttons */}
+                    <div className="flex flex-col gap-4 [@media(max-width:767px)]:order-4">
+                        <p className="text-white/45 text-xs uppercase tracking-widest">
+                            For independent artists · from $25 per track · remote, worldwide
+                        </p>
+                        <div className="grid grid-cols-3 gap-4 border-t border-white/5 pt-4">
+                            {stats.map((s, i) => (
+                                <div key={i} className="flex flex-col gap-1">
+                                    <span className="text-xl md:text-2xl font-semibold text-[#f5b942]">
+                                        {s.value}
+                                    </span>
+                                    <span className="text-white/55 text-xs uppercase tracking-widest">
+                                        {s.label}
+                                    </span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
                     {/* About me */}
-                    <div className="flex flex-col gap-3 pt-2 border-t border-white/5 [@media(max-width:767px)]:order-6">
+                    <div className="flex flex-col gap-3 [@media(max-width:767px)]:order-5">
                         <span className="text-white/30 text-xs uppercase tracking-[0.3em]">
                             Guitarist · Producer · Engineer
                         </span>
