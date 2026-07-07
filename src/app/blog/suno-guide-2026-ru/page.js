@@ -38,17 +38,6 @@ export const metadata = {
     other: { "article:published_time": "2026-04-10" },
 };
 
-function BackToTop() {
-    return (
-        <div className="flex justify-end pt-2">
-            <a href="#top" className="text-xs flex items-center gap-1.5 px-3 py-1.5 rounded-lg transition hover:opacity-80"
-                style={{ background: "rgba(201,168,76,0.08)", color: "#C9A84C", border: "1px solid rgba(201,168,76,0.15)" }}>
-                ↑ Наверх
-            </a>
-        </div>
-    );
-}
-
 function ProTip({ children }) {
     return (
         <div className="rounded-xl p-5 flex gap-3 items-start"
@@ -56,7 +45,7 @@ function ProTip({ children }) {
             <span className="text-base flex-shrink-0 font-bold" style={{ color: "#C9A84C" }}>★</span>
             <div>
                 <p className="text-xs font-bold uppercase tracking-widest mb-1.5" style={{ color: "#C9A84C" }}>Pro Tip</p>
-                <p className="text-white/70 text-sm leading-relaxed">{children}</p>
+                <p className="text-white/70 text-base leading-relaxed">{children}</p>
             </div>
         </div>
     );
@@ -82,7 +71,7 @@ const TOC = [
 function TableOfContents() {
     return (
         <div className="rounded-2xl p-6" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.07)" }}>
-            <p className="text-white font-semibold text-sm mb-4">Содержание</p>
+            <p className="text-white font-semibold text-base mb-4">Содержание</p>
             <ol className="flex flex-col gap-2">
                 {TOC.map((item, i) => (
                     <li key={item.id} className="flex items-baseline gap-2.5">
@@ -109,11 +98,11 @@ export default function SunoGuidePageRu() {
                 />
                 <div className="blog-prose flex flex-col gap-14 text-white/70 text-[16px] leading-relaxed">
 
-                    <div className="rounded-2xl p-6 flex gap-4 items-start" style={{ background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.2)" }}>
+                    <div className="rounded-2xl p-6 flex gap-4 items-start" style={{ background: "rgba(201,168,76,0.07)", border: "1px solid rgba(201,168,76,0.25)" }}>
                         <span className="text-2xl flex-shrink-0">🎯</span>
                         <div>
                             <p className="text-white font-semibold mb-2">Почему этот гайд существует</p>
-                            <p className="text-white/60 text-sm leading-relaxed">Оригинальный гайд вышел на английском — и сразу несколько музыкантов написали с одним вопросом: «А на русском будет?». Будет. Вот он. Полная версия — про интерфейс, логику, настройки и рабочий процесс. После этого Suno перестанет быть рулеткой и станет нормальным инструментом.</p>
+                            <p className="text-white/65 text-base leading-relaxed">Оригинальный гайд вышел на английском — и сразу несколько музыкантов написали с одним вопросом: «А на русском будет?». Будет. Вот он. Полная версия — про интерфейс, логику, настройки и рабочий процесс. После этого Suno перестанет быть рулеткой и станет нормальным инструментом.</p>
                         </div>
                     </div>
 
@@ -123,7 +112,7 @@ export default function SunoGuidePageRu() {
                         style={{ background: "linear-gradient(135deg, rgba(201,168,76,0.1) 0%, rgba(201,168,76,0.04) 100%)", border: "1px solid rgba(201,168,76,0.3)" }}>
                         <p className="text-xs font-bold uppercase tracking-widest" style={{ color: "rgba(201,168,76,0.6)" }}>Главная мысль</p>
                         <p className="text-2xl md:text-3xl font-semibold text-white leading-snug">Suno — не генератор хитов.<br />Suno — инструмент для развития идей.</p>
-                        <p className="text-white/50 text-sm max-w-md mx-auto mt-1">Всё остальное в этом гайде вытекает отсюда. Чем быстрее это осядет — тем быстрее пойдут результаты.</p>
+                        <p className="text-white/65 text-base max-w-md mx-auto mt-1">Всё остальное в этом гайде вытекает отсюда. Чем быстрее это осядет — тем быстрее пойдут результаты.</p>
                     </div>
 
                     <div id="before-we-start" className="flex flex-col gap-5">
@@ -138,7 +127,6 @@ export default function SunoGuidePageRu() {
                         <div className="rounded-2xl overflow-hidden border border-white/5">
                             <img loading="lazy" decoding="async" src="/images/suno-ru-1.webp" alt="Работа с Suno — это навык" className="w-full object-cover" />
                         </div>
-                        <BackToTop />
                     </div>
 
                     <div id="studio-not-magic" className="flex flex-col gap-5">
@@ -152,9 +140,8 @@ export default function SunoGuidePageRu() {
                         <p>Suno становится мощным ровно тогда, когда начинаешь понимать, как он думает, на что реагирует и где его реальные границы. После этого он перестаёт удивлять в плохом смысле и начинает удивлять в хорошем.</p>
                         <div className="rounded-xl p-4 flex gap-3 items-start" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}>
                             <span className="text-lg flex-shrink-0">💡</span>
-                            <p className="text-white/60 text-sm">Сначала разберись как работает. Потом иди вглубь. Попытка пропустить этот шаг не экономит время — она просто переносит путаницу на более сложный уровень.</p>
+                            <p className="text-white/65 text-base">Сначала разберись как работает. Потом иди вглубь. Попытка пропустить этот шаг не экономит время — она просто переносит путаницу на более сложный уровень.</p>
                         </div>
-                        <BackToTop />
                     </div>
 
                     <div id="interface" className="flex flex-col gap-5">
@@ -170,20 +157,20 @@ export default function SunoGuidePageRu() {
                             <div className="rounded-xl p-5 flex gap-4 items-start" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderLeft: "3px solid #C9A84C" }}>
                                 <span className="text-xl flex-shrink-0">🎙️</span>
                                 <div>
-                                    <p className="text-white font-semibold text-sm mb-2">Create — здесь всё начинается</p>
-                                    <p className="text-white/50 text-sm leading-relaxed">Место для идей, экспериментов и первых набросков. Думай об этом как о кабинке для записи — не нужно приходить с готовым результатом. Нужно просто знать, куда идёшь.</p>
+                                    <p className="text-white font-semibold text-base mb-2">Create — здесь всё начинается</p>
+                                    <p className="text-white/65 text-base leading-relaxed">Место для идей, экспериментов и первых набросков. Думай об этом как о кабинке для записи — не нужно приходить с готовым результатом. Нужно просто знать, куда идёшь.</p>
                                 </div>
                             </div>
                             <div className="rounded-xl p-5 flex gap-4 items-start" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderLeft: "3px solid #C9A84C" }}>
                                 <span className="text-xl flex-shrink-0">📚</span>
                                 <div>
-                                    <p className="text-white font-semibold text-sm mb-2">Library — твой личный архив</p>
-                                    <p className="text-white/50 text-sm leading-relaxed">Здесь хранится всё, что ты когда-либо сгенерировал. Можно лайкать, дизлайкать, собирать плейлисты. Важный момент: <strong className="text-white">это не публичные лайки</strong>. Никто кроме тебя их не видит. Это система фильтрации.</p>
+                                    <p className="text-white font-semibold text-base mb-2">Library — твой личный архив</p>
+                                    <p className="text-white/65 text-base leading-relaxed">Здесь хранится всё, что ты когда-либо сгенерировал. Можно лайкать, дизлайкать, собирать плейлисты. Важный момент: <strong className="text-white">это не публичные лайки</strong>. Никто кроме тебя их не видит. Это система фильтрации.</p>
                                     <div className="mt-3 flex flex-col gap-1.5 p-3 rounded-lg" style={{ background: "rgba(255,255,255,0.03)" }}>
-                                        <p className="text-white/50 text-xs">👍 Лайк — трек остаётся на виду, легко найти</p>
-                                        <p className="text-white/50 text-xs">👎 Дизлайк — трек прячется, но не удаляется</p>
+                                        <p className="text-white/55 text-sm">👍 Лайк — трек остаётся на виду, легко найти</p>
+                                        <p className="text-white/55 text-sm">👎 Дизлайк — трек прячется, но не удаляется</p>
                                     </div>
-                                    <p className="text-white/50 text-sm mt-3 leading-relaxed">Пользуйся этим без жалости. Library набивается быстро. Кто не фильтрует сразу — потом часами ищет тот единственный трек, который был хорошим. Как папка Downloads, которую ты игнорировал год — а там уже 847 файлов и непонятно что удалять.</p>
+                                    <p className="text-white/65 text-base mt-3 leading-relaxed">Пользуйся этим без жалости. Library набивается быстро. Кто не фильтрует сразу — потом часами ищет тот единственный трек, который был хорошим. Как папка Downloads, которую ты игнорировал год — а там уже 847 файлов и непонятно что удалять.</p>
                                 </div>
                             </div>
                         </div>
@@ -193,11 +180,10 @@ export default function SunoGuidePageRu() {
                         <div className="rounded-xl p-5 flex gap-4 items-start" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderLeft: "3px solid #C9A84C" }}>
                             <span className="text-xl flex-shrink-0">📁</span>
                             <div>
-                                <p className="text-white font-semibold text-sm mb-2">Workspace — папки для проектов</p>
-                                <p className="text-white/50 text-sm leading-relaxed">Если делаешь один жанр без серьёзных параллельных проектов — можно не трогать. Но стоит появиться нескольким проектам одновременно — альбом, клиентская работа, YouTube-канал — и без Workspace начинается каша. Думай об этом не как об аккуратности ради аккуратности, а как о свободной голове для музыки. Музыкант, который не может найти свою лучшую идею — всё равно что музыкант, у которого её не было.</p>
+                                <p className="text-white font-semibold text-base mb-2">Workspace — папки для проектов</p>
+                                <p className="text-white/65 text-base leading-relaxed">Если делаешь один жанр без серьёзных параллельных проектов — можно не трогать. Но стоит появиться нескольким проектам одновременно — альбом, клиентская работа, YouTube-канал — и без Workspace начинается каша. Думай об этом не как об аккуратности ради аккуратности, а как о свободной голове для музыки. Музыкант, который не может найти свою лучшую идею — всё равно что музыкант, у которого её не было.</p>
                             </div>
                         </div>
-                        <BackToTop />
                     </div>
 
                     <div id="simple-vs-custom" className="flex flex-col gap-5">
@@ -211,23 +197,22 @@ export default function SunoGuidePageRu() {
                             <img loading="lazy" decoding="async" src="/images/suno-ru-4.webp" alt="Simple vs Custom Mode в Suno" className="w-full object-cover" />
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div className="rounded-xl p-5 flex flex-col gap-3" style={{ background: "rgba(100,200,100,0.05)", border: "1px solid rgba(100,200,100,0.15)" }}>
-                                <p className="text-white font-semibold text-sm">✅ Simple Mode — начинай здесь</p>
-                                <p className="text-white/50 text-sm leading-relaxed">Один запрос, без лишнего. Идеален для момента, когда ты ещё не знаешь точно, чего хочешь. Проверить жанровую идею, поймать настроение, понять — есть ли в этом вообще что-то интересное, прежде чем тратить время на детали.</p>
+                            <div className="rounded-xl p-5 flex flex-col gap-3" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}>
+                                <p className="text-white font-semibold text-base">✅ Simple Mode — начинай здесь</p>
+                                <p className="text-white/65 text-base leading-relaxed">Один запрос, без лишнего. Идеален для момента, когда ты ещё не знаешь точно, чего хочешь. Проверить жанровую идею, поймать настроение, понять — есть ли в этом вообще что-то интересное, прежде чем тратить время на детали.</p>
                                 <p className="text-sm mt-1" style={{ color: "#C9A84C" }}>Как музыкант, который наигрывает тему на гитаре, прежде чем садиться за аранжировку. Финальный дубль не пишут первым.</p>
                             </div>
-                            <div className="rounded-xl p-5 flex flex-col gap-3" style={{ background: "rgba(255,100,100,0.05)", border: "1px solid rgba(255,100,100,0.15)" }}>
-                                <p className="text-white font-semibold text-sm">⚙️ Custom Mode — только после</p>
-                                <p className="text-white/50 text-sm leading-relaxed">Для случаев, когда направление уже ясное — жанр, настроение, характер вокала, примерная структура. Проблема: большинство пропускает этап исследования и лезет в Custom Mode, не понимая ещё, чего хочет. Итог — очень конкретные, очень дорогие ошибки.</p>
-                                <p className="text-white/30 text-sm mt-1">Больше настроек — больше способов ошибиться точно.</p>
+                            <div className="rounded-xl p-5 flex flex-col gap-3" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}>
+                                <p className="text-white font-semibold text-base">⚙️ Custom Mode — только после</p>
+                                <p className="text-white/65 text-base leading-relaxed">Для случаев, когда направление уже ясное — жанр, настроение, характер вокала, примерная структура. Проблема: большинство пропускает этап исследования и лезет в Custom Mode, не понимая ещё, чего хочет. Итог — очень конкретные, очень дорогие ошибки.</p>
+                                <p className="text-white/45 text-base mt-1">Больше настроек — больше способов ошибиться точно.</p>
                             </div>
                         </div>
                         <div className="rounded-xl p-5" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.08)" }}>
-                            <p className="text-white/80 text-sm italic leading-relaxed">«Custom Mode не делает результат лучше автоматически. Он просто делает ошибки дороже и конкретнее.»</p>
+                            <p className="text-white/80 text-base italic leading-relaxed">«Custom Mode не делает результат лучше автоматически. Он просто делает ошибки дороже и конкретнее.»</p>
                         </div>
                         <p>Simple Mode — не упрощённая версия для начинающих. Это инструмент исследования. Большинство хороших треков начинается именно там. Пропустить этот шаг — не сэкономить время, а перенести путаницу на более сложный уровень.</p>
                         <ProTip>На каждый новый проект — первые 5–10 генераций в Simple Mode. Почувствовал, что одна из них попала в точку? Вот тогда открывай Custom Mode. Не раньше.</ProTip>
-                        <BackToTop />
                     </div>
 
                     <div id="writing-prompts" className="flex flex-col gap-5">
@@ -241,12 +226,12 @@ export default function SunoGuidePageRu() {
                             <img loading="lazy" decoding="async" src="/images/suno-ru-5.webp" alt="Структура промпта в Suno" className="w-full object-cover" />
                         </div>
                         <p>Самая частая ошибка — <strong className="text-white">промпт-салат</strong>: жанр, настроение, ещё один жанр, эпоха, три инструмента, пара эмоций — всё в кучу, без порядка приоритетов. Suno не знает, что здесь главное, и начинает гадать. Когда AI гадает — получаешь что-то технически впечатляющее, звучащее как ничья музыка. Технически правильно. Эмоционально пусто.</p>
-                        <div className="rounded-xl p-5 flex flex-col gap-3" style={{ background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.2)" }}>
-                            <p className="text-white font-semibold text-sm">✅ Рабочая формула</p>
+                        <div className="rounded-xl p-5 flex flex-col gap-3" style={{ background: "rgba(201,168,76,0.07)", border: "1px solid rgba(201,168,76,0.25)" }}>
+                            <p className="text-white font-semibold text-base">✅ Рабочая формула</p>
                             <div className="rounded-lg p-3 font-mono text-sm text-center" style={{ background: "rgba(0,0,0,0.3)", color: "#C9A84C" }}>
                                 ЖАНР И НАСТРОЕНИЕ → ВОКАЛ → КЛЮЧЕВЫЕ ИНСТРУМЕНТЫ → ЗВУК И АТМОСФЕРА
                             </div>
-                            <p className="text-white/60 text-sm leading-relaxed">Сначала территория — потом характер — потом детали. Порядок важен: Suno читает промпт сверху вниз и приоритизирует соответственно. Написал «мягкий джаз» в начале, а «тяжёлые барабаны» в конце — система получает конфликт и решает его по своему усмотрению.</p>
+                            <p className="text-white/65 text-base leading-relaxed">Сначала территория — потом характер — потом детали. Порядок важен: Suno читает промпт сверху вниз и приоритизирует соответственно. Написал «мягкий джаз» в начале, а «тяжёлые барабаны» в конце — система получает конфликт и решает его по своему усмотрению.</p>
                         </div>
                         <div className="flex flex-col gap-3">
                             <p className="text-white/40 text-xs uppercase tracking-widest">Примеры, которые реально работают</p>
@@ -270,11 +255,10 @@ export default function SunoGuidePageRu() {
                         <div className="rounded-xl p-4 flex gap-3 items-start" style={{ background: "rgba(255,100,100,0.05)", border: "1px solid rgba(255,100,100,0.15)" }}>
                             <span className="text-lg flex-shrink-0">🚨</span>
                             <div>
-                                <p className="text-white font-semibold text-sm mb-1">Всегда описывай вокал</p>
-                                <p className="text-white/60 text-sm leading-relaxed">Хотя бы одну строку. Пол, подача, эмоциональный характер. Оставишь пустым — и можешь получить сопрано-вокалистку поверх своего дум-метала. Технически впечатляюще. Контекстуально — катастрофа. И да, это случалось с каждым хотя бы раз.</p>
+                                <p className="text-white font-semibold text-base mb-1">Всегда описывай вокал</p>
+                                <p className="text-white/65 text-base leading-relaxed">Хотя бы одну строку. Пол, подача, эмоциональный характер. Оставишь пустым — и можешь получить сопрано-вокалистку поверх своего дум-метала. Технически впечатляюще. Контекстуально — катастрофа. И да, это случалось с каждым хотя бы раз.</p>
                             </div>
                         </div>
-                        <BackToTop />
                     </div>
 
                     <div id="brackets" className="flex flex-col gap-5">
@@ -288,7 +272,7 @@ export default function SunoGuidePageRu() {
                         </div>
                         <div className="rounded-xl p-5" style={{ background: "rgba(201,168,76,0.08)", border: "1px solid rgba(201,168,76,0.25)" }}>
                             <p className="text-white font-semibold mb-2 text-center">Единственное правило, которое всё меняет</p>
-                            <p className="text-center text-white/80 text-sm leading-relaxed">Всё в <strong className="text-white">[квадратных скобках]</strong> = команда для Suno.<br />Всё без скобок = текст, который будет исполнен вслух.<br /><br />Вот и всё правило.</p>
+                            <p className="text-center text-white/80 text-base leading-relaxed">Всё в <strong className="text-white">[квадратных скобках]</strong> = команда для Suno.<br />Всё без скобок = текст, который будет исполнен вслух.<br /><br />Вот и всё правило.</p>
                         </div>
                         <p>Если напишешь без скобок слова "энергичное гитарное соло" — Suno с удовольствием споёт их вслух на твоём треке. Вокалист будет петь "энергичное гитарное солооо" поверх твоего брейкдауна. Не баг. Именно это ты и попросил.</p>
                         <p>Структурные теги — в скобках:</p>
@@ -299,9 +283,8 @@ export default function SunoGuidePageRu() {
                                 </div>
                             ))}
                         </div>
-                        <p className="text-white/50 text-sm">Внутри скобок можно писать и продюсерские пометки — [тихо, нарастающее напряжение], [full band entry], [emotional, slow down]. Suno воспринимает их как инструкции, а не как текст. Разница между структурированным треком и хаосом часто именно здесь.</p>
+                        <p className="text-white/65 text-base">Внутри скобок можно писать и продюсерские пометки — [тихо, нарастающее напряжение], [full band entry], [emotional, slow down]. Suno воспринимает их как инструкции, а не как текст. Разница между структурированным треком и хаосом часто именно здесь.</p>
                         <ProTip>Мета-теги держи короткими — до 3 слов. "Emotional blues guitar" работает лучше, чем "soul-crushing emotional authentic blues guitar played with raw passion". Suno понял тебя с первых трёх слов. Остальное — шум.</ProTip>
-                        <BackToTop />
                     </div>
 
                     <div id="song-structure" className="flex flex-col gap-5">
@@ -319,22 +302,21 @@ export default function SunoGuidePageRu() {
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="rounded-xl p-5 flex flex-col gap-3" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}>
-                                <p className="text-white font-semibold text-sm">🎵 Классическая поп-структура</p>
-                                <p className="text-white/50 text-sm leading-relaxed">Intro → Verse → Chorus → Verse → Chorus → Bridge → Final Chorus → Outro. Тысячи хитов написаны по этой схеме — не потому что так положено, а потому что она работает. Каждая секция делает что-то конкретное с вниманием и эмоцией слушателя.</p>
+                                <p className="text-white font-semibold text-base">🎵 Классическая поп-структура</p>
+                                <p className="text-white/65 text-base leading-relaxed">Intro → Verse → Chorus → Verse → Chorus → Bridge → Final Chorus → Outro. Тысячи хитов написаны по этой схеме — не потому что так положено, а потому что она работает. Каждая секция делает что-то конкретное с вниманием и эмоцией слушателя.</p>
                             </div>
                             <div className="rounded-xl p-5 flex flex-col gap-3" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}>
-                                <p className="text-white font-semibold text-sm">📱 Стриминговая структура</p>
-                                <p className="text-white/50 text-sm leading-relaxed">Короче, быстрее, хук в первые 30 секунд. Большинство решает остаться или уйти в первые 15 секунд. Это означает, что твоё интро фактически и является хуком. Думай об этом соответственно.</p>
+                                <p className="text-white font-semibold text-base">📱 Стриминговая структура</p>
+                                <p className="text-white/65 text-base leading-relaxed">Короче, быстрее, хук в первые 30 секунд. Большинство решает остаться или уйти в первые 15 секунд. Это означает, что твоё интро фактически и является хуком. Думай об этом соответственно.</p>
                             </div>
                         </div>
-                        <div className="rounded-xl p-4 flex gap-3 items-start" style={{ background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.15)" }}>
+                        <div className="rounded-xl p-4 flex gap-3 items-start" style={{ background: "rgba(201,168,76,0.07)", border: "1px solid rgba(201,168,76,0.25)" }}>
                             <span className="text-lg flex-shrink-0">💡</span>
                             <div>
-                                <p className="text-white font-semibold text-sm mb-1">Совет, который стоит запомнить</p>
-                                <p className="text-white/60 text-sm leading-relaxed">Начинай с инструментального интро — даже короткого. Это создаёт ощущение пространства перед вокалом, делает трек профессиональнее и даёт тебе чистый материал для работы в DAW.</p>
+                                <p className="text-white font-semibold text-base mb-1">Совет, который стоит запомнить</p>
+                                <p className="text-white/65 text-base leading-relaxed">Начинай с инструментального интро — даже короткого. Это создаёт ощущение пространства перед вокалом, делает трек профессиональнее и даёт тебе чистый материал для работы в DAW.</p>
                             </div>
                         </div>
-                        <BackToTop />
                     </div>
 
                     <div id="sweet-spot" className="flex flex-col gap-5">
@@ -348,7 +330,7 @@ export default function SunoGuidePageRu() {
                         </div>
                         <div className="flex flex-col gap-4">
                             <div className="rounded-xl p-5 flex flex-col gap-3" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}>
-                                <p className="text-white font-semibold text-sm">🎲 Weirdness — насколько Suno отклоняется от инструкций</p>
+                                <p className="text-white font-semibold text-base">🎲 Weirdness — насколько Suno отклоняется от инструкций</p>
                                 <div className="flex items-center gap-3 my-1">
                                     <span className="text-white/40 text-xs w-24 text-right">предсказуемо</span>
                                     <div className="flex-1 h-2 rounded-full overflow-hidden" style={{ background: "rgba(255,255,255,0.05)" }}>
@@ -356,12 +338,12 @@ export default function SunoGuidePageRu() {
                                     </div>
                                     <span className="text-white/40 text-xs w-24">хаотично</span>
                                 </div>
-                                <p className="text-white/50 text-sm"><strong className="text-white">Низко</strong> — чисто, предсказуемо. Хорошо, когда направление ясное.</p>
-                                <p className="text-white/50 text-sm"><strong className="text-white">Середина</strong> — рабочая зона. Интересные детали без разрушения структуры.</p>
-                                <p className="text-white/50 text-sm"><strong className="text-white">Максимум</strong> — горящие кредиты и непредсказуемый результат.</p>
+                                <p className="text-white/65 text-base"><strong className="text-white">Низко</strong> — чисто, предсказуемо. Хорошо, когда направление ясное.</p>
+                                <p className="text-white/65 text-base"><strong className="text-white">Середина</strong> — рабочая зона. Интересные детали без разрушения структуры.</p>
+                                <p className="text-white/65 text-base"><strong className="text-white">Максимум</strong> — горящие кредиты и непредсказуемый результат.</p>
                             </div>
                             <div className="rounded-xl p-5 flex flex-col gap-3" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}>
-                                <p className="text-white font-semibold text-sm">🎨 Style Influence — насколько строго Suno держится стиля</p>
+                                <p className="text-white font-semibold text-base">🎨 Style Influence — насколько строго Suno держится стиля</p>
                                 <div className="flex items-center gap-3 my-1">
                                     <span className="text-white/40 text-xs w-24 text-right">уходит в сторону</span>
                                     <div className="flex-1 h-2 rounded-full overflow-hidden" style={{ background: "rgba(255,255,255,0.05)" }}>
@@ -369,17 +351,16 @@ export default function SunoGuidePageRu() {
                                     </div>
                                     <span className="text-white/40 text-xs w-24">как робот</span>
                                 </div>
-                                <p className="text-white/50 text-sm"><strong className="text-white">Слишком низко</strong> — стиль дрейфует к середине трека.</p>
-                                <p className="text-white/50 text-sm"><strong className="text-white">Слишком высоко</strong> — жёстко и механично. Как послушный робот, который играет по нотам, но не понимает музыки.</p>
-                                <p className="text-white/50 text-sm"><strong className="text-white">Середина</strong> — пространство для интерпретации с якорем на нужном стиле.</p>
+                                <p className="text-white/65 text-base"><strong className="text-white">Слишком низко</strong> — стиль дрейфует к середине трека.</p>
+                                <p className="text-white/65 text-base"><strong className="text-white">Слишком высоко</strong> — жёстко и механично. Как послушный робот, который играет по нотам, но не понимает музыки.</p>
+                                <p className="text-white/65 text-base"><strong className="text-white">Середина</strong> — пространство для интерпретации с якорем на нужном стиле.</p>
                             </div>
                         </div>
                         <div className="rounded-xl p-4 flex gap-3" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.08)" }}>
                             <span className="text-lg">🔑</span>
-                            <p className="text-white/60 text-sm"><strong className="text-white">Чем больше хаоса на этапе генерации — тем сложнее работать с результатом потом.</strong> Генерируй чисто, добавляй характер в DAW.</p>
+                            <p className="text-white/65 text-base"><strong className="text-white">Чем больше хаоса на этапе генерации — тем сложнее работать с результатом потом.</strong> Генерируй чисто, добавляй характер в DAW.</p>
                         </div>
                         <ProTip>Высокий Weirdness создаёт не больше творчества — он создаёт больше работы на этапе редактирования. Эксперименты лучше оставить на потом, когда уже есть крепкая основа. Suno — для направления. DAW — для характера.</ProTip>
-                        <BackToTop />
                     </div>
 
                     <div id="stop-generating" className="flex flex-col gap-5">
@@ -389,8 +370,8 @@ export default function SunoGuidePageRu() {
                         </div>
                         <p>Есть одна привычка, которая убивает прогресс быстрее всего остального:</p>
                         <div className="rounded-xl p-5" style={{ background: "rgba(255,80,80,0.05)", border: "1px solid rgba(255,80,80,0.15)" }}>
-                            <p className="text-white font-semibold text-sm mb-2">🚫 Петля, которая никуда не ведёт</p>
-                            <p className="text-white/60 text-sm font-mono leading-relaxed">Generate → не нравится → закрыл → снова Generate → не нравится → ещё час → Suno плохой → закрыл → завтра открыл снова</p>
+                            <p className="text-white font-semibold text-base mb-2">🚫 Петля, которая никуда не ведёт</p>
+                            <p className="text-white/65 font-mono text-[15px] leading-relaxed">Generate → не нравится → закрыл → снова Generate → не нравится → ещё час → Suno плохой → закрыл → завтра открыл снова</p>
                         </div>
                         <div className="rounded-2xl overflow-hidden border border-white/5">
                             <img loading="lazy" decoding="async" src="/images/suno-ru-11.webp" alt="Не начинай с нуля каждый раз" className="w-full object-cover" />
@@ -398,7 +379,6 @@ export default function SunoGuidePageRu() {
                         <p>Каждый раз, когда выбрасываешь результат и начинаешь с чистого листа — выбрасываешь вместе с ним и идею, которая его породила. А идея иногда была хорошей. Просто исполнение не зашло.</p>
                         <p>Важный сдвиг в голове при работе с генеративным AI: ты не ищешь идеальный результат. Ты <em>развиваешь материал</em>. Первая генерация — черновик. Вторая — доработка. Третья может оказаться той самой.</p>
                         <p>Музыкант, который переписывает одну песню двадцать раз, делает что-то стоящее. Музыкант, который за выходные пишет двадцать разных песен — делает двадцать демо. <strong className="text-white">Развивай то, что нашёл</strong> — не ищи что-то новое каждые пять минут.</p>
-                        <BackToTop />
                     </div>
 
                     <div id="extend-cover-upload" className="flex flex-col gap-5">
@@ -414,29 +394,28 @@ export default function SunoGuidePageRu() {
                             <div className="rounded-xl p-5 flex gap-4 items-start" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderLeft: "3px solid #C9A84C" }}>
                                 <span className="text-xl flex-shrink-0">▶️</span>
                                 <div>
-                                    <p className="text-white font-semibold text-sm mb-2">Extend — продолжи то, что работает</p>
-                                    <p className="text-white/50 text-sm leading-relaxed">Extend продолжает трек, сохраняя его характер. Не новая генерация — именно продолжение. Звук остаётся тем же, атмосфера не ломается, ты получаешь более длинный и цельный материал. Каждый раз, когда хочется нажать Generate заново только потому что трек слишком короткий — используй Extend.</p>
+                                    <p className="text-white font-semibold text-base mb-2">Extend — продолжи то, что работает</p>
+                                    <p className="text-white/65 text-base leading-relaxed">Extend продолжает трек, сохраняя его характер. Не новая генерация — именно продолжение. Звук остаётся тем же, атмосфера не ломается, ты получаешь более длинный и цельный материал. Каждый раз, когда хочется нажать Generate заново только потому что трек слишком короткий — используй Extend.</p>
                                 </div>
                             </div>
                             <div className="rounded-xl p-5 flex gap-4 items-start" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderLeft: "3px solid #C9A84C" }}>
                                 <span className="text-xl flex-shrink-0">🔄</span>
                                 <div>
-                                    <p className="text-white font-semibold text-sm mb-2">Cover — A/B-тест одной идеи</p>
-                                    <p className="text-white/50 text-sm leading-relaxed">Cover делает альтернативную версию той же идеи — другая подача, другое ощущение, та же ДНК. Скорее та же роль, сыгранная другим актёром. Используй, когда структура нравится, но что-то в исполнении не попало.</p>
+                                    <p className="text-white font-semibold text-base mb-2">Cover — A/B-тест одной идеи</p>
+                                    <p className="text-white/65 text-base leading-relaxed">Cover делает альтернативную версию той же идеи — другая подача, другое ощущение, та же ДНК. Скорее та же роль, сыгранная другим актёром. Используй, когда структура нравится, но что-то в исполнении не попало.</p>
                                 </div>
                             </div>
-                            <div className="rounded-xl p-5 flex gap-4 items-start" style={{ background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.2)", borderLeft: "3px solid #C9A84C" }}>
+                            <div className="rounded-xl p-5 flex gap-4 items-start" style={{ background: "rgba(201,168,76,0.07)", border: "1px solid rgba(201,168,76,0.25)", borderLeft: "3px solid #C9A84C" }}>
                                 <span className="text-xl flex-shrink-0">⬆️</span>
                                 <div>
-                                    <p className="text-white font-semibold text-sm mb-2">Upload Audio — здесь Suno становится настоящим коллаборатором</p>
-                                    <p className="text-white/50 text-sm leading-relaxed">Загружаешь свою мелодию, рифф, напетую идею или ритмический паттерн — и Suno его развивает. В этом режиме AI перестаёт быть генератором и становится соавтором. Лучшие результаты всегда выходят именно так: оригинальная идея от человека, производственные возможности — от AI.</p>
+                                    <p className="text-white font-semibold text-base mb-2">Upload Audio — здесь Suno становится настоящим коллаборатором</p>
+                                    <p className="text-white/65 text-base leading-relaxed">Загружаешь свою мелодию, рифф, напетую идею или ритмический паттерн — и Suno его развивает. В этом режиме AI перестаёт быть генератором и становится соавтором. Лучшие результаты всегда выходят именно так: оригинальная идея от человека, производственные возможности — от AI.</p>
                                     <div className="mt-3 rounded-lg p-3 text-sm" style={{ background: "rgba(201,168,76,0.08)", color: "#C9A84C" }}>
                                         → Это максимально близко к настоящему совместному написанию с AI. Используй это.
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <BackToTop />
                     </div>
 
                     <div id="personas" className="flex flex-col gap-5">
@@ -450,11 +429,10 @@ export default function SunoGuidePageRu() {
                         </div>
                         <p>Persona — не копия трека. Это точка отсчёта. Сохранённый звуковой характер, к которому можно возвращаться от сессии к сессии, без необходимости заново его нащупывать каждый раз.</p>
                         <p>Представь: ты работаешь над альбомом. Нужно, чтобы каждый трек звучал как часть одного мира — тот же вокальный характер, та же звуковая палитра, та же энергия. Без Personas каждая сессия начинается с нуля. С Personas — закрепляешь звук и строишь от него. Разница между «похоже на альбом» и «это случайная подборка треков».</p>
-                        <div className="rounded-xl p-4 flex gap-3" style={{ background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.15)" }}>
+                        <div className="rounded-xl p-4 flex gap-3" style={{ background: "rgba(201,168,76,0.07)", border: "1px solid rgba(201,168,76,0.25)" }}>
                             <span className="text-lg">🎯</span>
-                            <p className="text-white/60 text-sm leading-relaxed">Personas особенно полезны для <strong className="text-white">альбомных проектов, YouTube-каналов и клиентских работ</strong> — везде, где нужно узнаваемое, цельное звучание в нескольких треках.</p>
+                            <p className="text-white/65 text-base leading-relaxed">Personas особенно полезны для <strong className="text-white">альбомных проектов, YouTube-каналов и клиентских работ</strong> — везде, где нужно узнаваемое, цельное звучание в нескольких треках.</p>
                         </div>
-                        <BackToTop />
                     </div>
 
                     <div id="demo-machine" className="flex flex-col gap-5">
@@ -468,9 +446,9 @@ export default function SunoGuidePageRu() {
                             <img loading="lazy" decoding="async" src="/images/suno-ru-14.webp" alt="Suno = демо, не релиз" className="w-full object-cover" />
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div className="rounded-xl p-5 flex flex-col gap-2" style={{ background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.15)" }}>
-                                <p className="text-white font-semibold text-sm">🎵 Suno даёт тебе</p>
-                                <ul className="flex flex-col gap-2 text-white/50 text-sm">
+                            <div className="rounded-xl p-5 flex flex-col gap-2" style={{ background: "rgba(201,168,76,0.07)", border: "1px solid rgba(201,168,76,0.25)" }}>
+                                <p className="text-white font-semibold text-base">🎵 Suno даёт тебе</p>
+                                <ul className="flex flex-col gap-2 text-white/65 text-base">
                                     <li>→ Идею и направление</li>
                                     <li>→ Структуру и аранжировку</li>
                                     <li>→ Характер и стиль вокала</li>
@@ -478,8 +456,8 @@ export default function SunoGuidePageRu() {
                                 </ul>
                             </div>
                             <div className="rounded-xl p-5 flex flex-col gap-2" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}>
-                                <p className="text-white font-semibold text-sm">🎚️ DAW даёт тебе</p>
-                                <ul className="flex flex-col gap-2 text-white/50 text-sm">
+                                <p className="text-white font-semibold text-base">🎚️ DAW даёт тебе</p>
+                                <ul className="flex flex-col gap-2 text-white/65 text-base">
                                     <li>→ Баланс и разделение в миксе</li>
                                     <li>→ Пространство и глубину</li>
                                     <li>→ Обработку и ясность вокала</li>
@@ -489,7 +467,6 @@ export default function SunoGuidePageRu() {
                         </div>
                         <p>Слушателю всё равно, как сделан трек. Ему важно, как он звучит. Трек из Suno с нормальным <a href="/mixing-mastering" style={{ color: "#C9A84C", textDecoration: "underline" }}>сведением и мастерингом</a> звучит лучше, чем живая запись, которую никто нормально не свёл. Инструменты не имеют значения. Результат — имеет.</p>
                         <p>Suno — отличная отправная точка. Не финиш. Следующий шаг — стемы, баланс, вокальная обработка, детали <a href="/arrangement" style={{ color: "#C9A84C", textDecoration: "underline" }}>аранжировки</a> — всё то, что переводит демо в то, что реально бьёт.</p>
-                        <BackToTop />
                     </div>
 {/* v5.5 Update */}
                     <div id="v55-update" className="flex flex-col gap-5">
@@ -498,9 +475,9 @@ export default function SunoGuidePageRu() {
                             <h2 className="text-xl md:text-2xl font-semibold text-white">Обновление v5.5 — голос, стиль и вкус</h2>
                         </div>
 
-                        <div className="rounded-xl p-4 flex gap-3 items-start" style={{ background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.2)" }}>
+                        <div className="rounded-xl p-4 flex gap-3 items-start" style={{ background: "rgba(201,168,76,0.07)", border: "1px solid rgba(201,168,76,0.25)" }}>
                             <span className="text-lg flex-shrink-0">📅</span>
-                            <p className="text-white/60 text-sm leading-relaxed">Suno v5.5 вышел 26 марта 2026. Это не улучшение движка — это смена философии. Предыдущие версии соревновались за качество звука. v5.5 соревнуется за идентичность. Три новые функции: <strong className="text-white">Voices, Custom Models, My Taste</strong>.</p>
+                            <p className="text-white/65 text-base leading-relaxed">Suno v5.5 вышел 26 марта 2026. Это не улучшение движка — это смена философии. Предыдущие версии соревновались за качество звука. v5.5 соревнуется за идентичность. Три новые функции: <strong className="text-white">Voices, Custom Models, My Taste</strong>.</p>
                         </div>
 
                         {/* Voices */}
@@ -524,30 +501,30 @@ export default function SunoGuidePageRu() {
                                         <span className="text-2xl font-bold flex-shrink-0" style={{ color: "rgba(201,168,76,0.25)" }}>{item.step}</span>
                                         <div>
                                             <p className="text-white font-medium text-sm">{item.title}</p>
-                                            <p className="text-white/50 text-sm mt-1 leading-relaxed">{item.desc}</p>
+                                            <p className="text-white/65 text-base mt-1 leading-relaxed">{item.desc}</p>
                                         </div>
                                     </div>
                                 ))}
                             </div>
 
                             <div className="rounded-xl p-5 flex flex-col gap-3" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderLeft: "3px solid #C9A84C" }}>
-                                <p className="text-white font-semibold text-sm">🎙️ Почему качество записи критично</p>
-                                <p className="text-white/60 text-sm leading-relaxed">Suno обучает голосовую модель на том материале, который ты ей даёшь. Если в записи есть шум кондиционера, эхо от стен, фоновая музыка или соседи за стеной — всё это войдёт в модель. Результат: при генерации трека голос будет звучать нечётко, с артефактами и искажениями. Никакой алгоритм не сможет «убрать» шум, который уже зашит в модель.</p>
-                                <p className="text-white/60 text-sm leading-relaxed mt-1">Оптимальные условия: тихая комната, студийный микрофон или хотя бы качественные наушники с микрофоном, минимальное расстояние от губ до источника записи. Запись ранним утром или поздно ночью когда улица тихая — не шутка, это реально работает.</p>
-                                <p className="text-white/60 text-sm leading-relaxed mt-1">Одна хорошая запись голоса сделанная один раз — это инвестиция. Плохая запись не исправляется никакими настройками после.</p>
+                                <p className="text-white font-semibold text-base">🎙️ Почему качество записи критично</p>
+                                <p className="text-white/65 text-base leading-relaxed">Suno обучает голосовую модель на том материале, который ты ей даёшь. Если в записи есть шум кондиционера, эхо от стен, фоновая музыка или соседи за стеной — всё это войдёт в модель. Результат: при генерации трека голос будет звучать нечётко, с артефактами и искажениями. Никакой алгоритм не сможет «убрать» шум, который уже зашит в модель.</p>
+                                <p className="text-white/65 text-base leading-relaxed mt-1">Оптимальные условия: тихая комната, студийный микрофон или хотя бы качественные наушники с микрофоном, минимальное расстояние от губ до источника записи. Запись ранним утром или поздно ночью когда улица тихая — не шутка, это реально работает.</p>
+                                <p className="text-white/65 text-base leading-relaxed mt-1">Одна хорошая запись голоса сделанная один раз — это инвестиция. Плохая запись не исправляется никакими настройками после.</p>
                             </div>
 
                             <div className="rounded-xl p-4 flex gap-3 items-start" style={{ background: "rgba(255,100,80,0.06)", border: "1px solid rgba(255,100,80,0.2)" }}>
                                 <span className="text-lg flex-shrink-0">⚠️</span>
                                 <div>
-                                    <p className="text-white font-semibold text-sm mb-1">Важно перед активацией</p>
-                                    <p className="text-white/60 text-sm leading-relaxed">При включении Voices нужно поставить галочку согласия на использование твоих голосовых данных для обучения модели Suno — не только твоей личной версии, но и общей модели платформы. Без этого функция не включается. Это не опционально. Решай осознанно.</p>
+                                    <p className="text-white font-semibold text-base mb-1">Важно перед активацией</p>
+                                    <p className="text-white/65 text-base leading-relaxed">При включении Voices нужно поставить галочку согласия на использование твоих голосовых данных для обучения модели Suno — не только твоей личной версии, но и общей модели платформы. Без этого функция не включается. Это не опционально. Решай осознанно.</p>
                                 </div>
                             </div>
 
                             <div className="rounded-xl p-4 flex gap-3" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}>
                                 <span className="text-lg">🔒</span>
-                                <p className="text-white/60 text-sm leading-relaxed">Голос по умолчанию приватный — только ты можешь его использовать для генерации. Функция совместного доступа к голосу анонсирована, но пока недоступна. Только для аккаунтов <strong className="text-white">Pro и Premier</strong>.</p>
+                                <p className="text-white/65 text-base leading-relaxed">Голос по умолчанию приватный — только ты можешь его использовать для генерации. Функция совместного доступа к голосу анонсирована, но пока недоступна. Только для аккаунтов <strong className="text-white">Pro и Premier</strong>.</p>
                             </div>
                         </div>
 
@@ -558,18 +535,18 @@ export default function SunoGuidePageRu() {
                             <p>Логика та же, что у пресетов и шаблонов в DAW — только вместо настроек плагинов ты загружаешь свои треки как обучающий материал. Модель улавливает твои жанровые предпочтения, характерные инструментальные решения, динамику и звуковую эстетику.</p>
 
                             <div className="rounded-xl p-5 flex flex-col gap-3" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderLeft: "3px solid #C9A84C" }}>
-                                <p className="text-white font-semibold text-sm">Что важно понимать</p>
-                                <p className="text-white/60 text-sm leading-relaxed">Custom Models хорошо улавливают поверхностные характеристики — тембр, жанровые маркеры, инструментальную текстуру. С более глубокими compositional tendencies — аранжировочными решениями, паузами, динамическими контрастами — модель справляется хуже. Чем самобытнее твой стиль, тем интереснее результат. Если твоя музыка звучит как большинство — особого смысла в Custom Model нет.</p>
+                                <p className="text-white font-semibold text-base">Что важно понимать</p>
+                                <p className="text-white/65 text-base leading-relaxed">Custom Models хорошо улавливают поверхностные характеристики — тембр, жанровые маркеры, инструментальную текстуру. С более глубокими compositional tendencies — аранжировочными решениями, паузами, динамическими контрастами — модель справляется хуже. Чем самобытнее твой стиль, тем интереснее результат. Если твоя музыка звучит как большинство — особого смысла в Custom Model нет.</p>
                             </div>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                                <div className="rounded-xl p-4 flex flex-col gap-2" style={{ background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.15)" }}>
+                                <div className="rounded-xl p-4 flex flex-col gap-2" style={{ background: "rgba(201,168,76,0.07)", border: "1px solid rgba(201,168,76,0.25)" }}>
                                     <p className="text-white font-semibold text-xs uppercase tracking-widest">Доступно</p>
-                                    <p className="text-white/60 text-sm">До 3 кастомных моделей на аккаунт. Только Pro и Premier.</p>
+                                    <p className="text-white/65 text-base">До 3 кастомных моделей на аккаунт. Только Pro и Premier.</p>
                                 </div>
                                 <div className="rounded-xl p-4 flex flex-col gap-2" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}>
                                     <p className="text-white font-semibold text-xs uppercase tracking-widest">Лучший сценарий</p>
-                                    <p className="text-white/60 text-sm">YouTube-канал, альбом, клиентский проект — где нужен единый, узнаваемый звук.</p>
+                                    <p className="text-white/65 text-base">YouTube-канал, альбом, клиентский проект — где нужен единый, узнаваемый звук.</p>
                                 </div>
                             </div>
                         </div>
@@ -582,12 +559,11 @@ export default function SunoGuidePageRu() {
 
                             <div className="rounded-xl p-4 flex gap-3" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}>
                                 <span className="text-lg">💡</span>
-                                <p className="text-white/60 text-sm leading-relaxed">Работает тем лучше, чем больше ты используешь Suno — и чем последовательнее в своих оценках. Лайкаешь блюз-рок и дизлайкаешь поп — My Taste это замечает. Лайкаешь всё подряд — система не понимает что ты хочешь и помогает меньше. Фильтруй Library честно.</p>
+                                <p className="text-white/65 text-base leading-relaxed">Работает тем лучше, чем больше ты используешь Suno — и чем последовательнее в своих оценках. Лайкаешь блюз-рок и дизлайкаешь поп — My Taste это замечает. Лайкаешь всё подряд — система не понимает что ты хочешь и помогает меньше. Фильтруй Library честно.</p>
                             </div>
                         </div>
 
                         <ProTip>v5.5 — это аддитивное обновление. Всё что работало в v5 работает и сейчас. Voices, Custom Models и My Taste — дополнительные слои поверх того же движка. Начни с My Taste прямо сейчас, это бесплатно. Voices и Custom Models — когда будет готова качественная запись голоса и накоплен собственный музыкальный каталог.</ProTip>
-                        <BackToTop />
                     </div>
                     <div id="checklist" className="flex flex-col gap-5">
                         <div className="flex items-center gap-3">
@@ -599,24 +575,23 @@ export default function SunoGuidePageRu() {
                             <img loading="lazy" decoding="async" src="/images/suno-ru-15.webp" alt="Чеклист перед генерацией" className="w-full object-cover" />
                         </div>
                         <InteractiveChecklist />
-                        <BackToTop />
                     </div>
 
                     <div className="flex flex-col gap-1">
                         <div className="w-full h-px" style={{ background: "rgba(255,255,255,0.06)" }} />
-                        <div className="rounded-2xl p-8 flex flex-col gap-4 mt-4" style={{ background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.2)" }}>
+                        <div className="rounded-2xl p-8 flex flex-col gap-4 mt-4" style={{ background: "rgba(201,168,76,0.07)", border: "1px solid rgba(201,168,76,0.25)" }}>
                             <h3 className="text-xl font-semibold text-white">Напоследок</h3>
-                            <p className="text-white/60 text-sm leading-relaxed">Работа с Suno — это навык. Не секретный промпт, не волшебная настройка — навык. Который растёт через практику, честное слушание и готовность разобраться в инструменте, а не бороться с ним.</p>
-                            <p className="text-white/60 text-sm leading-relaxed">Те, кто получают от Suno максимум — не те, кто нашёл магическую формулу. Это те, кто понял логику, выстроил рабочий процесс и продолжал возвращаться. Кто относится к нему как к соавтору, а не к торговому автомату с музыкой.</p>
-                            <p className="text-white/60 text-sm leading-relaxed">Suno ускоряет. Он не заменяет. Работа всё равно твоя — и это хорошо. Потому что именно в ней и живёт музыка.</p>
+                            <p className="text-white/65 text-base leading-relaxed">Работа с Suno — это навык. Не секретный промпт, не волшебная настройка — навык. Который растёт через практику, честное слушание и готовность разобраться в инструменте, а не бороться с ним.</p>
+                            <p className="text-white/65 text-base leading-relaxed">Те, кто получают от Suno максимум — не те, кто нашёл магическую формулу. Это те, кто понял логику, выстроил рабочий процесс и продолжал возвращаться. Кто относится к нему как к соавтору, а не к торговому автомату с музыкой.</p>
+                            <p className="text-white/65 text-base leading-relaxed">Suno ускоряет. Он не заменяет. Работа всё равно твоя — и это хорошо. Потому что именно в ней и живёт музыка.</p>
                             <p className="text-white font-semibold mt-2 text-lg">Иди делай.</p>
                         </div>
                     </div>
 
                     <div className="rounded-2xl p-8 text-center flex flex-col items-center gap-4"
-                        style={{ background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.2)" }}>
+                        style={{ background: "rgba(201,168,76,0.07)", border: "1px solid rgba(201,168,76,0.25)" }}>
                         <h3 className="text-xl font-semibold text-white">Демо из Suno готово — что дальше?</h3>
-                        <p className="text-white/50 text-sm max-w-md">Присылай трек — стемы, черновой микс или прямой экспорт из Suno. Доведём до релизного состояния. Первая консультация бесплатно.</p>
+                        <p className="text-white/65 text-base max-w-md">Присылай трек — стемы, черновой микс или прямой экспорт из Suno. Доведём до релизного состояния. Первая консультация бесплатно.</p>
                         <a href="/contact" className="inline-flex items-center gap-2 text-black font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition text-sm"
                             style={{ backgroundColor: "#C9A84C" }}>
                             Написать →

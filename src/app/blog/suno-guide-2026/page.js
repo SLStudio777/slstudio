@@ -40,21 +40,6 @@ export const metadata = {
     },
 };
 
-// ─── Reusable Back-to-Top button (server-safe, no state) ────────────────────
-function BackToTop() {
-    return (
-        <div className="flex justify-end pt-2">
-            <a
-                href="#top"
-                className="text-xs flex items-center gap-1.5 px-3 py-1.5 rounded-lg transition hover:opacity-80"
-                style={{ background: "rgba(201,168,76,0.08)", color: "#C9A84C", border: "1px solid rgba(201,168,76,0.15)" }}
-            >
-                ↑ Back to top
-            </a>
-        </div>
-    );
-}
-
 // ─── Pro Tip block ───────────────────────────────────────────────────────────
 function ProTip({ children }) {
     return (
@@ -65,7 +50,7 @@ function ProTip({ children }) {
             <span className="text-base flex-shrink-0 font-bold" style={{ color: "#C9A84C" }}>★</span>
             <div>
                 <p className="text-xs font-bold uppercase tracking-widest mb-1.5" style={{ color: "#C9A84C" }}>Pro Tip</p>
-                <p className="text-white/70 text-sm leading-relaxed">{children}</p>
+                <p className="text-white/70 text-base leading-relaxed">{children}</p>
             </div>
         </div>
     );
@@ -126,7 +111,7 @@ function TableOfContents() {
             className="rounded-2xl p-6"
             style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.07)" }}
         >
-            <p className="text-white font-semibold text-sm mb-4">Contents</p>
+            <p className="text-white font-semibold text-base mb-4">Contents</p>
             <ol className="flex flex-col gap-2">
                 {TOC.map((item, i) => (
                     <li key={item.id} className="flex items-baseline gap-2.5">
@@ -166,11 +151,11 @@ export default function SunoGuidePage() {
                 <div className="blog-prose flex flex-col gap-14 text-white/70 text-[16px] leading-relaxed">
 
                     {/* Intro callout */}
-                    <div className="rounded-2xl p-6 flex gap-4 items-start" style={{ background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.2)" }}>
+                    <div className="rounded-2xl p-6 flex gap-4 items-start" style={{ background: "rgba(201,168,76,0.07)", border: "1px solid rgba(201,168,76,0.25)" }}>
                         <span className="text-2xl flex-shrink-0">🎯</span>
                         <div>
                             <p className="text-white font-semibold mb-2">Who this guide is for</p>
-                            <p className="text-white/60 text-sm leading-relaxed">Musicians, producers, and curious creators who want <strong className="text-white">predictable results</strong> instead of random noise. We cover the interface, the logic, the settings, and the workflow — so you can stop gambling and start actually making music.</p>
+                            <p className="text-white/65 text-base leading-relaxed">Musicians, producers, and curious creators who want <strong className="text-white">predictable results</strong> instead of random noise. We cover the interface, the logic, the settings, and the workflow — so you can stop gambling and start actually making music.</p>
                         </div>
                     </div>
 
@@ -184,7 +169,7 @@ export default function SunoGuidePage() {
                     >
                         <p className="text-xs font-bold uppercase tracking-widest" style={{ color: "rgba(201,168,76,0.6)" }}>The Core Idea</p>
                         <p className="text-2xl md:text-3xl font-semibold text-white leading-snug">Suno is not a hit generator.<br />Suno is an idea development tool.</p>
-                        <p className="text-white/50 text-sm max-w-md mx-auto mt-1">Everything in this guide flows from that one principle. The faster you internalize it, the faster your results improve.</p>
+                        <p className="text-white/65 text-base max-w-md mx-auto mt-1">Everything in this guide flows from that one principle. The faster you internalize it, the faster your results improve.</p>
                     </div>
 
                     {/* ── Before We Start ── */}
@@ -200,7 +185,6 @@ export default function SunoGuidePage() {
                         <div className="rounded-2xl overflow-hidden border border-white/5">
                             <img loading="lazy" decoding="async" src="/images/suno-1.webp" alt="Working with Suno: It's a Skill, Not Just AI Knowledge" className="w-full object-cover" />
                         </div>
-                        <BackToTop />
                     </div>
 
                     {/* ── Part 1 ── */}
@@ -215,9 +199,8 @@ export default function SunoGuidePage() {
                         <p>What makes Suno powerful is the same thing that makes any professional tool powerful: understanding how it thinks, what it responds to, and where its limitations actually are. Once you have that, the tool stops fighting you and starts working with you.</p>
                         <div className="rounded-xl p-4 flex gap-3 items-start" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}>
                             <span className="text-lg flex-shrink-0">💡</span>
-                            <p className="text-white/60 text-sm">Start with the basics. Understand the tool. Then go deep. The shortcut is always longer than the actual path — especially with creative software.</p>
+                            <p className="text-white/65 text-base">Start with the basics. Understand the tool. Then go deep. The shortcut is always longer than the actual path — especially with creative software.</p>
                         </div>
-                        <BackToTop />
                     </div>
 
                     {/* ── Part 2 ── */}
@@ -234,20 +217,20 @@ export default function SunoGuidePage() {
                             <div className="rounded-xl p-5 flex gap-4 items-start" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderLeft: "3px solid #C9A84C" }}>
                                 <span className="text-xl flex-shrink-0">🎙️</span>
                                 <div>
-                                    <p className="text-white font-semibold text-sm mb-2">Create — Your Main Stage</p>
-                                    <p className="text-white/50 text-sm leading-relaxed">This is where tracks are born — ideas, demos, experiments. Everything starts here. Think of it as the recording booth. You do not need it to be perfect when you walk in. You just need a direction.</p>
+                                    <p className="text-white font-semibold text-base mb-2">Create — Your Main Stage</p>
+                                    <p className="text-white/65 text-base leading-relaxed">This is where tracks are born — ideas, demos, experiments. Everything starts here. Think of it as the recording booth. You do not need it to be perfect when you walk in. You just need a direction.</p>
                                 </div>
                             </div>
                             <div className="rounded-xl p-5 flex gap-4 items-start" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderLeft: "3px solid #C9A84C" }}>
                                 <span className="text-xl flex-shrink-0">📚</span>
                                 <div>
-                                    <p className="text-white font-semibold text-sm mb-2">Library — Your Personal Archive</p>
-                                    <p className="text-white/50 text-sm leading-relaxed">Every track you have ever generated lives here. You can like, dislike, and build playlists. Here is the crucial thing many people miss: <strong className="text-white">these are not social likes</strong>. Nobody sees them but you. They are a filtering system — and a very important one.</p>
+                                    <p className="text-white font-semibold text-base mb-2">Library — Your Personal Archive</p>
+                                    <p className="text-white/65 text-base leading-relaxed">Every track you have ever generated lives here. You can like, dislike, and build playlists. Here is the crucial thing many people miss: <strong className="text-white">these are not social likes</strong>. Nobody sees them but you. They are a filtering system — and a very important one.</p>
                                     <div className="mt-3 flex flex-col gap-1">
-                                        <p className="text-white/40 text-xs">👍 Like → track stays visible and easy to find</p>
-                                        <p className="text-white/40 text-xs">👎 Dislike → track hides (but does not delete — still there if you need it)</p>
+                                        <p className="text-white/50 text-sm">👍 Like → track stays visible and easy to find</p>
+                                        <p className="text-white/50 text-sm">👎 Dislike → track hides (but does not delete — still there if you need it)</p>
                                     </div>
-                                    <p className="text-white/50 text-sm mt-3">Use this ruthlessly. Your Library will fill up fast. A good filtering habit now saves hours of scrolling later. Think of it like keeping your Downloads folder clean — the kind of thing you ignore until it becomes a catastrophe.</p>
+                                    <p className="text-white/65 text-base mt-3">Use this ruthlessly. Your Library will fill up fast. A good filtering habit now saves hours of scrolling later. Think of it like keeping your Downloads folder clean — the kind of thing you ignore until it becomes a catastrophe.</p>
                                 </div>
                             </div>
                         </div>
@@ -257,12 +240,11 @@ export default function SunoGuidePage() {
                         <div className="rounded-xl p-5 flex gap-4 items-start" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderLeft: "3px solid #C9A84C" }}>
                             <span className="text-xl flex-shrink-0">📁</span>
                             <div>
-                                <p className="text-white font-semibold text-sm mb-2">Workspace — Your Project Folder System</p>
-                                <p className="text-white/50 text-sm leading-relaxed">If you are making one type of music casually, you can skip this. But the moment you have multiple genres, client projects, YouTube channel ideas, or album concepts running simultaneously — Workspace is what keeps you sane.</p>
-                                <p className="text-white/50 text-sm mt-2">Think of it less as keeping things tidy and more as keeping your brain organised. When you know where everything is and why it exists, your results become more consistent. And consistency is where quality lives. A musician who cannot find their best idea is the same as a musician who never had it.</p>
+                                <p className="text-white font-semibold text-base mb-2">Workspace — Your Project Folder System</p>
+                                <p className="text-white/65 text-base leading-relaxed">If you are making one type of music casually, you can skip this. But the moment you have multiple genres, client projects, YouTube channel ideas, or album concepts running simultaneously — Workspace is what keeps you sane.</p>
+                                <p className="text-white/65 text-base mt-2">Think of it less as keeping things tidy and more as keeping your brain organised. When you know where everything is and why it exists, your results become more consistent. And consistency is where quality lives. A musician who cannot find their best idea is the same as a musician who never had it.</p>
                             </div>
                         </div>
-                        <BackToTop />
                     </div>
 
                     {/* ── Part 3 ── */}
@@ -277,23 +259,22 @@ export default function SunoGuidePage() {
                             <img loading="lazy" decoding="async" src="/images/suno-4.webp" alt="Simple vs Custom Mode" className="w-full object-cover" />
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div className="rounded-xl p-5 flex flex-col gap-3" style={{ background: "rgba(100,200,100,0.05)", border: "1px solid rgba(100,200,100,0.15)" }}>
-                                <p className="text-white font-semibold text-sm">✅ Simple Mode — Use This First</p>
-                                <p className="text-white/50 text-sm leading-relaxed">The fast entry point. One idea, one line, no overthinking. It exists for exactly the moment when you do not yet know what you want. Use it to test whether a genre idea even works. To catch a mood quickly. To check if an idea has any potential before investing time in it.</p>
+                            <div className="rounded-xl p-5 flex flex-col gap-3" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}>
+                                <p className="text-white font-semibold text-base">✅ Simple Mode — Use This First</p>
+                                <p className="text-white/65 text-base leading-relaxed">The fast entry point. One idea, one line, no overthinking. It exists for exactly the moment when you do not yet know what you want. Use it to test whether a genre idea even works. To catch a mood quickly. To check if an idea has any potential before investing time in it.</p>
                                 <p className="text-sm" style={{ color: "#C9A84C" }}>Think of it like a musician noodling a melody before committing to an arrangement. You do not write the final take first.</p>
                             </div>
-                            <div className="rounded-xl p-5 flex flex-col gap-3" style={{ background: "rgba(255,100,100,0.05)", border: "1px solid rgba(255,100,100,0.15)" }}>
-                                <p className="text-white font-semibold text-sm">⚙️ Custom Mode — Use This After</p>
-                                <p className="text-white/50 text-sm leading-relaxed">For when you already know your direction — genre, mood, vocal feel, rough structure — and you want to control the details. The problem is that most people skip the exploration phase and demand Custom Mode precision before they have figured out what they want.</p>
-                                <p className="text-white/30 text-sm mt-1">More options means more ways to be precisely wrong.</p>
+                            <div className="rounded-xl p-5 flex flex-col gap-3" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}>
+                                <p className="text-white font-semibold text-base">⚙️ Custom Mode — Use This After</p>
+                                <p className="text-white/65 text-base leading-relaxed">For when you already know your direction — genre, mood, vocal feel, rough structure — and you want to control the details. The problem is that most people skip the exploration phase and demand Custom Mode precision before they have figured out what they want.</p>
+                                <p className="text-white/45 text-base mt-1">More options means more ways to be precisely wrong.</p>
                             </div>
                         </div>
                         <div className="rounded-xl p-5" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.08)" }}>
-                            <p className="text-white/80 text-sm italic leading-relaxed">"Custom Mode does not automatically make things better. It just makes your mistakes more expensive and more specific."</p>
+                            <p className="text-white/80 text-base italic leading-relaxed">"Custom Mode does not automatically make things better. It just makes your mistakes more expensive and more specific."</p>
                         </div>
                         <p>Use Simple Mode first. Most great tracks begin there. The exploration phase is not wasted time — it is where you figure out what you actually want. Skipping it does not save time, it just moves the confusion to a more complicated interface.</p>
                         <ProTip>Spend your first 5–10 generations in Simple Mode for every new project. Once one of them feels right — that is when you open Custom Mode. Not before.</ProTip>
-                        <BackToTop />
                     </div>
 
                     {/* ── Part 4 ── */}
@@ -308,12 +289,12 @@ export default function SunoGuidePage() {
                             <img loading="lazy" decoding="async" src="/images/suno-5.webp" alt="Structure Your Prompt" className="w-full object-cover" />
                         </div>
                         <p>The most common mistake is what we will call the <strong className="text-white">salad prompt</strong>: genre, mood, another genre, an era, an instrument, an emotion, some vibes, maybe a reference — all thrown together with no hierarchy. Suno does not know what you care about most, so it starts guessing. And when AI guesses, you get something technically impressive that sounds like nobody's music in particular.</p>
-                        <div className="rounded-xl p-5 flex flex-col gap-3" style={{ background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.2)" }}>
-                            <p className="text-white font-semibold text-sm">✅ The Working Formula</p>
+                        <div className="rounded-xl p-5 flex flex-col gap-3" style={{ background: "rgba(201,168,76,0.07)", border: "1px solid rgba(201,168,76,0.25)" }}>
+                            <p className="text-white font-semibold text-base">✅ The Working Formula</p>
                             <div className="rounded-lg p-3 font-mono text-sm text-center" style={{ background: "rgba(0,0,0,0.3)", color: "#C9A84C" }}>
                                 GENRE & MOOD → VOCALS → KEY INSTRUMENTS → MIX & FEEL
                             </div>
-                            <p className="text-white/60 text-sm leading-relaxed">You define the territory first, then the character, then the specific elements. This order matters because Suno prioritises from the top down. If you say "soft jazz" first and then "heavy drums" three lines later, the system has a conflict and resolves it however it wants — which is never how you wanted it.</p>
+                            <p className="text-white/65 text-base leading-relaxed">You define the territory first, then the character, then the specific elements. This order matters because Suno prioritises from the top down. If you say "soft jazz" first and then "heavy drums" three lines later, the system has a conflict and resolves it however it wants — which is never how you wanted it.</p>
                         </div>
                         <div className="flex flex-col gap-3">
                             <p className="text-white/40 text-xs uppercase tracking-widest">Practical Examples That Actually Work</p>
@@ -337,12 +318,11 @@ export default function SunoGuidePage() {
                         <div className="rounded-xl p-4 flex gap-3 items-start" style={{ background: "rgba(255,100,100,0.05)", border: "1px solid rgba(255,100,100,0.15)" }}>
                             <span className="text-lg flex-shrink-0">🚨</span>
                             <div>
-                                <p className="text-white font-semibold text-sm mb-1">Always describe the vocal</p>
-                                <p className="text-white/60 text-sm leading-relaxed">Even briefly. Gender, delivery style, emotional intensity. If you leave it blank, you are handing that decision to Suno — and you might get a soprano operatic performance over your doom metal track. Technically impressive. Contextually catastrophic. And yes, this has happened to everyone at least once.</p>
+                                <p className="text-white font-semibold text-base mb-1">Always describe the vocal</p>
+                                <p className="text-white/65 text-base leading-relaxed">Even briefly. Gender, delivery style, emotional intensity. If you leave it blank, you are handing that decision to Suno — and you might get a soprano operatic performance over your doom metal track. Technically impressive. Contextually catastrophic. And yes, this has happened to everyone at least once.</p>
                             </div>
                         </div>
                         <ProTip>Don't list every instrument you want to hear. Mention only the two or three instruments that define the track's identity. The rest Suno will figure out — and it usually does it well when it has room to breathe.</ProTip>
-                        <BackToTop />
                     </div>
 
                     {/* ── Part 5 ── */}
@@ -357,7 +337,7 @@ export default function SunoGuidePage() {
                         </div>
                         <div className="rounded-xl p-5" style={{ background: "rgba(201,168,76,0.08)", border: "1px solid rgba(201,168,76,0.25)" }}>
                             <p className="text-white font-semibold mb-2 text-center">The One Rule That Saves Everything</p>
-                            <p className="text-center text-white/80 text-sm leading-relaxed">Everything inside <strong className="text-white">[square brackets]</strong> = a command to Suno.<br />Everything outside = lyrics to be performed out loud.<br /><br />That is it. That is the whole rule.</p>
+                            <p className="text-center text-white/80 text-base leading-relaxed">Everything inside <strong className="text-white">[square brackets]</strong> = a command to Suno.<br />Everything outside = lyrics to be performed out loud.<br /><br />That is it. That is the whole rule.</p>
                         </div>
                         <p>If you write <code className="text-sm px-2 py-0.5 rounded" style={{ background: "rgba(255,255,255,0.08)", color: "#C9A84C" }}>energetic guitar solo</code> in your lyrics without brackets, Suno will cheerfully <em>sing those words</em>. Out loud. On your track. You will have a vocalist going "energetic guitar solooo" over your breakdown. Not what you wanted. Not a bug. That is exactly what you asked for.</p>
                         <p>Structural tags go in brackets:</p>
@@ -372,11 +352,10 @@ export default function SunoGuidePage() {
                         <div className="rounded-xl p-4 flex gap-3 items-start" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderLeft: "3px solid #C9A84C" }}>
                             <span className="text-xl flex-shrink-0">💡</span>
                             <div>
-                                <p className="text-white font-semibold text-sm mb-1">Start with an instrumental intro</p>
-                                <p className="text-white/60 text-sm leading-relaxed">Give your track space to breathe before the vocal comes in. It creates anticipation, sounds more professional, and gives you clean, vocal-free material to work with when you get to the DAW.</p>
+                                <p className="text-white font-semibold text-base mb-1">Start with an instrumental intro</p>
+                                <p className="text-white/65 text-base leading-relaxed">Give your track space to breathe before the vocal comes in. It creates anticipation, sounds more professional, and gives you clean, vocal-free material to work with when you get to the DAW.</p>
                             </div>
                         </div>
-                        <BackToTop />
                     </div>
 
                     {/* ── Part 6 ── */}
@@ -396,22 +375,21 @@ export default function SunoGuidePage() {
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="rounded-xl p-5 flex flex-col gap-3" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}>
-                                <p className="text-white font-semibold text-sm">🎵 Classic Pop Structure</p>
-                                <p className="text-white/50 text-sm leading-relaxed">Intro → Verse → Chorus → Verse → Chorus → Bridge → Final Chorus → Instrumental Outro. Full development. This is the architecture of a thousand hits for a reason — it works. Every section earns its place by doing something specific to the listener's emotional journey.</p>
+                                <p className="text-white font-semibold text-base">🎵 Classic Pop Structure</p>
+                                <p className="text-white/65 text-base leading-relaxed">Intro → Verse → Chorus → Verse → Chorus → Bridge → Final Chorus → Instrumental Outro. Full development. This is the architecture of a thousand hits for a reason — it works. Every section earns its place by doing something specific to the listener's emotional journey.</p>
                             </div>
                             <div className="rounded-xl p-5 flex flex-col gap-3" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}>
-                                <p className="text-white font-semibold text-sm">📱 Modern Streaming Structure</p>
-                                <p className="text-white/50 text-sm leading-relaxed">Leaner, faster, no patience for slow builds. Get to the chorus in the first 30 seconds. Streaming data shows most people decide whether to stay within the intro — which means your intro is actually your chorus.</p>
+                                <p className="text-white font-semibold text-base">📱 Modern Streaming Structure</p>
+                                <p className="text-white/65 text-base leading-relaxed">Leaner, faster, no patience for slow builds. Get to the chorus in the first 30 seconds. Streaming data shows most people decide whether to stay within the intro — which means your intro is actually your chorus.</p>
                             </div>
                         </div>
-                        <div className="rounded-xl p-4 flex gap-3 items-start" style={{ background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.15)" }}>
+                        <div className="rounded-xl p-4 flex gap-3 items-start" style={{ background: "rgba(201,168,76,0.07)", border: "1px solid rgba(201,168,76,0.25)" }}>
                             <span className="text-lg flex-shrink-0">💡</span>
                             <div>
-                                <p className="text-white font-semibold text-sm mb-1">Pro tip worth remembering</p>
-                                <p className="text-white/60 text-sm leading-relaxed">Start with an instrumental intro. Give your track space to breathe before the vocal comes in. It creates anticipation, sounds more professional, and gives you clean material to work with in the DAW.</p>
+                                <p className="text-white font-semibold text-base mb-1">Pro tip worth remembering</p>
+                                <p className="text-white/65 text-base leading-relaxed">Start with an instrumental intro. Give your track space to breathe before the vocal comes in. It creates anticipation, sounds more professional, and gives you clean material to work with in the DAW.</p>
                             </div>
                         </div>
-                        <BackToTop />
                     </div>
 
                     {/* ── Part 7 ── */}
@@ -426,7 +404,7 @@ export default function SunoGuidePage() {
                         </div>
                         <div className="flex flex-col gap-4">
                             <div className="rounded-xl p-5 flex flex-col gap-3" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}>
-                                <p className="text-white font-semibold text-sm">🎲 Weirdness — How Far Suno Deviates From Your Instructions</p>
+                                <p className="text-white font-semibold text-base">🎲 Weirdness — How Far Suno Deviates From Your Instructions</p>
                                 <div className="flex items-center gap-3 text-xs my-1">
                                     <span className="text-white/40 text-xs w-24 text-right">predictable</span>
                                     <div className="flex-1 h-2 rounded-full overflow-hidden" style={{ background: "rgba(255,255,255,0.05)" }}>
@@ -434,12 +412,12 @@ export default function SunoGuidePage() {
                                     </div>
                                     <span className="text-white/40 text-xs w-24">chaotic</span>
                                 </div>
-                                <p className="text-white/50 text-sm leading-relaxed"><strong className="text-white">Low</strong> — predictable, clean, close to what you asked for. Good for when you have a clear direction and do not want surprises.</p>
-                                <p className="text-white/50 text-sm leading-relaxed"><strong className="text-white">Middle</strong> — the working zone. A little weirdness creates interesting touches without derailing the whole track. This is where most usable results live.</p>
-                                <p className="text-white/50 text-sm leading-relaxed"><strong className="text-white">Maximum</strong> — broken, chaotic, credit-burning. Occasionally produces something genuinely surprising. More often produces something genuinely unusable.</p>
+                                <p className="text-white/65 text-base leading-relaxed"><strong className="text-white">Low</strong> — predictable, clean, close to what you asked for. Good for when you have a clear direction and do not want surprises.</p>
+                                <p className="text-white/65 text-base leading-relaxed"><strong className="text-white">Middle</strong> — the working zone. A little weirdness creates interesting touches without derailing the whole track. This is where most usable results live.</p>
+                                <p className="text-white/65 text-base leading-relaxed"><strong className="text-white">Maximum</strong> — broken, chaotic, credit-burning. Occasionally produces something genuinely surprising. More often produces something genuinely unusable.</p>
                             </div>
                             <div className="rounded-xl p-5 flex flex-col gap-3" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}>
-                                <p className="text-white font-semibold text-sm">🎨 Style Influence — How Strictly Suno Follows Your Defined Style</p>
+                                <p className="text-white font-semibold text-base">🎨 Style Influence — How Strictly Suno Follows Your Defined Style</p>
                                 <div className="flex items-center gap-3 text-xs my-1">
                                     <span className="text-white/40 text-xs w-24 text-right">style drift</span>
                                     <div className="flex-1 h-2 rounded-full overflow-hidden" style={{ background: "rgba(255,255,255,0.05)" }}>
@@ -447,17 +425,16 @@ export default function SunoGuidePage() {
                                     </div>
                                     <span className="text-white/40 text-xs w-24">robotic</span>
                                 </div>
-                                <p className="text-white/50 text-sm leading-relaxed"><strong className="text-white">Too low</strong> — style drifts away mid-track. The beginning sounds like what you asked for; the second half sounds like something else entirely.</p>
-                                <p className="text-white/50 text-sm leading-relaxed"><strong className="text-white">Too high</strong> — stiff and mechanical. The result technically matches your description but feels lifeless.</p>
-                                <p className="text-white/50 text-sm leading-relaxed"><strong className="text-white">Middle ground</strong> — give the tool room to interpret while keeping it on the right track.</p>
+                                <p className="text-white/65 text-base leading-relaxed"><strong className="text-white">Too low</strong> — style drifts away mid-track. The beginning sounds like what you asked for; the second half sounds like something else entirely.</p>
+                                <p className="text-white/65 text-base leading-relaxed"><strong className="text-white">Too high</strong> — stiff and mechanical. The result technically matches your description but feels lifeless.</p>
+                                <p className="text-white/65 text-base leading-relaxed"><strong className="text-white">Middle ground</strong> — give the tool room to interpret while keeping it on the right track.</p>
                             </div>
                         </div>
                         <div className="rounded-xl p-4 flex gap-3" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.08)" }}>
                             <span className="text-lg">🔑</span>
-                            <p className="text-white/60 text-sm leading-relaxed">The underlying principle: <strong className="text-white">the more chaos you introduce at the generation stage, the harder it is to work with the output later.</strong> Generate clean, get creative in the DAW.</p>
+                            <p className="text-white/65 text-base leading-relaxed">The underlying principle: <strong className="text-white">the more chaos you introduce at the generation stage, the harder it is to work with the output later.</strong> Generate clean, get creative in the DAW.</p>
                         </div>
                         <ProTip>High Weirdness usually creates more editing work later — not more creativity. Save the experimentation for after you have a solid, mixable base track. The DAW is where you add character; Suno is where you establish direction.</ProTip>
-                        <BackToTop />
                     </div>
 
                     {/* ── Part 8 ── */}
@@ -468,8 +445,8 @@ export default function SunoGuidePage() {
                         </div>
                         <p>Here is a habit that kills progress faster than anything else:</p>
                         <div className="rounded-xl p-5" style={{ background: "rgba(255,80,80,0.05)", border: "1px solid rgba(255,80,80,0.15)" }}>
-                            <p className="text-white font-semibold text-sm mb-2">🚫 The Loop That Goes Nowhere</p>
-                            <p className="text-white/60 text-sm font-mono leading-relaxed">Generate → do not like it → close → generate again → repeat until frustrated → conclude that Suno is bad → open it again tomorrow anyway</p>
+                            <p className="text-white font-semibold text-base mb-2">🚫 The Loop That Goes Nowhere</p>
+                            <p className="text-white/65 font-mono text-[15px] leading-relaxed">Generate → do not like it → close → generate again → repeat until frustrated → conclude that Suno is bad → open it again tomorrow anyway</p>
                         </div>
                         <div className="rounded-2xl overflow-hidden border border-white/5">
                             <img loading="lazy" decoding="async" src="/images/suno-11.webp" alt="Don't Start from Scratch Every Time" className="w-full object-cover" />
@@ -477,7 +454,6 @@ export default function SunoGuidePage() {
                         <p>Every time you throw away a generated track and start fresh, you are also throwing away the idea that shaped it. And sometimes that idea was good — the execution just was not there yet.</p>
                         <p>This is one of the most important mindset shifts when working with generative AI: you are not searching for the perfect output. You are developing material. The first generation is a draft. The second is a refinement. The third might be the one.</p>
                         <p>Suno works best when you <strong className="text-white">develop what you have found</strong> rather than constantly searching for something new. The goal is refinement, not lottery.</p>
-                        <BackToTop />
                     </div>
 
                     {/* ── Part 9 ── */}
@@ -494,29 +470,28 @@ export default function SunoGuidePage() {
                             <div className="rounded-xl p-5 flex gap-4 items-start" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderLeft: "3px solid #C9A84C" }}>
                                 <span className="text-xl flex-shrink-0">▶️</span>
                                 <div>
-                                    <p className="text-white font-semibold text-sm mb-2">Extend — Continue What Is Working</p>
-                                    <p className="text-white/50 text-sm leading-relaxed">Extend continues an existing track while preserving its character. It is not a new generation — it is a continuation. The sound stays consistent, the vibe carries through, and you get longer, more cohesive material to work with. Every time you would generate a new track from scratch because the existing one is too short, use Extend instead.</p>
+                                    <p className="text-white font-semibold text-base mb-2">Extend — Continue What Is Working</p>
+                                    <p className="text-white/65 text-base leading-relaxed">Extend continues an existing track while preserving its character. It is not a new generation — it is a continuation. The sound stays consistent, the vibe carries through, and you get longer, more cohesive material to work with. Every time you would generate a new track from scratch because the existing one is too short, use Extend instead.</p>
                                 </div>
                             </div>
                             <div className="rounded-xl p-5 flex gap-4 items-start" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderLeft: "3px solid #C9A84C" }}>
                                 <span className="text-xl flex-shrink-0">🔄</span>
                                 <div>
-                                    <p className="text-white font-semibold text-sm mb-2">Cover — A/B Test Your Track</p>
-                                    <p className="text-white/50 text-sm leading-relaxed">Cover creates an alternative version of the same idea — different delivery, different feel, same underlying DNA. Think of it as giving the same script to a different actor and seeing what happens. Use it when you like the structure but something about the execution is not quite right.</p>
+                                    <p className="text-white font-semibold text-base mb-2">Cover — A/B Test Your Track</p>
+                                    <p className="text-white/65 text-base leading-relaxed">Cover creates an alternative version of the same idea — different delivery, different feel, same underlying DNA. Think of it as giving the same script to a different actor and seeing what happens. Use it when you like the structure but something about the execution is not quite right.</p>
                                 </div>
                             </div>
-                            <div className="rounded-xl p-5 flex gap-4 items-start" style={{ background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.2)", borderLeft: "3px solid #C9A84C" }}>
+                            <div className="rounded-xl p-5 flex gap-4 items-start" style={{ background: "rgba(201,168,76,0.07)", border: "1px solid rgba(201,168,76,0.25)", borderLeft: "3px solid #C9A84C" }}>
                                 <span className="text-xl flex-shrink-0">⬆️</span>
                                 <div>
-                                    <p className="text-white font-semibold text-sm mb-2">Upload Audio — Where It Gets Genuinely Powerful</p>
-                                    <p className="text-white/50 text-sm leading-relaxed">You can upload your own hummed melody, guitar riff, or rhythm pattern — and Suno will develop it. This is the mode where AI stops being a generator and becomes a collaborator. Your melodic instinct, Suno's production capability. The combination is where genuinely original music comes from.</p>
+                                    <p className="text-white font-semibold text-base mb-2">Upload Audio — Where It Gets Genuinely Powerful</p>
+                                    <p className="text-white/65 text-base leading-relaxed">You can upload your own hummed melody, guitar riff, or rhythm pattern — and Suno will develop it. This is the mode where AI stops being a generator and becomes a collaborator. Your melodic instinct, Suno's production capability. The combination is where genuinely original music comes from.</p>
                                     <div className="mt-3 rounded-lg p-3 text-sm" style={{ background: "rgba(201,168,76,0.08)", color: "#C9A84C" }}>
                                         → This is the closest thing to actual co-writing with AI. Use it.
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <BackToTop />
                     </div>
 
                     {/* ── Part 10 ── */}
@@ -531,11 +506,10 @@ export default function SunoGuidePage() {
                         </div>
                         <p>A Persona is not a copy. It is a reference point. A saved sonic identity that you can return to across multiple tracks, ensuring consistency without having to reinvent the wheel every session.</p>
                         <p>Think about what this means in practice: you have been working on an album. Every track needs to sound like it belongs to the same world — same vocal character, same sonic palette, same energy. Without Personas, every session starts from zero. With Personas, you anchor the sound and build from there.</p>
-                        <div className="rounded-xl p-4 flex gap-3" style={{ background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.15)" }}>
+                        <div className="rounded-xl p-4 flex gap-3" style={{ background: "rgba(201,168,76,0.07)", border: "1px solid rgba(201,168,76,0.25)" }}>
                             <span className="text-lg">🎯</span>
-                            <p className="text-white/60 text-sm leading-relaxed">Personas are especially useful for <strong className="text-white">album projects, YouTube channels, and client work</strong> — anywhere you need your music to have a recognizable, coherent sound across multiple pieces.</p>
+                            <p className="text-white/65 text-base leading-relaxed">Personas are especially useful for <strong className="text-white">album projects, YouTube channels, and client work</strong> — anywhere you need your music to have a recognizable, coherent sound across multiple pieces.</p>
                         </div>
-                        <BackToTop />
                     </div>
 
                     {/* ── Part 11 ── */}
@@ -550,9 +524,9 @@ export default function SunoGuidePage() {
                             <img loading="lazy" decoding="async" src="/images/suno-14.webp" alt="Suno = Demo, Not a Release" className="w-full object-cover" />
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div className="rounded-xl p-5 flex flex-col gap-2" style={{ background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.15)" }}>
-                                <p className="text-white font-semibold text-sm">🎵 Suno gives you</p>
-                                <ul className="flex flex-col gap-2 text-white/50 text-sm">
+                            <div className="rounded-xl p-5 flex flex-col gap-2" style={{ background: "rgba(201,168,76,0.07)", border: "1px solid rgba(201,168,76,0.25)" }}>
+                                <p className="text-white font-semibold text-base">🎵 Suno gives you</p>
+                                <ul className="flex flex-col gap-2 text-white/65 text-base">
                                     <li>→ The idea and direction</li>
                                     <li>→ The structure and arrangement</li>
                                     <li>→ The character and vocal style</li>
@@ -560,8 +534,8 @@ export default function SunoGuidePage() {
                                 </ul>
                             </div>
                             <div className="rounded-xl p-5 flex flex-col gap-2" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}>
-                                <p className="text-white font-semibold text-sm">🎚️ Your DAW gives you</p>
-                                <ul className="flex flex-col gap-2 text-white/50 text-sm">
+                                <p className="text-white font-semibold text-base">🎚️ Your DAW gives you</p>
+                                <ul className="flex flex-col gap-2 text-white/65 text-base">
                                     <li>→ The mix balance and separation</li>
                                     <li>→ Spatial depth and dimension</li>
                                     <li>→ Vocal treatment and clarity</li>
@@ -571,7 +545,6 @@ export default function SunoGuidePage() {
                         </div>
                         <p>Listeners do not care how a track was made. They only care how it sounds. A Suno-generated track with professional <a href="/mixing-mastering" style={{ color: "#C9A84C", textDecoration: "underline" }}>mixing and mastering</a> sounds better than a traditionally recorded track that was never properly mixed. The tools do not matter. The result does.</p>
                         <p>Suno is a spectacular starting point. It is not the finish line. The next step after Suno is stems, balance, vocal treatment, arrangement detail — all the things that separate a demo from something that actually hits the way you intended.</p>
-                        <BackToTop />
                     </div>
 
                     {/* ── v5.5 Update ── */}
@@ -581,9 +554,9 @@ export default function SunoGuidePage() {
                             <h2 className="text-xl md:text-2xl font-semibold text-white">What's New in v5.5 — Voice, Style & Taste</h2>
                         </div>
 
-                        <div className="rounded-xl p-4 flex gap-3 items-start" style={{ background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.2)" }}>
+                        <div className="rounded-xl p-4 flex gap-3 items-start" style={{ background: "rgba(201,168,76,0.07)", border: "1px solid rgba(201,168,76,0.25)" }}>
                             <span className="text-lg flex-shrink-0">📅</span>
-                            <p className="text-white/60 text-sm leading-relaxed">Suno v5.5 released March 26, 2026. This is not an audio engine update — it is a philosophy shift. Previous versions competed on sound quality. v5.5 competes on identity. Three new features: <strong className="text-white">Voices, Custom Models, My Taste</strong>.</p>
+                            <p className="text-white/65 text-base leading-relaxed">Suno v5.5 released March 26, 2026. This is not an audio engine update — it is a philosophy shift. Previous versions competed on sound quality. v5.5 competes on identity. Three new features: <strong className="text-white">Voices, Custom Models, My Taste</strong>.</p>
                         </div>
 
                         {/* Voices */}
@@ -607,30 +580,30 @@ export default function SunoGuidePage() {
                                         <span className="text-2xl font-bold flex-shrink-0" style={{ color: "rgba(201,168,76,0.25)" }}>{item.step}</span>
                                         <div>
                                             <p className="text-white font-medium text-sm">{item.title}</p>
-                                            <p className="text-white/50 text-sm mt-1 leading-relaxed">{item.desc}</p>
+                                            <p className="text-white/65 text-base mt-1 leading-relaxed">{item.desc}</p>
                                         </div>
                                     </div>
                                 ))}
                             </div>
 
                             <div className="rounded-xl p-5 flex flex-col gap-3" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderLeft: "3px solid #C9A84C" }}>
-                                <p className="text-white font-semibold text-sm">🎙️ Why recording quality matters more than you think</p>
-                                <p className="text-white/60 text-sm leading-relaxed">Suno trains the voice model on whatever audio you give it. If your recording has air conditioning hum, room reverb, background music, or street noise — all of that gets baked into the model. The result: when the model generates your voice in a track, it carries those artifacts with it. The vocal sounds muddy, unstable, or artificially processed in ways you cannot fix after the fact.</p>
-                                <p className="text-white/60 text-sm leading-relaxed mt-1">This is not a post-processing problem — it is a training data problem. No algorithm can remove noise that is already part of the model. The only fix is a clean source recording.</p>
-                                <p className="text-white/60 text-sm leading-relaxed mt-1">Optimal conditions: a quiet room, a decent microphone or quality headset, close mic placement. Recording early in the morning or late at night when street noise is minimal is not overthinking it — it actually makes a difference. One good voice recording made once is an investment. A noisy recording is a limitation you carry into every track you make with it.</p>
+                                <p className="text-white font-semibold text-base">🎙️ Why recording quality matters more than you think</p>
+                                <p className="text-white/65 text-base leading-relaxed">Suno trains the voice model on whatever audio you give it. If your recording has air conditioning hum, room reverb, background music, or street noise — all of that gets baked into the model. The result: when the model generates your voice in a track, it carries those artifacts with it. The vocal sounds muddy, unstable, or artificially processed in ways you cannot fix after the fact.</p>
+                                <p className="text-white/65 text-base leading-relaxed mt-1">This is not a post-processing problem — it is a training data problem. No algorithm can remove noise that is already part of the model. The only fix is a clean source recording.</p>
+                                <p className="text-white/65 text-base leading-relaxed mt-1">Optimal conditions: a quiet room, a decent microphone or quality headset, close mic placement. Recording early in the morning or late at night when street noise is minimal is not overthinking it — it actually makes a difference. One good voice recording made once is an investment. A noisy recording is a limitation you carry into every track you make with it.</p>
                             </div>
 
                             <div className="rounded-xl p-4 flex gap-3 items-start" style={{ background: "rgba(255,100,80,0.06)", border: "1px solid rgba(255,100,80,0.2)" }}>
                                 <span className="text-lg flex-shrink-0">⚠️</span>
                                 <div>
-                                    <p className="text-white font-semibold text-sm mb-1">Read this before activating</p>
-                                    <p className="text-white/60 text-sm leading-relaxed">Activating Voices requires checking a consent box that grants Suno permission to use your voice data to train their models broadly — not just your private instance. This is not optional. Without it, the feature does not activate. Decide consciously. Pro and Premier accounts only.</p>
+                                    <p className="text-white font-semibold text-base mb-1">Read this before activating</p>
+                                    <p className="text-white/65 text-base leading-relaxed">Activating Voices requires checking a consent box that grants Suno permission to use your voice data to train their models broadly — not just your private instance. This is not optional. Without it, the feature does not activate. Decide consciously. Pro and Premier accounts only.</p>
                                 </div>
                             </div>
 
                             <div className="rounded-xl p-4 flex gap-3" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}>
                                 <span className="text-lg">🔒</span>
-                                <p className="text-white/60 text-sm leading-relaxed">Your voice is private by default — only your account can use it to generate songs. Voice sharing is listed as a future feature but is not live yet.</p>
+                                <p className="text-white/65 text-base leading-relaxed">Your voice is private by default — only your account can use it to generate songs. Voice sharing is listed as a future feature but is not live yet.</p>
                             </div>
                         </div>
 
@@ -641,13 +614,13 @@ export default function SunoGuidePage() {
                             <p>The logic is similar to DAW presets and templates, except instead of saving plugin settings you are curating a training set. The model picks up surface-level characteristics — timbre, genre markers, instrumental texture — reliably. Deeper compositional tendencies like arrangement restraint, timing, and dynamic contrast are harder to encode. The more distinctive your style, the more interesting the result.</p>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                                <div className="rounded-xl p-4 flex flex-col gap-2" style={{ background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.15)" }}>
+                                <div className="rounded-xl p-4 flex flex-col gap-2" style={{ background: "rgba(201,168,76,0.07)", border: "1px solid rgba(201,168,76,0.25)" }}>
                                     <p className="text-white font-semibold text-xs uppercase tracking-widest">Availability</p>
-                                    <p className="text-white/60 text-sm">Up to 3 custom models per account. Pro and Premier only.</p>
+                                    <p className="text-white/65 text-base">Up to 3 custom models per account. Pro and Premier only.</p>
                                 </div>
                                 <div className="rounded-xl p-4 flex flex-col gap-2" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}>
                                     <p className="text-white font-semibold text-xs uppercase tracking-widest">Best use case</p>
-                                    <p className="text-white/60 text-sm">YouTube channel, album project, client work — anywhere you need a consistent, recognizable sound across multiple tracks.</p>
+                                    <p className="text-white/65 text-base">YouTube channel, album project, client work — anywhere you need a consistent, recognizable sound across multiple tracks.</p>
                                 </div>
                             </div>
                         </div>
@@ -660,12 +633,11 @@ export default function SunoGuidePage() {
 
                             <div className="rounded-xl p-4 flex gap-3" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}>
                                 <span className="text-lg">💡</span>
-                                <p className="text-white/60 text-sm leading-relaxed">My Taste is the easiest way to start getting more personalised results from Suno immediately — no setup, no uploads, no subscription tier required. It just needs time and consistent use to build up.</p>
+                                <p className="text-white/65 text-base leading-relaxed">My Taste is the easiest way to start getting more personalised results from Suno immediately — no setup, no uploads, no subscription tier required. It just needs time and consistent use to build up.</p>
                             </div>
                         </div>
 
                         <ProTip>v5.5 is an additive update. Everything that worked in v5 still works. Voices, Custom Models, and My Taste are layers on top of the same engine. Start with My Taste right now — it is free and starts working immediately. Come back to Voices and Custom Models once you have a quality voice recording and a musical catalog worth training on.</ProTip>
-                        <BackToTop />
                     </div>
 
                     {/* ── Checklist ── */}
@@ -679,7 +651,6 @@ export default function SunoGuidePage() {
                             <img loading="lazy" decoding="async" src="/images/suno-15.webp" alt="Checklist" className="w-full object-cover" />
                         </div>
                         <InteractiveChecklist />
-                        <BackToTop />
                     </div>
 
                     {/* ── FAQ ── */}
@@ -694,21 +665,20 @@ export default function SunoGuidePage() {
                                 <div key={i} className="rounded-xl p-5 flex flex-col gap-2"
                                      style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}>
                                     <p className="text-white font-medium text-sm">{item.q}</p>
-                                    <p className="text-white/50 text-sm leading-relaxed">{item.a}</p>
+                                    <p className="text-white/65 text-base leading-relaxed">{item.a}</p>
                                 </div>
                             ))}
                         </div>
-                        <BackToTop />
                     </div>
 
                     {/* ── Final thought ── */}
                     <div className="flex flex-col gap-1">
                         <div className="w-full h-px" style={{ background: "rgba(255,255,255,0.06)" }} />
-                        <div className="rounded-2xl p-8 flex flex-col gap-4 mt-4" style={{ background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.2)" }}>
+                        <div className="rounded-2xl p-8 flex flex-col gap-4 mt-4" style={{ background: "rgba(201,168,76,0.07)", border: "1px solid rgba(201,168,76,0.25)" }}>
                             <h3 className="text-xl font-semibold text-white">Final Thought</h3>
-                            <p className="text-white/60 text-sm leading-relaxed">Working with Suno is a skill. Not a prompt hack, not a secret formula — a skill. The kind that develops through regular practice, honest listening, and a willingness to understand the tool rather than fight with it.</p>
-                            <p className="text-white/60 text-sm leading-relaxed">The musicians who get the most out of Suno are not the ones who found the magic prompt. They are the ones who understood the logic, built a workflow, and kept showing up. They treat it like a collaborator rather than a vending machine.</p>
-                            <p className="text-white/60 text-sm leading-relaxed">Suno accelerates your learning curve. It does not replace the work. The work is still yours — and that is a good thing. Because the work is also where the music actually lives.</p>
+                            <p className="text-white/65 text-base leading-relaxed">Working with Suno is a skill. Not a prompt hack, not a secret formula — a skill. The kind that develops through regular practice, honest listening, and a willingness to understand the tool rather than fight with it.</p>
+                            <p className="text-white/65 text-base leading-relaxed">The musicians who get the most out of Suno are not the ones who found the magic prompt. They are the ones who understood the logic, built a workflow, and kept showing up. They treat it like a collaborator rather than a vending machine.</p>
+                            <p className="text-white/65 text-base leading-relaxed">Suno accelerates your learning curve. It does not replace the work. The work is still yours — and that is a good thing. Because the work is also where the music actually lives.</p>
                             <p className="text-white font-semibold mt-2 text-lg">Now go make something.</p>
                         </div>
                     </div>
@@ -716,10 +686,10 @@ export default function SunoGuidePage() {
                     {/* ── CTA ── */}
                     <div
                         className="rounded-2xl p-8 text-center flex flex-col items-center gap-4"
-                        style={{ background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.2)" }}
+                        style={{ background: "rgba(201,168,76,0.07)", border: "1px solid rgba(201,168,76,0.25)" }}
                     >
                         <h3 className="text-xl font-semibold text-white">Your Suno demo ready for a professional mix?</h3>
-                        <p className="text-white/50 text-sm max-w-md">Send the track — stems, rough mix, or the Suno export itself. We will take it from demo to release-ready. First consultation is always free.</p>
+                        <p className="text-white/65 text-base max-w-md">Send the track — stems, rough mix, or the Suno export itself. We will take it from demo to release-ready. First consultation is always free.</p>
                         <a
                             href="/contact"
                             className="inline-flex items-center gap-2 text-black font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition text-sm"

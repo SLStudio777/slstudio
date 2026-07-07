@@ -39,17 +39,6 @@ export const metadata = {
     other: { "article:published_time": "2026-07-02" },
 };
 
-function BackToTop() {
-    return (
-        <div className="flex justify-end pt-2">
-            <a href="#top" className="text-xs flex items-center gap-1.5 px-3 py-1.5 rounded-lg transition hover:opacity-80"
-                style={{ background: "rgba(201,168,76,0.08)", color: "#C9A84C", border: "1px solid rgba(201,168,76,0.15)" }}>
-                ↑ Back to top
-            </a>
-        </div>
-    );
-}
-
 function ProTip({ children }) {
     return (
         <div className="rounded-xl p-5 flex gap-3 items-start"
@@ -57,7 +46,7 @@ function ProTip({ children }) {
             <span className="text-base flex-shrink-0 font-bold" style={{ color: "#C9A84C" }}>★</span>
             <div>
                 <p className="text-xs font-bold uppercase tracking-widest mb-1.5" style={{ color: "#C9A84C" }}>Pro Tip</p>
-                <p className="text-white/70 text-sm leading-relaxed">{children}</p>
+                <p className="text-white/70 text-base leading-relaxed">{children}</p>
             </div>
         </div>
     );
@@ -77,7 +66,7 @@ const TOC = [
 function TableOfContents() {
     return (
         <div className="rounded-2xl p-6" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.07)" }}>
-            <p className="text-white font-semibold text-sm mb-4">Contents</p>
+            <p className="text-white font-semibold text-base mb-4">Contents</p>
             <ol className="flex flex-col gap-2">
                 {TOC.map((item, i) => (
                     <li key={item.id} className="flex items-baseline gap-2.5">
@@ -107,18 +96,18 @@ export default function SunoStudioGuidePage() {
                 <div className="blog-prose flex flex-col gap-14 text-white/70 text-[16px] leading-relaxed">
 
                     {/* Intro */}
-                    <div className="rounded-2xl p-6 flex gap-4 items-start" style={{ background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.2)" }}>
+                    <div className="rounded-2xl p-6 flex gap-4 items-start" style={{ background: "rgba(201,168,76,0.07)", border: "1px solid rgba(201,168,76,0.25)" }}>
                         <span className="text-2xl flex-shrink-0">🎚️</span>
                         <div>
                             <p className="text-white font-semibold mb-2">Who this guide is for</p>
-                            <p className="text-white/60 text-sm leading-relaxed">For anyone who's made a few tracks in Suno and felt something like: <em>"this is kind of great, but why am I not in control of any of it?"</em> For musicians who need a predictable outcome, not a coin flip. And for everyone who's ever rage-closed a browser tab because the AI sang the wrong thing for the tenth time in a row. <strong className="text-white">That's fixable.</strong></p>
+                            <p className="text-white/65 text-base leading-relaxed">For anyone who's made a few tracks in Suno and felt something like: <em>"this is kind of great, but why am I not in control of any of it?"</em> For musicians who need a predictable outcome, not a coin flip. And for everyone who's ever rage-closed a browser tab because the AI sang the wrong thing for the tenth time in a row. <strong className="text-white">That's fixable.</strong></p>
                         </div>
                     </div>
 
                     {/* Link to Part 1 */}
                     <div className="rounded-xl p-4 flex gap-3 items-center" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.07)" }}>
                         <span className="text-lg flex-shrink-0">📖</span>
-                        <p className="text-white/60 text-sm">Haven't read Part 1 yet? Start with <a href="/blog/suno-guide-2026" style={{ color: "#C9A84C", textDecoration: "underline" }}>Suno AI: Complete Guide — Genres, Tags & Prompts 2026</a>.</p>
+                        <p className="text-white/65 text-base">Haven't read Part 1 yet? Start with <a href="/blog/suno-guide-2026" style={{ color: "#C9A84C", textDecoration: "underline" }}>Suno AI: Complete Guide — Genres, Tags & Prompts 2026</a>.</p>
                     </div>
 
                     <TableOfContents />
@@ -135,14 +124,14 @@ export default function SunoStudioGuidePage() {
                             ].map((item, i) => (
                                 <div key={i} className="flex items-center gap-3">
                                     <div className="flex flex-col items-center gap-1">
-                                        <span className="text-white font-semibold text-sm">{item.step}</span>
-                                        <span className="text-white/40 text-xs">{item.desc}</span>
+                                        <span className="text-white font-semibold text-base">{item.step}</span>
+                                        <span className="text-white/50 text-sm">{item.desc}</span>
                                     </div>
                                     {i < 2 && <span style={{ color: "rgba(201,168,76,0.4)" }}>→</span>}
                                 </div>
                             ))}
                         </div>
-                        <p className="text-white/50 text-sm mt-2 max-w-md mx-auto">Suno Studio is a deliberate middle stage. Not a replacement for your DAW, not an extension of Generate. It has its own role in the chain.</p>
+                        <p className="text-white/65 text-base mt-2 max-w-md mx-auto">Suno Studio is a deliberate middle stage. Not a replacement for your DAW, not an extension of Generate. It has its own role in the chain.</p>
                     </div>
 
                     {/* Chapter 1 */}
@@ -165,15 +154,14 @@ export default function SunoStudioGuidePage() {
                             ].map((item, i) => (
                                 <div key={i} className="rounded-xl p-5 flex flex-col gap-2" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}>
                                     <span className="text-2xl">{item.icon}</span>
-                                    <p className="text-white font-semibold text-sm">{item.step}</p>
-                                    <p className="text-white/50 text-sm leading-relaxed">{item.desc}</p>
+                                    <p className="text-white font-semibold text-base">{item.step}</p>
+                                    <p className="text-white/65 text-base leading-relaxed">{item.desc}</p>
                                 </div>
                             ))}
                         </div>
 
                         <p>Studio deliberately doesn't copy a DAW. There's no deep audio editing here, no complex effect chains, none of the arsenal a sound engineer lives in. <strong className="text-white">That's not a bug — it's a feature.</strong> Studio has a different job: organizing and developing the idea.</p>
                         <p>Without Studio, generation stays a collection of lucky and unlucky attempts. With it, something important appears: you can pause on the good moments, extend your track with intention, and stop starting from scratch every single time. For musicians and producers, this is above all a <strong className="text-white">time saver</strong> — what you bring into your DAW isn't a raw random result, it's an already-structured piece.</p>
-                        <BackToTop />
                     </div>
 
                     {/* Chapter 2 */}
@@ -191,21 +179,20 @@ export default function SunoStudioGuidePage() {
                         <p>What you see on it: the shape of the whole track, the clips and layers, the transitions between sections. <strong className="text-white">The most important shift</strong> — you stop perceiving the track as one big audio file. You start seeing a collection of parts that can be analyzed and developed individually.</p>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div className="rounded-xl p-5 flex flex-col gap-2" style={{ background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.15)" }}>
-                                <p className="text-white font-semibold text-sm">🔭 Wide view</p>
-                                <p className="text-white/50 text-sm leading-relaxed">See the full shape of the track and judge the overall arc. Does the idea actually work?</p>
+                            <div className="rounded-xl p-5 flex flex-col gap-2" style={{ background: "rgba(201,168,76,0.07)", border: "1px solid rgba(201,168,76,0.25)" }}>
+                                <p className="text-white font-semibold text-base">🔭 Wide view</p>
+                                <p className="text-white/65 text-base leading-relaxed">See the full shape of the track and judge the overall arc. Does the idea actually work?</p>
                             </div>
                             <div className="rounded-xl p-5 flex flex-col gap-2" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}>
-                                <p className="text-white font-semibold text-sm">🔬 Close view</p>
-                                <p className="text-white/50 text-sm leading-relaxed">Examine transitions, pauses, edit points. Where exactly should you set the Extend timestamp?</p>
+                                <p className="text-white font-semibold text-base">🔬 Close view</p>
+                                <p className="text-white/65 text-base leading-relaxed">Examine transitions, pauses, edit points. Where exactly should you set the Extend timestamp?</p>
                             </div>
                         </div>
 
                         <div className="rounded-xl p-4 flex gap-3" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}>
                             <span className="text-lg">💡</span>
-                            <p className="text-white/60 text-sm leading-relaxed">Use both views. Without the wide one, you can't tell if the idea holds together. Without the close one, you won't find the right place to extend. <strong className="text-white">Once you start thinking in timelines, everything becomes predictable.</strong></p>
+                            <p className="text-white/65 text-base leading-relaxed">Use both views. Without the wide one, you can't tell if the idea holds together. Without the close one, you won't find the right place to extend. <strong className="text-white">Once you start thinking in timelines, everything becomes predictable.</strong></p>
                         </div>
-                        <BackToTop />
                     </div>
 
                     {/* Chapter 3 */}
@@ -217,9 +204,9 @@ export default function SunoStudioGuidePage() {
                         <p>If Create gives you the idea, Extend is what turns it into a full track. It's the most powerful tool in Studio — and the one most consistently misused.</p>
 
                         <div className="rounded-xl p-5 flex flex-col gap-3" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.08)" }}>
-                            <p className="text-white font-semibold text-sm">What the model hears when you press Extend</p>
-                            <p className="text-white/60 text-sm italic leading-relaxed">"Listen to the last few seconds of this section, understand the context, and figure out what should come next. Preserve the key and BPM."</p>
-                            <p className="text-white/40 text-xs">Simple enough — but every detail matters.</p>
+                            <p className="text-white font-semibold text-base">What the model hears when you press Extend</p>
+                            <p className="text-white/65 text-base italic leading-relaxed">"Listen to the last few seconds of this section, understand the context, and figure out what should come next. Preserve the key and BPM."</p>
+                            <p className="text-white/50 text-sm">Simple enough — but every detail matters.</p>
                         </div>
 
                         <div className="rounded-2xl overflow-hidden border border-white/5">
@@ -230,17 +217,17 @@ export default function SunoStudioGuidePage() {
                         <p>The most common beginner mistake is pressing Extend wherever. The result: the track falls apart — the voice changes, the rhythm breaks, the song wanders off somewhere nobody intended.</p>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div className="rounded-xl p-5 flex flex-col gap-3" style={{ background: "rgba(255,80,80,0.05)", border: "1px solid rgba(255,80,80,0.15)" }}>
-                                <p className="text-white font-semibold text-sm">🚫 What not to do</p>
-                                <ul className="flex flex-col gap-2 text-white/50 text-sm">
+                            <div className="rounded-xl p-5 flex flex-col gap-3" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}>
+                                <p className="text-white font-semibold text-base">🚫 What not to do</p>
+                                <ul className="flex flex-col gap-2 text-white/65 text-base">
                                     <li>→ Cut in the middle of a word — the model will hallucinate</li>
                                     <li>→ Pick a random spot without reading the waveform</li>
                                     <li>→ Press Extend without updating the Lyrics field</li>
                                 </ul>
                             </div>
-                            <div className="rounded-xl p-5 flex flex-col gap-3" style={{ background: "rgba(100,200,100,0.05)", border: "1px solid rgba(100,200,100,0.15)" }}>
-                                <p className="text-white font-semibold text-sm">✅ What to do instead</p>
-                                <ul className="flex flex-col gap-2 text-white/50 text-sm">
+                            <div className="rounded-xl p-5 flex flex-col gap-3" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}>
+                                <p className="text-white font-semibold text-base">✅ What to do instead</p>
+                                <ul className="flex flex-col gap-2 text-white/65 text-base">
                                     <li>→ Find the end of a bar</li>
                                     <li>→ Find where the reverb tail fades out</li>
                                     <li>→ Find the pause after a chorus</li>
@@ -259,7 +246,7 @@ export default function SunoStudioGuidePage() {
 
                         <div className="rounded-xl p-5" style={{ background: "rgba(201,168,76,0.08)", border: "1px solid rgba(201,168,76,0.25)" }}>
                             <p className="text-white font-semibold mb-2">The block rule</p>
-                            <p className="text-white/70 text-sm leading-relaxed">If Part 2 isn't working — don't try to fix it with another Extend. Delete it and regenerate from the end of Part 1. If a part comes out wrong, we don't sand it down forever — we get a new one.</p>
+                            <p className="text-white/70 text-base leading-relaxed">If Part 2 isn't working — don't try to fix it with another Extend. Delete it and regenerate from the end of Part 1. If a part comes out wrong, we don't sand it down forever — we get a new one.</p>
                         </div>
 
                         <div className="flex flex-col gap-3 mt-2">
@@ -273,11 +260,10 @@ export default function SunoStudioGuidePage() {
                                     <div className="w-5 h-5 rounded flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: "rgba(201,168,76,0.15)", border: "1px solid rgba(201,168,76,0.3)" }}>
                                         <span className="text-xs" style={{ color: "#C9A84C" }}>✓</span>
                                     </div>
-                                    <p className="text-white/60 text-sm">{item}</p>
+                                    <p className="text-white/65 text-base">{item}</p>
                                 </div>
                             ))}
                         </div>
-                        <BackToTop />
                     </div>
 
                     {/* Chapter 4 */}
@@ -307,11 +293,11 @@ export default function SunoStudioGuidePage() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="rounded-xl p-4 flex flex-col gap-2" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderLeft: "3px solid #C9A84C" }}>
                                 <p className="text-white font-semibold text-xs uppercase tracking-widest">Lyrics field</p>
-                                <p className="text-white/60 text-sm">Meta-tag in square brackets: <span className="font-mono" style={{ color: "#C9A84C" }}>[Guitar Solo]</span>, <span className="font-mono" style={{ color: "#C9A84C" }}>[Synthesizer Solo]</span></p>
+                                <p className="text-white/65 text-base">Meta-tag in square brackets: <span className="font-mono" style={{ color: "#C9A84C" }}>[Guitar Solo]</span>, <span className="font-mono" style={{ color: "#C9A84C" }}>[Synthesizer Solo]</span></p>
                             </div>
                             <div className="rounded-xl p-4 flex flex-col gap-2" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderLeft: "3px solid #C9A84C" }}>
                                 <p className="text-white font-semibold text-xs uppercase tracking-widest">Style field</p>
-                                <p className="text-white/60 text-sm">Reinforce with description: <span className="font-mono text-xs" style={{ color: "#C9A84C" }}>Virtuoso Electric Guitar</span> or <span className="font-mono text-xs" style={{ color: "#C9A84C" }}>High-Pitched Synth Melody</span></p>
+                                <p className="text-white/65 text-base">Reinforce with description: <span className="font-mono text-xs" style={{ color: "#C9A84C" }}>Virtuoso Electric Guitar</span> or <span className="font-mono text-xs" style={{ color: "#C9A84C" }}>High-Pitched Synth Melody</span></p>
                             </div>
                         </div>
 
@@ -328,7 +314,6 @@ export default function SunoStudioGuidePage() {
                                 ["End on a single note", "One final chord and done"],
                             ]}
                         />
-                        <BackToTop />
                     </div>
 
                     {/* Chapter 5 */}
@@ -341,7 +326,7 @@ export default function SunoStudioGuidePage() {
 
                         <div className="rounded-xl p-4 flex gap-3 items-start" style={{ background: "rgba(255,100,80,0.05)", border: "1px solid rgba(255,100,80,0.15)" }}>
                             <span className="text-lg flex-shrink-0">🚨</span>
-                            <p className="text-white/60 text-sm leading-relaxed"><strong className="text-white">Hard rule:</strong> write prompts in English. Even if your song is in another language, the Style of Music field must be in English — that's the data Suno trained on. "Sad violin" — Suno gets the gist, with margin for error. <span className="font-mono text-xs" style={{ color: "#C9A84C" }}>Melancholic Violin Solo</span> — understood precisely. The difference between "bring me something to eat" and "oat milk cappuccino, medium, extra shot."</p>
+                            <p className="text-white/65 text-base leading-relaxed"><strong className="text-white">Hard rule:</strong> write prompts in English. Even if your song is in another language, the Style of Music field must be in English — that's the data Suno trained on. "Sad violin" — Suno gets the gist, with margin for error. <span className="font-mono text-xs" style={{ color: "#C9A84C" }}>Melancholic Violin Solo</span> — understood precisely. The difference between "bring me something to eat" and "oat milk cappuccino, medium, extra shot."</p>
                         </div>
 
                         <div className="rounded-2xl overflow-hidden border border-white/5">
@@ -354,12 +339,12 @@ export default function SunoStudioGuidePage() {
                             <div className="flex flex-col gap-4">
                                 <div className="flex flex-col gap-2">
                                     <p className="text-xl font-bold" style={{ color: "#C9A84C" }}>G — Genre</p>
-                                    <p className="text-white/60 text-sm leading-relaxed">Don't just write Rock or Pop. Use subgenres — they narrow the search space and produce consistent results:</p>
+                                    <p className="text-white/65 text-base leading-relaxed">Don't just write Rock or Pop. Use subgenres — they narrow the search space and produce consistent results:</p>
                                     <div className="overflow-x-auto">
                                         <table className="w-full text-sm" style={{ borderCollapse: "collapse" }}>
                                             <thead><tr style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
-                                                <th className="text-left py-2 pr-4 text-white/30 text-xs">Instead of…</th>
-                                                <th className="text-left py-2 text-white/30 text-xs">Write…</th>
+                                                <th className="text-left py-2 pr-4 text-white/45 text-sm">Instead of…</th>
+                                                <th className="text-left py-2 text-white/45 text-sm">Write…</th>
                                             </tr></thead>
                                             <tbody>
                                                 {[
@@ -368,7 +353,7 @@ export default function SunoStudioGuidePage() {
                                                     ["Hip-Hop", "Boom Bap / Trap / Lo-Fi Hip Hop"],
                                                 ].map((row, i) => (
                                                     <tr key={i} style={{ borderBottom: "1px solid rgba(255,255,255,0.04)" }}>
-                                                        <td className="py-2 pr-4 text-white/40 text-sm">{row[0]}</td>
+                                                        <td className="py-2 pr-4 text-white/55 text-base">{row[0]}</td>
                                                         <td className="py-2 font-mono text-xs" style={{ color: "#C9A84C" }}>{row[1]}</td>
                                                     </tr>
                                                 ))}
@@ -383,7 +368,7 @@ export default function SunoStudioGuidePage() {
 
                                 <div className="flex flex-col gap-2">
                                     <p className="text-xl font-bold" style={{ color: "#C9A84C" }}>M — Mood</p>
-                                    <p className="text-white/60 text-sm leading-relaxed">Beginners describe how they feel instead of using musical descriptors. The model doesn't need to know what you're feeling — it needs the atmosphere in technical terms:</p>
+                                    <p className="text-white/65 text-base leading-relaxed">Beginners describe how they feel instead of using musical descriptors. The model doesn't need to know what you're feeling — it needs the atmosphere in technical terms:</p>
                                     <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
                                         {[
                                             ["\"soulful\"", "Ethereal"],
@@ -392,7 +377,7 @@ export default function SunoStudioGuidePage() {
                                             ["\"dark\"", "Dark"],
                                         ].map((pair, i) => (
                                             <div key={i} className="rounded-lg p-3 flex flex-col gap-1 text-center" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}>
-                                                <p className="text-white/30 text-xs">{pair[0]}</p>
+                                                <p className="text-white/45 text-sm">{pair[0]}</p>
                                                 <p className="text-sm font-mono font-medium" style={{ color: "#C9A84C" }}>{pair[1]}</p>
                                             </div>
                                         ))}
@@ -401,7 +386,7 @@ export default function SunoStudioGuidePage() {
 
                                 <div className="flex flex-col gap-2">
                                     <p className="text-xl font-bold" style={{ color: "#C9A84C" }}>I — Instruments</p>
-                                    <p className="text-white/60 text-sm leading-relaxed">Name exactly what should be playing. This gives the track its substance:</p>
+                                    <p className="text-white/65 text-base leading-relaxed">Name exactly what should be playing. This gives the track its substance:</p>
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                                         {[
                                             "Distorted 808 Bass",
@@ -418,7 +403,7 @@ export default function SunoStudioGuidePage() {
 
                                 <div className="flex flex-col gap-2">
                                     <p className="text-xl font-bold" style={{ color: "#C9A84C" }}>V — Vocals</p>
-                                    <p className="text-white/60 text-sm leading-relaxed">Leave it unspecified and Suno picks randomly. Take control:</p>
+                                    <p className="text-white/65 text-base leading-relaxed">Leave it unspecified and Suno picks randomly. Take control:</p>
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                                         {[
                                             "Female Whisper",
@@ -439,20 +424,19 @@ export default function SunoStudioGuidePage() {
                         <GmivBuilder />
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div className="rounded-xl p-5 flex flex-col gap-3" style={{ background: "rgba(255,80,80,0.05)", border: "1px solid rgba(255,80,80,0.15)" }}>
-                                <p className="text-white font-semibold text-sm">✕ Weak prompt</p>
-                                <p className="text-white/50 text-sm italic">"Beautiful love song with piano, kind of sad"</p>
-                                <p className="text-white/30 text-xs">This is a wish. Suno guesses.</p>
+                            <div className="rounded-xl p-5 flex flex-col gap-3" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}>
+                                <p className="text-white font-semibold text-base">✕ Weak prompt</p>
+                                <p className="text-white/65 text-base italic">"Beautiful love song with piano, kind of sad"</p>
+                                <p className="text-white/45 text-sm">This is a wish. Suno guesses.</p>
                             </div>
-                            <div className="rounded-xl p-5 flex flex-col gap-3" style={{ background: "rgba(100,200,100,0.05)", border: "1px solid rgba(100,200,100,0.15)" }}>
-                                <p className="text-white font-semibold text-sm">✓ Strong prompt</p>
-                                <p className="text-white/50 text-sm font-mono text-xs leading-relaxed">RnB, Soul, Sentimental Mood, Grand Piano, Minimal Drums, Female Emotional Vocals, Slow Tempo, 80 BPM</p>
-                                <p className="text-white/30 text-xs">This is a spec. Suno executes.</p>
+                            <div className="rounded-xl p-5 flex flex-col gap-3" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}>
+                                <p className="text-white font-semibold text-base">✓ Strong prompt</p>
+                                <p className="text-white/65 font-mono text-sm leading-relaxed">RnB, Soul, Sentimental Mood, Grand Piano, Minimal Drums, Female Emotional Vocals, Slow Tempo, 80 BPM</p>
+                                <p className="text-white/45 text-sm">This is a spec. Suno executes.</p>
                             </div>
                         </div>
 
                         <ProTip>Suno responds better to comma-separated tags than to full sentences. Bad: "Make a song that sounds like it is raining outside." Good: <span className="font-mono text-xs" style={{ color: "#C9A84C" }}>Rainy atmosphere, Lo-Fi</span>. Short, clear, precise.</ProTip>
-                        <BackToTop />
                     </div>
 
                     {/* Chapter 6 */}
@@ -471,17 +455,17 @@ export default function SunoStudioGuidePage() {
                             <div className="rounded-xl p-5 flex gap-4 items-start" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderLeft: "3px solid #C9A84C" }}>
                                 <span className="text-xl flex-shrink-0">🎨</span>
                                 <div>
-                                    <p className="text-white font-semibold text-sm mb-2">Cover — Variation</p>
-                                    <p className="text-white/50 text-sm leading-relaxed">Use this when <strong className="text-white">you love the melody but not the sound</strong>. For example: the chorus melody is perfect, but it's played on piano and you want guitar. Select the section, hit Cover, swap the instrument in the prompt. Suno will attempt to "drape" the new sound over the existing notes.</p>
+                                    <p className="text-white font-semibold text-base mb-2">Cover — Variation</p>
+                                    <p className="text-white/65 text-base leading-relaxed">Use this when <strong className="text-white">you love the melody but not the sound</strong>. For example: the chorus melody is perfect, but it's played on piano and you want guitar. Select the section, hit Cover, swap the instrument in the prompt. Suno will attempt to "drape" the new sound over the existing notes.</p>
                                 </div>
                             </div>
 
-                            <div className="rounded-xl p-5 flex gap-4 items-start" style={{ background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.2)", borderLeft: "3px solid #C9A84C" }}>
+                            <div className="rounded-xl p-5 flex gap-4 items-start" style={{ background: "rgba(201,168,76,0.07)", border: "1px solid rgba(201,168,76,0.25)", borderLeft: "3px solid #C9A84C" }}>
                                 <span className="text-xl flex-shrink-0">🔧</span>
                                 <div>
-                                    <p className="text-white font-semibold text-sm mb-2">Replace — Context-aware substitution</p>
-                                    <p className="text-white/50 text-sm leading-relaxed">The most powerful tool in Studio — and the one beginners most often overlook. Use this when <strong className="text-white">the musical phrase itself is wrong, or there's an actual error</strong>.</p>
-                                    <p className="text-white/50 text-sm leading-relaxed mt-2">How it works: Suno doesn't listen to what's inside the selection. It listens to what comes <strong className="text-white">before</strong> and what comes <strong className="text-white">after</strong> — and generates a bridge that joins those two pieces seamlessly. It's close to magic.</p>
+                                    <p className="text-white font-semibold text-base mb-2">Replace — Context-aware substitution</p>
+                                    <p className="text-white/65 text-base leading-relaxed">The most powerful tool in Studio — and the one beginners most often overlook. Use this when <strong className="text-white">the musical phrase itself is wrong, or there's an actual error</strong>.</p>
+                                    <p className="text-white/65 text-base leading-relaxed mt-2">How it works: Suno doesn't listen to what's inside the selection. It listens to what comes <strong className="text-white">before</strong> and what comes <strong className="text-white">after</strong> — and generates a bridge that joins those two pieces seamlessly. It's close to magic.</p>
                                 </div>
                             </div>
                         </div>
@@ -504,7 +488,7 @@ export default function SunoStudioGuidePage() {
                                     <span className="text-2xl font-bold flex-shrink-0" style={{ color: "rgba(201,168,76,0.25)" }}>{item.step}</span>
                                     <div>
                                         <p className="text-white font-medium text-sm">{item.title}</p>
-                                        <p className="text-white/50 text-sm mt-1">{item.desc}</p>
+                                        <p className="text-white/65 text-base mt-1">{item.desc}</p>
                                     </div>
                                 </div>
                             ))}
@@ -526,16 +510,15 @@ export default function SunoStudioGuidePage() {
                             ].map((item, i) => (
                                 <div key={i} className="flex items-start gap-3">
                                     <div className="w-5 h-5 rounded flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-bold" style={{ background: "rgba(201,168,76,0.15)", color: "#C9A84C" }}>{i + 1}</div>
-                                    <p className="text-white/60 text-sm">{item}</p>
+                                    <p className="text-white/65 text-base">{item}</p>
                                 </div>
                             ))}
                         </div>
 
-                        <div className="rounded-xl p-4 flex gap-3" style={{ background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.15)" }}>
+                        <div className="rounded-xl p-4 flex gap-3" style={{ background: "rgba(201,168,76,0.07)", border: "1px solid rgba(201,168,76,0.25)" }}>
                             <span className="text-lg">🎸</span>
-                            <p className="text-white/60 text-sm leading-relaxed"><strong className="text-white">The core shift:</strong> in Studio we stop being generators and become editors. We don't hope randomness gets it right — we correct it when it doesn't.</p>
+                            <p className="text-white/65 text-base leading-relaxed"><strong className="text-white">The core shift:</strong> in Studio we stop being generators and become editors. We don't hope randomness gets it right — we correct it when it doesn't.</p>
                         </div>
-                        <BackToTop />
                     </div>
 
                     {/* Chapter 7 */}
@@ -554,22 +537,21 @@ export default function SunoStudioGuidePage() {
                             <div className="rounded-xl p-5 flex gap-4 items-start" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderLeft: "3px solid #C9A84C" }}>
                                 <span className="text-xl flex-shrink-0">🔊</span>
                                 <div>
-                                    <p className="text-white font-semibold text-sm mb-2">The golden rule of volume</p>
-                                    <p className="text-white/50 text-sm leading-relaxed">Feel like the instruments are too quiet under the vocal? <strong className="text-white">Don't turn them up.</strong> Do the opposite — turn the vocal down. In mixing, it's always better to pull back the loudest thing than to try and compete with it. This rule holds everywhere: in Studio, in your DAW, in life.</p>
+                                    <p className="text-white font-semibold text-base mb-2">The golden rule of volume</p>
+                                    <p className="text-white/65 text-base leading-relaxed">Feel like the instruments are too quiet under the vocal? <strong className="text-white">Don't turn them up.</strong> Do the opposite — turn the vocal down. In mixing, it's always better to pull back the loudest thing than to try and compete with it. This rule holds everywhere: in Studio, in your DAW, in life.</p>
                                 </div>
                             </div>
 
                             <div className="rounded-xl p-5 flex gap-4 items-start" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderLeft: "3px solid #C9A84C" }}>
                                 <span className="text-xl flex-shrink-0">↔️</span>
                                 <div>
-                                    <p className="text-white font-semibold text-sm mb-2">Pan: free up the center</p>
-                                    <p className="text-white/50 text-sm leading-relaxed">The center of the stereo field is <strong className="text-white">sacred space for the vocals and bass</strong>. Leave those alone. Everything else — guitars, synths, backing vocals — push to the sides. One instrument left, another right. This gives the track width and carves out space for the lead vocal to breathe instead of drown.</p>
+                                    <p className="text-white font-semibold text-base mb-2">Pan: free up the center</p>
+                                    <p className="text-white/65 text-base leading-relaxed">The center of the stereo field is <strong className="text-white">sacred space for the vocals and bass</strong>. Leave those alone. Everything else — guitars, synths, backing vocals — push to the sides. One instrument left, another right. This gives the track width and carves out space for the lead vocal to breathe instead of drown.</p>
                                 </div>
                             </div>
                         </div>
 
                         <ProTip>The Studio mixer is for orientation, not the finish line. If something sounds wrong here — treat it as a signal to revisit the structure, not a reason to spend an hour tweaking faders. The final sound is born in <a href="/mixing-mastering" style={{ color: "#C9A84C", textDecoration: "underline" }}>professional mixing</a>.</ProTip>
-                        <BackToTop />
                     </div>
 
                     {/* Chapter 8 */}
@@ -585,8 +567,8 @@ export default function SunoStudioGuidePage() {
                         </div>
 
                         <div className="rounded-xl p-5 flex flex-col gap-3" style={{ background: "rgba(255,80,80,0.06)", border: "1px solid rgba(255,80,80,0.2)" }}>
-                            <p className="text-white font-semibold text-sm">⚠️ Why you can't only hand over Full Song</p>
-                            <p className="text-white/60 text-sm leading-relaxed">Think of Full Song as an already-baked cake. A mixing engineer can try to "unbake" it with specialized software — but that's extra work, and the quality inevitably takes a hit. Why accept a result with artifacts and smearing when you could just hand over the clean individual ingredients to begin with?</p>
+                            <p className="text-white font-semibold text-base">⚠️ Why you can't only hand over Full Song</p>
+                            <p className="text-white/65 text-base leading-relaxed">Think of Full Song as an already-baked cake. A mixing engineer can try to "unbake" it with specialized software — but that's extra work, and the quality inevitably takes a hit. Why accept a result with artifacts and smearing when you could just hand over the clean individual ingredients to begin with?</p>
                         </div>
 
                         <div className="flex flex-col gap-4">
@@ -610,13 +592,12 @@ export default function SunoStudioGuidePage() {
                                 <div key={i} className="rounded-xl p-5 flex gap-4 items-start" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderLeft: "3px solid #C9A84C" }}>
                                     <span className="text-xl flex-shrink-0">{item.icon}</span>
                                     <div>
-                                        <p className="text-white font-semibold text-sm mb-2">{item.title}</p>
-                                        <p className="text-white/50 text-sm leading-relaxed">{item.desc}</p>
+                                        <p className="text-white font-semibold text-base mb-2">{item.title}</p>
+                                        <p className="text-white/65 text-base leading-relaxed">{item.desc}</p>
                                     </div>
                                 </div>
                             ))}
                         </div>
-                        <BackToTop />
                     </div>
 
                     {/* Final cheatsheet */}
@@ -653,19 +634,19 @@ export default function SunoStudioGuidePage() {
                     {/* Final thought */}
                     <div className="flex flex-col gap-1">
                         <div className="w-full h-px" style={{ background: "rgba(255,255,255,0.06)" }} />
-                        <div className="rounded-2xl p-8 flex flex-col gap-4 mt-4" style={{ background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.2)" }}>
+                        <div className="rounded-2xl p-8 flex flex-col gap-4 mt-4" style={{ background: "rgba(201,168,76,0.07)", border: "1px solid rgba(201,168,76,0.25)" }}>
                             <h3 className="text-xl font-semibold text-white">You're no longer just a user</h3>
-                            <p className="text-white/60 text-sm leading-relaxed">What's sitting on your drive now isn't a file — it's a disassembled project, part by part. You're no longer the person who hits Generate and prays. You're a producer with clean stems ready for a serious mix.</p>
-                            <p className="text-white/60 text-sm leading-relaxed">Timeline, Extend with the right timestamp, the G.M.I.V. formula, Cover and Replace, stems in WAV — this isn't a feature list. It's a workflow where every step is deliberate.</p>
+                            <p className="text-white/65 text-base leading-relaxed">What's sitting on your drive now isn't a file — it's a disassembled project, part by part. You're no longer the person who hits Generate and prays. You're a producer with clean stems ready for a serious mix.</p>
+                            <p className="text-white/65 text-base leading-relaxed">Timeline, Extend with the right timestamp, the G.M.I.V. formula, Cover and Replace, stems in WAV — this isn't a feature list. It's a workflow where every step is deliberate.</p>
                             <p className="text-white font-semibold mt-2 text-lg">Go make something.</p>
                         </div>
                     </div>
 
                     {/* CTA */}
                     <div className="rounded-2xl p-8 text-center flex flex-col items-center gap-4"
-                        style={{ background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.2)" }}>
+                        style={{ background: "rgba(201,168,76,0.07)", border: "1px solid rgba(201,168,76,0.25)" }}>
                         <h3 className="text-xl font-semibold text-white">Stems ready — what's next?</h3>
-                        <p className="text-white/50 text-sm max-w-md">Send over the stem archive or Full Song. We'll take it to release-ready. First consultation is free.</p>
+                        <p className="text-white/65 text-base max-w-md">Send over the stem archive or Full Song. We'll take it to release-ready. First consultation is free.</p>
                         <a href="/contact" className="inline-flex items-center gap-2 text-black font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition text-sm"
                             style={{ backgroundColor: "#C9A84C" }}>
                             Get in touch →
