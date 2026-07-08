@@ -188,7 +188,14 @@ export default function SectionIndicator() {
                             key={s.id}
                             href={`#${s.id}`}
                             className="section-dot group flex items-center justify-end"
-                            style={{ position: "relative" }}
+                            style={{
+                                position: "relative",
+                                // the label used to be an in-flow pill (~24px tall) which
+                                // set each row's height; now it's absolute, so keep the
+                                // original vertical rhythm (dot spacing + progress line
+                                // length) with an explicit minHeight
+                                minHeight: "24px",
+                            }}
                             aria-current={active ? "true" : undefined}
                         >
                             <span
