@@ -28,19 +28,46 @@ async function verifyToken(token, secret) {
 }
 
 export async function proxy(req) {
-    const isAdminRoute = req.nextUrl.pathname.startsWith("/admin");
-    if (!isAdminRoute) return NextResponse.next();
+    const { pathname } = req.nextUrl;
+
+    // Admin pages — a logged-out visitor gets redirected to the login form.
+    const isAdminRoute = pathname.startsWith("/admin");
+
+    // Data-changing API routes — the "back doors". Public pages read the DB
+    // directly through the server pool, NOT through these routes, so guarding
+    // them does not affect anything visitors see. Only the admin panel calls
+    // these (with the auth cookie), and login/contact stay open below.
+    const isProtectedApi =
+        pathname.startsWith("/api/enhancements") ||
+        pathname.startsWith("/api/videos") ||
+        pathname.startsWith("/api/test");
+
+    if (!isAdminRoute && !isProtectedApi) return NextResponse.next();
 
     const secret = process.env.AUTH_SECRET || process.env.DB_PASSWORD || "";
     const token = req.cookies.get("auth")?.value;
     const valid = await verifyToken(token, secret);
 
     if (!valid) {
+        // API callers get a clean 401 (a redirect would confuse a fetch());
+        // page visitors get bounced to the login form as before.
+        if (isProtectedApi) {
+            return Response.json(
+                { success: false, message: "Unauthorized" },
+                { status: 401 },
+            );
+        }
         return NextResponse.redirect(new URL("/login", req.url));
     }
+
     return NextResponse.next();
 }
 
 export const config = {
-    matcher: ["/admin/:path*"],
-}
+    matcher: [
+        "/admin/:path*",
+        "/api/enhancements/:path*",
+        "/api/videos/:path*",
+        "/api/test",
+    ],
+};
