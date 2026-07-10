@@ -7,8 +7,6 @@ export default function LoginPage() {
     const router = useRouter();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    // const [email, setEmail] = useState("admin@slstudio.com");
-    // const [password, setPassword] = useState("Blackmore_1979");
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
 

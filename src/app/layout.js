@@ -22,6 +22,16 @@ export const metadata = {
         default: 'SL Studio | Mixing, Mastering & Music Production',
         template: '%s | SL Studio',
     },
+    openGraph: {
+        images: [
+            {
+                url: "/images/og-image.png",
+                width: 1200,
+                height: 630,
+                alt: "SL Studio — Mixing, Mastering & Arrangement, Warsaw",
+            },
+        ],
+    },
     icons: {
         icon: '/favicon.svg',
     },
