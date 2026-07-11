@@ -30,7 +30,8 @@ export const metadata = {
         "ai mastering services",
     ],
     other: {
-        "article:published_time": "2026-02-18"
+        "article:published_time": "2026-02-18",
+        "article:modified_time": "2026-07-10"
     },
 };
 
@@ -171,6 +172,24 @@ export default function AIMixingReviewPage() {
                             </table>
                         </div>
                         <p>The third tier deserves a special mention: AI-assisted plugins are the same machine learning technology, but pointed in the right direction — they propose, you decide. That is why an assistant inside <a href="/blog/izotope-ozone-11-review" style={{color: "#C9A84C", textDecoration: "underline"}}>iZotope Ozone 11</a> feels useful while a fully automated mixing service feels like a slot machine: the difference is not the algorithm, it is who makes the final call.</p>
+                    </div>
+
+                    <div className="flex flex-col gap-4">
+                        <h2 className="text-xl md:text-2xl font-semibold text-white">What Has Changed Since This Test <span className="text-white/40 text-base font-normal">(updated July 2026)</span></h2>
+                        <p>I ran the test above in early 2026, and this corner of the market moves fast. A few tools worth naming have landed or matured since — and, tellingly, the most interesting ones sit in the <strong className="text-white">assistant</strong> tier, not the fully-automated one.</p>
+                        <div className="flex flex-col gap-3">
+                            {[
+                                {name: "Sonible smart:comp 3", text: "A spectro-dynamic compressor that uses AI analysis to map your audio and suggest a starting point, then hands you every normal control. This is the tier that keeps getting genuinely better — it works during the mix and you keep the final say. Exactly the 'propose, you decide' model that makes assistant plugins useful."},
+                                {name: "MixingGPT (plugin)", text: "A purpose-built AI mixing assistant rather than a general chatbot bolted onto audio. Useful as a second opinion and a fast starting point — but the same rule applies: treat its output as a draft to check, not a finished mix."},
+                                {name: "Cryo Mix", text: "The most interesting attempt at the hard problem — it splits a song into stems (vocals, drums, bass, guitars, synths) and balances each against the others with EQ, compression, panning and space before combining. That's aimed squarely at the 'systems thinking' weakness I hit above. Promising direction; I'd still run a real, imperfect session through it before trusting it with a release."},
+                            ].map((item, i) => (
+                                <div key={i} className="rounded-xl p-5 flex flex-col gap-2" style={{background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderLeft: "3px solid #C9A84C"}}>
+                                    <p className="text-white font-semibold text-sm">{item.name}</p>
+                                    <p className="text-white/55 text-base leading-relaxed">{item.text}</p>
+                                </div>
+                            ))}
+                        </div>
+                        <p>None of this overturns the conclusion. AI-assisted plugins — the ones that <em>propose</em> while you decide — keep improving and are worth using. Fully-automated, hands-off mixing still runs into the same wall: a mix is a web of decisions in context, and the newer tools that take that seriously (like Cryo Mix's per-stem approach) are the ones actually moving the needle.</p>
                     </div>
 
                     <div className="flex flex-col gap-4">

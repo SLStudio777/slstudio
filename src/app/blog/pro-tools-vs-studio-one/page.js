@@ -27,7 +27,8 @@ export const metadata = {
         "daw comparison mixing mastering",
     ],
     other: {
-        "article:published_time": "2025-02-10"
+        "article:published_time": "2025-02-10",
+        "article:modified_time": "2026-07-10"
     },
 };
 
@@ -43,6 +44,8 @@ export default function ProToolsVsStudioOnePage() {
                         <span className="text-white/30 text-xs uppercase tracking-widest">Tutorials</span>
                         <span className="text-white/20 text-xs">·</span>
                         <span className="text-white/30 text-xs">February 10, 2025</span>
+                        <span className="text-white/20 text-xs">·</span>
+                        <span className="text-xs" style={{color: "rgba(201,168,76,0.6)"}}>Updated July 2026</span>
                     </div>
                     <h1 className="text-3xl md:text-5xl font-semibold tracking-wide leading-tight mb-6">
                         Pro Tools vs Studio One
@@ -59,6 +62,13 @@ export default function ProToolsVsStudioOnePage() {
                         <p><strong className="text-white">Pro Tools</strong> has been the industry standard for decades. Studios around the world run on it. If you walk into a professional recording studio anywhere in the world, the chances are high that you will see Pro Tools on the screen. That reputation is earned — Pro Tools built its dominance in an era when it was genuinely ahead of everything else.</p>
                         <p>But the landscape has changed. <strong className="text-white">Studio One</strong> has quietly become one of the most capable DAWs available — and for many engineers, it has become the smarter choice. Not because Pro Tools is bad, but because Studio One does most things faster, with fewer steps, and with a workflow that gets out of the way and lets you focus on the music.</p>
                         <p>This comparison covers the areas where the difference between these two DAWs matters most in real-world mixing and <a href="/mixing-mastering" style={{color: "#C9A84C", textDecoration: "underline"}}>mastering</a> work.</p>
+                    </div>
+
+                    <div className="rounded-2xl p-5 flex flex-col gap-2"
+                         style={{background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderLeft: "3px solid #C9A84C"}}>
+                        <p className="text-white font-semibold text-sm">Update — the 2026 versions</p>
+                        <p className="text-white/55 text-base leading-relaxed"><strong className="text-white">Studio One is now Fender Studio Pro 8.</strong> After Fender acquired PreSonus, the DAW was rebranded in early 2026, dropping the PreSonus name. It's the direct successor to Studio One 7 — the same engine and the same workflow advantages described below, plus added Fender amp and effects plugins. Most engineers still call it "Studio One" out of habit, so that's the name used throughout this article.</p>
+                        <p className="text-white/55 text-base leading-relaxed"><strong className="text-white">Pro Tools is now on the 2026 cycle</strong> (latest: 2026.4, April 2026). Avid added Track Pin for navigating large sessions, MPEG-H immersive support, Dolby Headphone personalization, and a bundled Massive X Player. The immersive workflow keeps improving — but the integration and workflow points below still hold.</p>
                     </div>
 
                     <div className="flex flex-col gap-4">

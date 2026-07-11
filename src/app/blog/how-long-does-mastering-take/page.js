@@ -48,6 +48,18 @@ const faqItems = [
         q: "How long do mastering revisions take?",
         a: "Revision adjustments are usually completed within 24 hours of your feedback. Most projects finalise after the first revision round.",
     },
+    {
+        q: "How long does it take to mix and master a whole album?",
+        a: "For a typical 8–12 track album, plan on two to four weeks of calendar time. Each song still needs its own focused mixing and mastering pass, but an album adds work a single doesn't: an album-wide consistency pass so tone, loudness and character match across every track, plus checks on the transitions between songs. Rushing an album is exactly where that cohesion gets lost.",
+    },
+    {
+        q: "How long does it take to mix an album versus a single song?",
+        a: "A single song is several hours to a couple of days of mixing. An album is not simply that multiplied: after the individual mixes there's an album-wide pass to match balance, tone and level across all the tracks so the record sounds like one body of work rather than a dozen unrelated singles. For 10 songs, plan on two to three weeks of mixing before mastering begins.",
+    },
+    {
+        q: "Can a full album be mastered faster if all the mixes are ready?",
+        a: "Yes — clean, consistent mixes are the single biggest time-saver. If every track is well balanced and delivered with headroom, album mastering moves quickly and the consistency pass is mostly fine-tuning. If the mixes vary in quality or loudness, each one has to be corrected first, which is what stretches an album timeline.",
+    },
 ];
 
 const faqSchema = {

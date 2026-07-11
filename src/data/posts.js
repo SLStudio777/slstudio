@@ -46,8 +46,8 @@ export const posts = [
         image: "/images/blog-plugins-cover.webp",
         category: "Technics",
         date: "March 12, 2026",
-        title: "10 Mixing Plugins Worth Every Dollar in 2026",
-        excerpt: "Not a list of popular plugins. These are the 10 tools that actually show up on every session — from Plugin Alliance and Slate Digital to FabFilter and Valhalla."
+        title: "The Best Plugin Alliance Plugins for Mixing in 2026",
+        excerpt: "Not a list of popular plugins. Nine Plugin Alliance tools (Brainworx, SPL, the Lindell 80) plus one Slate Digital pick that actually show up on every session."
     },
     {
         href: "/blog/ai-mixing-mastering-review",

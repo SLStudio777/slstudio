@@ -3,14 +3,14 @@ import BlogJsonLd from "@/app/components/blog/BlogJsonLd";
 import BlogHeader from "@/app/components/blog/BlogHeader";
 
 export const metadata = {
-    title: "10 Mixing Plugins Worth Every Dollar in 2026",
+    title: "Best Plugin Alliance Plugins 2026 (10 Worth Every Dollar)",
     alternates: {
         canonical: "https://www.slstudio.pro/blog/best-mixing-plugins-2026"
     },
-    description: "Not a list of popular plugins. These are the 10 tools that actually show up on every session — from Plugin Alliance and Slate Digital to SPL and Brainworx.",
+    description: "The best Plugin Alliance plugins for mixing in 2026 — 10 tools (Brainworx, SPL, the Lindell 80) that earn a place on every session, plus one Slate Digital pick. Tested, not hyped.",
     openGraph: {
-        title: "10 Mixing Plugins Worth Every Dollar in 2026",
-        description: "Not a list of popular plugins. These are the 10 tools that actually show up on every session — from Plugin Alliance and Slate Digital to SPL and Brainworx.",
+        title: "Best Plugin Alliance Plugins 2026 (10 Worth Every Dollar)",
+        description: "The best Plugin Alliance plugins for mixing in 2026 — 10 tools (Brainworx, SPL, the Lindell 80) that earn a place on every session, plus one Slate Digital pick. Tested, not hyped.",
         type: "article",
         url: "https://www.slstudio.pro/blog/best-mixing-plugins-2026",
         siteName: "SL Studio",
@@ -18,15 +18,16 @@ export const metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "10 Mixing Plugins Worth Every Dollar in 2026",
-        description: "Not a list of popular plugins. These are the 10 tools that actually show up on every session — from Plugin Alliance and Slate Digital to SPL and Brainworx.",
+        title: "Best Plugin Alliance Plugins 2026 (10 Worth Every Dollar)",
+        description: "The best Plugin Alliance plugins for mixing in 2026 — 10 tools (Brainworx, SPL, the Lindell 80) that earn a place on every session, plus one Slate Digital pick. Tested, not hyped.",
     },
     keywords: [
+        "best plugin alliance plugins 2026",
         "best mixing plugins 2026",
         "plugin alliance review",
+        "brainworx bx_console lindell 80",
         "slate digital plugins",
         "best mixing plugins worth buying",
-        "silver bullet mk2 review",
     ],
     other: {
         "article:published_time": "2026-03-12"
@@ -42,7 +43,7 @@ export default function BestMixingPluginsPage() {
                 <BlogHeader
                     topic="Technics"
                     date="March 12, 2026"
-                    title="10 Mixing Plugins Worth Every Dollar in 2026"
+                    title="The Best Plugin Alliance Plugins for Mixing in 2026"
                     description="Every engineer has a graveyard of plugins bought, tried once, and never opened again. This is the opposite list — the tools that actually earn their place in every session."
                 />
 
@@ -50,7 +51,7 @@ export default function BestMixingPluginsPage() {
 
                     <div className="flex flex-col gap-4">
                         <p>The plugin market never stops growing. Between subscription bundles, flash sales, and endless YouTube recommendations, it is easy to accumulate hundreds of processors that never actually improve your mixes. The tools on this list are different — each one solves a real problem, sounds genuinely good, and has earned a permanent spot in the workflow.</p>
-                        <p>Some are from <a href="https://www.plugin-alliance.com" target="_blank" style={{color: "#C9A84C", textDecoration: "underline"}}>Plugin Alliance</a>, one from <a href="https://slatedigital.com" target="_blank" style={{color: "#C9A84C", textDecoration: "underline"}}>Slate Digital</a>. What they all share is that they made the sessions better — not just different.</p>
+                        <p>Nine of the ten are <a href="https://www.plugin-alliance.com" target="_blank" style={{color: "#C9A84C", textDecoration: "underline"}}>Plugin Alliance</a> titles — including the Brainworx and SPL brands that live under that roof — and one is from <a href="https://slatedigital.com" target="_blank" style={{color: "#C9A84C", textDecoration: "underline"}}>Slate Digital</a>. That is not brand loyalty; it is just where the tools that kept earning their place happened to come from. What they all share is that they made the sessions better — not just different.</p>
                     </div>
 
                     {[
