@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { User, RefreshCw, Clock } from "lucide-react";
 import HeroCard from "../cards/HeroCard";
 import HeroWave from "../common/HeroWave";
@@ -28,7 +29,15 @@ export default function Hero() {
                 regardless of what comes after in row 2. */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch">
                 <div className="flex flex-col gap-10 md:justify-between mobile-reflow">
-                    {/* Headline block — tight rhythm, no dead gaps */}
+                    {/* Headline block — tight rhythm, no dead gaps.
+                        H1: "From Raw to Ready." — 18 characters, well under
+                        the ~21–23 char ceiling observed for a single line at
+                        this font size/column width (the old "Welcome to SL
+                        Studio" was 21 chars and just barely fit). Doesn't
+                        repeat service names (those live on the H2 service
+                        cards + subheadline) and doesn't collide with the
+                        "Mixing & Mastering" H1 already used on
+                        /mixing-mastering. */}
                     <div className="flex flex-col gap-6 [@media(max-width:767px)]:order-1">
                         <div>
                             <span className="text-white/40 text-xs uppercase tracking-[0.3em]">
@@ -37,15 +46,24 @@ export default function Hero() {
                             <div className="relative mt-3">
                                 <div className="hero-title-glow" aria-hidden="true" />
                                 <h1 className="relative text-4xl md:text-6xl font-semibold leading-tight tracking-wide">
-                                    Welcome to <span className="text-[#f5b942]"><span className="tracking-widest">SL</span> Studio</span>
+                                    From Raw to <span className="text-[#f5b942]">Ready.</span>
                                 </h1>
                             </div>
                         </div>
                         {/* Living waveform — shared component, also used on the
                             Mixing & Mastering and Arrangement hero pages */}
                         <HeroWave />
+                        {/* Link now lives INSIDE the subheadline paragraph, right
+                            after the closing sentence — reads as "finish the
+                            sentence, then here's the button" instead of sitting
+                            on its own line. Removes one full flex gap (24px)
+                            plus a separate line's height compared to the
+                            previous standalone-Link version. */}
                         <p className="text-white/70 text-md md:text-lg leading-relaxed">
-                            A Warsaw studio for mixing, mastering, arrangement and production — a place where your music comes alive.
+                            A Warsaw studio for mixing, mastering, arrangement and production. Send a rough demo, an old recording, or just an idea — I'll take it from there.{" "}
+                            <Link href="/contact" className="text-[#f5b942] hover:text-[#C9A84C] transition whitespace-nowrap">
+                                Get a free preview →
+                            </Link>
                         </p>
                     </div>
                     {/* Services block — promoted right under the pitch, doing the
@@ -134,17 +152,14 @@ export default function Hero() {
                         About me
                     </h2>
                     <p className="text-white/70 leading-relaxed">
-                        I'm Serhii Lazariev - guitarist, vocalist, and music producer based in Warsaw, Poland.
-                        Blues-rock, funk, jazz-rock, indie — I've been in it long enough to know what makes a recording feel alive.
+                        I'm Serhii Lazariev - guitarist, vocalist, and music producer based in Warsaw, Poland. Blues-rock, funk, jazz-rock, indie — I've been in it long enough to know what makes a recording feel alive.
                     </p>
                     <p className="text-white/70 leading-relaxed">
-                        Send me what you have — a phone recording, a guitar sketch, a half-finished demo.
-                        We figure out together what the track actually needs. Mixing, mastering, arrangement, new parts.
-                        Sometimes a full overhaul, sometimes just a few touches.
+                        Send me what you have — a phone recording, a guitar sketch, a half-finished demo. We figure out together what the track actually needs. Mixing, mastering, arrangement, new parts. Sometimes a full overhaul, sometimes just a few touches.
                     </p>
-                    <a href="/contact" className="text-[#f5b942] hover:opacity-75 transition leading-relaxed">
+                    <Link href="/contact" className="text-[#f5b942] hover:text-[#C9A84C] transition leading-relaxed w-fit">
                         Send me what you've got.
-                    </a>
+                    </Link>
                 </div>
             </div>
         </section>

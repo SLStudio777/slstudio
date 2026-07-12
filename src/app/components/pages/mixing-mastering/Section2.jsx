@@ -25,7 +25,11 @@ const faqs = [
     },
     {
         q: "What if I don't like the result?",
-        a: "This rarely happens because we discuss the direction before I start. But if something isn't right — revisions are included, and I keep working until it is."
+        // Updated: previously this only promised revisions after work started.
+        // Now it also states the free preview step that happens before the
+        // full mix begins, matching the offer introduced on the homepage
+        // Hero and "How It Works" section.
+        a: "This rarely happens — before I start the full mix, I send a short processed preview so you can hear the direction and confirm it's right. If something still isn't right after that, revisions are included, and I keep working until it is."
     },
     {
         q: "Do you work with low-quality recordings?",

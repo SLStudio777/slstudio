@@ -25,7 +25,11 @@ const faqs = [
     },
     {
         q: "What if I don't like the direction you take?",
-        a: "That's exactly why I send a demo version first for your approval. You hear the direction before we go any further. No surprises at the end."
+        // Updated: added the word "free" so this matches the explicit offer
+        // now stated on the homepage Hero and "How It Works" section — the
+        // underlying process here was already the same, just wasn't
+        // labeled "free" before.
+        a: "That's exactly why I always send a free demo version first for your approval. You hear the direction before we go any further. No surprises at the end."
     },
     {
         q: "How much does it cost and how does payment work?",

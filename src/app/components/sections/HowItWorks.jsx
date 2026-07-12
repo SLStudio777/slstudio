@@ -17,7 +17,11 @@ const steps = [
         step: "02",
         title: "We Discuss the Direction",
         time: "Same day",
-        description: "Free consultation. I listen to your material and tell you exactly what I can do with it and how.",
+        // Updated to match the new Hero promise ("Get a free preview →"):
+        // previously this only described a verbal consultation. Now it also
+        // covers the processed audio sample, so the offer stays consistent
+        // from the top of the page down to this section.
+        description: "Free consultation and a short preview. I listen to your material and send back a quick processed sample, so you hear the direction before committing to anything.",
         highlight: false,
         badge: null,
     },
