@@ -1,5 +1,6 @@
 "use client";
 import { ChevronRight, HelpCircle } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
 
 const faqs = [
@@ -29,7 +30,16 @@ const faqs = [
         // now stated on the homepage Hero and "How It Works" section — the
         // underlying process here was already the same, just wasn't
         // labeled "free" before.
-        a: "That's exactly why I always send a free demo version first for your approval. You hear the direction before we go any further. No surprises at the end."
+        a: (
+            <>
+                That&apos;s exactly why I always send a{" "}
+                <Link href="/free-track-preview" className="text-gold underline hover:text-gold2 transition">
+                    free demo version
+                </Link>{" "}
+                first for your approval. You hear the direction before we go any further. No
+                surprises at the end.
+            </>
+        )
     },
     {
         q: "How much does it cost and how does payment work?",

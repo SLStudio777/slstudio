@@ -1,5 +1,6 @@
 "use client";
 import { ChevronRight, HelpCircle } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
 
 const faqs = [
@@ -28,8 +29,18 @@ const faqs = [
         // Updated: previously this only promised revisions after work started.
         // Now it also states the free preview step that happens before the
         // full mix begins, matching the offer introduced on the homepage
-        // Hero and "How It Works" section.
-        a: "This rarely happens — before I start the full mix, I send a short processed preview so you can hear the direction and confirm it's right. If something still isn't right after that, revisions are included, and I keep working until it is."
+        // Hero and "How It Works" section. "free preview" links to the
+        // dedicated /free-track-preview page for internal linking.
+        a: (
+            <>
+                This rarely happens — before I start the full mix, I send you a{" "}
+                <Link href="/free-track-preview" className="text-gold underline hover:text-gold2 transition">
+                    free preview
+                </Link>{" "}
+                so you can hear the direction and confirm it&apos;s right. If something still isn&apos;t
+                right after that, revisions are included, and I keep working until it is.
+            </>
+        )
     },
     {
         q: "Do you work with low-quality recordings?",

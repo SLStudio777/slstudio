@@ -16,10 +16,10 @@ export default function FinalCTA() {
                     Ready to transform your sound?
                 </h2>
                 <p className="text-white/65 text-[15px] relative z-10">
-                    First listen is always free. No commitment.
+                    Free preview of your track. No commitment.
                 </p>
                 <Link
-                    href="/contact"
+                    href="/free-track-preview"
                     className="btn-gold relative z-10 inline-flex items-center gap-2 font-semibold px-10 py-4 rounded-xl text-sm"
                     style={{
                         background: "linear-gradient(135deg, #C9A84C 0%, #e8c97a 50%, #C9A84C 100%)",

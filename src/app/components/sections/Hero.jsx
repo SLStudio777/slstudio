@@ -61,7 +61,7 @@ export default function Hero() {
                             previous standalone-Link version. */}
                         <p className="text-white/70 text-md md:text-lg leading-relaxed">
                             A Warsaw studio for mixing, mastering, arrangement and production. Send a rough demo, an old recording, or just an idea — I'll take it from there.{" "}
-                            <Link href="/contact" className="text-[#f5b942] hover:text-[#C9A84C] transition whitespace-nowrap">
+                            <Link href="/free-track-preview" className="text-[#f5b942] hover:text-[#C9A84C] transition whitespace-nowrap">
                                 Get a free preview →
                             </Link>
                         </p>
