@@ -31,12 +31,16 @@ const ALLOWED_CONTENT_TYPES = [
 const PATHNAME_RE = /^previews\/[A-Za-z0-9._-]+$/;
 
 export async function POST(req) {
-    // Blob signed-token issuance runs over OIDC (VERCEL_OIDC_TOKEN + BLOB_STORE_ID).
-    // Fail loudly with a clear message instead of a cryptic SDK error.
-    if (!process.env.BLOB_STORE_ID || !process.env.VERCEL_OIDC_TOKEN) {
+    // Blob signed-token issuance runs over OIDC + BLOB_STORE_ID. Only guard on
+    // BLOB_STORE_ID here: the OIDC token is NOT read from process.env in
+    // production — the SDK's getVercelOidcToken() takes it from the request
+    // context (the `x-vercel-oidc-token` header), so process.env.VERCEL_OIDC_TOKEN
+    // is empty on Vercel and only set locally via `.env.local`. Checking it here
+    // caused a false 503 in production. Let issueSignedToken read the token from
+    // the right source; the try/catch below surfaces any real auth failure.
+    if (!process.env.BLOB_STORE_ID) {
         console.error(
-            "[preview-upload] Missing BLOB_STORE_ID or VERCEL_OIDC_TOKEN. " +
-                "Run `vercel env pull .env.local` (owner does this manually) — the OIDC token expires ~12h."
+            "[preview-upload] Missing BLOB_STORE_ID. Connect the Blob store to the project (it sets BLOB_STORE_ID for all environments)."
         );
         return Response.json(
             { error: "Upload is temporarily unavailable. Please paste a link instead, or contact me on Telegram." },
