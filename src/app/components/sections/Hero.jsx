@@ -46,7 +46,7 @@ export default function Hero() {
                             <div className="relative mt-3">
                                 <div className="hero-title-glow" aria-hidden="true" />
                                 <h1 className="relative text-4xl md:text-6xl font-semibold leading-tight tracking-wide">
-                                    From Raw to <span className="text-[#f5b942]">Ready.</span>
+                                    From Raw to <span className="text-[#f5b942]">Ready</span>
                                 </h1>
                             </div>
                         </div>

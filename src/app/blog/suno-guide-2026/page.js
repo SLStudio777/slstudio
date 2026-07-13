@@ -516,7 +516,7 @@ export default function SunoGuidePage() {
                     <div id="demo-machine" className="flex flex-col gap-5">
                         <div className="flex items-center gap-3">
                             <span className="w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold flex-shrink-0" style={{ background: "rgba(201,168,76,0.15)", color: "#C9A84C" }}>11</span>
-                            <h2 className="text-xl md:text-2xl font-semibold text-white">Suno Is a Demo Machine. A Very Good One.</h2>
+                            <h2 className="text-xl md:text-2xl font-semibold text-white">Suno Is a Demo Machine. A Very Good One</h2>
                         </div>
                         <p>Let us be completely honest about something.</p>
                         <p>No matter how good your Suno track sounds in the player, it is still a demo. A good demo — sometimes a great demo — but a demo. The final result, the one people actually listen to and remember, is born in post-production.</p>

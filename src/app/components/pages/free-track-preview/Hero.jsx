@@ -12,6 +12,7 @@ import {
     Headphones,
     SlidersHorizontal,
     Sparkles,
+    Lock,
 } from "lucide-react";
 import { uploadPresigned } from "@vercel/blob/client";
 import HeroWave from "../../common/HeroWave";
@@ -213,7 +214,7 @@ export default function Hero() {
                         <div className="relative mt-3">
                             <div className="hero-title-glow" aria-hidden="true" />
                             <h1 className="relative text-4xl md:text-5xl font-semibold tracking-wide">
-                                Hear Your Track, <span className="text-gold2">Free.</span>
+                                Hear Your Track, <span className="text-gold2">Free</span>
                             </h1>
                         </div>
                         <div className="mt-6">
@@ -273,6 +274,27 @@ export default function Hero() {
                             ))}
                         </ul>
                     </div>
+
+                    {/* Real testimonial (from the site's Testimonials section) +
+                        privacy note — fills out the column under the card, after
+                        it on mobile (order-4). No card styling, kept modest. */}
+                    <figure className="[@media(max-width:767px)]:order-4 flex flex-col gap-2">
+                        <blockquote className="text-white/70 text-[15px] italic leading-relaxed">
+                            “Total bomb. Keep this one, don't change a thing. I keep hitting replay.
+                            Maestro, bravo.”
+                        </blockquote>
+                        <figcaption className="text-white/45 text-xs">
+                            — Andrii Holikov, Guitarist &amp; Musician
+                        </figcaption>
+                    </figure>
+
+                    <p className="[@media(max-width:767px)]:order-5 flex items-start gap-2 text-white/45 text-xs leading-relaxed">
+                        <Lock className="w-3.5 h-3.5 mt-0.5 flex-shrink-0" />
+                        <span>
+                            Your file goes into private storage. Nobody can reach it without a signed
+                            link, and I delete it once we're done.
+                        </span>
+                    </p>
                 </div>
 
                 {/* RIGHT column — the form (the main element of the screen).
@@ -300,7 +322,7 @@ export default function Hero() {
                                 <Send className="w-7 h-7" style={{ color: "#C9A84C" }} />
                             </div>
                             <div>
-                                <h3 className="text-xl font-semibold text-white mb-2">Got it.</h3>
+                                <h3 className="text-xl font-semibold text-white mb-2">Got it</h3>
                                 <p className="text-white/60 text-sm max-w-sm">
                                     I'll listen and send your preview back within 1–2 days — check
                                     your email.
@@ -579,7 +601,7 @@ export default function Hero() {
             </section>
 
             {/* ── BEFORE YOU SEND ── */}
-            <section className="max-w-3xl mx-auto w-full">
+            <section className="max-w-3xl">
                 <div className="mb-6">
                     <span className="text-white/30 text-xs uppercase tracking-[0.3em]">
                         Before You Send
@@ -657,7 +679,7 @@ export default function Hero() {
 function FAQ() {
     const [openIndex, setOpenIndex] = useState(null);
     return (
-        <section className="max-w-3xl mx-auto w-full">
+        <section className="max-w-3xl">
             <div className="mb-6">
                 <span className="text-white/30 text-xs uppercase tracking-[0.3em]">FAQ</span>
                 <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mt-2">

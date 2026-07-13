@@ -268,7 +268,7 @@ export default function AIMixingReviewPage() {
                     {/* CTA */}
                     <div className="rounded-2xl p-8 text-center flex flex-col items-center gap-4"
                          style={{background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.2)"}}>
-                        <h3 className="text-xl font-semibold text-white">Your music deserves more than a pattern match.</h3>
+                        <h3 className="text-xl font-semibold text-white">Your music deserves more than a pattern match</h3>
                         <p className="text-white/50 text-sm max-w-md">Send your track — rough mix, stems, or demo. First consultation is always free.</p>
                         <a href="/contact"
                            className="inline-flex items-center gap-2 text-black font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition text-sm"

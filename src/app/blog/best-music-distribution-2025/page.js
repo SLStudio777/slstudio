@@ -158,7 +158,7 @@ export default function MusicDistributionPage() {
                     {/* CTA */}
                     <div className="rounded-2xl p-8 text-center flex flex-col items-center gap-4"
                          style={{background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.2)"}}>
-                        <h3 className="text-xl font-semibold text-white">Ready to release? Make sure your master is ready first.</h3>
+                        <h3 className="text-xl font-semibold text-white">Ready to release? Make sure your master is ready first</h3>
                         <p className="text-white/50 text-sm max-w-md">A professional master ensures your track sounds its best on every platform — regardless of which distributor you choose. First consultation is always free.</p>
                         <a href="/contact"
                            className="inline-flex items-center gap-2 text-black font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition text-sm"

@@ -38,6 +38,7 @@ export default function Footer() {
                     <Link href="/arrangement" className="text-white/60 text-sm hover:text-gold2 transition">Arrangement & Production</Link>
                     <Link href="/blog" className="text-white/60 text-sm hover:text-gold2 transition">Blog</Link>
                     <Link href="/contact" className="text-white/60 text-sm hover:text-gold2 transition">Contact</Link>
+                    <Link href="/free-track-preview" className="text-white/60 text-sm hover:text-gold2 transition">Free Preview</Link>
                 </div>
 
                 {/* Right — Contact */}

@@ -79,7 +79,7 @@ export default function Hero() {
                     <div className="relative">
                         <div className="hero-title-glow" aria-hidden="true" />
                         <h1 className="relative text-4xl md:text-6xl font-semibold tracking-wide">
-                            {"Let's "}<span className="text-gold2">Work.</span>
+                            {"Let's "}<span className="text-gold2">Work</span>
                         </h1>
                     </div>
                     <p className="text-white/65 text-[15px] leading-relaxed max-w-sm">

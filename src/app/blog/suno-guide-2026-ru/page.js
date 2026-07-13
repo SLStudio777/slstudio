@@ -438,7 +438,7 @@ export default function SunoGuidePageRu() {
                     <div id="demo-machine" className="flex flex-col gap-5">
                         <div className="flex items-center gap-3">
                             <span className="w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold flex-shrink-0" style={{ background: "rgba(201,168,76,0.15)", color: "#C9A84C" }}>11</span>
-                            <h2 className="text-xl md:text-2xl font-semibold text-white">Suno делает демо. Хорошие демо.</h2>
+                            <h2 className="text-xl md:text-2xl font-semibold text-white">Suno делает демо. Хорошие демо</h2>
                         </div>
                         <p>Скажем прямо, без прикрас.</p>
                         <p>Как бы хорошо трек ни звучал в плеере Suno — это демо. Хорошее демо, иногда отличное — но демо. То, что люди слышат, скачивают и запоминают, рождается в пост-продакшне.</p>
