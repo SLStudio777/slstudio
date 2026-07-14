@@ -29,7 +29,7 @@ const faqs = [
         a: (
             <>
                 Właśnie dlatego zawsze najpierw wysyłam{" "}
-                <Link href="/free-track-preview" className="text-gold underline hover:text-gold2 transition">
+                <Link href="/pl/darmowy-fragment" className="text-gold underline hover:text-gold2 transition">
                     bezpłatne demo
                 </Link>{" "}
                 do akceptacji. Słyszysz kierunek, zanim pójdziemy dalej. Żadnych niespodzianek na końcu.

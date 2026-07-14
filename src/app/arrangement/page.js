@@ -40,9 +40,39 @@ export const metadata = {
     },
 };
 
+const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: "SL Studio — Arrangement & Production",
+    description:
+        "Professional music arrangement and production services — online worldwide, based in Warsaw, Poland.",
+    url: "https://www.slstudio.pro/arrangement",
+    image: "https://www.slstudio.pro/images/SL-logo-mark-1024.png",
+    email: "serhii@slstudio.pro",
+    founder: {
+        "@type": "Person",
+        name: "Serhii Lazariev",
+    },
+    address: {
+        "@type": "PostalAddress",
+        addressLocality: "Warsaw",
+        addressCountry: "PL",
+    },
+    areaServed: ["Warsaw", "Poland", "Worldwide"],
+    serviceType: "Arrangement & Production",
+    sameAs: [
+        "https://www.youtube.com/@SLStudio_Guitar",
+        "https://www.instagram.com/lazarev_serhii_sl",
+    ],
+};
+
 export default function ArrangementPage() {
     return (
         <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+            />
             <Hero />
             <BeforeAfterArrangement />
             <Section2 />

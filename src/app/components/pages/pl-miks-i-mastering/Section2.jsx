@@ -33,7 +33,7 @@ const faqs = [
         a: (
             <>
                 Rzadko się to zdarza — zanim zacznę pełny miks, wysyłam krótkie{" "}
-                <Link href="/free-track-preview" className="text-gold underline hover:text-gold2 transition">
+                <Link href="/pl/darmowy-fragment" className="text-gold underline hover:text-gold2 transition">
                     bezpłatne demo
                 </Link>
                 , żebyś usłyszał kierunek i go potwierdził. A jeśli i potem coś nie gra — poprawki są w cenie i pracuję do skutku.

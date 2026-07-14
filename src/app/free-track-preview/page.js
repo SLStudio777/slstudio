@@ -4,6 +4,11 @@ export const metadata = {
     title: "Free Track Preview",
     alternates: {
         canonical: "https://www.slstudio.pro/free-track-preview",
+        languages: {
+            "en": "https://www.slstudio.pro/free-track-preview",
+            "pl": "https://www.slstudio.pro/pl/darmowy-fragment",
+            "x-default": "https://www.slstudio.pro/free-track-preview",
+        },
     },
     description:
         "Send your track and hear a free processed preview before you pay anything. Rough demos, phone recordings, stems — any format, any quality. Warsaw-based mixing, mastering and production studio.",

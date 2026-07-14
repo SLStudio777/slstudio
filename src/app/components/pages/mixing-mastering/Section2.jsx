@@ -46,6 +46,10 @@ const faqs = [
         q: "Do you work with low-quality recordings?",
         a: "Yes. A poor recording quality is not a death sentence. I've worked with recordings from garages, rehearsal rooms, and phones. What matters is that the performance is alive — the sound I can fix."
     },
+    {
+        q: "Why are your rates lower than most studios?",
+        a: "There's no agency, no studio rent to cover, and no engineer's cut on top of mine — you're paying for the work itself. I keep the process lean so I can keep the price fair, not because the work is a shortcut."
+    },
 ];
 
 export default function Section2() {

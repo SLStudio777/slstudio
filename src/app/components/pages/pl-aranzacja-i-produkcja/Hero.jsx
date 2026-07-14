@@ -55,7 +55,7 @@ export default function Hero() {
                             >
                                 Posłuchaj różnicy ↓
                             </a>
-                            <Link href="/free-track-preview" className="text-white/55 hover:text-[#f5b942] transition text-sm">
+                            <Link href="/pl/darmowy-fragment" className="text-white/55 hover:text-[#f5b942] transition text-sm">
                                 albo wyślij pomysł od razu →
                             </Link>
                         </div>

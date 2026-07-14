@@ -4,9 +4,9 @@ import { Mail, Send, ArrowUpRight, Loader2 } from "lucide-react";
 import LangSwitch from "../../common/LangSwitch";
 
 const SERVICE_FROM_QUERY = {
-    "mastering": "Mastering Only",
-    "mixing-mastering": "Mixing and Mastering",
-    "arrangement": "Arrangement and Production",
+    "mastering": "Tylko mastering",
+    "mixing-mastering": "Miks i mastering",
+    "arrangement": "Aranżacja i produkcja",
 };
 
 const TelegramIcon = () => (<svg viewBox="0 0 24 24" className="w-5 h-5 fill-current"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L8.32 13.617l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.828.942z"/></svg>);
@@ -14,7 +14,7 @@ const InstagramIcon = () => (<svg viewBox="0 0 24 24" className="w-5 h-5 fill-cu
 const FacebookIcon = () => (<svg viewBox="0 0 24 24" className="w-5 h-5 fill-current"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>);
 
 const contacts = [
-    { href:"https://t.me/serhii_lazariev", icon:<TelegramIcon/>, label:"Telegram", sub:"Fastest response", handle:"@serhii_lazariev", highlight:true },
+    { href:"https://t.me/serhii_lazariev", icon:<TelegramIcon/>, label:"Telegram", sub:"Najszybsza odpowiedź", handle:"@serhii_lazariev", highlight:true },
     { href:"https://www.instagram.com/lazarev_serhii_sl", icon:<InstagramIcon/>, label:"Instagram", sub:null, handle:"@lazarev_serhii_sl", highlight:false },
     { href:"https://www.facebook.com/profile.php?id=100044130441850", icon:<FacebookIcon/>, label:"Facebook", sub:null, handle:"Serhii Lazariev", highlight:false },
     { href:"mailto:serhii@slstudio.pro", icon:<Mail className="w-5 h-5"/>, label:"Email", sub:null, handle:"serhii@slstudio.pro", highlight:false },
@@ -58,7 +58,7 @@ export default function Hero() {
                 });
             }
         } catch {
-            setError('Something went wrong. Please try again or write directly to Telegram.');
+            setError('Coś poszło nie tak. Spróbuj ponownie albo napisz bezpośrednio na Telegram.');
         } finally {
             setLoading(false);
         }
@@ -73,25 +73,25 @@ export default function Hero() {
             </div>
 
             <div className="mb-6">
-                <LangSwitch active="en" enHref="/contact" plHref="/pl/kontakt" />
+                <LangSwitch active="pl" enHref="/contact" plHref="/pl/kontakt" />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
 
                 {/* LEFT */}
                 <div className="flex flex-col gap-3">
-                    <span className="text-white/30 text-xs uppercase tracking-[0.3em]">Get In Touch</span>
+                    <span className="text-white/30 text-xs uppercase tracking-[0.3em]">Kontakt</span>
                     <div className="relative">
                         <div className="hero-title-glow" aria-hidden="true" />
                         <h1 className="relative text-4xl md:text-6xl font-semibold tracking-wide">
-                            {"Let's "}<span className="text-gold2">Work</span>
+                            {"Zróbmy "}<span className="text-gold2">muzykę</span>
                         </h1>
                     </div>
                     <p className="text-white/65 text-[15px] leading-relaxed max-w-sm">
-                        Send me your track. Tell me what you are going for, and I will tell you what I can do with it — no charge, no obligation, just an honest listen.
+                        Wyślij mi swój utwór. Powiedz, do czego dążysz, a ja powiem, co mogę z tym zrobić — bez opłat, bez zobowiązań, po prostu szczery odsłuch.
                     </p>
 
-                    <p className="text-white/25 text-xs uppercase tracking-widest mt-4 mb-1">Connect directly</p>
+                    <p className="text-white/25 text-xs uppercase tracking-widest mt-4 mb-1">Napisz bezpośrednio</p>
 
                     {contacts.map((c,i) => (
                         <a key={i} href={c.href}
@@ -118,9 +118,9 @@ export default function Hero() {
                     <div className="p-3.5 rounded-xl" style={{border:"1px solid rgba(255,255,255,0.05)",background:"rgba(255,255,255,0.02)"}}>
                         <div className="flex items-center gap-2 mb-1">
                             <div className="w-2 h-2 rounded-full flex-shrink-0" style={{background:"#C9A84C",boxShadow:"0 0 6px rgba(201,168,76,0.6)",animation:"pulse 2s ease-in-out infinite"}}/>
-                            <p className="text-white/40 text-xs uppercase tracking-widest">Response time</p>
+                            <p className="text-white/40 text-xs uppercase tracking-widest">Czas odpowiedzi</p>
                         </div>
-                        <p className="text-white/60 text-sm">Usually within 24 hours. Telegram is fastest.</p>
+                        <p className="text-white/60 text-sm">Zwykle w ciągu 24 godzin. Najszybciej przez Telegram.</p>
                     </div>
                 </div>
 
@@ -139,38 +139,38 @@ export default function Hero() {
                                 <Send className="w-7 h-7" style={{color:"#C9A84C"}}/>
                             </div>
                             <div>
-                                <h3 className="text-xl font-semibold text-white mb-2">Message Sent!</h3>
-                                <p className="text-white/50 text-sm">I will get back to you within 24 hours.</p>
+                                <h3 className="text-xl font-semibold text-white mb-2">Wiadomość wysłana!</h3>
+                                <p className="text-white/50 text-sm">Odezwę się w ciągu 24 godzin.</p>
                             </div>
                         </div>
                     ) : (
                         <div className="rounded-2xl p-6 flex flex-col gap-4" style={{border:"1px solid rgba(255,255,255,0.06)",background:"rgba(255,255,255,0.015)"}}>
-                            <p className="text-white/50 text-xs uppercase tracking-widest">Send a message</p>
+                            <p className="text-white/50 text-xs uppercase tracking-widest">Napisz wiadomość</p>
                             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                                 <div className="grid grid-cols-2 gap-4">
                                     <div className="flex flex-col gap-2">
-                                        <label className="text-white/40 text-xs uppercase tracking-widest">Name</label>
-                                        <input name="name" type="text" placeholder="John Smith" required className="rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none transition" style={{background:"rgba(255,255,255,0.03)",border:"1px solid rgba(255,255,255,0.07)"}} onFocus={e=>e.target.style.border="1px solid rgba(201,168,76,0.4)"} onBlur={e=>e.target.style.border="1px solid rgba(255,255,255,0.07)"}/>
+                                        <label className="text-white/40 text-xs uppercase tracking-widest">Imię</label>
+                                        <input name="name" type="text" placeholder="Jan Kowalski" required className="rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none transition" style={{background:"rgba(255,255,255,0.03)",border:"1px solid rgba(255,255,255,0.07)"}} onFocus={e=>e.target.style.border="1px solid rgba(201,168,76,0.4)"} onBlur={e=>e.target.style.border="1px solid rgba(255,255,255,0.07)"}/>
                                     </div>
                                     <div className="flex flex-col gap-2">
                                         <label className="text-white/40 text-xs uppercase tracking-widest">Email</label>
-                                        <input name="email" type="email" placeholder="john@email.com" required className="rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none transition" style={{background:"rgba(255,255,255,0.03)",border:"1px solid rgba(255,255,255,0.07)"}} onFocus={e=>e.target.style.border="1px solid rgba(201,168,76,0.4)"} onBlur={e=>e.target.style.border="1px solid rgba(255,255,255,0.07)"}/>
+                                        <input name="email" type="email" placeholder="jan@email.com" required className="rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none transition" style={{background:"rgba(255,255,255,0.03)",border:"1px solid rgba(255,255,255,0.07)"}} onFocus={e=>e.target.style.border="1px solid rgba(201,168,76,0.4)"} onBlur={e=>e.target.style.border="1px solid rgba(255,255,255,0.07)"}/>
                                     </div>
                                 </div>
                                 <div className="flex flex-col gap-2">
-                                    <label className="text-white/40 text-xs uppercase tracking-widest">Service</label>
+                                    <label className="text-white/40 text-xs uppercase tracking-widest">Usługa</label>
                                     <select name="service" required value={service} onChange={e=>setService(e.target.value)} style={{colorScheme:"dark",background:"#1b1b1b",border:"1px solid rgba(255,255,255,0.07)"}} className="rounded-xl px-4 py-3 text-sm text-white focus:outline-none transition" onFocus={e=>e.target.style.border="1px solid rgba(201,168,76,0.4)"} onBlur={e=>e.target.style.border="1px solid rgba(255,255,255,0.07)"}>
-                                        <option value="">Select a service...</option>
-                                        <option>Mastering Only</option>
-                                        <option>Mixing and Mastering</option>
-                                        <option>Arrangement and Production</option>
-                                        <option>Sound Enhancement</option>
-                                        <option>Not sure yet</option>
+                                        <option value="">Wybierz usługę...</option>
+                                        <option>Tylko mastering</option>
+                                        <option>Miks i mastering</option>
+                                        <option>Aranżacja i produkcja</option>
+                                        <option>Poprawa jakości nagrania</option>
+                                        <option>Jeszcze nie wiem</option>
                                     </select>
                                 </div>
                                 <div className="flex flex-col gap-2">
-                                    <label className="text-white/40 text-xs uppercase tracking-widest">About your project</label>
-                                    <textarea name="message" rows={5} placeholder="Genre, what you have recorded, what you are going for..." required className="rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none transition resize-none" style={{background:"rgba(255,255,255,0.03)",border:"1px solid rgba(255,255,255,0.07)"}} onFocus={e=>e.target.style.border="1px solid rgba(201,168,76,0.4)"} onBlur={e=>e.target.style.border="1px solid rgba(255,255,255,0.07)"}/>
+                                    <label className="text-white/40 text-xs uppercase tracking-widest">O Twoim projekcie</label>
+                                    <textarea name="message" rows={5} placeholder="Gatunek, co masz nagrane, do czego dążysz..." required className="rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none transition resize-none" style={{background:"rgba(255,255,255,0.03)",border:"1px solid rgba(255,255,255,0.07)"}} onFocus={e=>e.target.style.border="1px solid rgba(201,168,76,0.4)"} onBlur={e=>e.target.style.border="1px solid rgba(255,255,255,0.07)"}/>
                                 </div>
 
                                 {/* Honeypot — invisible to humans, bots fill it */}
@@ -183,7 +183,7 @@ export default function Hero() {
                                 )}
 
                                 <button type="submit" disabled={loading} className="flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-semibold text-black transition hover:opacity-90 disabled:opacity-60" style={{background:"#C9A84C",backgroundSize:"200% auto"}} onMouseEnter={e=>!loading&&(e.currentTarget.style.backgroundPosition="right center")} onMouseLeave={e=>e.currentTarget.style.backgroundPosition="left center"}>
-                                    {loading ? <><Loader2 size={14} className="animate-spin"/> Sending...</> : <><Send size={14}/> Send Message</>}
+                                    {loading ? <><Loader2 size={14} className="animate-spin"/> Wysyłam...</> : <><Send size={14}/> Wyślij wiadomość</>}
                                 </button>
                             </form>
                         </div>

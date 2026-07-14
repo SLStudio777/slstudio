@@ -3,7 +3,12 @@ import Hero from "../components/pages/contact/Hero";
 export const metadata = {
     title: "Contact",
     alternates: {
-        canonical: "https://www.slstudio.pro/contact"
+        canonical: "https://www.slstudio.pro/contact",
+        languages: {
+            "en": "https://www.slstudio.pro/contact",
+            "pl": "https://www.slstudio.pro/pl/kontakt",
+            "x-default": "https://www.slstudio.pro/contact",
+        },
     },
     description: "Get in touch with SL Studio. Send your track and let's make something great together. First consultation is always free.",
 };

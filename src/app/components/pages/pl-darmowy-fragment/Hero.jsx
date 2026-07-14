@@ -41,64 +41,64 @@ function sanitizeFileName(name) {
 }
 
 const trustChips = [
-    { icon: Clock, label: "1–2 days" },
-    { icon: CreditCard, label: "No card, no account" },
-    { icon: BadgeCheck, label: "No obligation" },
+    { icon: Clock, label: "1–2 dni" },
+    { icon: CreditCard, label: "Bez karty, bez konta" },
+    { icon: BadgeCheck, label: "Bez zobowiązań" },
 ];
 
 const steps = [
     {
         icon: UploadCloud,
         step: "01",
-        title: "Send what you have",
-        text: "Drop a file or paste a link. Any format, any quality. Rough demos and phone recordings are welcome — that's the whole point.",
+        title: "Wyślij, co masz",
+        text: "Wrzuć plik albo wklej link. Dowolny format, dowolna jakość. Robocze dema i nagrania z telefonu są mile widziane — o to właśnie chodzi.",
     },
     {
         icon: SlidersHorizontal,
         step: "02",
-        title: "I work on a section of it",
-        text: "Not a preset, not an algorithm. I sit down with your track and treat it like a paying job.",
+        title: "Pracuję nad fragmentem",
+        text: "Żadnego presetu, żadnego algorytmu. Siadam do Twojego utworu i traktuję go jak płatne zlecenie.",
     },
     {
         icon: Sparkles,
         step: "03",
-        title: "You hear the difference",
-        text: "Within 1–2 days you get the processed section back, plus honest notes on what the full version needs and exactly what it would cost.",
+        title: "Słyszysz różnicę",
+        text: "W ciągu 1–2 dni dostajesz obrobiony fragment plus szczere uwagi, czego potrzebuje pełna wersja i ile dokładnie by kosztowała.",
     },
 ];
 
 const checklist = [
-    "Send the best version you have — a finished mix, a rough mix, or raw stems.",
-    "If you have separate tracks (stems), zip them and send the archive.",
-    "Leave some headroom, no clipping. If you don't know what that means — send it anyway, I'll figure it out.",
-    "If you have a reference track — a song whose sound you're chasing — mention it in the notes.",
-    "If your file is over 100 MB, paste a link instead.",
+    "Wyślij najlepszą wersję, jaką masz — gotowy miks, roboczy miks albo surowe ślady.",
+    "Jeśli masz osobne ślady (stemy), spakuj je do ZIP-a i wyślij archiwum.",
+    "Zostaw trochę zapasu, bez przesterów. Nie wiesz, co to znaczy? Wyślij tak czy inaczej — ogarnę to.",
+    "Masz utwór referencyjny — piosenkę, której brzmienie chcesz osiągnąć? Wspomnij o niej w uwagach.",
+    "Jeśli plik przekracza 100 MB, wklej zamiast tego link.",
 ];
 
 const faqs = [
     {
-        q: "Is this really free?",
-        a: "Yes. No card, no account, no automatic charge. If you like what you hear, we talk about the full job. If not — keep the preview, no hard feelings.",
+        q: "Czy to naprawdę za darmo?",
+        a: "Tak. Bez karty, bez konta, bez automatycznych opłat. Spodoba Ci się efekt — pogadamy o całym utworze. Nie spodoba — fragment zostaje u Ciebie, bez urazy.",
     },
     {
-        q: "What exactly do you send back?",
-        a: "A processed section of your track — usually 30–60 seconds — plus notes on what the full version needs and what it would cost.",
+        q: "Co dokładnie dostaję z powrotem?",
+        a: "Obrobiony fragment Twojego utworu — zwykle 30–60 sekund — plus uwagi, czego potrzebuje pełna wersja i ile by kosztowała.",
     },
     {
-        q: "My recording is really rough. Should I still send it?",
-        a: "Especially then. Rough demos, rehearsal takes and phone recordings are the material I work with most.",
+        q: "Moje nagranie jest bardzo surowe. Wysyłać mimo to?",
+        a: "Zwłaszcza wtedy. Robocze dema, nagrania z prób i z telefonu to materiał, z którym pracuję najczęściej.",
     },
     {
-        q: "My file is too big to upload.",
-        a: "Paste a link instead — Google Drive, Dropbox or WeTransfer all work. Same result.",
+        q: "Mój plik jest za duży, żeby go wgrać.",
+        a: "Wklej zamiast tego link — Dysk Google, Dropbox albo WeTransfer, każdy zadziała. Ten sam efekt.",
     },
     {
-        q: "What happens to my file?",
-        a: "It goes into private storage that isn't publicly accessible — no one can reach it without a signed link, and I delete it once we're done.",
+        q: "Co dzieje się z moim plikiem?",
+        a: "Trafia do prywatnej przestrzeni, która nie jest publicznie dostępna — nikt się do niego nie dostanie bez podpisanego linku, a po zakończeniu go usuwam.",
     },
     {
-        q: "How long does it take?",
-        a: "Usually 1–2 days. Telegram is the fastest way to reach me if it's urgent.",
+        q: "Ile to trwa?",
+        a: "Zwykle 1–2 dni. Najszybciej złapiesz mnie na Telegramie, jeśli się spieszysz.",
     },
 ];
 
@@ -124,12 +124,12 @@ export default function Hero() {
         const ext = f.name.split(".").pop()?.toLowerCase();
         if (f.size > MAX_UPLOAD_BYTES) {
             setError(
-                "This file is over 100 MB. Paste a link instead (Google Drive, Dropbox or WeTransfer) and I'll grab it from there."
+                "Ten plik przekracza 100 MB. Wklej zamiast tego link (Dysk Google, Dropbox lub WeTransfer), a pobiorę go stamtąd."
             );
             return;
         }
         if (ext && !ALLOWED_EXT.includes(ext)) {
-            setError("Audio files and ZIP archives only.");
+            setError("Tylko pliki audio i archiwa ZIP.");
             return;
         }
         setFile(f);
@@ -142,7 +142,7 @@ export default function Hero() {
         const link = form.elements["link"].value.trim();
 
         if (!file && !link) {
-            setError("Attach a file or paste a link first.");
+            setError("Najpierw dodaj plik albo wklej link.");
             return;
         }
 
@@ -190,7 +190,7 @@ export default function Hero() {
         } catch (err) {
             console.error("[free-preview] submit error:", err);
             setError(
-                "Something went wrong. Please try again, or write to me directly on Telegram."
+                "Coś poszło nie tak. Spróbuj ponownie albo napisz do mnie bezpośrednio na Telegramie."
             );
         } finally {
             setLoading(false);
@@ -199,34 +199,30 @@ export default function Hero() {
 
     return (
         <div className="mt-12 mb-20">
-            <LangSwitch active="en" enHref="/free-track-preview" plHref="/pl/darmowy-fragment" />
+            <LangSwitch active="pl" enHref="/free-track-preview" plHref="/pl/darmowy-fragment" />
             <div className="flex flex-col gap-20 mt-4">
-            {/* ── HERO — two columns: pitch + trust + what-you-get-back | form ──
-                On mobile the columns unwrap (mobile-reflow → display:contents)
-                so the children reorder to: intro → form → what-you-get-back,
-                putting the form before the promises so nobody has to scroll to it. */}
+            {/* ── HERO — two columns: pitch + trust + what-you-get-back | form ── */}
             <section className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-stretch">
-                {/* LEFT column — blocks flow top-to-bottom with a normal gap;
-                    intentionally shorter than the form, no bottom-alignment. */}
+                {/* LEFT column */}
                 <div className="mobile-reflow flex flex-col gap-8">
-                    {/* Intro group — stays intact and in natural order on mobile */}
+                    {/* Intro group */}
                     <div className="[@media(max-width:767px)]:order-1 flex flex-col">
                         <span className="text-white/60 text-xs uppercase tracking-[0.3em]">
-                            Free Preview · No Obligation
+                            Darmowy fragment · Bez zobowiązań
                         </span>
                         <div className="relative mt-3">
                             <div className="hero-title-glow" aria-hidden="true" />
                             <h1 className="relative text-4xl md:text-5xl font-semibold tracking-wide">
-                                Hear Your Track, <span className="text-gold2">Free</span>
+                                Usłysz swój utwór, <span className="text-gold2">za darmo</span>
                             </h1>
                         </div>
                         <div className="mt-6">
                             <HeroWave />
                         </div>
                         <p className="text-white/70 text-md md:text-lg leading-relaxed mt-5">
-                            Send me your track and I'll process a section of it — free. A rough demo,
-                            a phone recording, stems, an old track that never sounded right. You hear
-                            what it can become before you decide anything.
+                            Wyślij mi swój utwór, a ja obrobię jego fragment — za darmo. Robocze demo,
+                            nagranie z telefonu, ślady, stary utwór, który nigdy dobrze nie brzmiał.
+                            Usłyszysz, czym może się stać, zanim cokolwiek zdecydujesz.
                         </p>
                         <div className="flex flex-wrap gap-3 mt-7">
                             {trustChips.map(({ icon: Icon, label }) => (
@@ -245,8 +241,7 @@ export default function Hero() {
                         </div>
                     </div>
 
-                    {/* What you get back — bottom of the column on desktop (faces the
-                        form), after the form on mobile (order-3). Gold card kept. */}
+                    {/* What you get back */}
                     <div
                         className="[@media(max-width:767px)]:order-3 rounded-2xl p-6 md:p-8 flex flex-col gap-4"
                         style={{
@@ -257,15 +252,15 @@ export default function Hero() {
                         <div className="flex items-center gap-3">
                             <Headphones className="w-6 h-6" style={{ color: "#C9A84C" }} />
                             <h2 className="text-xl md:text-2xl font-semibold text-white">
-                                What you get back
+                                Co dostajesz z powrotem
                             </h2>
                         </div>
                         <ul className="flex flex-col gap-2.5">
                             {[
-                                "A processed section of your own track (usually 30–60 seconds)",
-                                "An honest assessment — what can be fixed, what can't",
-                                "An exact price for the full job",
-                                "No obligation to book anything",
+                                "Obrobiony fragment Twojego utworu (zwykle 30–60 sekund)",
+                                "Szczera ocena — co da się poprawić, a czego nie",
+                                "Dokładna cena za całą pracę",
+                                "Zero zobowiązań, do niczego się nie zapisujesz",
                             ].map((item) => (
                                 <li
                                     key={item}
@@ -278,30 +273,27 @@ export default function Hero() {
                         </ul>
                     </div>
 
-                    {/* Real testimonial (from the site's Testimonials section) +
-                        privacy note — fills out the column under the card, after
-                        it on mobile (order-4). No card styling, kept modest. */}
+                    {/* Real testimonial (translated) + privacy note */}
                     <figure className="[@media(max-width:767px)]:order-4 flex flex-col gap-2">
                         <blockquote className="text-white/70 text-[15px] italic leading-relaxed">
-                            “Total bomb. Keep this one, don't change a thing. I keep hitting replay.
-                            Maestro, bravo.”
+                            „Totalna bomba. Zostaw tak, nic nie zmieniaj. Ciągle włączam od nowa.
+                            Maestro, brawo.”
                         </blockquote>
                         <figcaption className="text-white/45 text-xs">
-                            — Andrii Holikov, Guitarist &amp; Musician
+                            — Andrii Holikov, gitarzysta i muzyk
                         </figcaption>
                     </figure>
 
                     <p className="[@media(max-width:767px)]:order-5 flex items-start gap-2 text-white/45 text-xs leading-relaxed">
                         <Lock className="w-3.5 h-3.5 mt-0.5 flex-shrink-0" />
                         <span>
-                            Your file goes into private storage. Nobody can reach it without a signed
-                            link, and I delete it once we're done.
+                            Twój plik trafia do prywatnej przestrzeni. Nikt się do niego nie dostanie
+                            bez podpisanego linku, a po zakończeniu go usuwam.
                         </span>
                     </p>
                 </div>
 
-                {/* RIGHT column — the form (the main element of the screen).
-                    id + scrollMarginTop live here so the final CTA scrolls to it. */}
+                {/* RIGHT column — the form */}
                 <div
                     id="upload"
                     style={{ scrollMarginTop: "80px" }}
@@ -325,10 +317,10 @@ export default function Hero() {
                                 <Send className="w-7 h-7" style={{ color: "#C9A84C" }} />
                             </div>
                             <div>
-                                <h3 className="text-xl font-semibold text-white mb-2">Got it</h3>
+                                <h3 className="text-xl font-semibold text-white mb-2">Mam to</h3>
                                 <p className="text-white/60 text-sm max-w-sm">
-                                    I'll listen and send your preview back within 1–2 days — check
-                                    your email.
+                                    Odsłucham i odeślę Twój fragment w ciągu 1–2 dni — sprawdzaj
+                                    skrzynkę.
                                 </p>
                             </div>
                         </div>
@@ -344,12 +336,12 @@ export default function Hero() {
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div className="flex flex-col gap-2">
                                         <label className="text-white/40 text-xs uppercase tracking-widest">
-                                            Name
+                                            Imię
                                         </label>
                                         <input
                                             name="name"
                                             type="text"
-                                            placeholder="John Smith"
+                                            placeholder="Jan Kowalski"
                                             className="rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none transition"
                                             style={inputStyle}
                                             onFocus={focusOn}
@@ -364,7 +356,7 @@ export default function Hero() {
                                             name="email"
                                             type="email"
                                             required
-                                            placeholder="john@email.com"
+                                            placeholder="jan@email.com"
                                             className="rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none transition"
                                             style={inputStyle}
                                             onFocus={focusOn}
@@ -375,7 +367,7 @@ export default function Hero() {
 
                                 <div className="flex flex-col gap-2">
                                     <label className="text-white/40 text-xs uppercase tracking-widest">
-                                        What do you need?
+                                        Czego potrzebujesz?
                                     </label>
                                     <select
                                         name="service"
@@ -389,18 +381,18 @@ export default function Hero() {
                                         onFocus={focusOn}
                                         onBlur={focusOff}
                                     >
-                                        <option value="">Select...</option>
+                                        <option value="">Wybierz...</option>
                                         <option>Mastering</option>
-                                        <option>Mixing &amp; Mastering</option>
-                                        <option>Arrangement &amp; Production</option>
-                                        <option>Not sure yet</option>
+                                        <option>Miks i mastering</option>
+                                        <option>Aranżacja i produkcja</option>
+                                        <option>Jeszcze nie wiem</option>
                                     </select>
                                 </div>
 
                                 {/* File drop zone */}
                                 <div className="flex flex-col gap-2">
                                     <label className="text-white/40 text-xs uppercase tracking-widest">
-                                        Your track
+                                        Twój utwór
                                     </label>
                                     <div
                                         onClick={() => fileInputRef.current?.click()}
@@ -437,7 +429,7 @@ export default function Hero() {
                                                 </p>
                                                 <p className="text-white/40 text-xs">
                                                     {(file.size / (1024 * 1024)).toFixed(1)} MB ·
-                                                    click to replace
+                                                    kliknij, aby zmienić
                                                 </p>
                                             </>
                                         ) : (
@@ -447,8 +439,8 @@ export default function Hero() {
                                                     style={{ color: "rgba(201,168,76,0.7)" }}
                                                 />
                                                 <p className="text-white/70 text-sm">
-                                                    Drag a file here, or{" "}
-                                                    <span style={{ color: "#C9A84C" }}>browse</span>
+                                                    Przeciągnij plik tutaj albo{" "}
+                                                    <span style={{ color: "#C9A84C" }}>wybierz z dysku</span>
                                                 </p>
                                             </>
                                         )}
@@ -460,8 +452,8 @@ export default function Hero() {
                                         />
                                     </div>
                                     <p className="text-white/35 text-xs">
-                                        WAV, MP3, AIFF, FLAC or ZIP · up to 100 MB · your file stays
-                                        private
+                                        WAV, MP3, AIFF, FLAC lub ZIP · do 100 MB · plik pozostaje
+                                        prywatny
                                     </p>
 
                                     {loading && progress > 0 && (
@@ -479,7 +471,7 @@ export default function Hero() {
                                                 />
                                             </div>
                                             <p className="text-white/40 text-xs">
-                                                Uploading… {Math.round(progress)}%
+                                                Wysyłam… {Math.round(progress)}%
                                             </p>
                                         </div>
                                     )}
@@ -488,7 +480,7 @@ export default function Hero() {
                                 {/* Fallback link */}
                                 <div className="flex flex-col gap-2">
                                     <label className="text-white/40 text-xs uppercase tracking-widest">
-                                        Or paste a link (Google Drive, Dropbox, WeTransfer)
+                                        Albo wklej link (Dysk Google, Dropbox, WeTransfer)
                                     </label>
                                     <input
                                         name="link"
@@ -503,12 +495,12 @@ export default function Hero() {
 
                                 <div className="flex flex-col gap-2">
                                     <label className="text-white/40 text-xs uppercase tracking-widest">
-                                        Anything I should know?
+                                        Coś, o czym powinienem wiedzieć?
                                     </label>
                                     <textarea
                                         name="message"
                                         rows={4}
-                                        placeholder="Genre, reference track, what bothers you about the current sound."
+                                        placeholder="Gatunek, utwór referencyjny, co Ci przeszkadza w obecnym brzmieniu."
                                         className="rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none transition resize-none"
                                         style={inputStyle}
                                         onFocus={focusOn}
@@ -542,14 +534,11 @@ export default function Hero() {
                                 >
                                     {loading ? (
                                         <>
-                                            <Loader2 size={15} className="animate-spin" />{" "}
-                                            {progress > 0 && progress < 100
-                                                ? "Uploading…"
-                                                : "Sending…"}
+                                            <Loader2 size={15} className="animate-spin" /> Wysyłam…
                                         </>
                                     ) : (
                                         <>
-                                            <Send size={15} /> Send my track →
+                                            <Send size={15} /> Wyślij mój utwór →
                                         </>
                                     )}
                                 </button>
@@ -563,10 +552,10 @@ export default function Hero() {
             <section>
                 <div className="mb-8">
                     <span className="text-white/30 text-xs uppercase tracking-[0.3em]">
-                        How It Works
+                        Jak to działa
                     </span>
                     <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mt-2">
-                        Three steps, no catch
+                        Trzy kroki, bez haczyka
                     </h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -607,10 +596,10 @@ export default function Hero() {
             <section className="max-w-3xl">
                 <div className="mb-6">
                     <span className="text-white/30 text-xs uppercase tracking-[0.3em]">
-                        Before You Send
+                        Zanim wyślesz
                     </span>
                     <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mt-2">
-                        A few things that help
+                        Kilka rzeczy, które pomogą
                     </h2>
                 </div>
                 <ul className="flex flex-col gap-3">
@@ -655,10 +644,10 @@ export default function Hero() {
                         }}
                     />
                     <h2 className="text-3xl md:text-4xl font-semibold tracking-wide relative z-10">
-                        Curious how it could sound?
+                        Ciekawi Cię, jak mógłby brzmieć?
                     </h2>
                     <p className="text-white/65 text-[15px] relative z-10">
-                        Free preview of your track. No commitment.
+                        Darmowy fragment Twojego utworu. Bez zobowiązań.
                     </p>
                     <a
                         href="#upload"
@@ -671,7 +660,7 @@ export default function Hero() {
                             boxShadow: "0 0 30px rgba(201,168,76,0.25)",
                         }}
                     >
-                        Send Your Track →
+                        Wyślij swój utwór →
                     </a>
                 </div>
             </section>
@@ -687,7 +676,7 @@ function FAQ() {
             <div className="mb-6">
                 <span className="text-white/30 text-xs uppercase tracking-[0.3em]">FAQ</span>
                 <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mt-2">
-                    Frequently Asked Questions
+                    Najczęstsze pytania
                 </h2>
             </div>
             <div className="flex flex-col divide-y divide-white/5">
