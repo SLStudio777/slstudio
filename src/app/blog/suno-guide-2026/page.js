@@ -545,6 +545,7 @@ export default function SunoGuidePage() {
                         </div>
                         <p>Listeners do not care how a track was made. They only care how it sounds. A Suno-generated track with professional <a href="/mixing-mastering" style={{ color: "#C9A84C", textDecoration: "underline" }}>mixing and mastering</a> sounds better than a traditionally recorded track that was never properly mixed. The tools do not matter. The result does.</p>
                         <p>Suno is a spectacular starting point. It is not the finish line. The next step after Suno is stems, balance, vocal treatment, arrangement detail — all the things that separate a demo from something that actually hits the way you intended.</p>
+                        <p>Stems are where that work starts, and pulling them out of a finished song is its own craft: <a href="/blog/suno-advanced-split-clean-instrumental" style={{ color: "#C9A84C", textDecoration: "underline" }}>building a cleaner instrumental with Advanced Split</a> covers the separation modes and how the parts go back together.</p>
                     </div>
 
                     {/* ── v5.5 Update ── */}

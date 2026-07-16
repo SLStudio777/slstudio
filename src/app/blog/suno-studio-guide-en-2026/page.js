@@ -598,6 +598,7 @@ export default function SunoStudioGuidePage() {
                                 </div>
                             ))}
                         </div>
+                        <p>Exporting stems from Studio is the clean route, because the parts were never baked together in the first place. When a song is already finished and you need the instrumental pulled back out of it, that's the other job — <a href="/blog/suno-advanced-split-clean-instrumental" style={{ color: "#C9A84C", textDecoration: "underline" }}>rebuilding a Suno track from regenerated stems</a> goes through Advanced Split and the DAW reassembly.</p>
                     </div>
 
                     {/* Final cheatsheet */}

@@ -355,7 +355,7 @@ export default function SunoAdvancedSplitPage() {
                                     </li>
                                 ))}
                             </ul>
-                            <p>The clearer the arrangement, the easier it is for the model to identify what should be rebuilt.</p>
+                            <p>The clearer the arrangement, the easier it is for the model to identify what should be rebuilt. Prompting and structure tags are the levers that get you there — the <a href="/blog/suno-guide-2026" style={{ color: "#C9A84C", textDecoration: "underline" }}>complete Suno guide</a> covers both.</p>
                         </div>
 
                         <div className="flex flex-col gap-3">
@@ -413,13 +413,13 @@ export default function SunoAdvancedSplitPage() {
 
                         <div className="flex flex-col gap-3">
                             <p>Fixed tempo is not automatically &ldquo;better.&rdquo; It is a workflow choice. If the original performance depends on intentional pushes and pulls, Follow tempo changes may preserve the feel more faithfully. For rebuilding a backing track, adding programmed drums, or replacing instruments, Fixed tempo is usually easier.</p>
-                            <p>Use WAV rather than MP3. Compression artifacts may be fairly quiet in the full mix, but EQ, saturation, and repeated exports have a habit of introducing them to everyone in the room.</p>
+                            <p>Use WAV rather than MP3. Compression artifacts may be fairly quiet in the full mix, but EQ, saturation, and repeated exports have a habit of introducing them to everyone in the room. The same export rules apply to ordinary Suno projects — the <a href="/blog/suno-studio-guide-en-2026" style={{ color: "#C9A84C", textDecoration: "underline" }}>Suno Studio guide</a> walks through stems, WAV and BPM before they reach the DAW.</p>
                         </div>
 
                         <div className="flex flex-col gap-3">
                             <h3 className="text-lg font-semibold text-white">Step 5: Rebuild the track in a DAW</h3>
                             <p>Import every stem from the same starting point and check the transients against the grid. Then audition the tracks both in solo and in context.</p>
-                            <p>A stem that sounds ugly on its own may work perfectly in the mix. The opposite is also true: a beautiful solo stem can occupy half the spectrum and ruin the combined result.</p>
+                            <p>A stem that sounds ugly on its own may work perfectly in the mix. The opposite is also true: a beautiful solo stem can occupy half the spectrum and ruin the combined result. If the rebuild turns into writing new parts rather than balancing existing ones, you have crossed into <a href="/arrangement" style={{ color: "#C9A84C", textDecoration: "underline" }}>arrangement and music production</a>.</p>
                             <p>My order is simple:</p>
                             <ol className="flex flex-col gap-2.5">
                                 {[
@@ -517,6 +517,7 @@ export default function SunoAdvancedSplitPage() {
                             <h3 className="text-lg font-semibold text-white">Mix bus</h3>
                             <p>Once the reconstruction is balanced, a dynamic EQ or resonance suppressor can calm harsh upper-mid frequencies. Multiband compression can hold unstable areas in place.</p>
                             <p>But the old rule still applies: mastering makes a good mix feel finished. It makes a bad mix louder. If a note is missing from a stem, no mastering preset is going to remember it on your behalf.</p>
+                            <p>None of this is special to AI stems. It is ordinary <a href="/mixing-mastering" style={{ color: "#C9A84C", textDecoration: "underline" }}>professional mixing and mastering</a> work — Advanced Split changes the raw material you start from, not the craft that follows it.</p>
                         </div>
                     </div>
 
@@ -554,6 +555,7 @@ export default function SunoAdvancedSplitPage() {
                         <SectionHeading num="08" id="remaster-bonus">Bonus: remaster before splitting</SectionHeading>
                         <p>If the source track feels flat, try creating a remastered version before extracting stems. A different render may improve depth and make individual parts easier to identify.</p>
                         <p>Do not automatically replace the original. Remastering can change tone, balance, and arrangement details. Make a few versions and compare them at matched loudness. If one version is merely louder, it has not necessarily become wiser.</p>
+                        <p>Matched loudness is the only honest way to judge the difference, because louder simply reads as better to the ear. It is the same reason <a href="/blog/spotify-lufs-mastering-tips" style={{ color: "#C9A84C", textDecoration: "underline" }}>loudness normalization on Spotify</a> humbles so many competitive masters.</p>
                     </div>
 
                     {/* ── 09 Final checklist ── */}
