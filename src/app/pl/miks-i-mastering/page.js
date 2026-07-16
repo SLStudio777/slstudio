@@ -1,85 +1,112 @@
 import Hero from "../../components/pages/pl-miks-i-mastering/Hero";
 import Section1 from "../../components/pages/pl-miks-i-mastering/Section1";
 import Section2 from "../../components/pages/pl-miks-i-mastering/Section2";
+import { faqItems } from "../../components/pages/pl-miks-i-mastering/faqData";
 import BeforeAfterMixingPl from "../../components/sections/BeforeAfterMixingPl";
 
 export const metadata = {
-    title: "Miks i mastering online — studio w Warszawie",
-    alternates: {
-        canonical: "https://www.slstudio.pro/pl/miks-i-mastering",
-        languages: {
-            "pl": "https://www.slstudio.pro/pl/miks-i-mastering",
-            "en": "https://www.slstudio.pro/mixing-mastering",
-            "x-default": "https://www.slstudio.pro/mixing-mastering",
-        },
+  title: "Miks i mastering online",
+  alternates: {
+    canonical: "https://www.slstudio.pro/pl/miks-i-mastering",
+    languages: {
+      pl: "https://www.slstudio.pro/pl/miks-i-mastering",
+      en: "https://www.slstudio.pro/mixing-mastering",
+      "x-default": "https://www.slstudio.pro/mixing-mastering",
     },
+  },
+  description:
+    "Profesjonalny miks i mastering online z bezpłatnym fragmentem przed zamówieniem. Klarowne wokale, kontrolowany dół i brzmienie gotowe do publikacji. Warszawa i cała Polska.",
+  openGraph: {
+    title: "Miks i mastering online | SL Studio",
     description:
-        "Profesjonalny miks i mastering online. Wyślij ślady lub roboczy miks — odeślę dopracowany, gotowy do publikacji utwór. Studio w Warszawie, zdalnie w całej Polsce.",
-    keywords: [
-        "miks i mastering",
-        "miks i mastering online",
-        "ile kosztuje miks piosenki",
-        "mastering utworu",
-        "studio nagrań warszawa",
-        "miks wokalu",
-        "realizacja dźwięku",
+      "Wyślij ślady lub roboczy miks i najpierw usłysz bezpłatny, obrobiony fragment własnego utworu.",
+    type: "website",
+    url: "https://www.slstudio.pro/pl/miks-i-mastering",
+    locale: "pl_PL",
+    images: [
+      {
+        url: "https://www.slstudio.pro/images/Serhii-Lazariev-02.webp",
+        alt: "Serhii Lazariev — miks i mastering w SL Studio",
+      },
     ],
-    openGraph: {
-        title: "Miks i mastering online — studio w Warszawie | SL Studio",
-        description:
-            "Wyślij ślady lub roboczy miks — odeślę dopracowany, gotowy do publikacji utwór. Studio w Warszawie, zdalnie w całej Polsce.",
-        type: "website",
-        url: "https://www.slstudio.pro/pl/miks-i-mastering",
-        locale: "pl_PL",
-    },
-    twitter: {
-        card: "summary_large_image",
-        title: "Miks i mastering online — studio w Warszawie | SL Studio",
-        description:
-            "Profesjonalny miks i mastering utworów. Studio w Warszawie, zdalnie w całej Polsce.",
-    },
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Miks i mastering online | SL Studio",
+    description:
+      "Profesjonalny miks i mastering z bezpłatnym fragmentem przed zamówieniem.",
+    images: ["https://www.slstudio.pro/images/Serhii-Lazariev-02.webp"],
+  },
 };
 
 const serviceSchema = {
-    "@context": "https://schema.org",
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Miks i mastering online",
+  description:
+    "Profesjonalny miks i mastering online z bezpłatnym fragmentem przed rozpoczęciem pełnej realizacji.",
+  url: "https://www.slstudio.pro/pl/miks-i-mastering",
+  image: "https://www.slstudio.pro/images/Serhii-Lazariev-02.webp",
+  serviceType: "Miks i mastering muzyki",
+  areaServed: ["Warszawa", "Polska", "Cały świat"],
+  provider: {
     "@type": "ProfessionalService",
-    name: "SL Studio — Mixing & Mastering",
-    // Polish alias for the service — alternateName is a Thing-level property,
-    // valid on ProfessionalService (Thing > Organization > LocalBusiness).
-    alternateName: "Miks i Mastering",
-    description:
-        "Professional mixing and mastering services — online worldwide, based in Warsaw, Poland.",
-    url: "https://www.slstudio.pro/pl/miks-i-mastering",
-    image: "https://www.slstudio.pro/images/SL-logo-mark-1024.png",
+    name: "SL Studio",
+    url: "https://www.slstudio.pro/",
     email: "serhii@slstudio.pro",
-    founder: {
-        "@type": "Person",
-        name: "Serhii Lazariev",
-    },
+    founder: { "@type": "Person", name: "Serhii Lazariev" },
     address: {
-        "@type": "PostalAddress",
-        addressLocality: "Warsaw",
-        addressCountry: "PL",
+      "@type": "PostalAddress",
+      addressLocality: "Warszawa",
+      addressCountry: "PL",
     },
-    areaServed: ["Warsaw", "Poland", "Worldwide"],
-    serviceType: "Mixing & Mastering",
-    sameAs: [
-        "https://www.youtube.com/@SLStudio_Guitar",
-        "https://www.instagram.com/lazarev_serhii_sl",
+  },
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Usługi audio",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        priceCurrency: "USD",
+        price: "25",
+        description: "Mastering od 25 USD za utwór",
+        itemOffered: { "@type": "Service", name: "Mastering utworu" },
+      },
+      {
+        "@type": "Offer",
+        priceCurrency: "USD",
+        price: "60",
+        description: "Miks i mastering od 60 USD za utwór",
+        itemOffered: { "@type": "Service", name: "Miks i mastering utworu" },
+      },
     ],
+  },
+};
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
 };
 
 export default function MiksIMasteringPage() {
-    return (
-        <>
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-            />
-            <Hero />
-            <BeforeAfterMixingPl />
-            <Section2 />
-            <Section1 />
-        </>
-    )
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <Hero />
+      <BeforeAfterMixingPl />
+      <Section1 />
+      <Section2 />
+    </>
+  );
 }

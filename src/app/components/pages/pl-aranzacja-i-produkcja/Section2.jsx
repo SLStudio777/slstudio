@@ -1,89 +1,80 @@
-"use client";
 import { ChevronRight, HelpCircle } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
-
-const faqs = [
-    {
-        q: "Mam tylko pomysł nagrany na telefon. Czy to wystarczy?",
-        a: "Aż nadto. Wiadomość głosowa, zanucona melodia, riff nagrany o drugiej w nocy — wszystko to jest punktem wyjścia. Niejeden świetny utwór zaczął się dokładnie tak."
-    },
-    {
-        q: "Grasz na żywo czy używasz sampli?",
-        a: "Jedno i drugie — zależy od projektu. Gitary i część partii nagrywam sam, na żywo. Tam, gdzie potrzeba instrumentów orkiestrowych, dętych czy egzotycznych, sięgam po profesjonalne biblioteki i nowoczesną technologię. Tak czy inaczej, efekt brzmi organicznie."
-    },
-    {
-        q: "Zespół nagrał szkic na próbie. Zrobisz z tego gotowy utwór?",
-        a: "Właśnie po to tu jestem. Nagranie z próby ma żywą energię, którą później bardzo trudno odtworzyć w studiu. Biorę tę energię i ubieram ją w profesjonalne brzmienie."
-    },
-    {
-        q: "Chcę, żeby prosta gitara brzmiała jak cała orkiestra. Da się?",
-        a: "Jak najbardziej. To właśnie aranżacja — i jedna z ciekawszych części mojej pracy. Ty dajesz melodię albo akordy, ustalamy nastrój i rozmach, a ja buduję wokół tego pełny muzyczny obraz."
-    },
-    {
-        q: "Czy mogę wybrać, jakie instrumenty znajdą się w utworze?",
-        a: "Oczywiście. To Twoja muzyka. Wszystko ustalamy przed startem — gatunek, instrumenty, nastrój, referencje. Podrzucam pomysły, ale ostatnie słowo zawsze należy do Ciebie."
-    },
-    {
-        q: "Co jeśli nie spodoba mi się kierunek?",
-        a: (
-            <>
-                Właśnie dlatego zawsze najpierw wysyłam{" "}
-                <Link href="/pl/darmowy-fragment" className="text-gold underline hover:text-gold2 transition">
-                    bezpłatne demo
-                </Link>{" "}
-                do akceptacji. Słyszysz kierunek, zanim pójdziemy dalej. Żadnych niespodzianek na końcu.
-            </>
-        )
-    },
-    {
-        q: "Ile to kosztuje i jak wygląda płatność?",
-        a: "Wycena jest indywidualna i zależy od zakresu — dołożenie jednego instrumentu to zupełnie inny nakład pracy niż pełna aranżacja od zera. Najpierw ustalamy zakres i cenę, dopiero potem zaczynam. Zwykle płatność dzielimy: część na start, reszta po akceptacji gotowego utworu."
-    },
-];
+import { faqItems } from "./faqData";
 
 export default function Section2() {
-    const [openIndex, setOpenIndex] = useState(null);
-
-    return (
-        <section className="mt-10 flex flex-col gap-16">
-            <div className="flex flex-col gap-6">
-                <div className="flex items-center gap-3">
-                    <HelpCircle className="text-gold2 w-6 h-6" />
-                    <div className="flex flex-col">
-                        <span className="text-white/30 text-xs uppercase tracking-[0.3em]">
-                            FAQ
-                        </span>
-                        <h2 className="text-2xl md:text-3xl font-semibold tracking-wide">
-                            Najczęstsze pytania
-                        </h2>
-                    </div>
-                </div>
-
-                <div className="flex flex-col divide-y divide-white/5 max-w-3xl">
-                    {faqs.map((item, i) => (
-                        <div
-                            key={i}
-                            className="py-5 flex flex-col gap-2 cursor-pointer"
-                            onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                        >
-                            <div className="flex items-start gap-3">
-                                <ChevronRight
-                                    className={`w-4 h-4 mt-1 flex-shrink-0 text-gold2 transition-transform duration-200 ${openIndex === i ? "rotate-90" : ""}`}
-                                />
-                                <p className="text-white/90 font-medium text-base leading-snug">
-                                    {item.q}
-                                </p>
-                            </div>
-                            {openIndex === i && (
-                                <p className="text-white/60 text-[15px] leading-relaxed pl-7">
-                                    {item.a}
-                                </p>
-                            )}
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </section>
-    )
+  return (
+    <section className="mt-16 mb-20 flex flex-col gap-16">
+      <div className="flex flex-col gap-6">
+        <div className="flex items-center gap-3">
+          <HelpCircle className="text-gold2 w-6 h-6" />
+          <div>
+            <span className="text-white/30 text-xs uppercase tracking-[0.3em]">
+              FAQ
+            </span>
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-wide">
+              Najczęstsze pytania
+            </h2>
+          </div>
+        </div>
+        <div className="flex flex-col divide-y divide-white/5 max-w-3xl">
+          {faqItems.map((item) => (
+            <details key={item.q} className="group py-1">
+              <summary className="py-5 flex items-start gap-3 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                <ChevronRight className="w-4 h-4 mt-1 flex-shrink-0 text-gold2 transition-transform duration-200 group-open:rotate-90" />
+                <span className="text-white/90 font-medium text-base leading-snug">
+                  {item.q}
+                </span>
+              </summary>
+              <div className="pb-5 pl-7 text-white/60 text-[15px] leading-relaxed">
+                <p>{item.a}</p>
+                {item.previewLink && (
+                  <Link
+                    href="/pl/darmowy-fragment"
+                    className="inline-flex mt-3 text-gold underline hover:text-gold2 transition"
+                  >
+                    Wyślij pomysł na bezpłatny fragment →
+                  </Link>
+                )}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+      <div
+        className="rounded-2xl p-10 flex flex-col items-center text-center gap-6 max-w-3xl mx-auto w-full relative overflow-hidden"
+        style={{
+          background: "rgba(201,168,76,0.06)",
+          border: "1px solid rgba(201,168,76,0.2)",
+        }}
+      >
+        <div
+          className="absolute -top-16 left-1/2 -translate-x-1/2 w-[320px] h-[220px] rounded-full pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 70%)",
+          }}
+        />
+        <h2 className="text-3xl md:text-4xl font-semibold tracking-wide relative z-10">
+          Surowy pomysł w zupełności wystarczy
+        </h2>
+        <p className="text-white/65 text-[15px] leading-relaxed max-w-xl relative z-10">
+          Wyślij nagranie, które już masz. Posłucham, wyjaśnię, czego potrzebuje
+          aranżacja, i przygotuję krótką bezpłatną koncepcję lub ocenę.
+        </p>
+        <Link
+          href="/pl/darmowy-fragment"
+          className="btn-gold relative z-10 inline-flex items-center gap-2 font-semibold px-10 py-4 rounded-xl text-sm text-black"
+          style={{
+            background:
+              "linear-gradient(135deg, #C9A84C 0%, #e8c97a 50%, #C9A84C 100%)",
+            backgroundSize: "200% auto",
+            boxShadow: "0 0 30px rgba(201,168,76,0.25)",
+          }}
+        >
+          Wyślij mój pomysł →
+        </Link>
+      </div>
+    </section>
+  );
 }

@@ -10,7 +10,9 @@ function toIsoDate(dateString) {
     return `${parsed.getFullYear()}-${pad(parsed.getMonth() + 1)}-${pad(parsed.getDate())}T10:00:00+01:00`;
 }
 
-export default function BlogJsonLd({ slug }) {
+// dateModified / breadcrumbLabel are optional: articles that don't pass them
+// keep the previous output (no dateModified, full title as the last crumb).
+export default function BlogJsonLd({ slug, dateModified, breadcrumbLabel }) {
     const post = posts.find((p) => p.href === `/blog/${slug}`);
     if (!post) return null;
 
@@ -23,6 +25,7 @@ export default function BlogJsonLd({ slug }) {
         description: post.excerpt,
         image: `${SITE}${post.image}`,
         datePublished: toIsoDate(post.date),
+        ...(dateModified ? { dateModified: toIsoDate(dateModified) } : {}),
         mainEntityOfPage: url,
         author: {
             "@type": "Person",
@@ -45,7 +48,7 @@ export default function BlogJsonLd({ slug }) {
         itemListElement: [
             { "@type": "ListItem", position: 1, name: "Home", item: SITE },
             { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE}/blog` },
-            { "@type": "ListItem", position: 3, name: post.title, item: url },
+            { "@type": "ListItem", position: 3, name: breadcrumbLabel ?? post.title, item: url },
         ],
     };
 

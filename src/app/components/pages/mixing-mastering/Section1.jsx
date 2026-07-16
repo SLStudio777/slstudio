@@ -1,76 +1,237 @@
-"use client";
-import { useState } from "react";
+import Link from "next/link";
+
+const includedItems = [
+  "Editing and cleanup where the recording needs it",
+  "Balance, EQ, compression and low-end control",
+  "Vocal treatment, de-essing and tuning when needed",
+  "Automation, saturation, reverb and delay",
+  "Stereo mastering for streaming and digital release",
+  "Final WAV and MP3 files",
+  "Up to three revision rounds",
+];
+
+const steps = [
+  {
+    number: "01",
+    title: "Send your track",
+    text: "Stems are ideal, but a rough mix, rehearsal take or old recording is enough to start.",
+  },
+  {
+    number: "02",
+    title: "Hear a free preview",
+    text: "I process a 30–60 second section so you can hear the direction before booking the full job.",
+  },
+  {
+    number: "03",
+    title: "The full mix begins",
+    text: "Once we agree on the direction and exact price, I complete the mix and mastering.",
+  },
+  {
+    number: "04",
+    title: "Review and delivery",
+    text: "You receive the finished track and up to three revision rounds if anything needs adjustment.",
+  },
+];
 
 function ProTip({ children }) {
-    return (
-        <div className="rounded-xl p-5 flex gap-3 items-start mt-auto relative z-10"
-            style={{ background: "rgba(201,168,76,0.07)", border: "1px solid rgba(201,168,76,0.25)" }}>
-            <span className="text-base flex-shrink-0 font-bold" style={{ color: "#C9A84C" }}>★</span>
-            <div>
-                <p className="text-xs font-bold uppercase tracking-widest mb-1.5" style={{ color: "#C9A84C" }}>Pro Tip</p>
-                <p className="text-white/70 text-sm leading-relaxed">{children}</p>
-            </div>
-        </div>
-    );
+  return (
+    <div
+      className="rounded-xl p-5 flex gap-3 items-start mt-auto relative z-10"
+      style={{
+        background: "rgba(201,168,76,0.07)",
+        border: "1px solid rgba(201,168,76,0.25)",
+      }}
+    >
+      <span className="text-base flex-shrink-0 font-bold text-[#C9A84C]">
+        ★
+      </span>
+      <div>
+        <p className="text-xs font-bold uppercase tracking-widest mb-1.5 text-[#C9A84C]">
+          Pro Tip
+        </p>
+        <p className="text-white/70 text-sm leading-relaxed">{children}</p>
+      </div>
+    </div>
+  );
 }
 
 function GlowCard({ children }) {
-    const [hovered, setHovered] = useState(false);
-    return (
-        <div
-            className="rounded-2xl p-8 md:p-10 flex flex-col gap-6 relative overflow-hidden transition-all duration-300"
-            style={{
-                background: hovered ? "rgba(201,168,76,0.07)" : "rgba(255,255,255,0.03)",
-                border: hovered ? "1px solid rgba(201,168,76,0.35)" : "1px solid rgba(255,255,255,0.05)",
-            }}
-            onMouseEnter={() => setHovered(true)}
-            onMouseLeave={() => setHovered(false)}
-        >
-            <div style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                width: "60%",
-                height: "60%",
-                background: "radial-gradient(ellipse at 0% 0%, rgba(201,168,76,0.1) 0%, transparent 70%)",
-                pointerEvents: "none",
-            }} />
-            {children}
-        </div>
-    );
+  return (
+    <div className="rounded-2xl p-8 md:p-10 flex flex-col gap-6 relative overflow-hidden transition-all duration-300 bg-white/[0.03] border border-white/[0.05] hover:bg-[#C9A84C]/[0.07] hover:border-[#C9A84C]/35">
+      <div
+        className="absolute top-0 left-0 w-3/5 h-3/5 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse at 0% 0%, rgba(201,168,76,0.1) 0%, transparent 70%)",
+        }}
+      />
+      {children}
+    </div>
+  );
 }
 
 export default function Section1() {
-    return (
-        <section className="mt-6">
-            <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 items-stretch">
-                <GlowCard>
-                    <span className="text-white/30 text-xs uppercase tracking-[0.3em] relative z-10">
-                        The Process
-                    </span>
-                    <div className="flex flex-col gap-6 text-white/70 text-[15px] leading-relaxed relative z-10">
-                        <p>When someone sends me a track to mix, I spend the first ten minutes just listening. I don't touch anything. I listen and feel where it hurts. Where the bass is pressing too hard against the chest. Where the vocal is sinking and wants to come forward but can't. Where the guitar is cutting through the highs and stopping everything else from breathing.</p>
-                        <p>It's like walking into a room where everyone is talking at once. My job isn't to make someone shut up — it's to make sure everyone is heard.</p>
-                        <p>I start mixing from the bottom. Bass and drums first — they're the foundation, and if the foundation shakes, everything built on top will collapse no matter how beautifully it's decorated.</p>
-                        <p>I work with low frequencies like a bomb disposal expert — careful, no unnecessary moves. One wrong cut and the track loses all its power. One extra boost and the speakers start rattling like an old refrigerator.</p>
-                        <p>Once the low end settles into place, the other instruments start finding their own positions naturally. It's not magic — though sometimes it looks exactly like that.</p>
-                    </div>
-                    <ProTip>Send stems whenever you can — separate tracks for each instrument. Even a rough separation gives much more control than a stereo mix. No stems? Send what you have — I'll work with it.</ProTip>
-                </GlowCard>
+  return (
+    <section className="mt-10 flex flex-col gap-16">
+      <div>
+        <div className="mb-8">
+          <span className="text-white/30 text-xs uppercase tracking-[0.3em]">
+            Services & Pricing
+          </span>
+          <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mt-2">
+            What&apos;s included
+          </h2>
+          <p className="mt-4 text-white/60 max-w-3xl leading-relaxed">
+            No preset chain and no handoff to another engineer. I work on the
+            track personally, from the first listen to the final files.
+          </p>
+        </div>
 
-                <GlowCard>
-                    <span className="text-white/30 text-xs uppercase tracking-[0.3em] relative z-10">
-                        Guitars & Vocals
-                    </span>
-                    <div className="flex flex-col gap-6 text-white/70 text-[15px] leading-relaxed relative z-10">
-                        <p>Guitars are my personal passion and at the same time the most treacherous instrument in a mix. I'm a guitarist myself, and I can hear when a guitar was recorded right but sounds wrong. Sometimes it takes up too much space and pushes everything around it like that one guest at a party who always talks the loudest. Sometimes it does the opposite — hides and stays quiet when it should be singing. Finding that balance is a genuine pleasure.</p>
-                        <p>Vocals, for me, are their own universe. The voice is the most alive instrument in any recording, and it senses the slightest disrespect. Too much processing and it turns plastic. Too little and it bounces around like an untamed horse. I look for the point where the voice sounds like a voice — alive, real, but sitting in the mix like it was always meant to be there.</p>
-                        <p>Sometimes a track is missing a layer that was never recorded. This is where I sometimes turn to modern AI tools — not to replace live instruments, but to add that one detail that's missing. Like a painter who puts down the brush and uses their fingers instead — simply because it's more precise that way.</p>
-                        <p>Mastering is the final look before stepping on stage. I check the track on three different systems — studio monitors, regular headphones, and a phone speaker. If it sounds good there, it's done.</p>
-                    </div>
-                    <ProTip>A reference track goes a long way. If you have a song that sounds the way you want yours to sound — send it. It tells me more about your vision in three seconds than a paragraph of description.</ProTip>
-                </GlowCard>
+        <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-8">
+          <div className="rounded-2xl p-8 border border-[#C9A84C]/25 bg-[#C9A84C]/[0.06] flex flex-col gap-6">
+            <div>
+              <p className="text-white/40 text-xs uppercase tracking-[0.25em]">
+                Starting prices
+              </p>
+              <div className="mt-5 flex flex-col gap-5">
+                <div>
+                  <p className="text-white/70 text-sm">Mastering only</p>
+                  <p className="text-3xl font-semibold text-[#f5b942]">
+                    from $25
+                  </p>
+                </div>
+                <div className="h-px bg-white/10" />
+                <div>
+                  <p className="text-white/70 text-sm">
+                    Mixing &amp; mastering
+                  </p>
+                  <p className="text-3xl font-semibold text-[#f5b942]">
+                    from $60
+                  </p>
+                </div>
+              </div>
             </div>
-        </section>
-    );
+
+            <p className="text-white/55 text-sm leading-relaxed">
+              Exact price depends on the number of stems, recording quality and
+              the amount of editing required. You receive the price before the
+              full job begins.
+            </p>
+
+            <Link
+              href="/free-track-preview"
+              className="btn-gold inline-flex justify-center items-center font-semibold px-6 py-3.5 rounded-xl text-sm text-black bg-[#C9A84C]"
+            >
+              Get a Free Preview →
+            </Link>
+          </div>
+
+          <div className="rounded-2xl p-8 border border-white/[0.06] bg-white/[0.02]">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
+              {includedItems.map((item) => (
+                <li
+                  key={item}
+                  className="flex items-start gap-3 text-white/70 text-[15px] leading-relaxed"
+                >
+                  <span className="text-[#C9A84C] mt-0.5">→</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div className="mb-8">
+          <span className="text-white/30 text-xs uppercase tracking-[0.3em]">
+            The Process
+          </span>
+          <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mt-2">
+            From rough mix to final master
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {steps.map((step) => (
+            <div
+              key={step.number}
+              className="rounded-2xl p-6 border border-white/[0.06] bg-white/[0.02]"
+            >
+              <span className="text-3xl font-bold text-[#C9A84C]/30">
+                {step.number}
+              </span>
+              <h3 className="text-white font-semibold mt-4">{step.title}</h3>
+              <p className="text-white/60 text-sm leading-relaxed mt-2">
+                {step.text}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 items-stretch">
+        <GlowCard>
+          <span className="text-white/30 text-xs uppercase tracking-[0.3em] relative z-10">
+            How I Approach a Mix
+          </span>
+          <div className="flex flex-col gap-6 text-white/70 text-[15px] leading-relaxed relative z-10">
+            <p>
+              I spend the first ten minutes just listening. I do not touch
+              anything. I listen for where the track feels crowded, where the
+              low end loses control, and where the vocal wants to come forward
+              but cannot.
+            </p>
+            <p>
+              It is like walking into a room where everyone is talking at once.
+              My job is not to make someone shut up — it is to make sure
+              everyone is heard.
+            </p>
+            <p>
+              I usually start with bass and drums. They are the foundation, and
+              if the foundation shakes, no amount of decoration on top will save
+              the track.
+            </p>
+            <p>
+              Once the low end settles into place, the other instruments start
+              finding their positions naturally. It is not magic, although
+              sometimes it looks suspiciously similar.
+            </p>
+          </div>
+          <ProTip>
+            Send stems whenever possible. No stems? Send what you have — I will
+            tell you honestly how far the material can be taken.
+          </ProTip>
+        </GlowCard>
+
+        <GlowCard>
+          <span className="text-white/30 text-xs uppercase tracking-[0.3em] relative z-10">
+            Guitars, Vocals &amp; Translation
+          </span>
+          <div className="flex flex-col gap-6 text-white/70 text-[15px] leading-relaxed relative z-10">
+            <p>
+              I am a guitarist myself, so I hear quickly when a guitar was
+              recorded well but sits badly in the mix. Sometimes it takes over
+              the whole room. Sometimes it hides when it should be singing.
+            </p>
+            <p>
+              Vocals need a different kind of care. Too much processing turns
+              them plastic; too little leaves them disconnected. I look for the
+              point where the voice stays alive but feels as if it always
+              belonged inside the track.
+            </p>
+            <p>
+              Mastering is the final translation check. I test the finished
+              track on studio monitors, regular headphones and a phone speaker
+              before delivery.
+            </p>
+          </div>
+          <ProTip>
+            Send two or three reference tracks. They explain the tone, space and
+            energy you want faster than a paragraph of technical language.
+          </ProTip>
+        </GlowCard>
+      </div>
+    </section>
+  );
 }

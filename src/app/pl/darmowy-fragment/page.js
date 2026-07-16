@@ -1,41 +1,91 @@
 import Hero from "../../components/pages/pl-darmowy-fragment/Hero";
+import { faqItems } from "../../components/pages/pl-darmowy-fragment/faqData";
 
 export const metadata = {
-    title: "Darmowy fragment utworu",
-    alternates: {
-        canonical: "https://www.slstudio.pro/pl/darmowy-fragment",
-        languages: {
-            "pl": "https://www.slstudio.pro/pl/darmowy-fragment",
-            "en": "https://www.slstudio.pro/free-track-preview",
-            "x-default": "https://www.slstudio.pro/free-track-preview",
-        },
+  title: "Bezpłatny fragment miksu i masteringu",
+  alternates: {
+    canonical: "https://www.slstudio.pro/pl/darmowy-fragment",
+    languages: {
+      pl: "https://www.slstudio.pro/pl/darmowy-fragment",
+      en: "https://www.slstudio.pro/free-track-preview",
+      "x-default": "https://www.slstudio.pro/free-track-preview",
     },
+  },
+  description:
+    "Wyślij swój utwór i odbierz bezpłatny fragment miksu lub masteringu trwający 30–60 sekund. Bez karty, bez konta i bez zobowiązań. Dema, stemy i nagrania z telefonu są mile widziane.",
+  openGraph: {
+    title: "Bezpłatny fragment miksu i masteringu | SL Studio",
     description:
-        "Wyślij swój utwór i usłysz darmowy obrobiony fragment, zanim za cokolwiek zapłacisz. Robocze dema, nagrania z telefonu, ślady — dowolny format, dowolna jakość. Studio miksu i masteringu w Warszawie.",
-    keywords: [
-        "darmowy miks",
-        "darmowe demo utworu",
-        "darmowy fragment miksu",
-        "wyślij swój utwór",
-        "miks i mastering online",
-        "studio nagrań warszawa",
+      "Najpierw usłysz własny utwór po obróbce, a dopiero później zdecyduj o pełnej realizacji.",
+    type: "website",
+    url: "https://www.slstudio.pro/pl/darmowy-fragment",
+    locale: "pl_PL",
+    images: [
+      {
+        url: "https://www.slstudio.pro/images/Serhii-Lazariev-02.webp",
+        alt: "Bezpłatny fragment miksu i masteringu w SL Studio",
+      },
     ],
-    openGraph: {
-        title: "Darmowy fragment utworu | SL Studio",
-        description:
-            "Wyślij swój utwór i usłysz darmowy obrobiony fragment, zanim za cokolwiek zapłacisz. Dowolny format, dowolna jakość.",
-        type: "website",
-        url: "https://www.slstudio.pro/pl/darmowy-fragment",
-        locale: "pl_PL",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Bezpłatny fragment miksu i masteringu | SL Studio",
+    description:
+      "Usłysz 30–60 sekund własnego utworu po obróbce — bez karty i bez zobowiązań.",
+    images: ["https://www.slstudio.pro/images/Serhii-Lazariev-02.webp"],
+  },
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Bezpłatny fragment miksu i masteringu",
+  description:
+    "Bezpłatny fragment własnego utworu po obróbce, wraz z uczciwą oceną i dokładną wyceną pełnej realizacji.",
+  url: "https://www.slstudio.pro/pl/darmowy-fragment",
+  serviceType: "Bezpłatny fragment miksu i masteringu",
+  areaServed: ["Warszawa", "Polska", "Cały świat"],
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+    availability: "https://schema.org/InStock",
+  },
+  provider: {
+    "@type": "ProfessionalService",
+    name: "SL Studio",
+    url: "https://www.slstudio.pro/",
+    email: "serhii@slstudio.pro",
+    founder: { "@type": "Person", name: "Serhii Lazariev" },
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Warszawa",
+      addressCountry: "PL",
     },
-    twitter: {
-        card: "summary_large_image",
-        title: "Darmowy fragment utworu | SL Studio",
-        description:
-            "Wyślij swój utwór i usłysz darmowy obrobiony fragment, zanim za cokolwiek zapłacisz.",
-    },
+  },
+};
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
 };
 
 export default function DarmowyFragmentPage() {
-    return <Hero />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <Hero />
+    </>
+  );
 }

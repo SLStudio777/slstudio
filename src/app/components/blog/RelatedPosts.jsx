@@ -1,17 +1,29 @@
 import Link from "next/link";
 import { posts } from "@/data/posts";
 
-export default function RelatedPosts({ slug }) {
+// `slugs` is optional: pass an ordered list to curate the block by hand when
+// the category heuristic below picks the wrong neighbours (e.g. an article
+// whose most relevant companions sit in other categories). Without it the
+// original same-category-first behaviour is unchanged.
+export default function RelatedPosts({ slug, slugs }) {
     const current = posts.find((p) => p.href === `/blog/${slug}`);
     if (!current) return null;
 
-    const sameCategory = posts.filter(
-        (p) => p.href !== current.href && p.category === current.category,
-    );
-    const others = posts.filter(
-        (p) => p.href !== current.href && p.category !== current.category,
-    );
-    const related = [...sameCategory, ...others].slice(0, 3);
+    let related;
+    if (slugs?.length) {
+        related = slugs
+            .map((s) => posts.find((p) => p.href === `/blog/${s}`))
+            .filter((p) => p && p.href !== current.href)
+            .slice(0, 3);
+    } else {
+        const sameCategory = posts.filter(
+            (p) => p.href !== current.href && p.category === current.category,
+        );
+        const others = posts.filter(
+            (p) => p.href !== current.href && p.category !== current.category,
+        );
+        related = [...sameCategory, ...others].slice(0, 3);
+    }
     if (related.length === 0) return null;
 
     return (

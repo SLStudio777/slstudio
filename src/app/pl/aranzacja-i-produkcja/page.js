@@ -1,85 +1,100 @@
 import Hero from "../../components/pages/pl-aranzacja-i-produkcja/Hero";
 import Section1 from "../../components/pages/pl-aranzacja-i-produkcja/Section1";
 import Section2 from "../../components/pages/pl-aranzacja-i-produkcja/Section2";
+import { faqItems } from "../../components/pages/pl-aranzacja-i-produkcja/faqData";
 import BeforeAfterArrangementPl from "../../components/sections/BeforeAfterArrangementPl";
 
 export const metadata = {
-    title: "Aranżacja i produkcja muzyczna — studio w Warszawie",
-    alternates: {
-        canonical: "https://www.slstudio.pro/pl/aranzacja-i-produkcja",
-        languages: {
-            "pl": "https://www.slstudio.pro/pl/aranzacja-i-produkcja",
-            "en": "https://www.slstudio.pro/arrangement",
-            "x-default": "https://www.slstudio.pro/arrangement",
-        },
+  title: "Aranżacja i produkcja muzyczna online",
+  alternates: {
+    canonical: "https://www.slstudio.pro/pl/aranzacja-i-produkcja",
+    languages: {
+      pl: "https://www.slstudio.pro/pl/aranzacja-i-produkcja",
+      en: "https://www.slstudio.pro/arrangement",
+      "x-default": "https://www.slstudio.pro/arrangement",
     },
+  },
+  description:
+    "Profesjonalna aranżacja i produkcja muzyczna online od 110 USD. Zamieniam notatkę głosową, riff, szkic MIDI lub nagranie z próby w kompletny utwór gotowy do publikacji.",
+  openGraph: {
+    title: "Aranżacja i produkcja muzyczna online | SL Studio",
     description:
-        "Aranżacja utworów i produkcja muzyczna online. Od riffu, nucenia czy nagrania z próby do gotowego utworu. Studio w Warszawie, każdy gatunek, praca zdalna.",
-    keywords: [
-        "aranżacja utworu",
-        "produkcja muzyczna",
-        "aranżacja i produkcja muzyczna",
-        "producent muzyczny online",
-        "studio nagrań warszawa",
-        "aranżacja piosenki",
-        "produkcja muzyczna warszawa",
+      "Od notatki głosowej lub surowego demo do kompletnej produkcji. Najpierw usłyszysz bezpłatny fragment lub koncepcję.",
+    type: "website",
+    url: "https://www.slstudio.pro/pl/aranzacja-i-produkcja",
+    locale: "pl_PL",
+    images: [
+      {
+        url: "https://www.slstudio.pro/images/Serhii-Lazariev-03.webp",
+        alt: "Serhii Lazariev — aranżacja i produkcja muzyczna w SL Studio",
+      },
     ],
-    openGraph: {
-        title: "Aranżacja i produkcja muzyczna — studio w Warszawie | SL Studio",
-        description:
-            "Od riffu, nucenia czy nagrania z próby do gotowego utworu. Studio w Warszawie, każdy gatunek, praca zdalna.",
-        type: "website",
-        url: "https://www.slstudio.pro/pl/aranzacja-i-produkcja",
-        locale: "pl_PL",
-    },
-    twitter: {
-        card: "summary_large_image",
-        title: "Aranżacja i produkcja muzyczna — studio w Warszawie | SL Studio",
-        description:
-            "Aranżacja utworów i produkcja muzyczna. Studio w Warszawie, każdy gatunek, praca zdalna.",
-    },
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Aranżacja i produkcja muzyczna online | SL Studio",
+    description:
+      "Zamień surowy pomysł w kompletny utwór — najpierw bezpłatnie sprawdź kierunek.",
+    images: ["https://www.slstudio.pro/images/Serhii-Lazariev-03.webp"],
+  },
 };
 
 const serviceSchema = {
-    "@context": "https://schema.org",
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Aranżacja i produkcja muzyczna online",
+  description:
+    "Profesjonalna aranżacja i produkcja od notatki głosowej, riffu lub demo do kompletnego utworu.",
+  url: "https://www.slstudio.pro/pl/aranzacja-i-produkcja",
+  image: "https://www.slstudio.pro/images/Serhii-Lazariev-03.webp",
+  serviceType: "Aranżacja i produkcja muzyczna",
+  areaServed: ["Warszawa", "Polska", "Cały świat"],
+  provider: {
     "@type": "ProfessionalService",
-    name: "SL Studio — Arrangement & Production",
-    // Polish alias for the service — alternateName is a Thing-level property,
-    // valid on ProfessionalService (Thing > Organization > LocalBusiness).
-    alternateName: "Aranżacja i Produkcja",
-    description:
-        "Professional music arrangement and production services — online worldwide, based in Warsaw, Poland.",
-    url: "https://www.slstudio.pro/pl/aranzacja-i-produkcja",
-    image: "https://www.slstudio.pro/images/SL-logo-mark-1024.png",
+    name: "SL Studio",
+    url: "https://www.slstudio.pro/",
     email: "serhii@slstudio.pro",
-    founder: {
-        "@type": "Person",
-        name: "Serhii Lazariev",
-    },
+    founder: { "@type": "Person", name: "Serhii Lazariev" },
     address: {
-        "@type": "PostalAddress",
-        addressLocality: "Warsaw",
-        addressCountry: "PL",
+      "@type": "PostalAddress",
+      addressLocality: "Warszawa",
+      addressCountry: "PL",
     },
-    areaServed: ["Warsaw", "Poland", "Worldwide"],
-    serviceType: "Arrangement & Production",
-    sameAs: [
-        "https://www.youtube.com/@SLStudio_Guitar",
-        "https://www.instagram.com/lazarev_serhii_sl",
-    ],
+  },
+  offers: {
+    "@type": "Offer",
+    priceCurrency: "USD",
+    price: "110",
+    description: "Aranżacja i produkcja muzyczna od 110 USD za utwór",
+    itemOffered: { "@type": "Service", name: "Aranżacja i produkcja muzyczna" },
+  },
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
 };
 
 export default function AranzacjaIProdukcjaPage() {
-    return (
-        <>
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-            />
-            <Hero />
-            <BeforeAfterArrangementPl />
-            <Section2 />
-            <Section1 />
-        </>
-    )
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <Hero />
+      <BeforeAfterArrangementPl />
+      <Section1 />
+      <Section2 />
+    </>
+  );
 }

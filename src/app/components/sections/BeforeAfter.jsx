@@ -13,12 +13,22 @@ const DEFAULTS = {
 
 export default async function BeforeAfter({ labels }) {
     const t = { ...DEFAULTS, ...labels };
-    const [enhancements] = await pool.query(`
-        SELECT *
-        FROM enhancements
-        WHERE is_active = 1 AND section = 'home'
-        ORDER BY created_at DESC
-    `);
+    let enhancements = [];
+
+    try {
+        const [rows] = await pool.query(`
+            SELECT *
+            FROM enhancements
+            WHERE is_active = 1 AND section = 'home'
+            ORDER BY created_at DESC
+        `);
+        enhancements = rows;
+    } catch (error) {
+        console.error("[BeforeAfter] Failed to load homepage examples:", error);
+        return null;
+    }
+
+    if (!enhancements || enhancements.length === 0) return null;
 
     return (
         <section id="demos" className="py-10" style={{ scrollMarginTop: "80px" }}>
@@ -38,7 +48,7 @@ export default async function BeforeAfter({ labels }) {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {enhancements.map(el => (
+                {enhancements.map((el) => (
                     <BeforeAfterCard
                         key={el.id}
                         title={el.title}
@@ -49,5 +59,5 @@ export default async function BeforeAfter({ labels }) {
                 ))}
             </div>
         </section>
-    )
+    );
 }

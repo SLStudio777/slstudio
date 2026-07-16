@@ -1,89 +1,80 @@
-"use client";
 import { ChevronRight, HelpCircle } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
-
-const faqs = [
-    {
-        q: "Ile kosztuje miks i mastering utworu?",
-        a: "Wycena jest zawsze indywidualna — zależy od stanu materiału, liczby śladów i zakresu prac. Sam mastering pojedynczego utworu wychodzi taniej niż pełny miks wielośladowy z masteringiem. Zamiast zgadywać: wyślij utwór, a odeślę bezpłatne 60-sekundowe demo, szczerą ocenę i dokładną cenę z góry — bez zobowiązań."
-    },
-    {
-        q: "Jak wygląda miks i mastering online?",
-        a: "W całości zdalnie. Wysyłasz pliki przez Dysk Google, WeTransfer albo bezpośrednio na stronie, ja pracuję nad materiałem i odsyłam gotowy utwór. Nie musisz nigdzie przyjeżdżać — pracuję tak z artystami z całej Polski i spoza niej."
-    },
-    {
-        q: "Jakie pliki mam przygotować?",
-        a: "Najlepiej osobne ślady (stemy) — oddzielny plik dla każdego instrumentu i wokalu. Ale jeśli masz tylko roboczy miks stereo albo pojedyncze nagranie, to też się nada. Wyślij to, co masz, a resztę ustalimy."
-    },
-    {
-        q: "Ile trwa realizacja?",
-        a: "Zwykle 3–5 dni roboczych na pojedynczy utwór. Albumy i większe projekty ustalamy indywidualnie. Jeśli termin jest pilny — napisz, najczęściej da się coś zorganizować."
-    },
-    {
-        q: "Mam nagranie sprzed lat. Da się odświeżyć brzmienie?",
-        a: "Tak — i to jedno z ciekawszych zleceń, jakie dostaję. Ten sam utwór, ten sam wokal i te same instrumenty, ale ze świeżym miksem i nowoczesnym masteringiem brzmią zupełnie inaczej. Wielu artystów w ten sposób wydaje starszy materiał na nowo."
-    },
-    {
-        q: "Nagranie jest kiepskiej jakości. Da się z tym coś zrobić?",
-        a: "Bardzo często tak. Słabe nagranie to nie wyrok. Pracowałem z materiałem z garaży, sal prób i telefonów. Najważniejsze, żeby samo wykonanie było żywe — brzmienie da się poprawić."
-    },
-    {
-        q: "Co jeśli nie spodoba mi się efekt?",
-        a: (
-            <>
-                Rzadko się to zdarza — zanim zacznę pełny miks, wysyłam krótkie{" "}
-                <Link href="/pl/darmowy-fragment" className="text-gold underline hover:text-gold2 transition">
-                    bezpłatne demo
-                </Link>
-                , żebyś usłyszał kierunek i go potwierdził. A jeśli i potem coś nie gra — poprawki są w cenie i pracuję do skutku.
-            </>
-        )
-    },
-];
+import { faqItems } from "./faqData";
 
 export default function Section2() {
-    const [openIndex, setOpenIndex] = useState(null);
-
-    return (
-        <section className="mt-10 flex flex-col gap-16">
-            <div className="flex flex-col gap-6">
-                <div className="flex items-center gap-3">
-                    <HelpCircle className="text-gold2 w-6 h-6" />
-                    <div className="flex flex-col">
-                        <span className="text-white/30 text-xs uppercase tracking-[0.3em]">
-                            FAQ
-                        </span>
-                        <h2 className="text-2xl md:text-3xl font-semibold tracking-wide">
-                            Najczęstsze pytania
-                        </h2>
-                    </div>
-                </div>
-
-                <div className="flex flex-col divide-y divide-white/5 max-w-3xl">
-                    {faqs.map((item, i) => (
-                        <div
-                            key={i}
-                            className="py-5 flex flex-col gap-2 cursor-pointer"
-                            onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                        >
-                            <div className="flex items-start gap-3">
-                                <ChevronRight
-                                    className={`w-4 h-4 mt-1 flex-shrink-0 text-gold2 transition-transform duration-200 ${openIndex === i ? "rotate-90" : ""}`}
-                                />
-                                <p className="text-white/90 font-medium text-base leading-snug">
-                                    {item.q}
-                                </p>
-                            </div>
-                            {openIndex === i && (
-                                <p className="text-white/60 text-[15px] leading-relaxed pl-7">
-                                    {item.a}
-                                </p>
-                            )}
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </section>
-    )
+  return (
+    <section className="mt-16 mb-20 flex flex-col gap-16">
+      <div className="flex flex-col gap-6">
+        <div className="flex items-center gap-3">
+          <HelpCircle className="text-gold2 w-6 h-6" />
+          <div>
+            <span className="text-white/30 text-xs uppercase tracking-[0.3em]">
+              FAQ
+            </span>
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-wide">
+              Najczęstsze pytania
+            </h2>
+          </div>
+        </div>
+        <div className="flex flex-col divide-y divide-white/5 max-w-3xl">
+          {faqItems.map((item) => (
+            <details key={item.q} className="group py-1">
+              <summary className="py-5 flex items-start gap-3 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                <ChevronRight className="w-4 h-4 mt-1 flex-shrink-0 text-gold2 transition-transform duration-200 group-open:rotate-90" />
+                <span className="text-white/90 font-medium text-base leading-snug">
+                  {item.q}
+                </span>
+              </summary>
+              <div className="pb-5 pl-7 text-white/60 text-[15px] leading-relaxed">
+                <p>{item.a}</p>
+                {item.previewLink && (
+                  <Link
+                    href="/pl/darmowy-fragment"
+                    className="inline-flex mt-3 text-gold underline hover:text-gold2 transition"
+                  >
+                    Odbierz bezpłatny fragment →
+                  </Link>
+                )}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+      <div
+        className="rounded-2xl p-10 flex flex-col items-center text-center gap-6 max-w-3xl mx-auto w-full relative overflow-hidden"
+        style={{
+          background: "rgba(201,168,76,0.06)",
+          border: "1px solid rgba(201,168,76,0.2)",
+        }}
+      >
+        <div
+          className="absolute -top-16 left-1/2 -translate-x-1/2 w-[320px] h-[220px] rounded-full pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 70%)",
+          }}
+        />
+        <h2 className="text-3xl md:text-4xl font-semibold tracking-wide relative z-10">
+          Usłysz, jak może zabrzmieć Twój utwór
+        </h2>
+        <p className="text-white/65 text-[15px] leading-relaxed max-w-xl relative z-10">
+          Wyślij materiał i odbierz bezpłatny fragment trwający 30–60 sekund,
+          uczciwą ocenę oraz dokładną cenę pełnej realizacji.
+        </p>
+        <Link
+          href="/pl/darmowy-fragment"
+          className="btn-gold relative z-10 inline-flex items-center gap-2 font-semibold px-10 py-4 rounded-xl text-sm text-black"
+          style={{
+            background:
+              "linear-gradient(135deg, #C9A84C 0%, #e8c97a 50%, #C9A84C 100%)",
+            backgroundSize: "200% auto",
+            boxShadow: "0 0 30px rgba(201,168,76,0.25)",
+          }}
+        >
+          Chcę bezpłatny fragment →
+        </Link>
+      </div>
+    </section>
+  );
 }

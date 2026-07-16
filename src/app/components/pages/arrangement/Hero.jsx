@@ -4,91 +4,88 @@ import HeroWave from "../../common/HeroWave";
 import LangSwitch from "../../common/LangSwitch";
 
 export default function Hero() {
-    return (
-        <section className="mt-16 mb-10">
-            <LangSwitch active="en" enHref="/arrangement" plHref="/pl/aranzacja-i-produkcja" />
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch mt-4">
-                <div className="flex flex-col gap-6 md:justify-between">
-                    <div className="flex flex-col gap-6">
-                        <span className="
-                            text-white/40
-                            text-xs
-                            uppercase
-                            tracking-[0.3em]
-                        ">
-                            Production Service
-                        </span>
-                        <div className="relative">
-                            <div className="hero-title-glow" aria-hidden="true" />
-                            <h1 className="
-                                relative
-                                text-4xl md:text-6xl
-                                font-semibold
-                                leading-tight
-                                tracking-wide
-                            ">
-                                Arrangement &{" "}
-                                <span className="text-gold2">
-                                    Production
-                                </span>
-                            </h1>
-                        </div>
-                        <div className="max-w-2xl">
-                            <HeroWave />
-                        </div>
-                        <p className="
-                            text-xl md:text-2xl
-                            text-white/60
-                            leading-relaxed
-                            max-w-2xl
-                        ">
-                            From a raw idea to a full professional track
-                        </p>
-                        <p className="text-white/65 text-[16px] leading-relaxed max-w-2xl">
-                            A guitar riff, a voice memo, a rehearsal recording — that's enough to start. I build complete arrangements around your ideas. Any genre, remote workflow, worldwide.
-                        </p>
-                        <div className="flex items-center gap-6 flex-wrap">
-                            <a
-                                href="#demos"
-                                className="btn-gold inline-flex items-center gap-2 text-black font-semibold px-6 py-3 rounded-xl text-sm"
-                                style={{ backgroundColor: "#C9A84C", boxShadow: "0 0 24px rgba(201,168,76,0.25)" }}
-                            >
-                                Hear the Difference ↓
-                            </a>
-                            <Link href="/contact" className="text-white/55 hover:text-[#f5b942] transition text-sm">
-                                or send your idea directly →
-                            </Link>
-                        </div>
-                    </div>
-                    {/* Trust strip — real numbers, visible to visitors who land here
-                        directly from search, without ever seeing the homepage.
-                        Kept as its own flex child (sibling of the block above, under
-                        justify-between) so it always lands flush with the photo's
-                        bottom edge, regardless of how tall the photo ends up being. */}
-                    <div className="grid grid-cols-3 gap-4 border-t border-white/5 pt-6">
-                        {[
-                            { value: "300+", label: "Tracks Mixed & Mastered" },
-                            { value: "10+", label: "Years Behind the Board" },
-                            { value: "Any Genre", label: "Blues to Electronic" },
-                        ].map((s, i) => (
-                            <div key={i} className="flex flex-col gap-1">
-                                <span className="text-xl md:text-2xl font-semibold text-[#f5b942]">{s.value}</span>
-                                <span className="text-white/55 text-xs uppercase tracking-widest">{s.label}</span>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-                <div className="w-full aspect-[16/9] md:aspect-[4/3] relative rounded-xl overflow-hidden">
-                    <Image
-                        src="/images/Serhii-Lazariev-03.webp"
-                        alt="Serhii Lazariev"
-                        fill
-                        className="object-cover object-top"
-                        sizes="(max-width: 768px) 100vw, 1024px"
-                        loading="eager"
-                    />
-                </div>
+  return (
+    <section className="mt-16 mb-10">
+      <LangSwitch
+        active="en"
+        enHref="/arrangement"
+        plHref="/pl/aranzacja-i-produkcja"
+      />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch mt-4">
+        <div className="flex flex-col gap-6 md:justify-between">
+          <div className="flex flex-col gap-10">
+            <span className="text-white/40 text-xs uppercase tracking-[0.3em]">
+              Online Production · Warsaw / Worldwide
+            </span>
+            <div className="relative">
+              <div className="hero-title-glow" aria-hidden="true" />
+              <h1 className="relative text-4xl md:text-6xl font-semibold leading-tight tracking-wide">
+                Arrangement &amp; <span className="text-gold2">Production</span>
+              </h1>
             </div>
-        </section>
-    )
+            <div className="max-w-2xl">
+              <HeroWave />
+            </div>
+            <p className="text-xl md:text-2xl text-white/70 leading-relaxed max-w-2xl">
+              From a rough idea to a complete, release-ready track
+            </p>
+            <p className="text-white/65 text-[16px] leading-relaxed max-w-2xl">
+              A voice memo, guitar riff, MIDI sketch or rehearsal take is enough
+              to start. I build the arrangement around your idea, add the right
+              instruments and finish the production without sanding away the
+              personality that made the idea worth recording.
+            </p>
+            <div className="flex items-center gap-4 flex-wrap">
+              <a
+                href="#demos"
+                className="btn-gold inline-flex items-center gap-2 text-black font-semibold px-6 py-3 rounded-xl text-sm"
+                style={{
+                  backgroundColor: "#C9A84C",
+                  boxShadow: "0 0 24px rgba(201,168,76,0.25)",
+                }}
+              >
+                Hear the Difference ↓
+              </a>
+              <Link
+                href="/free-track-preview"
+                className="inline-flex items-center px-6 py-3 rounded-xl text-sm font-semibold text-white/80 hover:text-[#f5b942] transition border border-white/10 hover:border-[#C9A84C]/40"
+              >
+                Send Your Idea for Free →
+              </Link>
+            </div>
+            <p className="text-white/40 text-xs leading-relaxed">
+              I will listen to your material and prepare a short production
+              concept or honest assessment before you book the full project.
+            </p>
+          </div>
+          <div className="grid grid-cols-3 gap-4 border-t border-white/5 pt-6">
+            {[
+              { value: "300+", label: "Tracks Completed" },
+              { value: "10+", label: "Years Producing" },
+              { value: "Any Genre", label: "Blues to Electronic" },
+            ].map((item) => (
+              <div key={item.label} className="flex flex-col gap-1">
+                <span className="text-xl md:text-2xl font-semibold text-[#f5b942]">
+                  {item.value}
+                </span>
+                <span className="text-white/55 text-xs uppercase tracking-widest">
+                  {item.label}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="w-full aspect-[16/9] md:aspect-[4/3] relative rounded-xl overflow-hidden">
+          <Image
+            src="/images/Serhii-Lazariev-03.webp"
+            alt="Serhii Lazariev, music producer and arrangement engineer at SL Studio in Warsaw"
+            fill
+            className="object-cover object-top"
+            sizes="(max-width: 768px) 100vw, 50vw"
+            priority
+          />
+        </div>
+      </div>
+    </section>
+  );
 }

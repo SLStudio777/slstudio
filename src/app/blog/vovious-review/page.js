@@ -162,6 +162,7 @@ export default function VoviousReviewPage() {
                         <p><strong className="text-white">Sound:</strong> In side-by-side testing on the same blues-rock vocal, RePitch 2 was noticeably thinner in the high frequencies. Transient accuracy is rated lower by the developers themselves — 3 stars versus 5 for Vovious. On clean, well-recorded vocals the difference is subtle. On expressive or aggressive material it becomes more apparent.</p>
                         <p><strong className="text-white">Known bug with RePitch 2:</strong> In some DAW configurations, Cmd+Z (undo) does not undo the last edit — it removes the entire plugin from the track. This is a workflow-breaking issue on fast sessions. Vovious does not have this problem, though it has its own undo quirks in certain hosts (more on that below).</p>
                         <p><strong className="text-white">Verdict on the comparison:</strong> If the choice is between these two at similar price points, Vovious wins on sound quality and reliability. RePitch 2 is fast but the audio quality gap is real enough to matter on finished mixes.</p>
+                        <p>These two are not the only way out of Melodyne, of course. AutoTune Pro's Graph Mode, Waves Tune and your DAW's own editor all cover parts of the same job — I put the whole field side by side in <a href="/blog/best-melodyne-alternatives-2026" style={{color: "#C9A84C", textDecoration: "underline"}}>the best Melodyne alternatives compared</a>.</p>
                     </div>
 
                     {/* Vovious vs VariAudio */}

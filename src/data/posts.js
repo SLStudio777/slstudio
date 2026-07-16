@@ -1,5 +1,13 @@
 export const posts = [
     {
+        href: "/blog/best-melodyne-alternatives-2026",
+        image: "/images/melodyne-alternatives-cover.jpg",
+        category: "Review",
+        date: "July 16, 2026",
+        title: "Best Melodyne Alternatives in 2026: What Actually Replaces It?",
+        excerpt: "Half the plugins on every \"Melodyne alternative\" list do not replace Melodyne at all. Vovious, RePitch 2, AutoTune Pro 11, Waves Tune and your DAW's own editor — compared honestly."
+    },
+    {
         href: "/blog/suno-advanced-split-clean-instrumental",
         image: "/images/suno-clean-stems-cover.jpg",
         category: "Tutorials",
