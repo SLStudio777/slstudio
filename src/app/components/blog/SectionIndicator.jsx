@@ -99,9 +99,12 @@ export default function SectionIndicator() {
                 className="side-toc hidden [@media(min-width:1280px)]:flex flex-col"
                 style={{
                     position: "fixed",
-                    // hangs into the left margin; max() clamp keeps it from ever
-                    // sliding off-screen on the tightest supported laptop widths
-                    left: "max(20px, calc((100vw - 768px) / 2 - 240px))",
+                    // Hangs into the left margin. The offset is the rail's own
+                    // width (200px) plus the breathing room we want between it
+                    // and the text: 280 - 200 = 80px, matching the ~81px on the
+                    // dots side so the article sits centred between the two.
+                    // The max() clamp keeps it on-screen on the tightest laptops.
+                    left: "max(20px, calc((100vw - 768px) / 2 - 280px))",
                     top: "50%",
                     transform: "translateY(-50%)",
                     width: "200px",
