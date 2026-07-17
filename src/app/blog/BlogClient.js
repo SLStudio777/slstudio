@@ -12,7 +12,12 @@ const languages = [
     { value: "all", label: "All" },
     { value: "en", label: "EN" },
     { value: "ru", label: "RU" },
+    { value: "pl", label: "PL" },
 ];
+// Translated duplicates of English articles: they live on their own routes and
+// stay indexed, but the default list would just repeat every cover, so they only
+// appear when their own language button is pressed.
+const TRANSLATED = ["ru", "pl"];
 const PER_PAGE = 6;
 const FIRST_PAGE_COUNT = 7; // 1 featured + 6 grid cards, keeps page 1's grid even
 
@@ -52,12 +57,10 @@ export default function BlogClient() {
         const q = urlQuery.trim().toLowerCase();
         return posts.filter((p) => {
             if (active !== "All" && p.category !== active) return false;
-            // Russian posts are opt-in: the RU button shows them and nothing else,
-            // every other state (default / All / EN) leaves them out — otherwise the
-            // list repeats each Suno guide twice under the same cover. The pages
-            // themselves stay live and indexed; this only hides the listing card.
+            // Translated posts are opt-in: RU / PL each show only their own,
+            // every other state (default / All / EN) leaves them out.
             const postLang = p.lang || "en";
-            if (lang === "ru" ? postLang !== "ru" : postLang === "ru") return false;
+            if (TRANSLATED.includes(lang) ? postLang !== lang : TRANSLATED.includes(postLang)) return false;
             if (q && !`${p.title} ${p.excerpt} ${p.category}`.toLowerCase().includes(q)) return false;
             return true;
         });

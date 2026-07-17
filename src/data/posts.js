@@ -1,5 +1,14 @@
 export const posts = [
     {
+        href: "/pl/blog/best-melodyne-alternatives-2026",
+        image: "/images/melodyne-alternatives-cover-pl.jpg",
+        category: "Review",
+        date: "17 lipca 2026",
+        lang: "pl",
+        title: "Najlepsze alternatywy dla Melodyne w 2026: co naprawdę je zastępuje?",
+        excerpt: "Najlepsze alternatywy dla Melodyne do ręcznego strojenia wokalu, edycji wysokości dźwięku, korekcji w czasie rzeczywistym i pracy na budżecie — Vovious, RePitch 2, AutoTune Pro, Waves Tune oraz narzędzia wbudowane w DAW."
+    },
+    {
         href: "/blog/best-melodyne-alternatives-2026",
         image: "/images/melodyne-alternatives-cover.jpg",
         category: "Review",
@@ -63,6 +72,15 @@ export const posts = [
         excerpt: "Five sends, zero guesswork. The exact reverb and delay chain I use on vocal mixes — room, plate, microshift, delay, chamber. How it works and why."
     },
     {
+        href: "/pl/blog/best-mixing-plugins-2026",
+        image: "/images/blog-plugins-cover.webp",
+        category: "Technics",
+        date: "12 marca 2026",
+        lang: "pl",
+        title: "Najlepsze wtyczki Plugin Alliance do miksu w 2026",
+        excerpt: "Najlepsze wtyczki Plugin Alliance do miksu w 2026 — 10 narzędzi, które naprawdę zarabiają na swoje miejsce w prawdziwych sesjach, plus jedna pozycja od Slate Digital, która zasługuje na tę samą rozmowę."
+    },
+    {
         href: "/blog/best-mixing-plugins-2026",
         image: "/images/blog-plugins-cover.webp",
         category: "Technics",
@@ -70,6 +88,15 @@ export const posts = [
         lang: "en",
         title: "The Best Plugin Alliance Plugins for Mixing in 2026",
         excerpt: "Not a list of popular plugins. Nine Plugin Alliance tools (Brainworx, SPL, the Lindell 80) plus one Slate Digital pick that actually show up on every session."
+    },
+    {
+        href: "/pl/blog/ai-mixing-mastering-review",
+        image: "/images/blog-ai-mixing-cover.jpg",
+        category: "Industry Insights",
+        date: "18 lutego 2026",
+        lang: "pl",
+        title: "Miks i mastering AI w 2026 — test na prawdziwej sesji",
+        excerpt: "Czy AI potrafi zmiksować i zmasterować utwór? Wgrałem prawdziwą sesję z 30 śladami na jedną z najwyżej ocenianych platform AI, a potem zmapowałem cały rynek 2026 — co działa, co zawodzi i ile to kosztuje."
     },
     {
         href: "/blog/ai-mixing-mastering-review",
