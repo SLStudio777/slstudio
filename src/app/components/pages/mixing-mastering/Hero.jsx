@@ -5,7 +5,7 @@ import LangSwitch from "../../common/LangSwitch";
 
 export default function Hero() {
   return (
-    <section className="mt-16 mb-10">
+    <section className="mt-10 mb-10">
       <LangSwitch
         active="en"
         enHref="/mixing-mastering"
@@ -14,7 +14,7 @@ export default function Hero() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch mt-4">
         <div className="flex flex-col gap-6 md:justify-between">
-          <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-6">
             <span className="text-white/40 text-xs uppercase tracking-[0.3em]">
               Online Mixing Service · Warsaw / Worldwide
             </span>
@@ -66,7 +66,7 @@ export default function Hero() {
             </p>
           </div>
 
-          <div className="grid grid-cols-3 gap-4 border-t border-white/5 pt-6">
+          <div className="grid grid-cols-3 gap-4 border-t border-white/5 pt-4">
             {[
               { value: "300+", label: "Tracks Mixed & Mastered" },
               { value: "10+", label: "Years Behind the Board" },

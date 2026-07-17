@@ -87,6 +87,7 @@ const TOC = [
   { id: "personas", label: "Personas" },
   { id: "demo-machine", label: "Suno Is a Demo Machine" },
   { id: "v55-update", label: "What's New in v5.5" },
+  { id: "field-notes", label: "Field Notes from the Community" },
   { id: "checklist", label: "Pre-Generation Checklist" },
   { id: "faq", label: "FAQ: Instrumental & No Vocals" },
 ];
@@ -702,6 +703,32 @@ export default function SunoGuidePage() {
                   doom metal track. Technically impressive. Contextually
                   catastrophic. And yes, this has happened to everyone at least
                   once.
+                </p>
+              </div>
+            </div>
+            <div
+              className="rounded-xl p-4 flex gap-3 items-start"
+              style={{
+                background: "rgba(201,168,76,0.05)",
+                border: "1px solid rgba(201,168,76,0.2)",
+              }}
+            >
+              <span className="text-lg flex-shrink-0">🆕</span>
+              <div>
+                <p className="text-white font-semibold text-base mb-1">
+                  July 2026: the lyrics editor got rebuilt
+                </p>
+                <p className="text-white/65 text-base leading-relaxed">
+                  Suno redesigned the web lyrics workspace, and it is worth a
+                  detour. Three additions matter in practice: Lyricist (feed it
+                  a few of your own lyrics and it saves your writing voice as a
+                  reusable profile — think Persona, but for words instead of
+                  vocals), natural-language editing (highlight a line and type
+                  “make this darker” or “tighten this to a 4-count bar” — it
+                  rewrites in place), and rhyme suggestions on any highlighted
+                  word. None of this changes how the audio generates — but it
+                  moves a chunk of the rewriting work to before you spend
+                  credits, which is exactly where you want it.
                 </p>
               </div>
             </div>
@@ -1743,6 +1770,80 @@ export default function SunoGuidePage() {
               starts working immediately. Come back to Voices and Custom Models
               once you have a quality voice recording and a musical catalog
               worth training on.
+            </ProTip>
+          </div>
+
+          {/* ── Field notes ── */}
+          <div id="field-notes" className="flex flex-col gap-5">
+            <div className="flex items-center gap-3">
+              <span
+                className="w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold flex-shrink-0"
+                style={{
+                  background: "rgba(201,168,76,0.15)",
+                  color: "#C9A84C",
+                }}
+              >
+                🔍
+              </span>
+              <h2 className="text-xl md:text-2xl font-semibold text-white">
+                Field Notes from the Community
+              </h2>
+            </div>
+            <p>
+              Everything above comes from my own sessions. But I also spend a
+              lot of time in r/SunoAI and the long-running forum threads —
+              partly to steal good ideas, partly to check whether my habits
+              still hold up as the model changes. Here are the community
+              findings I have verified myself and now use. Consider this the
+              “things people learn the hard way” section.
+            </p>
+            <div className="flex flex-col gap-4">
+              {[
+                {
+                  title: "The [End] tag is not optional",
+                  body: "The single highest-ROI tag you can add. Without [End] on its own line at the bottom of your lyrics, Suno loves to keep generating past the natural finish — fading out mid-verse or rambling instrumentally until the hard cutoff. One well-known community breakdown of “why did Suno ignore my tags?” posts put this fix at number one, and my own hit rate agrees: since I started closing every song with [Outro] followed by [End], awkward endings dropped to almost zero.",
+                },
+                {
+                  title: "The Exclude Styles paradox",
+                  body: "The most common complaint thread in the whole subreddit: you write “no piano” and Suno decides piano is the love of your life. Negation is genuinely weak in these models — naming a thing, even to ban it, still puts it on the table. What works better: describe what you DO want densely enough that there is no room left for the unwanted element, and keep the Exclude field for broad genre words rather than sentences. Excluding specific instruments works occasionally; excluding a mood almost never does.",
+                },
+                {
+                  title:
+                    "Keep the style prompt under ~100 words — and give it a BPM",
+                  body: "Two findings that keep being rediscovered independently. Style prompts past roughly a hundred words start diluting themselves — the model averages everything and you get generic soup. And a concrete tempo (“75 BPM”, “138 BPM”) does more for usability than three adjectives: generic prompts produce random tempos, and a wrong tempo kills a track faster than a wrong instrument. Short, specific, numbered — then A/B test one variable at a time.",
+                },
+                {
+                  title:
+                    "Persona users: 25–30% audio influence, familiar instrumentation",
+                  body: "The consistent-voice-across-an-album problem has a semi-reliable recipe from people who shipped full albums: keep Audio Influence around 25–30% (higher and the persona drags its old melody into the new song), write the style description strong enough to override the persona’s ‘memory’, and — the least obvious one — keep some of the instrumentation from the track the persona was created on. The voice was learned in that context, and it stays recognisably itself when the context stays familiar.",
+                },
+                {
+                  title: "A v5.5 reality check",
+                  body: "The community is genuinely split on v5.5 — pronunciation clearly improved, but a loud camp reports flatter, less organic output and, more importantly, changed behaviour of personas created on older models. My advice from watching those threads: before rendering anything long-form on v5.5, regenerate one old track and compare. New model versions silently affect old personas, and finding that out on track nine of an album is the expensive way. The most sensible pattern I keep seeing (and now use myself): a hybrid workflow — draft and explore on v5.5, then re-generate or cover the keeper on v5, which still sounds more organic for most genres. Use models for their strengths instead of waiting for one to be perfect.",
+                },
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="rounded-xl p-5 flex flex-col gap-2"
+                  style={{
+                    background: "rgba(255,255,255,0.02)",
+                    border: "1px solid rgba(255,255,255,0.06)",
+                    borderLeft: "3px solid #C9A84C",
+                  }}
+                >
+                  <p className="text-white font-semibold text-sm">
+                    {item.title}
+                  </p>
+                  <p className="text-white/50 text-sm">{item.body}</p>
+                </div>
+              ))}
+            </div>
+            <ProTip>
+              Treat community lifehacks the way you treat plugin presets: a
+              starting point, not gospel. Every Suno version quietly rebalances
+              what works — the [End] tag survived four model versions, the
+              JSON-formatting tricks did not. Verify on your own material before
+              building a workflow around anything, including this article.
             </ProTip>
           </div>
 

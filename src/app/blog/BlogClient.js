@@ -52,7 +52,12 @@ export default function BlogClient() {
         const q = urlQuery.trim().toLowerCase();
         return posts.filter((p) => {
             if (active !== "All" && p.category !== active) return false;
-            if (lang !== "all" && (p.lang || "en") !== lang) return false;
+            // Russian posts are opt-in: the RU button shows them and nothing else,
+            // every other state (default / All / EN) leaves them out — otherwise the
+            // list repeats each Suno guide twice under the same cover. The pages
+            // themselves stay live and indexed; this only hides the listing card.
+            const postLang = p.lang || "en";
+            if (lang === "ru" ? postLang !== "ru" : postLang === "ru") return false;
             if (q && !`${p.title} ${p.excerpt} ${p.category}`.toLowerCase().includes(q)) return false;
             return true;
         });

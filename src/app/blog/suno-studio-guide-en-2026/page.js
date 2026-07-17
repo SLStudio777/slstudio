@@ -78,6 +78,7 @@ const TOC = [
   { id: "gmiv", label: "The G.M.I.V. Formula — prompts like a pro" },
   { id: "cover-replace", label: "Cover & Replace — surgical fixes" },
   { id: "mixer", label: "The Mixer — draft mode, not the finish line" },
+  { id: "field-notes", label: "Field Notes from the Community" },
   { id: "export", label: "Export — the final step with hard rules" },
 ];
 
@@ -296,6 +297,31 @@ export default function SunoStudioGuidePage() {
               intention, and bring something structured into your DAW instead of
               another random draft.
             </p>
+            <div
+              className="rounded-xl p-4 flex gap-3 items-start"
+              style={{
+                background: "rgba(201,168,76,0.05)",
+                border: "1px solid rgba(201,168,76,0.2)",
+              }}
+            >
+              <span className="text-lg flex-shrink-0">🆕</span>
+              <div>
+                <p className="text-white font-semibold text-base mb-1">
+                  Studio keeps leveling up — Studio 1.2
+                </p>
+                <p className="text-white/65 text-base leading-relaxed">
+                  In February 2026 Suno shipped Studio 1.2, and it quietly
+                  closed several gaps this guide used to warn about: Remove FX
+                  (strips baked-in reverb and delay from a stem — huge for
+                  vocals), Warp Markers (drag timing into place when a
+                  generation drifts off-grid), Time Signature support (finally,
+                  something other than 4/4), and Alternates (generate variants
+                  of a section and swap between them without losing the
+                  original). None of these replace a real DAW — but Remove FX
+                  alone saves you one paid plugin down the line.
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* Chapter 2 */}
@@ -1277,8 +1303,8 @@ export default function SunoStudioGuidePage() {
             </ProTip>
           </div>
 
-          {/* Chapter 8 */}
-          <div id="export" className="flex flex-col gap-5">
+          {/* Chapter 8 — Field Notes */}
+          <div id="field-notes" className="flex flex-col gap-5">
             <div className="flex items-center gap-3">
               <span
                 className="w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold flex-shrink-0"
@@ -1288,6 +1314,78 @@ export default function SunoStudioGuidePage() {
                 }}
               >
                 08
+              </span>
+              <h2 className="text-xl md:text-2xl font-semibold text-white">
+                Field Notes from the Community
+              </h2>
+            </div>
+            <p>
+              Everything above is my own workflow. But Studio is young, moving
+              fast, and the collective experience of r/SunoAI is accumulating
+              faster than any single person can test. I read those threads the
+              way I read gear forums before buying hardware — skeptically, but
+              thoroughly. Here is what keeps coming up, filtered through my own
+              sessions.
+            </p>
+            <div className="flex flex-col gap-4">
+              {[
+                {
+                  title: "The great stems debate",
+                  body: "There is a genuine civil war over whether Suno’s own stem separation is good enough. One camp swears by external tools like Ultimate Vocal Remover with the htdemucs_6s model — more stems, arguably less damage. The other camp (and honestly, my testing leans this way) says no external splitter is consistently and noticeably better than Suno’s own. The lifehack that actually settles it: generate several sets of stems for the same track and cherry-pick the best take of each instrument — stem quality varies between renders, and the second pull is often cleaner than the first. Whichever tool you use, judge it on the stem that carries your song: vocals if it’s a vocal track, synths if it’s electronic.",
+                },
+                {
+                  title: "Recreate and Replace are a re-roll, not an edit",
+                  body: "The most common disappointment among new Studio users: hitting Recreate or Replace on a track and getting something wildly different from the original — different feel, different timing, sometimes a different instrument entirely. One engineer described replacing a piano and consistently getting a brass section no matter what the sliders said. Treat these buttons as controlled dice, not as an editor: duplicate the project before surgery, replace the shortest section you can get away with, and accept that two or three rolls is the norm, not a failure.",
+                },
+                {
+                  title: "Watch the credit meter",
+                  body: "A warning that shows up in almost every honest Studio review: every generation inside Studio costs credits — every alternate, every replaced section, every experiment, regardless of length. People burn through a monthly allowance in a weekend of enthusiastic tinkering. My rule: decide what you are fixing before you open the project, fix exactly that, and get out. Studio rewards surgeons, not browsers.",
+                },
+                {
+                  title: "The pattern that actually ships",
+                  body: "Talk to the people actually releasing tracks and a consistent picture emerges: Studio is the assembly room, not the finish line. The workflow that keeps producing results — assemble the structure in Studio, export stems, then rebuild in a real DAW: replace some of the generated sounds with your own, fix timing and pitch, add your own transitions and space. As one producer put it, once you’ve swapped enough sounds and added your own design, nobody can tell the track started as AI. That matches my experience — and it’s exactly why this guide treats Export as the most important chapter.",
+                },
+                {
+                  title: "The 48-hour rule",
+                  body: "The least technical tip and possibly the most valuable one, straight from a veteran thread on making AI tracks sound professional: walk away from the song for a couple of days, then listen again after the initial dopamine rush has worn off. Fresh generations all sound amazing at 1 a.m. The ones that still sound amazing on Monday are the ones worth spending Studio credits and mixing hours on.",
+                },
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="rounded-xl p-5 flex flex-col gap-2"
+                  style={{
+                    background: "rgba(255,255,255,0.02)",
+                    border: "1px solid rgba(255,255,255,0.06)",
+                    borderLeft: "3px solid #C9A84C",
+                  }}
+                >
+                  <p className="text-white font-semibold text-sm">
+                    {item.title}
+                  </p>
+                  <p className="text-white/50 text-sm">{item.body}</p>
+                </div>
+              ))}
+            </div>
+            <ProTip>
+              Studio is barely a year old and gets patched constantly — half of
+              the complaints you will find in six-month-old threads are already
+              fixed, and half of the tricks are already obsolete. Check the date
+              on any Studio advice before trusting it. Including, in fairness,
+              this section.
+            </ProTip>
+          </div>
+
+          {/* Chapter 9 */}
+          <div id="export" className="flex flex-col gap-5">
+            <div className="flex items-center gap-3">
+              <span
+                className="w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold flex-shrink-0"
+                style={{
+                  background: "rgba(201,168,76,0.15)",
+                  color: "#C9A84C",
+                }}
+              >
+                09
               </span>
               <h2 className="text-xl md:text-2xl font-semibold text-white">
                 Export — the final step with hard rules
