@@ -1,6 +1,7 @@
 import Link from "next/link";
 import LangSwitch from "../components/common/LangSwitch";
 import HeroWave from "../components/common/HeroWave";
+import ScrollReveal from "../components/common/ScrollReveal";
 
 const SITE = "https://www.slstudio.pro";
 
@@ -124,7 +125,7 @@ export default function AboutPage() {
                 <div className="mb-8">
                     <LangSwitch active="en" enHref="/about" plHref="/pl/o-mnie" />
                 </div>
-                <div className="grid md:grid-cols-[1.1fr_1fr] gap-10 items-center">
+                <div className="grid md:grid-cols-[1fr_1.15fr] gap-10 items-center">
                     <div>
                         <p className="text-xs uppercase tracking-widest mb-4" style={{ color: "#C9A84C" }}>
                             About
@@ -144,6 +145,18 @@ export default function AboutPage() {
                             how to do with my whole attention — now from my studio in
                             Warsaw, for artists all over the world.
                         </p>
+                        <div className="mt-8 flex items-center gap-4">
+                            <span className="h-px w-16" style={{ background: "linear-gradient(90deg, #C9A84C, rgba(201,168,76,0))" }} />
+                            <span className="italic text-white/50" style={{ fontFamily: "var(--font-playfair)" }}>— Serhii, SL Studio</span>
+                        </div>
+                        <Link
+                            href="/free-track-preview"
+                            className="group inline-flex items-center gap-2 mt-6 text-sm font-medium transition hover:opacity-80"
+                            style={{ color: "#C9A84C" }}
+                        >
+                            Hear it before you pay
+                            <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+                        </Link>
                     </div>
                     <div className="rounded-2xl overflow-hidden border border-white/10">
                         <img
@@ -156,9 +169,9 @@ export default function AboutPage() {
 
                 {/* Stats */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-12">
-                    {stats.map((s) => (
+                    {stats.map((s, i) => (
+                        <ScrollReveal key={s.label} delay={i * 120}>
                         <div
-                            key={s.label}
                             className="rounded-2xl border border-white/10 bg-white/[0.03] px-6 py-6 text-center"
                         >
                             <div className="text-3xl font-semibold mb-1" style={{ color: "#C9A84C" }}>
@@ -166,6 +179,7 @@ export default function AboutPage() {
                             </div>
                             <div className="text-white/50 text-sm">{s.label}</div>
                         </div>
+                        </ScrollReveal>
                     ))}
                 </div>
             </section>
@@ -175,7 +189,8 @@ export default function AboutPage() {
                 <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mb-8">
                     The long road to a quiet room in Warsaw
                 </h2>
-                <div className="space-y-5 text-white/65 leading-relaxed max-w-3xl">
+                <div className="grid md:grid-cols-[1.15fr_1fr] gap-10 md:gap-14 items-start">
+                    <div className="space-y-5 text-white/65 leading-relaxed">
                     <p>
                         It started the way it usually does: a teenager, a cheap guitar,
                         and no plan B. Bands, rehearsal basements, small stages — that's
@@ -199,12 +214,51 @@ export default function AboutPage() {
                         worldwide — from a $25 master to a full production built around
                         a voice memo. Same ears, same care, every project.
                     </p>
+                    </div>
+
+                    {/* Timeline */}
+                    <div className="relative pl-6 md:mt-1" style={{ borderLeft: "1px solid rgba(201,168,76,0.25)" }}>
+                        {[
+                            { year: "13 y.o.", text: "First guitar. Never put it down." },
+                            { year: "20 years", text: "One band: tiny clubs → radio & TV → a proper anniversary stage." },
+                            { year: "10+ years", text: "Behind the board — rehearsals, demos, rescued live tapes." },
+                            { year: "2023", text: "SL Studio opens in Warsaw." },
+                            { year: "Today", text: "Mixing & mastering for artists worldwide." },
+                        ].map((step, i) => (
+                            <ScrollReveal key={step.year} delay={i * 120}>
+                                <div className="relative pb-8">
+                                    <span
+                                        className="absolute left-[-29px] top-1 w-2.5 h-2.5 rounded-full"
+                                        style={{ background: "#C9A84C", boxShadow: "0 0 12px rgba(201,168,76,0.6)" }}
+                                    />
+                                    <div className="text-xs font-semibold uppercase tracking-widest mb-1" style={{ color: "#C9A84C" }}>
+                                        {step.year}
+                                    </div>
+                                    <p className="text-white/55 text-sm leading-relaxed">{step.text}</p>
+                                </div>
+                            </ScrollReveal>
+                        ))}
+                    </div>
                 </div>
             </section>
 
             {/* Restoration project */}
             <section className="py-12">
-                <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-8 md:p-10">
+                <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-8 md:p-10">
+                    <div
+                        className="pointer-events-none absolute inset-y-0 right-0 w-1/2 hidden md:block"
+                        aria-hidden="true"
+                        style={{ background: "radial-gradient(ellipse at 85% 40%, rgba(201,168,76,0.10), transparent 65%)" }}
+                    />
+                    <div className="pointer-events-none absolute right-10 bottom-8 hidden lg:flex items-end gap-1.5" aria-hidden="true">
+                        {[38, 62, 26, 74, 48, 88, 34, 66, 22, 54, 42, 78].map((h, i) => (
+                            <span
+                                key={i}
+                                className="w-1.5 rounded-full"
+                                style={{ height: `${h}px`, background: "rgba(201,168,76,0.18)" }}
+                            />
+                        ))}
+                    </div>
                     <p className="text-xs uppercase tracking-widest mb-3" style={{ color: "#C9A84C" }}>
                         A project I'm proud of
                     </p>
@@ -248,15 +302,16 @@ export default function AboutPage() {
                     Musician first, engineer second
                 </h2>
                 <div className="grid md:grid-cols-3 gap-4">
-                    {principles.map((p) => (
+                    {principles.map((p, i) => (
+                        <ScrollReveal key={p.title} delay={i * 120}>
                         <div
-                            key={p.title}
                             className="rounded-2xl border border-white/10 bg-white/[0.03] p-6"
                         >
                             <div className="text-2xl mb-3">{p.icon}</div>
                             <h3 className="font-semibold mb-2">{p.title}</h3>
                             <p className="text-white/55 text-sm leading-relaxed">{p.text}</p>
                         </div>
+                        </ScrollReveal>
                     ))}
                 </div>
             </section>
