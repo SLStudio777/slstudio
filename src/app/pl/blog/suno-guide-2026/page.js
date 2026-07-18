@@ -1,4 +1,5 @@
 import RelatedPosts from "@/app/components/blog/RelatedPosts";
+import SunoCta from "@/app/components/blog/SunoCta";
 import InteractiveChecklist from "./InteractiveChecklist";
 import BlogHeader from "@/app/components/blog/BlogHeader";
 import ReadingProgress from "@/app/components/blog/ReadingProgress";
@@ -266,6 +267,8 @@ export default function SunoGuidePlPage() {
                 className="w-full object-cover" />
             </div>
           </div>
+
+          <SunoCta lang="pl" />
 
           {/* Part 2 */}
           <div id="studio-not-magic" className="flex flex-col gap-5">
@@ -839,7 +842,9 @@ export default function SunoGuidePlPage() {
             </a>
           </div>
 
-          <RelatedPosts slug="suno-guide-2026" />
+          <SunoCta lang="pl" />
+
+          <RelatedPosts slug="suno-guide-2026" lang="pl" />
         </div>
       </div>
     </div>

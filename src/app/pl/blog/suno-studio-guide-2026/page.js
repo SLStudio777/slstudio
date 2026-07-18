@@ -1,4 +1,5 @@
 import RelatedPosts from "@/app/components/blog/RelatedPosts";
+import SunoCta from "@/app/components/blog/SunoCta";
 import BlogHeader from "@/app/components/blog/BlogHeader";
 import GmivBuilder from "@/app/components/blog/GmivBuilder";
 import CheatsheetCopy from "@/app/components/blog/CheatsheetCopy";
@@ -218,6 +219,8 @@ export default function SunoStudioGuidePlPage() {
               i przynieść do DAW coś ustrukturyzowanego zamiast kolejnego losowego szkicu.
             </p>
           </div>
+
+          <SunoCta lang="pl" />
 
           {/* Chapter 2 */}
           <div id="timeline" className="flex flex-col gap-5">
@@ -723,7 +726,9 @@ export default function SunoStudioGuidePlPage() {
             </div>
           </div>
 
-          <RelatedPosts slug="suno-studio-guide-2026" />
+          <SunoCta lang="pl" />
+
+          <RelatedPosts slug="suno-studio-guide-2026" lang="pl" />
         </div>
       </div>
     </div>

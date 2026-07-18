@@ -1,4 +1,5 @@
 import Link from "next/link";
+import LangSwitch from "../../components/common/LangSwitch";
 
 const SITE = "https://www.slstudio.pro";
 
@@ -196,6 +197,9 @@ export default function SunoTrackFinishingPagePL() {
 
             {/* Hero */}
             <section className="container pt-16 pb-12">
+                <div className="mb-8">
+                    <LangSwitch active="pl" enHref="/suno-track-finishing" plHref="/pl/suno-track-finishing" />
+                </div>
                 <div className="max-w-3xl">
                     <p className="text-xs uppercase tracking-widest mb-4" style={{ color: "#C9A84C" }}>
                         Suno Track Finishing

@@ -1,4 +1,5 @@
 import RelatedPosts from "@/app/components/blog/RelatedPosts";
+import SunoCta from "@/app/components/blog/SunoCta";
 import BlogJsonLd from "@/app/components/blog/BlogJsonLd";
 import BlogHeader from "@/app/components/blog/BlogHeader";
 import GmivBuilder from "@/app/components/blog/GmivBuilder";
@@ -324,6 +325,8 @@ export default function SunoStudioGuidePage() {
               </div>
             </div>
           </div>
+
+          <SunoCta lang="en" />
 
           {/* Chapter 2 */}
           <div id="timeline" className="flex flex-col gap-5">
@@ -1567,6 +1570,8 @@ export default function SunoStudioGuidePage() {
               Get a Free Preview →
             </a>
           </div>
+
+          <SunoCta lang="en" />
 
           <RelatedPosts slug="suno-studio-guide-2026" />
         </div>

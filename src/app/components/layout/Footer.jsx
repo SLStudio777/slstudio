@@ -37,6 +37,7 @@ export default function Footer() {
                     <Link href="/mixing-mastering" className="text-white/60 text-sm hover:text-gold2 transition">Mixing & Mastering</Link>
                     <Link href="/arrangement" className="text-white/60 text-sm hover:text-gold2 transition">Arrangement & Production</Link>
                     <Link href="/blog" className="text-white/60 text-sm hover:text-gold2 transition">Blog</Link>
+                    <Link href="/suno-track-finishing" className="text-white/60 text-sm hover:text-gold2 transition">Suno Track Finishing</Link>
                     <Link href="/contact" className="text-white/60 text-sm hover:text-gold2 transition">Contact</Link>
                     <Link href="/free-track-preview" className="text-white/60 text-sm hover:text-gold2 transition">Free Preview</Link>
                 </div>

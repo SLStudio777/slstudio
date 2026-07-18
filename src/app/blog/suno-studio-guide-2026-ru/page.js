@@ -1,4 +1,5 @@
 import RelatedPosts from "@/app/components/blog/RelatedPosts";
+import SunoCta from "@/app/components/blog/SunoCta";
 import BlogJsonLd from "@/app/components/blog/BlogJsonLd";
 import BlogHeader from "@/app/components/blog/BlogHeader";
 import ReadingProgress from "@/app/components/blog/ReadingProgress";
@@ -326,6 +327,8 @@ export default function SunoStudioGuidePage() {
               </div>
             </div>
           </div>
+
+          <SunoCta lang="ru" />
 
           {/* Глава 2 */}
           <div id="timeline" className="flex flex-col gap-5">
@@ -1670,7 +1673,9 @@ export default function SunoStudioGuidePage() {
             </a>
           </div>
 
-          <RelatedPosts slug="suno-studio-guide-2026-ru" />
+          <SunoCta lang="ru" />
+
+          <RelatedPosts slug="suno-studio-guide-2026-ru" lang="ru" />
         </div>
       </div>
     </div>

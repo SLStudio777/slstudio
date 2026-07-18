@@ -5,9 +5,26 @@ import { posts } from "@/data/posts";
 // the category heuristic below picks the wrong neighbours (e.g. an article
 // whose most relevant companions sit in other categories). Without it the
 // original same-category-first behaviour is unchanged.
-export default function RelatedPosts({ slug, slugs }) {
-    const current = posts.find((p) => p.href === `/blog/${slug}`);
+//
+// `lang` is optional too: translated pages (pl/ru) may share the base slug with
+// their English twin, so pass the page's own language to resolve the right
+// `current` post and keep the suggestions in that language.
+export default function RelatedPosts({ slug, slugs, lang }) {
+    const langOf = (p) => p.lang ?? "en";
+
+    // A base slug like "suno-guide-2026" can match both the English post
+    // (/blog/…) and its Polish twin (/pl/blog/…). Prefer the one whose language
+    // matches `lang`; otherwise fall back to the exact English path.
+    const matches = posts.filter((p) => p.href.endsWith(`/blog/${slug}`));
+    const current =
+        (lang && matches.find((p) => langOf(p) === lang)) ||
+        matches.find((p) => p.href === `/blog/${slug}`) ||
+        matches[0];
     if (!current) return null;
+
+    // Suggestions must stay in the article's own language — no Russian cards
+    // under an English post, no English cards under a Polish one.
+    const targetLang = lang ?? langOf(current);
 
     let related;
     if (slugs?.length) {
@@ -16,22 +33,14 @@ export default function RelatedPosts({ slug, slugs }) {
             .filter((p) => p && p.href !== current.href)
             .slice(0, 3);
     } else {
-        // Language outranks category: an English article must not offer Russian
-        // reading (only the two RU Suno guides carry `lang`, English posts have
-        // no field). The other language is a fallback, not a filter — with 20
-        // English posts an English page never reaches it, while the two Russian
-        // guides still fill three cards instead of dropping to one.
-        const langOf = (p) => p.lang ?? "en";
-        const currentLang = langOf(current);
         const byCategoryFirst = (list) => [
             ...list.filter((p) => p.category === current.category),
             ...list.filter((p) => p.category !== current.category),
         ];
-        const candidates = posts.filter((p) => p.href !== current.href);
-        related = [
-            ...byCategoryFirst(candidates.filter((p) => langOf(p) === currentLang)),
-            ...byCategoryFirst(candidates.filter((p) => langOf(p) !== currentLang)),
-        ].slice(0, 3);
+        const candidates = posts.filter(
+            (p) => p.href !== current.href && langOf(p) === targetLang
+        );
+        related = byCategoryFirst(candidates).slice(0, 3);
     }
     if (related.length === 0) return null;
 
