@@ -1,41 +1,44 @@
 import RelatedPosts from "@/app/components/blog/RelatedPosts";
 import BlogJsonLd from "@/app/components/blog/BlogJsonLd";
 import BlogHeader from "@/app/components/blog/BlogHeader";
+import GmivBuilder from "@/app/components/blog/GmivBuilder";
+import CheatsheetCopy from "@/app/components/blog/CheatsheetCopy";
 import ReadingProgress from "@/app/components/blog/ReadingProgress";
 
 export const metadata = {
-  title: "Suno Studio: полный гайд 2026 — таймлайн, Extend, формула G.M.I.V.",
+  title: "How to Use Suno Studio in 2026: Timeline, Extend & Stem Export",
   alternates: {
-    canonical: "https://www.slstudio.pro/blog/suno-studio-guide-2026",
+    canonical: "https://www.slstudio.pro/blog/suno-studio-guide-en-2026",
     languages: {
       en: "https://www.slstudio.pro/blog/suno-studio-guide-en-2026",
       ru: "https://www.slstudio.pro/blog/suno-studio-guide-2026",
+      pl: "https://www.slstudio.pro/pl/blog/suno-studio-guide-en-2026",
       "x-default": "https://www.slstudio.pro/blog/suno-studio-guide-en-2026",
     },
   },
   description:
-    "Большинство пользователей Suno просто жмут Generate и надеются на удачу. Этот гайд — про то, как взять контроль: таймлайн, точки Extend, формула G.M.I.V., экспорт стемов.",
+    "Step-by-step Suno Studio tutorial — control the timeline, extend tracks at the exact timestamp, fix weak sections with Cover & Replace, and export clean WAV stems for mixing.",
   openGraph: {
-    title: "Suno Studio: полный гайд 2026 — таймлайн, Extend, формула G.M.I.V.",
+    title: "How to Use Suno Studio in 2026: Timeline, Extend & Stem Export",
     description:
-      "Большинство пользователей Suno просто жмут Generate и надеются на удачу. Этот гайд — про то, как взять контроль: таймлайн, точки Extend, формула G.M.I.V., экспорт стемов.",
+      "Step-by-step Suno Studio tutorial — control the timeline, extend tracks at the exact timestamp, fix weak sections with Cover & Replace, and export clean WAV stems for mixing.",
     type: "article",
-    url: "https://www.slstudio.pro/blog/suno-studio-guide-2026",
+    url: "https://www.slstudio.pro/blog/suno-studio-guide-en-2026",
     siteName: "SL Studio",
-    images: ["/images/blog-suno-studio-cover-ru.webp"],
+    images: ["/images/blog-suno-studio-cover.webp"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Suno Studio: полный гайд 2026 — таймлайн, Extend, формула G.M.I.V.",
+    title: "How to Use Suno Studio in 2026: Timeline, Extend & Stem Export",
     description:
-      "Большинство пользователей Suno просто жмут Generate и надеются на удачу. Этот гайд — про то, как взять контроль: таймлайн, точки Extend, формула G.M.I.V., экспорт стемов.",
+      "Step-by-step Suno Studio tutorial — control the timeline, extend tracks at the exact timestamp, fix weak sections with Cover & Replace, and export clean WAV stems for mixing.",
   },
   keywords: [
-    "suno studio гайд 2026",
-    "suno studio как пользоваться",
+    "suno studio tutorial 2026",
+    "how to use suno studio",
     "suno extend timestamp",
-    "suno gmiv формула промтов",
-    "suno стемы экспорт",
+    "suno gmiv prompt formula",
+    "suno stems export",
   ],
   other: { "article:published_time": "2026-07-02" },
 };
@@ -60,7 +63,7 @@ function ProTip({ children }) {
           className="text-xs font-bold uppercase tracking-widest mb-1.5"
           style={{ color: "#C9A84C" }}
         >
-          Совет
+          Pro Tip
         </p>
         <p className="text-white/70 text-base leading-relaxed">{children}</p>
       </div>
@@ -69,18 +72,15 @@ function ProTip({ children }) {
 }
 
 const TOC = [
-  {
-    id: "what-is-studio",
-    label: "Что такое Suno Studio — и чем она НЕ является",
-  },
-  { id: "timeline", label: "Таймлайн — главный инструмент" },
-  { id: "extend", label: "Extend — кнопка, которая делает из идеи песню" },
-  { id: "extend-tags", label: "Английские теги для Extend" },
-  { id: "gmiv", label: "Формула G.M.I.V. — промты как у профи" },
-  { id: "cover-replace", label: "Cover и Replace — точечный ремонт" },
-  { id: "mixer", label: "Микшер — черновик, не финал" },
-  { id: "field-notes", label: "Полевые заметки из сообщества" },
-  { id: "export", label: "Экспорт — финал с жёсткими правилами" },
+  { id: "what-is-studio", label: "What Suno Studio is — and what it's NOT" },
+  { id: "timeline", label: "The Timeline — your main instrument" },
+  { id: "extend", label: "Extend — the button that turns ideas into songs" },
+  { id: "extend-tags", label: "English tags for Extend" },
+  { id: "gmiv", label: "The G.M.I.V. Formula — prompts like a pro" },
+  { id: "cover-replace", label: "Cover & Replace — surgical fixes" },
+  { id: "mixer", label: "The Mixer — draft mode, not the finish line" },
+  { id: "field-notes", label: "Field Notes from the Community" },
+  { id: "export", label: "Export — the final step with hard rules" },
 ];
 
 function TableOfContents() {
@@ -92,7 +92,7 @@ function TableOfContents() {
         border: "1px solid rgba(255,255,255,0.07)",
       }}
     >
-      <p className="text-white font-semibold text-base mb-4">Содержание</p>
+      <p className="text-white font-semibold text-base mb-4">Contents</p>
       <ol className="flex flex-col gap-2">
         {TOC.map((item, i) => (
           <li key={item.id} className="flex items-baseline gap-2.5">
@@ -118,14 +118,14 @@ function TableOfContents() {
 export default function SunoStudioGuidePage() {
   return (
     <div id="top" className="mt-16 mb-20">
-      <BlogJsonLd slug="suno-studio-guide-2026" />
+      <BlogJsonLd slug="suno-studio-guide-en-2026" />
       <ReadingProgress />
       <div className="max-w-3xl mx-auto">
         <BlogHeader
-          topic="Уроки"
-          date="2 июля 2026"
-          title="Suno AI Часть 2: Suno Studio — полный гайд для музыкантов"
-          description="Первая часть была про генерацию. Эта — про то, что делать после. Suno Studio — рабочий этап между Generate и DAW, где хаос превращается в структуру."
+          topic="Tutorials"
+          date="July 2, 2026"
+          title="Suno AI Part 2: Suno Studio — Complete Guide for Musicians"
+          description="Part one was about generating better material. This one is about what happens after. Suno Studio sits between Generate and your DAW — the place where a good idea stops being random and starts becoming usable."
         />
 
         <div className="blog-prose flex flex-col gap-14 text-white/70 text-[16px] leading-relaxed">
@@ -140,13 +140,13 @@ export default function SunoStudioGuidePage() {
             <span className="text-2xl flex-shrink-0">🎚️</span>
             <div>
               <p className="text-white font-semibold mb-2">
-                Для кого этот гайд
+                Who this guide is for
               </p>
               <p className="text-white/65 text-base leading-relaxed">
-                Для тех, кто уже сделал пару песен в Suno и понял: результат
-                есть, а контроля пока нет. Для музыкантов, которым нужен
-                предсказуемый итог, а не «ну вдруг повезёт».{" "}
-                <strong className="text-white">Это лечится.</strong>
+                For anyone who has made a few tracks in Suno and realized the
+                real problem is not inspiration — it is control. For musicians
+                who want repeatable results, not a coin flip.{" "}
+                <strong className="text-white">That part is fixable.</strong>
               </p>
             </div>
           </div>
@@ -161,14 +161,14 @@ export default function SunoStudioGuidePage() {
           >
             <span className="text-lg flex-shrink-0">📖</span>
             <p className="text-white/65 text-base">
-              Не читал первую часть?{" "}
+              Haven't read Part 1 yet? Start with{" "}
               <a
-                href="/blog/suno-guide-2026-ru"
+                href="/blog/suno-guide-2026"
                 style={{ color: "#C9A84C", textDecoration: "underline" }}
               >
-                Suno AI: полный гайд — жанры, теги и промпты 2026
-              </a>{" "}
-              — начни с неё.
+                Suno AI: Complete Guide — Genres, Tags & Prompts 2026
+              </a>
+              .
             </p>
           </div>
 
@@ -176,7 +176,7 @@ export default function SunoStudioGuidePage() {
             <TableOfContents />
           </div>
 
-          {/* Три ступени */}
+          {/* Three stages */}
           <div
             className="rounded-2xl p-8 flex flex-col gap-3 text-center"
             style={{
@@ -189,13 +189,13 @@ export default function SunoStudioGuidePage() {
               className="text-xs font-bold uppercase tracking-widest"
               style={{ color: "rgba(201,168,76,0.6)" }}
             >
-              Три ступени кухни
+              Three stages of the kitchen
             </p>
             <div className="flex items-center justify-center gap-3 flex-wrap mt-2">
               {[
-                { step: "Generate", desc: "набросок идеи" },
-                { step: "Studio", desc: "структура и развитие" },
-                { step: "DAW", desc: "финальное сведение" },
+                { step: "Generate", desc: "sketch the idea" },
+                { step: "Studio", desc: "structure & develop" },
+                { step: "DAW", desc: "final mix & master" },
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-3">
                   <div className="flex flex-col items-center gap-1">
@@ -211,12 +211,12 @@ export default function SunoStudioGuidePage() {
               ))}
             </div>
             <p className="text-white/65 text-base mt-2 max-w-md mx-auto">
-              Suno Studio — осознанный средний этап со своей ролью: не DAW и не
-              просто продолжение Generate.
+              Studio is the middle stage: where ideas get structured before the
+              real finishing work begins in a DAW.
             </p>
           </div>
 
-          {/* Глава 1 */}
+          {/* Chapter 1 */}
           <div id="what-is-studio" className="flex flex-col gap-5">
             <div className="flex items-center gap-3">
               <span
@@ -229,21 +229,21 @@ export default function SunoStudioGuidePage() {
                 01
               </span>
               <h2 className="text-xl md:text-2xl font-semibold text-white">
-                Что такое Suno Studio — и чем она НЕ является
+                What Suno Studio is — and what it's NOT
               </h2>
             </div>
             <p>
-              Сразу расставим точки над «ё». Suno Studio — не продолжение кнопки
-              Generate и не замена DAW. Это отдельный рабочий этап между «нажал
-              — получил» и «открыл проект в редакторе».
+              Suno Studio is not Generate with a bigger toolbar, and it is not a
+              DAW in disguise. It is the stage between getting raw material and
+              opening a real editor.
             </p>
 
             <div className="rounded-2xl overflow-hidden border border-white/5">
               <img
                 loading="lazy"
                 decoding="async"
-                src="/images/suno-studio-ru-1.webp"
-                alt="Studio решает задачу организации и развития идеи"
+                src="/images/suno-studio-1.webp"
+                alt="Studio handles one job: organizing and developing your idea"
                 className="w-full object-cover"
               />
             </div>
@@ -253,17 +253,17 @@ export default function SunoStudioGuidePage() {
                 {
                   icon: "✏️",
                   step: "Generate",
-                  desc: "Создаёт материал. Набросок карандашом на салфетке. Идея, которую нужно развить.",
+                  desc: "Creates raw material. A pencil sketch on a napkin. The idea that still needs to become something.",
                 },
                 {
                   icon: "🎬",
                   step: "Studio",
-                  desc: "Организация и развитие идеи. Режиссёрский стол — видишь структуру, принимаешь решения.",
+                  desc: "Organization and development. The director's table — you can see the structure and make real decisions.",
                 },
                 {
                   icon: "🎛️",
                   step: "DAW",
-                  desc: "Финал: сведение, мастеринг, чистовая обработка. Финальная книга с редактором.",
+                  desc: "The finish line: mixing, mastering, polish. The final manuscript after the editor.",
                 },
               ].map((item, i) => (
                 <div
@@ -286,19 +286,17 @@ export default function SunoStudioGuidePage() {
             </div>
 
             <p>
-              Studio намеренно не копирует DAW. Здесь нет глубокого
-              редактирования аудио и сложного микширования с цепочками эффектов.{" "}
-              <strong className="text-white">Это не баг — это фича.</strong>{" "}
-              Задача Studio другая: организация и развитие идеи.
+              Studio deliberately does not copy a DAW. There is no deep editing,
+              no complex chains, and no engineer-grade finishing toolkit here.{" "}
+              <strong className="text-white">That is the point.</strong> Its job
+              is simpler and more useful: organize the idea before you polish it
+              somewhere else.
             </p>
             <p>
-              Без Studio генерация остаётся набором удачных и неудачных попыток.
-              С ней можно остановиться на сильном моменте, осмысленно продолжить
-              трек и не начинать всё заново. Для музыкантов и продюсеров это
-              прежде всего{" "}
-              <strong className="text-white">экономия времени</strong> — в DAW
-              переносится уже выстроенный материал, а не сырой случайный
-              результат.
+              Without Studio, generation remains a pile of lucky and unlucky
+              attempts. With it, you can stop on the useful moments, extend with
+              intention, and bring something structured into your DAW instead of
+              another random draft.
             </p>
             <div
               className="rounded-xl p-4 flex gap-3 items-start"
@@ -310,23 +308,24 @@ export default function SunoStudioGuidePage() {
               <span className="text-lg flex-shrink-0">🆕</span>
               <div>
                 <p className="text-white font-semibold text-base mb-1">
-                  Studio продолжает прокачиваться — Studio 1.2
+                  Studio keeps leveling up — Studio 1.2
                 </p>
                 <p className="text-white/65 text-base leading-relaxed">
-                  В феврале 2026 Suno выкатила Studio 1.2, и она тихо закрыла
-                  несколько дыр, о которых раньше приходилось предупреждать:
-                  Remove FX (снимает вшитый ревер и дилей со стема — для вокала
-                  это золото), Warp Markers (подтягиваешь тайминг на место,
-                  когда генерация уплыла с сетки), поддержка размеров
-                  (наконец-то не только 4/4) и Alternates (варианты секции без
-                  потери оригинала). Ничего из этого не заменяет настоящий DAW —
-                  но один Remove FX экономит тебе платный плагин в будущем.
+                  In February 2026 Suno shipped Studio 1.2, and it quietly
+                  closed several gaps this guide used to warn about: Remove FX
+                  (strips baked-in reverb and delay from a stem — huge for
+                  vocals), Warp Markers (drag timing into place when a
+                  generation drifts off-grid), Time Signature support (finally,
+                  something other than 4/4), and Alternates (generate variants
+                  of a section and swap between them without losing the
+                  original). None of these replace a real DAW — but Remove FX
+                  alone saves you one paid plugin down the line.
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Глава 2 */}
+          {/* Chapter 2 */}
           <div id="timeline" className="flex flex-col gap-5">
             <div className="flex items-center gap-3">
               <span
@@ -339,31 +338,30 @@ export default function SunoStudioGuidePage() {
                 02
               </span>
               <h2 className="text-xl md:text-2xl font-semibold text-white">
-                Таймлайн — главный инструмент
+                The Timeline — your main instrument
               </h2>
             </div>
             <p>
-              В центре Suno Studio находится таймлайн. Не кнопки и не меню —
-              именно он. На нём разворачивается вся музыка.
+              At the heart of Suno Studio is the timeline. That is where the
+              track stops feeling like one blob and starts revealing structure.
             </p>
 
             <div className="rounded-2xl overflow-hidden border border-white/5">
               <img
                 loading="lazy"
                 decoding="async"
-                src="/images/suno-studio-ru-2.webp"
-                alt="Таймлайн — главный инструмент контроля в Suno Studio"
+                src="/images/suno-studio-2.webp"
+                alt="The timeline is your main instrument of control in Suno Studio"
                 className="w-full object-cover"
               />
             </div>
 
             <p>
-              Что ты на нём видишь: форму трека целиком, дорожки и клипы,
-              переходы между частями.{" "}
-              <strong className="text-white">Самое важное открытие</strong> — ты
-              перестаёшь воспринимать трек как один сплошной файл. Ты начинаешь
-              видеть набор частей, которые можно анализировать и развивать по
-              отдельности.
+              You see the overall shape, the clips, the layers, and the
+              transition points.{" "}
+              <strong className="text-white">That is the key shift:</strong> you
+              stop treating the track like one big audio file and start treating
+              it like a set of parts you can judge one by one.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -375,11 +373,11 @@ export default function SunoStudioGuidePage() {
                 }}
               >
                 <p className="text-white font-semibold text-base">
-                  🔭 Крупный план
+                  🔭 Wide view
                 </p>
                 <p className="text-white/65 text-base leading-relaxed">
-                  Видишь форму трека целиком, оцениваешь общую логику развития.
-                  Работает ли идея вообще?
+                  See the full shape of the track and judge the overall arc.
+                  Does the idea actually work?
                 </p>
               </div>
               <div
@@ -390,11 +388,11 @@ export default function SunoStudioGuidePage() {
                 }}
               >
                 <p className="text-white font-semibold text-base">
-                  🔬 Детальный план
+                  🔬 Close view
                 </p>
                 <p className="text-white/65 text-base leading-relaxed">
-                  Смотришь на переходы, паузы, детали склейки. Где поставить
-                  точку входа для Extend?
+                  Examine transitions, pauses, edit points. Where exactly should
+                  you set the Extend timestamp?
                 </p>
               </div>
             </div>
@@ -408,18 +406,18 @@ export default function SunoStudioGuidePage() {
             >
               <span className="text-lg">💡</span>
               <p className="text-white/65 text-base leading-relaxed">
-                Используй оба режима. Без крупного плана не понять, работает ли
-                идея в целом. Без детального — не найти правильную точку для
-                продолжения.{" "}
+                Use both views. Without the wide one, you can't tell if the idea
+                holds together. Without the close one, you won't find the right
+                place to extend.{" "}
                 <strong className="text-white">
-                  Как только начинаешь мыслить таймлайном — всё становится
-                  предсказуемым.
+                  Once you start thinking in timelines, everything becomes
+                  predictable.
                 </strong>
               </p>
             </div>
           </div>
 
-          {/* Глава 3 */}
+          {/* Chapter 3 */}
           <div id="extend" className="flex flex-col gap-5">
             <div className="flex items-center gap-3">
               <span
@@ -432,13 +430,13 @@ export default function SunoStudioGuidePage() {
                 03
               </span>
               <h2 className="text-xl md:text-2xl font-semibold text-white">
-                Extend — кнопка, которая делает из идеи песню
+                Extend — the button that turns an idea into a song
               </h2>
             </div>
             <p>
-              Если Create даёт идею, то Extend превращает её в песню. Это самый
-              мощный инструмент Studio — и один из самых часто используемых
-              неправильно.
+              If Create gives you the idea, Extend is what turns it into a full
+              track. It's the most powerful tool in Studio — and the one most
+              consistently misused.
             </p>
 
             <div
@@ -449,14 +447,12 @@ export default function SunoStudioGuidePage() {
               }}
             >
               <p className="text-white font-semibold text-base">
-                Что слышит нейросеть когда жмёшь Extend
+                What the model hears when you press Extend
               </p>
               <p className="text-white/65 text-base italic leading-relaxed">
-                «Послушай последние секунды этого фрагмента, пойми контекст и
-                придумай, что должно звучать дальше. Сохрани тональность и BPM.»
-              </p>
-              <p className="text-white/50 text-sm">
-                Звучит просто — но весь дьявол в деталях.
+                "Listen to the last few seconds of this section, understand the
+                context, and figure out what should come next. Preserve the key
+                and BPM."
               </p>
             </div>
 
@@ -464,19 +460,19 @@ export default function SunoStudioGuidePage() {
               <img
                 loading="lazy"
                 decoding="async"
-                src="/images/suno-studio-ru-3.webp"
-                alt="Extend работает с контекстом — главное правило это точка входа"
+                src="/images/suno-studio-3.webp"
+                alt="Extend reads context — the timestamp is everything"
                 className="w-full object-cover"
               />
             </div>
 
             <h3 className="text-lg font-semibold text-white">
-              Главное правило: точка входа (Timestamp)
+              The one rule: the timestamp
             </h3>
             <p>
-              Самая частая ошибка новичков — нажимать Extend где попало.
-              Результат: трек разваливается, меняется голос, сбивается ритм,
-              песня уходит «не туда».
+              The most common beginner mistake is pressing Extend wherever. The
+              result: the track falls apart — the voice changes, the rhythm
+              breaks, the song wanders off somewhere nobody intended.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -488,15 +484,14 @@ export default function SunoStudioGuidePage() {
                 }}
               >
                 <p className="text-white font-semibold text-base">
-                  🚫 Что нельзя делать
+                  🚫 What not to do
                 </p>
                 <ul className="flex flex-col gap-2 text-white/65 text-base">
                   <li>
-                    → Ставить точку на середине слова вокалиста — нейросеть
-                    выдаст галлюцинации
+                    → Cut in the middle of a word — the model will hallucinate
                   </li>
-                  <li>→ Выбирать случайное место без анализа формы</li>
-                  <li>→ Жать Extend без нового текста в поле Lyrics</li>
+                  <li>→ Pick a random spot without reading the waveform</li>
+                  <li>→ Press Extend without updating the Lyrics field</li>
                 </ul>
               </div>
               <div
@@ -507,36 +502,37 @@ export default function SunoStudioGuidePage() {
                 }}
               >
                 <p className="text-white font-semibold text-base">
-                  ✅ Как делать правильно
+                  ✅ What to do instead
                 </p>
                 <ul className="flex flex-col gap-2 text-white/65 text-base">
-                  <li>→ Найди конец такта</li>
-                  <li>→ Найди момент, где затухает эхо</li>
-                  <li>→ Найди паузу после припева</li>
+                  <li>→ Find the end of a bar</li>
+                  <li>→ Find where the reverb tail fades out</li>
+                  <li>→ Find the pause after a chorus</li>
                 </ul>
               </div>
             </div>
 
             <ProTip>
-              Смотри на волну на таймлайне и ищи визуальные спады громкости —
-              это идеальные места для склейки. Там, где тихо — там и режем. Это
-              правило работает в Suno Studio, в DAW и в монтаже вообще.
+              Look at the waveform on the timeline and find the visual dips in
+              loudness — those are your ideal cut points. Where it goes quiet,
+              that's where you cut. This rule applies in Suno Studio, in your
+              DAW, and in editing generally.
             </ProTip>
 
             <h3 className="text-lg font-semibold text-white mt-2">
-              Логика конструктора: Part 1 → Part 2
+              Block logic: Part 1 → Part 2
             </h3>
             <p>
-              В Studio ты видишь цепочку: Part 1 → Extend → Part 2. Запомни
-              важное правило:
+              In Studio you see a chain: Part 1 → Extend → Part 2. One rule to
+              remember:
             </p>
 
             <div className="rounded-2xl overflow-hidden border border-white/5">
               <img
                 loading="lazy"
                 decoding="async"
-                src="/images/suno-studio-ru-4.webp"
-                alt="Studio — это конструктор: не нравится Part 2 — удали и сгенерируй заново"
+                src="/images/suno-studio-4.webp"
+                alt="Studio is a block system: don't like Part 2? Delete and regenerate"
                 className="w-full object-cover"
               />
             </div>
@@ -548,24 +544,23 @@ export default function SunoStudioGuidePage() {
                 border: "1px solid rgba(201,168,76,0.25)",
               }}
             >
-              <p className="text-white font-semibold mb-2">
-                Правило конструктора
-              </p>
+              <p className="text-white font-semibold mb-2">The block rule</p>
               <p className="text-white/70 text-base leading-relaxed">
-                Если Part 2 не нравится — не лечи её новыми Extend. Просто удали
-                и сгенерируй заново от конца первой части. Если деталь кривая,
-                мы не шлифуем её бесконечно — мы берём новую.
+                If Part 2 isn't working — don't try to fix it with another
+                Extend. Delete it and regenerate from the end of Part 1. If a
+                part comes out wrong, we don't sand it down forever — we get a
+                new one.
               </p>
             </div>
 
             <div className="flex flex-col gap-3 mt-2">
               <p className="text-white font-medium text-sm">
-                Чек-лист перед нажатием Extend:
+                Checklist before pressing Extend:
               </p>
               {[
-                "Выбрана правильная точка — нет обрыва голоса?",
-                "Старый текст в Lyrics удалён и написан новый (или хотя бы тег [Instrumental])?",
-                "Поле Style заполнено уточнениями на английском?",
+                "Is the timestamp right — no mid-word cuts?",
+                "Has the old Lyrics text been cleared and replaced with something new (or at least a [Instrumental] tag)?",
+                "Is the Style field filled with English descriptors?",
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-3">
                   <div
@@ -585,7 +580,7 @@ export default function SunoStudioGuidePage() {
             </div>
           </div>
 
-          {/* Глава 4 */}
+          {/* Chapter 4 */}
           <div id="extend-tags" className="flex flex-col gap-5">
             <div className="flex items-center gap-3">
               <span
@@ -598,81 +593,37 @@ export default function SunoStudioGuidePage() {
                 04
               </span>
               <h2 className="text-xl md:text-2xl font-semibold text-white">
-                Английские теги для Extend: управляем развитием
+                English tags for Extend: steering the direction
               </h2>
             </div>
             <p>
-              Когда делаешь Extend, поле Style — это не декорация. Именно здесь
-              ты решаешь, куда пойдёт трек. Вот тут начинается настоящая работа.
+              When you run an Extend, the Style field is where you steer the
+              track instead of hoping it reads your mind.
             </p>
 
             <h3 className="text-lg font-semibold text-white">
-              Управление динамикой
+              Controlling dynamics
             </h3>
             <p>
-              Не пиши «сделай громче» — пиши конкретные термины которые Suno
-              понимает:
+              Don't write "make it louder" — use specific terms Suno actually
+              understands:
             </p>
 
-            <div className="overflow-x-auto">
-              <table
-                className="w-full text-sm"
-                style={{ borderCollapse: "collapse" }}
-              >
-                <thead>
-                  <tr
-                    style={{ borderBottom: "1px solid rgba(255,255,255,0.1)" }}
-                  >
-                    <th className="text-left py-3 pr-6 text-white/40 text-xs uppercase tracking-widest font-medium">
-                      Тег
-                    </th>
-                    <th className="text-left py-3 text-white/40 text-xs uppercase tracking-widest font-medium">
-                      Что делает
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {[
-                    {
-                      tag: "Build up",
-                      desc: "Нарастание напряжения перед дропом",
-                    },
-                    {
-                      tag: "Explosive Drop",
-                      desc: "Мощный взрывной выход (электроника, рок)",
-                    },
-                    {
-                      tag: "Stripped back",
-                      desc: "Убираем лишнее, оставляем минимум (для ямы)",
-                    },
-                    {
-                      tag: "Full band kicks in",
-                      desc: "Вступает вся группа после тихого начала",
-                    },
-                  ].map((row, i) => (
-                    <tr
-                      key={i}
-                      style={{
-                        borderBottom: "1px solid rgba(255,255,255,0.05)",
-                      }}
-                    >
-                      <td
-                        className="py-3 pr-6 font-mono text-sm"
-                        style={{ color: "#C9A84C" }}
-                      >
-                        {row.tag}
-                      </td>
-                      <td className="py-3 text-white/60">{row.desc}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+            <CheatsheetCopy
+              title="Dynamic control tags"
+              variant="table"
+              items={[
+                ["Build up", "Rising tension before a drop"],
+                ["Explosive Drop", "Big, punchy release — electronics, rock"],
+                ["Stripped back", "Pull instruments away, expose the bones"],
+                ["Full band kicks in", "Whole band enters after a quiet intro"],
+              ]}
+            />
 
             <h3 className="text-lg font-semibold text-white">
-              Соло и проигрыш
+              Solos and instrumental breaks
             </h3>
-            <p>Работаем в связке двух полей — одного мало:</p>
+            <p>Two fields working together — one alone isn't enough:</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div
                 className="rounded-xl p-4 flex flex-col gap-2"
@@ -683,10 +634,10 @@ export default function SunoStudioGuidePage() {
                 }}
               >
                 <p className="text-white font-semibold text-xs uppercase tracking-widest">
-                  Поле Lyrics
+                  Lyrics field
                 </p>
                 <p className="text-white/65 text-base">
-                  Мета-тег в квадратных скобках:{" "}
+                  Meta-tag in square brackets:{" "}
                   <span className="font-mono" style={{ color: "#C9A84C" }}>
                     [Guitar Solo]
                   </span>
@@ -705,17 +656,17 @@ export default function SunoStudioGuidePage() {
                 }}
               >
                 <p className="text-white font-semibold text-xs uppercase tracking-widest">
-                  Поле Style
+                  Style field
                 </p>
                 <p className="text-white/65 text-base">
-                  Поддержка описанием:{" "}
+                  Reinforce with description:{" "}
                   <span
                     className="font-mono text-xs"
                     style={{ color: "#C9A84C" }}
                   >
                     Virtuoso Electric Guitar
                   </span>{" "}
-                  или{" "}
+                  or{" "}
                   <span
                     className="font-mono text-xs"
                     style={{ color: "#C9A84C" }}
@@ -727,59 +678,27 @@ export default function SunoStudioGuidePage() {
             </div>
 
             <h3 className="text-lg font-semibold text-white">
-              Как завершить трек красиво
+              How to end a track cleanly
             </h3>
             <p>
-              Suno обожает обрывать песни на полуслове — это известная болячка.
-              Чтобы сделать нормальный конец: выставляй Extend на последние
-              секунды и пиши в поле Style один из тегов:
+              Suno loves cutting songs off mid-thought — it's a well-known
+              quirk. To get a proper ending: set the Extend timestamp on the
+              final seconds and drop one of these tags into Style:
             </p>
 
-            <div className="overflow-x-auto">
-              <table
-                className="w-full text-sm"
-                style={{ borderCollapse: "collapse" }}
-              >
-                <thead>
-                  <tr
-                    style={{ borderBottom: "1px solid rgba(255,255,255,0.1)" }}
-                  >
-                    <th className="text-left py-3 pr-6 text-white/40 text-xs uppercase tracking-widest font-medium">
-                      Тег
-                    </th>
-                    <th className="text-left py-3 text-white/40 text-xs uppercase tracking-widest font-medium">
-                      Эффект
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {[
-                    { tag: "Outro", desc: "Концовка" },
-                    { tag: "Fade out", desc: "Плавное затухание" },
-                    { tag: "Grand Finale", desc: "Эпичная громкая концовка" },
-                    { tag: "End on a single note", desc: "Финальный аккорд" },
-                  ].map((row, i) => (
-                    <tr
-                      key={i}
-                      style={{
-                        borderBottom: "1px solid rgba(255,255,255,0.05)",
-                      }}
-                    >
-                      <td
-                        className="py-3 pr-6 font-mono text-sm"
-                        style={{ color: "#C9A84C" }}
-                      >
-                        {row.tag}
-                      </td>
-                      <td className="py-3 text-white/60">{row.desc}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+            <CheatsheetCopy
+              title="Ending tags"
+              variant="table"
+              items={[
+                ["Outro", "Standard ending section"],
+                ["Fade out", "Gradual fade to silence"],
+                ["Grand Finale", "Big, loud, cinematic close"],
+                ["End on a single note", "One final chord and done"],
+              ]}
+            />
           </div>
 
-          {/* Глава 5 */}
+          {/* Chapter 5 */}
           <div id="gmiv" className="flex flex-col gap-5">
             <div className="flex items-center gap-3">
               <span
@@ -792,16 +711,16 @@ export default function SunoStudioGuidePage() {
                 05
               </span>
               <h2 className="text-xl md:text-2xl font-semibold text-white">
-                Формула G.M.I.V. — пишем промты как профессионалы
+                The G.M.I.V. Formula — prompts like a pro
               </h2>
             </div>
             <p>
-              Перед формулой усвой главный принцип:{" "}
+              One principle before the formula:{" "}
               <strong className="text-white">
-                Suno не интерпретирует желания — она работает с тегами.
+                Suno does not interpret your feelings — it works with tags.
               </strong>{" "}
-              Красивое описание даёт случайность. Техническое задание даёт
-              управляемый результат.
+              If you write like a poet, you get randomness. If you write like a
+              spec sheet, results become far more predictable.
             </p>
 
             <div
@@ -813,19 +732,18 @@ export default function SunoStudioGuidePage() {
             >
               <span className="text-lg flex-shrink-0">🚨</span>
               <p className="text-white/65 text-base leading-relaxed">
-                <strong className="text-white">Железное правило:</strong> пиши
-                промты на английском. Даже если песня на русском, поле Style of
-                Music должно быть заполнено по-английски — Suno обучалась именно
-                на таких данных. «Грустная скрипка» — Suno поймёт, но с
-                погрешностью.{" "}
+                <strong className="text-white">Hard rule:</strong> write prompts
+                in English. Even if your song is in another language, the Style
+                of Music field must be in English — that's the data Suno trained
+                on. "Sad violin" — Suno gets the gist, with margin for error.{" "}
                 <span
                   className="font-mono text-xs"
                   style={{ color: "#C9A84C" }}
                 >
                   Melancholic Violin Solo
                 </span>{" "}
-                — поймёт идеально точно. Разница как между «принеси что-нибудь
-                поесть» и «принеси капучино на миндальном молоке».
+                — understood precisely. The difference between "bring me
+                something to eat" and "oat milk cappuccino, medium, extra shot."
               </p>
             </div>
 
@@ -833,8 +751,8 @@ export default function SunoStudioGuidePage() {
               <img
                 loading="lazy"
                 decoding="async"
-                src="/images/suno-studio-ru-5.webp"
-                alt="Suno работает с тегами: sad violin — рандом, melancholic violin solo — попадание"
+                src="/images/suno-studio-5.webp"
+                alt="Suno works with tags: sad violin is a lottery, melancholic violin solo is a target"
                 className="w-full object-cover"
               />
             </div>
@@ -847,7 +765,7 @@ export default function SunoStudioGuidePage() {
               }}
             >
               <p className="text-white font-semibold">
-                Формула G.M.I.V. — четыре компонента
+                The G.M.I.V. formula — four components
               </p>
 
               <div className="flex flex-col gap-4">
@@ -856,8 +774,8 @@ export default function SunoStudioGuidePage() {
                     G — Genre
                   </p>
                   <p className="text-white/65 text-base leading-relaxed">
-                    Не пиши просто Rock или Pop. Используй поджанры — они сужают
-                    поиск и дают точный результат:
+                    Don't just write Rock or Pop. Use subgenres — they narrow
+                    the search space and produce consistent results:
                   </p>
                   <div className="overflow-x-auto">
                     <table
@@ -871,10 +789,10 @@ export default function SunoStudioGuidePage() {
                           }}
                         >
                           <th className="text-left py-2 pr-4 text-white/45 text-sm">
-                            Вместо…
+                            Instead of…
                           </th>
                           <th className="text-left py-2 text-white/45 text-sm">
-                            Пиши…
+                            Write…
                           </th>
                         </tr>
                       </thead>
@@ -910,8 +828,8 @@ export default function SunoStudioGuidePage() {
                   <img
                     loading="lazy"
                     decoding="async"
-                    src="/images/suno-studio-ru-6.webp"
-                    alt="Поджанры — тем точнее жанр, тем стабильнее результат"
+                    src="/images/suno-studio-6.webp"
+                    alt="Subgenres — the more specific the genre, the more stable the result"
                     className="w-full object-cover"
                   />
                 </div>
@@ -921,16 +839,16 @@ export default function SunoStudioGuidePage() {
                     M — Mood
                   </p>
                   <p className="text-white/65 text-base leading-relaxed">
-                    Новички описывают свои чувства вместо технических
-                    дескрипторов. Нейросети не нужно знать что ты чувствуешь —
-                    ей нужна атмосфера в музыкальных терминах:
+                    Beginners describe how they feel instead of using musical
+                    descriptors. The model doesn't need to know what you're
+                    feeling — it needs the atmosphere in technical terms:
                   </p>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
                     {[
-                      ["«душевно»", "Ethereal"],
-                      ["«злобно»", "Aggressive"],
-                      ["«радостно»", "Euphoric"],
-                      ["«мрачно»", "Dark"],
+                      ['"soulful"', "Ethereal"],
+                      ['"angry"', "Aggressive"],
+                      ['"joyful"', "Euphoric"],
+                      ['"dark"', "Dark"],
                     ].map((pair, i) => (
                       <div
                         key={i}
@@ -957,7 +875,8 @@ export default function SunoStudioGuidePage() {
                     I — Instruments
                   </p>
                   <p className="text-white/65 text-base leading-relaxed">
-                    Укажи конкретно, что должно звучать. Это даёт треку «мясо»:
+                    Name exactly what should be playing. This gives the track
+                    its substance:
                   </p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                     {[
@@ -986,7 +905,7 @@ export default function SunoStudioGuidePage() {
                     V — Vocals
                   </p>
                   <p className="text-white/65 text-base leading-relaxed">
-                    Если не указать — Suno подберёт случайно. Возьми контроль:
+                    Leave it unspecified and Suno picks randomly. Take control:
                   </p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                     {[
@@ -1012,6 +931,9 @@ export default function SunoStudioGuidePage() {
               </div>
             </div>
 
+            {/* GMIV Interactive Builder */}
+            <GmivBuilder />
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div
                 className="rounded-xl p-5 flex flex-col gap-3"
@@ -1021,13 +943,13 @@ export default function SunoStudioGuidePage() {
                 }}
               >
                 <p className="text-white font-semibold text-base">
-                  ✕ Плохой промпт
+                  ✕ Weak prompt
                 </p>
                 <p className="text-white/65 text-base italic">
-                  «Красивая песня про любовь, пианино, грустно»
+                  "Beautiful love song with piano, kind of sad"
                 </p>
                 <p className="text-white/45 text-sm">
-                  Это пожелание. Suno угадывает.
+                  This is a wish. Suno guesses.
                 </p>
               </div>
               <div
@@ -1038,30 +960,30 @@ export default function SunoStudioGuidePage() {
                 }}
               >
                 <p className="text-white font-semibold text-base">
-                  ✓ Хороший промпт
+                  ✓ Strong prompt
                 </p>
                 <p className="text-white/65 font-mono text-sm leading-relaxed">
                   RnB, Soul, Sentimental Mood, Grand Piano, Minimal Drums,
                   Female Emotional Vocals, Slow Tempo, 80 BPM
                 </p>
                 <p className="text-white/45 text-sm">
-                  Это техническое задание. Suno выполняет.
+                  This is a spec. Suno executes.
                 </p>
               </div>
             </div>
 
             <ProTip>
-              Suno лучше реагирует на запятые, чем на длинные предложения.
-              Плохо: «Make a song that sounds like it is raining outside».
-              Хорошо:{" "}
+              Suno responds better to comma-separated tags than to full
+              sentences. Bad: "Make a song that sounds like it is raining
+              outside." Good:{" "}
               <span className="font-mono text-xs" style={{ color: "#C9A84C" }}>
                 Rainy atmosphere, Lo-Fi
               </span>
-              . Коротко, чётко, по делу.
+              . Short, clear, precise.
             </ProTip>
           </div>
 
-          {/* Глава 6 */}
+          {/* Chapter 6 */}
           <div id="cover-replace" className="flex flex-col gap-5">
             <div className="flex items-center gap-3">
               <span
@@ -1074,22 +996,22 @@ export default function SunoStudioGuidePage() {
                 06
               </span>
               <h2 className="text-xl md:text-2xl font-semibold text-white">
-                Cover и Replace — точечный ремонт без боли
+                Cover & Replace — surgical fixes without the pain
               </h2>
             </div>
             <p>
-              Классный трек, но в середине вокалист проглотил слово или барабаны
-              сбились с ритма. Раньше выход был один — генерировать всё заново.
-              В Studio это чинится точечно. Два инструмента под две разные
-              задачи.
+              Great track, but the vocalist swallowed a word in the middle or
+              the drums drifted off-beat. The old answer was to regenerate
+              everything from scratch. In Studio, you fix it precisely. Two
+              tools, two different jobs.
             </p>
 
             <div className="rounded-2xl overflow-hidden border border-white/5">
               <img
                 loading="lazy"
                 decoding="async"
-                src="/images/suno-studio-ru-7.webp"
-                alt="Cover и Replace — два разных инструмента под две разные задачи"
+                src="/images/suno-studio-7.webp"
+                alt="Cover and Replace — two different tools for two different problems"
                 className="w-full object-cover"
               />
             </div>
@@ -1106,17 +1028,17 @@ export default function SunoStudioGuidePage() {
                 <span className="text-xl flex-shrink-0">🎨</span>
                 <div>
                   <p className="text-white font-semibold text-base mb-2">
-                    Cover — Вариация
+                    Cover — Variation
                   </p>
                   <p className="text-white/65 text-base leading-relaxed">
-                    Используй, когда{" "}
+                    Use this when{" "}
                     <strong className="text-white">
-                      мелодия нравится, но не нравится звук
+                      you love the melody but not the sound
                     </strong>
-                    . Например: мелодия припева отличная, но сыграна на пианино,
-                    а ты хочешь гитару. Выделяем участок, жмём Cover, меняем
-                    инструмент в промпте. Suno постарается «натянуть» новый звук
-                    на старые ноты.
+                    . For example: the chorus melody is perfect, but it's played
+                    on piano and you want guitar. Select the section, hit Cover,
+                    swap the instrument in the prompt. Suno will attempt to
+                    "drape" the new sound over the existing notes.
                   </p>
                 </div>
               </div>
@@ -1132,23 +1054,24 @@ export default function SunoStudioGuidePage() {
                 <span className="text-xl flex-shrink-0">🔧</span>
                 <div>
                   <p className="text-white font-semibold text-base mb-2">
-                    Replace — Замена контекстом
+                    Replace — Context-aware substitution
                   </p>
                   <p className="text-white/65 text-base leading-relaxed">
-                    Самый мощный инструмент Studio, про который новички часто
-                    забывают. Используй, когда{" "}
+                    The most powerful tool in Studio — and the one beginners
+                    most often overlook. Use this when{" "}
                     <strong className="text-white">
-                      не нравится сама музыкальная фраза или есть ошибка
+                      the musical phrase itself is wrong, or there's an actual
+                      error
                     </strong>
                     .
                   </p>
                   <p className="text-white/65 text-base leading-relaxed mt-2">
-                    Как это работает: Suno не слушает то, что внутри выделенного
-                    квадрата. Она слушает то, что{" "}
-                    <strong className="text-white">до</strong>, и то, что{" "}
-                    <strong className="text-white">после</strong>. И генерирует
-                    мост, который идеально склеивает эти две части. Это почти
-                    волшебство.
+                    How it works: Suno doesn't listen to what's inside the
+                    selection. It listens to what comes{" "}
+                    <strong className="text-white">before</strong> and what
+                    comes <strong className="text-white">after</strong> — and
+                    generates a bridge that joins those two pieces seamlessly.
+                    It's close to magic.
                   </p>
                 </div>
               </div>
@@ -1158,43 +1081,45 @@ export default function SunoStudioGuidePage() {
               <img
                 loading="lazy"
                 decoding="async"
-                src="/images/suno-studio-ru-8.webp"
-                alt="Исправляем только ошибку — не весь трек"
+                src="/images/suno-studio-8.webp"
+                alt="Fix only the mistake — not the whole track"
                 className="w-full object-cover"
               />
             </div>
 
             <h3 className="text-lg font-semibold text-white">
-              Как исправлять галлюцинации
+              How to fix hallucinations
             </h3>
             <p>
-              Галлюцинации — это когда Suno спела лишнюю строчку, исковеркала
-              слово или вставила что-то неожиданное.{" "}
-              <strong className="text-white">Не выбрасывай трек.</strong>{" "}
-              Действуй так:
+              Hallucinations are when Suno sang an extra line, mangled a word,
+              or inserted something completely unexpected.{" "}
+              <strong className="text-white">
+                Don't throw the track away.
+              </strong>{" "}
+              Do this instead:
             </p>
 
             <div className="flex flex-col gap-3">
               {[
                 {
                   step: "01",
-                  title: "Выдели точно тот кусок где ошибка",
-                  desc: "Захвати чуть-чуть чистого звука по краям — для контекста.",
+                  title: "Select exactly the section with the error",
+                  desc: "Grab a small amount of clean audio on each side — that's the context.",
                 },
                 {
                   step: "02",
-                  title: "Нажми Replace Section",
-                  desc: "Не просто Replace — именно Replace Section.",
+                  title: "Click Replace Section",
+                  desc: "Not just Replace — specifically Replace Section.",
                 },
                 {
                   step: "03",
-                  title: "В поле Lyrics исправь текст",
-                  desc: "Исправь именно ту строчку где ошибка.",
+                  title: "Fix the text in the Lyrics field",
+                  desc: "Correct only the line where the error occurred.",
                 },
                 {
                   step: "04",
-                  title: "Нажми Create",
-                  desc: "Нейросеть перепоёт только этот кусок, сохранив мотив и ритм остальной песни.",
+                  title: "Hit Create",
+                  desc: "The model re-sings just that section, preserving the melodic and rhythmic feel of everything around it.",
                 },
               ].map((item, i) => (
                 <div
@@ -1225,26 +1150,27 @@ export default function SunoStudioGuidePage() {
               <img
                 loading="lazy"
                 decoding="async"
-                src="/images/suno-studio-ru-9.webp"
-                alt="Solo Hack — убираем голос и вставляем соло в три шага"
+                src="/images/suno-studio-9.webp"
+                alt="Solo Hack — remove the vocals and drop in a solo in three steps"
                 className="w-full object-cover"
               />
             </div>
 
             <h3 className="text-lg font-semibold text-white">
-              Solo Hack: убираем вокал и вставляем инструментал
+              Solo Hack: pull the vocals and drop in an instrumental
             </h3>
             <p>
-              Профессиональный трюк. Частая ситуация: хочешь соло гитары после
-              припева, а Suno упрямо продолжает петь куплеты. Что делать:
+              A pro move. Common situation: you want a guitar solo after the
+              chorus, but Suno stubbornly keeps singing more verses. Here's the
+              fix:
             </p>
 
             <div className="flex flex-col gap-3">
               {[
-                "Выдели вокальный кусок который хочешь убрать",
-                "Нажми Replace",
-                "В поле Lyrics: [Instrumental Solo] или [Guitar Lick]",
-                "В поле Style уточни: Virtuoso Electric Guitar Solo",
+                "Select the vocal section you want to remove",
+                "Click Replace",
+                "In the Lyrics field: [Instrumental Solo] or [Guitar Lick]",
+                "In the Style field: Virtuoso Electric Guitar Solo",
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-3">
                   <div
@@ -1270,14 +1196,14 @@ export default function SunoStudioGuidePage() {
             >
               <span className="text-lg">🎸</span>
               <p className="text-white/65 text-base leading-relaxed">
-                <strong className="text-white">Главное:</strong> в Studio мы
-                перестаём быть генераторами и становимся редакторами. Мы не
-                надеемся на рандом — мы исправляем его ошибки.
+                <strong className="text-white">The core shift:</strong> in
+                Studio we stop being generators and become editors. We don't
+                hope randomness gets it right — we correct it when it doesn't.
               </p>
             </div>
           </div>
 
-          {/* Глава 7 */}
+          {/* Chapter 7 */}
           <div id="mixer" className="flex flex-col gap-5">
             <div className="flex items-center gap-3">
               <span
@@ -1290,22 +1216,23 @@ export default function SunoStudioGuidePage() {
                 07
               </span>
               <h2 className="text-xl md:text-2xl font-semibold text-white">
-                Микшер в Studio — черновик, не финал
+                The Mixer in Studio — draft mode, not the finish line
               </h2>
             </div>
             <p>
-              Многие видят в Studio ручки громкости и думают: «О, сейчас я сведу
-              трек прямо здесь». Сразу снимаем розовые очки: встроенный микшер —
-              это инструмент для проверки идеи, а не финального качества. Но
-              кое-что полезное тут всё-таки сделать можно.
+              A lot of people see the volume faders in Studio and think:
+              "finally, I'll mix the track right here." Let's take the
+              rose-tinted glasses off: the built-in mixer is a tool for checking
+              your idea, not for achieving final quality. But there are a few
+              genuinely useful things you can do with it.
             </p>
 
             <div className="rounded-2xl overflow-hidden border border-white/5">
               <img
                 loading="lazy"
                 decoding="async"
-                src="/images/suno-studio-ru-10.webp"
-                alt="Центр — для голоса и баса. Ширина появляется когда центр свободен"
+                src="/images/suno-studio-10.webp"
+                alt="Center channel is for vocals and bass. Width comes from clearing the center"
                 className="w-full object-cover"
               />
             </div>
@@ -1322,17 +1249,15 @@ export default function SunoStudioGuidePage() {
                 <span className="text-xl flex-shrink-0">🔊</span>
                 <div>
                   <p className="text-white font-semibold text-base mb-2">
-                    Золотое правило громкости
+                    The golden rule of volume
                   </p>
                   <p className="text-white/65 text-base leading-relaxed">
-                    Кажется, что инструментал играет слишком тихо?{" "}
-                    <strong className="text-white">
-                      Не спеши его прибавлять.
-                    </strong>{" "}
-                    Сделай наоборот — убавь громкость вокала. В сведении всегда
-                    лучше убавить громкое, чем пытаться перекричать его
-                    остальными инструментами. Это правило работает везде — в
-                    Studio, в DAW, в жизни.
+                    Feel like the instruments are too quiet under the vocal?{" "}
+                    <strong className="text-white">Don't turn them up.</strong>{" "}
+                    Do the opposite — turn the vocal down. In mixing, it's
+                    always better to pull back the loudest thing than to try and
+                    compete with it. This rule holds everywhere: in Studio, in
+                    your DAW, in life.
                   </p>
                 </div>
               </div>
@@ -1348,38 +1273,38 @@ export default function SunoStudioGuidePage() {
                 <span className="text-xl flex-shrink-0">↔️</span>
                 <div>
                   <p className="text-white font-semibold text-base mb-2">
-                    Панорама: освободи центр
+                    Pan: free up the center
                   </p>
                   <p className="text-white/65 text-base leading-relaxed">
-                    Центр панорамы —{" "}
+                    The center of the stereo field is{" "}
                     <strong className="text-white">
-                      священное место для голоса и баса
+                      sacred space for the vocals and bass
                     </strong>
-                    . Их не трогаем. А всё остальное — гитары, синты, бэк-вокал
-                    — смело разводим по сторонам. Один инструмент влево, другой
-                    вправо. Это даёт треку ширину и освобождает место для
-                    голоса, чтобы он не тонул в миксе.
+                    . Leave those alone. Everything else — guitars, synths,
+                    backing vocals — push to the sides. One instrument left,
+                    another right. This gives the track width and carves out
+                    space for the lead vocal to breathe instead of drown.
                   </p>
                 </div>
               </div>
             </div>
 
             <ProTip>
-              Микшер в Studio — для ориентации, не для финала. Если что-то
-              звучит неправильно здесь — это сигнал к пересмотру структуры, а не
-              повод тратить час на настройку фейдеров. Финальное звучание
-              рождается в{" "}
+              The Studio mixer is for orientation, not the finish line. If
+              something sounds wrong here — treat it as a signal to revisit the
+              structure, not a reason to spend an hour tweaking faders. The
+              final sound is born in{" "}
               <a
                 href="/mixing-mastering"
                 style={{ color: "#C9A84C", textDecoration: "underline" }}
               >
-                профессиональном сведении
+                professional mixing
               </a>
               .
             </ProTip>
           </div>
 
-          {/* Глава 8 — Полевые заметки */}
+          {/* Chapter 8 — Field Notes */}
           <div id="field-notes" className="flex flex-col gap-5">
             <div className="flex items-center gap-3">
               <span
@@ -1392,38 +1317,38 @@ export default function SunoStudioGuidePage() {
                 08
               </span>
               <h2 className="text-xl md:text-2xl font-semibold text-white">
-                Полевые заметки из сообщества
+                Field Notes from the Community
               </h2>
             </div>
             <p>
-              Всё, что выше, — мой собственный воркфлоу. Но Studio — инструмент
-              молодой, меняется быстро, и коллективный опыт r/SunoAI
-              накапливается быстрее, чем один человек успевает тестировать. Я
-              читаю эти треды так же, как форумы про железо перед покупкой —
-              скептически, но внимательно. Вот что всплывает раз за разом —
-              пропущенное через мои собственные сессии.
+              Everything above is my own workflow. But Studio is young, moving
+              fast, and the collective experience of r/SunoAI is accumulating
+              faster than any single person can test. I read those threads the
+              way I read gear forums before buying hardware — skeptically, but
+              thoroughly. Here is what keeps coming up, filtered through my own
+              sessions.
             </p>
             <div className="flex flex-col gap-4">
               {[
                 {
-                  title: "Великий спор про стемы",
-                  body: "Вокруг встроенного разделения на стемы идёт настоящая гражданская война. Один лагерь клянётся внешними инструментами вроде Ultimate Vocal Remover с моделью htdemucs_6s — больше стемов, меньше повреждений. Другой (и, честно говоря, мои тесты склоняют меня сюда) говорит: ни один внешний сплиттер не бывает стабильно и заметно лучше родного. Лайфхак, который реально закрывает спор: сгенерируй несколько наборов стемов одного трека и собери лучший дубль каждого инструмента — качество стемов плавает от рендера к рендеру, и вторая попытка часто чище первой. И каким бы инструментом ты ни пользовался — суди по стему, который тащит твою песню: вокал — если трек вокальный, синты — если электронный.",
+                  title: "The great stems debate",
+                  body: "There is a genuine civil war over whether Suno’s own stem separation is good enough. One camp swears by external tools like Ultimate Vocal Remover with the htdemucs_6s model — more stems, arguably less damage. The other camp (and honestly, my testing leans this way) says no external splitter is consistently and noticeably better than Suno’s own. The lifehack that actually settles it: generate several sets of stems for the same track and cherry-pick the best take of each instrument — stem quality varies between renders, and the second pull is often cleaner than the first. Whichever tool you use, judge it on the stem that carries your song: vocals if it’s a vocal track, synths if it’s electronic.",
                 },
                 {
-                  title: "Recreate и Replace — это реролл, а не редактор",
-                  body: "Самое частое разочарование новичков в Studio: жмёшь Recreate или Replace — и получаешь нечто совсем непохожее на оригинал: другой грув, другой тайминг, а иногда вообще другой инструмент. Один инженер описывал, как менял пианино и упорно получал брасс-секцию, что бы ни стояло в настройках. Относись к этим кнопкам как к управляемым игральным костям, а не к редактору: дублируй проект перед операцией, меняй самый короткий участок, какой только можно, и прими как факт: два-три реролла — это норма, а не провал.",
+                  title: "Recreate and Replace are a re-roll, not an edit",
+                  body: "The most common disappointment among new Studio users: hitting Recreate or Replace on a track and getting something wildly different from the original — different feel, different timing, sometimes a different instrument entirely. One engineer described replacing a piano and consistently getting a brass section no matter what the sliders said. Treat these buttons as controlled dice, not as an editor: duplicate the project before surgery, replace the shortest section you can get away with, and accept that two or three rolls is the norm, not a failure.",
                 },
                 {
-                  title: "Следи за счётчиком кредитов",
-                  body: "Предостережение, которое всплывает почти в каждом честном обзоре Studio: каждая генерация внутри стоит кредитов — каждый альтернативный вариант, каждая заменённая секция, каждый эксперимент, независимо от длины. Люди сжигают месячный лимит за одни выходные увлечённого ковыряния. Моё правило: реши, что именно чинишь, ДО того как открыл проект, почини ровно это — и выходи. Studio награждает хирургов, а не гуляющих по кнопкам.",
+                  title: "Watch the credit meter",
+                  body: "A warning that shows up in almost every honest Studio review: every generation inside Studio costs credits — every alternate, every replaced section, every experiment, regardless of length. People burn through a monthly allowance in a weekend of enthusiastic tinkering. My rule: decide what you are fixing before you open the project, fix exactly that, and get out. Studio rewards surgeons, not browsers.",
                 },
                 {
-                  title: "Паттерн, который реально доводит треки до релиза",
-                  body: "Поговори с теми, кто реально выпускает треки, и картина сложится одна и та же: Studio — сборочный цех, а не финишная прямая. Рабочий воркфлоу: собрать структуру в Studio, выгрузить стемы и пересобрать в настоящем DAW: заменить часть сгенерированных звуков своими, починить тайминг и строй, добавить свои переходы и воздух. Как сказал один продюсер: когда заменил достаточно звуков и добавил свой саунд-дизайн — никто уже не скажет, что трек начинался как AI. Это совпадает с моим опытом — и именно поэтому глава про экспорт в этом гайде — самая важная.",
+                  title: "The pattern that actually ships",
+                  body: "Talk to the people actually releasing tracks and a consistent picture emerges: Studio is the assembly room, not the finish line. The workflow that keeps producing results — assemble the structure in Studio, export stems, then rebuild in a real DAW: replace some of the generated sounds with your own, fix timing and pitch, add your own transitions and space. As one producer put it, once you’ve swapped enough sounds and added your own design, nobody can tell the track started as AI. That matches my experience — and it’s exactly why this guide treats Export as the most important chapter.",
                 },
                 {
-                  title: "Правило 48 часов",
-                  body: "Самый нетехнический совет и, возможно, самый ценный — из треда ветеранов о том, как сделать AI-треки профессиональными по звуку: отойди от песни на пару дней и переслушай, когда первый дофаминовый кайф спадёт. В час ночи все свежие генерации звучат гениально. Тратить кредиты Studio и часы сведения стоит только на те, которые всё ещё звучат гениально в понедельник.",
+                  title: "The 48-hour rule",
+                  body: "The least technical tip and possibly the most valuable one, straight from a veteran thread on making AI tracks sound professional: walk away from the song for a couple of days, then listen again after the initial dopamine rush has worn off. Fresh generations all sound amazing at 1 a.m. The ones that still sound amazing on Monday are the ones worth spending Studio credits and mixing hours on.",
                 },
               ].map((item, i) => (
                 <div
@@ -1443,15 +1368,15 @@ export default function SunoStudioGuidePage() {
               ))}
             </div>
             <ProTip>
-              Studio едва исполнился год, и его патчат постоянно — половина
-              жалоб из тредов полугодовой давности уже исправлена, а половина
-              трюков уже устарела. Проверяй дату любого совета про Studio,
-              прежде чем ему верить. Включая, справедливости ради, и этот
-              раздел.
+              Studio is barely a year old and gets patched constantly — half of
+              the complaints you will find in six-month-old threads are already
+              fixed, and half of the tricks are already obsolete. Check the date
+              on any Studio advice before trusting it. Including, in fairness,
+              this section.
             </ProTip>
           </div>
 
-          {/* Глава 9 */}
+          {/* Chapter 9 */}
           <div id="export" className="flex flex-col gap-5">
             <div className="flex items-center gap-3">
               <span
@@ -1464,20 +1389,20 @@ export default function SunoStudioGuidePage() {
                 09
               </span>
               <h2 className="text-xl md:text-2xl font-semibold text-white">
-                Экспорт — финал с жёсткими правилами
+                Export — the final step with hard rules
               </h2>
             </div>
             <p>
-              Дошли до финала. Здесь несколько правил, нарушение которых быстро
-              бьёт по качеству.
+              The last step is simple, but it has a few rules that directly
+              affect quality.
             </p>
 
             <div className="rounded-2xl overflow-hidden border border-white/5">
               <img
                 loading="lazy"
                 decoding="async"
-                src="/images/suno-studio-ru-11.webp"
-                alt="Full Song — это уже испечённый пирог. Чистые исходники — чистый результат"
+                src="/images/suno-studio-11.webp"
+                alt="Full Song is the baked cake. Clean stems mean a clean result."
                 className="w-full object-cover"
               />
             </div>
@@ -1490,14 +1415,14 @@ export default function SunoStudioGuidePage() {
               }}
             >
               <p className="text-white font-semibold text-base">
-                ⚠️ Почему нельзя отдавать только Full Song
+                ⚠️ Why you can't only hand over Full Song
               </p>
               <p className="text-white/65 text-base leading-relaxed">
-                Представь, что Full Song — это уже испечённый пирог.
-                Звукорежиссёр может попытаться «расклеить» его специальным
-                софтом. Но это лишняя работа, и качество неизбежно падает. Зачем
-                получать грязный результат с артефактами, если можно сразу дать
-                человеку чистые исходники?
+                Think of Full Song as an already-baked cake. A mixing engineer
+                can try to "unbake" it with specialized software — but that's
+                extra work, and the quality inevitably takes a hit. Why accept a
+                result with artifacts and smearing when you could just hand over
+                the clean individual ingredients to begin with?
               </p>
             </div>
 
@@ -1505,18 +1430,18 @@ export default function SunoStudioGuidePage() {
               {[
                 {
                   icon: "📦",
-                  title: "Экспортируй Multitrack (Stems)",
-                  desc: "В меню Export всегда выбирай Multitrack (Stems). Suno выдаст архив, где все инструменты лежат отдельно: Vocals, Drums, Bass, Instruments. Звукорежиссёру отдаём две вещи: Full Song (чтобы услышал идею) и Multitrack Stems (чтобы работать раздельно). Только имея раздельные дорожки профессионал почистит грязь и соберёт из твоего конструктора настоящий трек.",
+                  title: "Export Multitrack (Stems)",
+                  desc: "In the Export menu, always choose Multitrack (Stems). Suno will give you an archive with every instrument on its own track: Vocals, Drums, Bass, Instruments. Give your engineer two things: Full Song (so they can hear the vision) and Multitrack Stems (so they can work on the parts). Only with separate tracks can a professional clean up the noise and assemble something truly polished.",
                 },
                 {
                   icon: "🎵",
-                  title: "Только WAV — забудь про MP3",
-                  desc: "MP3 — сжатый формат для черновиков и стриминга. В меню Audio выбирай только WAV. Suno и так добавляет цифровой шум в генерацию, а MP3 его только усилит. Нам нужен максимально чистый исходник для дальнейшей работы.",
+                  title: "WAV only — forget MP3 exists",
+                  desc: "MP3 is a compressed format for rough drafts and streaming. In the Audio menu, select WAV only. Suno already bakes in digital noise during generation — MP3 compression will amplify it. We want the cleanest possible source file for everything that comes next.",
                 },
                 {
                   icon: "🥁",
-                  title: "Запомни BPM — перед закрытием браузера",
-                  desc: "Посмотри на BPM в нижней части экрана и запомни эту цифру. Когда откроешь свою DAW, первым делом выстави тот же темп — и только потом загружай файлы. Так ритмическая сетка совпадёт идеально, и Stems лягут точно на место.",
+                  title: "Note the BPM — before you close the browser",
+                  desc: "Look at the BPM displayed at the bottom of the screen and write it down. When you open your DAW, set that exact tempo first — then import the files. That way the rhythmic grid aligns perfectly and the stems sit exactly where they should.",
                 },
               ].map((item, i) => (
                 <div
@@ -1540,80 +1465,53 @@ export default function SunoStudioGuidePage() {
                 </div>
               ))}
             </div>
-          </div>
-
-          {/* Итоговая таблица */}
-          <div
-            className="rounded-2xl p-6 flex flex-col gap-4"
-            style={{
-              background: "rgba(201,168,76,0.07)",
-              border: "1px solid rgba(201,168,76,0.25)",
-            }}
-          >
-            <h3 className="text-white font-semibold text-lg">
-              Итого — шпаргалка
-            </h3>
-            <div className="overflow-x-auto">
-              <table
-                className="w-full text-sm"
-                style={{ borderCollapse: "collapse" }}
+            <p>
+              Exporting stems from Studio is the clean route, because the parts
+              were never baked together in the first place. When a song is
+              already finished and you need the instrumental pulled back out of
+              it, that's the other job —{" "}
+              <a
+                href="/blog/suno-advanced-split-clean-instrumental"
+                style={{ color: "#C9A84C", textDecoration: "underline" }}
               >
-                <thead>
-                  <tr
-                    style={{ borderBottom: "1px solid rgba(255,255,255,0.1)" }}
-                  >
-                    <th className="text-left py-3 pr-6 text-white/40 text-xs uppercase tracking-widest font-medium">
-                      Задача
-                    </th>
-                    <th className="text-left py-3 text-white/40 text-xs uppercase tracking-widest font-medium">
-                      Инструмент
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {[
-                    ["Выстроить структуру трека", "Таймлайн"],
-                    [
-                      "Продолжить трек осмысленно",
-                      "Extend + правильный Timestamp",
-                    ],
-                    ["Написать работающий промпт", "Формула G.M.I.V."],
-                    ["Поменять звук, сохранив мелодию", "Cover"],
-                    ["Исправить ошибку точечно", "Replace"],
-                    ["Убрать вокал и вставить соло", "Solo Hack"],
-                    ["Подготовить файлы для DAW", "Stems + WAV + BPM"],
-                  ].map((row, i) => (
-                    <tr
-                      key={i}
-                      style={{
-                        borderBottom: "1px solid rgba(255,255,255,0.05)",
-                      }}
-                    >
-                      <td className="py-3 pr-6 text-white/70 text-base">
-                        {row[0]}
-                      </td>
-                      <td
-                        className="py-3 font-medium text-sm"
-                        style={{ color: "#C9A84C" }}
-                      >
-                        {row[1]}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            <p className="text-white/65 text-base leading-relaxed mt-2 italic">
-              Suno Studio не делает музыку за тебя. Она даёт{" "}
-              <strong className="text-white">
-                среду, в которой решаешь ты
-              </strong>
-              . Чем лучше понимаешь, что здесь можно контролировать — тем
-              предсказуемее результат.
+                rebuilding a Suno track from regenerated stems
+              </a>{" "}
+              goes through Advanced Split and the DAW reassembly.
             </p>
           </div>
 
-          {/* Финальная мысль */}
+          {/* Final cheatsheet */}
+          <CheatsheetCopy
+            title="Quick reference — the whole guide on one card"
+            variant="table"
+            items={[
+              ["Build a track structure", "Timeline"],
+              ["Extend with intention", "Extend + correct Timestamp"],
+              ["Write a prompt that works", "G.M.I.V. Formula"],
+              ["Change the sound, keep the melody", "Cover"],
+              ["Fix a single error surgically", "Replace"],
+              ["Pull vocals, insert an instrumental solo", "Solo Hack"],
+              ["Prepare files for your DAW", "Stems + WAV + BPM"],
+            ]}
+            footnote="Suno Studio doesn't make music for you. It gives you an environment where you make the decisions. The better you understand what's controllable here — the more predictable the result."
+          />
+
+          {/* Pre-export checklist */}
+          <CheatsheetCopy
+            title="Pre-export checklist"
+            variant="checklist"
+            items={[
+              "The timestamp for every Extend was set at a clean cut point",
+              "All Lyrics fields have been updated — no leftover text from previous sections",
+              "Style fields were filled in English for every Extend and Replace",
+              "The ending section has an Outro, Fade out or Grand Finale tag",
+              "BPM is noted somewhere before closing the tab",
+              "Exported as Multitrack Stems (not just Full Song)",
+              "Audio format set to WAV, not MP3",
+            ]}
+          />
+
+          {/* Final thought */}
           <div className="flex flex-col gap-1">
             <div
               className="w-full h-px"
@@ -1627,20 +1525,21 @@ export default function SunoStudioGuidePage() {
               }}
             >
               <h3 className="text-xl font-semibold text-white">
-                Ты больше не просто пользователь
+                You're no longer just a user
               </h3>
               <p className="text-white/65 text-base leading-relaxed">
-                Теперь у тебя на диске лежит не просто файл, а разобранный
-                проект. Ты уже не тот, кто жмёт «Создать» и молится на удачу — у
-                тебя есть нормальные исходники для серьёзной работы.
+                What's sitting on your drive now isn't a file — it's a
+                disassembled project, part by part. You're no longer the person
+                who hits Generate and prays. You're a producer with clean stems
+                ready for a serious mix.
               </p>
               <p className="text-white/65 text-base leading-relaxed">
-                Таймлайн, Extend с правильным Timestamp, формула G.M.I.V., Cover
-                и Replace, стемы в WAV — это не набор разрозненных функций, а
-                один рабочий процесс.
+                Timeline, Extend with the right timestamp, the G.M.I.V. formula,
+                Cover and Replace, stems in WAV — this isn't a feature list.
+                It's a workflow where every step is deliberate.
               </p>
               <p className="text-white font-semibold mt-2 text-lg">
-                Иди делай.
+                Go make something.
               </p>
             </div>
           </div>
@@ -1654,22 +1553,22 @@ export default function SunoStudioGuidePage() {
             }}
           >
             <h3 className="text-xl font-semibold text-white">
-              Не уверены, что нужно вашему треку?
+              Not sure what your track needs?
             </h3>
             <p className="text-white/65 text-base max-w-md">
-              Пришлите его и услышьте бесплатное превью — обработанный фрагмент
-              на 60 секунд, честную оценку и точную цену. Без обязательств.
+              Send it and hear a free 60-second preview — an honest assessment
+              and an exact price, no commitment.
             </p>
             <a
               href="/free-track-preview"
               className="inline-flex items-center gap-2 text-black font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition text-sm"
               style={{ backgroundColor: "#C9A84C" }}
             >
-              Получить бесплатное превью →
+              Get a Free Preview →
             </a>
           </div>
 
-          <RelatedPosts slug="suno-studio-guide-2026" />
+          <RelatedPosts slug="suno-studio-guide-en-2026" />
         </div>
       </div>
     </div>

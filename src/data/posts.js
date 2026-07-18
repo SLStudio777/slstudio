@@ -9,7 +9,7 @@ export const posts = [
         excerpt: "Przestań zgadywać przy Generate. Jak producenci naprawdę używają Suno — struktura promptu, nawiasy, Custom Mode, Personas i funkcje v5.5, które zmieniły workflow."
     },
     {
-        href: "/pl/blog/suno-studio-guide-en-2026",
+        href: "/pl/blog/suno-studio-guide-2026",
         image: "/images/blog-suno-studio-cover-pl.webp",
         category: "Tutorials",
         date: "2026-07-07",
@@ -72,7 +72,7 @@ export const posts = [
         excerpt: "A practical test of Suno Advanced Split: how to rebuild a cleaner instrumental without obvious vocal artifacts, export aligned WAV stems, and finish the track in a DAW."
     },
     {
-        href: "/blog/suno-studio-guide-2026",
+        href: "/blog/suno-studio-guide-2026-ru",
         image: "/images/blog-suno-studio-cover-ru.webp",
         category: "Tutorials",
         date: "2026-07-02",
@@ -81,7 +81,7 @@ export const posts = [
         excerpt: "Таймлайн, Extend, Cover, Replace, формула G.M.I.V. и экспорт стемов. От демки до чистового проекта для DAW — пошагово."
     },
     {
-    href: "/blog/suno-studio-guide-en-2026",
+    href: "/blog/suno-studio-guide-2026",
     image: "/images/blog-suno-studio-cover.webp",
     category: "Tutorials",
     date: "2026-07-02",
