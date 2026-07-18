@@ -7,12 +7,12 @@ import ReadingProgress from "@/app/components/blog/ReadingProgress";
 export const metadata = {
   title: "Jak używać Suno Studio w 2026: Timeline, Extend i eksport stemów",
   alternates: {
-    canonical: "https://www.slstudio.pro/pl/blog/suno-studio-guide-en-2026",
+    canonical: "https://www.slstudio.pro/pl/blog/suno-studio-guide-2026",
     languages: {
-      pl: "https://www.slstudio.pro/pl/blog/suno-studio-guide-en-2026",
-      en: "https://www.slstudio.pro/blog/suno-studio-guide-en-2026",
-      ru: "https://www.slstudio.pro/blog/suno-studio-guide-2026",
-      "x-default": "https://www.slstudio.pro/blog/suno-studio-guide-en-2026",
+      pl: "https://www.slstudio.pro/pl/blog/suno-studio-guide-2026",
+      en: "https://www.slstudio.pro/blog/suno-studio-guide-2026",
+      ru: "https://www.slstudio.pro/blog/suno-studio-guide-2026-ru",
+      "x-default": "https://www.slstudio.pro/blog/suno-studio-guide-2026",
     },
   },
   description:
@@ -22,7 +22,7 @@ export const metadata = {
     description:
       "Krok po kroku o Suno Studio — kontroluj timeline, rozszerzaj utwory w dokładnym miejscu, naprawiaj słabe sekcje przez Cover & Replace i eksportuj czyste stemy WAV do miksu.",
     type: "article",
-    url: "https://www.slstudio.pro/pl/blog/suno-studio-guide-en-2026",
+    url: "https://www.slstudio.pro/pl/blog/suno-studio-guide-2026",
     siteName: "SL Studio",
     locale: "pl_PL",
     images: ["/images/blog-suno-studio-cover-pl.webp"],
@@ -58,7 +58,7 @@ const articleSchema = {
   },
   datePublished: "2026-07-02",
   inLanguage: "pl",
-  url: "https://www.slstudio.pro/pl/blog/suno-studio-guide-en-2026",
+  url: "https://www.slstudio.pro/pl/blog/suno-studio-guide-2026",
 };
 
 function ProTip({ children }) {
@@ -723,7 +723,7 @@ export default function SunoStudioGuidePlPage() {
             </div>
           </div>
 
-          <RelatedPosts slug="suno-studio-guide-en-2026" />
+          <RelatedPosts slug="suno-studio-guide-2026" />
         </div>
       </div>
     </div>

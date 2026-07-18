@@ -6,11 +6,12 @@ import ReadingProgress from "@/app/components/blog/ReadingProgress";
 export const metadata = {
   title: "Suno Studio: полный гайд 2026 — таймлайн, Extend, формула G.M.I.V.",
   alternates: {
-    canonical: "https://www.slstudio.pro/blog/suno-studio-guide-2026",
+    canonical: "https://www.slstudio.pro/blog/suno-studio-guide-2026-ru",
     languages: {
-      en: "https://www.slstudio.pro/blog/suno-studio-guide-en-2026",
-      ru: "https://www.slstudio.pro/blog/suno-studio-guide-2026",
-      "x-default": "https://www.slstudio.pro/blog/suno-studio-guide-en-2026",
+      en: "https://www.slstudio.pro/blog/suno-studio-guide-2026",
+      ru: "https://www.slstudio.pro/blog/suno-studio-guide-2026-ru",
+      pl: "https://www.slstudio.pro/pl/blog/suno-studio-guide-2026",
+      "x-default": "https://www.slstudio.pro/blog/suno-studio-guide-2026",
     },
   },
   description:
@@ -20,7 +21,7 @@ export const metadata = {
     description:
       "Большинство пользователей Suno просто жмут Generate и надеются на удачу. Этот гайд — про то, как взять контроль: таймлайн, точки Extend, формула G.M.I.V., экспорт стемов.",
     type: "article",
-    url: "https://www.slstudio.pro/blog/suno-studio-guide-2026",
+    url: "https://www.slstudio.pro/blog/suno-studio-guide-2026-ru",
     siteName: "SL Studio",
     images: ["/images/blog-suno-studio-cover-ru.webp"],
   },
@@ -118,7 +119,7 @@ function TableOfContents() {
 export default function SunoStudioGuidePage() {
   return (
     <div id="top" className="mt-16 mb-20">
-      <BlogJsonLd slug="suno-studio-guide-2026" />
+      <BlogJsonLd slug="suno-studio-guide-2026-ru" />
       <ReadingProgress />
       <div className="max-w-3xl mx-auto">
         <BlogHeader
@@ -492,7 +493,7 @@ export default function SunoStudioGuidePage() {
                 </p>
                 <ul className="flex flex-col gap-2 text-white/65 text-base">
                   <li>
-                    → Ставить точку на середине слова вокалиста — нейросеть
+                    → Ставить точку на серед��не слова вокалиста — нейросеть
                     выдаст галлюцинации
                   </li>
                   <li>→ Выбирать случайное место без анализа формы</li>
@@ -1351,13 +1352,13 @@ export default function SunoStudioGuidePage() {
                     Панорама: освободи центр
                   </p>
                   <p className="text-white/65 text-base leading-relaxed">
-                    Центр панорамы —{" "}
+                    Центр панор��мы —{" "}
                     <strong className="text-white">
                       священное место для голоса и баса
                     </strong>
                     . Их не трогаем. А всё остальное — гитары, синты, бэк-вокал
                     — смело разводим по сторонам. Один инструмент влево, другой
-                    вправо. Это даёт треку ширину и освобождает место для
+                    вправо. Это даёт треку ��ирину и освобождает место для
                     голоса, чтобы он не тонул в миксе.
                   </p>
                 </div>
@@ -1423,7 +1424,7 @@ export default function SunoStudioGuidePage() {
                 },
                 {
                   title: "Правило 48 часов",
-                  body: "Самый нетехнический совет и, возможно, самый ценный — из треда ветеранов о том, как сделать AI-треки профессиональными по звуку: отойди от песни на пару дней и переслушай, когда первый дофаминовый кайф спадёт. В час ночи все свежие генерации звучат гениально. Тратить кредиты Studio и часы сведения стоит только на те, которые всё ещё звучат гениально в понедельник.",
+                  body: "Самый нетехнический совет и, возможно, самый ценный — из треда ветеранов о том, как сделать AI-треки профессиональными по звуку: отойди от песни на пару дней и переслушай, когда первый дофаминовый кайф спадёт. В час ночи все свежие генерации ��вучат гениально. Тратить кредиты Studio и часы сведения стоит только на те, которые всё ещё звучат гениально в понедельник.",
                 },
               ].map((item, i) => (
                 <div
@@ -1496,7 +1497,7 @@ export default function SunoStudioGuidePage() {
                 Представь, что Full Song — это уже испечённый пирог.
                 Звукорежиссёр может попытаться «расклеить» его специальным
                 софтом. Но это лишняя работа, и качество неизбежно падает. Зачем
-                получать грязный результат с артефактами, если можно сразу дать
+                получать грязный ре��ультат с артефактами, если можно сразу дать
                 человеку чистые исходники?
               </p>
             </div>
@@ -1572,7 +1573,7 @@ export default function SunoStudioGuidePage() {
                 </thead>
                 <tbody>
                   {[
-                    ["Выстроить структуру трека", "Таймлайн"],
+                    ["Выстроить структ��ру трека", "Таймлайн"],
                     [
                       "Продолжить трек осмысленно",
                       "Extend + правильный Timestamp",
@@ -1669,7 +1670,7 @@ export default function SunoStudioGuidePage() {
             </a>
           </div>
 
-          <RelatedPosts slug="suno-studio-guide-2026" />
+          <RelatedPosts slug="suno-studio-guide-2026-ru" />
         </div>
       </div>
     </div>
