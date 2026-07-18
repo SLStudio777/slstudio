@@ -12,6 +12,8 @@ export const metadata = {
     canonical: "https://www.slstudio.pro/blog/master-suno-track-for-spotify",
     languages: {
       en: "https://www.slstudio.pro/blog/master-suno-track-for-spotify",
+      pl: "https://www.slstudio.pro/pl/blog/master-suno-track-for-spotify",
+      ru: "https://www.slstudio.pro/blog/master-suno-track-for-spotify-ru",
       "x-default":
         "https://www.slstudio.pro/blog/master-suno-track-for-spotify",
     },

@@ -9,6 +9,24 @@ export const posts = [
         excerpt: "Your Suno track sounds quiet and thin on Spotify? A working mastering engineer breaks down loudness normalization, AI artifacts and a step-by-step fix — with real settings from the studio."
     },
     {
+        href: "/pl/blog/master-suno-track-for-spotify",
+        image: "/images/blog/suno-mastering/suno-mastering-cover.jpg",
+        category: "Mastering",
+        date: "2026-07-18",
+        lang: "pl",
+        title: "Jak zmasterować utwór z Suno na Spotify",
+        excerpt: "Twój utwór z Suno brzmi cicho i płasko na Spotify? Praktykujący realizator masteringu wyjaśnia normalizację głośności, artefakty AI i naprawę krok po kroku — z prawdziwymi ustawieniami ze studia."
+    },
+    {
+        href: "/blog/master-suno-track-for-spotify-ru",
+        image: "/images/blog/suno-mastering/suno-mastering-cover.jpg",
+        category: "Mastering",
+        date: "2026-07-18",
+        lang: "ru",
+        title: "Как замастерить трек из Suno для Spotify",
+        excerpt: "Ваш трек из Suno звучит тихо и плоско на Spotify? Практикующий инженер мастеринга разбирает нормализацию громкости, артефакты AI и пошаговое лечение — с реальными настройками из студии."
+    },
+    {
         href: "/pl/blog/suno-guide-2026",
         image: "/images/blog-suno-cover-pl.webp",
         category: "Tutorials",
