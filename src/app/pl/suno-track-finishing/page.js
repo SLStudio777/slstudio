@@ -3,11 +3,11 @@ import Link from "next/link";
 const SITE = "https://www.slstudio.pro";
 
 export const metadata = {
-    title: "Suno Track Finishing — Make Your AI Track Release-Ready",
+    title: "Suno Track Finishing — dopracuj utwór z AI do jakości wydawniczej",
     description:
-        "Made a track in Suno? I'll split it into stems, clean up the AI artifacts, add live instruments and master it for Spotify. Real engineer, real ears — from $39.",
+        "Masz utwór z Suno? Rozdzielę go na stemy, usunę artefakty AI, dogram żywe instrumenty i zrobię mastering pod Spotify. Prawdziwy inżynier — od 39$.",
     alternates: {
-        canonical: `${SITE}/suno-track-finishing`,
+        canonical: `${SITE}/pl/suno-track-finishing`,
         languages: {
             en: `${SITE}/suno-track-finishing`,
             pl: `${SITE}/pl/suno-track-finishing`,
@@ -15,10 +15,10 @@ export const metadata = {
         },
     },
     openGraph: {
-        title: "Suno Track Finishing — from AI demo to release-ready track",
+        title: "Suno Track Finishing — z dema AI do utworu gotowego do wydania",
         description:
-            "Stem separation, artifact cleanup, live instruments and streaming-ready mastering for Suno tracks. From $39.",
-        url: `${SITE}/suno-track-finishing`,
+            "Rozdzielanie na stemy, czyszczenie artefaktów, żywe instrumenty i mastering pod streaming dla utworów z Suno. Od 39$.",
+        url: `${SITE}/pl/suno-track-finishing`,
         siteName: "SL Studio",
         type: "website",
     },
@@ -29,12 +29,12 @@ const jsonLd = {
     "@graph": [
         {
             "@type": "Service",
-            "@id": `${SITE}/suno-track-finishing#service`,
+            "@id": `${SITE}/pl/suno-track-finishing#service`,
             name: "Suno Track Finishing",
-            serviceType: "AI music post-production, mixing and mastering",
+            serviceType: "Postprodukcja muzyki AI, miks i mastering",
             description:
-                "Professional finishing for AI-generated music: stem separation, artifact cleanup, live instruments, mixing and mastering for streaming platforms.",
-            url: `${SITE}/suno-track-finishing`,
+                "Profesjonalne dokończenie muzyki generowanej przez AI: rozdzielanie na stemy, czyszczenie artefaktów, żywe instrumenty, miks i mastering pod platformy streamingowe.",
+            url: `${SITE}/pl/suno-track-finishing`,
             provider: { "@id": `${SITE}/#studio` },
             areaServed: "Worldwide",
             offers: [
@@ -64,33 +64,33 @@ const jsonLd = {
 const pains = [
     {
         icon: "🤖",
-        title: "Metallic vocals & smeared cymbals",
-        text: "Classic AI artifacts. Suno gets the song right, but the high end often sounds synthetic — and listeners hear it in the first ten seconds.",
+        title: "Metaliczny wokal i rozmyte talerze",
+        text: "Klasyczne artefakty AI. Suno trafia z piosenką, ale góra pasma często brzmi syntetycznie — słuchacze słyszą to w pierwszych dziesięciu sekundach.",
     },
     {
         icon: "📉",
-        title: "Fails the loudness game",
-        text: "Raw Suno exports are either too quiet next to commercial releases or get crushed by Spotify's normalization. Either way, your track loses.",
+        title: "Przegrywa walkę o głośność",
+        text: "Surowe eksporty z Suno są albo za ciche obok komercyjnych wydań, albo zgniecione przez normalizację Spotify. Tak czy inaczej — Twój utwór przegrywa.",
     },
     {
         icon: "🌫️",
-        title: "Muddy low end",
-        text: "Kick and bass fighting for the same space, no punch, no definition — especially on phone speakers and earbuds, where most people will hear your song.",
+        title: "Mętny dół",
+        text: "Stopa i bas walczą o to samo miejsce, brak uderzenia i definicji — zwłaszcza na głośnikach telefonu i słuchawkach, gdzie większość ludzi usłyszy Twoją piosenkę.",
     },
     {
         icon: "🧱",
-        title: "One flat stereo file",
-        text: "No stems means no control. You can't turn the vocal up, fix the drums or replace a part — unless someone separates and rebuilds the track properly.",
+        title: "Jeden płaski plik stereo",
+        text: "Brak stemów to brak kontroli. Nie podgłośnisz wokalu, nie naprawisz perkusji, nie podmienisz partii — dopóki ktoś porządnie nie rozdzieli i nie odbuduje utworu.",
     },
 ];
 
 const included = [
-    "Stem separation — vocals, drums, bass and instruments split for full control",
-    "Artifact cleanup — taming the metallic highs, restoring cymbals and air",
-    "Live musicianship — real guitars and bass re-recorded where AI falls short",
-    "Vocal treatment — tuning, de-essing, presence, professional reverb & delay",
-    "Arrangement upgrades — proper intros, transitions and endings",
-    "Streaming-ready master — competitive loudness for Spotify, Apple Music, YouTube",
+    "Rozdzielenie na stemy — wokal, perkusja, bas i instrumenty osobno, pełna kontrola",
+    "Czyszczenie artefaktów — okiełznanie metalicznej góry, przywrócenie talerzy i powietrza",
+    "Żywe instrumenty — prawdziwe gitary i bas dogrywane tam, gdzie AI nie daje rady",
+    "Obróbka wokalu — strojenie, de-essing, obecność, profesjonalny pogłos i delay",
+    "Poprawki aranżacji — porządne intra, przejścia i zakończenia",
+    "Master gotowy na streaming — konkurencyjna głośność na Spotify, Apple Music, YouTube",
 ];
 
 const packages = [
@@ -98,95 +98,95 @@ const packages = [
         name: "Suno Master",
         price: "$39",
         popular: false,
-        tagline: "Your finished Suno track, polished and loud",
+        tagline: "Twój gotowy utwór z Suno — dopieszczony i głośny",
         features: [
-            "Mastering of your stereo file",
-            "Artifact softening on the master",
-            "Competitive loudness for all platforms",
-            "WAV + MP3 delivery",
-            "2–3 business days",
+            "Mastering Twojego pliku stereo",
+            "Łagodzenie artefaktów na masterze",
+            "Konkurencyjna głośność na wszystkich platformach",
+            "Pliki WAV + MP3",
+            "2–3 dni robocze",
         ],
-        cta: "/contact?service=suno-master",
+        cta: "/pl/kontakt?service=suno-master",
     },
     {
         name: "Suno Finishing",
         price: "$89",
         popular: true,
-        tagline: "Stems, cleanup, full mix and master",
+        tagline: "Stemy, czyszczenie, pełny miks i master",
         features: [
-            "Full stem separation",
-            "Artifact cleanup per stem",
-            "Complete remix from stems",
-            "Streaming-ready master",
-            "Revisions included",
-            "3–5 business days",
+            "Pełne rozdzielenie na stemy",
+            "Czyszczenie artefaktów na każdym stemie",
+            "Kompletny miks od nowa ze stemów",
+            "Master gotowy na streaming",
+            "Poprawki w cenie",
+            "3–5 dni roboczych",
         ],
-        cta: "/contact?service=suno-finishing",
+        cta: "/pl/kontakt?service=suno-finishing",
     },
     {
         name: "Full Production",
         price: "$149",
         popular: false,
-        tagline: "AI demo in, human record out",
+        tagline: "Wchodzi demo z AI, wychodzi ludzkie nagranie",
         features: [
-            "Everything in Suno Finishing",
-            "Live guitars & bass re-recorded",
-            "Vocal tuning & replacement parts",
-            "Arrangement additions",
-            "Revisions included",
-            "5–7 business days",
+            "Wszystko z pakietu Suno Finishing",
+            "Żywe gitary i bas dograne na nowo",
+            "Strojenie wokalu i partie zastępcze",
+            "Rozbudowa aranżacji",
+            "Poprawki w cenie",
+            "5–7 dni roboczych",
         ],
-        cta: "/contact?service=suno-production",
+        cta: "/pl/kontakt?service=suno-production",
     },
 ];
 
 const steps = [
     {
         num: "01",
-        title: "Send your track",
-        text: "The MP3 from Suno is enough — stems are a bonus, not a requirement.",
+        title: "Wyślij utwór",
+        text: "Wystarczy MP3 z Suno — stemy to bonus, nie wymóg.",
     },
     {
         num: "02",
-        title: "Free preview",
-        text: "I send back a short processed sample and an exact quote. You hear the direction before paying anything.",
+        title: "Darmowy fragment",
+        text: "Odsyłam krótką przetworzoną próbkę i dokładną wycenę. Słyszysz kierunek, zanim cokolwiek zapłacisz.",
     },
     {
         num: "03",
-        title: "The work",
-        text: "Stems, cleanup, live parts, mix, master — with updates along the way. No black box.",
+        title: "Praca",
+        text: "Stemy, czyszczenie, żywe partie, miks, master — z informacjami o postępach na bieżąco. Żadnej czarnej skrzynki.",
     },
     {
         num: "04",
-        title: "Release-ready files",
-        text: "WAV + MP3, loud and clean on every platform. Revisions until you're happy.",
+        title: "Pliki gotowe do wydania",
+        text: "WAV + MP3, głośno i czysto na każdej platformie. Poprawki, aż będziesz w pełni zadowolony.",
     },
 ];
 
 const faq = [
     {
-        q: "Can you really work from just the MP3?",
-        a: "Yes. I use professional stem separation to split your track into vocals, drums, bass and instruments, then clean and rebuild each part. If you have Suno stems or a WAV, even better — but the MP3 is a workable starting point.",
+        q: "Naprawdę wystarczy samo MP3?",
+        a: "Tak. Używam profesjonalnego rozdzielania na stemy, żeby podzielić Twój utwór na wokal, perkusję, bas i instrumenty, a potem czyszczę i odbudowuję każdą partię. Jeśli masz stemy z Suno albo plik WAV — jeszcze lepiej, ale MP3 to działający punkt wyjścia.",
     },
     {
-        q: "Will it still sound like my track?",
-        a: "That's the whole point. I don't replace your song — I finish it. The melody, the voice, the vibe stay yours. What changes is the clarity, punch, loudness and the details that separate a demo from a release.",
+        q: "Czy to nadal będzie brzmiało jak mój utwór?",
+        a: "O to właśnie chodzi. Nie podmieniam Twojej piosenki — kończę ją. Melodia, głos i klimat zostają Twoje. Zmienia się czystość, uderzenie, głośność i detale, które odróżniają demo od wydania.",
     },
     {
-        q: "Am I allowed to release Suno tracks commercially?",
-        a: "If you generated the track on a paid Suno plan, Suno's terms allow commercial use. I work on the audio itself — the rights side stays between you and Suno, and it's straightforward on paid tiers.",
+        q: "Czy mogę komercyjnie wydawać utwory z Suno?",
+        a: "Jeśli wygenerowano utwór na płatnym planie Suno, warunki Suno pozwalają na użytek komercyjny. Ja pracuję nad samym audio — kwestia praw zostaje między Tobą a Suno i na płatnych planach jest prosta.",
     },
     {
-        q: "What loudness do you master to?",
-        a: "I master for how the track actually behaves on Spotify, Apple Music and YouTube after their normalization — not to a magic LUFS number. Competitive loudness without crushing the life out of the mix.",
+        q: "Do jakiej głośności robisz mastering?",
+        a: "Masteruję pod to, jak utwór faktycznie zachowuje się na Spotify, Apple Music i YouTube po ich normalizacji — a nie pod magiczną liczbę LUFS. Konkurencyjna głośność bez zgniatania życia z miksu.",
     },
     {
-        q: "What if my track needs less work than I think?",
-        a: "Then I'll say so. After the free preview you get an honest scope: sometimes a $39 master is genuinely all a track needs. You never pay for work your song doesn't need.",
+        q: "A jeśli mój utwór potrzebuje mniej pracy, niż myślę?",
+        a: "To Ci to powiem. Po darmowym fragmencie dostajesz uczciwy zakres prac: czasem master za 39$ to naprawdę wszystko, czego utwór potrzebuje. Nigdy nie płacisz za pracę, której Twoja piosenka nie potrzebuje.",
     },
 ];
 
-export default function SunoTrackFinishingPage() {
+export default function SunoTrackFinishingPagePL() {
     return (
         <>
             <script
@@ -201,30 +201,30 @@ export default function SunoTrackFinishingPage() {
                         Suno Track Finishing
                     </p>
                     <h1 className="text-4xl md:text-5xl font-semibold tracking-wide leading-tight mb-6">
-                        You made the track.
+                        Utwór już masz.
                         <br />
-                        I'll make it release-ready.
+                        Ja sprawię, że będzie gotowy do wydania.
                     </h1>
                     <p className="text-white/65 text-lg leading-relaxed mb-4">
-                        Suno gets your song 90% there — and everyone can hear the
-                        missing 10%. Metallic vocals, smeared cymbals, weak low end,
-                        loudness that doesn't survive Spotify. I take your AI track
-                        apart, fix what the AI couldn't, and deliver a master that
-                        stands next to commercial releases.
+                        Suno robi 90% roboty — a brakujące 10% słychać od razu.
+                        Metaliczny wokal, rozmyte talerze, słaby dół, głośność, która
+                        nie przeżywa Spotify. Rozbieram Twój utwór AI na części,
+                        naprawiam to, czego AI nie umiało, i oddaję master, który stoi
+                        obok komercyjnych wydań.
                     </p>
                     <p className="text-white/45 text-sm mb-8">
-                        By the way — I wrote the{" "}
-                        <Link href="/blog/suno-guide-2026" className="underline hover:text-white/70 transition">
-                            Suno guide
+                        Swoją drogą — to ja napisałem{" "}
+                        <Link href="/pl/blog/suno-guide-2026" className="underline hover:text-white/70 transition">
+                            przewodnik po Suno
                         </Link>{" "}
-                        and the{" "}
-                        <Link href="/blog/suno-studio-guide-2026" className="underline hover:text-white/70 transition">
-                            Suno Studio guide
+                        i{" "}
+                        <Link href="/pl/blog/suno-studio-guide-2026" className="underline hover:text-white/70 transition">
+                            przewodnik po Suno Studio
                         </Link>{" "}
-                        on this site. This niche is my home turf.
+                        na tej stronie. Ta nisza to moje podwórko.
                     </p>
                     <Link
-                        href="/free-track-preview"
+                        href="/pl/darmowy-fragment"
                         className="btn-gold inline-block px-8 py-3 rounded-lg font-semibold"
                         style={{
                             background:
@@ -234,7 +234,7 @@ export default function SunoTrackFinishingPage() {
                             boxShadow: "0 0 24px rgba(201,168,76,0.25)",
                         }}
                     >
-                        Get a Free Preview →
+                        Darmowy fragment →
                     </Link>
                 </div>
             </section>
@@ -242,7 +242,7 @@ export default function SunoTrackFinishingPage() {
             {/* Pain points */}
             <section className="container py-12">
                 <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mb-8">
-                    Why raw Suno tracks don't get taken seriously
+                    Dlaczego surowe utwory z Suno nie są traktowane poważnie
                 </h2>
                 <div className="grid sm:grid-cols-2 gap-4">
                     {pains.map((p) => (
@@ -261,12 +261,12 @@ export default function SunoTrackFinishingPage() {
             {/* What's included */}
             <section className="container py-12">
                 <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mb-4">
-                    What “finishing” actually means
+                    Co naprawdę znaczy „dokończenie”
                 </h2>
                 <p className="text-white/55 mb-8 max-w-2xl">
-                    Not an algorithm. A musician and engineer working on your song by
-                    hand — the same process I use for every human-recorded track in
-                    the studio.
+                    To nie algorytm. To muzyk i inżynier pracujący nad Twoją piosenką
+                    ręcznie — tym samym procesem, którego używam przy każdym
+                    nagraniu ludzkim w studiu.
                 </p>
                 <ul className="space-y-3 max-w-3xl">
                     {included.map((item) => (
@@ -281,11 +281,11 @@ export default function SunoTrackFinishingPage() {
             {/* Packages */}
             <section className="container py-12">
                 <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mb-4">
-                    Simple, transparent pricing
+                    Proste, przejrzyste ceny
                 </h2>
                 <p className="text-white/55 mb-8 max-w-2xl">
-                    Exact price confirmed after the free preview. 50% upfront, the
-                    rest after you approve the result.
+                    Dokładna cena po darmowym fragmencie. 50% z góry, reszta po
+                    akceptacji efektu.
                 </p>
                 <div className="grid md:grid-cols-3 gap-4">
                     {packages.map((p) => (
@@ -309,7 +309,7 @@ export default function SunoTrackFinishingPage() {
                                     className="text-xs uppercase tracking-widest mb-3"
                                     style={{ color: "#C9A84C" }}
                                 >
-                                    Most popular
+                                    Najczęściej wybierany
                                 </span>
                             )}
                             <h3 className="text-xl font-semibold mb-1">{p.name}</h3>
@@ -341,7 +341,7 @@ export default function SunoTrackFinishingPage() {
                                           }
                                 }
                             >
-                                Get Started
+                                Zaczynamy
                             </Link>
                         </div>
                     ))}
@@ -351,7 +351,7 @@ export default function SunoTrackFinishingPage() {
             {/* How it works */}
             <section className="container py-12">
                 <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mb-8">
-                    How it works
+                    Jak to działa
                 </h2>
                 <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
                     {steps.map((s) => (
@@ -372,7 +372,7 @@ export default function SunoTrackFinishingPage() {
             {/* FAQ */}
             <section className="container py-12">
                 <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mb-8">
-                    Questions people actually ask
+                    Pytania, które naprawdę padają
                 </h2>
                 <div className="space-y-4 max-w-3xl">
                     {faq.map((item) => (
@@ -391,15 +391,15 @@ export default function SunoTrackFinishingPage() {
             <section className="container py-16">
                 <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-8 md:p-12 text-center">
                     <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mb-4">
-                        Hear your track finished — before you pay
+                        Usłysz swój utwór ukończony — zanim zapłacisz
                     </h2>
                     <p className="text-white/60 mb-8 max-w-xl mx-auto">
-                        Send the Suno MP3 and get a free processed preview with an
-                        exact quote. If you don't hear the difference, walk away — no
-                        hard feelings.
+                        Wyślij MP3 z Suno i otrzymaj darmową przetworzoną próbkę z
+                        dokładną wyceną. Jeśli nie usłyszysz różnicy — po prostu
+                        odejdź, bez urazy.
                     </p>
                     <Link
-                        href="/free-track-preview"
+                        href="/pl/darmowy-fragment"
                         className="btn-gold inline-block px-8 py-3 rounded-lg font-semibold"
                         style={{
                             background:
@@ -409,7 +409,7 @@ export default function SunoTrackFinishingPage() {
                             boxShadow: "0 0 24px rgba(201,168,76,0.25)",
                         }}
                     >
-                        Get a Free Preview →
+                        Darmowy fragment →
                     </Link>
                 </div>
             </section>
