@@ -4,44 +4,44 @@ import { useState } from "react";
 
 const CHECKLIST_ITEMS = [
   {
-    check: "I know what I am going for",
-    note: "A direction, not a wish. 'I want something that sounds cool' is not a direction.",
+    check: "Wiem, do czego dążę",
+    note: "Kierunek, nie życzenie. „Chcę czegoś, co brzmi fajnie” to nie kierunek.",
   },
   {
-    check: "Started in Simple Mode",
-    note: "To find the direction first. Custom Mode can wait.",
+    check: "Zacząłem od Simple Mode",
+    note: "Najpierw znajdź kierunek. Custom Mode może poczekać.",
   },
   {
-    check: "Prompt order is correct",
-    note: "Genre & mood → vocals → instruments → mix feel.",
+    check: "Kolejność promptu jest poprawna",
+    note: "Gatunek i nastrój → wokal → instrumenty → charakter miksu.",
   },
   {
-    check: "No contradictions in the prompt",
-    note: "If two elements conflict, Suno will guess which one you meant. You will not like the guess.",
+    check: "Brak sprzeczności w prompcie",
+    note: "Jeśli dwa elementy się kłócą, Suno zgadnie, o który chodziło. Nie spodoba ci się ten wybór.",
   },
   {
-    check: "Vocals are described",
-    note: "Even one line. Gender, delivery, emotional quality.",
+    check: "Wokal jest opisany",
+    note: "Choćby jedna linijka. Płeć, sposób śpiewania, emocje.",
   },
   {
-    check: "Only key instruments listed",
-    note: "Not every instrument you have ever heard. The essentials.",
+    check: "Wypisane tylko kluczowe instrumenty",
+    note: "Nie każdy instrument, jaki znasz. Tylko te najważniejsze.",
   },
   {
-    check: "Structure tags are in [brackets]",
-    note: "Not in the lyrics. In brackets.",
+    check: "Tagi struktury są w [nawiasach]",
+    note: "Nie w tekście utworu. W nawiasach.",
   },
   {
-    check: "Weirdness & Style Influence around the middle",
-    note: "Not maximum. Never maximum.",
+    check: "Weirdness i Style Influence w okolicach środka",
+    note: "Nie na maksa. Nigdy na maksa.",
   },
   {
-    check: "If I have a good take — Extend or Cover first",
-    note: "Do not throw away working material to chase something new.",
+    check: "Jeśli mam dobre podejście — najpierw Extend albo Cover",
+    note: "Nie wyrzucaj działającego materiału w pogoni za czymś nowym.",
   },
   {
-    check: "I remember: Suno output is a demo",
-    note: "The DAW finishes the job. Always.",
+    check: "Pamiętam: wynik z Suno to demo",
+    note: "Robotę kończy DAW. Zawsze.",
   },
 ];
 
@@ -133,7 +133,7 @@ export default function InteractiveChecklist() {
             border: "1px solid rgba(201,168,76,0.3)",
           }}
         >
-          ✓ You are ready. Hit Generate.
+          ✓ Jesteś gotowy. Kliknij Generate.
         </div>
       )}
     </div>

@@ -1,5 +1,4 @@
 import RelatedPosts from "@/app/components/blog/RelatedPosts";
-import BlogJsonLd from "@/app/components/blog/BlogJsonLd";
 import InteractiveChecklist from "./InteractiveChecklist";
 import BlogHeader from "@/app/components/blog/BlogHeader";
 import ReadingProgress from "@/app/components/blog/ReadingProgress";
@@ -176,7 +175,6 @@ function TableOfContents() {
 export default function SunoGuidePlPage() {
   return (
     <div id="top" className="mt-16 mb-20">
-      <BlogJsonLd slug="suno-guide-2026" />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}

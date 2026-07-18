@@ -1,5 +1,24 @@
 import Link from "next/link";
 
+const LOCALES = { ru: "ru-RU", pl: "pl-PL", en: "en-US" };
+
+// post.date is a machine-readable ISO "YYYY-MM-DD" (kept ISO for JSON-LD,
+// sorting and sitemap). Render it in the post's own language. The date is
+// parsed and formatted in UTC so the day never shifts with the viewer's
+// timezone, and server/client output stays identical (no hydration mismatch).
+function formatDate(iso, lang) {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(iso || "")) return iso; // safety: show as-is
+    const d = new Date(`${iso}T00:00:00Z`);
+    const out = new Intl.DateTimeFormat(LOCALES[lang] || LOCALES.en, {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+        timeZone: "UTC",
+    }).format(d);
+    // ru-RU appends " г." — drop it to match the article header style
+    return out.replace(/\s*г\.?$/, "");
+}
+
 // featured: full-width hero card (image beside text on md+)
 // eager: above-the-fold cards load their cover immediately (LCP)
 export default function PostCard({ post, featured = false, eager = false }) {
@@ -25,7 +44,7 @@ export default function PostCard({ post, featured = false, eager = false }) {
                         <span className="text-white/40 text-xs">·</span>
                         <span className="text-white/60 text-xs uppercase tracking-widest">{post.category}</span>
                         <span className="text-white/40 text-xs">·</span>
-                        <span className="text-white/60 text-xs">{post.date}</span>
+                        <span className="text-white/60 text-xs">{formatDate(post.date, post.lang)}</span>
                     </div>
                     <h2 className="text-xl md:text-2xl font-semibold group-hover:text-gold-bright transition leading-snug text-balance">
                         {post.title}
@@ -58,7 +77,7 @@ export default function PostCard({ post, featured = false, eager = false }) {
                 <div className="flex items-center gap-2">
                     <span className="text-white/60 text-xs uppercase tracking-widest">{post.category}</span>
                     <span className="text-white/40 text-xs">·</span>
-                    <span className="text-white/60 text-xs">{post.date}</span>
+                    <span className="text-white/60 text-xs">{formatDate(post.date, post.lang)}</span>
                 </div>
                 <h2 className="text-base md:text-lg font-semibold group-hover:text-gold-bright transition leading-snug">
                     {post.title}

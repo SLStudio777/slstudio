@@ -1,5 +1,4 @@
 import RelatedPosts from "@/app/components/blog/RelatedPosts";
-import BlogJsonLd from "@/app/components/blog/BlogJsonLd";
 import BlogHeader from "@/app/components/blog/BlogHeader";
 import GmivBuilder from "@/app/components/blog/GmivBuilder";
 import CheatsheetCopy from "@/app/components/blog/CheatsheetCopy";
@@ -110,7 +109,6 @@ function TableOfContents() {
 export default function SunoStudioGuidePlPage() {
   return (
     <div id="top" className="mt-16 mb-20">
-      <BlogJsonLd slug="suno-studio-guide-en-2026" />
       <script type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <ReadingProgress />
