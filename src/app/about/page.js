@@ -1,5 +1,6 @@
 import Link from "next/link";
 import LangSwitch from "../components/common/LangSwitch";
+import HeroWave from "../components/common/HeroWave";
 
 const SITE = "https://www.slstudio.pro";
 
@@ -134,6 +135,9 @@ export default function AboutPage() {
                         <p className="text-white/50 text-sm uppercase tracking-widest mb-6">
                             Guitarist · Vocalist · Producer · Mixing & Mastering Engineer
                         </p>
+                        <div className="max-w-xl mb-6">
+                            <HeroWave />
+                        </div>
                         <p className="text-white/65 text-lg leading-relaxed">
                             I picked up a guitar at 13 and never really put it down.
                             Thirty-plus years later, music is still the only work I know

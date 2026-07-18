@@ -4,7 +4,7 @@ import { posts } from "../../../data/posts.js";
 
 const FEATURED_SLUGS = [
     "/blog/suno-guide-2026",
-    "/blog/suno-studio-guide-en-2026",
+    "/blog/master-suno-track-for-spotify",
     "/blog/blues-rock-mixing-mastering",
 ];
 

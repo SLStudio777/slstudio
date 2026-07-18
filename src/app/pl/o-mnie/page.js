@@ -1,5 +1,6 @@
 import Link from "next/link";
 import LangSwitch from "../../components/common/LangSwitch";
+import HeroWave from "../../components/common/HeroWave";
 
 const SITE = "https://www.slstudio.pro";
 
@@ -126,6 +127,9 @@ export default function OMniePage() {
                         <p className="text-white/50 text-sm uppercase tracking-widest mb-6">
                             Gitarzysta · Wokalista · Producent · Inżynier miksu i masteringu
                         </p>
+                        <div className="max-w-xl mb-6">
+                            <HeroWave />
+                        </div>
                         <p className="text-white/65 text-lg leading-relaxed">
                             Wziąłem gitarę do ręki w wieku 13 lat i właściwie nigdy jej
                             nie odłożyłem. Ponad trzydzieści lat później muzyka wciąż
