@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { Mail, Send, ArrowUpRight, Loader2 } from "lucide-react";
+import { Mail, Send, ArrowUpRight, Loader2, Clock, MessagesSquare, BadgeCheck, ChevronDown } from "lucide-react";
 import LangSwitch from "../../common/LangSwitch";
 
 const SERVICE_FROM_QUERY = {
@@ -65,21 +65,21 @@ export default function Hero() {
     };
 
     return (
-        <section className="max-w-5xl mx-auto relative">
+        <section className="relative">
             <div className="pointer-events-none absolute inset-0 overflow-hidden -z-10">
                 <div style={{position:"absolute",top:"-80px",left:"-120px",width:"400px",height:"400px",borderRadius:"50%",background:"radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%)",animation:"pulse 6s ease-in-out infinite"}}/>
                 <div style={{position:"absolute",bottom:"0",right:"-80px",width:"300px",height:"300px",borderRadius:"50%",background:"radial-gradient(circle, rgba(201,168,76,0.05) 0%, transparent 70%)",animation:"pulse 8s ease-in-out infinite reverse"}}/>
                 <style>{`@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.15);opacity:0.6}}`}</style>
             </div>
 
-            <div className="mb-6">
+            <div className="mb-3">
                 <LangSwitch active="en" enHref="/contact" plHref="/pl/kontakt" />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+            <div className="grid grid-cols-1 md:grid-cols-[1.1fr_1fr] gap-8 md:gap-10 items-stretch">
 
                 {/* LEFT */}
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-3 md:justify-between">
                     <span className="text-white/30 text-xs uppercase tracking-[0.3em]">Get In Touch</span>
                     <div className="relative">
                         <div className="hero-title-glow" aria-hidden="true" />
@@ -190,6 +190,63 @@ export default function Hero() {
                     )}
                 </div>
 
+            </div>
+            {/* Three steps — same style as the "How It Works" cards on the free preview page */}
+            <div className="mt-20">
+                <div className="mb-8">
+                    <span className="text-white/30 text-xs uppercase tracking-[0.3em]">What's next</span>
+                    <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mt-2">What happens after you hit send</h2>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {[
+                        { num:"01", icon:<Clock className="w-5 h-5"/>, title:"I reply within 24 hours", body:"Usually faster — Telegram is the quickest. No bots, no canned replies — it is always me personally." },
+                        { num:"02", icon:<MessagesSquare className="w-5 h-5"/>, title:"We talk about your track", body:"You tell me what you have recorded and what you are going for. I tell you honestly what can be done — and what is not worth doing." },
+                        { num:"03", icon:<BadgeCheck className="w-5 h-5"/>, title:"A preview or an exact price", body:"You get a free processed preview of a section, or an exact quote for the full job. No obligation — the decision is yours." },
+                    ].map((s,i) => (
+                        <div key={i} className="rounded-2xl p-6 flex flex-col gap-4 h-full" style={{border:"1px solid rgba(255,255,255,0.05)",background:"rgba(255,255,255,0.03)",borderLeft:"3px solid rgba(201,168,76,0.4)"}}>
+                            <div className="flex items-start justify-between">
+                                <div className="w-9 h-9 rounded-lg flex items-center justify-center" style={{background:"rgba(201,168,76,0.1)",color:"#C9A84C"}}>{s.icon}</div>
+                                <span className="text-2xl font-semibold" style={{color:"rgba(201,168,76,0.35)"}}>{s.num}</span>
+                            </div>
+                            <p className="text-white font-semibold text-sm">{s.title}</p>
+                            <p className="text-white/50 text-sm leading-relaxed">{s.body}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            {/* Mini FAQ */}
+            <div className="mt-20">
+                <div className="mb-8">
+                    <span className="text-white/30 text-xs uppercase tracking-[0.3em]">FAQ</span>
+                    <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mt-2">Common questions</h2>
+                </div>
+                <div className="flex flex-col gap-3">
+                    {[
+                        { q:"What language can I write in?", a:"English, Polish, Ukrainian or Russian — whichever is comfortable. I will reply in the same language." },
+                        { q:"What should I put in the message?", a:"A few sentences is enough: the genre, what you have recorded (a demo, stems, a finished mix) and what bothers you about the current sound. A link to a reference track is welcome." },
+                        { q:"My file is too big — how do I send it?", a:"Not through the form — paste a link to Google Drive, Dropbox or WeTransfer. Or use the free preview page, it has an uploader that takes up to 100 MB." },
+                    ].map((f,i) => (
+                        <details key={i} className="rounded-xl group" style={{border:"1px solid rgba(255,255,255,0.06)",background:"rgba(255,255,255,0.02)"}}>
+                            <summary className="flex items-center justify-between gap-3 p-4 cursor-pointer text-white text-sm font-medium list-none [&::-webkit-details-marker]:hidden">
+                                {f.q}
+                                <ChevronDown className="w-4 h-4 flex-shrink-0 opacity-40 transition-transform group-open:rotate-180" style={{color:"#C9A84C"}}/>
+                            </summary>
+                            <p className="px-4 pb-4 text-white/50 text-sm leading-relaxed">{f.a}</p>
+                        </details>
+                    ))}
+                </div>
+            </div>
+
+            {/* CTA — mirror of the "Prefer to talk first?" card on the free preview page */}
+            <div className="mt-20 rounded-2xl p-8 text-center flex flex-col items-center gap-4" style={{background:"rgba(201,168,76,0.06)",border:"1px solid rgba(201,168,76,0.2)"}}>
+                <h3 className="text-xl font-semibold text-white">Don't feel like writing?</h3>
+                <p className="text-white/50 text-sm max-w-md">
+                    Just send the track instead — you'll get a free preview, honest notes and an exact price. Then we talk.
+                </p>
+                <a href="/free-track-preview" className="inline-flex items-center gap-2 text-black font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition text-sm" style={{backgroundColor:"#C9A84C"}}>
+                    Send a Track →
+                </a>
             </div>
         </section>
     );

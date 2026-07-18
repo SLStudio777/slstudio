@@ -15,7 +15,7 @@ export const metadata = {
 
 export default function ContactPage() {
     return (
-        <div className="mt-16 mb-20">
+        <div className="mt-8 mb-20">
             <Hero />
         </div>
     )
