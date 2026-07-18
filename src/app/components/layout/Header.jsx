@@ -21,6 +21,7 @@ export default function Header() {
                     <li><Link href="/mixing-mastering" className="hover:text-gold2 transition">Mixing & Mastering</Link></li>
                     <li><Link href="/arrangement" className="hover:text-gold2 transition">Arrangement</Link></li>
                     <li><Link href="/blog" className="hover:text-gold2 transition">Blog</Link></li>
+                    <li><Link href="/about" className="hover:text-gold2 transition">About</Link></li>
                     <li><Link href="/contact" className="hover:text-gold2 transition">Contact</Link></li>
                     <li>
                         <Link href="/free-track-preview" className="btn-gold px-4 py-2 rounded-lg font-semibold whitespace-nowrap" style={{background: "linear-gradient(135deg, #C9A84C 0%, #e8c97a 50%, #C9A84C 100%)", backgroundSize: "200% auto", color: "#161616", boxShadow: "0 0 24px rgba(201,168,76,0.25)"}}>
@@ -41,6 +42,7 @@ export default function Header() {
                         <li><Link href="/mixing-mastering" onClick={() => setOpen(false)} className="hover:text-gold2 transition block py-1">Mixing & Mastering</Link></li>
                         <li><Link href="/arrangement" onClick={() => setOpen(false)} className="hover:text-gold2 transition block py-1">Arrangement</Link></li>
                         <li><Link href="/blog" onClick={() => setOpen(false)} className="hover:text-gold2 transition block py-1">Blog</Link></li>
+                        <li><Link href="/about" onClick={() => setOpen(false)} className="hover:text-gold2 transition block py-1">About</Link></li>
                         <li><Link href="/contact" onClick={() => setOpen(false)} className="hover:text-gold2 transition block py-1">Contact</Link></li>
                         <li className="pt-1">
                             <Link href="/free-track-preview" onClick={() => setOpen(false)} className="btn-gold inline-block px-6 py-2.5 rounded-lg font-semibold" style={{background: "linear-gradient(135deg, #C9A84C 0%, #e8c97a 50%, #C9A84C 100%)", backgroundSize: "200% auto", color: "#161616", boxShadow: "0 0 24px rgba(201,168,76,0.25)"}}>
