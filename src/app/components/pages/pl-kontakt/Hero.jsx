@@ -65,7 +65,7 @@ export default function Hero() {
     };
 
     return (
-        <section className="max-w-5xl mx-auto relative">
+        <section className="relative">
             <div className="pointer-events-none absolute inset-0 overflow-hidden -z-10">
                 <div style={{position:"absolute",top:"-80px",left:"-120px",width:"400px",height:"400px",borderRadius:"50%",background:"radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%)",animation:"pulse 6s ease-in-out infinite"}}/>
                 <div style={{position:"absolute",bottom:"0",right:"-80px",width:"300px",height:"300px",borderRadius:"50%",background:"radial-gradient(circle, rgba(201,168,76,0.05) 0%, transparent 70%)",animation:"pulse 8s ease-in-out infinite reverse"}}/>
@@ -76,7 +76,7 @@ export default function Hero() {
                 <LangSwitch active="pl" enHref="/contact" plHref="/pl/kontakt" />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-stretch">
 
                 {/* LEFT */}
                 <div className="flex flex-col gap-3">
@@ -139,7 +139,7 @@ export default function Hero() {
                                 <Send className="w-7 h-7" style={{color:"#C9A84C"}}/>
                             </div>
                             <div>
-                                <h3 className="text-xl font-semibold text-white mb-2">Wiadomość wysłana!</h3>
+                                <h3 className="text-xl font-semibold text-white mb-2">Wiadomość wys����ana!</h3>
                                 <p className="text-white/50 text-sm">Odezwę się w ciągu 24 godzin.</p>
                             </div>
                         </div>
@@ -192,19 +192,19 @@ export default function Hero() {
 
             </div>
 
-            {/* Three steps */}
-            <div className="mt-16 flex flex-col gap-6">
-                <div>
-                    <p className="text-white/30 text-xs uppercase tracking-[0.3em] mb-2">Co dalej</p>
-                    <h2 className="text-2xl md:text-3xl font-semibold text-white">Co się dzieje po wysłaniu wiadomości</h2>
+            {/* Three steps — same style as the "How It Works" cards on the free preview page */}
+            <div className="mt-20">
+                <div className="mb-8">
+                    <span className="text-white/30 text-xs uppercase tracking-[0.3em]">Co dalej</span>
+                    <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mt-2">Co się dzieje po wysłaniu wiadomości</h2>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {[
                         { num:"01", icon:<Clock className="w-5 h-5"/>, title:"Odpowiadam w ciągu 24 godzin", body:"Zwykle szybciej — najszybciej na Telegramie. Bez botów i automatycznych odpowiedzi, zawsze osobiście." },
                         { num:"02", icon:<MessagesSquare className="w-5 h-5"/>, title:"Rozmawiamy o utworze", body:"Mówisz, co masz nagrane i do czego dążysz. Ja szczerze mówię, co da się z tym zrobić, a czego nie warto." },
                         { num:"03", icon:<BadgeCheck className="w-5 h-5"/>, title:"Preview albo konkretna cena", body:"Dostajesz darmowe preview fragmentu albo dokładną wycenę całości. Zero zobowiązań — decyzja należy do Ciebie." },
                     ].map((s,i) => (
-                        <div key={i} className="rounded-xl p-5 flex flex-col gap-3" style={{border:"1px solid rgba(255,255,255,0.06)",background:"rgba(255,255,255,0.02)"}}>
+                        <div key={i} className="rounded-2xl p-6 flex flex-col gap-4 h-full" style={{border:"1px solid rgba(255,255,255,0.05)",background:"rgba(255,255,255,0.03)",borderLeft:"3px solid rgba(201,168,76,0.4)"}}>
                             <div className="flex items-start justify-between">
                                 <div className="w-9 h-9 rounded-lg flex items-center justify-center" style={{background:"rgba(201,168,76,0.1)",color:"#C9A84C"}}>{s.icon}</div>
                                 <span className="text-2xl font-semibold" style={{color:"rgba(201,168,76,0.35)"}}>{s.num}</span>
@@ -217,10 +217,10 @@ export default function Hero() {
             </div>
 
             {/* Mini FAQ */}
-            <div className="mt-16 flex flex-col gap-6">
-                <div>
-                    <p className="text-white/30 text-xs uppercase tracking-[0.3em] mb-2">FAQ</p>
-                    <h2 className="text-2xl md:text-3xl font-semibold text-white">Częste pytania</h2>
+            <div className="mt-20">
+                <div className="mb-8">
+                    <span className="text-white/30 text-xs uppercase tracking-[0.3em]">FAQ</span>
+                    <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mt-2">Częste pytania</h2>
                 </div>
                 <div className="flex flex-col gap-3">
                     {[
@@ -240,12 +240,12 @@ export default function Hero() {
             </div>
 
             {/* CTA — mirror of the "Prefer to talk first?" card on the free preview page */}
-            <div className="mt-16 rounded-2xl p-8 text-center flex flex-col items-center gap-4" style={{background:"rgba(201,168,76,0.06)",border:"1px solid rgba(201,168,76,0.2)"}}>
+            <div className="mt-20 rounded-2xl p-8 text-center flex flex-col items-center gap-4" style={{background:"rgba(201,168,76,0.06)",border:"1px solid rgba(201,168,76,0.2)"}}>
                 <h3 className="text-xl font-semibold text-white">Nie chce Ci się pisać?</h3>
                 <p className="text-white/50 text-sm max-w-md">
                     Po prostu wyślij utwór — dostaniesz darmowe preview, szczere uwagi i konkretną cenę. A potem porozmawiamy.
                 </p>
-                <a href="/free-track-preview" className="inline-flex items-center gap-2 text-black font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition text-sm" style={{backgroundColor:"#C9A84C"}}>
+                <a href="/pl/darmowy-fragment" className="inline-flex items-center gap-2 text-black font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition text-sm" style={{backgroundColor:"#C9A84C"}}>
                     Wyślij utwór →
                 </a>
             </div>
