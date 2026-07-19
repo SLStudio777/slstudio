@@ -6,15 +6,15 @@ import LangSwitch from "../../common/LangSwitch";
 
 export default function Hero() {
   return (
-    <section className="mt-10 mb-10">
+    <section className="mt-8 mb-10">
       <LangSwitch
         active="en"
         enHref="/arrangement"
         plHref="/pl/aranzacja-i-produkcja"
       />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch mt-4">
-        <div className="flex flex-col gap-6 md:justify-between">
-          <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-5 md:justify-between">
+          <div className="flex flex-col gap-5">
             <span className="text-white/40 text-xs uppercase tracking-[0.3em]">
               Online Production · Warsaw / Worldwide
             </span>

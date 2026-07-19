@@ -25,12 +25,12 @@ const trustBullets = [
 
 export default function Hero() {
     return (
-        <section className="mt-12 mb-10">
+        <section className="mt-8 mb-10">
             {/* Row 1 — pitch + services vs. photo. The two are independently
                 aligned: cards' bottom lands exactly on the photo's bottom,
                 regardless of what comes after in row 2. */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch">
-                <div className="flex flex-col gap-10 md:justify-between mobile-reflow">
+                <div className="flex flex-col gap-8 md:justify-between mobile-reflow">
                     {/* Headline block — tight rhythm, no dead gaps.
                         H1: "From Raw to Ready." — 18 characters, well under
                         the ~21–23 char ceiling observed for a single line at
@@ -40,7 +40,7 @@ export default function Hero() {
                         cards + subheadline) and doesn't collide with the
                         "Mixing & Mastering" H1 already used on
                         /mixing-mastering. */}
-                    <div className="flex flex-col gap-6 [@media(max-width:767px)]:order-1">
+                    <div className="flex flex-col gap-5 [@media(max-width:767px)]:order-1">
                         <div>
                             <span className="text-white/40 text-xs uppercase tracking-[0.3em]">
                                 Warsaw, Poland
@@ -72,7 +72,7 @@ export default function Hero() {
                         job the old CTA buttons used to do (each card is its own
                         call to action). justify-between on the parent pins this
                         to the bottom of row 1, matching the photo's bottom. */}
-                    <div className="flex flex-col gap-6 [@media(max-width:767px)]:order-3">
+                    <div className="flex flex-col gap-5 [@media(max-width:767px)]:order-3">
                         <h2 className="text-2xl md:text-3xl font-semibold">
                             Professional Audio Services
                         </h2>

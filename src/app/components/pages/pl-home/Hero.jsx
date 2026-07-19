@@ -41,13 +41,13 @@ const trustBullets = [
 
 export default function Hero() {
     return (
-        <section className="mt-12 mb-10">
+        <section className="mt-8 mb-10">
             {/* Row 1 — pitch + services | photo. Grid items-stretch: the left
                 column (taller) sets the row height, the photo stretches to match
                 so its bottom lands on the service-cards bottom. No justify-between. */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch">
-                <div className="flex flex-col gap-10 mobile-reflow">
-                    <div className="flex flex-col gap-6 [@media(max-width:767px)]:order-1">
+                <div className="flex flex-col gap-8 mobile-reflow">
+                    <div className="flex flex-col gap-5 [@media(max-width:767px)]:order-1">
                         <div>
                             <span className="text-white/40 text-xs uppercase tracking-[0.3em]">
                                 Warszawa, Polska
@@ -67,7 +67,7 @@ export default function Hero() {
                             </Link>
                         </p>
                     </div>
-                    <div className="flex flex-col gap-6 [@media(max-width:767px)]:order-3">
+                    <div className="flex flex-col gap-5 [@media(max-width:767px)]:order-3">
                         <h2 className="text-2xl md:text-3xl font-semibold">
                             Profesjonalne usługi audio
                         </h2>
