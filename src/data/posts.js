@@ -1,5 +1,23 @@
 export const posts = [
     {
+        href: "/blog/mixing-mastering-cost-2026",
+        image: "/images/blog/pricing/pricing-cover.jpg",
+        category: "Business",
+        date: "2026-07-20",
+        lang: "en",
+        title: "How Much Does Mixing and Mastering Cost in 2026?",
+        excerpt: "From $5 AI tools to $5,000 boutique mixes: a working engineer breaks down every price tier on the 2026 market, the red flags to avoid and how to pay less without losing quality."
+    },
+    {
+        href: "/pl/blog/mixing-mastering-cost-2026",
+        image: "/images/blog/pricing/pricing-cover-pl.jpg",
+        category: "Biznes",
+        date: "2026-07-20",
+        lang: "pl",
+        title: "Ile kosztuje mix i mastering w 2026?",
+        excerpt: "Od narzędzi AI za 20 zł po studia premium: praktykujący realizator rozkłada wszystkie poziomy cen na rynku 2026, w tym polskie stawki, czerwone flagi i sposoby, by płacić mniej bez utraty jakości."
+    },
+    {
         href: "/blog/why-ai-tracks-sound-cheap",
         image: "/images/blog/ai-restoration/ai-restoration-cover.jpg",
         category: "Production",
