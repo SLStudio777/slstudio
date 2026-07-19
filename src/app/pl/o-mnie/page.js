@@ -38,7 +38,7 @@ const jsonLd = {
             description:
                 "Gitarzysta, wokalista i producent muzyczny. Ponad 30 lat w muzyce, ponad 10 lat za konsoletą, 300+ zmiksowanych utworów. SL Studio, Warszawa.",
             url: `${SITE}/pl/o-mnie`,
-            image: `${SITE}/images/Serhii-Lazariev.webp`,
+            image: `${SITE}/images/serhii-lazariev-home-studio.webp`,
             worksFor: { "@id": `${SITE}/#studio` },
             address: {
                 "@type": "PostalAddress",
@@ -153,7 +153,7 @@ export default function OMniePage() {
                     </div>
                     <div className="rounded-2xl overflow-hidden border border-white/10">
                         <img
-                            src="/images/Serhii-Lazariev.webp"
+                            src="/images/serhii-lazariev-home-studio.webp"
                             alt="Serhii Lazariev — inżynier miksu i masteringu w swoim warszawskim studiu"
                             className="w-full h-auto object-cover"
                         />

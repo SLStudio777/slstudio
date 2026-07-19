@@ -1,5 +1,32 @@
 export const posts = [
     {
+        href: "/blog/why-ai-tracks-sound-cheap",
+        image: "/images/blog/ai-restoration/ai-restoration-cover.jpg",
+        category: "Production",
+        date: "2026-07-19",
+        lang: "en",
+        title: "Why AI Tracks Sound Cheap — and How to Fix It",
+        excerpt: "Listeners spot an AI track in seconds. A working engineer shows the deep fix: stem separation, real drums, MIDI bass, the 9 kHz vocal trick and two reverbs that bring a Suno track to life."
+    },
+    {
+        href: "/pl/blog/why-ai-tracks-sound-cheap",
+        image: "/images/blog/ai-restoration/ai-restoration-cover.jpg",
+        category: "Produkcja",
+        date: "2026-07-19",
+        lang: "pl",
+        title: "Dlaczego utwory z AI brzmią tanio — i jak to naprawić",
+        excerpt: "Słuchacze rozpoznają utwór z AI w kilka sekund. Praktykujący realizator pokazuje głęboką naprawę: stemy, prawdziwe bębny, bas z MIDI, trik z wokalem na 9 kHz i dwa pogłosy, które ożywiają utwór z Suno."
+    },
+    {
+        href: "/blog/why-ai-tracks-sound-cheap-ru",
+        image: "/images/blog/ai-restoration/ai-restoration-cover.jpg",
+        category: "Продакшен",
+        date: "2026-07-19",
+        lang: "ru",
+        title: "Почему AI-треки звучат дёшево — и как это исправить",
+        excerpt: "Слушатели вычисляют AI-трек за секунды. Практикующий инженер показывает глубокое лечение: стемы, живые барабаны, MIDI-бас, трюк с вокалом на 9 кГц и два реверба, которые оживляют трек из Suno."
+    },
+    {
         href: "/blog/master-suno-track-for-spotify",
         image: "/images/blog/suno-mastering/suno-mastering-cover.jpg",
         category: "Mastering",

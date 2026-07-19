@@ -38,7 +38,7 @@ const jsonLd = {
             description:
                 "Guitarist, vocalist and music producer. 30+ years in music, 10+ years behind the board, 300+ tracks mixed and mastered at SL Studio, Warsaw.",
             url: `${SITE}/about`,
-            image: `${SITE}/images/Serhii-Lazariev.webp`,
+            image: `${SITE}/images/serhii-lazariev-home-studio.webp`,
             worksFor: { "@id": `${SITE}/#studio` },
             address: {
                 "@type": "PostalAddress",
@@ -160,7 +160,7 @@ export default function AboutPage() {
                     </div>
                     <div className="rounded-2xl overflow-hidden border border-white/10">
                         <img
-                            src="/images/Serhii-Lazariev.webp"
+                            src="/images/serhii-lazariev-home-studio.webp"
                             alt="Serhii Lazariev — mixing and mastering engineer in his Warsaw studio"
                             className="w-full h-auto object-cover"
                         />
