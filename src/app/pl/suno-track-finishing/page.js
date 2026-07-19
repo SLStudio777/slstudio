@@ -1,5 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
 import LangSwitch from "../../components/common/LangSwitch";
+import HeroWave from "../../components/common/HeroWave";
 
 const SITE = "https://www.slstudio.pro";
 
@@ -200,15 +202,17 @@ export default function SunoTrackFinishingPagePL() {
                 <div className="mb-8">
                     <LangSwitch active="pl" enHref="/suno-track-finishing" plHref="/pl/suno-track-finishing" />
                 </div>
-                <div className="max-w-3xl">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
+                    <div>
                     <p className="text-xs uppercase tracking-widest mb-4" style={{ color: "#C9A84C" }}>
                         Suno Track Finishing
                     </p>
-                    <h1 className="text-4xl md:text-5xl font-semibold tracking-wide leading-tight mb-6">
-                        Utwór już masz.
-                        <br />
-                        Ja sprawię, że będzie gotowy do wydania.
+                    <h1 className="text-4xl md:text-5xl font-semibold tracking-wide leading-tight mb-6" style={{ fontFamily: "var(--font-playfair)" }}>
+                        Od Suno do <span className="text-[#f5b942]">wydania</span>
                     </h1>
+                    <div className="max-w-xl mb-6">
+                        <HeroWave />
+                    </div>
                     <p className="text-white/65 text-lg leading-relaxed mb-4">
                         Suno robi 90% roboty — a brakujące 10% słychać od razu.
                         Metaliczny wokal, rozmyte talerze, słaby dół, głośność, która
@@ -240,6 +244,40 @@ export default function SunoTrackFinishingPagePL() {
                     >
                         Darmowy fragment →
                     </Link>
+                    </div>
+
+                    <div>
+                        <div className="relative rounded-2xl overflow-hidden border border-white/10">
+                            <Image
+                                src="/images/suno-live-guitars.webp"
+                                alt="Serhii Lazariev z gitarą Gibson Les Paul i wzmacniaczem Marshall — prawdziwe gitary w utworach AI"
+                                width={1600}
+                                height={1015}
+                                className="w-full h-auto"
+                                priority
+                            />
+                            <div
+                                className="absolute inset-0 pointer-events-none"
+                                style={{
+                                    background:
+                                        "linear-gradient(to top, rgba(20,20,20,0.55), rgba(20,20,20,0) 40%), linear-gradient(to right, rgba(20,20,20,0.35), rgba(20,20,20,0) 30%)",
+                                }}
+                            />
+                            <span
+                                className="absolute bottom-4 left-4 text-[11px] uppercase tracking-widest px-3 py-1.5 rounded-full"
+                                style={{
+                                    color: "#e8c97a",
+                                    background: "rgba(20,20,20,0.65)",
+                                    border: "1px solid rgba(201,168,76,0.4)",
+                                }}
+                            >
+                                Human Performance
+                            </span>
+                        </div>
+                        <p className="mt-3 text-center text-xs uppercase tracking-widest text-white/35">
+                            Utwór z Suno → Prawdziwe gitary → Ludzki miks i master
+                        </p>
+                    </div>
                 </div>
             </section>
 

@@ -122,8 +122,8 @@ export default function OMniePage() {
                         <p className="text-xs uppercase tracking-widest mb-4" style={{ color: "#C9A84C" }}>
                             O mnie
                         </p>
-                        <h1 className="text-4xl md:text-5xl font-semibold tracking-wide leading-tight mb-4">
-                            Serhii Lazariev
+                        <h1 className="text-4xl md:text-5xl font-semibold tracking-wide leading-tight mb-4" style={{ fontFamily: "var(--font-playfair)" }}>
+                            Serhii <span className="text-[#f5b942]">Lazariev</span>
                         </h1>
                         <p className="text-white/50 text-sm uppercase tracking-widest mb-6">
                             Gitarzysta · Wokalista · Producent · Inżynier miksu i masteringu
@@ -179,7 +179,7 @@ export default function OMniePage() {
 
             {/* Story */}
             <section className="py-12">
-                <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mb-8">
+                <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mb-8" style={{ fontFamily: "var(--font-playfair)" }}>
                     Długa droga do cichego pokoju w Warszawie
                 </h2>
                 <div className="grid md:grid-cols-[1.15fr_1fr] gap-10 md:gap-14 items-start">
@@ -256,7 +256,7 @@ export default function OMniePage() {
                     <p className="text-xs uppercase tracking-widest mb-3" style={{ color: "#C9A84C" }}>
                         Projekt, z którego jestem dumny
                     </p>
-                    <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mb-6">
+                    <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mb-6" style={{ fontFamily: "var(--font-playfair)" }}>
                         Ratuję piosenki, które mogły zniknąć
                     </h2>
                     <div className="space-y-5 text-white/65 leading-relaxed max-w-3xl">
@@ -292,7 +292,7 @@ export default function OMniePage() {
 
             {/* Principles */}
             <section className="py-12">
-                <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mb-8">
+                <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mb-8" style={{ fontFamily: "var(--font-playfair)" }}>
                     Najpierw muzyk, potem inżynier
                 </h2>
                 <div className="grid md:grid-cols-3 gap-4">
@@ -312,7 +312,7 @@ export default function OMniePage() {
 
             {/* Tools */}
             <section className="py-12">
-                <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mb-6">
+                <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mb-6" style={{ fontFamily: "var(--font-playfair)" }}>
                     Studio pracuje na
                 </h2>
                 <div className="flex flex-wrap gap-3">
@@ -339,7 +339,7 @@ export default function OMniePage() {
             {/* CTA */}
             <section className="py-16">
                 <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-8 md:p-12 text-center">
-                    <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mb-4">
+                    <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mb-4" style={{ fontFamily: "var(--font-playfair)" }}>
                         Usłysz efekt, zanim zapłacisz
                     </h2>
                     <p className="text-white/60 mb-8 max-w-xl mx-auto">
