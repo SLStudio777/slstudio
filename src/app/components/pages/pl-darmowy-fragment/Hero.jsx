@@ -99,7 +99,7 @@ const focusOff = (e) =>
 
 function trackEvent(name, params = {}) {
   if (typeof window !== "undefined" && typeof window.gtag === "function") {
-    window.gtag("event", name, params);
+    window.gtag("event", name, { form_language: "pl", ...params });
   }
 }
 
@@ -120,10 +120,18 @@ export default function Hero() {
       setError(
         "Ten plik przekracza 100 MB. Wklej zamiast tego link (Dysk Google, Dropbox lub WeTransfer), a pobiorę go stamtąd.",
       );
+      trackEvent("preview_validation_error", {
+        reason: "file_too_large",
+        file_size_mb: Number((f.size / (1024 * 1024)).toFixed(1)),
+      });
       return;
     }
     if (ext && !ALLOWED_EXT.includes(ext)) {
       setError("Tylko pliki audio i archiwa ZIP.");
+      trackEvent("preview_validation_error", {
+        reason: "invalid_extension",
+        file_extension: ext,
+      });
       return;
     }
     setFile(f);
@@ -141,6 +149,9 @@ export default function Hero() {
 
     if (!file && !link) {
       setError("Najpierw dodaj plik albo wklej link.");
+      trackEvent("preview_validation_error", {
+        reason: "no_file_or_link",
+      });
       return;
     }
 
@@ -157,6 +168,9 @@ export default function Hero() {
 
       if (file) {
         const pathname = `previews/${Date.now()}-${sanitizeFileName(file.name)}`;
+        trackEvent("preview_upload_started", {
+          file_size_mb: Number((file.size / (1024 * 1024)).toFixed(1)),
+        });
         const blob = await uploadPresigned(pathname, file, {
           access: "private",
           handleUploadUrl: "/api/preview-upload",
@@ -276,7 +290,7 @@ export default function Hero() {
                 {[
                   "Obrobiony fragment Twojego utworu (zwykle 30–60 sekund)",
                   "Szczera ocena — co da się poprawić, a czego nie",
-                  "Dokładna cena za całą pracę",
+                  "Dokładna cena za cał�� pracę",
                   "Zero zobowiązań, do niczego się nie zapisujesz",
                 ].map((item) => (
                   <li
@@ -580,6 +594,11 @@ export default function Hero() {
                     Formularz nie działa?{" "}
                     <Link
                       href="/pl/kontakt"
+                      onClick={() =>
+                        trackEvent("preview_contact_click", {
+                          location: "form_fallback",
+                        })
+                      }
                       className="text-[#C9A84C] underline hover:text-[#e8c97a] transition"
                     >
                       Napisz do mnie bezpośrednio →
@@ -740,6 +759,9 @@ function FAQ() {
               {item.contactLink && (
                 <Link
                   href="/pl/kontakt"
+                  onClick={() =>
+                    trackEvent("preview_contact_click", { location: "faq" })
+                  }
                   className="inline-flex mt-3 text-[#C9A84C] underline hover:text-[#e8c97a] transition"
                 >
                   Napisz do mnie bezpośrednio →

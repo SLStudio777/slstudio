@@ -99,7 +99,7 @@ const focusOff = (e) =>
 
 function trackEvent(name, params = {}) {
   if (typeof window !== "undefined" && typeof window.gtag === "function") {
-    window.gtag("event", name, params);
+    window.gtag("event", name, { form_language: "en", ...params });
   }
 }
 
@@ -120,10 +120,18 @@ export default function Hero() {
       setError(
         "This file is over 100 MB. Paste a link instead (Google Drive, Dropbox or WeTransfer) and I'll grab it from there.",
       );
+      trackEvent("preview_validation_error", {
+        reason: "file_too_large",
+        file_size_mb: Number((f.size / (1024 * 1024)).toFixed(1)),
+      });
       return;
     }
     if (ext && !ALLOWED_EXT.includes(ext)) {
       setError("Audio files and ZIP archives only.");
+      trackEvent("preview_validation_error", {
+        reason: "invalid_extension",
+        file_extension: ext,
+      });
       return;
     }
     setFile(f);
@@ -141,6 +149,9 @@ export default function Hero() {
 
     if (!file && !link) {
       setError("Attach a file or paste a link first.");
+      trackEvent("preview_validation_error", {
+        reason: "no_file_or_link",
+      });
       return;
     }
 
@@ -157,6 +168,9 @@ export default function Hero() {
 
       if (file) {
         const pathname = `previews/${Date.now()}-${sanitizeFileName(file.name)}`;
+        trackEvent("preview_upload_started", {
+          file_size_mb: Number((file.size / (1024 * 1024)).toFixed(1)),
+        });
         const blob = await uploadPresigned(pathname, file, {
           access: "private",
           handleUploadUrl: "/api/preview-upload",
@@ -591,6 +605,11 @@ export default function Hero() {
                     Upload not working?{" "}
                     <Link
                       href="/contact"
+                      onClick={() =>
+                        trackEvent("preview_contact_click", {
+                          location: "form_fallback",
+                        })
+                      }
                       className="text-[#C9A84C] underline hover:text-[#e8c97a] transition"
                     >
                       Contact me directly →
@@ -751,6 +770,9 @@ function FAQ() {
               {item.contactLink && (
                 <Link
                   href="/contact"
+                  onClick={() =>
+                    trackEvent("preview_contact_click", { location: "faq" })
+                  }
                   className="inline-flex mt-3 text-[#C9A84C] underline hover:text-[#e8c97a] transition"
                 >
                   Contact me directly →
