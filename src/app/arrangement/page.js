@@ -15,7 +15,7 @@ export const metadata = {
     },
   },
   description:
-    "Professional online music arrangement and production from $110. Turn a voice memo, guitar riff, MIDI sketch or rehearsal recording into a complete release-ready track.",
+    "Professional online music arrangement and production from $119. Turn a voice memo, guitar riff, MIDI sketch or rehearsal recording into a complete release-ready track.",
   openGraph: {
     title: "Online Music Arrangement & Production | SL Studio",
     description:
@@ -63,8 +63,8 @@ const serviceSchema = {
   offers: {
     "@type": "Offer",
     priceCurrency: "USD",
-    price: "110",
-    description: "Music arrangement and production from $110 per track",
+    price: "119",
+    description: "Music arrangement and production from $119 per track",
     itemOffered: {
       "@type": "Service",
       name: "Music arrangement and production",

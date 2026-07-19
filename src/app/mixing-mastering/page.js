@@ -83,8 +83,8 @@ const serviceSchema = {
       {
         "@type": "Offer",
         priceCurrency: "USD",
-        price: "25",
-        description: "Mastering only, from $25 per track",
+        price: "39",
+        description: "Mastering only, from $39 per track",
         itemOffered: {
           "@type": "Service",
           name: "Music mastering",
@@ -93,8 +93,8 @@ const serviceSchema = {
       {
         "@type": "Offer",
         priceCurrency: "USD",
-        price: "60",
-        description: "Mixing and mastering, from $60 per track",
+        price: "89",
+        description: "Mixing and mastering, from $89 per track",
         itemOffered: {
           "@type": "Service",
           name: "Music mixing and mastering",
