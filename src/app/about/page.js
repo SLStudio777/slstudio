@@ -1,6 +1,7 @@
 import Link from "next/link";
 import LangSwitch from "../components/common/LangSwitch";
 import HeroWave from "../components/common/HeroWave";
+import HeroStats from "../components/common/HeroStats";
 import ScrollReveal from "../components/common/ScrollReveal";
 
 const SITE = "https://www.slstudio.pro";
@@ -125,62 +126,50 @@ export default function AboutPage() {
                 <div className="mb-8">
                     <LangSwitch active="en" enHref="/about" plHref="/pl/o-mnie" />
                 </div>
-                <div className="grid md:grid-cols-[1fr_1.15fr] gap-10 items-center">
-                    <div>
-                        <p className="text-xs uppercase tracking-widest mb-4" style={{ color: "#C9A84C" }}>
-                            About
-                        </p>
-                        <h1 className="text-4xl md:text-5xl font-semibold tracking-wide leading-tight mb-4" style={{ fontFamily: "var(--font-playfair)" }}>
-                            Serhii <span className="text-[#f5b942]">Lazariev</span>
-                        </h1>
-                        <p className="text-white/50 text-sm uppercase tracking-widest mb-6">
-                            Guitarist · Vocalist · Producer · Mixing & Mastering Engineer
-                        </p>
-                        <div className="max-w-xl mb-6">
-                            <HeroWave />
+                <div className="grid md:grid-cols-[1fr_1.15fr] gap-10 items-stretch">
+                    <div className="flex flex-col gap-6 md:justify-between">
+                        <div className="flex flex-col gap-6">
+                            <p className="text-xs uppercase tracking-widest" style={{ color: "#C9A84C" }}>
+                                About
+                            </p>
+                            <h1 className="text-4xl md:text-5xl font-semibold tracking-wide leading-tight" style={{ fontFamily: "var(--font-playfair)" }}>
+                                Serhii <span className="text-[#f5b942]">Lazariev</span>
+                            </h1>
+                            <p className="text-white/50 text-sm uppercase tracking-widest">
+                                Guitarist · Vocalist · Producer · Mixing & Mastering Engineer
+                            </p>
+                            <div className="max-w-xl">
+                                <HeroWave />
+                            </div>
+                            <p className="text-white/65 text-lg leading-relaxed">
+                                I picked up a guitar at 13 and never really put it down.
+                                Thirty-plus years later, music is still the only work I know
+                                how to do with my whole attention — now from my studio in
+                                Warsaw, for artists all over the world.
+                            </p>
+                            <div className="flex items-center gap-4">
+                                <span className="h-px w-16" style={{ background: "linear-gradient(90deg, #C9A84C, rgba(201,168,76,0))" }} />
+                                <span className="italic text-white/50" style={{ fontFamily: "var(--font-playfair)" }}>— Serhii, SL Studio</span>
+                            </div>
+                            <Link
+                                href="/free-track-preview"
+                                className="group inline-flex self-start items-center gap-2 text-sm font-medium transition hover:opacity-80"
+                                style={{ color: "#C9A84C" }}
+                            >
+                                Hear it before you pay
+                                <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+                            </Link>
                         </div>
-                        <p className="text-white/65 text-lg leading-relaxed">
-                            I picked up a guitar at 13 and never really put it down.
-                            Thirty-plus years later, music is still the only work I know
-                            how to do with my whole attention — now from my studio in
-                            Warsaw, for artists all over the world.
-                        </p>
-                        <div className="mt-8 flex items-center gap-4">
-                            <span className="h-px w-16" style={{ background: "linear-gradient(90deg, #C9A84C, rgba(201,168,76,0))" }} />
-                            <span className="italic text-white/50" style={{ fontFamily: "var(--font-playfair)" }}>— Serhii, SL Studio</span>
-                        </div>
-                        <Link
-                            href="/free-track-preview"
-                            className="group inline-flex items-center gap-2 mt-6 text-sm font-medium transition hover:opacity-80"
-                            style={{ color: "#C9A84C" }}
-                        >
-                            Hear it before you pay
-                            <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
-                        </Link>
+
+                        <HeroStats items={stats} />
                     </div>
-                    <div className="rounded-2xl overflow-hidden border border-white/10">
+                    <div className="rounded-2xl overflow-hidden border border-white/10 md:aspect-[3/2]">
                         <img
                             src="/images/serhii-lazariev-home-studio.webp"
                             alt="Serhii Lazariev — mixing and mastering engineer in his Warsaw studio"
-                            className="w-full h-auto object-cover"
+                            className="w-full h-auto md:h-full object-cover"
                         />
                     </div>
-                </div>
-
-                {/* Stats */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-12">
-                    {stats.map((s, i) => (
-                        <ScrollReveal key={s.label} delay={i * 120}>
-                        <div
-                            className="rounded-2xl border border-white/10 bg-white/[0.03] px-6 py-6 text-center"
-                        >
-                            <div className="text-3xl font-semibold mb-1" style={{ color: "#C9A84C" }}>
-                                {s.value}
-                            </div>
-                            <div className="text-white/50 text-sm">{s.label}</div>
-                        </div>
-                        </ScrollReveal>
-                    ))}
                 </div>
             </section>
 
