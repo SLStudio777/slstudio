@@ -263,16 +263,6 @@ export default function SunoTrackFinishingPagePL() {
                                         "linear-gradient(to top, rgba(20,20,20,0.55), rgba(20,20,20,0) 40%), linear-gradient(to right, rgba(20,20,20,0.35), rgba(20,20,20,0) 30%)",
                                 }}
                             />
-                            <span
-                                className="absolute bottom-4 left-4 text-[11px] uppercase tracking-widest px-3 py-1.5 rounded-full"
-                                style={{
-                                    color: "#e8c97a",
-                                    background: "rgba(20,20,20,0.65)",
-                                    border: "1px solid rgba(201,168,76,0.4)",
-                                }}
-                            >
-                                Human Performance
-                            </span>
                         </div>
                         <p className="mt-3 text-center text-xs uppercase tracking-widest text-white/35">
                             Utwór z Suno → Prawdziwe gitary → Ludzki miks i master
