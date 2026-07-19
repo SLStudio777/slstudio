@@ -120,7 +120,7 @@ export default function Hero() {
                     {/* Price clarifier + stats — moved here from the old CTA row */}
                     <div className="flex flex-col gap-4">
                         <p className="text-white/45 text-xs uppercase tracking-widest">
-                            For independent artists · from $25 per track · remote, worldwide
+                            For independent artists · from $39 per track · remote, worldwide
                         </p>
                         <div className="grid grid-cols-3 gap-4 border-t border-white/5 pt-4">
                             {stats.map((s, i) => (

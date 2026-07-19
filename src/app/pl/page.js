@@ -6,6 +6,8 @@ import Testimonials from "../components/sections/Testimonials";
 import BlogPreview from "../components/sections/BlogPreview";
 import Pricing from "../components/sections/Pricing";
 import FinalCTA from "../components/sections/FinalCTA";
+import FAQ from "../components/sections/FAQ";
+import SunoBanner from "../components/sections/SunoBanner";
 
 export const metadata = {
     title: { absolute: "SL Studio | Miks, mastering i produkcja muzyczna" },
@@ -174,11 +176,55 @@ const pricingLabels = {
         { title: "Tylko mastering", description: "Finalna obróbka gotowego miksu. Zoptymalizowany pod streaming, konkurencyjna głośność, dostarczany w WAV i MP3." },
         { title: "Miks i mastering", description: "Pełny miks wszystkich śladów plus mastering. Działa ze stemami albo roboczym miksem, który chcesz doprowadzić do poziomu wydawniczego." },
         { title: "Aranżacja i produkcja", description: "Od pomysłu do gotowego utworu. Instrumenty, struktura, miks i mastering. Ostateczna cena zależy od zakresu." },
+        { title: "Suno / AI Track Finishing", description: "Masz utwór z Suno lub Udio? Rozdzielam stemy, czyszczę artefakty, dogrywam żywe partie i robię ludzki miks oraz mastering. Stałe pakiety.", href: "/pl/suno-track-finishing" },
     ],
     payment: [
         { title: "50% z góry", description: "Reszta po akceptacji efektu. Zero ryzyka po Twojej stronie." },
         { title: "Najpierw rozmowa, potem płatność", description: "Dokładną cenę potwierdzamy po omówieniu projektu. Pierwsza konsultacja zawsze bezpłatna." },
         { title: "PayPal i przelew", description: "Pracuję z klientami z całego świata. Bez ograniczeń lokalizacji." },
+    ],
+};
+
+const sunoBannerLabels = {
+    heading: "Masz utwór z Suno lub Udio?",
+    text: "Zamieniam generacje AI w gotowe do wydania utwory — rozdzielam stemy, czyszczę artefakty, dogrywam żywe instrumenty i robię ludzki miks oraz mastering.",
+    cta: "Pakiety od $39",
+    href: "/pl/suno-track-finishing",
+};
+
+const faqLabels = {
+    eyebrow: "FAQ",
+    heading: "Najczęstsze pytania",
+    sub: "Konkretne odpowiedzi o cenach, terminach i sposobie pracy.",
+    items: [
+        {
+            q: "Ile kosztuje miks i mastering?",
+            a: "Mastering od $39 za utwór, miks i mastering od $89, aranżacja i produkcja od $119. Dokończenie utworu wygenerowanego przez AI (Suno/Udio) to $39–149 w zależności od pakietu. Dokładną cenę potwierdzam po bezpłatnej konsultacji — bez ukrytych opłat.",
+        },
+        {
+            q: "Ile to trwa?",
+            a: "Większość projektów dostarczam w 3–5 dni roboczych. Odpowiedź dostajesz tego samego dnia, a przed rozpoczęciem pracy — krótką próbkę obróbki.",
+        },
+        {
+            q: "Jakie pliki mam wysłać?",
+            a: "Cokolwiek masz: stemy (WAV, najlepiej 24-bit), roboczy miks albo nawet nagranie z telefonu. Dowolny format, dowolna jakość — powiem Ci, jeśli czegoś zabraknie.",
+        },
+        {
+            q: "Ile poprawek jest w cenie?",
+            a: "Poprawki są w cenie, aż będziesz w pełni zadowolony z efektu. Bez opłat za każdą rundę.",
+        },
+        {
+            q: "Pracujesz z utworami wygenerowanymi przez AI (Suno, Udio)?",
+            a: "Tak — to osobna usługa. Rozdzielam stemy, czyszczę artefakty, zastępuję słabe partie żywymi instrumentami i robię ludzki miks oraz mastering. Zobacz stronę Suno Track Finishing z pakietami.",
+        },
+        {
+            q: "Jak działa darmowy fragment?",
+            a: "Wysyłasz utwór, ja obrabiam krótki fragment i odsyłam za darmo. Słyszysz kierunek, zanim cokolwiek zapłacisz — bez zobowiązań.",
+        },
+        {
+            q: "Jak wygląda płatność?",
+            a: "50% z góry, reszta po akceptacji efektu. PayPal i przelew bankowy — pracuję z klientami z całego świata.",
+        },
     ],
 };
 
@@ -197,11 +243,13 @@ export default function HomePl() {
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
             />
             <Hero />
+            <SunoBanner labels={sunoBannerLabels} />
             <BeforeAfter labels={beforeAfterLabels} />
             <YouTube labels={youTubeLabels} />
             <HowItWorks labels={howItWorksLabels} />
             <Testimonials labels={testimonialsLabels} />
             <BlogPreview labels={blogPreviewLabels} />
+            <FAQ labels={faqLabels} />
             <Pricing labels={pricingLabels} />
             <FinalCTA labels={finalCtaLabels} />
         </>

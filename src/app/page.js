@@ -7,6 +7,8 @@ import Testimonials from "./components/sections/Testimonials";
 import Pricing from "./components/sections/Pricing";
 import FinalCTA from "./components/sections/FinalCTA";
 import BlogPreview from "./components/sections/BlogPreview";
+import FAQ from "./components/sections/FAQ";
+import SunoBanner from "./components/sections/SunoBanner";
 
 export const metadata = {
   title: { absolute: "SL Studio | Mixing, Mastering & Music Production" },
@@ -86,12 +88,14 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
       <Hero />
+      <SunoBanner />
       <BeforeAfter />
       <YouTube />
       <HowItWorks />
       <Testimonials />
-      
+
       <BlogPreview />
+      <FAQ />
       <Pricing />
       <FinalCTA />
     </>
