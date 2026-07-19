@@ -4,6 +4,7 @@ import Link from "next/link";
 import { User, RefreshCw, Clock, Shuffle, AudioLines } from "lucide-react";
 import HeroCard from "../../cards/HeroCard";
 import HeroWave from "../../common/HeroWave";
+import HeroStats from "../../common/HeroStats";
 import LangSwitch from "../../common/LangSwitch";
 
 // Polish mirror of the home Hero. Deliberately NOT a byte-copy of the English
@@ -111,18 +112,7 @@ export default function Hero() {
                         <p className="text-white/45 text-xs uppercase tracking-widest">
                             Dla niezależnych artystów · od 39 $ za utwór · zdalnie, na całym świecie
                         </p>
-                        <div className="grid grid-cols-3 gap-4 border-t border-white/5 pt-4">
-                            {stats.map((s, i) => (
-                                <div key={i} className="flex flex-col gap-1">
-                                    <span className="text-xl md:text-2xl font-semibold text-[#f5b942]">
-                                        {s.value}
-                                    </span>
-                                    <span className="text-white/55 text-xs uppercase tracking-widest">
-                                        {s.label}
-                                    </span>
-                                </div>
-                            ))}
-                        </div>
+                        <HeroStats items={stats} />
                     </div>
                     <div className="flex flex-col gap-3">
                         {trustBullets.map(({ icon: Icon, text }, i) => (

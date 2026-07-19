@@ -4,6 +4,7 @@ import Link from "next/link";
 import { User, RefreshCw, Clock } from "lucide-react";
 import HeroCard from "../cards/HeroCard";
 import HeroWave from "../common/HeroWave";
+import HeroStats from "../common/HeroStats";
 import LangSwitch from "../common/LangSwitch";
 import { servicesData } from "@/data/temporaryData";
 
@@ -122,18 +123,7 @@ export default function Hero() {
                         <p className="text-white/45 text-xs uppercase tracking-widest">
                             For independent artists · from $39 per track · remote, worldwide
                         </p>
-                        <div className="grid grid-cols-3 gap-4 border-t border-white/5 pt-4">
-                            {stats.map((s, i) => (
-                                <div key={i} className="flex flex-col gap-1">
-                                    <span className="text-xl md:text-2xl font-semibold text-[#f5b942]">
-                                        {s.value}
-                                    </span>
-                                    <span className="text-white/55 text-xs uppercase tracking-widest">
-                                        {s.label}
-                                    </span>
-                                </div>
-                            ))}
-                        </div>
+                        <HeroStats items={stats} />
                     </div>
                     {/* Trust bullets — fills the space that used to sit empty
                         beside About Me */}
