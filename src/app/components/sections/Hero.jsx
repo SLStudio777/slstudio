@@ -116,7 +116,7 @@ export default function Hero() {
                 on the left mirrors row 1's trick: clarifier/stats pinned to the
                 top, trust bullets pinned to the bottom, matching whatever height
                 About Me's (naturally taller) paragraphs end up needing. */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-10 items-stretch">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-14 items-stretch">
                 <div className="flex flex-col gap-6 md:justify-between [@media(max-width:767px)]:order-4">
                     {/* Price clarifier + stats — moved here from the old CTA row */}
                     <div className="flex flex-col gap-4">

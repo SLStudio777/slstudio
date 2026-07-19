@@ -106,7 +106,7 @@ export default function Hero() {
             </div>
 
             {/* Row 2 — stats + trust | About me. Natural flow (items-start). */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-10 items-start">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-14 items-start">
                 <div className="flex flex-col gap-6 [@media(max-width:767px)]:order-4">
                     <div className="flex flex-col gap-4">
                         <p className="text-white/45 text-xs uppercase tracking-widest">
