@@ -132,7 +132,7 @@ export default function AboutPage() {
                             <p className="text-xs uppercase tracking-widest" style={{ color: "#C9A84C" }}>
                                 About
                             </p>
-                            <h1 className="text-4xl md:text-5xl font-semibold tracking-wide leading-tight" style={{ fontFamily: "var(--font-playfair)" }}>
+                            <h1 className="text-4xl md:text-6xl font-semibold tracking-wide leading-tight" style={{ fontFamily: "var(--font-playfair)" }}>
                                 Serhii <span className="text-[#f5b942]">Lazariev</span>
                             </h1>
                             <p className="text-white/50 text-sm uppercase tracking-widest">

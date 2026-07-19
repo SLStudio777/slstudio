@@ -122,7 +122,7 @@ export default async function BlogPage({ searchParams }) {
                     </span>
                     <div className="relative mt-2">
                         <div className="hero-title-glow" aria-hidden="true" />
-                        <h1 className="relative text-4xl md:text-5xl font-semibold tracking-wide">
+                        <h1 className="relative text-4xl md:text-6xl font-semibold leading-tight tracking-wide">
                             Blog
                         </h1>
                     </div>
