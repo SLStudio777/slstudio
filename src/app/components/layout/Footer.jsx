@@ -1,13 +1,27 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {FacebookIcon, InstagramIcon, TelegramIcon, YouTubeIcon} from "../common/SVGIcons";
 
 export default function Footer() {
+    const pathname = usePathname();
+
+    // Same behaviour as the header: a footer nav link clicked while already on
+    // that page scrolls to the top instead of doing nothing.
+    const handleNav = (href) => (e) => {
+        if (pathname === href) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+    };
+
     return (
         <footer className="mt-10 border-t border-white/5 bg-[#1b1b1b]">
             <div className="container py-12 grid grid-cols-1 md:grid-cols-3 gap-10">
                 {/* Left — Brand */}
                 <div className="flex flex-col gap-4">
-                    <Link href="/" className="w-fit">
+                    <Link href="/" onClick={handleNav("/")} className="w-fit">
                         <img src="/images/logo-animated.svg" alt="SL Studio" style={{ height: "32px" }} />
                     </Link>
                     <p className="text-white/50 text-sm leading-relaxed">
@@ -33,13 +47,13 @@ export default function Footer() {
                 {/* Center — Navigation */}
                 <div className="flex flex-col gap-3">
                     <p className="text-white/30 text-xs uppercase tracking-[0.2em] mb-2">Navigation</p>
-                    <Link href="/" className="text-white/60 text-sm hover:text-gold2 transition">Home</Link>
-                    <Link href="/mixing-mastering" className="text-white/60 text-sm hover:text-gold2 transition">Mixing & Mastering</Link>
-                    <Link href="/arrangement" className="text-white/60 text-sm hover:text-gold2 transition">Arrangement & Production</Link>
-                    <Link href="/blog" className="text-white/60 text-sm hover:text-gold2 transition">Blog</Link>
-                    <Link href="/suno-track-finishing" className="text-white/60 text-sm hover:text-gold2 transition">Suno Track Finishing</Link>
-                    <Link href="/contact" className="text-white/60 text-sm hover:text-gold2 transition">Contact</Link>
-                    <Link href="/free-track-preview" className="text-white/60 text-sm hover:text-gold2 transition">Free Preview</Link>
+                    <Link href="/" onClick={handleNav("/")} className="text-white/60 text-sm hover:text-gold2 transition">Home</Link>
+                    <Link href="/mixing-mastering" onClick={handleNav("/mixing-mastering")} className="text-white/60 text-sm hover:text-gold2 transition">Mixing & Mastering</Link>
+                    <Link href="/arrangement" onClick={handleNav("/arrangement")} className="text-white/60 text-sm hover:text-gold2 transition">Arrangement & Production</Link>
+                    <Link href="/blog" onClick={handleNav("/blog")} className="text-white/60 text-sm hover:text-gold2 transition">Blog</Link>
+                    <Link href="/suno-track-finishing" onClick={handleNav("/suno-track-finishing")} className="text-white/60 text-sm hover:text-gold2 transition">Suno Track Finishing</Link>
+                    <Link href="/contact" onClick={handleNav("/contact")} className="text-white/60 text-sm hover:text-gold2 transition">Contact</Link>
+                    <Link href="/free-track-preview" onClick={handleNav("/free-track-preview")} className="text-white/60 text-sm hover:text-gold2 transition">Free Preview</Link>
                 </div>
 
                 {/* Right — Contact */}
