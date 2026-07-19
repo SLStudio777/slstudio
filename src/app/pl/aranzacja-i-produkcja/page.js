@@ -15,7 +15,7 @@ export const metadata = {
     },
   },
   description:
-    "Profesjonalna aranżacja i produkcja muzyczna online od 110 USD. Zamieniam notatkę głosową, riff, szkic MIDI lub nagranie z próby w kompletny utwór gotowy do publikacji.",
+    "Profesjonalna aranżacja i produkcja muzyczna online od 119 USD. Zamieniam notatkę głosową, riff, szkic MIDI lub nagranie z próby w kompletny utwór gotowy do publikacji.",
   openGraph: {
     title: "Aranżacja i produkcja muzyczna online | SL Studio",
     description:
@@ -64,8 +64,8 @@ const serviceSchema = {
   offers: {
     "@type": "Offer",
     priceCurrency: "USD",
-    price: "110",
-    description: "Aranżacja i produkcja muzyczna od 110 USD za utwór",
+    price: "119",
+    description: "Aranżacja i produkcja muzyczna od 119 USD za utwór",
     itemOffered: { "@type": "Service", name: "Aranżacja i produkcja muzyczna" },
   },
 };

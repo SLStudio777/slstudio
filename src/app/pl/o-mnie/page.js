@@ -66,7 +66,7 @@ const jsonLd = {
                 addressCountry: "PL",
             },
             areaServed: "Worldwide",
-            priceRange: "$25-$300",
+            priceRange: "$39-$300",
             email: "serhii@slstudio.pro",
         },
     ],
@@ -204,7 +204,7 @@ export default function OMniePage() {
                     </p>
                     <p>
                         Dziś miksuję, masteruję, aranżuję i produkuję dla niezależnych
-                        artystów z całego świata — od masteringu za 25$ po pełną
+                        artystów z całego świata — od masteringu za 39$ po pełną
                         produkcję zbudowaną wokół nagrania z telefonu. Te same uszy, ta
                         sama staranność, każdy projekt.
                     </p>

@@ -97,7 +97,7 @@ export default function Section1() {
                 Aranżacja i produkcja
               </p>
               <p className="text-3xl font-semibold text-[#f5b942]">
-                od 110 USD
+                od 119 USD
               </p>
             </div>
             <p className="text-white/55 text-sm leading-relaxed">

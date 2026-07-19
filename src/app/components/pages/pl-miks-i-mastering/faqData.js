@@ -5,7 +5,7 @@ export const faqItems = [
   },
   {
     q: "Ile kosztuje miks i mastering?",
-    a: "Mastering zaczyna się od 25 USD, a miks z masteringiem od 60 USD za utwór. Dokładna cena zależy od liczby śladów, jakości nagrania i zakresu edycji. Wycena jest znana przed rozpoczęciem pełnej realizacji.",
+    a: "Mastering zaczyna się od 39 USD, a miks z masteringiem od 89 USD za utwór. Dokładna cena zależy od liczby śladów, jakości nagrania i zakresu edycji. Wycena jest znana przed rozpoczęciem pełnej realizacji.",
   },
   {
     q: "Ile trwa realizacja?",

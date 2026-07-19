@@ -5,7 +5,7 @@ export const faqItems = [
   },
   {
     q: "Ile kosztuje aranżacja i produkcja utworu?",
-    a: "Cena zaczyna się od 110 USD. Dokładna wycena zależy od długości utworu, liczby instrumentów, zakresu edycji oraz tego, czy potrzebujesz kompletnej produkcji, czy tylko kilku dodatkowych partii. Cenę poznasz przed rozpoczęciem pełnej realizacji.",
+    a: "Cena zaczyna się od 119 USD. Dokładna wycena zależy od długości utworu, liczby instrumentów, zakresu edycji oraz tego, czy potrzebujesz kompletnej produkcji, czy tylko kilku dodatkowych partii. Cenę poznasz przed rozpoczęciem pełnej realizacji.",
   },
   {
     q: "Co otrzymam w ramach realizacji?",

@@ -74,7 +74,7 @@ const jsonLd = {
                 addressCountry: "PL",
             },
             areaServed: "Worldwide",
-            priceRange: "$25-$300",
+            priceRange: "$39-$300",
             email: "serhii@slstudio.pro",
         },
     ],
@@ -211,7 +211,7 @@ export default function AboutPage() {
                     </p>
                     <p>
                         Today I mix, master, arrange and produce for independent artists
-                        worldwide — from a $25 master to a full production built around
+                        worldwide — from a $39 master to a full production built around
                         a voice memo. Same ears, same care, every project.
                     </p>
                     </div>

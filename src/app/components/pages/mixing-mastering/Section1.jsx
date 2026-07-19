@@ -97,7 +97,7 @@ export default function Section1() {
                 <div>
                   <p className="text-white/70 text-sm">Mastering only</p>
                   <p className="text-3xl font-semibold text-[#f5b942]">
-                    from $25
+                    from $39
                   </p>
                 </div>
                 <div className="h-px bg-white/10" />
@@ -106,7 +106,7 @@ export default function Section1() {
                     Mixing &amp; mastering
                   </p>
                   <p className="text-3xl font-semibold text-[#f5b942]">
-                    from $60
+                    from $89
                   </p>
                 </div>
               </div>

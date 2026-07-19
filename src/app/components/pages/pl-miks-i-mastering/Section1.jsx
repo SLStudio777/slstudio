@@ -94,14 +94,14 @@ export default function Section1() {
                 <div>
                   <p className="text-white/70 text-sm">Sam mastering</p>
                   <p className="text-3xl font-semibold text-[#f5b942]">
-                    od 25 USD
+                    od 39 USD
                   </p>
                 </div>
                 <div className="h-px bg-white/10" />
                 <div>
                   <p className="text-white/70 text-sm">Miks i mastering</p>
                   <p className="text-3xl font-semibold text-[#f5b942]">
-                    od 60 USD
+                    od 89 USD
                   </p>
                 </div>
               </div>

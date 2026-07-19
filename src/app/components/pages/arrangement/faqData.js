@@ -5,7 +5,7 @@ export const faqItems = [
   },
   {
     q: "How much does arrangement and production cost?",
-    a: "Projects start at $110. The exact price depends on the length of the song, the number of instruments, the amount of editing and whether you need a full production or only a few additional parts. You receive the exact price before the full job begins.",
+    a: "Projects start at $119. The exact price depends on the length of the song, the number of instruments, the amount of editing and whether you need a full production or only a few additional parts. You receive the exact price before the full job begins.",
   },
   {
     q: "What is included in the finished project?",

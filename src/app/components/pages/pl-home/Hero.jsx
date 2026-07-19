@@ -109,7 +109,7 @@ export default function Hero() {
                 <div className="flex flex-col gap-6 [@media(max-width:767px)]:order-4">
                     <div className="flex flex-col gap-4">
                         <p className="text-white/45 text-xs uppercase tracking-widest">
-                            Dla niezależnych artystów · od 25 $ za utwór · zdalnie, na całym świecie
+                            Dla niezależnych artystów · od 39 $ za utwór · zdalnie, na całym świecie
                         </p>
                         <div className="grid grid-cols-3 gap-4 border-t border-white/5 pt-4">
                             {stats.map((s, i) => (

@@ -97,7 +97,7 @@ export default function Section1() {
               <p className="text-white/70 text-sm mt-5">
                 Arrangement &amp; production
               </p>
-              <p className="text-3xl font-semibold text-[#f5b942]">from $110</p>
+              <p className="text-3xl font-semibold text-[#f5b942]">from $119</p>
             </div>
             <p className="text-white/55 text-sm leading-relaxed">
               The exact price depends on the song length, number of instruments,
