@@ -29,16 +29,16 @@ export default function Footer() {
                         Transforming raw recordings into polished, release-ready tracks — remotely, worldwide.
                     </p>
                     <div className="flex items-center gap-3 text-white/40 mt-2">
-                        <a href="https://www.youtube.com/@SLStudio_Guitar" target="_blank" className="hover:text-gold2 transition">
+                        <a href="https://www.youtube.com/@SLStudio_Guitar" target="_blank" rel="noopener noreferrer" aria-label="SL Studio on YouTube" className="hover:text-gold2 transition">
                             <YouTubeIcon size={21} />
                         </a>
-                        <a href="https://www.instagram.com/lazarev_serhii_sl" target="_blank" className="hover:text-gold2 transition">
+                        <a href="https://www.instagram.com/lazarev_serhii_sl" target="_blank" rel="noopener noreferrer" aria-label="SL Studio on Instagram" className="hover:text-gold2 transition">
                             <InstagramIcon size={19} />
                         </a>
-                        <a href="https://www.facebook.com/profile.php?id=100044130441850" target="_blank" className="hover:text-gold2 transition">
+                        <a href="https://www.facebook.com/profile.php?id=100044130441850" target="_blank" rel="noopener noreferrer" aria-label="SL Studio on Facebook" className="hover:text-gold2 transition">
                             <FacebookIcon size={16} />
                         </a>
-                        <a href="https://t.me/serhii_lazariev" target="_blank" className="hover:text-gold2 transition">
+                        <a href="https://t.me/serhii_lazariev" target="_blank" rel="noopener noreferrer" aria-label="SL Studio on Telegram" className="hover:text-gold2 transition">
                             <TelegramIcon size={18} />
                         </a>
                     </div>
@@ -59,7 +59,7 @@ export default function Footer() {
                 {/* Right — Contact */}
                 <div className="flex flex-col gap-3">
                     <p className="text-white/30 text-xs uppercase tracking-[0.2em] mb-2">Get In Touch</p>
-                    <a href="https://t.me/serhii_lazariev" target="_blank" className="text-white/60 text-sm hover:text-gold2 transition">
+                    <a href="https://t.me/serhii_lazariev" target="_blank" rel="noopener noreferrer" className="text-white/60 text-sm hover:text-gold2 transition">
                         Telegram — @serhii_lazariev
                     </a>
                     <a href="mailto:serhii@slstudio.pro" className="text-white/60 text-sm hover:text-gold2 transition">

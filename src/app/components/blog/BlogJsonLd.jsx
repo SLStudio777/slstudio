@@ -6,8 +6,9 @@ function toIsoDate(dateString) {
     const parsed = new Date(dateString);
     if (isNaN(parsed)) return undefined;
     const pad = (n) => String(n).padStart(2, "0");
-    // full ISO 8601 with Warsaw offset, as required for Article rich results
-    return `${parsed.getFullYear()}-${pad(parsed.getMonth() + 1)}-${pad(parsed.getDate())}T10:00:00+01:00`;
+    // full ISO 8601 in UTC, as required for Article rich results
+    // (a fixed +01:00 offset is wrong during Warsaw DST, so we use Z instead)
+    return `${parsed.getFullYear()}-${pad(parsed.getMonth() + 1)}-${pad(parsed.getDate())}T10:00:00Z`;
 }
 
 // dateModified / breadcrumbLabel are optional: articles that don't pass them
