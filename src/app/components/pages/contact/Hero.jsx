@@ -9,6 +9,7 @@ import {
   MessagesSquare,
   BadgeCheck,
   ChevronDown,
+  FileText,
 } from "lucide-react";
 import LangSwitch from "../../common/LangSwitch";
 import StepFlareCard from "../../common/StepFlareCard";
@@ -149,7 +150,7 @@ export default function Hero() {
         <style>{`@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.15);opacity:0.6}}`}</style>
       </div>
 
-      <div className="mb-3">
+      <div className="mb-1 md:mt-6">
         <LangSwitch active="en" enHref="/contact" plHref="/pl/kontakt" />
       </div>
 
@@ -181,16 +182,17 @@ export default function Hero() {
               key={i}
               href={c.href}
               target={c.href.startsWith("mailto") ? undefined : "_blank"}
-              className="group flex items-center gap-3 p-3.5 rounded-xl transition-all duration-200"
+              className={`group flex items-center gap-3 ${c.highlight ? "p-3.5" : "p-2.5"} rounded-xl transition-all duration-200`}
               style={
                 c.highlight
                   ? {
-                      border: "1px solid rgba(201,168,76,0.35)",
-                      background: "rgba(201,168,76,0.06)",
+                      border: "1px solid rgba(201,168,76,0.4)",
+                      background: "rgba(201,168,76,0.08)",
+                      boxShadow: "0 0 22px rgba(201,168,76,0.14)",
                     }
                   : {
                       border: "1px solid rgba(255,255,255,0.05)",
-                      background: "rgba(255,255,255,0.02)",
+                      background: "rgba(255,255,255,0.015)",
                     }
               }
               onMouseEnter={(e) => {
@@ -200,23 +202,23 @@ export default function Hero() {
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.border = c.highlight
-                  ? "1px solid rgba(201,168,76,0.35)"
+                  ? "1px solid rgba(201,168,76,0.4)"
                   : "1px solid rgba(255,255,255,0.05)";
                 e.currentTarget.style.background = c.highlight
-                  ? "rgba(201,168,76,0.06)"
-                  : "rgba(255,255,255,0.02)";
+                  ? "rgba(201,168,76,0.08)"
+                  : "rgba(255,255,255,0.015)";
                 e.currentTarget.style.transform = "translateX(0)";
               }}
             >
               <div
-                className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
+                className={`${c.highlight ? "w-9 h-9" : "w-8 h-8"} rounded-lg flex items-center justify-center flex-shrink-0`}
                 style={{ background: "rgba(201,168,76,0.1)", color: "#C9A84C" }}
               >
                 {c.icon}
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2">
-                  <p className="text-white font-medium text-sm">{c.label}</p>
+                  <p className={`${c.highlight ? "text-white" : "text-white/75"} font-medium text-sm`}>{c.label}</p>
                   {c.sub && (
                     <span
                       className="text-xs px-2 py-0.5 rounded-full"
@@ -265,13 +267,71 @@ export default function Hero() {
         </div>
 
         {/* RIGHT — stretched to match the left column's height (5 contact
-                    cards make it taller); logo pinned top, form pinned bottom */}
+                    cards make it taller); compact column header pinned top, form pinned bottom */}
         <div className="flex flex-col gap-4 md:justify-between">
-          <img
-            src="/images/logo-animated.svg"
-            alt="SL Studio"
-            style={{ width: "100%", display: "block", mixBlendMode: "lighten" }}
-          />
+          <div className="flex flex-col gap-5">
+            <div className="flex items-center gap-5 self-start md:mt-[34px]">
+              <div
+                className="relative w-16 h-16 md:w-[68px] md:h-[68px] flex-shrink-0 rounded-full overflow-hidden"
+                style={{
+                  border: "1px solid rgba(201,168,76,0.35)",
+                  boxShadow: "0 0 20px rgba(201,168,76,0.12)",
+                }}
+              >
+                <img
+                  src="/images/Serhii-Lazariev.webp"
+                  alt="Serhii Lazariev"
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
+              <div>
+                <h2 className="text-3xl md:text-4xl font-semibold tracking-wide leading-none text-white">
+                  Send Your <span className="text-gold2">Track</span>
+                </h2>
+                <p className="text-white/45 text-sm mt-2">
+                  Usually replies within 24 hours
+                </p>
+              </div>
+            </div>
+            {/* Track-prep guide card */}
+            <a
+              href="/blog/how-to-export-stems-for-mixing"
+              className="group flex items-center gap-3 p-3.5 rounded-xl transition-all duration-200"
+              style={{
+                border: "1px solid rgba(201,168,76,0.3)",
+                background: "rgba(201,168,76,0.05)",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.border = "1px solid rgba(201,168,76,0.5)";
+                e.currentTarget.style.background = "rgba(201,168,76,0.09)";
+                e.currentTarget.style.transform = "translateX(3px)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.border = "1px solid rgba(201,168,76,0.3)";
+                e.currentTarget.style.background = "rgba(201,168,76,0.05)";
+                e.currentTarget.style.transform = "translateX(0)";
+              }}
+            >
+              <div
+                className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
+                style={{ background: "rgba(201,168,76,0.1)", color: "#C9A84C" }}
+              >
+                <FileText className="w-5 h-5" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="text-white font-medium text-sm">
+                  Preparing your track?
+                </p>
+                <p className="text-white/50 text-xs">
+                  How to export stems the right way + a free PDF checklist
+                </p>
+              </div>
+              <ArrowUpRight
+                className="w-4 h-4 flex-shrink-0 opacity-30 group-hover:opacity-70 transition"
+                style={{ color: "#C9A84C" }}
+              />
+            </a>
+          </div>
 
           {sent ? (
             <div
@@ -302,7 +362,7 @@ export default function Hero() {
             </div>
           ) : (
             <div
-              className="rounded-2xl p-6 flex flex-col gap-4"
+              className="rounded-2xl p-6 md:pb-3 flex flex-col gap-4"
               style={{
                 border: "1px solid rgba(255,255,255,0.06)",
                 background: "rgba(255,255,255,0.015)",
