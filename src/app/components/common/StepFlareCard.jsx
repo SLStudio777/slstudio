@@ -11,12 +11,16 @@ export default function StepFlareCard({
   const replayStepFlare = (event) => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-    const number = event.currentTarget.querySelector(".step-number");
-    if (!number) return;
+    const numbers = event.currentTarget.querySelectorAll(".step-number");
+    if (!numbers.length) return;
 
-    number.style.animation = "none";
-    void number.offsetWidth;
-    number.style.animation = "stepFlare 0.9s ease-out both";
+    numbers.forEach((number) => {
+      number.style.animation = "none";
+    });
+    void event.currentTarget.offsetWidth;
+    numbers.forEach((number) => {
+      number.style.animation = "stepFlare 0.9s ease-out both";
+    });
   };
 
   return (

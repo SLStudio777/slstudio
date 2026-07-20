@@ -86,7 +86,10 @@ export default function Section1() {
           </p>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-8">
-          <div className="rounded-2xl p-8 border border-[#C9A84C]/25 bg-[#C9A84C]/[0.06] flex flex-col gap-6">
+          <StepFlareCard
+            delay={0}
+            className="rounded-2xl p-8 border border-[#C9A84C]/25 bg-[#C9A84C]/[0.06] flex flex-col gap-6 h-full"
+          >
             <div>
               <p className="text-white/40 text-xs uppercase tracking-[0.25em]">
                 Ceny od
@@ -94,14 +97,14 @@ export default function Section1() {
               <div className="mt-5 flex flex-col gap-5">
                 <div>
                   <p className="text-white/70 text-sm">Sam mastering</p>
-                  <p className="text-3xl font-semibold text-[#f5b942]">
+                  <p className="step-number text-3xl font-semibold text-[#f5b942]">
                     od 39 USD
                   </p>
                 </div>
                 <div className="h-px bg-white/10" />
                 <div>
                   <p className="text-white/70 text-sm">Miks i mastering</p>
-                  <p className="text-3xl font-semibold text-[#f5b942]">
+                  <p className="step-number text-3xl font-semibold text-[#f5b942]">
                     od 89 USD
                   </p>
                 </div>
@@ -117,7 +120,7 @@ export default function Section1() {
             >
               Odbierz bezpłatny fragment →
             </Link>
-          </div>
+          </StepFlareCard>
           <div className="rounded-2xl p-8 border border-white/[0.06] bg-white/[0.02] flex flex-col">
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 flex-1 content-between">
               {includedItems.map((item) => (
