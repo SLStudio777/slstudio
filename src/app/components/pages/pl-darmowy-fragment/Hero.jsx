@@ -9,7 +9,6 @@ import {
   FileAudio,
   Send,
   Loader2,
-  ChevronRight,
   Headphones,
   SlidersHorizontal,
   Sparkles,
@@ -19,7 +18,25 @@ import { uploadPresigned } from "@vercel/blob/client";
 import HeroWave from "../../common/HeroWave";
 import StepFlareCard from "../../common/StepFlareCard";
 import LangSwitch from "../../common/LangSwitch";
+import FAQ from "../../sections/FAQ";
 import { faqItems } from "./faqData";
+
+const faqLabels = {
+  eyebrow: "FAQ",
+  heading: "Najczęstsze pytania",
+  sub: "Konkretne odpowiedzi o darmowym fragmencie, plikach i przebiegu współpracy.",
+  items: faqItems.map((item) => ({
+    q: item.q,
+    a: item.a,
+    link: item.contactLink
+      ? {
+          href: "/pl/kontakt",
+          label: "Napisz do mnie bezpośrednio →",
+          onClick: () => trackEvent("preview_contact_click", { location: "faq" }),
+        }
+      : undefined,
+  })),
+};
 
 // Keep in sync with MAX_UPLOAD_BYTES in /api/preview-upload/route.js
 const MAX_UPLOAD_BYTES = 100 * 1024 * 1024; // 100 MB
@@ -234,7 +251,7 @@ export default function Hero() {
         {/* ── HERO — two columns: pitch + trust + what-you-get-back | form ── */}
         <section className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-stretch">
           {/* LEFT column */}
-          <div className="mobile-reflow flex flex-col gap-8">
+          <div className="mobile-reflow flex flex-col gap-8 md:justify-between">
             {/* Intro group */}
             <div className="[@media(max-width:767px)]:order-1 flex flex-col">
               <span className="text-white/60 text-xs uppercase tracking-[0.3em]">
@@ -306,8 +323,15 @@ export default function Hero() {
             </div>
 
             {/* Real testimonial (translated) + privacy note */}
-            <figure className="[@media(max-width:767px)]:order-4 flex flex-col gap-2">
-              <blockquote className="text-white/70 text-[15px] italic leading-relaxed">
+            <figure className="[@media(max-width:767px)]:order-4 relative rounded-2xl p-6 pt-9 flex flex-col gap-2 overflow-hidden bg-white/[0.03] border border-white/[0.05]">
+              <span
+                aria-hidden="true"
+                className="absolute -top-2 left-5 text-7xl leading-none font-serif select-none pointer-events-none"
+                style={{ color: "rgba(201,168,76,0.3)" }}
+              >
+                “
+              </span>
+              <blockquote className="relative text-white/70 text-[15px] italic leading-relaxed">
                 „Totalna bomba. Zostaw tak, nic nie zmieniaj. Ciągle włączam od
                 nowa. Maestro, brawo.”
               </blockquote>
@@ -684,7 +708,7 @@ export default function Hero() {
         </section>
 
         {/* ── FAQ ── */}
-        <FAQ />
+        <FAQ labels={faqLabels} />
 
         {/* ── FINAL CTA ── */}
         <section className="py-4">
@@ -736,43 +760,3 @@ export default function Hero() {
   );
 }
 
-function FAQ() {
-  return (
-    <section className="max-w-3xl">
-      <div className="mb-6">
-        <span className="text-white/30 text-xs uppercase tracking-[0.3em]">
-          FAQ
-        </span>
-        <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mt-2">
-          Najczęstsze pytania
-        </h2>
-      </div>
-      <div className="flex flex-col divide-y divide-white/5">
-        {faqItems.map((item) => (
-          <details key={item.q} className="group py-1">
-            <summary className="py-5 flex items-start gap-3 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-              <ChevronRight className="w-4 h-4 mt-1 flex-shrink-0 text-gold2 transition-transform duration-200 group-open:rotate-90" />
-              <span className="text-white/90 font-medium text-base leading-snug">
-                {item.q}
-              </span>
-            </summary>
-            <div className="pb-5 pl-7 text-white/60 text-[15px] leading-relaxed">
-              <p>{item.a}</p>
-              {item.contactLink && (
-                <Link
-                  href="/pl/kontakt"
-                  onClick={() =>
-                    trackEvent("preview_contact_click", { location: "faq" })
-                  }
-                  className="inline-flex mt-3 text-[#C9A84C] underline hover:text-[#e8c97a] transition"
-                >
-                  Napisz do mnie bezpośrednio →
-                </Link>
-              )}
-            </div>
-          </details>
-        ))}
-      </div>
-    </section>
-  );
-}

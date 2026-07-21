@@ -1,5 +1,4 @@
 import Hero from "../../components/pages/pl-darmowy-fragment/Hero";
-import { faqItems } from "../../components/pages/pl-darmowy-fragment/faqData";
 
 export const metadata = {
   title: "Bezpłatny fragment miksu i masteringu",
@@ -64,15 +63,6 @@ const serviceSchema = {
     },
   },
 };
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqItems.map((item) => ({
-    "@type": "Question",
-    name: item.q,
-    acceptedAnswer: { "@type": "Answer", text: item.a },
-  })),
-};
 
 export default function DarmowyFragmentPage() {
   return (
@@ -80,10 +70,6 @@ export default function DarmowyFragmentPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Hero />
     </>

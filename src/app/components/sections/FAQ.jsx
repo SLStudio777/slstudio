@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import Link from "next/link";
 import ScrollReveal from "../common/ScrollReveal";
 
 // All text comes from labels (English default) so the section can be reused
@@ -41,7 +42,7 @@ const DEFAULTS = {
   ],
 };
 
-function FaqItem({ q, a, open, onToggle }) {
+function FaqItem({ q, a, link, open, onToggle }) {
   return (
     <div
       className="rounded-2xl overflow-hidden"
@@ -77,6 +78,16 @@ function FaqItem({ q, a, open, onToggle }) {
       >
         <div style={{ overflow: "hidden" }}>
           <p className="text-white/65 text-sm leading-relaxed px-5 pb-4">{a}</p>
+          {link && (
+            <Link
+              href={link.href}
+              onClick={link.onClick}
+              className="inline-flex px-5 pb-4 -mt-2 text-sm underline transition hover:opacity-80"
+              style={{ color: "#C9A84C" }}
+            >
+              {link.label}
+            </Link>
+          )}
         </div>
       </div>
     </div>
@@ -126,6 +137,7 @@ export default function FAQ({ labels }) {
             <FaqItem
               q={item.q}
               a={item.a}
+              link={item.link}
               open={openIndex === i}
               onToggle={() => setOpenIndex(openIndex === i ? -1 : i)}
             />

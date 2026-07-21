@@ -1,7 +1,6 @@
 import Hero from "../../components/pages/pl-aranzacja-i-produkcja/Hero";
 import Section1 from "../../components/pages/pl-aranzacja-i-produkcja/Section1";
 import Section2 from "../../components/pages/pl-aranzacja-i-produkcja/Section2";
-import { faqItems } from "../../components/pages/pl-aranzacja-i-produkcja/faqData";
 import BeforeAfterArrangementPl from "../../components/sections/BeforeAfterArrangementPl";
 
 export const metadata = {
@@ -70,15 +69,6 @@ const serviceSchema = {
   },
 };
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqItems.map((item) => ({
-    "@type": "Question",
-    name: item.q,
-    acceptedAnswer: { "@type": "Answer", text: item.a },
-  })),
-};
 
 export default function AranzacjaIProdukcjaPage() {
   return (
@@ -86,10 +76,6 @@ export default function AranzacjaIProdukcjaPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Hero />
       <BeforeAfterArrangementPl />

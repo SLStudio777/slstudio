@@ -1,5 +1,4 @@
 import Hero from "../components/pages/free-track-preview/Hero";
-import { faqItems } from "../components/pages/free-track-preview/faqData";
 
 export const metadata = {
   title: "Free Mixing & Mastering Preview",
@@ -75,18 +74,6 @@ const serviceSchema = {
   },
 };
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqItems.map((item) => ({
-    "@type": "Question",
-    name: item.q,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: item.a,
-    },
-  })),
-};
 
 export default function FreeTrackPreviewPage() {
   return (
@@ -94,10 +81,6 @@ export default function FreeTrackPreviewPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Hero />
     </>

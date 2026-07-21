@@ -1,7 +1,6 @@
 import Hero from "../components/pages/mixing-mastering/Hero";
 import Section1 from "../components/pages/mixing-mastering/Section1";
 import Section2 from "../components/pages/mixing-mastering/Section2";
-import { faqItems } from "../components/pages/mixing-mastering/faqData";
 import BeforeAfterMixing from "../components/sections/BeforeAfterMixing";
 
 export const metadata = {
@@ -104,18 +103,6 @@ const serviceSchema = {
   },
 };
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqItems.map((item) => ({
-    "@type": "Question",
-    name: item.q,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: item.a,
-    },
-  })),
-};
 
 export default function MixingMasteringPage() {
   return (
@@ -123,10 +110,6 @@ export default function MixingMasteringPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Hero />
       <BeforeAfterMixing />

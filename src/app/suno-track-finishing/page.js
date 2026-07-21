@@ -4,6 +4,8 @@ import LangSwitch from "../components/common/LangSwitch";
 import HeroWave from "../components/common/HeroWave";
 import StepFlareCard from "../components/common/StepFlareCard";
 import BeforeAfterSuno from "../components/sections/BeforeAfterSuno";
+import FAQ from "../components/sections/FAQ";
+import { Bot, Gauge, Waves, Layers } from "lucide-react";
 
 const SITE = "https://www.slstudio.pro";
 
@@ -68,22 +70,22 @@ const jsonLd = {
 
 const pains = [
   {
-    icon: "🤖",
+    icon: Bot,
     title: "Metallic vocals & smeared cymbals",
     text: "Classic AI artifacts. Suno gets the song right, but the high end often sounds synthetic — and listeners hear it in the first ten seconds.",
   },
   {
-    icon: "📉",
+    icon: Gauge,
     title: "Fails the loudness game",
     text: "Raw Suno exports are either too quiet next to commercial releases or get crushed by Spotify's normalization. Either way, your track loses.",
   },
   {
-    icon: "🌫️",
+    icon: Waves,
     title: "Muddy low end",
     text: "Kick and bass fighting for the same space, no punch, no definition — especially on phone speakers and earbuds, where most people will hear your song.",
   },
   {
-    icon: "🧱",
+    icon: Layers,
     title: "One flat stereo file",
     text: "No stems means no control. You can't turn the vocal up, fix the drums or replace a part — unless someone separates and rebuilds the track properly.",
   },
@@ -307,9 +309,17 @@ export default function SunoTrackFinishingPage() {
           {pains.map((p) => (
             <div
               key={p.title}
-              className="rounded-2xl border border-white/10 bg-white/[0.03] p-6"
+              className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-colors duration-300 hover:border-[#C9A84C]/35"
             >
-              <div className="text-2xl mb-3">{p.icon}</div>
+              <div
+                className="w-10 h-10 rounded-xl flex items-center justify-center mb-4"
+                style={{
+                  background: "rgba(201,168,76,0.10)",
+                  border: "1px solid rgba(201,168,76,0.25)",
+                }}
+              >
+                <p.icon className="w-5 h-5" style={{ color: "#C9A84C" }} />
+              </div>
               <h3 className="font-semibold mb-2">{p.title}</h3>
               <p className="text-white/55 text-sm leading-relaxed">{p.text}</p>
             </div>
@@ -326,7 +336,7 @@ export default function SunoTrackFinishingPage() {
           Not an algorithm. A musician and engineer working on your song by hand
           — the same process I use for every human-recorded track in the studio.
         </p>
-        <ul className="space-y-3 max-w-3xl">
+        <ul className="grid sm:grid-cols-2 gap-x-10 gap-y-3">
           {included.map((item) => (
             <li key={item} className="flex gap-3 text-white/65 leading-relaxed">
               <span style={{ color: "#C9A84C" }}>✓</span>
@@ -435,43 +445,49 @@ export default function SunoTrackFinishingPage() {
       </section>
 
       {/* FAQ */}
-      <section className="container py-12">
-        <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mb-8">
-          Questions people actually ask
-        </h2>
-        <div className="space-y-4 max-w-3xl">
-          {faq.map((item) => (
-            <div
-              key={item.q}
-              className="rounded-2xl border border-white/10 bg-white/[0.03] p-6"
-            >
-              <h3 className="font-semibold mb-2">{item.q}</h3>
-              <p className="text-white/55 text-sm leading-relaxed">{item.a}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+      <div className="container">
+        <FAQ
+          labels={{
+            eyebrow: "FAQ",
+            heading: "Questions people actually ask",
+            sub: "Straight answers about stems, rights, moderation and loudness.",
+            items: faq,
+          }}
+        />
+      </div>
 
       {/* CTA */}
       <section className="container py-16">
-        <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-8 md:p-12 text-center">
-          <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mb-4">
+        <div
+          className="rounded-2xl p-10 flex flex-col items-center text-center gap-6 max-w-3xl mx-auto w-full relative overflow-hidden"
+          style={{
+            background: "rgba(201,168,76,0.06)",
+            border: "1px solid rgba(201,168,76,0.2)",
+          }}
+        >
+          <div
+            className="absolute -top-16 left-1/2 -translate-x-1/2 w-[320px] h-[220px] rounded-full pointer-events-none"
+            style={{
+              background:
+                "radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 70%)",
+            }}
+          />
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-wide relative z-10">
             Hear your track finished — before you pay
           </h2>
-          <p className="text-white/60 mb-8 max-w-xl mx-auto">
+          <p className="text-white/65 text-[15px] leading-relaxed max-w-xl relative z-10">
             Send the Suno MP3 and get a free processed preview with an exact
             quote. If you don't hear the difference, walk away — no hard
             feelings.
           </p>
           <Link
             href="/free-track-preview"
-            className="btn-gold inline-block px-8 py-3 rounded-lg font-semibold"
+            className="btn-gold relative z-10 inline-flex items-center gap-2 font-semibold px-10 py-4 rounded-xl text-sm text-black"
             style={{
               background:
                 "linear-gradient(135deg, #C9A84C 0%, #e8c97a 50%, #C9A84C 100%)",
               backgroundSize: "200% auto",
-              color: "#161616",
-              boxShadow: "0 0 24px rgba(201,168,76,0.25)",
+              boxShadow: "0 0 30px rgba(201,168,76,0.25)",
             }}
           >
             Get a Free Preview →

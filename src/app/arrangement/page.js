@@ -1,7 +1,6 @@
 import Hero from "../components/pages/arrangement/Hero";
 import Section1 from "../components/pages/arrangement/Section1";
 import Section2 from "../components/pages/arrangement/Section2";
-import { faqItems } from "../components/pages/arrangement/faqData";
 import BeforeAfterArrangement from "../components/sections/BeforeAfterArrangement";
 
 export const metadata = {
@@ -72,15 +71,6 @@ const serviceSchema = {
   },
 };
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqItems.map((item) => ({
-    "@type": "Question",
-    name: item.q,
-    acceptedAnswer: { "@type": "Answer", text: item.a },
-  })),
-};
 
 export default function ArrangementPage() {
   return (
@@ -88,10 +78,6 @@ export default function ArrangementPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Hero />
       <BeforeAfterArrangement />

@@ -1,46 +1,25 @@
-import { ChevronRight, HelpCircle } from "lucide-react";
 import Link from "next/link";
+import FAQ from "../../sections/FAQ";
 import { faqItems } from "./faqData";
+
+const faqLabels = {
+  eyebrow: "FAQ",
+  heading: "Frequently Asked Questions",
+  sub: "Direct answers about arrangement, production and how we start.",
+  items: faqItems.map((item) => ({
+    q: item.q,
+    a: item.a,
+    link: item.previewLink
+      ? { href: "/free-track-preview", label: "Send your idea for a free preview →" }
+      : undefined,
+  })),
+};
 
 export default function Section2() {
   return (
     <section className="mt-16 mb-20 flex flex-col gap-16">
-      <div className="flex flex-col gap-6">
-        <div className="flex items-center gap-3">
-          <HelpCircle className="text-gold2 w-6 h-6" />
-          <div>
-            <span className="text-white/30 text-xs uppercase tracking-[0.3em]">
-              FAQ
-            </span>
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-wide">
-              Frequently Asked Questions
-            </h2>
-          </div>
-        </div>
-        <div className="flex flex-col divide-y divide-white/5 max-w-3xl">
-          {faqItems.map((item) => (
-            <details key={item.q} className="group py-1">
-              <summary className="py-5 flex items-start gap-3 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-                <ChevronRight className="w-4 h-4 mt-1 flex-shrink-0 text-gold2 transition-transform duration-200 group-open:rotate-90" />
-                <span className="text-white/90 font-medium text-base leading-snug">
-                  {item.q}
-                </span>
-              </summary>
-              <div className="pb-5 pl-7 text-white/60 text-[15px] leading-relaxed">
-                <p>{item.a}</p>
-                {item.previewLink && (
-                  <Link
-                    href="/free-track-preview"
-                    className="inline-flex mt-3 text-gold underline hover:text-gold2 transition"
-                  >
-                    Send your idea for a free preview →
-                  </Link>
-                )}
-              </div>
-            </details>
-          ))}
-        </div>
-      </div>
+      <FAQ labels={faqLabels} />
+
       <div
         className="rounded-2xl p-10 flex flex-col items-center text-center gap-6 max-w-3xl mx-auto w-full relative overflow-hidden"
         style={{

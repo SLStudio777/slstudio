@@ -717,16 +717,16 @@ export default function Hero() {
               pointerEvents: "none",
             }}
           />
-          <h3 className="text-xl font-semibold text-white relative z-10">
+          <h3 className="text-3xl md:text-4xl font-semibold tracking-wide text-white relative z-10">
             Don't feel like writing?
           </h3>
-          <p className="text-white/50 text-sm max-w-md relative z-10">
+          <p className="text-white/65 text-[15px] leading-relaxed max-w-xl relative z-10">
             Just send the track instead — you'll get a free preview, honest
             notes and an exact price. Then we talk.
           </p>
           <a
             href="/free-track-preview"
-            className="btn-gold relative z-10 inline-flex items-center gap-2 text-black font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition text-sm"
+            className="btn-gold relative z-10 inline-flex items-center gap-2 text-black font-semibold px-10 py-4 rounded-xl hover:opacity-90 transition text-sm"
             style={{
               background:
                 "linear-gradient(135deg, #C9A84C 0%, #e8c97a 50%, #C9A84C 100%)",

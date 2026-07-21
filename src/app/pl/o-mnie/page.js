@@ -449,7 +449,7 @@ export default function OMniePage() {
           </p>
           <Link
             href="/pl/darmowy-fragment"
-            className="btn-gold relative z-10 inline-flex items-center justify-center px-10 py-4 rounded-xl font-semibold transition hover:opacity-90"
+            className="btn-gold relative z-10 inline-flex items-center gap-2 font-semibold px-10 py-4 rounded-xl text-sm transition hover:opacity-90"
             style={{
               background:
                 "linear-gradient(135deg, #C9A84C 0%, #e8c97a 50%, #C9A84C 100%)",

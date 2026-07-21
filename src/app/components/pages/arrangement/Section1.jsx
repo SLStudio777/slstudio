@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Lightbulb } from "lucide-react";
 import StepFlareCard from "../../common/StepFlareCard";
 
 const includedItems = [
@@ -44,8 +45,14 @@ function ProTip({ children }) {
         border: "1px solid rgba(201,168,76,0.25)",
       }}
     >
-      <span className="text-base flex-shrink-0 font-bold text-[#C9A84C]">
-        ★
+      <span
+        className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
+        style={{
+          background: "rgba(201,168,76,0.12)",
+          border: "1px solid rgba(201,168,76,0.3)",
+        }}
+      >
+        <Lightbulb className="w-4 h-4" style={{ color: "#C9A84C" }} />
       </span>
       <div>
         <p className="text-xs font-bold uppercase tracking-widest mb-1.5 text-[#C9A84C]">
