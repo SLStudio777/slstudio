@@ -144,6 +144,7 @@ export default function UpdateEnhancementPage({ params }) {
                             <option value="home">Home</option>
                             <option value="mixing">Mixing & Mastering</option>
                             <option value="arrangement">Arrangement</option>
+                            <option value="suno">Suno Track Finishing</option>
                         </select>
                     </div>
 

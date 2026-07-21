@@ -3,6 +3,7 @@ import Image from "next/image";
 import LangSwitch from "../components/common/LangSwitch";
 import HeroWave from "../components/common/HeroWave";
 import StepFlareCard from "../components/common/StepFlareCard";
+import BeforeAfterSuno from "../components/sections/BeforeAfterSuno";
 
 const SITE = "https://www.slstudio.pro";
 
@@ -334,6 +335,8 @@ export default function SunoTrackFinishingPage() {
           ))}
         </ul>
       </section>
+
+      <BeforeAfterSuno />
 
       {/* Packages */}
       <section className="container py-12">
