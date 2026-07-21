@@ -617,7 +617,7 @@ export default function HowToExportStemsForMixingPagePl() {
             </div>
           </div>
 
-          <RelatedPosts slug="how-to-export-stems-for-mixing" />
+          <RelatedPosts slug="how-to-export-stems-for-mixing" lang="pl" />
         </div>
       </div>
     </div>

@@ -608,7 +608,7 @@ export default function HowToExportStemsForMixingPageRu() {
             </div>
           </div>
 
-          <RelatedPosts slug="how-to-export-stems-for-mixing-ru" />
+          <RelatedPosts slug="how-to-export-stems-for-mixing-ru" lang="ru" />
         </div>
       </div>
     </div>

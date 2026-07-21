@@ -8,7 +8,7 @@ import LinkIcon from "@/app/components/sections/admin/LinkIcon";
 import CreateBtn from "@/app/components/sections/admin/CreateBtn";
 import DeleteBtn from "@/app/components/sections/admin/DeleteBtn";
 
-// import { youTubeData } from "@/data/temporaryData";
+// import { youTubeData } from "@/data/siteContent";
 
 export default async function VideosPage() {
     const [videos] = await pool.query(`

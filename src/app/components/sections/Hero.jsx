@@ -6,7 +6,7 @@ import HeroCard from "../cards/HeroCard";
 import HeroWave from "../common/HeroWave";
 import HeroStats from "../common/HeroStats";
 import LangSwitch from "../common/LangSwitch";
-import { servicesData } from "@/data/temporaryData";
+import { servicesData } from "@/data/siteContent";
 
 const stats = [
     { value: "300+", label: "Tracks Mixed & Mastered" },
@@ -14,8 +14,8 @@ const stats = [
     { value: "Any Genre", label: "From Blues to Electronic" },
 ];
 
-// Same facts already stated in the Why Choose section below — surfaced
-// here too, compact, to fill out row 2 next to the (naturally taller)
+// These four points are what the retired WhyChoose section used to say —
+// they now live here, compact, filling row 2 next to the (naturally taller)
 // About Me column instead of leaving it empty.
 const trustBullets = [
     { icon: User, text: "Direct access to a real producer — no agencies, no middlemen" },

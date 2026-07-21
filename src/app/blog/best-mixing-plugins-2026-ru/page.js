@@ -299,7 +299,7 @@ export default function BestMixingPluginsPageRu() {
             </a>
           </div>
 
-          <RelatedPosts slug="best-mixing-plugins-2026-ru" />
+          <RelatedPosts slug="best-mixing-plugins-2026-ru" lang="ru" />
         </div>
       </div>
     </div>

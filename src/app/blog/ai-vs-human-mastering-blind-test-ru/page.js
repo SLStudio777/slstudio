@@ -589,7 +589,7 @@ export default function AiVsHumanMasteringBlindTestPageRu() {
             </a>
           </div>
 
-          <RelatedPosts slug="ai-vs-human-mastering-blind-test-ru" />
+          <RelatedPosts slug="ai-vs-human-mastering-blind-test-ru" lang="ru" />
         </div>
       </div>
     </div>

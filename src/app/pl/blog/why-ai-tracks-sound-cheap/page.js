@@ -633,7 +633,7 @@ export default function WhyAiTracksSoundCheapPagePl() {
 
           <SunoCta lang="pl" />
 
-          <RelatedPosts slug="why-ai-tracks-sound-cheap" />
+          <RelatedPosts slug="why-ai-tracks-sound-cheap" lang="pl" />
         </div>
       </div>
     </div>

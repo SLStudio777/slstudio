@@ -321,7 +321,7 @@ export default function MelodyneAlternativesPageRu() {
             <a href="/free-track-preview" className="inline-flex items-center gap-2 text-black font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition text-sm" style={{backgroundColor: "#C9A84C"}}>Получить бесплатное превью →</a>
           </div>
 
-          <RelatedPosts slug="best-melodyne-alternatives-2026-ru" />
+          <RelatedPosts slug="best-melodyne-alternatives-2026-ru" lang="ru" />
         </div>
       </div>
     </div>

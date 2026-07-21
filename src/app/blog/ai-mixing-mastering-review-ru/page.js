@@ -283,7 +283,7 @@ export default function AIMixingReviewPageRu() {
             </a>
           </div>
 
-          <RelatedPosts slug="ai-mixing-mastering-review-ru" />
+          <RelatedPosts slug="ai-mixing-mastering-review-ru" lang="ru" />
 
         </div>
       </div>

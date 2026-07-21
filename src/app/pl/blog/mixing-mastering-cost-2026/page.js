@@ -722,7 +722,7 @@ export default function MixingMasteringCost2026PagePL() {
             </a>
           </div>
 
-          <RelatedPosts slug="pl/blog/mixing-mastering-cost-2026" />
+          <RelatedPosts slug="mixing-mastering-cost-2026" lang="pl" />
         </div>
       </div>
     </div>

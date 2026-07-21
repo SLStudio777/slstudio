@@ -634,7 +634,7 @@ export default function WhyAiTracksSoundCheapPageRu() {
 
           <SunoCta lang="ru" />
 
-          <RelatedPosts slug="why-ai-tracks-sound-cheap-ru" />
+          <RelatedPosts slug="why-ai-tracks-sound-cheap-ru" lang="ru" />
         </div>
       </div>
     </div>
