@@ -15,15 +15,10 @@ import LangSwitch from "../../common/LangSwitch";
 import StepFlareCard from "../../common/StepFlareCard";
 import ScrollFaders from "../../common/ScrollFaders";
 
-// Keys are the ?service= values used by the CTA links; each value must match an
-// <option> below verbatim, otherwise the select silently stays empty.
 const SERVICE_FROM_QUERY = {
   mastering: "Tylko mastering",
   "mixing-mastering": "Miks i mastering",
   arrangement: "Aranżacja i produkcja",
-  "suno-master": "Suno Master",
-  "suno-finishing": "Suno Finishing",
-  "suno-production": "Suno Full Production",
 };
 
 const TelegramIcon = () => (
@@ -519,9 +514,6 @@ export default function Hero() {
                     <option>Tylko mastering</option>
                     <option>Miks i mastering</option>
                     <option>Aranżacja i produkcja</option>
-                    <option>Suno Master</option>
-                    <option>Suno Finishing</option>
-                    <option>Suno Full Production</option>
                     <option>Poprawa jakości nagrania</option>
                     <option>Jeszcze nie wiem</option>
                   </select>
@@ -672,7 +664,7 @@ export default function Hero() {
             Częste pytania
           </h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_420px] gap-16 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_640px] gap-10 items-start">
           <div className="flex flex-col gap-3 max-w-3xl">
             {[
               {

@@ -6,10 +6,14 @@ const RAIL_RANGE = 162;
 const CONTAINER_H = 190;
 const CONTAINER_W = 46;
 
+// Symmetric console-style scale: 0.0 dB sits exactly at mid-travel, +12 at
+// the top, −12 at the bottom, moving linearly with the cap.
 function posToDb(pos) {
-  if (pos > 0.97) return "\u2212\u221e";
-  const db = 6 - pos * 66;
-  return (db > 0 ? "+" : "") + Math.round(db);
+  const db = (0.5 - pos) * 24;
+  const rounded = Math.round(db * 10) / 10;
+  if (rounded === 0) return "0.0";
+  const text = Math.abs(rounded).toFixed(1);
+  return rounded > 0 ? `+${text}` : `\u2212${text}`;
 }
 
 // A single draggable mixing-console fader. Starts near the top, glides to a
@@ -192,7 +196,7 @@ function Fader({ triggered, delay, uid }) {
   );
 }
 
-// Five faders, spaced well apart. They stay near the top until this row
+// Eight faders, spaced well apart. They stay near the top until this row
 // scrolls into view, glide to a random position and settle — after that
 // each one can be grabbed and dragged up/down freely, with a live dB readout
 // tracking the cap from the side.
@@ -222,8 +226,8 @@ export default function ScrollFaders() {
       className="hidden md:flex justify-evenly items-center w-full h-full"
       aria-hidden="true"
     >
-      {[0, 1, 2, 3, 4].map((i) => (
-        <Fader key={i} triggered={triggered} delay={220 + i * 240} uid={i} />
+      {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => (
+        <Fader key={i} triggered={triggered} delay={200 + i * 170} uid={i} />
       ))}
     </div>
   );
