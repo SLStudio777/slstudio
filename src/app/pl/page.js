@@ -139,17 +139,27 @@ const howItWorksLabels = {
 const testimonialsLabels = {
     eyebrow: "Opinie klientów",
     heading: "Co mówią artyści",
+    factLabels: { before: "Przed", after: "Po" },
     items: [
         {
             role: "Gitarzysta i muzyk",
+            genre: "Metal / rock",
+            before: "Nagrania zespołu z budżetowego studia — dobre wykonanie, ale brzmieniu brakowało spójności i mocy z prób na żywo.",
+            after: "Gęsto i potężnie, każdy instrument na swoim miejscu. Od pół roku każdy nowy utwór trafia właśnie tutaj.",
             text: "Totalna bomba. Zostaw tak, nic nie zmieniaj. Ciągle włączam od nowa. Maestro, brawo.",
         },
         {
             role: "Wokalista i autor piosenek",
+            genre: "Ballada akustyczna",
+            before: "Domowe nagranie piosenki na 30. urodziny syna — płaski, przytłumiony wokal, gitara zagłuszała słowa.",
+            after: "Każde słowo słychać, ciepła żywa gitara — prawdziwa piosenka, jak z radia, a nie domowe demo.",
             text: "Siedziałem sam przed głośnikami, świętując 30. urodziny syna — słuchając tego, co stworzyliśmy razem. Emocje mnie dopadły. Bez słów. Dziękuję.",
         },
         {
             role: "Wokalistka i kompozytorka",
+            genre: "Pop-ballada",
+            before: "Autorska piosenka o miłości — ostre, kłujące wysokie dźwięki i wąskie brzmienie „jak z pudełka”.",
+            after: "Miękki, przestrzenny wokal z powietrzem — góry szybują, zamiast ciąć.",
             text: "Piękna muzyka — po prostu dodaje skrzydeł. ❤️❤️❤️❤️❤️❤️❤️",
         },
     ],

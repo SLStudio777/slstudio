@@ -1,5 +1,25 @@
 export const posts = [
   {
+    href: "/blog/mixing-guitar-driven-rock",
+    image: "/images/blog-guitar-rock-cover.jpg",
+    category: "Mixing & Mastering",
+    date: "2026-07-21",
+    lang: "en",
+    title: "Mixing Guitar-Driven Rock — A Wall of Guitars That Still Breathes",
+    excerpt:
+      "Double-tracking, panning, carving space for the vocal and keeping the low end tight — a guitarist-engineer's approach to mixing dense, modern rock.",
+  },
+  {
+    href: "/pl/blog/mixing-guitar-driven-rock",
+    image: "/images/blog-guitar-rock-cover.jpg",
+    category: "Produkcja",
+    date: "2026-07-21",
+    lang: "pl",
+    title: "Mix rocka gitarowego — ściana gitar, która wciąż oddycha",
+    excerpt:
+      "Double-tracking, panorama, miejsce dla wokalu i zwarty dół — podejście gitarzysty-realizatora do miksu gęstego, nowoczesnego rocka.",
+  },
+  {
     href: "/blog/how-to-export-stems-for-mixing",
     image: "/images/blog/stems/stems-cover.jpg",
     category: "Production",
