@@ -16,6 +16,59 @@ const plLabels = {
   playingFinal: "Odtwarzam wersję finalną",
 };
 
+// Historie przypadków pokazywane pod każdym odtwarzaczem przed/po. Dopasowane
+// do kart z panelu admina po słowie kluczowym w tytule karty, z kolejnością
+// listy jako zapasowym dopasowaniem.
+const CASE_STORIES = [
+  {
+    match: "acoustic",
+    client: "Agnieszka, wokalistka",
+    cameWithLabel: "Z czym przyszła",
+    cameWith:
+      "Nagranie akustyczne — tylko głos i gitara. Piosenka była gotowa, ale brzmiała jak demo. Agnieszka chciała, żeby zagrał ją pełny zespół.",
+    doneLabel: "Co zostało zrobione",
+    done:
+      "Pełna aranżacja na cały skład — perkusja, bas, gitary, dodatkowe instrumenty. Do tego edycja i mastering wokalu. Z akustycznego demo powstał gotowy, pełnobrzmiący utwór.",
+  },
+  {
+    match: "rehearsal",
+    client: "Oleg, wokalista i autor piosenek",
+    cameWithLabel: "Z czym przyszedł",
+    cameWith:
+      "Surowe nagranie z próby. Piosenka już istniała — ale brzmiała jak sala prób, a nie jak płyta.",
+    doneLabel: "Co zostało zrobione",
+    done:
+      "Pełna praca aranżacyjna — nowe partie instrumentów dobudowane wokół oryginalnego wykonania, całość doszlifowana i wyprodukowana na studyjnym poziomie, z miksem i masteringiem wokalu. Nagranie z próby stało się pełnoprawną wersją studyjną.",
+  },
+  {
+    match: "folk",
+    client: "Alexander, autor piosenek i kompozytor",
+    cameWithLabel: "Z czym przyszedł",
+    cameWith:
+      "Folkowy utwór, który nagrał samodzielnie około dziesięć lat temu — grając na wszystkich instrumentach, jakie miał pod ręką. Piosenka była mu bliska, ale nagranie brzmiało domowo i przestarzale.",
+    doneLabel: "Co zostało zrobione",
+    done:
+      "Utwór został zbudowany od nowa ze świeżą, pełną aranżacją — nowe partie instrumentów, nowoczesna produkcja, miks i mastering. Piosenka zachowała swoją duszę, a wreszcie zyskała profesjonalne brzmienie, na jakie zasługiwała.",
+  },
+  {
+    match: "indie",
+    client: "Andrii, gitarzysta i kompozytor",
+    cameWithLabel: "Z czym przyszedł",
+    cameWith:
+      "Utwór indie napisany dla swojego zespołu i nagrany samodzielnie w DAW. Partie gitary rytmicznej nagrał sam, ale utworowi brakowało gitary prowadzącej — solówki to nie jego bajka — a aranżacja potrzebowała profesjonalnego szlifu.",
+    doneLabel: "Co zostało zrobione",
+    done:
+      "Solidna aranżacja zbudowana na jego oryginalnej produkcji — plus prawdziwa gitara prowadząca nagrana specjalnie do utworu, łącznie z partią solową, której w piosence brakowało.",
+  },
+];
+
+function storyFor(title, index) {
+  const t = String(title || "").toLowerCase();
+  return (
+    CASE_STORIES.find((s) => t.includes(s.match)) || CASE_STORIES[index] || null
+  );
+}
+
 function DemoFallback() {
   return (
     <section id="demos" className="py-10" style={{ scrollMarginTop: "80px" }}>
@@ -69,16 +122,39 @@ export default async function BeforeAfterArrangementPl() {
           aranżacji.
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {enhancements.map((item) => (
-          <BeforeAfterCard
-            key={item.id}
-            title={item.title}
-            before={String(item.file_before).trim()}
-            after={String(item.file_after).trim()}
-            labels={plLabels}
-          />
-        ))}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {enhancements.map((item, i) => {
+          const story = storyFor(item.title, i);
+          return (
+            <div key={item.id} className="flex flex-col gap-4">
+              <BeforeAfterCard
+                title={item.title}
+                before={String(item.file_before).trim()}
+                after={String(item.file_after).trim()}
+                labels={plLabels}
+              />
+              {story && (
+                <div className="rounded-2xl p-6 border border-white/[0.06] bg-white/[0.02] flex flex-col gap-3 flex-1">
+                  <p className="text-white font-semibold text-[15px]">
+                    {story.client}
+                  </p>
+                  <p className="text-white/60 text-sm leading-relaxed">
+                    <span className="text-[#C9A84C] font-medium">
+                      {story.cameWithLabel}:{" "}
+                    </span>
+                    {story.cameWith}
+                  </p>
+                  <p className="text-white/60 text-sm leading-relaxed">
+                    <span className="text-[#C9A84C] font-medium">
+                      {story.doneLabel}:{" "}
+                    </span>
+                    {story.done}
+                  </p>
+                </div>
+              )}
+            </div>
+          );
+        })}
       </div>
     </section>
   );

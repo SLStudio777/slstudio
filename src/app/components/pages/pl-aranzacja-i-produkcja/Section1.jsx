@@ -13,6 +13,25 @@ const includedItems = [
   "Maksymalnie trzy rundy poprawek",
 ];
 
+const pricingTiers = [
+  {
+    name: "Partie i dopracowanie demo",
+    price: "od 119 USD",
+    text: "Pojedyncze instrumenty i partie nagrane lub wyprodukowane do Twojego projektu, plus edycja.",
+  },
+  {
+    name: "Pełna aranżacja",
+    price: "149–299 USD",
+    text: "Notatka głosowa, riff lub szkic staje się kompletnym utworem ze wszystkimi potrzebnymi instrumentami.",
+    featured: true,
+  },
+  {
+    name: "Produkcja gotowa do wydania",
+    price: "199–399 USD",
+    text: "Pełna aranżacja plus miks i mastering — ukończony utwór, gotowy do wydania.",
+  },
+];
+
 const steps = [
   {
     number: "01",
@@ -95,48 +114,54 @@ export default function Section1() {
             Twoim pomyśle.
           </p>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-8">
-          <StepFlareCard
-            delay={0}
-            className="rounded-2xl p-8 border border-[#C9A84C]/25 bg-[#C9A84C]/[0.06] flex flex-col gap-6 h-full"
-          >
-            <div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {pricingTiers.map((tier, i) => (
+            <StepFlareCard
+              key={tier.name}
+              delay={i * 120}
+              className={`rounded-2xl p-8 flex flex-col gap-4 h-full border ${
+                tier.featured
+                  ? "border-[#C9A84C]/25 bg-[#C9A84C]/[0.06]"
+                  : "border-white/[0.06] bg-white/[0.02]"
+              }`}
+            >
               <p className="text-white/40 text-xs uppercase tracking-[0.25em]">
-                Cena od
-              </p>
-              <p className="text-white/70 text-sm mt-5">
-                Aranżacja i produkcja
+                {tier.name}
               </p>
               <p className="step-number price-number text-3xl font-semibold text-[#f5b942]">
-                od 119 USD
+                {tier.price}
               </p>
-            </div>
-            <p className="text-white/55 text-sm leading-relaxed">
-              Dokładna cena zależy od długości utworu, liczby instrumentów,
-              edycji oraz tego, czy potrzebujesz pełnej produkcji, czy tylko
-              wybranych partii. Wycena jest znana przed rozpoczęciem pełnego
-              projektu.
-            </p>
-            <Link
-              href="/pl/darmowy-fragment"
-              className="btn-gold inline-flex justify-center items-center font-semibold px-6 py-3.5 rounded-xl text-sm text-black bg-[#C9A84C]"
-            >
-              Wyślij pomysł bezpłatnie →
-            </Link>
-          </StepFlareCard>
-          <div className="rounded-2xl p-8 border border-white/[0.06] bg-white/[0.02] flex flex-col">
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 flex-1 content-between">
-              {includedItems.map((item) => (
-                <li
-                  key={item}
-                  className="flex items-start gap-3 text-white/70 text-[15px] leading-relaxed"
-                >
-                  <span className="text-[#C9A84C] mt-0.5">→</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+              <p className="text-white/55 text-sm leading-relaxed">
+                {tier.text}
+              </p>
+            </StepFlareCard>
+          ))}
+        </div>
+        <div className="mt-6 rounded-2xl p-8 border border-white/[0.06] bg-white/[0.02]">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
+            {includedItems.map((item) => (
+              <li
+                key={item}
+                className="flex items-start gap-3 text-white/70 text-[15px] leading-relaxed"
+              >
+                <span className="text-[#C9A84C] mt-0.5">→</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="mt-6 flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <p className="text-white/55 text-sm leading-relaxed max-w-2xl">
+            Dokładna cena w ramach każdego przedziału zależy od długości utworu, liczby
+            instrumentów i zakresu produkcji. Wycenę znasz przed rozpoczęciem
+            pełnego projektu.
+          </p>
+          <Link
+            href="/pl/darmowy-fragment"
+            className="btn-gold inline-flex justify-center items-center font-semibold px-6 py-3.5 rounded-xl text-sm text-black bg-[#C9A84C] flex-shrink-0"
+          >
+            Wyślij pomysł bezpłatnie →
+          </Link>
         </div>
       </div>
       <div>

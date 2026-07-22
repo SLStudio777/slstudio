@@ -105,7 +105,7 @@ const packages = [
     name: "Suno Master",
     price: "$39",
     popular: false,
-    tagline: "Twój gotowy utwór z Suno — dopieszczony i głośny",
+    tagline: "Ekspresowy master przez mój sprawdzony łańcuch — dopieszczony i głośny",
     features: [
       "Mastering Twojego pliku stereo",
       "Łagodzenie artefaktów na masterze",

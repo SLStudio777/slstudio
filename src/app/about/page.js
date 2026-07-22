@@ -75,7 +75,7 @@ const jsonLd = {
         addressCountry: "PL",
       },
       areaServed: "Worldwide",
-      priceRange: "$39-$300",
+      priceRange: "$39-$399",
       email: "serhii@slstudio.pro",
     },
   ],

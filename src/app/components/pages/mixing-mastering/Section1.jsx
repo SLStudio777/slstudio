@@ -110,23 +110,47 @@ export default function Section1() {
                   <p className="step-number price-number text-3xl font-semibold text-[#f5b942]">
                     from $39
                   </p>
+                  <p className="text-white/50 text-xs leading-relaxed mt-1.5">
+                    $39 = express master through my proven chain of settings.
+                    Fully manual masters for complex tracks are priced higher.
+                  </p>
                 </div>
                 <div className="h-px bg-white/10" />
                 <div>
                   <p className="text-white/70 text-sm">
                     Mixing &amp; mastering
                   </p>
-                  <p className="step-number price-number text-3xl font-semibold text-[#f5b942]">
-                    from $89
-                  </p>
+                  <div className="mt-2 flex flex-col gap-2">
+                    <div className="flex items-baseline justify-between gap-4">
+                      <span className="text-white/55 text-sm">Up to 10 stems</span>
+                      <span className="price-number text-lg font-semibold text-[#f5b942]">
+                        $89
+                      </span>
+                    </div>
+                    <div className="flex items-baseline justify-between gap-4">
+                      <span className="text-white/55 text-sm">Up to 25 stems</span>
+                      <span className="price-number text-lg font-semibold text-[#f5b942]">
+                        $139
+                      </span>
+                    </div>
+                    <div className="flex items-baseline justify-between gap-4">
+                      <span className="text-white/55 text-sm">
+                        More than 25 stems
+                      </span>
+                      <span className="price-number text-lg font-semibold text-[#f5b942]">
+                        from $189
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
 
             <p className="text-white/55 text-sm leading-relaxed">
-              Exact price depends on the number of stems, recording quality and
-              the amount of editing required. You receive the price before the
-              full job begins.
+              The exact price within each tier depends on recording quality
+              and the amount of editing required. You receive it before the
+              full job begins — and up to three revision rounds are included
+              at every price.
             </p>
 
             <Link

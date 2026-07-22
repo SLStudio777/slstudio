@@ -13,6 +13,25 @@ const includedItems = [
   "Up to three revision rounds",
 ];
 
+const pricingTiers = [
+  {
+    name: "Parts & Demo Polish",
+    price: "from $119",
+    text: "Individual instruments and parts recorded or produced for your existing project, plus editing.",
+  },
+  {
+    name: "Full Arrangement",
+    price: "$149–299",
+    text: "A voice memo, riff or sketch becomes a complete track with all the instruments it needs.",
+    featured: true,
+  },
+  {
+    name: "Release-Ready Production",
+    price: "$199–399",
+    text: "Full arrangement plus mixing and mastering — a finished track, ready for release.",
+  },
+];
+
 const steps = [
   {
     number: "01",
@@ -96,48 +115,54 @@ export default function Section1() {
             already present in your idea.
           </p>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-8">
-          <StepFlareCard
-            delay={0}
-            className="rounded-2xl p-8 border border-[#C9A84C]/25 bg-[#C9A84C]/[0.06] flex flex-col gap-6 h-full"
-          >
-            <div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {pricingTiers.map((tier, i) => (
+            <StepFlareCard
+              key={tier.name}
+              delay={i * 120}
+              className={`rounded-2xl p-8 flex flex-col gap-4 h-full border ${
+                tier.featured
+                  ? "border-[#C9A84C]/25 bg-[#C9A84C]/[0.06]"
+                  : "border-white/[0.06] bg-white/[0.02]"
+              }`}
+            >
               <p className="text-white/40 text-xs uppercase tracking-[0.25em]">
-                Starting price
-              </p>
-              <p className="text-white/70 text-sm mt-5">
-                Arrangement &amp; production
+                {tier.name}
               </p>
               <p className="step-number price-number text-3xl font-semibold text-[#f5b942]">
-                from $119
+                {tier.price}
               </p>
-            </div>
-            <p className="text-white/55 text-sm leading-relaxed">
-              The exact price depends on the song length, number of instruments,
-              editing and whether you need a complete production or only
-              selected parts. You receive the price before the full project
-              begins.
-            </p>
-            <Link
-              href="/free-track-preview"
-              className="btn-gold inline-flex justify-center items-center font-semibold px-6 py-3.5 rounded-xl text-sm text-black bg-[#C9A84C]"
-            >
-              Send Your Idea for Free →
-            </Link>
-          </StepFlareCard>
-          <div className="rounded-2xl p-8 border border-white/[0.06] bg-white/[0.02] flex flex-col">
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 flex-1 content-between">
-              {includedItems.map((item) => (
-                <li
-                  key={item}
-                  className="flex items-start gap-3 text-white/70 text-[15px] leading-relaxed"
-                >
-                  <span className="text-[#C9A84C] mt-0.5">→</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+              <p className="text-white/55 text-sm leading-relaxed">
+                {tier.text}
+              </p>
+            </StepFlareCard>
+          ))}
+        </div>
+        <div className="mt-6 rounded-2xl p-8 border border-white/[0.06] bg-white/[0.02]">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
+            {includedItems.map((item) => (
+              <li
+                key={item}
+                className="flex items-start gap-3 text-white/70 text-[15px] leading-relaxed"
+              >
+                <span className="text-[#C9A84C] mt-0.5">→</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="mt-6 flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <p className="text-white/55 text-sm leading-relaxed max-w-2xl">
+            The exact price within each range depends on the song length, the
+            number of instruments and how much production the track needs. You
+            receive a fixed quote before the full project begins.
+          </p>
+          <Link
+            href="/free-track-preview"
+            className="btn-gold inline-flex justify-center items-center font-semibold px-6 py-3.5 rounded-xl text-sm text-black bg-[#C9A84C] flex-shrink-0"
+          >
+            Send Your Idea for Free →
+          </Link>
         </div>
       </div>
 

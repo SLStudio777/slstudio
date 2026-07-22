@@ -107,19 +107,45 @@ export default function Section1() {
                   <p className="step-number price-number text-3xl font-semibold text-[#f5b942]">
                     od 39 USD
                   </p>
+                  <p className="text-white/50 text-xs leading-relaxed mt-1.5">
+                    39 USD = ekspresowy master przez mój sprawdzony łańcuch
+                    obróbki. W pełni ręczne mastery bardziej złożonych utworów
+                    wyceniam wyżej.
+                  </p>
                 </div>
                 <div className="h-px bg-white/10" />
                 <div>
                   <p className="text-white/70 text-sm">Miks i mastering</p>
-                  <p className="step-number price-number text-3xl font-semibold text-[#f5b942]">
-                    od 89 USD
-                  </p>
+                  <div className="mt-2 flex flex-col gap-2">
+                    <div className="flex items-baseline justify-between gap-4">
+                      <span className="text-white/55 text-sm">Do 10 śladów</span>
+                      <span className="price-number text-lg font-semibold text-[#f5b942]">
+                        89 USD
+                      </span>
+                    </div>
+                    <div className="flex items-baseline justify-between gap-4">
+                      <span className="text-white/55 text-sm">Do 25 śladów</span>
+                      <span className="price-number text-lg font-semibold text-[#f5b942]">
+                        139 USD
+                      </span>
+                    </div>
+                    <div className="flex items-baseline justify-between gap-4">
+                      <span className="text-white/55 text-sm">
+                        Powyżej 25 śladów
+                      </span>
+                      <span className="price-number text-lg font-semibold text-[#f5b942]">
+                        od 189 USD
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
             <p className="text-white/55 text-sm leading-relaxed">
-              Dokładna cena zależy od liczby śladów, jakości nagrania i zakresu
-              edycji. Otrzymasz ją przed rozpoczęciem pełnej realizacji.
+              Dokładna cena w ramach każdego progu zależy od jakości nagrania
+              i zakresu edycji. Otrzymasz ją przed rozpoczęciem pełnej
+              realizacji — a każda cena obejmuje maksymalnie trzy rundy
+              poprawek.
             </p>
             <Link
               href="/pl/darmowy-fragment"
