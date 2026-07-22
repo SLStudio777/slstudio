@@ -301,6 +301,35 @@ export default function SunoTrackFinishingPagePL() {
 
       {/* Pain points */}
       <section className="container py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-4">
+          {[
+            {
+              n: "7 mln",
+              t: "utworów AI powstaje każdego dnia — sam Suno generuje cały katalog Spotify co dwa tygodnie",
+            },
+            {
+              n: "44%",
+              t: "całej nowej muzyki trafiającej na streamingi jest już generowane przez AI",
+            },
+            {
+              n: "<3%",
+              t: "czasu słuchania przypada utworom AI — wyróżnia się tylko to, co brzmi po ludzku",
+            },
+          ].map((s) => (
+            <div key={s.n}>
+              <p className="step-number text-3xl md:text-4xl font-semibold text-[#f5b942]">
+                {s.n}
+              </p>
+              <p className="text-white/55 text-sm leading-relaxed mt-1">
+                {s.t}
+              </p>
+            </div>
+          ))}
+        </div>
+        <p className="text-white/70 text-sm mb-12">
+          Żeby Twój utwór trafił do tych 3%, musi brzmieć jak płyta —
+          właśnie temu służy dopracowanie.
+        </p>
         <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mb-8">
           Dlaczego surowe utwory z Suno nie są traktowane poważnie
         </h2>

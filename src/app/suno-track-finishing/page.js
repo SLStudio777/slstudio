@@ -302,6 +302,35 @@ export default function SunoTrackFinishingPage() {
 
       {/* Pain points */}
       <section className="container py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-4">
+          {[
+            {
+              n: "7 million",
+              t: "AI tracks are generated every day — Suno alone outputs Spotify's entire catalog every two weeks",
+            },
+            {
+              n: "44%",
+              t: "of all new music uploaded to streaming services is already AI-generated",
+            },
+            {
+              n: "<3%",
+              t: "of listening time goes to AI tracks — only songs that sound human stand out",
+            },
+          ].map((s) => (
+            <div key={s.n}>
+              <p className="step-number text-3xl md:text-4xl font-semibold text-[#f5b942]">
+                {s.n}
+              </p>
+              <p className="text-white/55 text-sm leading-relaxed mt-1">
+                {s.t}
+              </p>
+            </div>
+          ))}
+        </div>
+        <p className="text-white/70 text-sm mb-12">
+          For your track to land in those 3%, it has to sound like a record
+          — that's exactly what finishing is for.
+        </p>
         <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mb-8">
           Why raw Suno tracks don't get taken seriously
         </h2>
