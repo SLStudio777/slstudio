@@ -19,6 +19,7 @@ const LABELS = {
     random: "Random track",
     copyLink: "Copy link",
     copied: "Copied!",
+    seek: "Seek",
   },
   pl: {
     tracks: "utwor\u00f3w",
@@ -33,6 +34,7 @@ const LABELS = {
     random: "Losowy utw\u00f3r",
     copyLink: "Kopiuj link",
     copied: "Skopiowano!",
+    seek: "Przewiń",
   },
 };
 
@@ -353,7 +355,7 @@ export default function PortfolioPlayer({ lang = "en" }) {
                       type="button"
                       onClick={() => toggle(row.track)}
                       aria-label={row.track.title}
-                      className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition hover:opacity-90"
+                      className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition hover:opacity-90"
                       style={{ background: "linear-gradient(135deg, #C9A84C, #e8c97a)", color: "#141414" }}
                     >
                       {current === row.track.slug && playing ? <Pause size={15} /> : <Play size={15} className="ml-0.5" />}
@@ -372,6 +374,8 @@ export default function PortfolioPlayer({ lang = "en" }) {
                         <div className="truncate text-xs text-white/75">{lang === "pl" ? row.track.captionPl : row.track.captionEn}</div>
                       ) : null}
                       <div
+                        role="button"
+                        aria-label={t.seek}
                         className="mt-1.5 h-1 w-full cursor-pointer overflow-hidden rounded-full bg-white/[0.07]"
                         onClick={(e) => seek(row.track, e)}
                       >
@@ -387,14 +391,14 @@ export default function PortfolioPlayer({ lang = "en" }) {
                       onClick={() => copyLink(row.track)}
                       title={copiedSlug === row.track.slug ? t.copied : t.copyLink}
                       aria-label={t.copyLink}
-                      className="shrink-0 text-white/65 transition hover:text-[#C9A84C] opacity-0 group-hover:opacity-100"
+                      className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-white/65 transition hover:text-[#C9A84C] opacity-0 group-hover:opacity-100"
                     >
                       <Link2 size={14} />
                     </button>
                     <a
                       href={row.track.file}
                       download
-                      className="shrink-0 text-white/65 transition hover:text-[#C9A84C]"
+                      className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-white/65 transition hover:text-[#C9A84C]"
                       aria-label={t.download}
                       title={t.download}
                     >
@@ -455,6 +459,8 @@ export default function PortfolioPlayer({ lang = "en" }) {
                 ) : null}
               </div>
               <div
+                role="button"
+                aria-label={t.seek}
                 className="mt-1 h-1 w-full cursor-pointer overflow-hidden rounded-full bg-white/[0.07]"
                 onClick={(e) => seek(currentTrack, e)}
               >

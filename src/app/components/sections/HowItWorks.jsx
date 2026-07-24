@@ -132,7 +132,7 @@ export default function HowItWorks({ labels }) {
                       background: "rgba(201,168,76,0.15)",
                       border: "1px solid rgba(201,168,76,0.35)",
                       color: "#C9A84C",
-                      fontSize: "10px",
+                      fontSize: "12px",
                       fontWeight: "600",
                       letterSpacing: "0.08em",
                       padding: "2px 8px",
