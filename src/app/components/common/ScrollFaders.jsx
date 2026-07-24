@@ -80,7 +80,7 @@ function Fader({ triggered, delay, uid }) {
       {/* dB readout: hangs to the left of the rail and tracks the cap's
           vertical position, sliding up a touch and fading in while active */}
       <div
-        className="absolute text-[10px] tabular-nums pointer-events-none"
+        className="absolute text-xs tabular-nums pointer-events-none"
         style={{
           right: "calc(100% + 8px)",
           top: 0,

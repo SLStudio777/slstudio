@@ -60,7 +60,7 @@ function FaqItem({ q, a, link, open, onToggle }) {
         aria-expanded={open}
         className="w-full flex items-center justify-between gap-4 text-left px-5 py-4 cursor-pointer"
       >
-        <span className="font-medium text-white text-[15px]">{q}</span>
+        <span className="font-medium text-white text-base">{q}</span>
         <ChevronDown
           className="w-4 h-4 flex-shrink-0 transition-transform duration-300"
           style={{

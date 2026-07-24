@@ -260,7 +260,7 @@ export default function MixingMasteringCost2026Page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <ReadingProgress />
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-[680px] mx-auto">
         <BlogHeader
           topic="Business"
           date="July 11, 2026"
@@ -615,7 +615,7 @@ export default function MixingMasteringCost2026Page() {
               {checklist.map((item, i) => (
                 <div key={i} className="flex items-start gap-3">
                   <span
-                    className="w-5 h-5 rounded flex-shrink-0 flex items-center justify-center text-[10px] font-bold mt-0.5"
+                    className="w-5 h-5 rounded flex-shrink-0 flex items-center justify-center text-xs font-bold mt-0.5"
                     style={{
                       background: "rgba(201,168,76,0.15)",
                       color: "#C9A84C",

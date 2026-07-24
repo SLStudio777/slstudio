@@ -53,7 +53,7 @@ export default function SunoBanner({ labels }) {
                     />
                 </div>
                 <div className="flex-1 min-w-0">
-                    <p className="font-semibold text-white text-[15px]">{t.heading}</p>
+                    <p className="font-semibold text-white text-base">{t.heading}</p>
                     <p className="text-white/60 text-sm leading-relaxed hidden sm:block">{t.text}</p>
                 </div>
                 <span

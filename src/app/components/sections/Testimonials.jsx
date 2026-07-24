@@ -82,7 +82,7 @@ export default function Testimonials({ labels }) {
                                 <div className="flex flex-col gap-2.5 text-sm">
                                     {t.before && (
                                         <div className="flex gap-3">
-                                            <span className="text-[11px] uppercase tracking-[0.15em] font-semibold w-12 flex-shrink-0 pt-0.5"
+                                            <span className="text-xs uppercase tracking-[0.15em] font-semibold w-12 flex-shrink-0 pt-0.5"
                                                   style={{ color: "rgba(201,168,76,0.7)" }}>
                                                 {L.factLabels.before}
                                             </span>
@@ -91,7 +91,7 @@ export default function Testimonials({ labels }) {
                                     )}
                                     {t.after && (
                                         <div className="flex gap-3">
-                                            <span className="text-[11px] uppercase tracking-[0.15em] font-semibold w-12 flex-shrink-0 pt-0.5"
+                                            <span className="text-xs uppercase tracking-[0.15em] font-semibold w-12 flex-shrink-0 pt-0.5"
                                                   style={{ color: "#C9A84C" }}>
                                                 {L.factLabels.after}
                                             </span>

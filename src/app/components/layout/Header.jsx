@@ -124,7 +124,7 @@ export default function Header() {
                         style={{ height: "24px"}}
                     />
                 </Link>
-                <ul className="flex items-center gap-6 text-white/70 text-[15px] font-medium tracking-wide max-[768px]:hidden">
+                <ul className="flex items-center gap-6 text-white/70 text-base font-medium tracking-wide max-[768px]:hidden">
                     <li className="beam-group flex items-center gap-0">
                         <div className="beam-shimmer" aria-hidden="true" />
                         <Link href="/mixing-mastering" onClick={handleNav("/mixing-mastering")} className="beam-btn px-4 py-2 rounded-l-lg font-medium whitespace-nowrap hover:text-gold2" style={{ border: "1px solid transparent", background: "linear-gradient(90deg, rgba(201,168,76,0) 0%, rgba(201,168,76,0.008) 55%, rgba(201,168,76,0.022) 100%) padding-box, linear-gradient(90deg, rgba(201,168,76,0) 0%, rgba(201,168,76,0.035) 100%) border-box" }}>Mixing & Mastering</Link>
@@ -151,7 +151,7 @@ export default function Header() {
             </div>
             {open && (
                 <div className="min-[769px]:hidden border-t border-white/5 bg-[#1b1b1b]">
-                    <ul className="container py-4 flex flex-col gap-3 text-white/70 text-[15px] font-medium">
+                    <ul className="container py-4 flex flex-col gap-3 text-white/70 text-base font-medium">
                         <li className="flex flex-col items-stretch gap-0 pt-1">
                             <Link href="/" onClick={handleNav("/", true)} className="beam-btn px-4 py-2 rounded-t-lg font-medium hover:text-gold2" style={{ border: "1px solid transparent", background: "linear-gradient(180deg, rgba(201,168,76,0) 0%, rgba(201,168,76,0.002) 60%, rgba(201,168,76,0.006) 100%) padding-box, linear-gradient(180deg, rgba(201,168,76,0) 0%, rgba(201,168,76,0.012) 100%) border-box" }}>Home</Link>
                             <Link href="/mixing-mastering" onClick={handleNav("/mixing-mastering", true)} className="beam-btn px-4 py-2 font-medium hover:text-gold2" style={{ border: "1px solid transparent", borderTop: "none", background: "linear-gradient(180deg, rgba(201,168,76,0.006) 0%, rgba(201,168,76,0.012) 50%, rgba(201,168,76,0.022) 100%) padding-box, linear-gradient(180deg, rgba(201,168,76,0.012) 0%, rgba(201,168,76,0.035) 100%) border-box" }}>Mixing & Mastering</Link>

@@ -93,7 +93,7 @@ function FaqItem({ q, a, open, onToggle }) {
         aria-expanded={open}
         className="w-full flex items-center justify-between gap-4 text-left px-5 py-4 cursor-pointer"
       >
-        <span className="font-medium text-white text-[15px]">{q}</span>
+        <span className="font-medium text-white text-base">{q}</span>
         <ChevronDown
           className="w-4 h-4 flex-shrink-0 transition-transform duration-300"
           style={{
@@ -214,7 +214,7 @@ export default function Hero() {
               <span className="text-gold2">Work</span>
             </h1>
           </div>
-          <p className="relative md:top-4 text-white/65 text-[15px] leading-relaxed max-w-sm">
+          <p className="relative md:top-4 text-white/65 text-base leading-relaxed max-w-sm">
             Send me your track. Tell me what you are going for, and I will tell
             you what I can do with it — no charge, no obligation, just an honest
             listen.
@@ -450,7 +450,7 @@ export default function Hero() {
                       type="text"
                       placeholder="John Smith"
                       required
-                      className="rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none transition"
+                      className="rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 transition"
                       style={{
                         background: "rgba(255,255,255,0.03)",
                         border: "1px solid rgba(255,255,255,0.07)",
@@ -474,7 +474,7 @@ export default function Hero() {
                       type="email"
                       placeholder="john@email.com"
                       required
-                      className="rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none transition"
+                      className="rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 transition"
                       style={{
                         background: "rgba(255,255,255,0.03)",
                         border: "1px solid rgba(255,255,255,0.07)",
@@ -504,7 +504,7 @@ export default function Hero() {
                       background: "#1b1b1b",
                       border: "1px solid rgba(255,255,255,0.07)",
                     }}
-                    className="rounded-xl px-4 py-3 text-sm text-white focus:outline-none transition"
+                    className="rounded-xl px-4 py-3 text-sm text-white transition"
                     onFocus={(e) =>
                       (e.target.style.border = "1px solid rgba(201,168,76,0.4)")
                     }
@@ -533,7 +533,7 @@ export default function Hero() {
                     rows={5}
                     placeholder="Genre, what you have recorded, what you are going for..."
                     required
-                    className="rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none transition resize-none"
+                    className="rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 transition resize-none"
                     style={{
                       background: "rgba(255,255,255,0.03)",
                       border: "1px solid rgba(255,255,255,0.07)",
@@ -731,7 +731,7 @@ export default function Hero() {
           <h3 className="text-3xl md:text-4xl font-semibold tracking-wide text-white relative z-10">
             Don't feel like writing?
           </h3>
-          <p className="text-white/65 text-[15px] leading-relaxed max-w-xl relative z-10">
+          <p className="text-white/65 text-base leading-relaxed max-w-xl relative z-10">
             Just send the track instead — you'll get a free preview, honest
             notes and an exact price. Then we talk.
           </p>

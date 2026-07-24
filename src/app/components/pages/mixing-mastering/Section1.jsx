@@ -166,7 +166,7 @@ export default function Section1() {
               {includedItems.map((item) => (
                 <li
                   key={item}
-                  className="flex items-start gap-3 text-white/70 text-[15px] leading-relaxed"
+                  className="flex items-start gap-3 text-white/70 text-base leading-relaxed"
                 >
                   <span className="text-[#C9A84C] mt-0.5">→</span>
                   <span>{item}</span>
@@ -212,7 +212,7 @@ export default function Section1() {
           <span className="text-white/75 text-xs uppercase tracking-[0.3em] relative z-10">
             How I Approach a Mix
           </span>
-          <div className="flex flex-col gap-6 text-white/70 text-[15px] leading-relaxed relative z-10">
+          <div className="flex flex-col gap-6 text-white/70 text-base leading-relaxed relative z-10">
             <p>
               I spend the first ten minutes just listening. I do not touch
               anything. I listen for where the track feels crowded, where the
@@ -245,7 +245,7 @@ export default function Section1() {
           <span className="text-white/75 text-xs uppercase tracking-[0.3em] relative z-10">
             Guitars, Vocals &amp; Translation
           </span>
-          <div className="flex flex-col gap-6 text-white/70 text-[15px] leading-relaxed relative z-10">
+          <div className="flex flex-col gap-6 text-white/70 text-base leading-relaxed relative z-10">
             <p>
               I am a guitarist myself, so I hear quickly when a guitar was
               recorded well but sits badly in the mix. Sometimes it takes over

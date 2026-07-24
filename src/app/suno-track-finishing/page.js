@@ -506,7 +506,7 @@ export default function SunoTrackFinishingPage() {
           <h2 className="text-3xl md:text-4xl font-semibold tracking-wide relative z-10">
             Hear your track finished — before you pay
           </h2>
-          <p className="text-white/65 text-[15px] leading-relaxed max-w-xl relative z-10">
+          <p className="text-white/65 text-base leading-relaxed max-w-xl relative z-10">
             Send the Suno MP3 and get a free processed preview with an exact
             quote. If you don't hear the difference, walk away — no hard
             feelings.

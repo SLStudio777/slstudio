@@ -93,7 +93,7 @@ function FaqItem({ q, a, open, onToggle }) {
         aria-expanded={open}
         className="w-full flex items-center justify-between gap-4 text-left px-5 py-4 cursor-pointer"
       >
-        <span className="font-medium text-white text-[15px]">{q}</span>
+        <span className="font-medium text-white text-base">{q}</span>
         <ChevronDown
           className="w-4 h-4 flex-shrink-0 transition-transform duration-300"
           style={{
@@ -215,7 +215,7 @@ export default function Hero() {
               <span className="text-gold2">muzykę</span>
             </h1>
           </div>
-          <p className="relative md:top-4 text-white/65 text-[15px] leading-relaxed max-w-sm">
+          <p className="relative md:top-4 text-white/65 text-base leading-relaxed max-w-sm">
             Wyślij mi swój utwór. Powiedz, do czego dążysz, a ja powiem, co mogę
             z tym zrobić — bez opłat, bez zobowiązań, po prostu szczery odsłuch.
           </p>
@@ -450,7 +450,7 @@ export default function Hero() {
                       type="text"
                       placeholder="Jan Kowalski"
                       required
-                      className="rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none transition"
+                      className="rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 transition"
                       style={{
                         background: "rgba(255,255,255,0.03)",
                         border: "1px solid rgba(255,255,255,0.07)",
@@ -474,7 +474,7 @@ export default function Hero() {
                       type="email"
                       placeholder="jan@email.com"
                       required
-                      className="rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none transition"
+                      className="rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 transition"
                       style={{
                         background: "rgba(255,255,255,0.03)",
                         border: "1px solid rgba(255,255,255,0.07)",
@@ -504,7 +504,7 @@ export default function Hero() {
                       background: "#1b1b1b",
                       border: "1px solid rgba(255,255,255,0.07)",
                     }}
-                    className="rounded-xl px-4 py-3 text-sm text-white focus:outline-none transition"
+                    className="rounded-xl px-4 py-3 text-sm text-white transition"
                     onFocus={(e) =>
                       (e.target.style.border = "1px solid rgba(201,168,76,0.4)")
                     }
@@ -533,7 +533,7 @@ export default function Hero() {
                     rows={5}
                     placeholder="Gatunek, co masz nagrane, do czego dążysz..."
                     required
-                    className="rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none transition resize-none"
+                    className="rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 transition resize-none"
                     style={{
                       background: "rgba(255,255,255,0.03)",
                       border: "1px solid rgba(255,255,255,0.07)",
@@ -732,7 +732,7 @@ export default function Hero() {
           <h3 className="text-3xl md:text-4xl font-semibold tracking-wide text-white relative z-10">
             Nie chce Ci się pisać?
           </h3>
-          <p className="text-white/65 text-[15px] leading-relaxed max-w-xl relative z-10">
+          <p className="text-white/65 text-base leading-relaxed max-w-xl relative z-10">
             Po prostu wyślij utwór — dostaniesz darmowe preview, szczere uwagi i
             konkretną cenę. A potem porozmawiamy.
           </p>

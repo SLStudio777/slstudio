@@ -185,7 +185,7 @@ export default function SunoGuidePlPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
       <ReadingProgress />
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-[680px] mx-auto">
         <BlogHeader
           topic="Poradniki"
           date="14 kwietnia 2026"
@@ -582,7 +582,7 @@ export default function SunoGuidePlPage() {
             <p>Oto nawyk, który najszybciej zabija postęp:</p>
             <div className="rounded-xl p-5" style={{ background: "rgba(255,80,80,0.05)", border: "1px solid rgba(255,80,80,0.15)" }}>
               <p className="text-white font-semibold text-base mb-2">🚫 Pętla, która nigdzie nie prowadzi</p>
-              <p className="text-white/65 font-mono text-[15px] leading-relaxed">
+              <p className="text-white/65 font-mono text-base leading-relaxed">
                 Generuj → nie podoba się → zamknij → generuj znowu → powtarzaj aż sfrustrowany
                 → stwierdź, że Suno jest złe → otwórz jutro i tak
               </p>

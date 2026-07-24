@@ -35,7 +35,7 @@ export default function FreeMixingPluginsPage() {
     return (
         <div className="mt-16 mb-20">
             <BlogJsonLd slug="mixing-with-free-plugins" />
-            <div className="max-w-3xl mx-auto">
+            <div className="max-w-[680px] mx-auto">
 
                 {/* Header */}
                 <div className="mb-12">

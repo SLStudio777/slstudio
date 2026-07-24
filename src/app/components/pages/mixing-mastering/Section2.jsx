@@ -37,7 +37,7 @@ export default function Section2() {
         <h2 className="text-3xl md:text-4xl font-semibold tracking-wide relative z-10">
           Hear what your track could become
         </h2>
-        <p className="text-white/65 text-[15px] leading-relaxed max-w-xl relative z-10">
+        <p className="text-white/65 text-base leading-relaxed max-w-xl relative z-10">
           Send your track and receive a free 30–60 second processed preview, an
           honest assessment and an exact price for the full job.
         </p>

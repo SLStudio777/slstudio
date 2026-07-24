@@ -506,7 +506,7 @@ export default function SunoTrackFinishingPagePL() {
           <h2 className="text-3xl md:text-4xl font-semibold tracking-wide relative z-10">
             Usłysz swój utwór ukończony — zanim zapłacisz
           </h2>
-          <p className="text-white/65 text-[15px] leading-relaxed max-w-xl relative z-10">
+          <p className="text-white/65 text-base leading-relaxed max-w-xl relative z-10">
             Wyślij MP3 z Suno i otrzymaj darmową przetworzoną próbkę z dokładną
             wyceną. Jeśli nie usłyszysz różnicy — po prostu odejdź, bez urazy.
           </p>

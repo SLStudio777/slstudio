@@ -91,7 +91,7 @@ export default function MelodyneAlternativesPageRu() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-[680px] mx-auto">
         <BlogHeader
           topic="Техника"
           date="15 мая 2026"

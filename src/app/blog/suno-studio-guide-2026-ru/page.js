@@ -122,7 +122,7 @@ export default function SunoStudioGuidePage() {
     <div id="top" className="mt-16 mb-20">
       <BlogJsonLd slug="suno-studio-guide-2026-ru" />
       <ReadingProgress />
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-[680px] mx-auto">
         <BlogHeader
           topic="Уроки"
           date="2 июля 2026"

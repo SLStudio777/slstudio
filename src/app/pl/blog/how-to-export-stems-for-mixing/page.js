@@ -202,7 +202,7 @@ export default function HowToExportStemsForMixingPagePl() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <ReadingProgress />
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-[680px] mx-auto">
         <BlogHeader
           topic="Produkcja"
           date="2 lipca 2026"

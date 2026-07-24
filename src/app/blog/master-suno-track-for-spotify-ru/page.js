@@ -209,7 +209,7 @@ export default function MasterSunoTrackForSpotifyRuPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <ReadingProgress />
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-[680px] mx-auto">
         <BlogHeader
           topic="Мастеринг"
           date="3 июня 2026"

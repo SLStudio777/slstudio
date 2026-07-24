@@ -43,7 +43,7 @@ export default function VoviousReviewPage() {
   return (
     <div className="mt-16 mb-20">
       <BlogJsonLd slug="vovious-review" />
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-[680px] mx-auto">
         <BlogHeader
           topic="Review"
           date="January 15, 2026"

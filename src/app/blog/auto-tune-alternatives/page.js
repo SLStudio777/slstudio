@@ -38,7 +38,7 @@ export default function AutoTunePage() {
     return (
         <div className="mt-16 mb-20">
             <BlogJsonLd slug="auto-tune-alternatives" />
-            <div className="max-w-3xl mx-auto">
+            <div className="max-w-[680px] mx-auto">
 
                 <BlogHeader
                     topic="Technics"

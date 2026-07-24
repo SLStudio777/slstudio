@@ -176,7 +176,7 @@ export default function HowItWorks({ labels }) {
                       {time}
                     </span>
                   </div>
-                  <p className="text-white/65 text-[15px] leading-relaxed">
+                  <p className="text-white/65 text-base leading-relaxed">
                     {description}
                   </p>
                 </div>

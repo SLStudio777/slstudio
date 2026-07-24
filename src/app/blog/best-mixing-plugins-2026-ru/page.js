@@ -46,7 +46,7 @@ export default function BestMixingPluginsPageRu() {
   return (
     <div className="mt-16 mb-20">
       <BlogJsonLd slug="best-mixing-plugins-2026-ru" />
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-[680px] mx-auto">
         <BlogHeader
           topic="Техника"
           date="17 марта 2026"

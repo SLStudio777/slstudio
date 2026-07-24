@@ -80,7 +80,7 @@ export default function MasteringTimePage() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
             />
-            <div className="max-w-3xl mx-auto">
+            <div className="max-w-[680px] mx-auto">
 
                 {/* Header */}
                 <div className="mb-12">

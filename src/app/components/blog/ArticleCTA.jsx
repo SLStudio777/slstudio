@@ -46,7 +46,7 @@ export default function ArticleCTA() {
                 }}
             >
                 <p className="text-xl md:text-2xl font-semibold text-white mb-2">{t.title}</p>
-                <p className="text-white/70 text-[15px] mb-5">{t.text}</p>
+                <p className="text-white/70 text-base mb-5">{t.text}</p>
                 <a
                     href={t.href}
                     className="inline-block rounded-full px-8 py-3 font-semibold text-sm"

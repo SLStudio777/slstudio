@@ -166,7 +166,7 @@ export default function SunoGuidePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <ReadingProgress />
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-[680px] mx-auto">
         <BlogHeader
           topic="Tutorials"
           date="April 10, 2026"
@@ -1183,7 +1183,7 @@ export default function SunoGuidePage() {
               <p className="text-white font-semibold text-base mb-2">
                 🚫 The Loop That Goes Nowhere
               </p>
-              <p className="text-white/65 font-mono text-[15px] leading-relaxed">
+              <p className="text-white/65 font-mono text-base leading-relaxed">
                 Generate → do not like it → close → generate again → repeat
                 until frustrated → conclude that Suno is bad → open it again
                 tomorrow anyway

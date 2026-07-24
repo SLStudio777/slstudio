@@ -317,7 +317,7 @@ export default function Hero() {
                 ].map((item) => (
                   <li
                     key={item}
-                    className="flex items-start gap-3 text-white/75 text-[15px]"
+                    className="flex items-start gap-3 text-white/75 text-base"
                   >
                     <span style={{ color: "#C9A84C" }}>→</span>
                     <span>{item}</span>
@@ -337,7 +337,7 @@ export default function Hero() {
               >
                 “
               </span>
-              <blockquote className="relative text-white/70 text-[15px] italic leading-relaxed">
+              <blockquote className="relative text-white/70 text-base italic leading-relaxed">
                 “Total bomb. Keep this one, don't change a thing. I keep hitting
                 replay. Maestro, bravo.”
               </blockquote>
@@ -408,7 +408,7 @@ export default function Hero() {
                         name="name"
                         type="text"
                         placeholder="John Smith"
-                        className="rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none transition"
+                        className="rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 transition"
                         style={inputStyle}
                         onFocus={focusOn}
                         onBlur={focusOff}
@@ -423,7 +423,7 @@ export default function Hero() {
                         type="email"
                         required
                         placeholder="john@email.com"
-                        className="rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none transition"
+                        className="rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 transition"
                         style={inputStyle}
                         onFocus={focusOn}
                         onBlur={focusOff}
@@ -443,7 +443,7 @@ export default function Hero() {
                         background: "#1b1b1b",
                         border: "1px solid rgba(255,255,255,0.07)",
                       }}
-                      className="rounded-xl px-4 py-3 text-sm text-white focus:outline-none transition"
+                      className="rounded-xl px-4 py-3 text-sm text-white transition"
                       onFocus={focusOn}
                       onBlur={focusOff}
                     >
@@ -560,7 +560,7 @@ export default function Hero() {
                       name="link"
                       type="url"
                       placeholder="https://…"
-                      className="rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none transition"
+                      className="rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 transition"
                       style={inputStyle}
                       onFocus={focusOn}
                       onBlur={focusOff}
@@ -575,7 +575,7 @@ export default function Hero() {
                       name="message"
                       rows={4}
                       placeholder="Genre, reference track, what bothers you about the current sound."
-                      className="rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none transition resize-none"
+                      className="rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 transition resize-none"
                       style={inputStyle}
                       onFocus={focusOn}
                       onBlur={focusOff}
@@ -685,7 +685,7 @@ export default function Hero() {
                 </div>
                 <div className="flex flex-col gap-1">
                   <h3 className="font-semibold text-white">{title}</h3>
-                  <p className="text-white/65 text-[15px] leading-relaxed">
+                  <p className="text-white/65 text-base leading-relaxed">
                     {text}
                   </p>
                 </div>
@@ -708,7 +708,7 @@ export default function Hero() {
             {checklist.map((item) => (
               <li
                 key={item}
-                className="flex items-start gap-3 text-white/70 text-[15px] leading-relaxed"
+                className="flex items-start gap-3 text-white/70 text-base leading-relaxed"
               >
                 <span className="mt-0.5" style={{ color: "#C9A84C" }}>
                   →
@@ -748,7 +748,7 @@ export default function Hero() {
             <h2 className="text-3xl md:text-4xl font-semibold tracking-wide relative z-10">
               Prefer to talk first?
             </h2>
-            <p className="text-white/65 text-[15px] relative z-10">
+            <p className="text-white/65 text-base relative z-10">
               If the upload does not work or you want to discuss the project
               first, send me a message directly.
             </p>

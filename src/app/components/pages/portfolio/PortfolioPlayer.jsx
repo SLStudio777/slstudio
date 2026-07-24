@@ -362,10 +362,10 @@ export default function PortfolioPlayer({ lang = "en" }) {
                       <div className="flex items-center gap-2">
                         <span className="truncate text-sm text-white/85">{row.track.title}</span>
                         {row.track.band ? (
-                          <span className="flex h-6 min-w-6 shrink-0 items-center justify-center rounded-full border border-[#C9A84C]/45 px-1 text-[9px] tracking-wider text-[#C9A84C]">{row.track.band}</span>
+                          <span className="flex h-6 min-w-6 shrink-0 items-center justify-center rounded-full border border-[#C9A84C]/45 px-1 text-xs tracking-wider text-[#C9A84C]">{row.track.band}</span>
                         ) : null}
                         {row.track.cover ? (
-                          <span className="shrink-0 rounded-full border border-white/20 px-2 py-0.5 text-[9px] uppercase tracking-wider text-white/75">cover</span>
+                          <span className="shrink-0 rounded-full border border-white/20 px-2 py-0.5 text-xs uppercase tracking-wider text-white/75">cover</span>
                         ) : null}
                       </div>
                       {(lang === "pl" ? row.track.captionPl : row.track.captionEn) ? (

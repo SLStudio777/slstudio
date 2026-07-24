@@ -8,6 +8,13 @@
   --color-gold-bright: #f5b942;
 }
 
+/* Keyboard focus (audit v4, WCAG 2.4.7): visible gold ring for keyboard
+   navigation only — mouse clicks don't trigger :focus-visible. */
+:focus-visible {
+  outline: 2px solid #c9a84c;
+  outline-offset: 2px;
+}
+
 html,
 body {
   margin: 0;

@@ -90,7 +90,7 @@ export default function AIMixingReviewPagePL() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-[680px] mx-auto">
         <BlogHeader
           topic="Industry Insights"
           date="18 lutego 2026"

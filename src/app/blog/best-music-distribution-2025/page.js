@@ -37,7 +37,7 @@ export default function MusicDistributionPage() {
     return (
         <div className="mt-16 mb-20">
             <BlogJsonLd slug="best-music-distribution-2025" />
-            <div className="max-w-3xl mx-auto">
+            <div className="max-w-[680px] mx-auto">
                 
                 <BlogHeader 
                     date="May 2, 2025" 

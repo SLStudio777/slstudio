@@ -56,7 +56,7 @@ export default function BestMixingPluginsPagePL() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-[680px] mx-auto">
         <BlogHeader
           topic="Technics"
           date="12 marca 2026"

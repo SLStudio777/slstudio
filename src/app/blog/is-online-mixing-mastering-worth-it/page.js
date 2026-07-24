@@ -35,7 +35,7 @@ export default function OnlineMixingPage() {
     return (
         <div className="mt-16 mb-20">
             <BlogJsonLd slug="is-online-mixing-mastering-worth-it" />
-            <div className="max-w-3xl mx-auto">
+            <div className="max-w-[680px] mx-auto">
 
                 {/* Header */}
                 <div className="mb-12">

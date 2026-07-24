@@ -159,7 +159,7 @@ export default function Section1() {
               {includedItems.map((item) => (
                 <li
                   key={item}
-                  className="flex items-start gap-3 text-white/70 text-[15px] leading-relaxed"
+                  className="flex items-start gap-3 text-white/70 text-base leading-relaxed"
                 >
                   <span className="text-[#C9A84C] mt-0.5">→</span>
                   <span>{item}</span>
@@ -202,7 +202,7 @@ export default function Section1() {
           <span className="text-white/75 text-xs uppercase tracking-[0.3em] relative z-10">
             Jak podchodzę do miksu
           </span>
-          <div className="flex flex-col gap-6 text-white/70 text-[15px] leading-relaxed relative z-10">
+          <div className="flex flex-col gap-6 text-white/70 text-base leading-relaxed relative z-10">
             <p>
               Pierwsze dziesięć minut po prostu słucham. Niczego nie dotykam.
               Sprawdzam, gdzie robi się tłoczno, gdzie dół traci kontrolę i
@@ -232,7 +232,7 @@ export default function Section1() {
           <span className="text-white/75 text-xs uppercase tracking-[0.3em] relative z-10">
             Gitary, wokal i przekładalność
           </span>
-          <div className="flex flex-col gap-6 text-white/70 text-[15px] leading-relaxed relative z-10">
+          <div className="flex flex-col gap-6 text-white/70 text-base leading-relaxed relative z-10">
             <p>
               Sam jestem gitarzystą, dlatego szybko słyszę, kiedy gitara została
               dobrze nagrana, ale źle siedzi w miksie. Czasem zajmuje cały

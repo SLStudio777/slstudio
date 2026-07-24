@@ -319,7 +319,7 @@ export default function BestMelodyneAlternativesPagePL() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <ReadingProgress />
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-[680px] mx-auto">
         <BlogHeader
           topic="Review"
           date="15 maja 2026"

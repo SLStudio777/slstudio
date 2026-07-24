@@ -199,7 +199,7 @@ export default function WhyAiTracksSoundCheapPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <ReadingProgress />
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-[680px] mx-auto">
         <BlogHeader
           topic="Production"
           date="June 13, 2026"

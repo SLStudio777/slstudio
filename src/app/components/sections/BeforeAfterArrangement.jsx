@@ -129,7 +129,7 @@ export default async function BeforeAfterArrangement() {
               />
               {story && (
                 <div className="rounded-2xl p-6 border border-white/[0.06] bg-white/[0.02] flex flex-col gap-3 flex-1">
-                  <p className="text-white font-semibold text-[15px]">
+                  <p className="text-white font-semibold text-base">
                     {story.client}
                   </p>
                   <p className="text-white/60 text-sm leading-relaxed">

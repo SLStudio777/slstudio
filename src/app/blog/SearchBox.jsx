@@ -37,7 +37,7 @@ export default function SearchBox() {
                 onChange={(e) => handleSearch(e.target.value)}
                 placeholder="Search articles..."
                 aria-label="Search articles"
-                className="w-full pl-4 pr-10 py-2.5 rounded-lg text-sm bg-white/5 border border-white/10 text-white/80 placeholder:text-white/65 focus:outline-none focus:border-gold/60 transition [&::-webkit-search-cancel-button]:appearance-none"
+                className="w-full pl-4 pr-10 py-2.5 rounded-lg text-sm bg-white/5 border border-white/10 text-white/80 placeholder:text-white/65 focus:border-gold/60 transition [&::-webkit-search-cancel-button]:appearance-none"
             />
             {query && (
                 <button

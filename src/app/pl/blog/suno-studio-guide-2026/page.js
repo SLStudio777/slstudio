@@ -113,7 +113,7 @@ export default function SunoStudioGuidePlPage() {
       <script type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <ReadingProgress />
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-[680px] mx-auto">
         <BlogHeader
           topic="Poradniki"
           date="7 lipca 2026"

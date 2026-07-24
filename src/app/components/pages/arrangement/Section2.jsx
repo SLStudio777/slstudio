@@ -37,7 +37,7 @@ export default function Section2() {
         <h2 className="text-3xl md:text-4xl font-semibold tracking-wide relative z-10">
           Your rough idea is enough
         </h2>
-        <p className="text-white/65 text-[15px] leading-relaxed max-w-xl relative z-10">
+        <p className="text-white/65 text-base leading-relaxed max-w-xl relative z-10">
           Send the recording you already have. I will listen, explain what the
           arrangement needs and prepare a short free concept or assessment
           before you commit.

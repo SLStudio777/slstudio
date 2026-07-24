@@ -103,7 +103,7 @@ export default function SectionIndicator() {
                 .side-toc a:hover { color: rgba(255,255,255,0.85) !important; }
             `}</style>
             <p
-                className="text-[11px] font-semibold uppercase"
+                className="text-xs font-semibold uppercase"
                 style={{
                     color: "rgba(201,168,76,0.65)",
                     letterSpacing: "0.25em",

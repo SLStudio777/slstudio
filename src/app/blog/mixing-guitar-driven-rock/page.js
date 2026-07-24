@@ -68,7 +68,7 @@ export default function GuitarRockPage() {
     return (
         <div className="mt-16 mb-20">
             <BlogJsonLd slug="mixing-guitar-driven-rock" />
-            <div className="max-w-3xl mx-auto">
+            <div className="max-w-[680px] mx-auto">
 
                 <BlogHeader
                     topic="Mixing & Mastering"

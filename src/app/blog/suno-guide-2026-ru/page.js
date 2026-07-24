@@ -128,7 +128,7 @@ export default function SunoGuidePageRu() {
     <div id="top" className="mt-16 mb-20">
       <BlogJsonLd slug="suno-guide-2026-ru" />
       <ReadingProgress />
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-[680px] mx-auto">
         <BlogHeader
           topic="Уроки"
           date="1 мая 2026"
@@ -1059,7 +1059,7 @@ export default function SunoGuidePageRu() {
               <p className="text-white font-semibold text-base mb-2">
                 🚫 Петля, которая никуда не ведёт
               </p>
-              <p className="text-white/65 font-mono text-[15px] leading-relaxed">
+              <p className="text-white/65 font-mono text-base leading-relaxed">
                 Generate → не нравится → закрыл → снова Generate → не нравится →
                 ещё час → Suno плохой → закрыл → завтра открыл снова
               </p>

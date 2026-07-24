@@ -210,7 +210,7 @@ export default function MasterSunoTrackForSpotifyPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <ReadingProgress />
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-[680px] mx-auto">
         <BlogHeader
           topic="Mastering"
           date="June 3, 2026"

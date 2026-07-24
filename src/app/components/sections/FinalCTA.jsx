@@ -23,7 +23,7 @@ export default function FinalCTA({ labels }) {
                 <h2 className="text-3xl md:text-4xl font-semibold tracking-wide relative z-10">
                     {t.heading}
                 </h2>
-                <p className="text-white/65 text-[15px] relative z-10">
+                <p className="text-white/65 text-base relative z-10">
                     {t.text}
                 </p>
                 <Link

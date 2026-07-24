@@ -143,7 +143,7 @@ export default function Section1() {
             {includedItems.map((item) => (
               <li
                 key={item}
-                className="flex items-start gap-3 text-white/70 text-[15px] leading-relaxed"
+                className="flex items-start gap-3 text-white/70 text-base leading-relaxed"
               >
                 <span className="text-[#C9A84C] mt-0.5">→</span>
                 <span>{item}</span>
@@ -200,7 +200,7 @@ export default function Section1() {
           <span className="text-white/75 text-xs uppercase tracking-[0.3em] relative z-10">
             The Kitchen Voice Memo
           </span>
-          <div className="flex flex-col gap-6 text-white/70 text-[15px] leading-relaxed relative z-10">
+          <div className="flex flex-col gap-6 text-white/70 text-base leading-relaxed relative z-10">
             <p>
               Once someone sent me a voice message: a melody hummed into a phone
               in the kitchen, with a dripping tap in the background. The note
@@ -228,7 +228,7 @@ export default function Section1() {
           <span className="text-white/75 text-xs uppercase tracking-[0.3em] relative z-10">
             What I Can Build
           </span>
-          <div className="flex flex-col gap-6 text-white/70 text-[15px] leading-relaxed relative z-10">
+          <div className="flex flex-col gap-6 text-white/70 text-base leading-relaxed relative z-10">
             <p>
               I work across blues-rock, funk, indie, pop, metal, jazz and
               electronic music. My background is rooted in live instruments and
