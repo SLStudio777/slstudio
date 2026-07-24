@@ -138,7 +138,7 @@ function TableOfContents() {
             </span>
             <a
               href={`#${item.id}`}
-              className="text-sm text-white/50 hover:text-white transition leading-snug"
+              className="text-sm text-white/65 hover:text-white transition leading-snug"
             >
               {item.label}
             </a>
@@ -167,7 +167,7 @@ function Figure({ src, alt, caption, eager = false }) {
         />
       </div>
       {caption && (
-        <figcaption className="text-white/45 text-sm leading-relaxed">
+        <figcaption className="text-white/65 text-sm leading-relaxed">
           {caption}
         </figcaption>
       )}
@@ -435,16 +435,16 @@ export default function BestMelodyneAlternativesPage() {
                         borderBottom: "1px solid rgba(255,255,255,0.08)",
                       }}
                     >
-                      <th className="text-left py-2 pr-4 text-white/45 text-sm whitespace-nowrap">
+                      <th className="text-left py-2 pr-4 text-white/65 text-sm whitespace-nowrap">
                         Option
                       </th>
-                      <th className="text-left py-2 pr-4 text-white/45 text-sm whitespace-nowrap">
+                      <th className="text-left py-2 pr-4 text-white/65 text-sm whitespace-nowrap">
                         Workflow
                       </th>
-                      <th className="text-left py-2 pr-4 text-white/45 text-sm whitespace-nowrap">
+                      <th className="text-left py-2 pr-4 text-white/65 text-sm whitespace-nowrap">
                         Best for
                       </th>
-                      <th className="text-left py-2 text-white/45 text-sm whitespace-nowrap">
+                      <th className="text-left py-2 text-white/65 text-sm whitespace-nowrap">
                         Main limitation
                       </th>
                     </tr>
@@ -460,13 +460,13 @@ export default function BestMelodyneAlternativesPage() {
                         <td className="py-2 pr-4 font-semibold text-white text-base whitespace-nowrap">
                           {row[0]}
                         </td>
-                        <td className="py-2 pr-4 text-white/55 text-base">
+                        <td className="py-2 pr-4 text-white/70 text-base">
                           {row[1]}
                         </td>
-                        <td className="py-2 pr-4 text-white/55 text-base">
+                        <td className="py-2 pr-4 text-white/70 text-base">
                           {row[2]}
                         </td>
-                        <td className="py-2 text-white/55 text-base">
+                        <td className="py-2 text-white/70 text-base">
                           {row[3]}
                         </td>
                       </tr>
@@ -475,7 +475,7 @@ export default function BestMelodyneAlternativesPage() {
                 </table>
               </div>
             </div>
-            <p className="text-white/45 text-sm leading-relaxed">
+            <p className="text-white/65 text-sm leading-relaxed">
               <em>
                 Prices and sales change constantly. Compare the edition and
                 feature set you actually need, not the largest number on a

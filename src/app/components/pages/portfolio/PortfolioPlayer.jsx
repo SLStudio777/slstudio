@@ -118,10 +118,10 @@ function BandCard({ band, lang }) {
           </span>
           <div>
             <div className="text-sm font-semibold text-white/85">{band.name}</div>
-            <div className="text-xs text-white/40">{lang === "pl" ? band.cityPl : band.cityEn}</div>
+            <div className="text-xs text-white/75">{lang === "pl" ? band.cityPl : band.cityEn}</div>
           </div>
         </div>
-        <p className="text-sm leading-relaxed text-white/55">{lang === "pl" ? band.textPl : band.textEn}</p>
+        <p className="text-sm leading-relaxed text-white/70">{lang === "pl" ? band.textPl : band.textEn}</p>
       </div>
     </div>
   );
@@ -328,7 +328,7 @@ export default function PortfolioPlayer({ lang = "en" }) {
           <section id={`pf-${s.genre}`} className="mb-12" style={{ scrollMarginTop: 90 }}>
             <h2 className="mb-4 text-xl md:text-2xl font-semibold tracking-wide" style={{ fontFamily: "var(--font-playfair)" }}>
               {lang === "pl" ? s.labelPl : s.labelEn}{" "}
-              <span className="text-sm text-white/35">{s.tracks.length} {t.tracks}</span>
+              <span className="text-sm text-white/65">{s.tracks.length} {t.tracks}</span>
             </h2>
             <div className="space-y-1.5">
               {rows.map((row) =>
@@ -346,7 +346,7 @@ export default function PortfolioPlayer({ lang = "en" }) {
                         : "border-white/[0.06] bg-white/[0.02] hover:border-[#C9A84C]/25 hover:bg-white/[0.04]"
                     }`}
                   >
-                    <span className="flex w-6 shrink-0 items-center justify-end text-xs tabular-nums text-white/30">
+                    <span className="flex w-6 shrink-0 items-center justify-end text-xs tabular-nums text-white/75">
                       {current === row.track.slug ? <Vinyl spinning={playing} /> : String(row.num).padStart(2, "0")}
                     </span>
                     <button
@@ -365,11 +365,11 @@ export default function PortfolioPlayer({ lang = "en" }) {
                           <span className="flex h-6 min-w-6 shrink-0 items-center justify-center rounded-full border border-[#C9A84C]/45 px-1 text-[9px] tracking-wider text-[#C9A84C]">{row.track.band}</span>
                         ) : null}
                         {row.track.cover ? (
-                          <span className="shrink-0 rounded-full border border-white/20 px-2 py-0.5 text-[9px] uppercase tracking-wider text-white/45">cover</span>
+                          <span className="shrink-0 rounded-full border border-white/20 px-2 py-0.5 text-[9px] uppercase tracking-wider text-white/75">cover</span>
                         ) : null}
                       </div>
                       {(lang === "pl" ? row.track.captionPl : row.track.captionEn) ? (
-                        <div className="truncate text-xs text-white/40">{lang === "pl" ? row.track.captionPl : row.track.captionEn}</div>
+                        <div className="truncate text-xs text-white/75">{lang === "pl" ? row.track.captionPl : row.track.captionEn}</div>
                       ) : null}
                       <div
                         className="mt-1.5 h-1 w-full cursor-pointer overflow-hidden rounded-full bg-white/[0.07]"
@@ -381,20 +381,20 @@ export default function PortfolioPlayer({ lang = "en" }) {
                         />
                       </div>
                     </div>
-                    <span className="shrink-0 text-xs tabular-nums text-white/40">{row.track.duration}</span>
+                    <span className="shrink-0 text-xs tabular-nums text-white/75">{row.track.duration}</span>
                     <button
                       type="button"
                       onClick={() => copyLink(row.track)}
                       title={copiedSlug === row.track.slug ? t.copied : t.copyLink}
                       aria-label={t.copyLink}
-                      className="shrink-0 text-white/30 transition hover:text-[#C9A84C] opacity-0 group-hover:opacity-100"
+                      className="shrink-0 text-white/65 transition hover:text-[#C9A84C] opacity-0 group-hover:opacity-100"
                     >
                       <Link2 size={14} />
                     </button>
                     <a
                       href={row.track.file}
                       download
-                      className="shrink-0 text-white/35 transition hover:text-[#C9A84C]"
+                      className="shrink-0 text-white/65 transition hover:text-[#C9A84C]"
                       aria-label={t.download}
                       title={t.download}
                     >
@@ -449,7 +449,7 @@ export default function PortfolioPlayer({ lang = "en" }) {
               <div className="flex items-baseline gap-2">
                 <span className="truncate text-sm text-white/85">{currentTrack.title}</span>
                 {(lang === "pl" ? currentTrack.captionPl : currentTrack.captionEn) ? (
-                  <span className="hidden truncate text-xs text-white/40 sm:inline">
+                  <span className="hidden truncate text-xs text-white/75 sm:inline">
                     {lang === "pl" ? currentTrack.captionPl : currentTrack.captionEn}
                   </span>
                 ) : null}
@@ -461,7 +461,7 @@ export default function PortfolioPlayer({ lang = "en" }) {
                 <div className="h-full rounded-full" style={{ width: `${progress}%`, background: "linear-gradient(90deg, #C9A84C, #e8c97a)" }} />
               </div>
             </div>
-            <span className="shrink-0 text-xs tabular-nums text-white/40">{currentTrack.duration}</span>
+            <span className="shrink-0 text-xs tabular-nums text-white/75">{currentTrack.duration}</span>
             <button
               type="button"
               onClick={() => setAutoNext((v) => !v)}
@@ -470,7 +470,7 @@ export default function PortfolioPlayer({ lang = "en" }) {
               aria-label={t.autoplay}
               className="flex shrink-0 items-center gap-1.5"
             >
-              <SkipForward size={13} className={autoNext ? "text-[#C9A84C]" : "text-white/35"} />
+              <SkipForward size={13} className={autoNext ? "text-[#C9A84C]" : "text-white/65"} />
               <span className={`relative inline-flex h-4 w-7 items-center rounded-full transition-colors ${autoNext ? "bg-[#C9A84C]" : "bg-white/15"}`}>
                 <span
                   className={`inline-block h-3 w-3 transform rounded-full bg-[#0e0d0b] transition-transform ${autoNext ? "translate-x-3.5" : "translate-x-0.5"}`}
@@ -483,7 +483,7 @@ export default function PortfolioPlayer({ lang = "en" }) {
               onClick={stop}
               aria-label={t.stop}
               title={t.stop}
-              className="shrink-0 text-white/40 transition hover:text-white/75"
+              className="shrink-0 text-white/65 transition hover:text-white/75"
             >
               <X size={16} />
             </button>

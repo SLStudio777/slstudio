@@ -15,7 +15,7 @@ export default function BlogHeader({topic, date, title, description}) {
             <div className="flex items-center gap-2 mb-6 flex-wrap">
                 <Link
                     href="/blog"
-                    className="text-white/40 text-xs uppercase tracking-widest hover:text-gold2 transition"
+                    className="text-white/75 text-xs uppercase tracking-widest hover:text-gold2 transition"
                 >
                     Blog
                 </Link>
@@ -32,7 +32,7 @@ export default function BlogHeader({topic, date, title, description}) {
                     {topic}
                 </Link>
                 <span className="text-white/15 text-xs">·</span>
-                <span className="text-white/40 text-xs">{date}</span>
+                <span className="text-white/75 text-xs">{date}</span>
             </div>
 
             <h1 className="text-3xl md:text-5xl font-semibold tracking-wide leading-tight mb-4">
@@ -41,7 +41,7 @@ export default function BlogHeader({topic, date, title, description}) {
 
             {/* Author byline */}
             <div className="flex items-center gap-2 mb-6 text-sm flex-wrap">
-                <span className="text-white/50">By</span>
+                <span className="text-white/65">By</span>
                 <Link
                     href="/about"
                     className="font-medium transition hover:opacity-80"
@@ -49,8 +49,8 @@ export default function BlogHeader({topic, date, title, description}) {
                 >
                     Serhii Lazariev
                 </Link>
-                <span className="text-white/25">·</span>
-                <span className="text-white/50">
+                <span className="text-white/65">·</span>
+                <span className="text-white/65">
                     Guitarist, producer & mixing engineer at SL Studio
                 </span>
             </div>

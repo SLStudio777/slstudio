@@ -33,11 +33,11 @@ export default async function BeforeAfterSunoPl() {
   return (
     <section
       id="demos"
-      className="container py-12"
+      className="py-12"
       style={{ scrollMarginTop: "80px" }}
     >
       <div className="mb-10">
-        <div className="text-white/55 mb-4 flex items-center gap-2">
+        <div className="text-white/70 mb-4 flex items-center gap-2">
           <AudioWaveform size={16} />
           <span className="text-xs uppercase tracking-widest">Przed i po</span>
         </div>

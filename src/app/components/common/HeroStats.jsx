@@ -117,7 +117,7 @@ export default function HeroStats({ items }) {
                     <span className="text-xl md:text-2xl font-semibold text-[#f5b942] tabular-nums">
                         {display[i]}
                     </span>
-                    <span className="text-white/55 text-xs uppercase tracking-widest">
+                    <span className="text-white/75 text-xs uppercase tracking-widest">
                         {item.label}
                     </span>
                 </div>

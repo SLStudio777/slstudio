@@ -97,7 +97,7 @@ function TableOfContents() {
             <span className="text-xs flex-shrink-0 w-5 text-right" style={{ color: "rgba(201,168,76,0.5)" }}>
               {String(i + 1).padStart(2, "0")}.
             </span>
-            <a href={`#${item.id}`} className="text-sm text-white/50 hover:text-white transition leading-snug">
+            <a href={`#${item.id}`} className="text-sm text-white/65 hover:text-white transition leading-snug">
               {item.label}
             </a>
           </li>
@@ -170,7 +170,7 @@ export default function SunoStudioGuidePlPage() {
                 <div key={i} className="flex items-center gap-3">
                   <div className="flex flex-col items-center gap-1">
                     <span className="text-white font-semibold text-base">{item.step}</span>
-                    <span className="text-white/50 text-sm">{item.desc}</span>
+                    <span className="text-white/65 text-sm">{item.desc}</span>
                   </div>
                   {i < 2 && <span style={{ color: "rgba(201,168,76,0.4)" }}>→</span>}
                 </div>

@@ -40,9 +40,9 @@ export default function OnlineMixingPage() {
                 {/* Header */}
                 <div className="mb-12">
                     <div className="flex items-center gap-3 mb-6">
-                        <span className="text-white/40 text-xs uppercase tracking-widest">Tutorials</span>
+                        <span className="text-white/75 text-xs uppercase tracking-widest">Tutorials</span>
                         <span className="text-white/20 text-xs">·</span>
-                        <span className="text-white/40 text-xs">September 10, 2025</span>
+                        <span className="text-white/75 text-xs">September 10, 2025</span>
                     </div>
                     <h1 className="text-3xl md:text-5xl font-semibold tracking-wide leading-tight mb-6">
                         Is Online Mixing and Mastering Worth It in 2026?
@@ -82,19 +82,19 @@ export default function OnlineMixingPage() {
                         <div className="flex flex-col gap-6">
                             <div className="rounded-xl p-5 flex flex-col gap-2" style={{background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderLeft: "3px solid #C9A84C"}}>
                                 <p className="text-white font-semibold text-sm">No Geographic Limitation</p>
-                                <p className="text-white/50 text-sm">Instead of choosing from whoever is local, you can work with someone who specialises in your specific genre — regardless of where they are. A blues rock engineer in Warsaw working with a singer-songwriter in Melbourne is a normal working arrangement in 2025.</p>
+                                <p className="text-white/65 text-sm">Instead of choosing from whoever is local, you can work with someone who specialises in your specific genre — regardless of where they are. A blues rock engineer in Warsaw working with a singer-songwriter in Melbourne is a normal working arrangement in 2025.</p>
                             </div>
                             <div className="rounded-xl p-5 flex flex-col gap-2" style={{background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderLeft: "3px solid #C9A84C"}}>
                                 <p className="text-white font-semibold text-sm">More Time on the Track</p>
-                                <p className="text-white/50 text-sm">Flat-rate project pricing means the engineer is not incentivised to rush. The detail work — automation, spatial processing, the subtle decisions that separate a good mix from a great one — gets the time it needs.</p>
+                                <p className="text-white/65 text-sm">Flat-rate project pricing means the engineer is not incentivised to rush. The detail work — automation, spatial processing, the subtle decisions that separate a good mix from a great one — gets the time it needs.</p>
                             </div>
                             <div className="rounded-xl p-5 flex flex-col gap-2" style={{background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderLeft: "3px solid #C9A84C"}}>
                                 <p className="text-white font-semibold text-sm">Fast, Predictable Turnaround</p>
-                                <p className="text-white/50 text-sm">Most professional online <a href="/mixing-mastering" style={{color: "#C9A84C", textDecoration: "underline"}}>mixing and mastering</a> services work to 3 to 5 business day turnarounds. No waiting for studio availability, no scheduling conflicts.</p>
+                                <p className="text-white/65 text-sm">Most professional online <a href="/mixing-mastering" style={{color: "#C9A84C", textDecoration: "underline"}}>mixing and mastering</a> services work to 3 to 5 business day turnarounds. No waiting for studio availability, no scheduling conflicts.</p>
                             </div>
                             <div className="rounded-xl p-5 flex flex-col gap-2" style={{background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderLeft: "3px solid #C9A84C"}}>
                                 <p className="text-white font-semibold text-sm">Your Feedback Is More Useful</p>
-                                <p className="text-white/50 text-sm">When you listen to a mix revision at home on your own speakers, in a room you know — the feedback you give is more accurate than listening in an unfamiliar studio environment. Artists who work online often report that their notes are clearer and the final result lands closer to what they heard in their head.</p>
+                                <p className="text-white/65 text-sm">When you listen to a mix revision at home on your own speakers, in a room you know — the feedback you give is more accurate than listening in an unfamiliar studio environment. Artists who work online often report that their notes are clearer and the final result lands closer to what they heard in their head.</p>
                             </div>
                         </div>
                     </div>
@@ -137,7 +137,7 @@ export default function OnlineMixingPage() {
                                     <span className="text-2xl font-bold flex-shrink-0" style={{color: "rgba(201,168,76,0.3)"}}>{item.step}</span>
                                     <div>
                                         <p className="text-white font-medium text-sm">{item.title}</p>
-                                        <p className="text-white/50 text-sm mt-1">{item.desc}</p>
+                                        <p className="text-white/65 text-sm mt-1">{item.desc}</p>
                                     </div>
                                 </div>
                             ))}
@@ -155,7 +155,7 @@ export default function OnlineMixingPage() {
                     <div className="rounded-2xl p-8 text-center flex flex-col items-center gap-4"
                          style={{background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.2)"}}>
                         <h3 className="text-xl font-semibold text-white">Not sure what your track needs?</h3>
-                        <p className="text-white/50 text-sm max-w-md">Send it and hear a free 60-second preview — an honest assessment and an exact price, no commitment.</p>
+                        <p className="text-white/65 text-sm max-w-md">Send it and hear a free 60-second preview — an honest assessment and an exact price, no commitment.</p>
                         <a href="/free-track-preview"
                            className="inline-flex items-center gap-2 text-black font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition text-sm"
                            style={{backgroundColor: "#C9A84C"}}>

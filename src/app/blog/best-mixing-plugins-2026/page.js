@@ -261,7 +261,7 @@ export default function BestMixingPluginsPage() {
                     {item.name}
                   </a>
                   <div className="flex items-center gap-2">
-                    <span className="text-white/40 text-xs">
+                    <span className="text-white/75 text-xs">
                       {item.company}
                     </span>
                     <span className="text-white/20 text-xs">·</span>
@@ -349,7 +349,7 @@ export default function BestMixingPluginsPage() {
             <h3 className="text-xl font-semibold text-white">
               Not sure what your track needs?
             </h3>
-            <p className="text-white/50 text-sm max-w-md">
+            <p className="text-white/65 text-sm max-w-md">
               Send it and hear a free 60-second preview — an honest assessment
               and an exact price, no commitment.
             </p>

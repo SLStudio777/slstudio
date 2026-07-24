@@ -49,7 +49,7 @@ export default function Hero() {
                 <div className="flex flex-col gap-8 mobile-reflow">
                     <div className="flex flex-col gap-5 [@media(max-width:767px)]:order-1">
                         <div>
-                            <span className="text-white/50 text-xs uppercase tracking-[0.3em]">
+                            <span className="text-white/75 text-xs uppercase tracking-[0.3em]">
                                 Warszawa, Polska
                             </span>
                             <div className="relative mt-3">
@@ -109,7 +109,7 @@ export default function Hero() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-14 items-start">
                 <div className="flex flex-col gap-6 [@media(max-width:767px)]:order-4">
                     <div className="flex flex-col gap-4">
-                        <p className="text-white/45 text-xs uppercase tracking-widest">
+                        <p className="text-white/75 text-xs uppercase tracking-widest">
                             Dla niezależnych artystów · od 39 $ za utwór · zdalnie, na całym świecie
                         </p>
                         <HeroStats items={stats} />
@@ -128,7 +128,7 @@ export default function Hero() {
                 </div>
 
                 <div className="flex flex-col gap-3 [@media(max-width:767px)]:order-5">
-                    <span className="text-white/40 text-xs uppercase tracking-[0.3em]">
+                    <span className="text-white/75 text-xs uppercase tracking-[0.3em]">
                         Gitarzysta · Producent · Realizator
                     </span>
                     <h2 className="text-xl md:text-2xl font-semibold tracking-wide">

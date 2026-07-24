@@ -145,7 +145,7 @@ function TableOfContents() {
             </span>
             <a
               href={`#${item.id}`}
-              className="text-sm text-white/50 hover:text-white transition leading-snug"
+              className="text-sm text-white/65 hover:text-white transition leading-snug"
             >
               {item.label}
             </a>
@@ -406,10 +406,10 @@ export default function SunoGuidePage() {
                     and a very important one.
                   </p>
                   <div className="mt-3 flex flex-col gap-1">
-                    <p className="text-white/50 text-sm">
+                    <p className="text-white/65 text-sm">
                       👍 Like → track stays visible and easy to find
                     </p>
-                    <p className="text-white/50 text-sm">
+                    <p className="text-white/65 text-sm">
                       👎 Dislike → track hides (but does not delete — still
                       there if you need it)
                     </p>
@@ -536,7 +536,7 @@ export default function SunoGuidePage() {
                   demand Custom Mode precision before they have figured out what
                   they want.
                 </p>
-                <p className="text-white/45 text-base mt-1">
+                <p className="text-white/65 text-base mt-1">
                   More options means more ways to be precisely wrong.
                 </p>
               </div>
@@ -630,7 +630,7 @@ export default function SunoGuidePage() {
               </p>
             </div>
             <div className="flex flex-col gap-3">
-              <p className="text-white/50 text-xs uppercase tracking-widest">
+              <p className="text-white/75 text-xs uppercase tracking-widest">
                 Practical Examples That Actually Work
               </p>
               {[
@@ -1049,7 +1049,7 @@ export default function SunoGuidePage() {
                   🎲 Weirdness — How Far Suno Deviates From Your Instructions
                 </p>
                 <div className="flex items-center gap-3 text-xs my-1">
-                  <span className="text-white/50 text-xs w-24 text-right">
+                  <span className="text-white/75 text-xs w-24 text-right">
                     predictable
                   </span>
                   <div
@@ -1065,7 +1065,7 @@ export default function SunoGuidePage() {
                       }}
                     ></div>
                   </div>
-                  <span className="text-white/50 text-xs w-24">chaotic</span>
+                  <span className="text-white/75 text-xs w-24">chaotic</span>
                 </div>
                 <p className="text-white/65 text-base leading-relaxed">
                   <strong className="text-white">Low</strong> — predictable,
@@ -1097,7 +1097,7 @@ export default function SunoGuidePage() {
                   Style
                 </p>
                 <div className="flex items-center gap-3 text-xs my-1">
-                  <span className="text-white/50 text-xs w-24 text-right">
+                  <span className="text-white/75 text-xs w-24 text-right">
                     style drift
                   </span>
                   <div
@@ -1112,7 +1112,7 @@ export default function SunoGuidePage() {
                       }}
                     ></div>
                   </div>
-                  <span className="text-white/50 text-xs w-24">robotic</span>
+                  <span className="text-white/75 text-xs w-24">robotic</span>
                 </div>
                 <p className="text-white/65 text-base leading-relaxed">
                   <strong className="text-white">Too low</strong> — style drifts
@@ -1838,7 +1838,7 @@ export default function SunoGuidePage() {
                   <p className="text-white font-semibold text-sm">
                     {item.title}
                   </p>
-                  <p className="text-white/50 text-sm">{item.body}</p>
+                  <p className="text-white/65 text-sm">{item.body}</p>
                 </div>
               ))}
             </div>

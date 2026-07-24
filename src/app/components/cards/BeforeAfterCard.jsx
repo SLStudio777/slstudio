@@ -195,7 +195,7 @@ export default function BeforeAfterCard({title, before, after, labels}) {
                 <div>
                     <h3 className="font-semibold text-base text-white">{title}</h3>
                     <div className="flex items-center gap-2 mt-1">
-                        <span className="text-white/40 text-xs uppercase tracking-widest">
+                        <span className="text-white/75 text-xs uppercase tracking-widest">
                             {mode === "before" ? L.raw : L.final}
                         </span>
                         {isPlaying && (
@@ -211,8 +211,8 @@ export default function BeforeAfterCard({title, before, after, labels}) {
                 <div className="flex bg-white/5 rounded-lg p-1 text-xs border border-white/5">
                     <button
                         onClick={() => switchMode("before")}
-                        className={`mode-btn px-3 py-1 rounded-md font-medium cursor-pointer
-                            ${mode === "before" ? "text-black" : "text-white/55"}`}
+                        className={`mode-btn px-3.5 rounded-md font-medium cursor-pointer inline-flex items-center justify-center min-h-[40px]
+                            ${mode === "before" ? "text-black" : "text-white/75"}`}
                         style={mode === "before"
                             ? { backgroundColor: "#C9A84C", boxShadow: "0 0 8px rgba(201,168,76,0.4)" }
                             : {}}
@@ -221,8 +221,8 @@ export default function BeforeAfterCard({title, before, after, labels}) {
                     </button>
                     <button
                         onClick={() => switchMode("after")}
-                        className={`mode-btn px-3 py-1 rounded-md font-medium cursor-pointer
-                            ${mode === "after" ? "text-black" : "text-white/55"}`}
+                        className={`mode-btn px-3.5 rounded-md font-medium cursor-pointer inline-flex items-center justify-center min-h-[40px]
+                            ${mode === "after" ? "text-black" : "text-white/75"}`}
                         style={mode === "after"
                             ? { backgroundColor: "#C9A84C", boxShadow: "0 0 8px rgba(201,168,76,0.4)" }
                             : {}}
@@ -283,7 +283,7 @@ export default function BeforeAfterCard({title, before, after, labels}) {
                         }
                     </button>
                 </div>
-                <span className="text-white/25 text-xs">
+                <span className="text-white/75 text-xs">
                     {audioLoading ? L.loading : mode === "before" ? L.playingRaw : L.playingFinal}
                 </span>
             </div>

@@ -141,7 +141,7 @@ export default function AboutPage() {
               >
                 Serhii <span className="text-[#f5b942]">Lazariev</span>
               </h1>
-              <p className="text-white/50 text-sm uppercase tracking-widest">
+              <p className="text-white/65 text-sm uppercase tracking-widest">
                 Guitarist · Vocalist · Producer · Mixing & Mastering Engineer
               </p>
               <div className="max-w-xl">
@@ -162,7 +162,7 @@ export default function AboutPage() {
                   }}
                 />
                 <span
-                  className="italic text-white/50"
+                  className="italic text-white/65"
                   style={{ fontFamily: "var(--font-playfair)" }}
                 >
                   — Serhii, SL Studio
@@ -263,7 +263,7 @@ export default function AboutPage() {
                   >
                     {step.year}
                   </div>
-                  <p className="text-white/55 text-sm leading-relaxed">
+                  <p className="text-white/70 text-sm leading-relaxed">
                     {step.text}
                   </p>
                 </div>
@@ -409,7 +409,7 @@ export default function AboutPage() {
             </span>
           ))}
         </div>
-        <p className="text-white/50 text-sm mt-4">
+        <p className="text-white/65 text-sm mt-4">
           Tools matter less than the ears driving them — but good tools help.
         </p>
       </section>
@@ -460,7 +460,7 @@ export default function AboutPage() {
           >
             Get a Free Preview →
           </Link>
-          <p className="relative z-10 text-white/50 text-sm">
+          <p className="relative z-10 text-white/65 text-sm">
             Or just{" "}
             <Link
               href="/contact"

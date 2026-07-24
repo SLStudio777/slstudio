@@ -118,7 +118,7 @@ export default function ImpactStats({ items }) {
           <p className="text-xl md:text-2xl font-semibold text-[#f5b942] tabular-nums">
             {display[i]}
           </p>
-          <p className="text-white/55 text-sm leading-relaxed mt-1">
+          <p className="text-white/70 text-sm leading-relaxed mt-1">
             {item.caption}
           </p>
         </div>

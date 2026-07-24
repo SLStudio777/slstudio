@@ -40,9 +40,9 @@ export default function FXEQReviewPage() {
                 {/* Header */}
                 <div className="mb-12">
                     <div className="flex items-center gap-3 mb-6">
-                        <span className="text-white/40 text-xs uppercase tracking-widest">Review</span>
+                        <span className="text-white/75 text-xs uppercase tracking-widest">Review</span>
                         <span className="text-white/20 text-xs">·</span>
-                        <span className="text-white/40 text-xs">October 5, 2025</span>
+                        <span className="text-white/75 text-xs">October 5, 2025</span>
                     </div>
                     <h1 className="text-3xl md:text-5xl font-semibold tracking-wide leading-tight mb-6">
                         iZotope FXEQ Review — Frequency-Specific Effects for Mixing
@@ -83,7 +83,7 @@ export default function FXEQReviewPage() {
                             ].map((m, i) => (
                                 <div key={i} className="rounded-xl p-4 flex flex-col gap-1" style={{background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)"}}>
                                     <p className="text-white font-semibold text-sm">{m.name}</p>
-                                    <p className="text-white/50 text-sm">{m.desc}</p>
+                                    <p className="text-white/65 text-sm">{m.desc}</p>
                                 </div>
                             ))}
                         </div>
@@ -124,11 +124,11 @@ export default function FXEQReviewPage() {
                         <p className="text-white/60 text-sm leading-relaxed mt-2">It is fun to use in a way that most professional tools are not. That matters — tools that spark ideas and invite experimentation tend to produce better results than tools that just process. FXEQ belongs in a professional <a href="/mixing-mastering" style={{color: "#C9A84C", textDecoration: "underline"}}>mixing</a> toolkit.</p>
                         <div className="flex gap-6 mt-3 flex-wrap">
                             <div>
-                                <p className="text-white/40 text-xs uppercase tracking-widest mb-1">Strengths</p>
+                                <p className="text-white/75 text-xs uppercase tracking-widest mb-1">Strengths</p>
                                 <p className="text-white/60 text-sm">Genuinely novel concept, practical on guitars and vocals, creative Lo-Fi modes, good BPM sync</p>
                             </div>
                             <div>
-                                <p className="text-white/40 text-xs uppercase tracking-widest mb-1">Limitations</p>
+                                <p className="text-white/75 text-xs uppercase tracking-widest mb-1">Limitations</p>
                                 <p className="text-white/60 text-sm">Learning curve for the EQ-as-effect-control paradigm, can be easy to over-process</p>
                             </div>
                         </div>
@@ -138,7 +138,7 @@ export default function FXEQReviewPage() {
                     <div className="rounded-2xl p-8 text-center flex flex-col items-center gap-4"
                          style={{background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.2)"}}>
                         <h3 className="text-xl font-semibold text-white">Want to hear what creative mixing can do for your track?</h3>
-                        <p className="text-white/50 text-sm max-w-md">Send your recording and we will show you. First consultation is always free.</p>
+                        <p className="text-white/65 text-sm max-w-md">Send your recording and we will show you. First consultation is always free.</p>
                         <a href="/contact"
                            className="inline-flex items-center gap-2 text-black font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition text-sm"
                            style={{backgroundColor: "#C9A84C"}}>

@@ -133,7 +133,7 @@ export default function OMniePage() {
               >
                 Serhii <span className="text-[#f5b942]">Lazariev</span>
               </h1>
-              <p className="text-white/50 text-sm uppercase tracking-widest">
+              <p className="text-white/65 text-sm uppercase tracking-widest">
                 Gitarzysta · Wokalista · Producent · Inżynier miksu i masteringu
               </p>
               <div className="max-w-xl">
@@ -154,7 +154,7 @@ export default function OMniePage() {
                   }}
                 />
                 <span
-                  className="italic text-white/50"
+                  className="italic text-white/65"
                   style={{ fontFamily: "var(--font-playfair)" }}
                 >
                   — Serhii, SL Studio
@@ -259,7 +259,7 @@ export default function OMniePage() {
                   >
                     {step.year}
                   </div>
-                  <p className="text-white/55 text-sm leading-relaxed">
+                  <p className="text-white/70 text-sm leading-relaxed">
                     {step.text}
                   </p>
                 </div>
@@ -406,7 +406,7 @@ export default function OMniePage() {
             </span>
           ))}
         </div>
-        <p className="text-white/50 text-sm mt-4">
+        <p className="text-white/65 text-sm mt-4">
           Narzędzia znaczą mniej niż uszy, które nimi kierują — ale dobre
           narzędzia pomagają.
         </p>
@@ -458,7 +458,7 @@ export default function OMniePage() {
           >
             Darmowy fragment →
           </Link>
-          <p className="relative z-10 text-white/50 text-sm">
+          <p className="relative z-10 text-white/65 text-sm">
             Albo po prostu{" "}
             <Link
               href="/pl/kontakt"

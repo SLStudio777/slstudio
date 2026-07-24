@@ -108,7 +108,7 @@ export default function BluesRockPage() {
 
                         <div className="rounded-xl p-5 flex flex-col gap-3" style={{background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)"}}>
                             <p className="text-white font-semibold text-sm">Plugins I actually reach for on blues rock guitars</p>
-                            <ul className="flex flex-col gap-1.5 text-white/50 text-sm">
+                            <ul className="flex flex-col gap-1.5 text-white/65 text-sm">
                                 <li>→ <a href="https://www.plugin-alliance.com/en/products/ltl_silver_bullet_mk2.html" target="_blank" style={{color: "#C9A84C"}}>Silver Bullet MK2</a> — Neve/API character blend, adds harmonic density without making the guitar sound processed</li>
                                 <li>→ <a href="https://www.plugin-alliance.com/en/products/kirchhoff-eq.html" target="_blank" style={{color: "#C9A84C"}}>Kirchhoff EQ</a> — multiple analog emulation modes, surgical cuts in the problem midrange zones</li>
                                 <li>→ <a href="https://www.plugin-alliance.com/en/products/black_box_analog_design_hg-2.html" target="_blank" style={{color: "#C9A84C"}}>Black Box HG-2</a> — saturation that adds harmonic density, particularly useful on driven tones</li>
@@ -218,7 +218,7 @@ export default function BluesRockPage() {
                             {faqs.map((item, i) => (
                                 <div key={i} className="py-5 flex flex-col gap-2">
                                     <p className="text-white/90 font-medium text-base">{item.q}</p>
-                                    <p className="text-white/50 text-sm leading-relaxed">{item.a}</p>
+                                    <p className="text-white/65 text-sm leading-relaxed">{item.a}</p>
                                 </div>
                             ))}
                         </div>
@@ -228,7 +228,7 @@ export default function BluesRockPage() {
                     <div className="rounded-2xl p-8 text-center flex flex-col items-center gap-4"
                          style={{background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.2)"}}>
                         <h3 className="text-xl font-semibold text-white">Not sure what your track needs?</h3>
-                        <p className="text-white/50 text-sm max-w-md">Send it and hear a free 60-second preview — an honest assessment and an exact price, no commitment.</p>
+                        <p className="text-white/65 text-sm max-w-md">Send it and hear a free 60-second preview — an honest assessment and an exact price, no commitment.</p>
                         <a href="/free-track-preview"
                            className="inline-flex items-center gap-2 text-black font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition text-sm"
                            style={{backgroundColor: "#C9A84C"}}>

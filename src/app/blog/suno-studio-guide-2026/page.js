@@ -105,7 +105,7 @@ function TableOfContents() {
             </span>
             <a
               href={`#${item.id}`}
-              className="text-sm text-white/50 hover:text-white transition leading-snug"
+              className="text-sm text-white/65 hover:text-white transition leading-snug"
             >
               {item.label}
             </a>
@@ -203,7 +203,7 @@ export default function SunoStudioGuidePage() {
                     <span className="text-white font-semibold text-base">
                       {item.step}
                     </span>
-                    <span className="text-white/50 text-sm">{item.desc}</span>
+                    <span className="text-white/65 text-sm">{item.desc}</span>
                   </div>
                   {i < 2 && (
                     <span style={{ color: "rgba(201,168,76,0.4)" }}>→</span>
@@ -791,10 +791,10 @@ export default function SunoStudioGuidePage() {
                             borderBottom: "1px solid rgba(255,255,255,0.08)",
                           }}
                         >
-                          <th className="text-left py-2 pr-4 text-white/45 text-sm">
+                          <th className="text-left py-2 pr-4 text-white/65 text-sm">
                             Instead of…
                           </th>
-                          <th className="text-left py-2 text-white/45 text-sm">
+                          <th className="text-left py-2 text-white/65 text-sm">
                             Write…
                           </th>
                         </tr>
@@ -811,7 +811,7 @@ export default function SunoStudioGuidePage() {
                               borderBottom: "1px solid rgba(255,255,255,0.04)",
                             }}
                           >
-                            <td className="py-2 pr-4 text-white/55 text-base">
+                            <td className="py-2 pr-4 text-white/70 text-base">
                               {row[0]}
                             </td>
                             <td
@@ -861,7 +861,7 @@ export default function SunoStudioGuidePage() {
                           border: "1px solid rgba(255,255,255,0.06)",
                         }}
                       >
-                        <p className="text-white/45 text-sm">{pair[0]}</p>
+                        <p className="text-white/65 text-sm">{pair[0]}</p>
                         <p
                           className="text-sm font-mono font-medium"
                           style={{ color: "#C9A84C" }}
@@ -951,7 +951,7 @@ export default function SunoStudioGuidePage() {
                 <p className="text-white/65 text-base italic">
                   "Beautiful love song with piano, kind of sad"
                 </p>
-                <p className="text-white/45 text-sm">
+                <p className="text-white/65 text-sm">
                   This is a wish. Suno guesses.
                 </p>
               </div>
@@ -969,7 +969,7 @@ export default function SunoStudioGuidePage() {
                   RnB, Soul, Sentimental Mood, Grand Piano, Minimal Drums,
                   Female Emotional Vocals, Slow Tempo, 80 BPM
                 </p>
-                <p className="text-white/45 text-sm">
+                <p className="text-white/65 text-sm">
                   This is a spec. Suno executes.
                 </p>
               </div>
@@ -1366,7 +1366,7 @@ export default function SunoStudioGuidePage() {
                   <p className="text-white font-semibold text-sm">
                     {item.title}
                   </p>
-                  <p className="text-white/50 text-sm">{item.body}</p>
+                  <p className="text-white/65 text-sm">{item.body}</p>
                 </div>
               ))}
             </div>

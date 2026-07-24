@@ -189,7 +189,7 @@ export default function AIMixingReviewPagePL() {
                 >
                   <span className="text-2xl flex-shrink-0">{item.icon}</span>
                   <div>
-                    <p className="text-white/50 text-xs uppercase tracking-widest mb-1">
+                    <p className="text-white/75 text-xs uppercase tracking-widest mb-1">
                       {item.step}
                     </p>
                     <p className="text-white font-semibold text-sm mb-1">
@@ -242,7 +242,7 @@ export default function AIMixingReviewPagePL() {
                 <p className="text-white font-semibold text-sm">
                   ✅ Mastering AI
                 </p>
-                <ul className="flex flex-col gap-1 text-white/50 text-sm">
+                <ul className="flex flex-col gap-1 text-white/65 text-sm">
                   <li>→ Jeden plik stereo</li>
                   <li>→ Ustandaryzowane cele</li>
                   <li>→ Dobry do dem i referencji</li>
@@ -257,7 +257,7 @@ export default function AIMixingReviewPagePL() {
                 }}
               >
                 <p className="text-white font-semibold text-sm">⚠️ Miks AI</p>
-                <ul className="flex flex-col gap-1 text-white/50 text-sm">
+                <ul className="flex flex-col gap-1 text-white/65 text-sm">
                   <li>→ 30–100 osobnych śladów</li>
                   <li>→ Każda decyzja wpływa na inne</li>
                   <li>→ Wymaga kontekstu muzycznego</li>
@@ -285,16 +285,16 @@ export default function AIMixingReviewPagePL() {
                   <tr
                     style={{ borderBottom: "1px solid rgba(255,255,255,0.1)" }}
                   >
-                    <th className="text-left py-3 pr-6 text-white/50 text-xs uppercase tracking-widest font-medium">
+                    <th className="text-left py-3 pr-6 text-white/75 text-xs uppercase tracking-widest font-medium">
                       Poziom
                     </th>
-                    <th className="text-left py-3 pr-6 text-white/50 text-xs uppercase tracking-widest font-medium">
+                    <th className="text-left py-3 pr-6 text-white/75 text-xs uppercase tracking-widest font-medium">
                       Przykłady
                     </th>
-                    <th className="text-left py-3 pr-6 text-white/50 text-xs uppercase tracking-widest font-medium">
+                    <th className="text-left py-3 pr-6 text-white/75 text-xs uppercase tracking-widest font-medium">
                       Uczciwe zastosowanie
                     </th>
-                    <th className="text-left py-3 text-white/50 text-xs uppercase tracking-widest font-medium">
+                    <th className="text-left py-3 text-white/75 text-xs uppercase tracking-widest font-medium">
                       Typowy koszt
                     </th>
                   </tr>
@@ -335,8 +335,8 @@ export default function AIMixingReviewPagePL() {
                       <td className="py-3 pr-6 text-white font-medium">
                         {row.t}
                       </td>
-                      <td className="py-3 pr-6 text-white/50">{row.e}</td>
-                      <td className="py-3 pr-6 text-white/50">{row.u}</td>
+                      <td className="py-3 pr-6 text-white/65">{row.e}</td>
+                      <td className="py-3 pr-6 text-white/65">{row.u}</td>
                       <td className="py-3" style={{ color: "#C9A84C" }}>
                         {row.c}
                       </td>
@@ -361,7 +361,7 @@ export default function AIMixingReviewPagePL() {
           <div className="flex flex-col gap-4">
             <h2 className="text-xl md:text-2xl font-semibold text-white">
               Co się zmieniło od czasu tego testu{" "}
-              <span className="text-white/50 text-base font-normal">
+              <span className="text-white/65 text-base font-normal">
                 (aktualizacja: lipiec 2026)
               </span>
             </h2>
@@ -400,7 +400,7 @@ export default function AIMixingReviewPagePL() {
                   <p className="text-white font-semibold text-sm">
                     {item.name}
                   </p>
-                  <p className="text-white/55 text-base leading-relaxed">
+                  <p className="text-white/70 text-base leading-relaxed">
                     {item.text}
                   </p>
                 </div>
@@ -485,7 +485,7 @@ export default function AIMixingReviewPagePL() {
                     <p className="text-white font-semibold text-sm mb-1">
                       {item.title}
                     </p>
-                    <p className="text-white/50 text-sm leading-relaxed">
+                    <p className="text-white/65 text-sm leading-relaxed">
                       {item.text}
                     </p>
                   </div>
@@ -562,7 +562,7 @@ export default function AIMixingReviewPagePL() {
                   }}
                 >
                   <p className="text-white font-medium text-sm">{item.q}</p>
-                  <p className="text-white/50 text-sm leading-relaxed">
+                  <p className="text-white/65 text-sm leading-relaxed">
                     {item.a}
                   </p>
                 </div>
@@ -659,7 +659,7 @@ export default function AIMixingReviewPagePL() {
             <h3 className="text-xl font-semibold text-white">
               Nie wiesz, czego potrzebuje Twój utwór?
             </h3>
-            <p className="text-white/50 text-sm max-w-md">
+            <p className="text-white/65 text-sm max-w-md">
               Wyślij go i posłuchaj darmowego 60-sekundowego podglądu — szczera
               ocena i konkretna cena, bez zobowiązań.
             </p>

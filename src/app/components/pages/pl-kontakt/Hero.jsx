@@ -205,7 +205,7 @@ export default function Hero() {
         {/* LEFT — justify-between spreads the blocks so the column's top and
                     bottom line up exactly with the form column on the right */}
         <div className="flex flex-col gap-3">
-          <span className="relative md:top-2 text-white/40 text-xs uppercase tracking-[0.3em]">
+          <span className="relative md:top-2 text-white/75 text-xs uppercase tracking-[0.3em]">
             Kontakt
           </span>
           <div className="relative md:top-2">
@@ -220,7 +220,7 @@ export default function Hero() {
             z tym zrobić — bez opłat, bez zobowiązań, po prostu szczery odsłuch.
           </p>
 
-          <p className="relative md:top-2 text-white/25 text-xs uppercase tracking-widest mt-1 mb-1">
+          <p className="relative md:top-2 text-white/75 text-xs uppercase tracking-widest mt-1 mb-1">
             Napisz bezpośrednio
           </p>
 
@@ -287,7 +287,7 @@ export default function Hero() {
                       </span>
                     )}
                   </div>
-                  <p className="text-white/50 text-xs truncate">{c.handle}</p>
+                  <p className="text-white/75 text-xs truncate">{c.handle}</p>
                 </div>
                 <ArrowUpRight
                   className="w-4 h-4 flex-shrink-0 opacity-30 group-hover:opacity-70 transition"
@@ -312,7 +312,7 @@ export default function Hero() {
                     animation: "pulse 2s ease-in-out infinite",
                   }}
                 />
-                <p className="text-white/50 text-xs uppercase tracking-widest">
+                <p className="text-white/75 text-xs uppercase tracking-widest">
                   Czas odpowiedzi
                 </p>
               </div>
@@ -355,7 +355,7 @@ export default function Hero() {
                 <h2 className="relative whitespace-nowrap text-3xl md:text-[52px] font-semibold tracking-wide leading-none text-white">
                   Wyślij swój <span className="text-gold2">utwór</span>
                 </h2>
-                <p className="text-white/45 text-sm md:text-base mt-2">
+                <p className="text-white/65 text-sm md:text-base mt-2">
                   Zwykle odpowiadam w ciągu 24 godzin
                 </p>
               </div>
@@ -390,7 +390,7 @@ export default function Hero() {
                 <p className="text-white font-medium text-sm">
                   Przygotowujesz swój utwór?
                 </p>
-                <p className="text-white/50 text-xs">
+                <p className="text-white/75 text-xs">
                   Jak dobrze wyeksportować stemy + darmowa checklista PDF
                 </p>
               </div>
@@ -423,7 +423,7 @@ export default function Hero() {
                 <h3 className="text-xl font-semibold text-white mb-2">
                   Wiadomość wys������ana!
                 </h3>
-                <p className="text-white/50 text-sm">
+                <p className="text-white/65 text-sm">
                   Odezwę się w ciągu 24 godzin.
                 </p>
               </div>
@@ -436,13 +436,13 @@ export default function Hero() {
                 background: "rgba(255,255,255,0.015)",
               }}
             >
-              <p className="text-white/50 text-xs uppercase tracking-widest">
+              <p className="text-white/75 text-xs uppercase tracking-widest">
                 Napisz wiadomość
               </p>
               <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="flex flex-col gap-2">
-                    <label className="text-white/50 text-xs uppercase tracking-widest">
+                    <label className="text-white/75 text-xs uppercase tracking-widest">
                       Imię
                     </label>
                     <input
@@ -466,7 +466,7 @@ export default function Hero() {
                     />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <label className="text-white/50 text-xs uppercase tracking-widest">
+                    <label className="text-white/75 text-xs uppercase tracking-widest">
                       Email
                     </label>
                     <input
@@ -491,7 +491,7 @@ export default function Hero() {
                   </div>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label className="text-white/50 text-xs uppercase tracking-widest">
+                  <label className="text-white/75 text-xs uppercase tracking-widest">
                     Usługa
                   </label>
                   <select
@@ -525,7 +525,7 @@ export default function Hero() {
                   </select>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label className="text-white/50 text-xs uppercase tracking-widest">
+                  <label className="text-white/75 text-xs uppercase tracking-widest">
                     O Twoim projekcie
                   </label>
                   <textarea
@@ -598,7 +598,7 @@ export default function Hero() {
       {/* Three steps — same style as the "How It Works" cards on the free preview page */}
       <div className="mt-20">
         <div className="mb-8">
-          <span className="text-white/40 text-xs uppercase tracking-[0.3em]">
+          <span className="text-white/75 text-xs uppercase tracking-[0.3em]">
             Co dalej
           </span>
           <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mt-2">
@@ -655,7 +655,7 @@ export default function Hero() {
                 </span>
               </div>
               <p className="text-white font-semibold text-sm">{s.title}</p>
-              <p className="text-white/50 text-sm leading-relaxed">{s.body}</p>
+              <p className="text-white/65 text-sm leading-relaxed">{s.body}</p>
             </StepFlareCard>
           ))}
         </div>
@@ -664,7 +664,7 @@ export default function Hero() {
       {/* Mini FAQ — same card and accordion behavior as the homepage */}
       <div className="mt-20">
         <div className="mb-8">
-          <span className="text-white/40 text-xs uppercase tracking-[0.3em]">
+          <span className="text-white/75 text-xs uppercase tracking-[0.3em]">
             FAQ
           </span>
           <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mt-2">

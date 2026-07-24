@@ -49,7 +49,7 @@ export default function Testimonials({ labels }) {
     return (
         <section className="py-12 border-t border-white/5">
             <div className="mb-10">
-                <span className="text-white/40 text-xs uppercase tracking-[0.3em]">
+                <span className="text-white/75 text-xs uppercase tracking-[0.3em]">
                     {L.eyebrow}
                 </span>
                 <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mt-2">
@@ -86,7 +86,7 @@ export default function Testimonials({ labels }) {
                                                   style={{ color: "rgba(201,168,76,0.7)" }}>
                                                 {L.factLabels.before}
                                             </span>
-                                            <span className="text-white/55 leading-relaxed">{t.before}</span>
+                                            <span className="text-white/70 leading-relaxed">{t.before}</span>
                                         </div>
                                     )}
                                     {t.after && (
@@ -116,7 +116,7 @@ export default function Testimonials({ labels }) {
                                 </div>
                                 <div>
                                     <p className="font-semibold text-sm text-white">{t.name}</p>
-                                    <p className="text-white/55 text-xs">{t.role}</p>
+                                    <p className="text-white/75 text-xs">{t.role}</p>
                                 </div>
                             </div>
                         </div>

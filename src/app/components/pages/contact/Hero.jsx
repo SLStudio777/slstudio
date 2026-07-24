@@ -204,7 +204,7 @@ export default function Hero() {
       <div className="grid grid-cols-1 md:grid-cols-[1.1fr_1fr] gap-8 md:gap-10 items-stretch md:-translate-y-[36px]">
         {/* LEFT */}
         <div className="flex flex-col gap-3">
-          <span className="relative md:top-2 text-white/40 text-xs uppercase tracking-[0.3em]">
+          <span className="relative md:top-2 text-white/75 text-xs uppercase tracking-[0.3em]">
             Get In Touch
           </span>
           <div className="relative md:top-2">
@@ -220,7 +220,7 @@ export default function Hero() {
             listen.
           </p>
 
-          <p className="relative md:top-2 text-white/25 text-xs uppercase tracking-widest mt-1 mb-1">
+          <p className="relative md:top-2 text-white/75 text-xs uppercase tracking-widest mt-1 mb-1">
             Connect directly
           </p>
 
@@ -287,7 +287,7 @@ export default function Hero() {
                       </span>
                     )}
                   </div>
-                  <p className="text-white/50 text-xs truncate">{c.handle}</p>
+                  <p className="text-white/75 text-xs truncate">{c.handle}</p>
                 </div>
                 <ArrowUpRight
                   className="w-4 h-4 flex-shrink-0 opacity-30 group-hover:opacity-70 transition"
@@ -312,7 +312,7 @@ export default function Hero() {
                     animation: "pulse 2s ease-in-out infinite",
                   }}
                 />
-                <p className="text-white/50 text-xs uppercase tracking-widest">
+                <p className="text-white/75 text-xs uppercase tracking-widest">
                   Response time
                 </p>
               </div>
@@ -355,7 +355,7 @@ export default function Hero() {
                 <h2 className="relative whitespace-nowrap text-3xl md:text-[52px] font-semibold tracking-wide leading-none text-white">
                   Send Your <span className="text-gold2">Track</span>
                 </h2>
-                <p className="text-white/45 text-sm md:text-base mt-2">
+                <p className="text-white/65 text-sm md:text-base mt-2">
                   Usually replies within 24 hours
                 </p>
               </div>
@@ -390,7 +390,7 @@ export default function Hero() {
                 <p className="text-white font-medium text-sm">
                   Preparing your track?
                 </p>
-                <p className="text-white/50 text-xs">
+                <p className="text-white/75 text-xs">
                   How to export stems the right way + a free PDF checklist
                 </p>
               </div>
@@ -423,7 +423,7 @@ export default function Hero() {
                 <h3 className="text-xl font-semibold text-white mb-2">
                   Message Sent!
                 </h3>
-                <p className="text-white/50 text-sm">
+                <p className="text-white/65 text-sm">
                   I will get back to you within 24 hours.
                 </p>
               </div>
@@ -436,13 +436,13 @@ export default function Hero() {
                 background: "rgba(255,255,255,0.015)",
               }}
             >
-              <p className="text-white/50 text-xs uppercase tracking-widest">
+              <p className="text-white/75 text-xs uppercase tracking-widest">
                 Send a message
               </p>
               <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="flex flex-col gap-2">
-                    <label className="text-white/50 text-xs uppercase tracking-widest">
+                    <label className="text-white/75 text-xs uppercase tracking-widest">
                       Name
                     </label>
                     <input
@@ -466,7 +466,7 @@ export default function Hero() {
                     />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <label className="text-white/50 text-xs uppercase tracking-widest">
+                    <label className="text-white/75 text-xs uppercase tracking-widest">
                       Email
                     </label>
                     <input
@@ -491,7 +491,7 @@ export default function Hero() {
                   </div>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label className="text-white/50 text-xs uppercase tracking-widest">
+                  <label className="text-white/75 text-xs uppercase tracking-widest">
                     Service
                   </label>
                   <select
@@ -525,7 +525,7 @@ export default function Hero() {
                   </select>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label className="text-white/50 text-xs uppercase tracking-widest">
+                  <label className="text-white/75 text-xs uppercase tracking-widest">
                     About your project
                   </label>
                   <textarea
@@ -597,7 +597,7 @@ export default function Hero() {
       {/* Three steps — same style as the "How It Works" cards on the free preview page */}
       <div className="mt-20">
         <div className="mb-8">
-          <span className="text-white/40 text-xs uppercase tracking-[0.3em]">
+          <span className="text-white/75 text-xs uppercase tracking-[0.3em]">
             What's next
           </span>
           <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mt-2">
@@ -654,7 +654,7 @@ export default function Hero() {
                 </span>
               </div>
               <p className="text-white font-semibold text-sm">{s.title}</p>
-              <p className="text-white/50 text-sm leading-relaxed">{s.body}</p>
+              <p className="text-white/65 text-sm leading-relaxed">{s.body}</p>
             </StepFlareCard>
           ))}
         </div>
@@ -663,7 +663,7 @@ export default function Hero() {
       {/* Mini FAQ — same card and accordion behavior as the homepage */}
       <div className="mt-20">
         <div className="mb-8">
-          <span className="text-white/40 text-xs uppercase tracking-[0.3em]">
+          <span className="text-white/75 text-xs uppercase tracking-[0.3em]">
             FAQ
           </span>
           <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mt-2">

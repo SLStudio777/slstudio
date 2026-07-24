@@ -60,7 +60,7 @@ export default function AutoTunePage() {
 
                         <div className="rounded-xl p-5 flex flex-col gap-2" style={{background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)"}}>
                             <p className="text-white font-semibold text-sm">The Cher Effect in numbers</p>
-                            <p className="text-white/50 text-sm">Retune Speed = 0 ms. That is the only setting that separates "subtle pitch correction" from "sounds like a robot." One knob. Twenty years of musical history.</p>
+                            <p className="text-white/65 text-sm">Retune Speed = 0 ms. That is the only setting that separates "subtle pitch correction" from "sounds like a robot." One knob. Twenty years of musical history.</p>
                         </div>
                     </div>
 
@@ -85,10 +85,10 @@ export default function AutoTunePage() {
                                 {title: "DAW Crashes", desc: "Reports from KVR Audio forums described Auto-Tune Unlimited crashing Pro Tools, Studio One, and Luna on Apple Silicon Macs — instantly, on plugin load. Users with M1 hardware described the plugin as unusable."},
                             ].map((item, i) => (
                                 <div key={i} className="rounded-xl p-4 flex gap-3" style={{background: "rgba(255,80,80,0.04)", border: "1px solid rgba(255,80,80,0.12)"}}>
-                                    <span className="text-white/40 text-sm flex-shrink-0 mt-0.5">→</span>
+                                    <span className="text-white/65 text-sm flex-shrink-0 mt-0.5">→</span>
                                     <div>
                                         <p className="text-white font-medium text-sm">{item.title}</p>
-                                        <p className="text-white/50 text-sm mt-1 leading-relaxed">{item.desc}</p>
+                                        <p className="text-white/65 text-sm mt-1 leading-relaxed">{item.desc}</p>
                                     </div>
                                 </div>
                             ))}
@@ -136,8 +136,8 @@ export default function AutoTunePage() {
                             <p><a href="https://slatedigital.com/metatune-automatic-tuner-plugin/" target="_blank" style={{color: "#C9A84C", textDecoration: "underline"}}>MetaTune</a> has become the most-discussed replacement among professional engineers. The workflow is immediately familiar — the interface logic is close enough to Auto-Tune that the learning curve is measured in minutes rather than sessions. Pitch correction quality is comparable at its best.</p>
                             <p>The practical advantages are significant. No stability issues. No iLok chaos. Included in Slate Digital's All Access subscription alongside SSL-modeled channel strips, compressors, Virtual Mix Rack, and more. For engineers already paying for an Auto-Tune subscription, the value comparison is uncomfortable for Antares.</p>
                             <div className="rounded-xl p-4 flex flex-col gap-1" style={{background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.05)"}}>
-                                <p className="text-white/50 text-sm">MetaTune — <strong className="text-white">$199</strong> one-time or included in Slate All Access at <strong className="text-white">~$20/month</strong></p>
-                                <p className="text-white/50 text-sm">AutoTune 2026 — <strong className="text-white">$300</strong> one-time or <strong className="text-white">$35/month</strong> subscription</p>
+                                <p className="text-white/65 text-sm">MetaTune — <strong className="text-white">$199</strong> one-time or included in Slate All Access at <strong className="text-white">~$20/month</strong></p>
+                                <p className="text-white/65 text-sm">AutoTune 2026 — <strong className="text-white">$300</strong> one-time or <strong className="text-white">$35/month</strong> subscription</p>
                             </div>
                         </div>
 
@@ -168,11 +168,11 @@ export default function AutoTunePage() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="rounded-xl p-5 flex flex-col gap-2" style={{background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)"}}>
                                 <p className="text-white font-semibold text-sm">Pitch Correction</p>
-                                <p className="text-white/50 text-sm leading-relaxed">Adjusts individual notes to the nearest correct pitch within a defined key. Works on performance-level inaccuracies. Auto-Tune, MetaTune, Melodyne — these are pitch correction tools.</p>
+                                <p className="text-white/65 text-sm leading-relaxed">Adjusts individual notes to the nearest correct pitch within a defined key. Works on performance-level inaccuracies. Auto-Tune, MetaTune, Melodyne — these are pitch correction tools.</p>
                             </div>
                             <div className="rounded-xl p-5 flex flex-col gap-2" style={{background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)"}}>
                                 <p className="text-white font-semibold text-sm">Pitch Shifting</p>
-                                <p className="text-white/50 text-sm leading-relaxed">Moves the entire signal up or down by a defined amount — semitones, cents, or larger intervals. Used for harmonies, creative effects, or transposing a vocal to fit a new key. Different problem, different tool.</p>
+                                <p className="text-white/65 text-sm leading-relaxed">Moves the entire signal up or down by a defined amount — semitones, cents, or larger intervals. Used for harmonies, creative effects, or transposing a vocal to fit a new key. Different problem, different tool.</p>
                             </div>
                         </div>
 
@@ -195,7 +195,7 @@ export default function AutoTunePage() {
                                 <div key={i} className="rounded-xl p-4 flex gap-3" style={{background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)"}}>
                                     <span style={{color: "#C9A84C"}} className="flex-shrink-0 text-sm mt-0.5">→</span>
                                     <div>
-                                        <p className="text-white/50 text-xs uppercase tracking-widest mb-1">{item.scenario}</p>
+                                        <p className="text-white/75 text-xs uppercase tracking-widest mb-1">{item.scenario}</p>
                                         <p className="text-white/70 text-sm">{item.rec}</p>
                                     </div>
                                 </div>
@@ -211,9 +211,9 @@ export default function AutoTunePage() {
                             <table className="w-full text-sm" style={{borderCollapse: "collapse"}}>
                                 <thead>
                                     <tr style={{borderBottom: "1px solid rgba(255,255,255,0.1)"}}>
-                                        <th className="text-left py-2 pr-4 text-white/50 text-xs uppercase tracking-widest font-medium">Plugin</th>
-                                        <th className="text-left py-2 pr-4 text-white/50 text-xs uppercase tracking-widest font-medium">Price</th>
-                                        <th className="text-left py-2 text-white/50 text-xs uppercase tracking-widest font-medium">Best For</th>
+                                        <th className="text-left py-2 pr-4 text-white/75 text-xs uppercase tracking-widest font-medium">Plugin</th>
+                                        <th className="text-left py-2 pr-4 text-white/75 text-xs uppercase tracking-widest font-medium">Price</th>
+                                        <th className="text-left py-2 text-white/75 text-xs uppercase tracking-widest font-medium">Best For</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -226,8 +226,8 @@ export default function AutoTunePage() {
                                     ].map((row, i) => (
                                         <tr key={i} style={{borderBottom: "1px solid rgba(255,255,255,0.05)"}}>
                                             <td className="py-2.5 pr-4 text-white font-medium text-sm">{row.name}</td>
-                                            <td className="py-2.5 pr-4 text-white/50 text-sm">{row.price}</td>
-                                            <td className="py-2.5 text-white/50 text-sm">{row.best}</td>
+                                            <td className="py-2.5 pr-4 text-white/65 text-sm">{row.price}</td>
+                                            <td className="py-2.5 text-white/65 text-sm">{row.best}</td>
                                         </tr>
                                     ))}
                                 </tbody>
@@ -247,7 +247,7 @@ export default function AutoTunePage() {
                     <div className="rounded-2xl p-8 text-center flex flex-col items-center gap-4"
                          style={{background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.2)"}}>
                         <h3 className="text-xl font-semibold text-white">Not sure what your track needs?</h3>
-                        <p className="text-white/50 text-sm max-w-md">Send it and hear a free 60-second preview — an honest assessment and an exact price, no commitment.</p>
+                        <p className="text-white/65 text-sm max-w-md">Send it and hear a free 60-second preview — an honest assessment and an exact price, no commitment.</p>
                         <a href="/free-track-preview"
                            className="inline-flex items-center gap-2 text-black font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition text-sm"
                            style={{backgroundColor: "#C9A84C"}}>

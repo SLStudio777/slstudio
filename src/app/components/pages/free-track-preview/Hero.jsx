@@ -263,7 +263,7 @@ export default function Hero() {
               </span>
               <div className="relative mt-3">
                 <div className="hero-title-glow" aria-hidden="true" />
-                <h1 className="relative text-4xl md:text-5xl font-semibold tracking-wide">
+                <h1 className="relative text-4xl md:text-6xl font-semibold tracking-wide">
                   Hear Your Track, <span className="text-gold2">Free</span>
                 </h1>
               </div>
@@ -341,12 +341,12 @@ export default function Hero() {
                 “Total bomb. Keep this one, don't change a thing. I keep hitting
                 replay. Maestro, bravo.”
               </blockquote>
-              <figcaption className="text-white/45 text-xs">
+              <figcaption className="text-white/75 text-xs">
                 — Andrii Holikov, Guitarist &amp; Musician
               </figcaption>
             </figure>
 
-            <p className="[@media(max-width:767px)]:order-5 flex items-start gap-2 text-white/45 text-xs leading-relaxed">
+            <p className="[@media(max-width:767px)]:order-5 flex items-start gap-2 text-white/75 text-xs leading-relaxed">
               <Lock className="w-3.5 h-3.5 mt-0.5 flex-shrink-0" />
               <span>
                 Your file goes into private storage and is used only to prepare
@@ -401,7 +401,7 @@ export default function Hero() {
                 <form onSubmit={handleSubmit} className="flex flex-col gap-5">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="flex flex-col gap-2">
-                      <label className="text-white/50 text-xs uppercase tracking-widest">
+                      <label className="text-white/75 text-xs uppercase tracking-widest">
                         Name
                       </label>
                       <input
@@ -415,7 +415,7 @@ export default function Hero() {
                       />
                     </div>
                     <div className="flex flex-col gap-2">
-                      <label className="text-white/50 text-xs uppercase tracking-widest">
+                      <label className="text-white/75 text-xs uppercase tracking-widest">
                         Email
                       </label>
                       <input
@@ -432,7 +432,7 @@ export default function Hero() {
                   </div>
 
                   <div className="flex flex-col gap-2">
-                    <label className="text-white/50 text-xs uppercase tracking-widest">
+                    <label className="text-white/75 text-xs uppercase tracking-widest">
                       What do you need?
                     </label>
                     <select
@@ -453,7 +453,7 @@ export default function Hero() {
                       <option>Arrangement &amp; Production</option>
                       <option>Not sure yet</option>
                     </select>
-                    <p className="text-white/35 text-xs leading-relaxed">
+                    <p className="text-white/75 text-xs leading-relaxed">
                       For arrangement projects, the preview may be a short
                       production concept or an initial assessment, depending on
                       the material.
@@ -462,7 +462,7 @@ export default function Hero() {
 
                   {/* File drop zone */}
                   <div className="flex flex-col gap-2">
-                    <label className="text-white/50 text-xs uppercase tracking-widest">
+                    <label className="text-white/75 text-xs uppercase tracking-widest">
                       Your track
                     </label>
                     <button
@@ -500,7 +500,7 @@ export default function Hero() {
                           <p className="text-white text-sm font-medium break-all">
                             {file.name}
                           </p>
-                          <p className="text-white/50 text-xs">
+                          <p className="text-white/75 text-xs">
                             {(file.size / (1024 * 1024)).toFixed(1)} MB · click
                             to replace
                           </p>
@@ -525,7 +525,7 @@ export default function Hero() {
                         onChange={(e) => pickFile(e.target.files?.[0])}
                       />
                     </button>
-                    <p className="text-white/35 text-xs">
+                    <p className="text-white/75 text-xs">
                       WAV, MP3, AIFF, FLAC, OGG, M4A, MP4, WebM or ZIP · up to
                       100 MB · your file stays private
                     </p>
@@ -544,7 +544,7 @@ export default function Hero() {
                             }}
                           />
                         </div>
-                        <p className="text-white/50 text-xs">
+                        <p className="text-white/75 text-xs">
                           Uploading… {Math.round(progress)}%
                         </p>
                       </div>
@@ -553,7 +553,7 @@ export default function Hero() {
 
                   {/* Fallback link */}
                   <div className="flex flex-col gap-2">
-                    <label className="text-white/50 text-xs uppercase tracking-widest">
+                    <label className="text-white/75 text-xs uppercase tracking-widest">
                       Or paste a link (Google Drive, Dropbox, WeTransfer)
                     </label>
                     <input
@@ -568,7 +568,7 @@ export default function Hero() {
                   </div>
 
                   <div className="flex flex-col gap-2">
-                    <label className="text-white/50 text-xs uppercase tracking-widest">
+                    <label className="text-white/75 text-xs uppercase tracking-widest">
                       Anything I should know?
                     </label>
                     <textarea
@@ -620,13 +620,13 @@ export default function Hero() {
                     )}
                   </button>
 
-                  <p className="text-white/35 text-xs leading-relaxed text-center">
+                  <p className="text-white/75 text-xs leading-relaxed text-center">
                     Your contact details and file are used only to prepare and
                     deliver this preview. Nothing is published or shared without
                     your permission.
                   </p>
 
-                  <p className="text-white/45 text-xs text-center">
+                  <p className="text-white/75 text-xs text-center">
                     Upload not working?{" "}
                     <Link
                       href="/contact"
@@ -649,7 +649,7 @@ export default function Hero() {
         {/* ── HOW IT WORKS ── */}
         <section>
           <div className="mb-8">
-            <span className="text-white/40 text-xs uppercase tracking-[0.3em]">
+            <span className="text-white/75 text-xs uppercase tracking-[0.3em]">
               How It Works
             </span>
             <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mt-2">
@@ -697,7 +697,7 @@ export default function Hero() {
         {/* ── BEFORE YOU SEND ── */}
         <section className="max-w-3xl">
           <div className="mb-6">
-            <span className="text-white/40 text-xs uppercase tracking-[0.3em]">
+            <span className="text-white/75 text-xs uppercase tracking-[0.3em]">
               Before You Send
             </span>
             <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mt-2">

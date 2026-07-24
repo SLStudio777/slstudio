@@ -112,7 +112,7 @@ function TableOfContents() {
             </span>
             <a
               href={`#${item.id}`}
-              className="text-sm text-white/50 hover:text-white transition leading-snug"
+              className="text-sm text-white/65 hover:text-white transition leading-snug"
             >
               {item.label}
             </a>
@@ -366,10 +366,10 @@ export default function SunoGuidePageRu() {
                     className="mt-3 flex flex-col gap-1.5 p-3 rounded-lg"
                     style={{ background: "rgba(255,255,255,0.03)" }}
                   >
-                    <p className="text-white/55 text-sm">
+                    <p className="text-white/70 text-sm">
                       👍 Лайк — трек остаётся на виду, легко найти
                     </p>
-                    <p className="text-white/55 text-sm">
+                    <p className="text-white/70 text-sm">
                       👎 Дизлайк — трек прячется, но не удаляется
                     </p>
                   </div>
@@ -488,7 +488,7 @@ export default function SunoGuidePageRu() {
                   ещё, чего хочет. Итог — очень конкретные, очень дорогие
                   ошибки.
                 </p>
-                <p className="text-white/45 text-base mt-1">
+                <p className="text-white/65 text-base mt-1">
                   Больше настроек — больше способов ошибиться точно.
                 </p>
               </div>
@@ -583,7 +583,7 @@ export default function SunoGuidePageRu() {
               </p>
             </div>
             <div className="flex flex-col gap-3">
-              <p className="text-white/50 text-xs uppercase tracking-widest">
+              <p className="text-white/75 text-xs uppercase tracking-widest">
                 Примеры, которые реально работают
               </p>
               {[
@@ -932,7 +932,7 @@ export default function SunoGuidePageRu() {
                   🎲 Weirdness — насколько Suno отклоняется от инструкций
                 </p>
                 <div className="flex items-center gap-3 my-1">
-                  <span className="text-white/50 text-xs w-24 text-right">
+                  <span className="text-white/75 text-xs w-24 text-right">
                     предсказуемо
                   </span>
                   <div
@@ -948,7 +948,7 @@ export default function SunoGuidePageRu() {
                       }}
                     ></div>
                   </div>
-                  <span className="text-white/50 text-xs w-24">хаотично</span>
+                  <span className="text-white/75 text-xs w-24">хаотично</span>
                 </div>
                 <p className="text-white/65 text-base">
                   <strong className="text-white">Низко</strong> — чисто,
@@ -974,7 +974,7 @@ export default function SunoGuidePageRu() {
                   🎨 Style Influence — насколько строго Suno держится стиля
                 </p>
                 <div className="flex items-center gap-3 my-1">
-                  <span className="text-white/50 text-xs w-24 text-right">
+                  <span className="text-white/75 text-xs w-24 text-right">
                     уходит в сторону
                   </span>
                   <div
@@ -989,7 +989,7 @@ export default function SunoGuidePageRu() {
                       }}
                     ></div>
                   </div>
-                  <span className="text-white/50 text-xs w-24">как робот</span>
+                  <span className="text-white/75 text-xs w-24">как робот</span>
                 </div>
                 <p className="text-white/65 text-base">
                   <strong className="text-white">Слишком низко</strong> — стиль
@@ -1709,7 +1709,7 @@ export default function SunoGuidePageRu() {
                   <p className="text-white font-semibold text-sm">
                     {item.title}
                   </p>
-                  <p className="text-white/50 text-sm">{item.body}</p>
+                  <p className="text-white/65 text-sm">{item.body}</p>
                 </div>
               ))}
             </div>

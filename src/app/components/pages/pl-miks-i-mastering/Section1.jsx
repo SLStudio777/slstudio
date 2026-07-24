@@ -80,7 +80,7 @@ export default function Section1() {
     <section className="mt-10 flex flex-col gap-16">
       <div>
         <div className="mb-8">
-          <span className="text-white/40 text-xs uppercase tracking-[0.3em]">
+          <span className="text-white/75 text-xs uppercase tracking-[0.3em]">
             Usługi i ceny
           </span>
           <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mt-2">
@@ -98,7 +98,7 @@ export default function Section1() {
             className="rounded-2xl p-8 border border-[#C9A84C]/25 bg-[#C9A84C]/[0.06] flex flex-col gap-6 h-full"
           >
             <div>
-              <p className="text-white/50 text-xs uppercase tracking-[0.25em]">
+              <p className="text-white/75 text-xs uppercase tracking-[0.25em]">
                 Ceny od
               </p>
               <div className="mt-5 flex flex-col gap-5">
@@ -107,7 +107,7 @@ export default function Section1() {
                   <p className="step-number price-number text-3xl font-semibold text-[#f5b942]">
                     od 39 USD
                   </p>
-                  <p className="text-white/50 text-xs leading-relaxed mt-1.5">
+                  <p className="text-white/75 text-xs leading-relaxed mt-1.5">
                     39 USD = ekspresowy master przez mój sprawdzony łańcuch
                     obróbki. W pełni ręczne mastery bardziej złożonych utworów
                     wyceniam wyżej.
@@ -118,19 +118,19 @@ export default function Section1() {
                   <p className="text-white/70 text-sm">Miks i mastering</p>
                   <div className="mt-2 flex flex-col gap-2">
                     <div className="flex items-baseline justify-between gap-4">
-                      <span className="text-white/55 text-sm">Do 10 śladów</span>
+                      <span className="text-white/70 text-sm">Do 10 śladów</span>
                       <span className="price-number text-lg font-semibold text-[#f5b942]">
                         89 USD
                       </span>
                     </div>
                     <div className="flex items-baseline justify-between gap-4">
-                      <span className="text-white/55 text-sm">Do 25 śladów</span>
+                      <span className="text-white/70 text-sm">Do 25 śladów</span>
                       <span className="price-number text-lg font-semibold text-[#f5b942]">
                         139 USD
                       </span>
                     </div>
                     <div className="flex items-baseline justify-between gap-4">
-                      <span className="text-white/55 text-sm">
+                      <span className="text-white/70 text-sm">
                         Powyżej 25 śladów
                       </span>
                       <span className="price-number text-lg font-semibold text-[#f5b942]">
@@ -141,7 +141,7 @@ export default function Section1() {
                 </div>
               </div>
             </div>
-            <p className="text-white/55 text-sm leading-relaxed">
+            <p className="text-white/70 text-sm leading-relaxed">
               Dokładna cena w ramach każdego progu zależy od jakości nagrania
               i zakresu edycji. Otrzymasz ją przed rozpoczęciem pełnej
               realizacji — a każda cena obejmuje maksymalnie trzy rundy
@@ -171,7 +171,7 @@ export default function Section1() {
       </div>
       <div>
         <div className="mb-8">
-          <span className="text-white/40 text-xs uppercase tracking-[0.3em]">
+          <span className="text-white/75 text-xs uppercase tracking-[0.3em]">
             Jak to działa
           </span>
           <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mt-2">
@@ -199,7 +199,7 @@ export default function Section1() {
       </div>
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 items-stretch">
         <GlowCard>
-          <span className="text-white/40 text-xs uppercase tracking-[0.3em] relative z-10">
+          <span className="text-white/75 text-xs uppercase tracking-[0.3em] relative z-10">
             Jak podchodzę do miksu
           </span>
           <div className="flex flex-col gap-6 text-white/70 text-[15px] leading-relaxed relative z-10">
@@ -229,7 +229,7 @@ export default function Section1() {
           </Wskazowka>
         </GlowCard>
         <GlowCard>
-          <span className="text-white/40 text-xs uppercase tracking-[0.3em] relative z-10">
+          <span className="text-white/75 text-xs uppercase tracking-[0.3em] relative z-10">
             Gitary, wokal i przekładalność
           </span>
           <div className="flex flex-col gap-6 text-white/70 text-[15px] leading-relaxed relative z-10">

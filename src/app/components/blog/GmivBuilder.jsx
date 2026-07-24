@@ -92,7 +92,7 @@ function Section({ letter, title, items, selected, onToggle, max = 2, countLabel
             <div className="flex items-center gap-2">
                 <span className="text-lg font-bold" style={{ color: "#C9A84C" }}>{letter}</span>
                 <span className="text-white/60 text-sm">— {title}</span>
-                <span className="text-white/25 text-xs ml-auto">{countLabel(selected.length, max)}</span>
+                <span className="text-white/75 text-xs ml-auto">{countLabel(selected.length, max)}</span>
             </div>
             <div className="flex flex-wrap gap-2">
                 {items.map((item) => (
@@ -168,7 +168,7 @@ export default function GmivBuilder({ lang = "en" }) {
             >
                 <div>
                     <p className="text-white font-semibold text-base">G.M.I.V. Prompt Builder</p>
-                    <p className="text-white/50 text-xs mt-0.5">{t.subtitle}</p>
+                    <p className="text-white/75 text-xs mt-0.5">{t.subtitle}</p>
                 </div>
                 <button
                     onClick={handleReset}

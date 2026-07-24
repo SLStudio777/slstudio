@@ -123,13 +123,13 @@ export default function FAQ({ labels }) {
         }}
       />
       <div className="mb-8">
-        <span className="text-white/40 text-xs uppercase tracking-[0.3em]">
+        <span className="text-white/75 text-xs uppercase tracking-[0.3em]">
           {t.eyebrow}
         </span>
         <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mt-2">
           {t.heading}
         </h2>
-        <p className="text-white/55 text-sm mt-2">{t.sub}</p>
+        <p className="text-white/70 text-sm mt-2">{t.sub}</p>
       </div>
       <div className="relative flex flex-col gap-3 max-w-3xl">
         {t.items.map((item, i) => (

@@ -96,7 +96,7 @@ function TableOfContents() {
                 {TOC.map((item, i) => (
                     <li key={item.id} className="flex items-baseline gap-2.5">
                         <span className="text-xs flex-shrink-0 w-5 text-right" style={{ color: "rgba(201,168,76,0.5)" }}>{String(i + 1).padStart(2, "0")}.</span>
-                        <a href={`#${item.id}`} className="text-sm text-white/50 hover:text-white transition leading-snug">{item.label}</a>
+                        <a href={`#${item.id}`} className="text-sm text-white/65 hover:text-white transition leading-snug">{item.label}</a>
                     </li>
                 ))}
             </ol>
@@ -119,7 +119,7 @@ function Figure({ src, alt, caption, eager = false }) {
                     className="w-full h-auto object-cover"
                 />
             </div>
-            {caption && <figcaption className="text-white/45 text-sm leading-relaxed">{caption}</figcaption>}
+            {caption && <figcaption className="text-white/65 text-sm leading-relaxed">{caption}</figcaption>}
         </figure>
     );
 }
@@ -271,16 +271,16 @@ export default function SunoAdvancedSplitPage() {
                             <div className="overflow-x-auto">
                                 <table className="w-full text-sm" style={{ borderCollapse: "collapse" }}>
                                     <thead><tr style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
-                                        <th className="text-left py-2 pr-4 text-white/45 text-sm whitespace-nowrap">Mode</th>
-                                        <th className="text-left py-2 pr-4 text-white/45 text-sm">What it does</th>
-                                        <th className="text-left py-2 text-white/45 text-sm">Best use</th>
+                                        <th className="text-left py-2 pr-4 text-white/65 text-sm whitespace-nowrap">Mode</th>
+                                        <th className="text-left py-2 pr-4 text-white/65 text-sm">What it does</th>
+                                        <th className="text-left py-2 text-white/65 text-sm">Best use</th>
                                     </tr></thead>
                                     <tbody>
                                         {modes.map((row, i) => (
                                             <tr key={i} style={{ borderBottom: "1px solid rgba(255,255,255,0.04)" }}>
                                                 <td className="py-2 pr-4 font-semibold text-white text-base whitespace-nowrap">{row[0]}</td>
-                                                <td className="py-2 pr-4 text-white/55 text-base">{row[1]}</td>
-                                                <td className="py-2 text-white/55 text-base">{row[2]}</td>
+                                                <td className="py-2 pr-4 text-white/70 text-base">{row[1]}</td>
+                                                <td className="py-2 text-white/70 text-base">{row[2]}</td>
                                             </tr>
                                         ))}
                                     </tbody>

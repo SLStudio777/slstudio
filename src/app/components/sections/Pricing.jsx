@@ -149,7 +149,7 @@ function ServiceCard({
 
       {/* Title + price */}
       <div>
-        <p className="text-white/55 text-xs uppercase tracking-widest mb-0.5">
+        <p className="text-white/75 text-xs uppercase tracking-widest mb-0.5">
           {title}
         </p>
         <p
@@ -195,14 +195,14 @@ export default function Pricing({ labels }) {
   return (
     <section className="py-12 border-t border-white/5">
       <div className="mb-8">
-        <span className="text-white/40 text-xs uppercase tracking-[0.3em]">
+        <span className="text-white/75 text-xs uppercase tracking-[0.3em]">
           {t.eyebrow}
         </span>
         <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mt-2">
           {t.heading}
         </h2>
-        <p className="text-white/55 text-sm mt-2">{t.sub1}</p>
-        <p className="text-white/55 text-sm mt-1">{t.sub2}</p>
+        <p className="text-white/70 text-sm mt-2">{t.sub1}</p>
+        <p className="text-white/70 text-sm mt-1">{t.sub2}</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
@@ -240,7 +240,7 @@ export default function Pricing({ labels }) {
               </div>
               <div>
                 <p className="font-medium text-sm text-white mb-0.5">{title}</p>
-                <p className="text-white/55 text-xs leading-relaxed">
+                <p className="text-white/75 text-xs leading-relaxed">
                   {description}
                 </p>
               </div>

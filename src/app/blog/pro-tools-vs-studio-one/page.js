@@ -41,9 +41,9 @@ export default function ProToolsVsStudioOnePage() {
                 {/* Header */}
                 <div className="mb-12">
                     <div className="flex items-center gap-3 mb-6">
-                        <span className="text-white/40 text-xs uppercase tracking-widest">Tutorials</span>
+                        <span className="text-white/75 text-xs uppercase tracking-widest">Tutorials</span>
                         <span className="text-white/20 text-xs">·</span>
-                        <span className="text-white/40 text-xs">February 10, 2025</span>
+                        <span className="text-white/75 text-xs">February 10, 2025</span>
                         <span className="text-white/20 text-xs">·</span>
                         <span className="text-xs" style={{color: "rgba(201,168,76,0.6)"}}>Updated July 2026</span>
                     </div>
@@ -67,8 +67,8 @@ export default function ProToolsVsStudioOnePage() {
                     <div className="rounded-2xl p-5 flex flex-col gap-2"
                          style={{background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderLeft: "3px solid #C9A84C"}}>
                         <p className="text-white font-semibold text-sm">Update — the 2026 versions</p>
-                        <p className="text-white/55 text-base leading-relaxed"><strong className="text-white">Studio One is now Fender Studio Pro 8.</strong> After Fender acquired PreSonus, the DAW was rebranded in early 2026, dropping the PreSonus name. It's the direct successor to Studio One 7 — the same engine and the same workflow advantages described below, plus added Fender amp and effects plugins. Most engineers still call it "Studio One" out of habit, so that's the name used throughout this article.</p>
-                        <p className="text-white/55 text-base leading-relaxed"><strong className="text-white">Pro Tools is now on the 2026 cycle</strong> (latest: 2026.4, April 2026). Avid added Track Pin for navigating large sessions, MPEG-H immersive support, Dolby Headphone personalization, and a bundled Massive X Player. The immersive workflow keeps improving — but the integration and workflow points below still hold.</p>
+                        <p className="text-white/70 text-base leading-relaxed"><strong className="text-white">Studio One is now Fender Studio Pro 8.</strong> After Fender acquired PreSonus, the DAW was rebranded in early 2026, dropping the PreSonus name. It's the direct successor to Studio One 7 — the same engine and the same workflow advantages described below, plus added Fender amp and effects plugins. Most engineers still call it "Studio One" out of habit, so that's the name used throughout this article.</p>
+                        <p className="text-white/70 text-base leading-relaxed"><strong className="text-white">Pro Tools is now on the 2026 cycle</strong> (latest: 2026.4, April 2026). Avid added Track Pin for navigating large sessions, MPEG-H immersive support, Dolby Headphone personalization, and a bundled Massive X Player. The immersive workflow keeps improving — but the integration and workflow points below still hold.</p>
                     </div>
 
                     <div className="flex flex-col gap-4">
@@ -164,7 +164,7 @@ export default function ProToolsVsStudioOnePage() {
                     <div className="rounded-2xl p-8 text-center flex flex-col items-center gap-4"
                          style={{background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.2)"}}>
                         <h3 className="text-xl font-semibold text-white">Ready to send your track for professional mixing?</h3>
-                        <p className="text-white/50 text-sm max-w-md">Whatever DAW you use to record — the final result is what matters. First consultation is always free.</p>
+                        <p className="text-white/65 text-sm max-w-md">Whatever DAW you use to record — the final result is what matters. First consultation is always free.</p>
                         <a href="/contact"
                            className="inline-flex items-center gap-2 text-black font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition text-sm"
                            style={{backgroundColor: "#C9A84C"}}>

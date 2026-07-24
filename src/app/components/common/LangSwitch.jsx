@@ -16,7 +16,7 @@ function Item({ label, href, active }) {
         );
     }
     return (
-        <Link href={href} className="text-white/45 hover:text-[#f5b942] transition">
+        <Link href={href} className="text-white/65 hover:text-[#f5b942] transition">
             {label}
         </Link>
     );

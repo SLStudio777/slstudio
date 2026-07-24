@@ -110,7 +110,7 @@ export default function AIMixingReviewPageRu() {
                      style={{background: item.color, border: `1px solid ${item.border}`}}>
                   <span className="text-2xl flex-shrink-0">{item.icon}</span>
                   <div>
-                    <p className="text-white/50 text-xs uppercase tracking-widest mb-1">{item.step}</p>
+                    <p className="text-white/75 text-xs uppercase tracking-widest mb-1">{item.step}</p>
                     <p className="text-white font-semibold text-sm mb-1">{item.title}</p>
                     <p className="text-white/60 text-sm leading-relaxed">{item.result}</p>
                   </div>
@@ -128,7 +128,7 @@ export default function AIMixingReviewPageRu() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
               <div className="rounded-xl p-5 flex flex-col gap-3" style={{background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.15)"}}>
                 <p className="text-white font-semibold text-sm">✅ AI-мастеринг</p>
-                <ul className="flex flex-col gap-1 text-white/50 text-sm">
+                <ul className="flex flex-col gap-1 text-white/65 text-sm">
                   <li>→ Один стереофайл</li>
                   <li>→ Стандартизированные цели</li>
                   <li>→ Хорош для демо и референсов</li>
@@ -137,7 +137,7 @@ export default function AIMixingReviewPageRu() {
               </div>
               <div className="rounded-xl p-5 flex flex-col gap-3" style={{background: "rgba(255,80,80,0.04)", border: "1px solid rgba(255,80,80,0.1)"}}>
                 <p className="text-white font-semibold text-sm">⚠️ AI-сведение</p>
-                <ul className="flex flex-col gap-1 text-white/50 text-sm">
+                <ul className="flex flex-col gap-1 text-white/65 text-sm">
                   <li>→ 30–100 отдельных дорожек</li>
                   <li>→ Каждое решение влияет на другие</li>
                   <li>→ Требует музыкального контекста</li>
@@ -154,10 +154,10 @@ export default function AIMixingReviewPageRu() {
               <table className="w-full text-sm" style={{borderCollapse: "collapse"}}>
                 <thead>
                   <tr style={{borderBottom: "1px solid rgba(255,255,255,0.1)"}}>
-                    <th className="text-left py-3 pr-6 text-white/50 text-xs uppercase tracking-widest font-medium">Уровень</th>
-                    <th className="text-left py-3 pr-6 text-white/50 text-xs uppercase tracking-widest font-medium">Примеры</th>
-                    <th className="text-left py-3 pr-6 text-white/50 text-xs uppercase tracking-widest font-medium">Честное применение</th>
-                    <th className="text-left py-3 text-white/50 text-xs uppercase tracking-widest font-medium">Типичная цена</th>
+                    <th className="text-left py-3 pr-6 text-white/75 text-xs uppercase tracking-widest font-medium">Уровень</th>
+                    <th className="text-left py-3 pr-6 text-white/75 text-xs uppercase tracking-widest font-medium">Примеры</th>
+                    <th className="text-left py-3 pr-6 text-white/75 text-xs uppercase tracking-widest font-medium">Честное применение</th>
+                    <th className="text-left py-3 text-white/75 text-xs uppercase tracking-widest font-medium">Типичная цена</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -169,8 +169,8 @@ export default function AIMixingReviewPageRu() {
                   ].map((row, i) => (
                     <tr key={i} style={{borderBottom: "1px solid rgba(255,255,255,0.05)"}}>
                       <td className="py-3 pr-6 text-white font-medium">{row.t}</td>
-                      <td className="py-3 pr-6 text-white/50">{row.e}</td>
-                      <td className="py-3 pr-6 text-white/50">{row.u}</td>
+                      <td className="py-3 pr-6 text-white/65">{row.e}</td>
+                      <td className="py-3 pr-6 text-white/65">{row.u}</td>
                       <td className="py-3" style={{color: "#C9A84C"}}>{row.c}</td>
                     </tr>
                   ))}
@@ -181,7 +181,7 @@ export default function AIMixingReviewPageRu() {
           </div>
 
           <div className="flex flex-col gap-4">
-            <h2 className="text-xl md:text-2xl font-semibold text-white">Что изменилось после этого теста <span className="text-white/50 text-base font-normal">(обновлено в июле 2026)</span></h2>
+            <h2 className="text-xl md:text-2xl font-semibold text-white">Что изменилось после этого теста <span className="text-white/65 text-base font-normal">(обновлено в июле 2026)</span></h2>
             <p>Тест выше я проводил в начале 2026 года, а этот уголок рынка меняется быстро. С тех пор появились или дозрели несколько инструментов, которые стоит назвать, — и, что показательно, самые интересные из них сидят на уровне <strong className="text-white">ассистентов</strong>, а не полной автоматики.</p>
             <div className="flex flex-col gap-3">
               {[
@@ -191,7 +191,7 @@ export default function AIMixingReviewPageRu() {
               ].map((item, i) => (
                 <div key={i} className="rounded-xl p-5 flex flex-col gap-2" style={{background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderLeft: "3px solid #C9A84C"}}>
                   <p className="text-white font-semibold text-sm">{item.name}</p>
-                  <p className="text-white/55 text-base leading-relaxed">{item.text}</p>
+                  <p className="text-white/70 text-base leading-relaxed">{item.text}</p>
                 </div>
               ))}
             </div>
@@ -219,7 +219,7 @@ export default function AIMixingReviewPageRu() {
                   <span className="text-xl flex-shrink-0">{item.icon}</span>
                   <div>
                     <p className="text-white font-semibold text-sm mb-1">{item.title}</p>
-                    <p className="text-white/50 text-sm leading-relaxed">{item.text}</p>
+                    <p className="text-white/65 text-sm leading-relaxed">{item.text}</p>
                   </div>
                 </div>
               ))}
@@ -245,7 +245,7 @@ export default function AIMixingReviewPageRu() {
                 <div key={i} className="rounded-xl p-5 flex flex-col gap-2"
                      style={{background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)"}}>
                   <p className="text-white font-medium text-sm">{item.q}</p>
-                  <p className="text-white/50 text-sm leading-relaxed">{item.a}</p>
+                  <p className="text-white/65 text-sm leading-relaxed">{item.a}</p>
                 </div>
               ))}
             </div>
@@ -275,7 +275,7 @@ export default function AIMixingReviewPageRu() {
           <div className="rounded-2xl p-8 text-center flex flex-col items-center gap-4"
                style={{background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.2)"}}>
             <h3 className="text-xl font-semibold text-white">Не уверены, что нужно вашему треку?</h3>
-            <p className="text-white/50 text-sm max-w-md">Пришлите его и услышьте бесплатное 60-секундное превью — честная оценка и точная цена, без обязательств.</p>
+            <p className="text-white/65 text-sm max-w-md">Пришлите его и услышьте бесплатное 60-секундное превью — честная оценка и точная цена, без обязательств.</p>
             <a href="/free-track-preview"
                className="inline-flex items-center gap-2 text-black font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition text-sm"
                style={{backgroundColor: "#C9A84C"}}>

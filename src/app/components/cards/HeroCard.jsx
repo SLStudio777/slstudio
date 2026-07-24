@@ -40,7 +40,7 @@ export default function HeroCard({ icon: Icon, title, description, href, cta = "
                 <Icon className="w-5 h-5" style={{ color: "#C9A84C" }} />
             </div>
             <h2 className="text-base font-semibold text-white relative z-10">{title}</h2>
-            <p className="text-white/55 text-sm leading-relaxed flex-1 relative z-10">{description}</p>
+            <p className="text-white/70 text-sm leading-relaxed flex-1 relative z-10">{description}</p>
             <div className="mt-auto inline-flex items-center gap-2 text-sm font-semibold px-4 py-2 rounded-lg w-fit relative z-10"
                 style={{
                     color: "#C9A84C",

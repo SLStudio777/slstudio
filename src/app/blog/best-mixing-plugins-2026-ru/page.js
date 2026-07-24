@@ -221,7 +221,7 @@ export default function BestMixingPluginsPageRu() {
                     {item.name}
                   </a>
                   <div className="flex items-center gap-2">
-                    <span className="text-white/40 text-xs">
+                    <span className="text-white/75 text-xs">
                       {item.company}
                     </span>
                     <span className="text-white/20 text-xs">·</span>
@@ -287,7 +287,7 @@ export default function BestMixingPluginsPageRu() {
             <h3 className="text-xl font-semibold text-white">
               Не уверены, что нужно вашему треку?
             </h3>
-            <p className="text-white/50 text-sm max-w-md">
+            <p className="text-white/65 text-sm max-w-md">
               Пришлите его и услышьте бесплатное 60-секундное превью — честная оценка и точная цена, без обязательств.
             </p>
             <a

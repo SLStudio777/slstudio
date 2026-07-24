@@ -70,7 +70,7 @@ export default function VocalReverbDelayPage() {
                                     "04 — Eighth Note Delay (Waves Repeater)",
                                     "05 — Chamber (Seventh Heaven / Bricasti)",
                                 ].map((item, i) => (
-                                    <p key={i} className="text-white/50 text-sm font-mono">{item}</p>
+                                    <p key={i} className="text-white/65 text-sm font-mono">{item}</p>
                                 ))}
                             </div>
                         </div>
@@ -162,7 +162,7 @@ export default function VocalReverbDelayPage() {
                                         <p className="text-white font-medium text-sm w-24 flex-shrink-0">{item.send}</p>
                                         <div className="flex-1">
                                             <p className="text-white/60 text-sm">{item.plugin}</p>
-                                            <p className="text-white/40 text-xs mt-0.5">{item.role}</p>
+                                            <p className="text-white/75 text-xs mt-0.5">{item.role}</p>
                                         </div>
                                     </div>
                                 ))}
@@ -187,7 +187,7 @@ export default function VocalReverbDelayPage() {
                     <div className="rounded-2xl p-8 text-center flex flex-col items-center gap-4"
                          style={{background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.2)"}}>
                         <h3 className="text-xl font-semibold text-white">Not sure what your track needs?</h3>
-                        <p className="text-white/50 text-sm max-w-md">Send it and hear a free 60-second preview — an honest assessment and an exact price, no commitment.</p>
+                        <p className="text-white/65 text-sm max-w-md">Send it and hear a free 60-second preview — an honest assessment and an exact price, no commitment.</p>
                         <a href="/free-track-preview"
                            className="inline-flex items-center gap-2 text-black font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition text-sm"
                            style={{backgroundColor: "#C9A84C"}}>

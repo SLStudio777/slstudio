@@ -19,7 +19,7 @@ function DemoFallback() {
   return (
     <section id="demos" className="py-10" style={{ scrollMarginTop: "80px" }}>
       <div className="rounded-2xl p-8 border border-white/[0.06] bg-white/[0.02]">
-        <div className="text-white/55 mb-4 flex items-center gap-2">
+        <div className="text-white/70 mb-4 flex items-center gap-2">
           <AudioWaveform size={16} />
           <span className="text-xs uppercase tracking-widest">Przed i po</span>
         </div>
@@ -55,7 +55,7 @@ export default async function BeforeAfterMixingPl() {
   return (
     <section id="demos" className="py-10" style={{ scrollMarginTop: "80px" }}>
       <div className="mb-10">
-        <div className="text-white/55 mb-4 flex items-center gap-2">
+        <div className="text-white/70 mb-4 flex items-center gap-2">
           <AudioWaveform size={16} />
           <span className="text-xs uppercase tracking-widest">Przed i po</span>
         </div>

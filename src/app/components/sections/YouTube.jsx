@@ -36,7 +36,7 @@ export default async function YouTube({ labels }) {
             <div className="mb-10">
                 <div className="flex items-center gap-2 mb-2">
                     <YouTubeIcon size={16} className="text-white/65" />
-                    <span className="text-white/40 text-xs uppercase tracking-[0.3em]">
+                    <span className="text-white/75 text-xs uppercase tracking-[0.3em]">
                         {t.eyebrow}
                     </span>
                 </div>
@@ -48,7 +48,7 @@ export default async function YouTube({ labels }) {
                         href="https://www.youtube.com/@SLStudio_Guitar"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-sm text-white/55 hover:text-white transition flex-shrink-0"
+                        className="flex items-center gap-2 text-sm text-white/70 hover:text-white transition flex-shrink-0"
                     >
                         <YouTubeRedIcon size={16} />
                         <span>@SLStudio_Guitar</span>

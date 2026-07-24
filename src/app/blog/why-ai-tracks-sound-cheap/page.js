@@ -126,7 +126,7 @@ function TableOfContents() {
             </span>
             <a
               href={`#${item.id}`}
-              className="text-sm text-white/50 hover:text-white transition leading-snug"
+              className="text-sm text-white/65 hover:text-white transition leading-snug"
             >
               {item.label}
             </a>

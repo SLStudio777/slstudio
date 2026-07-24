@@ -216,7 +216,7 @@ export default function SunoTrackFinishingPage() {
       />
 
       {/* Hero */}
-      <section className="container pt-16 pb-12">
+      <section className="pt-16 pb-12">
         <div className="mb-8">
           <LangSwitch
             active="en"
@@ -233,7 +233,7 @@ export default function SunoTrackFinishingPage() {
               Suno Track Finishing
             </p>
             <h1
-              className="text-4xl md:text-5xl font-semibold tracking-wide leading-tight mb-6"
+              className="text-4xl md:text-6xl font-semibold tracking-wide leading-tight mb-6"
               style={{ fontFamily: "var(--font-playfair)" }}
             >
               From Suno to <span className="text-[#f5b942]">Release</span>
@@ -248,7 +248,7 @@ export default function SunoTrackFinishingPage() {
               AI couldn't, and deliver a master that stands next to commercial
               releases.
             </p>
-            <p className="text-white/45 text-sm mb-8">
+            <p className="text-white/65 text-sm mb-8">
               By the way — I wrote the{" "}
               <Link
                 href="/blog/suno-guide-2026"
@@ -299,7 +299,7 @@ export default function SunoTrackFinishingPage() {
                 }}
               />
             </div>
-            <p className="mt-3 text-center text-xs uppercase tracking-widest text-white/35 md:absolute md:top-full md:left-0 md:right-0">
+            <p className="mt-3 text-center text-xs uppercase tracking-widest text-white/75 md:absolute md:top-full md:left-0 md:right-0">
               Suno track → Live guitars → Human mix & master
             </p>
           </div>
@@ -307,7 +307,7 @@ export default function SunoTrackFinishingPage() {
       </section>
 
       {/* Pain points */}
-      <section className="container py-12">
+      <section className="py-12">
         <ImpactStats
           items={[
             {
@@ -351,18 +351,18 @@ export default function SunoTrackFinishingPage() {
                 <p.icon className="w-5 h-5" style={{ color: "#C9A84C" }} />
               </div>
               <h3 className="font-semibold mb-2">{p.title}</h3>
-              <p className="text-white/55 text-sm leading-relaxed">{p.text}</p>
+              <p className="text-white/70 text-sm leading-relaxed">{p.text}</p>
             </SpotlightCard>
           ))}
         </div>
       </section>
 
       {/* What's included */}
-      <section className="container py-12">
+      <section className="py-12">
         <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mb-4">
           What “finishing” actually means
         </h2>
-        <p className="text-white/55 mb-8 max-w-2xl">
+        <p className="text-white/70 mb-8 max-w-2xl">
           Not an algorithm. A musician and engineer working on your song by hand
           — the same process I use for every human-recorded track in the studio.
         </p>
@@ -379,11 +379,11 @@ export default function SunoTrackFinishingPage() {
       <BeforeAfterSuno />
 
       {/* Packages */}
-      <section className="container py-12">
+      <section className="py-12">
         <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mb-4">
           Simple, transparent pricing
         </h2>
-        <p className="text-white/55 mb-8 max-w-2xl">
+        <p className="text-white/70 mb-8 max-w-2xl">
           Exact price confirmed after the free preview. 30% upfront, the rest
           after you approve the result.
         </p>
@@ -420,7 +420,7 @@ export default function SunoTrackFinishingPage() {
               >
                 {p.price}
               </div>
-              <p className="text-white/50 text-sm mb-5">{p.tagline}</p>
+              <p className="text-white/65 text-sm mb-5">{p.tagline}</p>
               <ul className="space-y-2 text-sm text-white/60 mb-6 flex-1">
                 {p.features.map((f) => (
                   <li key={f} className="flex gap-2">
@@ -453,7 +453,7 @@ export default function SunoTrackFinishingPage() {
       </section>
 
       {/* How it works */}
-      <section className="container py-12">
+      <section className="py-12">
         <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mb-8">
           How it works
         </h2>
@@ -469,14 +469,14 @@ export default function SunoTrackFinishingPage() {
                 {s.num}
               </span>
               <h3 className="font-semibold mb-2">{s.title}</h3>
-              <p className="text-white/55 text-sm leading-relaxed">{s.text}</p>
+              <p className="text-white/70 text-sm leading-relaxed">{s.text}</p>
             </StepFlareCard>
           ))}
         </div>
       </section>
 
       {/* FAQ */}
-      <div className="container">
+      <div>
         <FAQ
           labels={{
             eyebrow: "FAQ",
@@ -488,7 +488,7 @@ export default function SunoTrackFinishingPage() {
       </div>
 
       {/* CTA */}
-      <section className="container py-16">
+      <section className="py-16">
         <div
           className="rounded-2xl p-10 flex flex-col items-center text-center gap-6 max-w-3xl mx-auto w-full relative overflow-hidden"
           style={{

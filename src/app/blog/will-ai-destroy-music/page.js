@@ -87,7 +87,7 @@ export default function AIDestroyMusicPage() {
                             ].map((item, i) => (
                                 <div key={i} className="rounded-xl p-5 flex flex-col gap-2" style={{background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderLeft: "3px solid rgba(201,168,76,0.4)"}}>
                                     <p className="text-white font-semibold text-sm">{item.title}</p>
-                                    <p className="text-white/50 text-sm leading-relaxed">{item.text}</p>
+                                    <p className="text-white/65 text-sm leading-relaxed">{item.text}</p>
                                 </div>
                             ))}
                         </div>
@@ -118,7 +118,7 @@ export default function AIDestroyMusicPage() {
                     <div className="rounded-2xl p-8 text-center flex flex-col items-center gap-4"
                          style={{background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.2)"}}>
                         <h3 className="text-xl font-semibold text-white">Your music. Human ears. Professional result</h3>
-                        <p className="text-white/50 text-sm max-w-md">Send your track — rough mix, demo, or stems. First consultation is always free.</p>
+                        <p className="text-white/65 text-sm max-w-md">Send your track — rough mix, demo, or stems. First consultation is always free.</p>
                         <a href="/contact"
                            className="inline-flex items-center gap-2 text-black font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition text-sm"
                            style={{backgroundColor: "#C9A84C"}}>

@@ -5,7 +5,7 @@ export default function LinkIcon({icon: Icon, title, href}) {
         <Link
             href={href}
             className="
-                text-sm text-white/50 hover:text-gold2 transition
+                text-sm text-white/65 hover:text-gold2 transition
                 flex items-center gap-2
             "
         >

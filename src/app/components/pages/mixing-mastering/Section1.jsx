@@ -83,7 +83,7 @@ export default function Section1() {
     <section className="mt-10 flex flex-col gap-16">
       <div>
         <div className="mb-8">
-          <span className="text-white/40 text-xs uppercase tracking-[0.3em]">
+          <span className="text-white/75 text-xs uppercase tracking-[0.3em]">
             Services & Pricing
           </span>
           <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mt-2">
@@ -101,7 +101,7 @@ export default function Section1() {
             className="rounded-2xl p-8 border border-[#C9A84C]/25 bg-[#C9A84C]/[0.06] flex flex-col gap-6 h-full"
           >
             <div>
-              <p className="text-white/50 text-xs uppercase tracking-[0.25em]">
+              <p className="text-white/75 text-xs uppercase tracking-[0.25em]">
                 Starting prices
               </p>
               <div className="mt-5 flex flex-col gap-5">
@@ -110,7 +110,7 @@ export default function Section1() {
                   <p className="step-number price-number text-3xl font-semibold text-[#f5b942]">
                     from $39
                   </p>
-                  <p className="text-white/50 text-xs leading-relaxed mt-1.5">
+                  <p className="text-white/75 text-xs leading-relaxed mt-1.5">
                     $39 = express master through my proven chain of settings.
                     Fully manual masters for complex tracks are priced higher.
                   </p>
@@ -122,19 +122,19 @@ export default function Section1() {
                   </p>
                   <div className="mt-2 flex flex-col gap-2">
                     <div className="flex items-baseline justify-between gap-4">
-                      <span className="text-white/55 text-sm">Up to 10 stems</span>
+                      <span className="text-white/70 text-sm">Up to 10 stems</span>
                       <span className="price-number text-lg font-semibold text-[#f5b942]">
                         $89
                       </span>
                     </div>
                     <div className="flex items-baseline justify-between gap-4">
-                      <span className="text-white/55 text-sm">Up to 25 stems</span>
+                      <span className="text-white/70 text-sm">Up to 25 stems</span>
                       <span className="price-number text-lg font-semibold text-[#f5b942]">
                         $139
                       </span>
                     </div>
                     <div className="flex items-baseline justify-between gap-4">
-                      <span className="text-white/55 text-sm">
+                      <span className="text-white/70 text-sm">
                         More than 25 stems
                       </span>
                       <span className="price-number text-lg font-semibold text-[#f5b942]">
@@ -146,7 +146,7 @@ export default function Section1() {
               </div>
             </div>
 
-            <p className="text-white/55 text-sm leading-relaxed">
+            <p className="text-white/70 text-sm leading-relaxed">
               The exact price within each tier depends on recording quality
               and the amount of editing required. You receive it before the
               full job begins — and up to three revision rounds are included
@@ -179,7 +179,7 @@ export default function Section1() {
 
       <div>
         <div className="mb-8">
-          <span className="text-white/40 text-xs uppercase tracking-[0.3em]">
+          <span className="text-white/75 text-xs uppercase tracking-[0.3em]">
             The Process
           </span>
           <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mt-2">
@@ -209,7 +209,7 @@ export default function Section1() {
 
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 items-stretch">
         <GlowCard>
-          <span className="text-white/40 text-xs uppercase tracking-[0.3em] relative z-10">
+          <span className="text-white/75 text-xs uppercase tracking-[0.3em] relative z-10">
             How I Approach a Mix
           </span>
           <div className="flex flex-col gap-6 text-white/70 text-[15px] leading-relaxed relative z-10">
@@ -242,7 +242,7 @@ export default function Section1() {
         </GlowCard>
 
         <GlowCard>
-          <span className="text-white/40 text-xs uppercase tracking-[0.3em] relative z-10">
+          <span className="text-white/75 text-xs uppercase tracking-[0.3em] relative z-10">
             Guitars, Vocals &amp; Translation
           </span>
           <div className="flex flex-col gap-6 text-white/70 text-[15px] leading-relaxed relative z-10">

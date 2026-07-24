@@ -40,9 +40,9 @@ export default function FreeMixingPluginsPage() {
                 {/* Header */}
                 <div className="mb-12">
                     <div className="flex items-center gap-3 mb-6">
-                        <span className="text-white/40 text-xs uppercase tracking-widest">Tutorials</span>
+                        <span className="text-white/75 text-xs uppercase tracking-widest">Tutorials</span>
                         <span className="text-white/20 text-xs">·</span>
-                        <span className="text-white/40 text-xs">June 10, 2025</span>
+                        <span className="text-white/75 text-xs">June 10, 2025</span>
                     </div>
                     <h1 className="text-3xl md:text-5xl font-semibold tracking-wide leading-tight mb-6">
                         Can You Mix a Professional Track with Free Plugins Only?
@@ -68,23 +68,23 @@ export default function FreeMixingPluginsPage() {
                         <div className="flex flex-col gap-4">
                             <div className="rounded-xl p-5 flex flex-col gap-2" style={{background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderLeft: "3px solid #C9A84C"}}>
                                 <p className="text-white font-semibold text-sm">EQ — <a href="https://www.tokyodawn.net/tdr-nova/" target="_blank" style={{color: "#C9A84C", textDecoration: "underline"}}>TDR Nova by Tokyo Dawn Records</a></p>
-                                <p className="text-white/50 text-sm">A dynamic EQ that rivals many paid options. Clean, transparent, and genuinely useful on any source. The free version covers the vast majority of mixing EQ needs.</p>
+                                <p className="text-white/65 text-sm">A dynamic EQ that rivals many paid options. Clean, transparent, and genuinely useful on any source. The free version covers the vast majority of mixing EQ needs.</p>
                             </div>
                             <div className="rounded-xl p-5 flex flex-col gap-2" style={{background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderLeft: "3px solid #C9A84C"}}>
                                 <p className="text-white font-semibold text-sm">Compression — <a href="https://www.kvraudio.com/product/molot-by-vladg-sound" target="_blank" style={{color: "#C9A84C", textDecoration: "underline"}}>Molot by vladg/sound</a></p>
-                                <p className="text-white/50 text-sm">A Soviet-era inspired compressor with genuine character. Particularly useful on drums and bus compression where personality is part of the goal.</p>
+                                <p className="text-white/65 text-sm">A Soviet-era inspired compressor with genuine character. Particularly useful on drums and bus compression where personality is part of the goal.</p>
                             </div>
                             <div className="rounded-xl p-5 flex flex-col gap-2" style={{background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderLeft: "3px solid #C9A84C"}}>
                                 <p className="text-white font-semibold text-sm">Reverb — <a href="https://valhalladsp.com/shop/reverb/valhalla-supermassive/" target="_blank" style={{color: "#C9A84C", textDecoration: "underline"}}>Valhalla Supermassive</a></p>
-                                <p className="text-white/50 text-sm">Free from Valhalla DSP — a company known for industry-standard paid reverbs. Supermassive is genuinely excellent for room sounds, plates, and atmospheric spaces.</p>
+                                <p className="text-white/65 text-sm">Free from Valhalla DSP — a company known for industry-standard paid reverbs. Supermassive is genuinely excellent for room sounds, plates, and atmospheric spaces.</p>
                             </div>
                             <div className="rounded-xl p-5 flex flex-col gap-2" style={{background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderLeft: "3px solid #C9A84C"}}>
                                 <p className="text-white font-semibold text-sm">Saturation — <a href="https://www.shatteredglass.audio/products" target="_blank" style={{color: "#C9A84C", textDecoration: "underline"}}>Saturation Knob by Softube</a></p>
-                                <p className="text-white/50 text-sm">Simple and effective. A single knob that adds harmonic content and warmth — useful on guitars, vocals, and bass without complicating the signal chain.</p>
+                                <p className="text-white/65 text-sm">Simple and effective. A single knob that adds harmonic content and warmth — useful on guitars, vocals, and bass without complicating the signal chain.</p>
                             </div>
                             <div className="rounded-xl p-5 flex flex-col gap-2" style={{background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderLeft: "3px solid #C9A84C"}}>
                                 <p className="text-white font-semibold text-sm">Limiter — <a href="https://www.tokyodawn.net/tdr-limiter-6-ge/" target="_blank" style={{color: "#C9A84C", textDecoration: "underline"}}>TDR Limiter 6 GE (free version)</a></p>
-                                <p className="text-white/50 text-sm">The free version of TDR Limiter 6 is a capable mastering limiter. Transparent, with solid metering and a clean ceiling.</p>
+                                <p className="text-white/65 text-sm">The free version of TDR Limiter 6 is a capable mastering limiter. Transparent, with solid metering and a clean ceiling.</p>
                             </div>
                         </div>
                     </div>
@@ -137,7 +137,7 @@ export default function FreeMixingPluginsPage() {
                     <div className="rounded-2xl p-8 text-center flex flex-col items-center gap-4"
                          style={{background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.2)"}}>
                         <h3 className="text-xl font-semibold text-white">Not sure what your track needs?</h3>
-                        <p className="text-white/50 text-sm max-w-md">Send it and hear a free 60-second preview — an honest assessment and an exact price, no commitment.</p>
+                        <p className="text-white/65 text-sm max-w-md">Send it and hear a free 60-second preview — an honest assessment and an exact price, no commitment.</p>
                         <a href="/free-track-preview"
                            className="inline-flex items-center gap-2 text-black font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition text-sm"
                            style={{backgroundColor: "#C9A84C"}}>

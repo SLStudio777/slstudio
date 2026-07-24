@@ -148,7 +148,7 @@ function TableOfContents() {
             </span>
             <a
               href={`#${item.id}`}
-              className="text-sm text-white/50 hover:text-white transition leading-snug"
+              className="text-sm text-white/65 hover:text-white transition leading-snug"
             >
               {item.label}
             </a>
@@ -177,7 +177,7 @@ function Figure({ src, alt, caption, eager = false }) {
         />
       </div>
       {caption && (
-        <figcaption className="text-white/45 text-sm leading-relaxed">
+        <figcaption className="text-white/65 text-sm leading-relaxed">
           {caption}
         </figcaption>
       )}
@@ -434,16 +434,16 @@ export default function BestMelodyneAlternativesPagePL() {
                         borderBottom: "1px solid rgba(255,255,255,0.08)",
                       }}
                     >
-                      <th className="text-left py-2 pr-4 text-white/45 text-sm whitespace-nowrap">
+                      <th className="text-left py-2 pr-4 text-white/65 text-sm whitespace-nowrap">
                         Wtyczka
                       </th>
-                      <th className="text-left py-2 pr-4 text-white/45 text-sm whitespace-nowrap">
+                      <th className="text-left py-2 pr-4 text-white/65 text-sm whitespace-nowrap">
                         Czym jest
                       </th>
-                      <th className="text-left py-2 pr-4 text-white/45 text-sm whitespace-nowrap">
+                      <th className="text-left py-2 pr-4 text-white/65 text-sm whitespace-nowrap">
                         Najlepsza do
                       </th>
-                      <th className="text-left py-2 text-white/45 text-sm whitespace-nowrap">
+                      <th className="text-left py-2 text-white/65 text-sm whitespace-nowrap">
                         Główne ograniczenie
                       </th>
                     </tr>
@@ -468,7 +468,7 @@ export default function BestMelodyneAlternativesPagePL() {
                 </table>
               </div>
             </div>
-            <p className="text-white/45 text-sm leading-relaxed">
+            <p className="text-white/65 text-sm leading-relaxed">
               <em>
                 Ceny i promocje zmieniają się bez przerwy. Porównuj edycję i
                 zestaw funkcji, których realnie potrzebujesz, a nie największą

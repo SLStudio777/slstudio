@@ -78,10 +78,10 @@ export default function MusicDistributionPage() {
                             <table className="w-full text-sm" style={{borderCollapse: "collapse"}}>
                                 <thead>
                                     <tr style={{borderBottom: "1px solid rgba(255,255,255,0.1)"}}>
-                                        <th className="text-left py-3 pr-4 text-white/50 text-xs uppercase tracking-widest font-medium">Distributor</th>
-                                        <th className="text-left py-3 pr-4 text-white/50 text-xs uppercase tracking-widest font-medium">Price</th>
-                                        <th className="text-left py-3 pr-4 text-white/50 text-xs uppercase tracking-widest font-medium">Royalties</th>
-                                        <th className="text-left py-3 text-white/50 text-xs uppercase tracking-widest font-medium">WAV Upload</th>
+                                        <th className="text-left py-3 pr-4 text-white/75 text-xs uppercase tracking-widest font-medium">Distributor</th>
+                                        <th className="text-left py-3 pr-4 text-white/75 text-xs uppercase tracking-widest font-medium">Price</th>
+                                        <th className="text-left py-3 pr-4 text-white/75 text-xs uppercase tracking-widest font-medium">Royalties</th>
+                                        <th className="text-left py-3 text-white/75 text-xs uppercase tracking-widest font-medium">WAV Upload</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -159,7 +159,7 @@ export default function MusicDistributionPage() {
                     <div className="rounded-2xl p-8 text-center flex flex-col items-center gap-4"
                          style={{background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.2)"}}>
                         <h3 className="text-xl font-semibold text-white">Ready to release? Make sure your master is ready first</h3>
-                        <p className="text-white/50 text-sm max-w-md">A professional master ensures your track sounds its best on every platform — regardless of which distributor you choose. First consultation is always free.</p>
+                        <p className="text-white/65 text-sm max-w-md">A professional master ensures your track sounds its best on every platform — regardless of which distributor you choose. First consultation is always free.</p>
                         <a href="/contact"
                            className="inline-flex items-center gap-2 text-black font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition text-sm"
                            style={{backgroundColor: "#C9A84C"}}>

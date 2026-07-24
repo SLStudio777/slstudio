@@ -85,9 +85,9 @@ export default function MasteringTimePage() {
                 {/* Header */}
                 <div className="mb-12">
                     <div className="flex items-center gap-3 mb-6">
-                        <span className="text-white/40 text-xs uppercase tracking-widest">Mixing & Mastering</span>
+                        <span className="text-white/75 text-xs uppercase tracking-widest">Mixing & Mastering</span>
                         <span className="text-white/20 text-xs">·</span>
-                        <span className="text-white/40 text-xs">November 10, 2025</span>
+                        <span className="text-white/75 text-xs">November 10, 2025</span>
                     </div>
                     <h1 className="text-3xl md:text-5xl font-semibold tracking-wide leading-tight mb-6">
                         How Long Does It Take to Master a Song?
@@ -148,7 +148,7 @@ export default function MasteringTimePage() {
                                 <div key={i} className="rounded-xl p-4 flex flex-col gap-1 md:flex-row md:items-center md:gap-6" style={{background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)"}}>
                                     <p className="text-white font-medium text-sm md:w-48 flex-shrink-0">{item.type}</p>
                                     <p className="text-sm flex-shrink-0" style={{color: "#C9A84C"}}>{item.time}</p>
-                                    <p className="text-white/50 text-sm">{item.note}</p>
+                                    <p className="text-white/65 text-sm">{item.note}</p>
                                 </div>
                             ))}
                         </div>
@@ -167,7 +167,7 @@ export default function MasteringTimePage() {
                                     <span className="text-2xl font-bold flex-shrink-0" style={{color: "rgba(201,168,76,0.3)"}}>{item.day}</span>
                                     <div>
                                         <p className="text-white font-medium text-sm">{item.title}</p>
-                                        <p className="text-white/50 text-sm mt-1">{item.desc}</p>
+                                        <p className="text-white/65 text-sm mt-1">{item.desc}</p>
                                     </div>
                                 </div>
                             ))}
@@ -193,7 +193,7 @@ export default function MasteringTimePage() {
                                 <div key={i} className="rounded-xl p-5 flex flex-col gap-2"
                                      style={{background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)"}}>
                                     <p className="text-white font-medium text-sm">{item.q}</p>
-                                    <p className="text-white/50 text-sm leading-relaxed">{item.a}</p>
+                                    <p className="text-white/65 text-sm leading-relaxed">{item.a}</p>
                                 </div>
                             ))}
                         </div>
@@ -210,7 +210,7 @@ export default function MasteringTimePage() {
                     <div className="rounded-2xl p-8 text-center flex flex-col items-center gap-4"
                          style={{background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.2)"}}>
                         <h3 className="text-xl font-semibold text-white">Not sure what your track needs?</h3>
-                        <p className="text-white/50 text-sm max-w-md">Send it and hear a free 60-second preview — an honest assessment and an exact price, no commitment.</p>
+                        <p className="text-white/65 text-sm max-w-md">Send it and hear a free 60-second preview — an honest assessment and an exact price, no commitment.</p>
                         <a href="/free-track-preview"
                            className="inline-flex items-center gap-2 text-black font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition text-sm"
                            style={{backgroundColor: "#C9A84C"}}>

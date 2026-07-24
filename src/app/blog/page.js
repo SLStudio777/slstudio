@@ -152,7 +152,7 @@ export default async function BlogPage({ searchParams }) {
                                 className={`px-3.5 py-1.5 rounded-md text-xs font-medium uppercase tracking-widest transition ${
                                     lang === l.value
                                         ? "bg-gold text-black"
-                                        : "text-white/55 hover:text-white/80"
+                                        : "text-white/70 hover:text-white/80"
                                 }`}
                             >
                                 {l.label}
@@ -184,7 +184,7 @@ export default async function BlogPage({ searchParams }) {
                 </div>
 
                 {filtered.length > 0 && (
-                    <p className="text-xs text-white/45 mb-6" aria-live="polite">
+                    <p className="text-xs text-white/75 mb-6" aria-live="polite">
                         {filtered.length} {filtered.length === 1 ? "article" : "articles"}
                         {hasFilter ? " found" : ""}
                         {urlQuery.trim() && (

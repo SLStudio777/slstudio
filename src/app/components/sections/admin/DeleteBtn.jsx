@@ -39,7 +39,7 @@ export default function DeleteBtn({ url, isActive, title = "Delete" }) {
             onClick={handleDelete}
             disabled={loading}
             className="
-                text-sm text-white/50
+                text-sm text-white/65
                 hover:text-gold2 transition
                 transition
                 flex items-center gap-2

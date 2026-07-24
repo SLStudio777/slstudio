@@ -181,7 +181,7 @@ export default function AIMixingReviewPage() {
                 >
                   <span className="text-2xl flex-shrink-0">{item.icon}</span>
                   <div>
-                    <p className="text-white/50 text-xs uppercase tracking-widest mb-1">
+                    <p className="text-white/75 text-xs uppercase tracking-widest mb-1">
                       {item.step}
                     </p>
                     <p className="text-white font-semibold text-sm mb-1">
@@ -239,7 +239,7 @@ export default function AIMixingReviewPage() {
                 <p className="text-white font-semibold text-sm">
                   ✅ AI Mastering
                 </p>
-                <ul className="flex flex-col gap-1 text-white/50 text-sm">
+                <ul className="flex flex-col gap-1 text-white/65 text-sm">
                   <li>→ One stereo file</li>
                   <li>→ Standardised goals</li>
                   <li>→ Good for demos and references</li>
@@ -254,7 +254,7 @@ export default function AIMixingReviewPage() {
                 }}
               >
                 <p className="text-white font-semibold text-sm">⚠️ AI Mixing</p>
-                <ul className="flex flex-col gap-1 text-white/50 text-sm">
+                <ul className="flex flex-col gap-1 text-white/65 text-sm">
                   <li>→ 30-100 individual tracks</li>
                   <li>→ Every decision affects others</li>
                   <li>→ Requires musical context</li>
@@ -283,16 +283,16 @@ export default function AIMixingReviewPage() {
                   <tr
                     style={{ borderBottom: "1px solid rgba(255,255,255,0.1)" }}
                   >
-                    <th className="text-left py-3 pr-6 text-white/50 text-xs uppercase tracking-widest font-medium">
+                    <th className="text-left py-3 pr-6 text-white/75 text-xs uppercase tracking-widest font-medium">
                       Tier
                     </th>
-                    <th className="text-left py-3 pr-6 text-white/50 text-xs uppercase tracking-widest font-medium">
+                    <th className="text-left py-3 pr-6 text-white/75 text-xs uppercase tracking-widest font-medium">
                       Examples
                     </th>
-                    <th className="text-left py-3 pr-6 text-white/50 text-xs uppercase tracking-widest font-medium">
+                    <th className="text-left py-3 pr-6 text-white/75 text-xs uppercase tracking-widest font-medium">
                       Honest use case
                     </th>
-                    <th className="text-left py-3 text-white/50 text-xs uppercase tracking-widest font-medium">
+                    <th className="text-left py-3 text-white/75 text-xs uppercase tracking-widest font-medium">
                       Typical cost
                     </th>
                   </tr>
@@ -333,8 +333,8 @@ export default function AIMixingReviewPage() {
                       <td className="py-3 pr-6 text-white font-medium">
                         {row.t}
                       </td>
-                      <td className="py-3 pr-6 text-white/50">{row.e}</td>
-                      <td className="py-3 pr-6 text-white/50">{row.u}</td>
+                      <td className="py-3 pr-6 text-white/65">{row.e}</td>
+                      <td className="py-3 pr-6 text-white/65">{row.u}</td>
                       <td className="py-3" style={{ color: "#C9A84C" }}>
                         {row.c}
                       </td>
@@ -363,7 +363,7 @@ export default function AIMixingReviewPage() {
           <div className="flex flex-col gap-4">
             <h2 className="text-xl md:text-2xl font-semibold text-white">
               What Has Changed Since This Test{" "}
-              <span className="text-white/50 text-base font-normal">
+              <span className="text-white/65 text-base font-normal">
                 (updated July 2026)
               </span>
             </h2>
@@ -401,7 +401,7 @@ export default function AIMixingReviewPage() {
                   <p className="text-white font-semibold text-sm">
                     {item.name}
                   </p>
-                  <p className="text-white/55 text-base leading-relaxed">
+                  <p className="text-white/70 text-base leading-relaxed">
                     {item.text}
                   </p>
                 </div>
@@ -548,7 +548,7 @@ export default function AIMixingReviewPage() {
                     <p className="text-white font-semibold text-sm mb-1">
                       {item.title}
                     </p>
-                    <p className="text-white/50 text-sm leading-relaxed">
+                    <p className="text-white/65 text-sm leading-relaxed">
                       {item.text}
                     </p>
                   </div>
@@ -621,7 +621,7 @@ export default function AIMixingReviewPage() {
                   }}
                 >
                   <p className="text-white font-medium text-sm">{item.q}</p>
-                  <p className="text-white/50 text-sm leading-relaxed">
+                  <p className="text-white/65 text-sm leading-relaxed">
                     {item.a}
                   </p>
                 </div>
@@ -718,7 +718,7 @@ export default function AIMixingReviewPage() {
             <h3 className="text-xl font-semibold text-white">
               Not sure what your track needs?
             </h3>
-            <p className="text-white/50 text-sm max-w-md">
+            <p className="text-white/65 text-sm max-w-md">
               Send it and hear a free 60-second preview — an honest assessment
               and an exact price, no commitment.
             </p>

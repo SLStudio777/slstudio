@@ -162,7 +162,7 @@ function TableOfContents() {
             </span>
             <a
               href={`#${item.id}`}
-              className="text-sm text-white/50 hover:text-white transition leading-snug"
+              className="text-sm text-white/65 hover:text-white transition leading-snug"
             >
               {item.label}
             </a>
@@ -342,8 +342,8 @@ export default function SunoGuidePlPage() {
                     Nikt ich nie widzi poza tobą. To system filtrowania — i bardzo ważny.
                   </p>
                   <div className="mt-3 flex flex-col gap-1">
-                    <p className="text-white/50 text-sm">👍 Lajk → utwór zostaje widoczny i łatwy do znalezienia</p>
-                    <p className="text-white/50 text-sm">👎 Dislajk → utwór się chowa (ale nie usuwa)</p>
+                    <p className="text-white/65 text-sm">👍 Lajk → utwór zostaje widoczny i łatwy do znalezienia</p>
+                    <p className="text-white/65 text-sm">👎 Dislajk → utwór się chowa (ale nie usuwa)</p>
                   </div>
                 </div>
               </div>
@@ -405,7 +405,7 @@ export default function SunoGuidePlPage() {
                   Na wtedy, gdy już znasz swój kierunek — gatunek, nastrój, klimat wokalu,
                   ogólna struktura — i chcesz kontrolować szczegóły.
                 </p>
-                <p className="text-white/45 text-base mt-1">
+                <p className="text-white/65 text-base mt-1">
                   Więcej opcji to więcej sposobów na precyzyjny błąd.
                 </p>
               </div>
