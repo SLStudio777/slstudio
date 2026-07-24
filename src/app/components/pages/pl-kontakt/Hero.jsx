@@ -205,7 +205,7 @@ export default function Hero() {
         {/* LEFT — justify-between spreads the blocks so the column's top and
                     bottom line up exactly with the form column on the right */}
         <div className="flex flex-col gap-3">
-          <span className="relative md:top-2 text-white/30 text-xs uppercase tracking-[0.3em]">
+          <span className="relative md:top-2 text-white/40 text-xs uppercase tracking-[0.3em]">
             Kontakt
           </span>
           <div className="relative md:top-2">
@@ -312,7 +312,7 @@ export default function Hero() {
                     animation: "pulse 2s ease-in-out infinite",
                   }}
                 />
-                <p className="text-white/40 text-xs uppercase tracking-widest">
+                <p className="text-white/50 text-xs uppercase tracking-widest">
                   Czas odpowiedzi
                 </p>
               </div>
@@ -442,7 +442,7 @@ export default function Hero() {
               <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="flex flex-col gap-2">
-                    <label className="text-white/40 text-xs uppercase tracking-widest">
+                    <label className="text-white/50 text-xs uppercase tracking-widest">
                       Imię
                     </label>
                     <input
@@ -466,7 +466,7 @@ export default function Hero() {
                     />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <label className="text-white/40 text-xs uppercase tracking-widest">
+                    <label className="text-white/50 text-xs uppercase tracking-widest">
                       Email
                     </label>
                     <input
@@ -491,7 +491,7 @@ export default function Hero() {
                   </div>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label className="text-white/40 text-xs uppercase tracking-widest">
+                  <label className="text-white/50 text-xs uppercase tracking-widest">
                     Usługa
                   </label>
                   <select
@@ -525,7 +525,7 @@ export default function Hero() {
                   </select>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label className="text-white/40 text-xs uppercase tracking-widest">
+                  <label className="text-white/50 text-xs uppercase tracking-widest">
                     O Twoim projekcie
                   </label>
                   <textarea
@@ -598,7 +598,7 @@ export default function Hero() {
       {/* Three steps — same style as the "How It Works" cards on the free preview page */}
       <div className="mt-20">
         <div className="mb-8">
-          <span className="text-white/30 text-xs uppercase tracking-[0.3em]">
+          <span className="text-white/40 text-xs uppercase tracking-[0.3em]">
             Co dalej
           </span>
           <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mt-2">
@@ -664,7 +664,7 @@ export default function Hero() {
       {/* Mini FAQ — same card and accordion behavior as the homepage */}
       <div className="mt-20">
         <div className="mb-8">
-          <span className="text-white/30 text-xs uppercase tracking-[0.3em]">
+          <span className="text-white/40 text-xs uppercase tracking-[0.3em]">
             FAQ
           </span>
           <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mt-2">
@@ -687,8 +687,8 @@ export default function Hero() {
                 a: "Nie przez formularz — wrzuć link do Google Drive, Dropbox albo WeTransfer. Możesz też skorzystać ze strony darmowego preview, tam jest uploader do 100 MB.",
               },
               {
-                q: "Jak wygląda płatność?",
-                a: "30% zaliczki po ustaleniu zakresu prac, reszta po akceptacji finalnego efektu. Wise albo przelew bankowy (polski IBAN); płatności kartą już wkrótce.",
+                  q: "Jak wygląda płatność?",
+                  a: "30% zaliczki po ustaleniu zakresu prac, reszta po akceptacji finalnego efektu. Wise albo przelew bankowy (polski IBAN); płatności kartą już wkrótce.",
               },
             ].map((f, i) => (
               <FaqItem

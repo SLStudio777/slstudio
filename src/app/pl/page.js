@@ -189,9 +189,9 @@ const pricingLabels = {
         { title: "Suno / AI Track Finishing", description: "Masz utwór z Suno lub Udio? Rozdzielam stemy, czyszczę artefakty, dogrywam żywe partie i robię ludzki miks oraz mastering. Stałe pakiety.", href: "/pl/suno-track-finishing" },
     ],
     payment: [
-        { title: "50% z góry", description: "Reszta po akceptacji efektu. Zero ryzyka po Twojej stronie." },
+        { title: "30% z góry", description: "Reszta po akceptacji efektu. Zero ryzyka po Twojej stronie." },
         { title: "Najpierw rozmowa, potem płatność", description: "Dokładną cenę potwierdzamy po omówieniu projektu. Pierwsza konsultacja zawsze bezpłatna." },
-        { title: "PayPal i przelew", description: "Pracuję z klientami z całego świata. Bez ograniczeń lokalizacji." },
+        { title: "Wise i przelew", description: "Pracuję z klientami z całego świata. Bez ograniczeń lokalizacji." },
     ],
 };
 
@@ -233,7 +233,7 @@ const faqLabels = {
         },
         {
             q: "Jak wygląda płatność?",
-            a: "30% zaliczki po ustaleniu zakresu prac, pozostałe 70% po akceptacji finalnego efektu. Wise albo zwykły przelew bankowy (polski IBAN — PLN, EUR lub USD); płatności kartą na stronie już wkrótce.",
+            a: "30% zaliczki po ustaleniu zakresu prac, pozostałe 70% po akceptacji finalnego efektu. Wise albo zwykły przelew bankowy (polski IBAN — PLN, EUR, USD); płatności kartą na stronie już wkrótce.",
         },
     ],
 };

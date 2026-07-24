@@ -58,7 +58,7 @@ export default async function VideosPage() {
                                 <span className="text-white/80 font-medium">
                                     {video.title}
                                 </span>
-                                <span className="text-white/40 text-sm">
+                                <span className="text-white/50 text-sm">
                                     youtube.com/watch?v=<span className="font-semibold text-white/70">{video.video_id}</span>
                                 </span>
                             </div>

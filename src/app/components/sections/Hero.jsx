@@ -42,7 +42,7 @@ export default function Hero() {
                         /mixing-mastering. */}
                     <div className="flex flex-col gap-5 [@media(max-width:767px)]:order-1">
                         <div>
-                            <span className="text-white/40 text-xs uppercase tracking-[0.3em]">
+                            <span className="text-white/50 text-xs uppercase tracking-[0.3em]">
                                 Warsaw, Poland
                             </span>
                             <div className="relative mt-3">
@@ -144,7 +144,7 @@ export default function Hero() {
                     copy wraps into fewer, longer lines and the block reads
                     shorter/less stretched next to the photo above it */}
                 <div className="flex flex-col gap-3 [@media(max-width:767px)]:order-5">
-                    <span className="text-white/30 text-xs uppercase tracking-[0.3em]">
+                    <span className="text-white/40 text-xs uppercase tracking-[0.3em]">
                         Guitarist · Producer · Engineer
                     </span>
                     <h2 className="text-xl md:text-2xl font-semibold tracking-wide">

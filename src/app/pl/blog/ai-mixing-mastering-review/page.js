@@ -189,7 +189,7 @@ export default function AIMixingReviewPagePL() {
                 >
                   <span className="text-2xl flex-shrink-0">{item.icon}</span>
                   <div>
-                    <p className="text-white/40 text-xs uppercase tracking-widest mb-1">
+                    <p className="text-white/50 text-xs uppercase tracking-widest mb-1">
                       {item.step}
                     </p>
                     <p className="text-white font-semibold text-sm mb-1">
@@ -285,16 +285,16 @@ export default function AIMixingReviewPagePL() {
                   <tr
                     style={{ borderBottom: "1px solid rgba(255,255,255,0.1)" }}
                   >
-                    <th className="text-left py-3 pr-6 text-white/40 text-xs uppercase tracking-widest font-medium">
+                    <th className="text-left py-3 pr-6 text-white/50 text-xs uppercase tracking-widest font-medium">
                       Poziom
                     </th>
-                    <th className="text-left py-3 pr-6 text-white/40 text-xs uppercase tracking-widest font-medium">
+                    <th className="text-left py-3 pr-6 text-white/50 text-xs uppercase tracking-widest font-medium">
                       Przykłady
                     </th>
-                    <th className="text-left py-3 pr-6 text-white/40 text-xs uppercase tracking-widest font-medium">
+                    <th className="text-left py-3 pr-6 text-white/50 text-xs uppercase tracking-widest font-medium">
                       Uczciwe zastosowanie
                     </th>
-                    <th className="text-left py-3 text-white/40 text-xs uppercase tracking-widest font-medium">
+                    <th className="text-left py-3 text-white/50 text-xs uppercase tracking-widest font-medium">
                       Typowy koszt
                     </th>
                   </tr>
@@ -361,7 +361,7 @@ export default function AIMixingReviewPagePL() {
           <div className="flex flex-col gap-4">
             <h2 className="text-xl md:text-2xl font-semibold text-white">
               Co się zmieniło od czasu tego testu{" "}
-              <span className="text-white/40 text-base font-normal">
+              <span className="text-white/50 text-base font-normal">
                 (aktualizacja: lipiec 2026)
               </span>
             </h2>

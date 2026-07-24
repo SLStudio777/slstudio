@@ -28,7 +28,7 @@ export default function Footer() {
                         Music production, mixing, mastering and arrangement.
                         Transforming raw recordings into polished, release-ready tracks — remotely, worldwide.
                     </p>
-                    <div className="flex items-center gap-3 text-white/40 mt-2">
+                    <div className="flex items-center gap-3 text-white/50 mt-2">
                         <a href="https://www.youtube.com/@SLStudio_Guitar" target="_blank" rel="noopener noreferrer" aria-label="SL Studio on YouTube" className="hover:text-gold2 transition">
                             <YouTubeIcon size={21} />
                         </a>
@@ -46,7 +46,7 @@ export default function Footer() {
 
                 {/* Center — Navigation */}
                 <div className="flex flex-col gap-3">
-                    <p className="text-white/30 text-xs uppercase tracking-[0.2em] mb-2">Navigation</p>
+                    <p className="text-white/40 text-xs uppercase tracking-[0.2em] mb-2">Navigation</p>
                     <Link href="/" onClick={handleNav("/")} className="text-white/60 text-sm hover:text-gold2 transition">Home</Link>
                     <Link href="/mixing-mastering" onClick={handleNav("/mixing-mastering")} className="text-white/60 text-sm hover:text-gold2 transition">Mixing & Mastering</Link>
                     <Link href="/arrangement" onClick={handleNav("/arrangement")} className="text-white/60 text-sm hover:text-gold2 transition">Arrangement & Production</Link>
@@ -58,21 +58,21 @@ export default function Footer() {
 
                 {/* Right — Contact */}
                 <div className="flex flex-col gap-3">
-                    <p className="text-white/30 text-xs uppercase tracking-[0.2em] mb-2">Get In Touch</p>
+                    <p className="text-white/40 text-xs uppercase tracking-[0.2em] mb-2">Get In Touch</p>
                     <a href="https://t.me/serhii_lazariev" target="_blank" rel="noopener noreferrer" className="text-white/60 text-sm hover:text-gold2 transition">
                         Telegram — @serhii_lazariev
                     </a>
                     <a href="mailto:serhii@slstudio.pro" className="text-white/60 text-sm hover:text-gold2 transition">
                         serhii@slstudio.pro
                     </a>
-                    <p className="text-white/30 text-sm mt-2">Warsaw, Poland</p>
-                    <p className="text-white/30 text-sm">Worldwide Remote</p>
+                    <p className="text-white/40 text-sm mt-2">Warsaw, Poland</p>
+                    <p className="text-white/40 text-sm">Worldwide Remote</p>
                 </div>
             </div>
 
             {/* Bottom */}
             <div className="border-t border-white/5">
-                <div className="container py-4 text-xs text-white/30 flex justify-between">
+                <div className="container py-4 text-xs text-white/40 flex justify-between">
                     <span>&copy; {new Date().getFullYear()} SL Studio — Serhii Lazariev</span>
                     <span>All rights reserved</span>
                 </div>

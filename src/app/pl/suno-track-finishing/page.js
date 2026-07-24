@@ -203,7 +203,7 @@ const faq = [
   },
   {
     q: "Jak wygląda płatność?",
-    a: "30% zaliczki po ustaleniu zakresu prac po darmowym fragmencie, pozostałe 70% po akceptacji finalnego efektu. Wise albo przelew bankowy (polski IBAN); płatności kartą na stronie już wkrótce.",
+    a: "30% zaliczki po ustaleniu zakresu prac po darmowym fragmencie, pozostała część po akceptacji finalnego efektu. Wise albo przelew bankowy (polski IBAN); płatności kartą już wkrótce.",
   },
 ];
 
@@ -384,7 +384,7 @@ export default function SunoTrackFinishingPagePL() {
           Proste, przejrzyste ceny
         </h2>
         <p className="text-white/55 mb-8 max-w-2xl">
-          Dokładna cena po darmowym fragmencie. 50% z góry, reszta po akceptacji
+          Dokładna cena po darmowym fragmencie. 30% z góry, reszta po akceptacji
           efektu.
         </p>
         <div className="grid md:grid-cols-3 gap-4">

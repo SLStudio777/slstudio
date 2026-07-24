@@ -85,7 +85,7 @@ export default function AutoTunePage() {
                                 {title: "DAW Crashes", desc: "Reports from KVR Audio forums described Auto-Tune Unlimited crashing Pro Tools, Studio One, and Luna on Apple Silicon Macs — instantly, on plugin load. Users with M1 hardware described the plugin as unusable."},
                             ].map((item, i) => (
                                 <div key={i} className="rounded-xl p-4 flex gap-3" style={{background: "rgba(255,80,80,0.04)", border: "1px solid rgba(255,80,80,0.12)"}}>
-                                    <span className="text-white/30 text-sm flex-shrink-0 mt-0.5">→</span>
+                                    <span className="text-white/40 text-sm flex-shrink-0 mt-0.5">→</span>
                                     <div>
                                         <p className="text-white font-medium text-sm">{item.title}</p>
                                         <p className="text-white/50 text-sm mt-1 leading-relaxed">{item.desc}</p>
@@ -195,7 +195,7 @@ export default function AutoTunePage() {
                                 <div key={i} className="rounded-xl p-4 flex gap-3" style={{background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)"}}>
                                     <span style={{color: "#C9A84C"}} className="flex-shrink-0 text-sm mt-0.5">→</span>
                                     <div>
-                                        <p className="text-white/40 text-xs uppercase tracking-widest mb-1">{item.scenario}</p>
+                                        <p className="text-white/50 text-xs uppercase tracking-widest mb-1">{item.scenario}</p>
                                         <p className="text-white/70 text-sm">{item.rec}</p>
                                     </div>
                                 </div>
@@ -211,9 +211,9 @@ export default function AutoTunePage() {
                             <table className="w-full text-sm" style={{borderCollapse: "collapse"}}>
                                 <thead>
                                     <tr style={{borderBottom: "1px solid rgba(255,255,255,0.1)"}}>
-                                        <th className="text-left py-2 pr-4 text-white/40 text-xs uppercase tracking-widest font-medium">Plugin</th>
-                                        <th className="text-left py-2 pr-4 text-white/40 text-xs uppercase tracking-widest font-medium">Price</th>
-                                        <th className="text-left py-2 text-white/40 text-xs uppercase tracking-widest font-medium">Best For</th>
+                                        <th className="text-left py-2 pr-4 text-white/50 text-xs uppercase tracking-widest font-medium">Plugin</th>
+                                        <th className="text-left py-2 pr-4 text-white/50 text-xs uppercase tracking-widest font-medium">Price</th>
+                                        <th className="text-left py-2 text-white/50 text-xs uppercase tracking-widest font-medium">Best For</th>
                                     </tr>
                                 </thead>
                                 <tbody>

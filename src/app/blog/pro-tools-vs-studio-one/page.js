@@ -41,9 +41,9 @@ export default function ProToolsVsStudioOnePage() {
                 {/* Header */}
                 <div className="mb-12">
                     <div className="flex items-center gap-3 mb-6">
-                        <span className="text-white/30 text-xs uppercase tracking-widest">Tutorials</span>
+                        <span className="text-white/40 text-xs uppercase tracking-widest">Tutorials</span>
                         <span className="text-white/20 text-xs">·</span>
-                        <span className="text-white/30 text-xs">February 10, 2025</span>
+                        <span className="text-white/40 text-xs">February 10, 2025</span>
                         <span className="text-white/20 text-xs">·</span>
                         <span className="text-xs" style={{color: "rgba(201,168,76,0.6)"}}>Updated July 2026</span>
                     </div>

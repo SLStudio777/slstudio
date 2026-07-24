@@ -27,7 +27,7 @@ export default function BlogPreview({ labels }) {
             {/* Header row */}
             <div className="flex items-end justify-between mb-8 gap-4 flex-wrap">
                 <div>
-                    <span className="text-white/30 text-xs uppercase tracking-[0.3em]">
+                    <span className="text-white/40 text-xs uppercase tracking-[0.3em]">
                         {t.eyebrow}
                     </span>
                     <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mt-2">
@@ -107,7 +107,7 @@ export default function BlogPreview({ labels }) {
                                     {post.category}
                                 </span>
                                 <span className="text-white/20 text-xs">·</span>
-                                <span className="text-white/30 text-xs">{post.date}</span>
+                                <span className="text-white/40 text-xs">{post.date}</span>
                             </div>
                             <h3 className="text-white font-semibold text-sm leading-snug line-clamp-2 group-hover:text-gold2 transition">
                                 {post.title}

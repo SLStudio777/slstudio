@@ -401,7 +401,7 @@ export default function Hero() {
                 <form onSubmit={handleSubmit} className="flex flex-col gap-5">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="flex flex-col gap-2">
-                      <label className="text-white/40 text-xs uppercase tracking-widest">
+                      <label className="text-white/50 text-xs uppercase tracking-widest">
                         Name
                       </label>
                       <input
@@ -415,7 +415,7 @@ export default function Hero() {
                       />
                     </div>
                     <div className="flex flex-col gap-2">
-                      <label className="text-white/40 text-xs uppercase tracking-widest">
+                      <label className="text-white/50 text-xs uppercase tracking-widest">
                         Email
                       </label>
                       <input
@@ -432,7 +432,7 @@ export default function Hero() {
                   </div>
 
                   <div className="flex flex-col gap-2">
-                    <label className="text-white/40 text-xs uppercase tracking-widest">
+                    <label className="text-white/50 text-xs uppercase tracking-widest">
                       What do you need?
                     </label>
                     <select
@@ -462,7 +462,7 @@ export default function Hero() {
 
                   {/* File drop zone */}
                   <div className="flex flex-col gap-2">
-                    <label className="text-white/40 text-xs uppercase tracking-widest">
+                    <label className="text-white/50 text-xs uppercase tracking-widest">
                       Your track
                     </label>
                     <button
@@ -500,7 +500,7 @@ export default function Hero() {
                           <p className="text-white text-sm font-medium break-all">
                             {file.name}
                           </p>
-                          <p className="text-white/40 text-xs">
+                          <p className="text-white/50 text-xs">
                             {(file.size / (1024 * 1024)).toFixed(1)} MB · click
                             to replace
                           </p>
@@ -544,7 +544,7 @@ export default function Hero() {
                             }}
                           />
                         </div>
-                        <p className="text-white/40 text-xs">
+                        <p className="text-white/50 text-xs">
                           Uploading… {Math.round(progress)}%
                         </p>
                       </div>
@@ -553,7 +553,7 @@ export default function Hero() {
 
                   {/* Fallback link */}
                   <div className="flex flex-col gap-2">
-                    <label className="text-white/40 text-xs uppercase tracking-widest">
+                    <label className="text-white/50 text-xs uppercase tracking-widest">
                       Or paste a link (Google Drive, Dropbox, WeTransfer)
                     </label>
                     <input
@@ -568,7 +568,7 @@ export default function Hero() {
                   </div>
 
                   <div className="flex flex-col gap-2">
-                    <label className="text-white/40 text-xs uppercase tracking-widest">
+                    <label className="text-white/50 text-xs uppercase tracking-widest">
                       Anything I should know?
                     </label>
                     <textarea
@@ -649,7 +649,7 @@ export default function Hero() {
         {/* ── HOW IT WORKS ── */}
         <section>
           <div className="mb-8">
-            <span className="text-white/30 text-xs uppercase tracking-[0.3em]">
+            <span className="text-white/40 text-xs uppercase tracking-[0.3em]">
               How It Works
             </span>
             <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mt-2">
@@ -697,7 +697,7 @@ export default function Hero() {
         {/* ── BEFORE YOU SEND ── */}
         <section className="max-w-3xl">
           <div className="mb-6">
-            <span className="text-white/30 text-xs uppercase tracking-[0.3em]">
+            <span className="text-white/40 text-xs uppercase tracking-[0.3em]">
               Before You Send
             </span>
             <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mt-2">

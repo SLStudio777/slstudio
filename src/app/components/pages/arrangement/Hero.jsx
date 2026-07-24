@@ -15,7 +15,7 @@ export default function Hero() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch mt-4">
         <div className="flex flex-col gap-5 md:justify-between">
           <div className="flex flex-col gap-5">
-            <span className="text-white/40 text-xs uppercase tracking-[0.3em]">
+            <span className="text-white/50 text-xs uppercase tracking-[0.3em]">
               Online Production · Warsaw / Worldwide
             </span>
             <div className="relative">
@@ -54,7 +54,7 @@ export default function Hero() {
                 Send Your Idea for Free →
               </Link>
             </div>
-            <p className="text-white/40 text-xs leading-relaxed">
+            <p className="text-white/50 text-xs leading-relaxed">
               I will listen to your material and prepare a short production
               concept or honest assessment before you book the full project.
             </p>

@@ -203,7 +203,7 @@ const faq = [
   },
   {
     q: "How does payment work?",
-    a: "30% upfront once we agree on the scope after the free preview, the remaining 70% when you approve the final result. Wise or bank transfer (Polish IBAN); card payments on the site are coming soon.",
+    a: "30% upfront once we agree on the scope after your free preview, the rest after you approve the final result. Wise or bank transfer (Polish IBAN); card payments are coming soon.",
   },
 ];
 
@@ -384,7 +384,7 @@ export default function SunoTrackFinishingPage() {
           Simple, transparent pricing
         </h2>
         <p className="text-white/55 mb-8 max-w-2xl">
-          Exact price confirmed after the free preview. 50% upfront, the rest
+          Exact price confirmed after the free preview. 30% upfront, the rest
           after you approve the result.
         </p>
         <div className="grid md:grid-cols-3 gap-4">

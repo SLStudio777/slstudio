@@ -179,6 +179,22 @@ export default function SectionIndicator() {
                     })}
                 </ol>
             </div>
+            {/* compact mid-read CTA under the contents rail */}
+            <a
+                href={isPolish ? "/pl/darmowy-fragment" : "/free-track-preview"}
+                style={{
+                    display: "block",
+                    marginTop: "18px",
+                    paddingLeft: "16px",
+                    fontSize: "12px",
+                    lineHeight: 1.5,
+                    color: "rgba(201,168,76,0.9)",
+                }}
+            >
+                {isPolish
+                    ? "Chcesz, żeby Twój utwór brzmiał tak? → Darmowy fragment"
+                    : "Want your track to sound like this? → Free preview"}
+            </a>
         </nav>
     );
 }

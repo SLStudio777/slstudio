@@ -100,16 +100,16 @@ export default function VoviousReviewPage() {
                   <tr
                     style={{ borderBottom: "1px solid rgba(255,255,255,0.1)" }}
                   >
-                    <th className="text-left py-3 pr-6 text-white/40 text-xs uppercase tracking-widest font-medium">
+                    <th className="text-left py-3 pr-6 text-white/50 text-xs uppercase tracking-widest font-medium">
                       Plugin
                     </th>
-                    <th className="text-left py-3 pr-6 text-white/40 text-xs uppercase tracking-widest font-medium">
+                    <th className="text-left py-3 pr-6 text-white/50 text-xs uppercase tracking-widest font-medium">
                       Price
                     </th>
-                    <th className="text-left py-3 pr-6 text-white/40 text-xs uppercase tracking-widest font-medium">
+                    <th className="text-left py-3 pr-6 text-white/50 text-xs uppercase tracking-widest font-medium">
                       Algorithm
                     </th>
-                    <th className="text-left py-3 text-white/40 text-xs uppercase tracking-widest font-medium">
+                    <th className="text-left py-3 text-white/50 text-xs uppercase tracking-widest font-medium">
                       Best For
                     </th>
                   </tr>
@@ -153,7 +153,7 @@ export default function VoviousReviewPage() {
                       <td className="py-3 pr-6" style={{ color: "#C9A84C" }}>
                         {row.price}
                       </td>
-                      <td className="py-3 pr-6 text-white/40 text-xs">
+                      <td className="py-3 pr-6 text-white/50 text-xs">
                         {row.algo}
                       </td>
                       <td className="py-3 text-white/50">{row.best}</td>
@@ -721,7 +721,7 @@ export default function VoviousReviewPage() {
                     border: "1px solid rgba(255,255,255,0.06)",
                   }}
                 >
-                  <p className="text-white/40 text-xs uppercase tracking-widest">
+                  <p className="text-white/50 text-xs uppercase tracking-widest">
                     {item.label}
                   </p>
                   <p
@@ -735,7 +735,7 @@ export default function VoviousReviewPage() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-2">
               <div>
-                <p className="text-white/30 text-xs uppercase tracking-widest mb-1">
+                <p className="text-white/40 text-xs uppercase tracking-widest mb-1">
                   Strengths
                 </p>
                 <p className="text-white/60 text-sm">
@@ -744,7 +744,7 @@ export default function VoviousReviewPage() {
                 </p>
               </div>
               <div>
-                <p className="text-white/30 text-xs uppercase tracking-widest mb-1">
+                <p className="text-white/40 text-xs uppercase tracking-widest mb-1">
                   Limitations
                 </p>
                 <p className="text-white/60 text-sm">

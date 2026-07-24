@@ -40,9 +40,9 @@ export default function KStripReviewPage() {
                 {/* Header */}
                 <div className="mb-12">
                     <div className="flex items-center gap-3 mb-6">
-                        <span className="text-white/30 text-xs uppercase tracking-widest">Review</span>
+                        <span className="text-white/40 text-xs uppercase tracking-widest">Review</span>
                         <span className="text-white/20 text-xs">·</span>
-                        <span className="text-white/30 text-xs">July 15, 2025</span>
+                        <span className="text-white/40 text-xs">July 15, 2025</span>
                     </div>
                     <h1 className="text-3xl md:text-5xl font-semibold tracking-wide leading-tight mb-6">
                         Kiive Audio KStrip Review — Three Console Flavors in One Plugin
@@ -162,11 +162,11 @@ export default function KStripReviewPage() {
                         <p className="text-white/60 text-sm leading-relaxed mt-2">It will not replace dedicated high-end emulations for engineers who need exact vintage accuracy. But for sessions where you want console character, dynamic control, and tonal flexibility in a single insert — KStrip earns its place in the chain.</p>
                         <div className="flex gap-4 mt-2 flex-wrap">
                             <div className="flex flex-col gap-1">
-                                <span className="text-white/30 text-xs uppercase tracking-widest">Strengths</span>
+                                <span className="text-white/40 text-xs uppercase tracking-widest">Strengths</span>
                                 <span className="text-white/60 text-sm">Flexible flavor switching, solid EQ character, visual gate, mid/side processing</span>
                             </div>
                             <div className="flex flex-col gap-1">
-                                <span className="text-white/30 text-xs uppercase tracking-widest">Limitations</span>
+                                <span className="text-white/40 text-xs uppercase tracking-widest">Limitations</span>
                                 <span className="text-white/60 text-sm">Transient shaper is subtle, not a perfect hardware clone</span>
                             </div>
                         </div>

@@ -195,7 +195,7 @@ export default function BeforeAfterCard({title, before, after, labels}) {
                 <div>
                     <h3 className="font-semibold text-base text-white">{title}</h3>
                     <div className="flex items-center gap-2 mt-1">
-                        <span className="text-white/30 text-xs uppercase tracking-widest">
+                        <span className="text-white/40 text-xs uppercase tracking-widest">
                             {mode === "before" ? L.raw : L.final}
                         </span>
                         {isPlaying && (

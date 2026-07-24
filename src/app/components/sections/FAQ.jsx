@@ -123,7 +123,7 @@ export default function FAQ({ labels }) {
         }}
       />
       <div className="mb-8">
-        <span className="text-white/30 text-xs uppercase tracking-[0.3em]">
+        <span className="text-white/40 text-xs uppercase tracking-[0.3em]">
           {t.eyebrow}
         </span>
         <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mt-2">

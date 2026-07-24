@@ -85,9 +85,9 @@ export default function MasteringTimePage() {
                 {/* Header */}
                 <div className="mb-12">
                     <div className="flex items-center gap-3 mb-6">
-                        <span className="text-white/30 text-xs uppercase tracking-widest">Mixing & Mastering</span>
+                        <span className="text-white/40 text-xs uppercase tracking-widest">Mixing & Mastering</span>
                         <span className="text-white/20 text-xs">·</span>
-                        <span className="text-white/30 text-xs">November 10, 2025</span>
+                        <span className="text-white/40 text-xs">November 10, 2025</span>
                     </div>
                     <h1 className="text-3xl md:text-5xl font-semibold tracking-wide leading-tight mb-6">
                         How Long Does It Take to Master a Song?
@@ -148,7 +148,7 @@ export default function MasteringTimePage() {
                                 <div key={i} className="rounded-xl p-4 flex flex-col gap-1 md:flex-row md:items-center md:gap-6" style={{background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)"}}>
                                     <p className="text-white font-medium text-sm md:w-48 flex-shrink-0">{item.type}</p>
                                     <p className="text-sm flex-shrink-0" style={{color: "#C9A84C"}}>{item.time}</p>
-                                    <p className="text-white/40 text-sm">{item.note}</p>
+                                    <p className="text-white/50 text-sm">{item.note}</p>
                                 </div>
                             ))}
                         </div>

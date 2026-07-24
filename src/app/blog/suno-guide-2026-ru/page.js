@@ -583,7 +583,7 @@ export default function SunoGuidePageRu() {
               </p>
             </div>
             <div className="flex flex-col gap-3">
-              <p className="text-white/40 text-xs uppercase tracking-widest">
+              <p className="text-white/50 text-xs uppercase tracking-widest">
                 Примеры, которые реально работают
               </p>
               {[
@@ -932,7 +932,7 @@ export default function SunoGuidePageRu() {
                   🎲 Weirdness — насколько Suno отклоняется от инструкций
                 </p>
                 <div className="flex items-center gap-3 my-1">
-                  <span className="text-white/40 text-xs w-24 text-right">
+                  <span className="text-white/50 text-xs w-24 text-right">
                     предсказуемо
                   </span>
                   <div
@@ -948,7 +948,7 @@ export default function SunoGuidePageRu() {
                       }}
                     ></div>
                   </div>
-                  <span className="text-white/40 text-xs w-24">хаотично</span>
+                  <span className="text-white/50 text-xs w-24">хаотично</span>
                 </div>
                 <p className="text-white/65 text-base">
                   <strong className="text-white">Низко</strong> — чисто,
@@ -974,7 +974,7 @@ export default function SunoGuidePageRu() {
                   🎨 Style Influence — насколько строго Suno держится стиля
                 </p>
                 <div className="flex items-center gap-3 my-1">
-                  <span className="text-white/40 text-xs w-24 text-right">
+                  <span className="text-white/50 text-xs w-24 text-right">
                     уходит в сторону
                   </span>
                   <div
@@ -989,7 +989,7 @@ export default function SunoGuidePageRu() {
                       }}
                     ></div>
                   </div>
-                  <span className="text-white/40 text-xs w-24">как робот</span>
+                  <span className="text-white/50 text-xs w-24">как робот</span>
                 </div>
                 <p className="text-white/65 text-base">
                   <strong className="text-white">Слишком низко</strong> — стиль

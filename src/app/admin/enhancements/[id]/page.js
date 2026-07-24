@@ -75,7 +75,7 @@ export default function UpdateEnhancementPage({ params }) {
     }
 
     if (fetching) {
-        return <div className="py-20 text-white/40">Loading...</div>;
+        return <div className="py-20 text-white/50">Loading...</div>;
     }
 
     return (
@@ -89,7 +89,7 @@ export default function UpdateEnhancementPage({ params }) {
                     Back to enhancements
                 </Link>
                 <div>
-                    <span className="text-white/40 text-xs uppercase tracking-[0.25em]">
+                    <span className="text-white/50 text-xs uppercase tracking-[0.25em]">
                         Content Management
                     </span>
                     <h1 className="mt-2 text-3xl font-semibold tracking-wide">

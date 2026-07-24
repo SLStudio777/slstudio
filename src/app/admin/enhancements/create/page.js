@@ -64,7 +64,7 @@ export default function CreateEnhancementPage() {
                         Back to enhancements
                     </Link>
                     <div>
-                        <span className="text-white/40 text-xs uppercase tracking-[0.25em]">
+                        <span className="text-white/50 text-xs uppercase tracking-[0.25em]">
                             Content Management
                         </span>
                         <h1 className="mt-2 text-3xl font-semibold tracking-wide">

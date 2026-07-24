@@ -40,9 +40,9 @@ export default function FreeMixingPluginsPage() {
                 {/* Header */}
                 <div className="mb-12">
                     <div className="flex items-center gap-3 mb-6">
-                        <span className="text-white/30 text-xs uppercase tracking-widest">Tutorials</span>
+                        <span className="text-white/40 text-xs uppercase tracking-widest">Tutorials</span>
                         <span className="text-white/20 text-xs">·</span>
-                        <span className="text-white/30 text-xs">June 10, 2025</span>
+                        <span className="text-white/40 text-xs">June 10, 2025</span>
                     </div>
                     <h1 className="text-3xl md:text-5xl font-semibold tracking-wide leading-tight mb-6">
                         Can You Mix a Professional Track with Free Plugins Only?

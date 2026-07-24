@@ -630,7 +630,7 @@ export default function SunoGuidePage() {
               </p>
             </div>
             <div className="flex flex-col gap-3">
-              <p className="text-white/40 text-xs uppercase tracking-widest">
+              <p className="text-white/50 text-xs uppercase tracking-widest">
                 Practical Examples That Actually Work
               </p>
               {[
@@ -1049,7 +1049,7 @@ export default function SunoGuidePage() {
                   🎲 Weirdness — How Far Suno Deviates From Your Instructions
                 </p>
                 <div className="flex items-center gap-3 text-xs my-1">
-                  <span className="text-white/40 text-xs w-24 text-right">
+                  <span className="text-white/50 text-xs w-24 text-right">
                     predictable
                   </span>
                   <div
@@ -1065,7 +1065,7 @@ export default function SunoGuidePage() {
                       }}
                     ></div>
                   </div>
-                  <span className="text-white/40 text-xs w-24">chaotic</span>
+                  <span className="text-white/50 text-xs w-24">chaotic</span>
                 </div>
                 <p className="text-white/65 text-base leading-relaxed">
                   <strong className="text-white">Low</strong> — predictable,
@@ -1097,7 +1097,7 @@ export default function SunoGuidePage() {
                   Style
                 </p>
                 <div className="flex items-center gap-3 text-xs my-1">
-                  <span className="text-white/40 text-xs w-24 text-right">
+                  <span className="text-white/50 text-xs w-24 text-right">
                     style drift
                   </span>
                   <div
@@ -1112,7 +1112,7 @@ export default function SunoGuidePage() {
                       }}
                     ></div>
                   </div>
-                  <span className="text-white/40 text-xs w-24">robotic</span>
+                  <span className="text-white/50 text-xs w-24">robotic</span>
                 </div>
                 <p className="text-white/65 text-base leading-relaxed">
                   <strong className="text-white">Too low</strong> — style drifts

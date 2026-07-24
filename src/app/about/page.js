@@ -409,7 +409,7 @@ export default function AboutPage() {
             </span>
           ))}
         </div>
-        <p className="text-white/40 text-sm mt-4">
+        <p className="text-white/50 text-sm mt-4">
           Tools matter less than the ears driving them — but good tools help.
         </p>
       </section>
@@ -460,7 +460,7 @@ export default function AboutPage() {
           >
             Get a Free Preview →
           </Link>
-          <p className="relative z-10 text-white/40 text-sm">
+          <p className="relative z-10 text-white/50 text-sm">
             Or just{" "}
             <Link
               href="/contact"

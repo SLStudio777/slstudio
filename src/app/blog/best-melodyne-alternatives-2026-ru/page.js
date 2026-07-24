@@ -123,10 +123,10 @@ export default function MelodyneAlternativesPageRu() {
               <table className="w-full text-sm" style={{borderCollapse: "collapse"}}>
                 <thead>
                   <tr style={{borderBottom: "1px solid rgba(255,255,255,0.1)"}}>
-                    <th className="text-left py-3 pr-6 text-white/40 text-xs uppercase tracking-widest font-medium">Вариант</th>
-                    <th className="text-left py-3 pr-6 text-white/40 text-xs uppercase tracking-widest font-medium">Воркфлоу</th>
-                    <th className="text-left py-3 pr-6 text-white/40 text-xs uppercase tracking-widest font-medium">Лучше всего для</th>
-                    <th className="text-left py-3 text-white/40 text-xs uppercase tracking-widest font-medium">Главное ограничение</th>
+                    <th className="text-left py-3 pr-6 text-white/50 text-xs uppercase tracking-widest font-medium">Вариант</th>
+                    <th className="text-left py-3 pr-6 text-white/50 text-xs uppercase tracking-widest font-medium">Воркфлоу</th>
+                    <th className="text-left py-3 pr-6 text-white/50 text-xs uppercase tracking-widest font-medium">Лучше всего для</th>
+                    <th className="text-left py-3 text-white/50 text-xs uppercase tracking-widest font-medium">Главное ограничение</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -147,7 +147,7 @@ export default function MelodyneAlternativesPageRu() {
                 </tbody>
               </table>
             </div>
-            <p className="text-white/40 text-sm italic">Цены и распродажи меняются постоянно. Сравнивайте редакцию и набор функций, которые вам реально нужны, а не самую большую цифру на странице продукта.</p>
+            <p className="text-white/50 text-sm italic">Цены и распродажи меняются постоянно. Сравнивайте редакцию и набор функций, которые вам реально нужны, а не самую большую цифру на странице продукта.</p>
           </div>
 
           <div className="flex flex-col gap-4">
@@ -162,7 +162,7 @@ export default function MelodyneAlternativesPageRu() {
             <p>Различие важно, потому что автотюнер может сделать весь вокал «правильнее» и при этом посадить одну фразу на неправильную ноту. Ручной редактор позволяет починить эту фразу, не выглаживая индивидуальность из всего остального.</p>
             <p>Многие инженеры используют обе категории. Пишут через автотюнер, затем открывают финальный вокал в нотном редакторе. Звучит избыточно — ровно до момента, когда автоматика уверенно «исправляет» выразительный подъезд на неправильную ступень гаммы. Тогда вторая стадия внезапно ощущается не роскошью, а страховкой.</p>
             <img src="/images/realtime-vs-manual-vocal-tuning-ru.png" alt="Коррекция в реальном времени в сравнении с ручной правкой нот" className="rounded-xl w-full" />
-            <p className="text-white/40 text-sm italic">Тюнеры реального времени формируют исполнение во время записи. Ручные редакторы чинят отдельные ноты после — и в профессиональной работе с вокалом часто используют оба подхода.</p>
+            <p className="text-white/50 text-sm italic">Тюнеры реального времени формируют исполнение во время записи. Ручные редакторы чинят отдельные ноты после — и в профессиональной работе с вокалом часто используют оба подхода.</p>
           </div>
 
           <div className="flex flex-col gap-4">
@@ -185,7 +185,7 @@ export default function MelodyneAlternativesPageRu() {
             <h2 className="text-xl md:text-2xl font-semibold text-white">1. Vovious — самая интересная новая альтернатива</h2>
             <p><a href="https://vovious.com" target="_blank" style={{color: "#C9A84C", textDecoration: "underline"}}>Vovious</a> — самое заметное событие в ручном тюнинге вокала за последние годы. Это не клон Melodyne и не автотюнер с графиком «для галочки» — это современный нотный редактор, спроектированный вокруг одной задачи: быстрая естественная правка монофонического вокала.</p>
             <img src="/images/vovious-editorial-ru.jpg" alt="Интерфейс редактора Vovious" className="rounded-xl w-full" />
-            <p className="text-white/40 text-sm italic">Редактор Vovious: ноты определяются автоматически, кривая питча правится прямо поверх волны.</p>
+            <p className="text-white/50 text-sm italic">Редактор Vovious: ноты определяются автоматически, кривая питча правится прямо поверх волны.</p>
             <p><strong className="text-white">Что выделяет:</strong> скорость воркфлоу. Анализ мгновенный, разбиение на ноты точное, а правки дрейфа и вибрато разделены — можно успокоить дрейф, не трогая живое вибрато. Поддержка ARA2 означает, что в совместимых DAW не нужно ничего «передавать» в плагин — трек просто открывается.</p>
             <p><strong className="text-white">Ограничения:</strong> только монофонический материал — полифонию (гитара, фортепиано, аккорды) он не разбирает, в отличие от Melodyne Editor/Studio. Продукт молодой, и экосистема вокруг него ещё формируется.</p>
             <p><strong className="text-white">Вердикт:</strong> если 90% вашей работы в Melodyne — лид-вокал и бэки, Vovious закроет это быстрее и приятнее. Подробное сравнение — в моём обзоре <a href="/blog/vovious-review" style={{color: "#C9A84C", textDecoration: "underline"}}>Vovious vs Melodyne</a> (на английском).</p>
@@ -195,7 +195,7 @@ export default function MelodyneAlternativesPageRu() {
             <h2 className="text-xl md:text-2xl font-semibold text-white">2. Synchro Arts RePitch 2 — сильнейший прямой конкурент</h2>
             <p><a href="https://www.synchroarts.com/repitch" target="_blank" style={{color: "#C9A84C", textDecoration: "underline"}}>RePitch 2</a> — то, что получается, когда команда, годами делавшая выравнивание вокала (VocAlign), строит полноценный нотный редактор. Питч, тайминг и уровни правятся на уровне нот, а звуковой движок один из самых прозрачных в индустрии даже при заметных сдвигах.</p>
             <img src="/images/repitch-editorial-ru.jpg" alt="Интерфейс редактора Synchro Arts RePitch" className="rounded-xl w-full" />
-            <p className="text-white/40 text-sm italic">RePitch 2: понотная правка питча и тайминга с одним из самых прозрачных движков на рынке.</p>
+            <p className="text-white/50 text-sm italic">RePitch 2: понотная правка питча и тайминга с одним из самых прозрачных движков на рынке.</p>
             <p><strong className="text-white">Что выделяет:</strong> связка с VocAlign. Если вы сводите многослойный вокал — лид + даблы + гармонии, — связка RePitch для питча и VocAlign для выравнивания закрывает весь процесс быстрее, чем Melodyne в одиночку. ARA2 поддерживается.</p>
             <p><strong className="text-white">Ограничения:</strong> интерфейс плотный и требует привыкания; полифонии нет; после смены владельца Synchro Arts часть пользователей осторожно смотрит на будущее лицензий.</p>
             <p><strong className="text-white">Вердикт:</strong> самая близкая по возможностям замена Melodyne для вокальной работы, особенно в коммерческом продакшене с большим количеством слоёв.</p>
@@ -305,7 +305,7 @@ export default function MelodyneAlternativesPageRu() {
 
           <div className="flex flex-col gap-2">
             <h2 className="text-lg font-semibold text-white">Источники</h2>
-            <ul className="flex flex-col gap-1 text-sm text-white/40">
+            <ul className="flex flex-col gap-1 text-sm text-white/50">
               <li><a href="https://vovious.com" target="_blank" className="hover:text-white/70 transition">vovious.com — официальная документация Vovious</a></li>
               <li><a href="https://www.synchroarts.com/repitch" target="_blank" className="hover:text-white/70 transition">synchroarts.com — RePitch 2</a></li>
               <li><a href="https://www.antarestech.com" target="_blank" className="hover:text-white/70 transition">antarestech.com — AutoTune Pro</a></li>

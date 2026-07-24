@@ -36,7 +36,7 @@ export default async function YouTube({ labels }) {
             <div className="mb-10">
                 <div className="flex items-center gap-2 mb-2">
                     <YouTubeIcon size={16} className="text-white/65" />
-                    <span className="text-white/30 text-xs uppercase tracking-[0.3em]">
+                    <span className="text-white/40 text-xs uppercase tracking-[0.3em]">
                         {t.eyebrow}
                     </span>
                 </div>

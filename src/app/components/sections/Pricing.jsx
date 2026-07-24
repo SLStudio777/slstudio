@@ -72,7 +72,7 @@ const DEFAULTS = {
   ],
   payment: [
     {
-      title: "50% upfront",
+      title: "30% upfront",
       description:
         "The rest after you approve the result. No risk on your side.",
     },
@@ -82,7 +82,7 @@ const DEFAULTS = {
         "Exact price confirmed after we discuss your project. First consultation is always free.",
     },
     {
-      title: "PayPal & bank transfer",
+      title: "Wise & bank transfer",
       description: "Working with clients worldwide. No location limitations.",
     },
   ],
@@ -195,7 +195,7 @@ export default function Pricing({ labels }) {
   return (
     <section className="py-12 border-t border-white/5">
       <div className="mb-8">
-        <span className="text-white/30 text-xs uppercase tracking-[0.3em]">
+        <span className="text-white/40 text-xs uppercase tracking-[0.3em]">
           {t.eyebrow}
         </span>
         <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mt-2">

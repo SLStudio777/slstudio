@@ -162,7 +162,7 @@ export default function VocalReverbDelayPage() {
                                         <p className="text-white font-medium text-sm w-24 flex-shrink-0">{item.send}</p>
                                         <div className="flex-1">
                                             <p className="text-white/60 text-sm">{item.plugin}</p>
-                                            <p className="text-white/30 text-xs mt-0.5">{item.role}</p>
+                                            <p className="text-white/40 text-xs mt-0.5">{item.role}</p>
                                         </div>
                                     </div>
                                 ))}

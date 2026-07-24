@@ -406,7 +406,7 @@ export default function OMniePage() {
             </span>
           ))}
         </div>
-        <p className="text-white/40 text-sm mt-4">
+        <p className="text-white/50 text-sm mt-4">
           Narzędzia znaczą mniej niż uszy, które nimi kierują — ale dobre
           narzędzia pomagają.
         </p>
@@ -458,7 +458,7 @@ export default function OMniePage() {
           >
             Darmowy fragment →
           </Link>
-          <p className="relative z-10 text-white/40 text-sm">
+          <p className="relative z-10 text-white/50 text-sm">
             Albo po prostu{" "}
             <Link
               href="/pl/kontakt"

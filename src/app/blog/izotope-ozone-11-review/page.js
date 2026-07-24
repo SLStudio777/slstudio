@@ -42,9 +42,9 @@ export default function OzoneReviewPage() {
                 {/* Header */}
                 <div className="mb-12">
                     <div className="flex items-center gap-3 mb-6">
-                        <span className="text-white/30 text-xs uppercase tracking-widest">Review</span>
+                        <span className="text-white/40 text-xs uppercase tracking-widest">Review</span>
                         <span className="text-white/20 text-xs">·</span>
-                        <span className="text-white/30 text-xs">March 15, 2025</span>
+                        <span className="text-white/40 text-xs">March 15, 2025</span>
                     </div>
                     <h1 className="text-3xl md:text-5xl font-semibold tracking-wide leading-tight mb-6">
                         iZotope Ozone 11 Review: The Best Mastering Plugin Gets Better
@@ -104,9 +104,9 @@ export default function OzoneReviewPage() {
                             <table className="w-full text-sm" style={{borderCollapse: "collapse"}}>
                                 <thead>
                                     <tr style={{borderBottom: "1px solid rgba(255,255,255,0.1)"}}>
-                                        <th className="text-left py-3 pr-6 text-white/40 text-xs uppercase tracking-widest font-medium">Feature</th>
-                                        <th className="text-left py-3 pr-6 text-white/40 text-xs uppercase tracking-widest font-medium">Standard</th>
-                                        <th className="text-left py-3 text-white/40 text-xs uppercase tracking-widest font-medium">Advanced</th>
+                                        <th className="text-left py-3 pr-6 text-white/50 text-xs uppercase tracking-widest font-medium">Feature</th>
+                                        <th className="text-left py-3 pr-6 text-white/50 text-xs uppercase tracking-widest font-medium">Standard</th>
+                                        <th className="text-left py-3 text-white/50 text-xs uppercase tracking-widest font-medium">Advanced</th>
                                     </tr>
                                 </thead>
                                 <tbody>

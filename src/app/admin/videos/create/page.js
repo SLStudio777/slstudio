@@ -64,7 +64,7 @@ export default function CreateVideoPage() {
                         Back to videos
                     </Link>
                     <div>
-                        <span className="text-white/40 text-xs uppercase tracking-[0.25em]">
+                        <span className="text-white/50 text-xs uppercase tracking-[0.25em]">
                             Content Management
                         </span>
                         <h1 className="mt-2 text-3xl font-semibold tracking-wide">
@@ -173,7 +173,7 @@ export default function CreateVideoPage() {
                     bg-white/[0.03]
                     flex flex-col gap-6
                 ">
-                    <div className="flex items-center gap-2 text-white/40">
+                    <div className="flex items-center gap-2 text-white/50">
                         <YouTubeIcon size={18} />
                         <span className="text-xs uppercase tracking-[0.25em]">
                             Preview
@@ -194,7 +194,7 @@ export default function CreateVideoPage() {
                                 <h2 className="text-xl font-semibold text-white/80">
                                     {title || "Video title"}
                                 </h2>
-                                <span className="text-white/40 text-sm">
+                                <span className="text-white/50 text-sm">
                                     youtube.com/watch?v=<span className="font-semibold text-white/70">{videoId}</span>
                                 </span>
                             </div>

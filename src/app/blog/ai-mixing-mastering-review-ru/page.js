@@ -110,7 +110,7 @@ export default function AIMixingReviewPageRu() {
                      style={{background: item.color, border: `1px solid ${item.border}`}}>
                   <span className="text-2xl flex-shrink-0">{item.icon}</span>
                   <div>
-                    <p className="text-white/40 text-xs uppercase tracking-widest mb-1">{item.step}</p>
+                    <p className="text-white/50 text-xs uppercase tracking-widest mb-1">{item.step}</p>
                     <p className="text-white font-semibold text-sm mb-1">{item.title}</p>
                     <p className="text-white/60 text-sm leading-relaxed">{item.result}</p>
                   </div>
@@ -154,10 +154,10 @@ export default function AIMixingReviewPageRu() {
               <table className="w-full text-sm" style={{borderCollapse: "collapse"}}>
                 <thead>
                   <tr style={{borderBottom: "1px solid rgba(255,255,255,0.1)"}}>
-                    <th className="text-left py-3 pr-6 text-white/40 text-xs uppercase tracking-widest font-medium">Уровень</th>
-                    <th className="text-left py-3 pr-6 text-white/40 text-xs uppercase tracking-widest font-medium">Примеры</th>
-                    <th className="text-left py-3 pr-6 text-white/40 text-xs uppercase tracking-widest font-medium">Честное применение</th>
-                    <th className="text-left py-3 text-white/40 text-xs uppercase tracking-widest font-medium">Типичная цена</th>
+                    <th className="text-left py-3 pr-6 text-white/50 text-xs uppercase tracking-widest font-medium">Уровень</th>
+                    <th className="text-left py-3 pr-6 text-white/50 text-xs uppercase tracking-widest font-medium">Примеры</th>
+                    <th className="text-left py-3 pr-6 text-white/50 text-xs uppercase tracking-widest font-medium">Честное применение</th>
+                    <th className="text-left py-3 text-white/50 text-xs uppercase tracking-widest font-medium">Типичная цена</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -181,7 +181,7 @@ export default function AIMixingReviewPageRu() {
           </div>
 
           <div className="flex flex-col gap-4">
-            <h2 className="text-xl md:text-2xl font-semibold text-white">Что изменилось после этого теста <span className="text-white/40 text-base font-normal">(обновлено в июле 2026)</span></h2>
+            <h2 className="text-xl md:text-2xl font-semibold text-white">Что изменилось после этого теста <span className="text-white/50 text-base font-normal">(обновлено в июле 2026)</span></h2>
             <p>Тест выше я проводил в начале 2026 года, а этот уголок рынка меняется быстро. С тех пор появились или дозрели несколько инструментов, которые стоит назвать, — и, что показательно, самые интересные из них сидят на уровне <strong className="text-white">ассистентов</strong>, а не полной автоматики.</p>
             <div className="flex flex-col gap-3">
               {[

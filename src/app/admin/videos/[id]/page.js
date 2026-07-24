@@ -73,7 +73,7 @@ export default function UpdateVideoPage({ params }) {
 
     if (fetching) {
         return (
-            <div className="py-20 text-white/40">
+            <div className="py-20 text-white/50">
                 Loading...
             </div>
         );
@@ -91,7 +91,7 @@ export default function UpdateVideoPage({ params }) {
                     Back to videos
                 </Link>
                 <div>
-                    <span className="text-white/40 text-xs uppercase tracking-[0.25em]">
+                    <span className="text-white/50 text-xs uppercase tracking-[0.25em]">
                         Content Management
                     </span>
                     <h1 className="mt-2 text-3xl font-semibold tracking-wide">
@@ -187,7 +187,7 @@ export default function UpdateVideoPage({ params }) {
                     border border-white/5
                     bg-white/[0.03]
                 ">
-                    <div className="flex items-center gap-2 text-white/40 mb-6">
+                    <div className="flex items-center gap-2 text-white/50 mb-6">
                         <YouTubeIcon size={18} />
                         <span className="text-xs uppercase tracking-[0.25em]">
                             Preview
@@ -204,7 +204,7 @@ export default function UpdateVideoPage({ params }) {
                             {title}
                         </h2>
 
-                        <span className="text-white/40 text-sm">
+                        <span className="text-white/50 text-sm">
                             youtube.com/watch?v=
                             <span className="text-white/70 font-semibold">
                                 {videoId}

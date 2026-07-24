@@ -627,10 +627,10 @@ export default function SunoStudioGuidePage() {
                   <tr
                     style={{ borderBottom: "1px solid rgba(255,255,255,0.1)" }}
                   >
-                    <th className="text-left py-3 pr-6 text-white/40 text-xs uppercase tracking-widest font-medium">
+                    <th className="text-left py-3 pr-6 text-white/50 text-xs uppercase tracking-widest font-medium">
                       Тег
                     </th>
-                    <th className="text-left py-3 text-white/40 text-xs uppercase tracking-widest font-medium">
+                    <th className="text-left py-3 text-white/50 text-xs uppercase tracking-widest font-medium">
                       Что делает
                     </th>
                   </tr>
@@ -748,10 +748,10 @@ export default function SunoStudioGuidePage() {
                   <tr
                     style={{ borderBottom: "1px solid rgba(255,255,255,0.1)" }}
                   >
-                    <th className="text-left py-3 pr-6 text-white/40 text-xs uppercase tracking-widest font-medium">
+                    <th className="text-left py-3 pr-6 text-white/50 text-xs uppercase tracking-widest font-medium">
                       Тег
                     </th>
-                    <th className="text-left py-3 text-white/40 text-xs uppercase tracking-widest font-medium">
+                    <th className="text-left py-3 text-white/50 text-xs uppercase tracking-widest font-medium">
                       Эффект
                     </th>
                   </tr>
@@ -1566,10 +1566,10 @@ export default function SunoStudioGuidePage() {
                   <tr
                     style={{ borderBottom: "1px solid rgba(255,255,255,0.1)" }}
                   >
-                    <th className="text-left py-3 pr-6 text-white/40 text-xs uppercase tracking-widest font-medium">
+                    <th className="text-left py-3 pr-6 text-white/50 text-xs uppercase tracking-widest font-medium">
                       Задача
                     </th>
-                    <th className="text-left py-3 text-white/40 text-xs uppercase tracking-widest font-medium">
+                    <th className="text-left py-3 text-white/50 text-xs uppercase tracking-widest font-medium">
                       Инструмент
                     </th>
                   </tr>

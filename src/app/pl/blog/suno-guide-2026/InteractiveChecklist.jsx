@@ -115,11 +115,11 @@ export default function InteractiveChecklist() {
           </div>
           <div>
             <p
-              className={`text-sm font-medium transition ${checked[i] ? "line-through text-white/30" : "text-white"}`}
+              className={`text-sm font-medium transition ${checked[i] ? "line-through text-white/40" : "text-white"}`}
             >
               {item.check}
             </p>
-            <p className="text-white/40 text-xs mt-0.5">{item.note}</p>
+            <p className="text-white/50 text-xs mt-0.5">{item.note}</p>
           </div>
         </button>
       ))}

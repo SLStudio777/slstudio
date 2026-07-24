@@ -261,7 +261,7 @@ export default function BestMixingPluginsPage() {
                     {item.name}
                   </a>
                   <div className="flex items-center gap-2">
-                    <span className="text-white/30 text-xs">
+                    <span className="text-white/40 text-xs">
                       {item.company}
                     </span>
                     <span className="text-white/20 text-xs">·</span>

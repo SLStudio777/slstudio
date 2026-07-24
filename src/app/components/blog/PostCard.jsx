@@ -41,9 +41,9 @@ export default function PostCard({ post, featured = false, eager = false }) {
                 <div className="p-6 md:p-8 flex flex-col gap-3 justify-center flex-1">
                     <div className="flex items-center gap-2">
                         <span className="text-gold text-xs uppercase tracking-widest">Latest</span>
-                        <span className="text-white/40 text-xs">·</span>
+                        <span className="text-white/50 text-xs">·</span>
                         <span className="text-white/60 text-xs uppercase tracking-widest">{post.category}</span>
-                        <span className="text-white/40 text-xs">·</span>
+                        <span className="text-white/50 text-xs">·</span>
                         <span className="text-white/60 text-xs">{formatDate(post.date, post.lang)}</span>
                     </div>
                     <h2 className="text-xl md:text-2xl font-semibold group-hover:text-gold-bright transition leading-snug text-balance">
@@ -76,7 +76,7 @@ export default function PostCard({ post, featured = false, eager = false }) {
             <div className="p-5 flex flex-col gap-3 flex-1">
                 <div className="flex items-center gap-2">
                     <span className="text-white/60 text-xs uppercase tracking-widest">{post.category}</span>
-                    <span className="text-white/40 text-xs">·</span>
+                    <span className="text-white/50 text-xs">·</span>
                     <span className="text-white/60 text-xs">{formatDate(post.date, post.lang)}</span>
                 </div>
                 <h2 className="text-base md:text-lg font-semibold group-hover:text-gold-bright transition leading-snug">

@@ -78,10 +78,10 @@ export default function MusicDistributionPage() {
                             <table className="w-full text-sm" style={{borderCollapse: "collapse"}}>
                                 <thead>
                                     <tr style={{borderBottom: "1px solid rgba(255,255,255,0.1)"}}>
-                                        <th className="text-left py-3 pr-4 text-white/40 text-xs uppercase tracking-widest font-medium">Distributor</th>
-                                        <th className="text-left py-3 pr-4 text-white/40 text-xs uppercase tracking-widest font-medium">Price</th>
-                                        <th className="text-left py-3 pr-4 text-white/40 text-xs uppercase tracking-widest font-medium">Royalties</th>
-                                        <th className="text-left py-3 text-white/40 text-xs uppercase tracking-widest font-medium">WAV Upload</th>
+                                        <th className="text-left py-3 pr-4 text-white/50 text-xs uppercase tracking-widest font-medium">Distributor</th>
+                                        <th className="text-left py-3 pr-4 text-white/50 text-xs uppercase tracking-widest font-medium">Price</th>
+                                        <th className="text-left py-3 pr-4 text-white/50 text-xs uppercase tracking-widest font-medium">Royalties</th>
+                                        <th className="text-left py-3 text-white/50 text-xs uppercase tracking-widest font-medium">WAV Upload</th>
                                     </tr>
                                 </thead>
                                 <tbody>

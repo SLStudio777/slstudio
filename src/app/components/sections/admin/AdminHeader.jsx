@@ -6,7 +6,7 @@ export default function AdminHeader({partName=""}) {
     return (
         <div className="flex items-center justify-between">
             <div>
-                <span className="text-white/40 text-xs uppercase tracking-[0.25em]">
+                <span className="text-white/50 text-xs uppercase tracking-[0.25em]">
                     Control Panel
                 </span>
                 <h1 className="mt-2 text-2xl font-semibold tracking-wide">

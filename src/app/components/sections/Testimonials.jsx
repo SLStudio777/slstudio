@@ -49,7 +49,7 @@ export default function Testimonials({ labels }) {
     return (
         <section className="py-12 border-t border-white/5">
             <div className="mb-10">
-                <span className="text-white/30 text-xs uppercase tracking-[0.3em]">
+                <span className="text-white/40 text-xs uppercase tracking-[0.3em]">
                     {L.eyebrow}
                 </span>
                 <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mt-2">

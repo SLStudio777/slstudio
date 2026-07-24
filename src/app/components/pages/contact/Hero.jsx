@@ -204,7 +204,7 @@ export default function Hero() {
       <div className="grid grid-cols-1 md:grid-cols-[1.1fr_1fr] gap-8 md:gap-10 items-stretch md:-translate-y-[36px]">
         {/* LEFT */}
         <div className="flex flex-col gap-3">
-          <span className="relative md:top-2 text-white/30 text-xs uppercase tracking-[0.3em]">
+          <span className="relative md:top-2 text-white/40 text-xs uppercase tracking-[0.3em]">
             Get In Touch
           </span>
           <div className="relative md:top-2">
@@ -312,7 +312,7 @@ export default function Hero() {
                     animation: "pulse 2s ease-in-out infinite",
                   }}
                 />
-                <p className="text-white/40 text-xs uppercase tracking-widest">
+                <p className="text-white/50 text-xs uppercase tracking-widest">
                   Response time
                 </p>
               </div>
@@ -442,7 +442,7 @@ export default function Hero() {
               <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="flex flex-col gap-2">
-                    <label className="text-white/40 text-xs uppercase tracking-widest">
+                    <label className="text-white/50 text-xs uppercase tracking-widest">
                       Name
                     </label>
                     <input
@@ -466,7 +466,7 @@ export default function Hero() {
                     />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <label className="text-white/40 text-xs uppercase tracking-widest">
+                    <label className="text-white/50 text-xs uppercase tracking-widest">
                       Email
                     </label>
                     <input
@@ -491,7 +491,7 @@ export default function Hero() {
                   </div>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label className="text-white/40 text-xs uppercase tracking-widest">
+                  <label className="text-white/50 text-xs uppercase tracking-widest">
                     Service
                   </label>
                   <select
@@ -525,7 +525,7 @@ export default function Hero() {
                   </select>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label className="text-white/40 text-xs uppercase tracking-widest">
+                  <label className="text-white/50 text-xs uppercase tracking-widest">
                     About your project
                   </label>
                   <textarea
@@ -597,7 +597,7 @@ export default function Hero() {
       {/* Three steps — same style as the "How It Works" cards on the free preview page */}
       <div className="mt-20">
         <div className="mb-8">
-          <span className="text-white/30 text-xs uppercase tracking-[0.3em]">
+          <span className="text-white/40 text-xs uppercase tracking-[0.3em]">
             What's next
           </span>
           <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mt-2">
@@ -663,7 +663,7 @@ export default function Hero() {
       {/* Mini FAQ — same card and accordion behavior as the homepage */}
       <div className="mt-20">
         <div className="mb-8">
-          <span className="text-white/30 text-xs uppercase tracking-[0.3em]">
+          <span className="text-white/40 text-xs uppercase tracking-[0.3em]">
             FAQ
           </span>
           <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mt-2">
@@ -686,8 +686,8 @@ export default function Hero() {
                 a: "Not through the form — paste a link to Google Drive, Dropbox or WeTransfer. Or use the free preview page, it has an uploader that takes up to 100 MB.",
               },
               {
-                q: "How does payment work?",
-                a: "30% upfront once we agree on the scope, the rest after you approve the final result. Wise or bank transfer (Polish IBAN); card payments are coming soon.",
+                  q: "How does payment work?",
+                  a: "30% upfront once we agree on the scope, the rest after you approve the final result. Wise or bank transfer (Polish IBAN); card payments are coming soon.",
               },
             ].map((f, i) => (
               <FaqItem

@@ -168,7 +168,7 @@ export default function GmivBuilder({ lang = "en" }) {
             >
                 <div>
                     <p className="text-white font-semibold text-base">G.M.I.V. Prompt Builder</p>
-                    <p className="text-white/40 text-xs mt-0.5">{t.subtitle}</p>
+                    <p className="text-white/50 text-xs mt-0.5">{t.subtitle}</p>
                 </div>
                 <button
                     onClick={handleReset}

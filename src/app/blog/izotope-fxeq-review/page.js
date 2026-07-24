@@ -40,9 +40,9 @@ export default function FXEQReviewPage() {
                 {/* Header */}
                 <div className="mb-12">
                     <div className="flex items-center gap-3 mb-6">
-                        <span className="text-white/30 text-xs uppercase tracking-widest">Review</span>
+                        <span className="text-white/40 text-xs uppercase tracking-widest">Review</span>
                         <span className="text-white/20 text-xs">·</span>
-                        <span className="text-white/30 text-xs">October 5, 2025</span>
+                        <span className="text-white/40 text-xs">October 5, 2025</span>
                     </div>
                     <h1 className="text-3xl md:text-5xl font-semibold tracking-wide leading-tight mb-6">
                         iZotope FXEQ Review — Frequency-Specific Effects for Mixing
@@ -124,11 +124,11 @@ export default function FXEQReviewPage() {
                         <p className="text-white/60 text-sm leading-relaxed mt-2">It is fun to use in a way that most professional tools are not. That matters — tools that spark ideas and invite experimentation tend to produce better results than tools that just process. FXEQ belongs in a professional <a href="/mixing-mastering" style={{color: "#C9A84C", textDecoration: "underline"}}>mixing</a> toolkit.</p>
                         <div className="flex gap-6 mt-3 flex-wrap">
                             <div>
-                                <p className="text-white/30 text-xs uppercase tracking-widest mb-1">Strengths</p>
+                                <p className="text-white/40 text-xs uppercase tracking-widest mb-1">Strengths</p>
                                 <p className="text-white/60 text-sm">Genuinely novel concept, practical on guitars and vocals, creative Lo-Fi modes, good BPM sync</p>
                             </div>
                             <div>
-                                <p className="text-white/30 text-xs uppercase tracking-widest mb-1">Limitations</p>
+                                <p className="text-white/40 text-xs uppercase tracking-widest mb-1">Limitations</p>
                                 <p className="text-white/60 text-sm">Learning curve for the EQ-as-effect-control paradigm, can be easy to over-process</p>
                             </div>
                         </div>

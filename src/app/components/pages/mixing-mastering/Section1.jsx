@@ -83,7 +83,7 @@ export default function Section1() {
     <section className="mt-10 flex flex-col gap-16">
       <div>
         <div className="mb-8">
-          <span className="text-white/30 text-xs uppercase tracking-[0.3em]">
+          <span className="text-white/40 text-xs uppercase tracking-[0.3em]">
             Services & Pricing
           </span>
           <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mt-2">
@@ -101,7 +101,7 @@ export default function Section1() {
             className="rounded-2xl p-8 border border-[#C9A84C]/25 bg-[#C9A84C]/[0.06] flex flex-col gap-6 h-full"
           >
             <div>
-              <p className="text-white/40 text-xs uppercase tracking-[0.25em]">
+              <p className="text-white/50 text-xs uppercase tracking-[0.25em]">
                 Starting prices
               </p>
               <div className="mt-5 flex flex-col gap-5">
@@ -179,7 +179,7 @@ export default function Section1() {
 
       <div>
         <div className="mb-8">
-          <span className="text-white/30 text-xs uppercase tracking-[0.3em]">
+          <span className="text-white/40 text-xs uppercase tracking-[0.3em]">
             The Process
           </span>
           <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mt-2">
@@ -209,7 +209,7 @@ export default function Section1() {
 
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 items-stretch">
         <GlowCard>
-          <span className="text-white/30 text-xs uppercase tracking-[0.3em] relative z-10">
+          <span className="text-white/40 text-xs uppercase tracking-[0.3em] relative z-10">
             How I Approach a Mix
           </span>
           <div className="flex flex-col gap-6 text-white/70 text-[15px] leading-relaxed relative z-10">
@@ -242,7 +242,7 @@ export default function Section1() {
         </GlowCard>
 
         <GlowCard>
-          <span className="text-white/30 text-xs uppercase tracking-[0.3em] relative z-10">
+          <span className="text-white/40 text-xs uppercase tracking-[0.3em] relative z-10">
             Guitars, Vocals &amp; Translation
           </span>
           <div className="flex flex-col gap-6 text-white/70 text-[15px] leading-relaxed relative z-10">

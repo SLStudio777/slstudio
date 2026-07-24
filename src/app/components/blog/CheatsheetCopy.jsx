@@ -83,8 +83,8 @@ export default function CheatsheetCopy({ title, items, variant = "table", footno
                     <table className="w-full text-sm" style={{ borderCollapse: "collapse" }}>
                         <thead>
                             <tr style={{ borderBottom: "1px solid rgba(255,255,255,0.1)" }}>
-                                <th className="text-left py-3 pr-6 text-white/40 text-xs uppercase tracking-widest font-medium">{t.task}</th>
-                                <th className="text-left py-3 text-white/40 text-xs uppercase tracking-widest font-medium">{t.tool}</th>
+                                <th className="text-left py-3 pr-6 text-white/50 text-xs uppercase tracking-widest font-medium">{t.task}</th>
+                                <th className="text-left py-3 text-white/50 text-xs uppercase tracking-widest font-medium">{t.tool}</th>
                             </tr>
                         </thead>
                         <tbody>
