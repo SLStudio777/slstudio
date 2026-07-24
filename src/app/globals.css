@@ -15,6 +15,15 @@
   outline-offset: 2px;
 }
 
+/* The bare `transition` utility animates outline-color, so the focus ring
+   would fade in from currentColor (a white flash ~150ms on text-white
+   elements). Pinning outline-color everywhere makes the gold ring instant. */
+*,
+::before,
+::after {
+  outline-color: #c9a84c;
+}
+
 html,
 body {
   margin: 0;
