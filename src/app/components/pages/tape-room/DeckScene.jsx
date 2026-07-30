@@ -110,6 +110,7 @@ export default function DeckScene({ onBack }) {
   const timersRef = useRef([])
   const coachTimersRef = useRef([])
   const transportCoachTimersRef = useRef([])
+  const meterAudioContextRef = useRef(null)
   const sfxRef = useRef({})
 
   const later = (fn, ms) => {
@@ -119,6 +120,8 @@ export default function DeckScene({ onBack }) {
     () => () => {
       timersRef.current.forEach(clearTimeout)
       transportCoachTimersRef.current.forEach(clearTimeout)
+      meterAudioContextRef.current?.close().catch(() => {})
+      meterAudioContextRef.current = null
     },
     [],
   )
@@ -128,13 +131,13 @@ export default function DeckScene({ onBack }) {
     transportCoachTimersRef.current = []
     setMobileCoach(null)
     if (markSeen && typeof window !== 'undefined') {
-      window.sessionStorage.setItem('tr-mobile-controls-seen-v2', '1')
+      window.sessionStorage.setItem('tr-mobile-controls-seen-v3', '1')
     }
   }
 
   function runMobileTransportCoach() {
     if (typeof window === 'undefined' || window.innerWidth > 640) return
-    if (window.sessionStorage.getItem('tr-mobile-controls-seen-v2') === '1') return
+    if (window.sessionStorage.getItem('tr-mobile-controls-seen-v3') === '1') return
 
     clearTransportCoach()
     transportCoachTimersRef.current.push(
@@ -150,7 +153,7 @@ export default function DeckScene({ onBack }) {
     setMobileCoach(null)
 
     if (typeof window === 'undefined' || window.innerWidth > 640) return
-    if (window.sessionStorage.getItem('tr-mobile-controls-seen-v2') === '1') return
+    if (window.sessionStorage.getItem('tr-mobile-controls-seen-v3') === '1') return
 
     if (deckState === 'ready' && track && !insertOn) {
       coachTimersRef.current.push(setTimeout(() => setMobileCoach('play'), 1800))
@@ -186,6 +189,21 @@ export default function DeckScene({ onBack }) {
     if (!audio) return
     audio.currentTime = 0
     audio.play().catch(() => {})
+  }
+
+  // iOS only allows Web Audio to start from a direct user gesture. Creating
+  // and resuming the meter context inside the physical PLAY click keeps the
+  // side indicators audio-reactive on phones instead of silently suspended.
+  function unlockMeterAudio() {
+    if (typeof window === 'undefined') return
+    const AudioContextClass = window.AudioContext || window.webkitAudioContext
+    if (!AudioContextClass) return
+    try {
+      if (!meterAudioContextRef.current || meterAudioContextRef.current.state === 'closed') {
+        meterAudioContextRef.current = new AudioContextClass()
+      }
+      meterAudioContextRef.current.resume().catch(() => {})
+    } catch {}
   }
 
   const transportOn =
@@ -275,6 +293,8 @@ export default function DeckScene({ onBack }) {
   }, [activeGenre, activeArtist])
 
   function onInsertEnded() {
+    // Финальный механический щелчок ровно в момент, когда крышка закрылась.
+    playSfx('stop')
     setInsertOn(false)
     // Кассета внутри, но ничего не зажато — ждём нажатия PLAY на деке
     setDeckState('ready')
@@ -365,7 +385,11 @@ export default function DeckScene({ onBack }) {
       if (!AudioContextClass) return
 
       try {
-        audioContext = new AudioContextClass()
+        audioContext = meterAudioContextRef.current
+        if (!audioContext || audioContext.state === 'closed') {
+          audioContext = new AudioContextClass()
+          meterAudioContextRef.current = audioContext
+        }
         sourceNode = audioContext.createMediaElementSource(mediaElement)
         analyser = audioContext.createAnalyser()
         analyser.fftSize = 1024
@@ -377,8 +401,6 @@ export default function DeckScene({ onBack }) {
         animateFrame()
       } catch {
         resetFrameEnergy()
-        audioContext?.close().catch(() => {})
-        audioContext = null
         sourceNode = null
         analyser = null
       }
@@ -430,7 +452,6 @@ export default function DeckScene({ onBack }) {
         sourceNode?.disconnect()
         analyser?.disconnect()
       } catch {}
-      audioContext?.close().catch(() => {})
       try {
         ws?.destroy()
       } catch {}
@@ -463,10 +484,12 @@ export default function DeckScene({ onBack }) {
     if (id === mobileCoach) setMobileCoach(null)
     if (id === 'play') {
       if (deckState === 'ready' && track) {
+        unlockMeterAudio()
         playSfx('play')
         setDeckState('playing')
         runMobileTransportCoach()
       } else if (deckState === 'paused') {
+        unlockMeterAudio()
         playSfx('play')
         setDeckState('playing')
       }
@@ -515,6 +538,8 @@ export default function DeckScene({ onBack }) {
         playSfx('eject')
         setDeckState('open')
       } else if (deckState === 'open') {
+        // Closing the empty tray uses the same short mechanical latch as STOP.
+        playSfx('stop')
         setDeckState('idle')
       }
     }

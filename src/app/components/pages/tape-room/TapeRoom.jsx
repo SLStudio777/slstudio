@@ -810,13 +810,40 @@ const css = `
     background: #0d0a07;
   }
   .tr-deck-wrap { width: 122%; max-width: none; margin-left: -11%; border-radius: 0; box-shadow: none; }
-  .tr-audio-rail { width: 3px; top: 5%; bottom: 5%; }
+  .tr-audio-rail {
+    width: 3px; top: 5%; bottom: 5%; z-index: 10;
+    mix-blend-mode: normal;
+  }
   .tr-audio-rail--left { left: 9.4%; }
   .tr-audio-rail--right { right: 9.4%; }
+  .tr-deck-wrap--playing .tr-audio-rail {
+    opacity: calc(.14 + var(--tr-rail-energy) * .72);
+  }
   .tr-hotspot { top: 66% !important; height: 30% !important; }
-  .tr-hotspot__tip { font-size: 12px; padding: 7px 11px; letter-spacing: .12em; }
+  .tr-hotspot__tip {
+    top: 25%; bottom: auto;
+    min-width: 48px; box-sizing: border-box;
+    padding: 6px 10px 13px;
+    border: 0; border-radius: 0;
+    background: rgba(23, 15, 8, .64);
+    color: rgba(239, 203, 132, .84);
+    font-size: 12px; letter-spacing: .1em; text-align: center;
+    clip-path: polygon(18% 5%, 82% 5%, 96% 35%, 50% 100%, 4% 35%);
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, .42));
+    transform: translate(-50%, -100%);
+  }
   .tr-hotspot--coach { z-index: 9; }
-  .tr-hotspot--coach::after { inset: -8% -12%; }
+  .tr-hotspot--coach::after { inset: 5% -10% 0; }
+  .tr-hotspot--coach .tr-hotspot__tip {
+    opacity: .82;
+    transform: translate(-50%, -100%);
+    animation: trCoachPick 1.35s cubic-bezier(.45, 0, .25, 1) 1 both;
+  }
+  @keyframes trCoachPick {
+    0%, 42% { transform: translate(-50%, calc(-100% - 3px)); }
+    72% { transform: translate(-50%, calc(-100% + 6px)); }
+    100% { transform: translate(-50%, -100%); }
+  }
   .tr-hotspot[data-control='play'] { left: 22% !important; width: 6.3% !important; }
   .tr-hotspot[data-control='rewind'] { left: 28.3% !important; width: 5% !important; }
   .tr-hotspot[data-control='fastForward'] { left: 33.3% !important; width: 4.8% !important; }
@@ -847,7 +874,8 @@ const css = `
 
 /* Доступность: уважаем reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .tr-room__hint, .tr-room__lamp, .tr-hotspot--hint::after, .tr-hotspot--coach::after, .tr-box,
+  .tr-room__hint, .tr-room__lamp, .tr-hotspot--hint::after, .tr-hotspot--coach::after,
+  .tr-hotspot--coach .tr-hotspot__tip, .tr-box,
   .tr-box--featured::after, .tr-artist-card { animation: none; }
   .tr-audio-rail { display: none; }
   .tr-room__frame { transition: opacity .4s ease; }
