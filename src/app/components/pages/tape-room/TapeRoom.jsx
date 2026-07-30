@@ -43,11 +43,21 @@ export default function TapeRoom() {
 const GRAIN_SVG = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`
 
 const css = `
-/* ── Корневой контейнер: вырывается из контейнера сайта на всю ширину ── */
+/* ── Tape Room занимает всю доступную ширину без 100vw.
+   100vw учитывает системную полосу прокрутки Windows и может создавать
+   горизонтальный overflow на обычных мониторах. :has снимает ограничения
+   общего main.container только на этой странице. ── */
+main.container:has(> .tr-root) {
+  width: 100%;
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
+}
 .tr-root {
   position: relative;
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
   min-height: 100svh;
   background: #14100c;
   color: #e8dfc8;
