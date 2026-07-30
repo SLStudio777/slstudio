@@ -1,13 +1,8 @@
 'use client'
 
-// ──────────────────────────────────────────────────────────
-// Сцена «комната»: полноэкранное фото студии.
-// Клик по деке → плавный зум в неё → переход к сцене деки.
-// ──────────────────────────────────────────────────────────
-
 import { useRef, useState } from 'react'
 
-const ZOOM_MS = 1200 // должно совпадать с transition в .tr-room__frame
+const ZOOM_MS = 1200
 
 export default function RoomScene({ onEnter }) {
   const [zooming, setZooming] = useState(false)
@@ -32,23 +27,29 @@ export default function RoomScene({ onEnter }) {
   return (
     <section className={`tr-room${zooming ? ' tr-room--zoom' : ''}`}>
       <div className="tr-room__frame">
-        <img
-          src="/tape-room/room.webp"
-          alt="Студийная комната: кассетная дека на столе и коробки с кассетами"
-          className="tr-room__img"
-          fetchPriority="high"
-        />
+        <picture className="tr-room__picture">
+          <source
+            media="(max-width: 640px) and (orientation: portrait)"
+            srcSet="/tape-room/room-mobile.webp"
+          />
+          <img
+            src="/tape-room/room.webp"
+            alt="Studio room with a cassette deck and tape archive"
+            className="tr-room__img"
+            fetchPriority="high"
+          />
+        </picture>
         <div className="tr-room__lamp" aria-hidden="true" />
         <div className="tr-room__vignette" aria-hidden="true" />
 
-        <button type="button" className="tr-room__hotspot" onClick={enter} aria-label="Включить деку">
-          <span className="tr-room__hint">▸ Включить деку</span>
+        <button type="button" className="tr-room__hotspot" onClick={enter} aria-label="Switch on the deck">
+          <span className="tr-room__hint">▸ Switch on the deck</span>
         </button>
       </div>
 
       <header className="tr-room__title">
         <h1>The Tape Room</h1>
-        <p>Личный архив живого звука</p>
+        <p>A personal archive of living sound</p>
       </header>
     </section>
   )

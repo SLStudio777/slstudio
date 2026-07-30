@@ -99,6 +99,7 @@ export default function DeckScene({ onBack }) {
   const [activeArtist, setActiveArtist] = useState(null)
   const [insertOn, setInsertOn] = useState(false)
   const [audioError, setAudioError] = useState(false)
+  const [mobileCoach, setMobileCoach] = useState(null)
 
   const deckRef = useRef(null)
   const insertRef = useRef(null)
@@ -107,12 +108,44 @@ export default function DeckScene({ onBack }) {
   const trayRef = useRef(null)
   const wavesurferRef = useRef(null)
   const timersRef = useRef([])
+  const coachTimersRef = useRef([])
   const sfxRef = useRef({})
 
   const later = (fn, ms) => {
     timersRef.current.push(setTimeout(fn, ms))
   }
   useEffect(() => () => timersRef.current.forEach(clearTimeout), [])
+
+  useEffect(() => {
+    coachTimersRef.current.forEach(clearTimeout)
+    coachTimersRef.current = []
+    setMobileCoach(null)
+
+    if (typeof window === 'undefined' || window.innerWidth > 640) return
+    if (window.sessionStorage.getItem('tr-mobile-controls-seen') === '1') return
+
+    const coachLater = (stage, ms, finish = false) => {
+      coachTimersRef.current.push(
+        setTimeout(() => {
+          setMobileCoach(stage)
+          if (finish) window.sessionStorage.setItem('tr-mobile-controls-seen', '1')
+        }, ms),
+      )
+    }
+
+    if (deckState === 'ready' && track && !insertOn) {
+      coachLater('play', 1800)
+    } else if (deckState === 'playing') {
+      coachLater('pause', 2600)
+      coachLater('stop', 4700)
+      coachLater(null, 6900, true)
+    }
+
+    return () => {
+      coachTimersRef.current.forEach(clearTimeout)
+      coachTimersRef.current = []
+    }
+  }, [deckState, track?.id, insertOn])
 
   useEffect(() => {
     const sounds = {}
@@ -412,6 +445,7 @@ export default function DeckScene({ onBack }) {
   // ── Физические кнопки деки ──
   function handleHotspot(id) {
     if (insertOn) return
+    if (id === mobileCoach) setMobileCoach(null)
     if (id === 'play') {
       if (deckState === 'ready' && track) {
         playSfx('play')
@@ -557,14 +591,19 @@ export default function DeckScene({ onBack }) {
             <button
               key={h.id}
               type="button"
-              className={`tr-hotspot${
+              className={[
+                'tr-hotspot',
                 (h.id === 'play' && deckState === 'ready' && track) ||
                 (h.id === 'pause' && deckState === 'playing') ||
                 ((h.id === 'rewind' || h.id === 'fastForward') &&
                   (deckState === 'playing' || deckState === 'paused'))
-                  ? ' tr-hotspot--hint'
-                  : ''
-              }`}
+                  ? 'tr-hotspot--hint'
+                  : '',
+                mobileCoach === h.id ? 'tr-hotspot--coach' : '',
+              ]
+                .filter(Boolean)
+                .join(' ')}
+              data-control={h.id}
               style={{
                 left: `${h.x}%`,
                 top: `${h.y}%`,
@@ -574,7 +613,9 @@ export default function DeckScene({ onBack }) {
               onClick={() => handleHotspot(h.id)}
               aria-label={h.label}
             >
-              <span className="tr-hotspot__tip">{h.label}</span>
+              <span className="tr-hotspot__tip">
+                {mobileCoach === h.id ? h.id.toUpperCase() : h.label}
+              </span>
             </button>
           ))}
           </div>
