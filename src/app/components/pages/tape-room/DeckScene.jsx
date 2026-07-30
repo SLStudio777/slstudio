@@ -77,7 +77,7 @@ function groupTracksByArtist(tracks) {
       group = {
         artist,
         artistId,
-        label: artist === 'SL Studio' ? 'Other recordings' : artist,
+        label: artist,
         logo: track.artistLogo || null,
         logoVariant: track.artistLogoVariant || null,
         tracks: [],
@@ -133,13 +133,13 @@ export default function DeckScene({ onBack }) {
     transportCoachTimersRef.current = []
     setMobileCoach(null)
     if (markSeen && typeof window !== 'undefined') {
-      window.sessionStorage.setItem('tr-mobile-controls-seen-v4', '1')
+      window.sessionStorage.setItem('tr-mobile-controls-seen-v5', '1')
     }
   }
 
   function runMobileTransportCoach() {
     if (typeof window === 'undefined' || window.innerWidth > 640) return
-    if (window.sessionStorage.getItem('tr-mobile-controls-seen-v4') === '1') return
+    if (window.sessionStorage.getItem('tr-mobile-controls-seen-v5') === '1') return
 
     clearTransportCoach()
     transportCoachTimersRef.current.push(
@@ -155,7 +155,7 @@ export default function DeckScene({ onBack }) {
     setMobileCoach(null)
 
     if (typeof window === 'undefined' || window.innerWidth > 640) return
-    if (window.sessionStorage.getItem('tr-mobile-controls-seen-v4') === '1') return
+    if (window.sessionStorage.getItem('tr-mobile-controls-seen-v5') === '1') return
 
     if (deckState === 'ready' && track && !insertOn) {
       coachTimersRef.current.push(setTimeout(() => setMobileCoach('play'), 1800))
@@ -324,7 +324,7 @@ export default function DeckScene({ onBack }) {
   function onInsertTimeUpdate() {
     const video = insertRef.current
     if (!video?.duration || insertLatchPlayedRef.current) return
-    if (video.duration - video.currentTime <= 0.65) {
+    if (video.duration - video.currentTime <= 0.8) {
       insertLatchPlayedRef.current = true
       playSfx('stop')
     }

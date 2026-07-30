@@ -17,7 +17,7 @@ import ScrollReveal from "../../common/ScrollReveal";
 const LABELS = {
   en: {
     tracks: "tracks",
-    bands: "Bands I've played with",
+    bands: "Bands & personal projects",
     download: "Download",
     showAll: "Show all",
     showLess: "Show less",
@@ -36,7 +36,7 @@ const LABELS = {
   },
   pl: {
     tracks: "utwor\u00f3w",
-    bands: "Zespo\u0142y, z kt\u00f3rymi gra\u0142em",
+    bands: "Zespo\u0142y i projekty autorskie",
     download: "Pobierz",
     showAll: "Poka\u017c wszystkie",
     showLess: "Zwi\u0144",
@@ -133,7 +133,7 @@ function BandCard({ band, lang }) {
       : band.logoVariant === "color"
         ? "#4e3d4c"
         : "#050507";
-  const needsEdgeBlend = ["TM", "ID", "RS"].includes(band.badge);
+  const needsEdgeBlend = ["TM", "ID", "RS", "SL"].includes(band.badge);
 
   return (
     <article

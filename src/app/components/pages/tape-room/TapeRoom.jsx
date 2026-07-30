@@ -860,7 +860,8 @@ const css = `
   .tr-hotspot--coach { z-index: 9; }
   .tr-hotspot--coach::after { inset: 5% -10% 0; }
   .tr-hotspot--coach .tr-hotspot__tip {
-    opacity: .82; transform: translate(-50%, -100%);
+    display: block; visibility: visible;
+    opacity: .82 !important; transform: translate(-50%, -100%);
     animation: trCoachPick 1.25s cubic-bezier(.45, 0, .25, 1) 1 both;
   }
   @keyframes trCoachPick {

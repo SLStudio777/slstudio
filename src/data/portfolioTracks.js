@@ -62,8 +62,8 @@ export const portfolioSections = [
         "title": "Epistrofunk",
         "file": "/audio/portfolio/epistrofunk.mp3",
         "duration": "2:32",
-        "captionEn": "",
-        "captionPl": "",
+        "captionEn": "SL Studio",
+        "captionPl": "SL Studio",
         "band": null,
         "cover": false
       }
@@ -316,8 +316,8 @@ export const portfolioSections = [
         "title": "It Feels So Good",
         "file": "/audio/portfolio/it-feels-so-good.mp3",
         "duration": "4:10",
-        "captionEn": "",
-        "captionPl": "",
+        "captionEn": "SL Studio",
+        "captionPl": "SL Studio",
         "band": null,
         "cover": true
       },
@@ -326,8 +326,8 @@ export const portfolioSections = [
         "title": "SOS d'un terrien en d\u00e9tresse",
         "file": "/audio/portfolio/sos-dun-terrien.mp3",
         "duration": "5:00",
-        "captionEn": "",
-        "captionPl": "",
+        "captionEn": "SL Studio",
+        "captionPl": "SL Studio",
         "band": null,
         "cover": true
       },
@@ -336,8 +336,8 @@ export const portfolioSections = [
         "title": "Chandelier (Sia)",
         "file": "/audio/portfolio/chandelier-sia.mp3",
         "duration": "3:41",
-        "captionEn": "",
-        "captionPl": "",
+        "captionEn": "SL Studio",
+        "captionPl": "SL Studio",
         "band": null,
         "cover": true
       }
@@ -440,8 +440,8 @@ export const portfolioSections = [
         "title": "\u0417\u043d\u0430\u0439\u0434\u0438 \u043c\u0435\u043d\u0435",
         "file": "/audio/portfolio/znaidy-mene.mp3",
         "duration": "4:53",
-        "captionEn": "",
-        "captionPl": "",
+        "captionEn": "SL Studio",
+        "captionPl": "SL Studio",
         "band": null,
         "cover": false
       },
@@ -450,8 +450,8 @@ export const portfolioSections = [
         "title": "Blood Moon Rite",
         "file": "/audio/portfolio/blood-moon-rite.mp3",
         "duration": "4:23",
-        "captionEn": "",
-        "captionPl": "",
+        "captionEn": "SL Studio",
+        "captionPl": "SL Studio",
         "band": null,
         "cover": false
       },
@@ -460,8 +460,8 @@ export const portfolioSections = [
         "title": "Ashes on the Water",
         "file": "/audio/portfolio/ashes-on-the-water.mp3",
         "duration": "4:13",
-        "captionEn": "",
-        "captionPl": "",
+        "captionEn": "SL Studio",
+        "captionPl": "SL Studio",
         "band": null,
         "cover": false
       },
@@ -470,8 +470,8 @@ export const portfolioSections = [
         "title": "Whispers of the Old Grove",
         "file": "/audio/portfolio/old-grove-whispers.mp3",
         "duration": "3:40",
-        "captionEn": "",
-        "captionPl": "",
+        "captionEn": "SL Studio",
+        "captionPl": "SL Studio",
         "band": null,
         "cover": false
       },
@@ -480,8 +480,8 @@ export const portfolioSections = [
         "title": "Crow's Lullaby",
         "file": "/audio/portfolio/crows-lullaby.mp3",
         "duration": "3:10",
-        "captionEn": "",
-        "captionPl": "",
+        "captionEn": "SL Studio",
+        "captionPl": "SL Studio",
         "band": null,
         "cover": false
       }
@@ -497,8 +497,8 @@ export const portfolioSections = [
         "title": "\u0412\u0438\u0440\u0443\u0441-\u043b\u044e\u0431\u043e\u0432\u044c",
         "file": "/audio/portfolio/virus-lyubov.mp3",
         "duration": "3:08",
-        "captionEn": "",
-        "captionPl": "",
+        "captionEn": "Oleg Volos",
+        "captionPl": "Oleg Volos",
         "band": null,
         "cover": false
       },
@@ -507,8 +507,8 @@ export const portfolioSections = [
         "title": "\u0418\u044e\u043b\u044c",
         "file": "/audio/portfolio/iyul.mp3",
         "duration": "3:22",
-        "captionEn": "",
-        "captionPl": "",
+        "captionEn": "Oleg Volos",
+        "captionPl": "Oleg Volos",
         "band": null,
         "cover": false
       },
@@ -517,8 +517,8 @@ export const portfolioSections = [
         "title": "\u041f\u043e\u0434 \u0434\u043e\u0436\u0434\u0451\u043c",
         "file": "/audio/portfolio/pod-dozhdyom.mp3",
         "duration": "3:18",
-        "captionEn": "",
-        "captionPl": "",
+        "captionEn": "Oleg Volos",
+        "captionPl": "Oleg Volos",
         "band": null,
         "cover": false
       },
@@ -527,8 +527,8 @@ export const portfolioSections = [
         "title": "\u0420\u044b\u0446\u0430\u0440\u044c",
         "file": "/audio/portfolio/rytsar.mp3",
         "duration": "3:10",
-        "captionEn": "",
-        "captionPl": "",
+        "captionEn": "Oleg Volos",
+        "captionPl": "Oleg Volos",
         "band": null,
         "cover": false
       },
@@ -584,8 +584,8 @@ export const portfolioSections = [
         "title": "\u0417\u043e\u043b\u0443\u0448\u043a\u0430",
         "file": "/audio/portfolio/zolushka.mp3",
         "duration": "3:50",
-        "captionEn": "",
-        "captionPl": "",
+        "captionEn": "SL Studio",
+        "captionPl": "SL Studio",
         "band": null,
         "cover": true
       },
@@ -604,8 +604,8 @@ export const portfolioSections = [
         "title": "Badinerie (J.S. Bach)",
         "file": "/audio/portfolio/badinerie-bach.mp3",
         "duration": "2:26",
-        "captionEn": "",
-        "captionPl": "",
+        "captionEn": "SL Studio",
+        "captionPl": "SL Studio",
         "band": null,
         "cover": true
       },
@@ -614,8 +614,8 @@ export const portfolioSections = [
         "title": "Adagio (Albinoni)",
         "file": "/audio/portfolio/adagio-albinoni.mp3",
         "duration": "4:46",
-        "captionEn": "",
-        "captionPl": "",
+        "captionEn": "SL Studio",
+        "captionPl": "SL Studio",
         "band": null,
         "cover": true
       },
@@ -624,8 +624,8 @@ export const portfolioSections = [
         "title": "Bailando",
         "file": "/audio/portfolio/bailando.mp3",
         "duration": "3:48",
-        "captionEn": "",
-        "captionPl": "",
+        "captionEn": "SL Studio",
+        "captionPl": "SL Studio",
         "band": null,
         "cover": true
       },
@@ -634,8 +634,8 @@ export const portfolioSections = [
         "title": "Lovers in Warsaw",
         "file": "/audio/portfolio/lovers-in-warsaw.mp3",
         "duration": "3:40",
-        "captionEn": "",
-        "captionPl": "",
+        "captionEn": "SL Studio",
+        "captionPl": "SL Studio",
         "band": null,
         "cover": false
       }
@@ -693,5 +693,15 @@ export const portfolioBands = [
     "cityPl": "Warszawa",
     "textEn": "Warsaw metal founded and driven by Andrii \u2014 the songwriter, arranger and engine of the project. Igor on drums brings raw energy that electrifies every room. Serhii handles the solo guitars and arrangements. Different vocalists, always evolving, never standing still.",
     "textPl": "Warszawski metal za\u0142o\u017cony i nap\u0119dzany przez Andrija \u2014 kompozytora, aran\u017cera i si\u0142\u0119 nap\u0119dow\u0105 projektu. Igor za perkusj\u0105 wnosi energi\u0119, kt\u00f3ra elektryzuje ka\u017cd\u0105 sal\u0119. Siergiej odpowiada za gitary solowe i aran\u017cacje. R\u00f3\u017cni wokali\u015bci, ci\u0105g\u0142a ewolucja, \u017cadnego stania w miejscu."
+  },
+  {
+    "badge": "SL",
+    "logo": "/images/bands/sl-studio.webp",
+    "logoVariant": "dark",
+    "name": "SL Studio",
+    "cityEn": "Personal project",
+    "cityPl": "Projekt autorski",
+    "textEn": "The music that never belonged to just one band: original sketches, studio experiments, classical arrangements and covers recorded across the years. SL Studio is Serhii’s personal archive — the place where every side of the guitar, every idea and every unfinished direction can meet.",
+    "textPl": "Muzyka, która nigdy nie należała tylko do jednego zespołu: autorskie szkice, eksperymenty studyjne, aranżacje klasyczne i covery nagrywane przez lata. SL Studio to osobiste archiwum Siergieja — miejsce, w którym spotykają się wszystkie strony gitary, pomysły i niedokończone kierunki."
   }
 ];

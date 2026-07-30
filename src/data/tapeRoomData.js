@@ -61,10 +61,13 @@ const ARTIST_LOGOS = {
   idillia: { src: '/images/bands/idillia.webp', variant: 'dark' },
   paradox: { src: '/images/bands/paradox.webp', variant: 'color' },
   'red-sky-syndrome': { src: '/images/bands/red-sky-syndrome.webp', variant: 'dark' },
+  'sl-studio': { src: '/images/bands/sl-studio.webp', variant: 'dark' },
 }
 const BRANDS = ['sony', 'tdk', 'basf', 'maxell', 'denon', 'blank']
 
 function getArtistName(track) {
+  // Keep Olga in the existing unassigned bucket until its genre is decided.
+  if (track.slug === 'olga') return 'Other recordings'
   const caption = track.captionEn || track.captionPl || ''
   const captionName = caption.split('—')[0].trim()
   const rawName = captionName || BAND_NAMES[track.band] || 'SL Studio'
@@ -132,7 +135,7 @@ for (const track of ALL_TRACKS) {
     artist = {
       id: track.artistId,
       name: track.artist,
-      displayName: track.artist === 'SL Studio' ? 'Other recordings' : track.artist,
+      displayName: track.artist,
       logo: track.artistLogo,
       logoVariant: track.artistLogoVariant,
       tracks: [],
