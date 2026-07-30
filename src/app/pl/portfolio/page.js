@@ -10,6 +10,20 @@ export const metadata = {
   title: "Portfolio — Moja muzyka",
   description: "Jazz, blues, rock, metal, dark folk, pop i klasyka — piosenki, które napisałem, grałem w zespołach i odrestaurowałem ze starych nagrań.",
   alternates: { canonical: `${SITE}/pl/portfolio`, languages: { en: `${SITE}/portfolio`, pl: `${SITE}/pl/portfolio`, "x-default": `${SITE}/portfolio` } },
+  openGraph: {
+    title: "Portfolio — Moja muzyka | SL Studio",
+    description: "Jazz, blues, rock, metal, dark folk, pop i klasyka — piosenki, które napisałem, grałem w zespołach i odrestaurowałem ze starych nagrań.",
+    url: `${SITE}/pl/portfolio`,
+    siteName: "SL Studio",
+    type: "website",
+    images: [{ url: "/images/og-image.png", alt: "SL Studio music portfolio" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Portfolio — Moja muzyka | SL Studio",
+    description: "Jazz, blues, rock, metal, dark folk, pop i klasyka — piosenki, które napisałem, grałem w zespołach i odrestaurowałem ze starych nagrań.",
+    images: ["/images/og-image.png"],
+  },
 };
 
 export default function PortfolioPagePl() {

@@ -63,6 +63,19 @@ const SUBGROUP_NAMES = {
   RS: "Red Sky Syndrome",
 };
 
+const BAND_ARCHIVE_KEYS = {
+  TM: "band-TM",
+  BB: "band-BB",
+  ID: "band-ID",
+  PX: "band-PX",
+  RS: "band-RS",
+  SL: "artist-SL Studio",
+};
+
+function artistArchiveId(key) {
+  return `pf-artist-${key.replace(/[^a-zA-Z0-9_-]/g, "-")}`;
+}
+
 function Vinyl({ spinning }) {
   return (
     <span
@@ -100,7 +113,7 @@ function EqBars({ playing }) {
   );
 }
 
-function BandCard({ band, lang }) {
+function BandCard({ band, lang, onOpen }) {
   const ref = useRef(null);
 
   function onMove(e) {
@@ -133,14 +146,24 @@ function BandCard({ band, lang }) {
       : band.logoVariant === "color"
         ? "#4e3d4c"
         : "#050507";
-  const needsEdgeBlend = ["TM", "ID", "RS", "SL"].includes(band.badge);
+  const needsEdgeBlend = ["TM", "ID", "RS"].includes(band.badge);
 
   return (
     <article
       ref={ref}
       onMouseMove={onMove}
       onMouseLeave={onLeave}
-      className="group relative overflow-hidden rounded-2xl border border-[#C9A84C]/20 bg-[#15120e] p-3 transition-transform duration-200 will-change-transform"
+      onClick={() => onOpen?.(band)}
+      onKeyDown={(event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          onOpen?.(band);
+        }
+      }}
+      role="button"
+      tabIndex={0}
+      aria-label={`Open ${band.name} song archive`}
+      className="group relative cursor-pointer overflow-hidden rounded-2xl border border-[#C9A84C]/20 bg-[#15120e] p-3 transition-transform duration-200 will-change-transform focus-visible:ring-2 focus-visible:ring-[#C9A84C]/70"
       style={{
         boxShadow:
           "0 22px 45px -30px rgba(0,0,0,0.95), inset 0 1px rgba(255,230,180,0.04)",
@@ -282,6 +305,28 @@ export default function PortfolioPlayer({ lang = "en" }) {
     });
   });
 
+  function openBandArchive(band) {
+    const artistKey = BAND_ARCHIVE_KEYS[band.badge];
+    if (!artistKey) return;
+    setBrowseMode("artists");
+    setOpenCollection(`artist:${artistKey}`);
+
+    const placeArtistBelowHeader = (behavior = "smooth") => {
+      const element = document.getElementById(artistArchiveId(artistKey));
+      if (!element) return;
+      const header = document.querySelector("nav.sticky");
+      const headerHeight = header?.getBoundingClientRect().height || 72;
+      const top = element.getBoundingClientRect().top + window.scrollY - headerHeight - 22;
+      window.scrollTo({ top: Math.max(0, top), behavior });
+    };
+
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    window.setTimeout(() => placeArtistBelowHeader(reducedMotion ? "auto" : "smooth"), 80);
+    // A second exact placement runs after the previous accordion has finished
+    // collapsing, preventing lower artists from landing halfway under the header.
+    window.setTimeout(() => placeArtistBelowHeader("auto"), 620);
+  }
+
   // Spacebar = play/pause
   const toggleCurrent = useCallback(() => {
     const audio = audioRef.current;
@@ -324,9 +369,9 @@ export default function PortfolioPlayer({ lang = "en" }) {
     const audio = audioRef.current;
     if (!audio) return;
     audio.src = track.file;
-    audio.play();
     setCurrent(track.slug);
-    setPlaying(true);
+    setPlaying(false);
+    requestAudioPlay(audio);
     const section = portfolioSections.find((item) =>
       item.tracks.some((candidate) => candidate.slug === track.slug),
     );
@@ -346,10 +391,10 @@ export default function PortfolioPlayer({ lang = "en" }) {
     const audio = audioRef.current;
     if (!audio) return;
     audio.src = track.file;
-    audio.play();
     setCurrent(track.slug);
-    setPlaying(true);
+    setPlaying(false);
     setProgress(0);
+    requestAudioPlay(audio);
   }
 
   function toggle(track) {
@@ -538,10 +583,10 @@ export default function PortfolioPlayer({ lang = "en" }) {
           const next = i >= 0 ? allTracks[i + 1] : null;
           if (audio && next && autoNext) {
             audio.src = next.file;
-            audio.play();
             setCurrent(next.slug);
-            setPlaying(true);
+            setPlaying(false);
             setProgress(0);
+            requestAudioPlay(audio);
           } else {
             setPlaying(false);
             setProgress(0);
@@ -581,6 +626,13 @@ export default function PortfolioPlayer({ lang = "en" }) {
           <Shuffle size={14} />
           {t.random}
         </button>
+        <a
+          href="/tape-room"
+          className="ml-0 inline-flex min-h-10 items-center gap-2 rounded-full border border-[#e8c97a]/65 bg-[#C9A84C]/10 px-5 py-2 text-sm font-medium text-[#e8c97a] shadow-[0_0_24px_rgba(201,168,76,0.2)] transition hover:-translate-y-0.5 hover:bg-[#C9A84C]/20 hover:shadow-[0_0_32px_rgba(201,168,76,0.36)] sm:ml-auto"
+        >
+          Enter the Tape Room
+          <span aria-hidden="true">→</span>
+        </a>
       </div>
 
       {/* Compact catalogue: one open drawer at a time */}
@@ -663,7 +715,7 @@ export default function PortfolioPlayer({ lang = "en" }) {
                           ? "border-[#C9A84C]/35 bg-[#C9A84C]/[0.035]"
                           : "border-white/[0.07] bg-white/[0.02] hover:border-[#C9A84C]/20"
                       }`}
-                      style={{ scrollMarginTop: 90 }}
+                      style={{ scrollMarginTop: 112 }}
                     >
                       <button
                         type="button"
@@ -724,7 +776,9 @@ export default function PortfolioPlayer({ lang = "en" }) {
                   const isOpen = openCollection === key;
                   return (
                     <section
+                      id={artistArchiveId(artist.key)}
                       key={artist.key}
+                      style={{ scrollMarginTop: 112 }}
                       className={`overflow-hidden rounded-2xl border transition ${
                         isOpen
                           ? "border-[#C9A84C]/35 bg-[#C9A84C]/[0.035]"
@@ -789,7 +843,7 @@ export default function PortfolioPlayer({ lang = "en" }) {
           </h2>
           <div className="grid gap-4 md:grid-cols-2">
             {portfolioBands.map((b) => (
-              <BandCard key={b.badge} band={b} lang={lang} />
+              <BandCard key={b.badge} band={b} lang={lang} onOpen={openBandArchive} />
             ))}
           </div>
         </section>

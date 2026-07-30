@@ -65,6 +65,14 @@ const HOTSPOTS = [
   { id: 'pause', label: 'Pause', x: 43.5, y: 70.5, w: 5.4, h: 20 },
 ]
 
+const ALL_LIBRARY_TRACKS = ARTISTS.flatMap((artist) => artist.tracks)
+
+function formatTapeTime(seconds) {
+  if (!Number.isFinite(seconds) || seconds < 0) return '0:00'
+  const whole = Math.floor(seconds)
+  return `${Math.floor(whole / 60)}:${String(whole % 60).padStart(2, '0')}`
+}
+
 function groupTracksByArtist(tracks) {
   const groups = []
   const byArtist = new Map()
@@ -101,6 +109,9 @@ export default function DeckScene({ onBack }) {
   const [audioError, setAudioError] = useState(false)
   const [mobileCoach, setMobileCoach] = useState(null)
   const [mobileTransportHint, setMobileTransportHint] = useState(null)
+  const [quickQueueInfo, setQuickQueueInfo] = useState(null)
+  const [continuousPlay, setContinuousPlay] = useState(true)
+  const [trackTime, setTrackTime] = useState({ current: 0, duration: 0 })
 
   const deckRef = useRef(null)
   const frameRef = useRef(null)
@@ -114,6 +125,9 @@ export default function DeckScene({ onBack }) {
   const coachTimersRef = useRef([])
   const transportCoachTimersRef = useRef([])
   const meterAudioContextRef = useRef(null)
+  const quickQueueRef = useRef([])
+  const quickQueueIndexRef = useRef(-1)
+  const continuousPlayRef = useRef(true)
   const sfxRef = useRef({})
 
   const later = (fn, ms) => {
@@ -240,9 +254,99 @@ export default function DeckScene({ onBack }) {
     deckState === 'rewinding' ||
     deckState === 'fastForwarding'
 
+  function clearQuickQueue() {
+    quickQueueRef.current = []
+    quickQueueIndexRef.current = -1
+    setQuickQueueInfo(null)
+  }
+
+  function setContinuousEnabled(enabled) {
+    continuousPlayRef.current = enabled
+    setContinuousPlay(enabled)
+  }
+
+  function toggleContinuousPlay() {
+    setContinuousEnabled(!continuousPlayRef.current)
+  }
+
+  function startQuickQueue(items, label, shuffle = false) {
+    if (!items?.length || insertOn) return
+    const queue = [...items]
+    if (shuffle) {
+      for (let i = queue.length - 1; i > 0; i -= 1) {
+        const j = Math.floor(Math.random() * (i + 1))
+        ;[queue[i], queue[j]] = [queue[j], queue[i]]
+      }
+    }
+
+    unlockMeterAudio()
+    clearTransportCoach()
+    setContinuousEnabled(true)
+    quickQueueRef.current = queue
+    quickQueueIndexRef.current = 0
+    setQuickQueueInfo({ label, position: 1, total: queue.length })
+    setInsertOn(false)
+    setAudioError(false)
+    setTrack(queue[0])
+    setDeckState('playing')
+    playSfx('play')
+    runMobileTransportCoach()
+    deckRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+  }
+
+  function advanceQuickQueue() {
+    const queue = quickQueueRef.current
+    if (!queue.length) {
+      setDeckState('ready')
+      return
+    }
+    const nextIndex = (quickQueueIndexRef.current + 1) % queue.length
+
+    quickQueueIndexRef.current = nextIndex
+    setQuickQueueInfo((current) =>
+      current ? { ...current, position: nextIndex + 1 } : current,
+    )
+    setAudioError(false)
+    setTrack(queue[nextIndex])
+    setDeckState('playing')
+  }
+
+  function seekWaveWithKeyboard(event) {
+    const ws = wavesurferRef.current
+    const duration = ws?.getDuration?.() || trackTime.duration || 0
+    if (!ws || !duration) return
+
+    let target = null
+    const step = Math.max(1, duration * 0.05)
+    if (event.key === 'ArrowRight' || event.key === 'ArrowUp')
+      target = Math.min(duration, (ws.getCurrentTime?.() || 0) + step)
+    else if (event.key === 'ArrowLeft' || event.key === 'ArrowDown')
+      target = Math.max(0, (ws.getCurrentTime?.() || 0) - step)
+    else if (event.key === 'Home') target = 0
+    else if (event.key === 'End') target = Math.max(0, duration - 0.05)
+
+    if (target === null) return
+    event.preventDefault()
+    ws.setTime(target)
+    setTrackTime({ current: Math.floor(target), duration: Math.floor(duration) })
+  }
+
+  function advanceLibraryTrack() {
+    if (!ALL_LIBRARY_TRACKS.length || !track) {
+      setDeckState('ready')
+      return
+    }
+    const currentIndex = ALL_LIBRARY_TRACKS.findIndex((item) => item.id === track.id)
+    const nextIndex = currentIndex >= 0 ? (currentIndex + 1) % ALL_LIBRARY_TRACKS.length : 0
+    setAudioError(false)
+    setTrack(ALL_LIBRARY_TRACKS[nextIndex])
+    setDeckState('playing')
+  }
+
   // ── Выбор кассеты: открыть деку → положить кассету → видео вставки ──
   function pickCassette(genre, t, soundVariant) {
     if (insertOn) return
+    clearQuickQueue()
     primeSfx(['insert', 'stop'])
     playSfx(soundVariant % 2 === 0 ? 'cassettePickup1' : 'cassettePickup2')
     setAudioError(false)
@@ -353,6 +457,7 @@ export default function DeckScene({ onBack }) {
     let mediaElement = null
     let animationFrame = 0
     let removeReadyListener = null
+    let removeTimeUpdateListener = null
     let removePlayListener = null
     let smoothLeft = 0
     let smoothRight = 0
@@ -455,17 +560,22 @@ export default function DeckScene({ onBack }) {
         if (cancelled || !waveRef.current) return
         ws = WaveSurfer.create({
           container: waveRef.current,
-          height: 56,
-          waveColor: 'rgba(96, 72, 44, 0.35)',
-          progressColor: '#8a6a34',
-          cursorColor: '#C9A84C',
+          height: 62,
+          waveColor: 'rgba(222, 202, 156, 0.2)',
+          progressColor: '#d4ae54',
+          cursorColor: '#f0d68f',
+          cursorWidth: 1,
           barWidth: 2,
-          barGap: 2,
-          barRadius: 2,
+          barGap: 3,
+          barRadius: 3,
+          normalize: true,
+          dragToSeek: true,
+          hideScrollbar: true,
           url: track.audio,
           autoplay: true,
         })
         removeReadyListener = ws.on('ready', () => {
+          setTrackTime({ current: 0, duration: Math.floor(ws.getDuration?.() || 0) })
           mediaElement = ws.getMediaElement?.() || null
           if (!mediaElement) return
           const onPlay = () => {
@@ -476,10 +586,24 @@ export default function DeckScene({ onBack }) {
           removePlayListener = () => mediaElement?.removeEventListener('play', onPlay)
           if (!mediaElement.paused) onPlay()
         })
-        // When the tape ends, release the transport and the frame light.
+        removeTimeUpdateListener = ws.on('timeupdate', (currentTime) => {
+          const currentSeconds = Math.floor(currentTime || 0)
+          const durationSeconds = Math.floor(ws.getDuration?.() || 0)
+          setTrackTime((previous) =>
+            previous.current === currentSeconds && previous.duration === durationSeconds
+              ? previous
+              : { current: currentSeconds, duration: durationSeconds },
+          )
+        })
+        // The illuminated repeat control governs both quick queues and a
+        // cassette selected manually from the archive.
         ws.on('finish', () => {
           resetFrameEnergy()
-          setDeckState('ready')
+          if (!continuousPlayRef.current) {
+            clearQuickQueue()
+            setDeckState('ready')
+          } else if (quickQueueRef.current.length) advanceQuickQueue()
+          else advanceLibraryTrack()
         })
         ws.on('error', () => setAudioError(true))
         wavesurferRef.current = ws
@@ -490,6 +614,7 @@ export default function DeckScene({ onBack }) {
       cancelled = true
       cancelAnimationFrame(animationFrame)
       removeReadyListener?.()
+      removeTimeUpdateListener?.()
       removePlayListener?.()
       resetFrameEnergy()
       try {
@@ -571,6 +696,7 @@ export default function DeckScene({ onBack }) {
     } else if (id === 'stop') {
       clearTransportCoach()
       if (transportOn) {
+        clearQuickQueue()
         playSfx('stop')
         // Звук и видео останавливаются сразу. На 160 мс показываем физически
         // зажатую STOP, затем клавиша отщёлкивается; кассета остаётся внутри.
@@ -591,29 +717,6 @@ export default function DeckScene({ onBack }) {
     }
   }
 
-  const status = insertOn
-    ? 'Inserting cassette…'
-    : deckState === 'idle'
-      ? 'Open a box below and choose a cassette'
-      : deckState === 'open'
-        ? 'Deck is open — choose a cassette from a box'
-        : deckState === 'loaded'
-          ? 'Cassette in tray'
-          : deckState === 'ready'
-            ? track
-              ? 'Cassette loaded — press ▸ PLAY on the deck'
-              : ''
-            : deckState === 'paused'
-              ? 'Paused — press PAUSE again to continue'
-              : deckState === 'rewinding'
-                ? 'Rewinding 10 seconds…'
-                : deckState === 'fastForwarding'
-                  ? 'Fast-forwarding 10 seconds…'
-                  : deckState === 'stopping'
-                    ? 'Stopped'
-                : track
-                ? `Playing: ${track.artist} — ${track.title}`
-                : ''
 
   // Какое фото деки показываем под видео/оверлеями
   const stillState = insertOn ? 'loaded' : deckState
@@ -663,7 +766,7 @@ export default function DeckScene({ onBack }) {
           src="/tape-room/cassette-insert-web.mp4"
           muted
           playsInline
-          preload="auto"
+          preload="metadata"
           onTimeUpdate={onInsertTimeUpdate}
           onEnded={onInsertEnded}
         />
@@ -676,7 +779,7 @@ export default function DeckScene({ onBack }) {
           muted
           playsInline
           loop
-          preload="auto"
+          preload="metadata"
         />
 
         {/* Физические кнопки: PLAY / REW / FF / STOP-EJECT / PAUSE */}
@@ -721,21 +824,57 @@ export default function DeckScene({ onBack }) {
             </button>
           ))}
             </div>
+            <button
+              type="button"
+              className={`tr-continuous-toggle${continuousPlay ? ' tr-continuous-toggle--on' : ''}`}
+              aria-pressed={continuousPlay}
+              aria-label={continuousPlay ? 'Turn continuous play off' : 'Turn continuous play on'}
+              title={continuousPlay ? 'Continuous play is on' : 'Continuous play is off'}
+              onClick={toggleContinuousPlay}
+            >
+              <span className="tr-continuous-toggle__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M7 7.5h8.2a4.3 4.3 0 0 1 0 8.6H14" />
+                  <path d="m7 4-3.5 3.5L7 11" />
+                  <path d="M17 20l3.5-3.5L17 13" />
+                </svg>
+              </span>
+              <small>AUTO</small>
+              <i aria-hidden="true" />
+            </button>
           </div>
-
-          <p className="tr-status">{status}</p>
         </div>
 
       {/* ── Вкладыш с треком и волной ── */}
       {track && (deckState === 'ready' || deckState === 'stopping' || transportOn) && !insertOn && (
         <div className="tr-jcard">
           <div className="tr-jcard__line">
-            <span className="tr-jcard__title">
-              {track.artist} — {track.title}
-            </span>
+            <div className="tr-jcard__heading">
+              <span className="tr-jcard__eyebrow">Now playing</span>
+              <span className="tr-jcard__title">
+                {track.artist} — {track.title}
+              </span>
+            </div>
             <span className="tr-jcard__genre">{track.genreName}</span>
           </div>
-          <div ref={waveRef} />
+          <div
+            className="tr-wave-shell"
+            role="slider"
+            tabIndex={trackTime.duration > 0 ? 0 : -1}
+            aria-label={`Seek ${track.artist} — ${track.title}`}
+            aria-valuemin={0}
+            aria-valuemax={Math.max(0, trackTime.duration)}
+            aria-valuenow={Math.min(trackTime.current, trackTime.duration || 0)}
+            aria-valuetext={`${formatTapeTime(trackTime.current)} elapsed, ${formatTapeTime(Math.max(0, trackTime.duration - trackTime.current))} remaining`}
+            aria-disabled={trackTime.duration <= 0}
+            onKeyDown={seekWaveWithKeyboard}
+          >
+            <div ref={waveRef} className="tr-waveform" />
+            <div className="tr-wave-time" aria-label="Playback time">
+              <span>{formatTapeTime(trackTime.current)}</span>
+              <span>−{formatTapeTime(Math.max(0, trackTime.duration - trackTime.current))}</span>
+            </div>
+          </div>
           {audioError && (
             <p className="tr-jcard__error">
               Audio file not found — check the path in src/data/tapeRoomData.js
@@ -780,12 +919,39 @@ export default function DeckScene({ onBack }) {
             </button>
           </div>
 
-          <a className="tr-quick-listen" href="/portfolio">
-            <span>Standard player</span>
-            <small>quick listening</small>
-            <strong aria-hidden="true">→</strong>
-          </a>
+          <div className="tr-quick-actions">
+            <button
+              type="button"
+              className="tr-shuffle-listen"
+              onClick={() =>
+                startQuickQueue(
+                  ARTISTS.flatMap((artist) => artist.tracks),
+                  'Shuffle all recordings',
+                  true,
+                )
+              }
+            >
+              <span>Shuffle all</span>
+              <small>continuous random play</small>
+              <strong aria-hidden="true">⤨</strong>
+            </button>
+            <a className="tr-quick-listen" href="/portfolio">
+              <span>Standard player</span>
+              <small>open the compact catalogue</small>
+              <strong aria-hidden="true">→</strong>
+            </a>
+          </div>
         </div>
+
+        {quickQueueInfo && (
+          <div className="tr-queue-status" role="status">
+            <span>Continuous play</span>
+            <strong>{quickQueueInfo.label}</strong>
+            <small>
+              {quickQueueInfo.position} / {quickQueueInfo.total}
+            </small>
+          </div>
+        )}
 
         {collectionMode === 'genres' ? (
           <>
@@ -829,7 +995,7 @@ export default function DeckScene({ onBack }) {
                   <>
                     <div className="tr-hits-intro">
                       <span>SL Studio selection</span>
-                      <h3>Five pieces to begin with</h3>
+                      <h3>Six pieces to begin with</h3>
                       <p>A short route through different sides of the studio archive.</p>
                     </div>
                     <div className="tr-tray__grid tr-tray__grid--hits">
@@ -963,6 +1129,19 @@ export default function DeckScene({ onBack }) {
                     {activeArtist.tracks.length} recordings ·{' '}
                     {[...new Set(activeArtist.tracks.map((item) => item.genreName))].join(' · ')}
                   </p>
+                  <button
+                    type="button"
+                    className="tr-play-series"
+                    onClick={() =>
+                      startQuickQueue(
+                        activeArtist.tracks,
+                        `${activeArtist.displayName} · in order`,
+                      )
+                    }
+                  >
+                    <span aria-hidden="true">▶</span>
+                    Play all in order
+                  </button>
                 </div>
 
                 <div className="tr-tray__grid">
