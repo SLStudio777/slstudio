@@ -109,12 +109,40 @@ export default function DeckScene({ onBack }) {
   const wavesurferRef = useRef(null)
   const timersRef = useRef([])
   const coachTimersRef = useRef([])
+  const transportCoachTimersRef = useRef([])
   const sfxRef = useRef({})
 
   const later = (fn, ms) => {
     timersRef.current.push(setTimeout(fn, ms))
   }
-  useEffect(() => () => timersRef.current.forEach(clearTimeout), [])
+  useEffect(
+    () => () => {
+      timersRef.current.forEach(clearTimeout)
+      transportCoachTimersRef.current.forEach(clearTimeout)
+    },
+    [],
+  )
+
+  function clearTransportCoach(markSeen = false) {
+    transportCoachTimersRef.current.forEach(clearTimeout)
+    transportCoachTimersRef.current = []
+    setMobileCoach(null)
+    if (markSeen && typeof window !== 'undefined') {
+      window.sessionStorage.setItem('tr-mobile-controls-seen-v2', '1')
+    }
+  }
+
+  function runMobileTransportCoach() {
+    if (typeof window === 'undefined' || window.innerWidth > 640) return
+    if (window.sessionStorage.getItem('tr-mobile-controls-seen-v2') === '1') return
+
+    clearTransportCoach()
+    transportCoachTimersRef.current.push(
+      setTimeout(() => setMobileCoach('pause'), 1600),
+      setTimeout(() => setMobileCoach('stop'), 3900),
+      setTimeout(() => clearTransportCoach(true), 6200),
+    )
+  }
 
   useEffect(() => {
     coachTimersRef.current.forEach(clearTimeout)
@@ -122,23 +150,10 @@ export default function DeckScene({ onBack }) {
     setMobileCoach(null)
 
     if (typeof window === 'undefined' || window.innerWidth > 640) return
-    if (window.sessionStorage.getItem('tr-mobile-controls-seen') === '1') return
-
-    const coachLater = (stage, ms, finish = false) => {
-      coachTimersRef.current.push(
-        setTimeout(() => {
-          setMobileCoach(stage)
-          if (finish) window.sessionStorage.setItem('tr-mobile-controls-seen', '1')
-        }, ms),
-      )
-    }
+    if (window.sessionStorage.getItem('tr-mobile-controls-seen-v2') === '1') return
 
     if (deckState === 'ready' && track && !insertOn) {
-      coachLater('play', 1800)
-    } else if (deckState === 'playing') {
-      coachLater('pause', 2600)
-      coachLater('stop', 4700)
-      coachLater(null, 6900, true)
+      coachTimersRef.current.push(setTimeout(() => setMobileCoach('play'), 1800))
     }
 
     return () => {
@@ -450,11 +465,13 @@ export default function DeckScene({ onBack }) {
       if (deckState === 'ready' && track) {
         playSfx('play')
         setDeckState('playing')
+        runMobileTransportCoach()
       } else if (deckState === 'paused') {
         playSfx('play')
         setDeckState('playing')
       }
     } else if (id === 'pause') {
+      clearTransportCoach(true)
       if (deckState === 'playing') {
         playSfx('pause')
         setDeckState('paused')
@@ -482,6 +499,7 @@ export default function DeckScene({ onBack }) {
         later(() => setDeckState('playing'), 1260)
       }
     } else if (id === 'stop') {
+      clearTransportCoach(true)
       if (transportOn) {
         playSfx('stop')
         // Звук и видео останавливаются сразу. На 160 мс показываем физически
@@ -544,8 +562,9 @@ export default function DeckScene({ onBack }) {
 
         {/* ── Дека на том же рабочем столе, что и в общей сцене ── */}
         <div className="tr-deck-workbench">
-          <div
-            className={`tr-deck-wrap${deckState === 'playing' ? ' tr-deck-wrap--playing' : ''}`}
+          <div className="tr-deck-frame">
+            <div
+              className={`tr-deck-wrap${deckState === 'playing' ? ' tr-deck-wrap--playing' : ''}`}
             ref={deckRef}
           >
             <span className="tr-audio-rail tr-audio-rail--left" aria-hidden="true" />
@@ -618,6 +637,7 @@ export default function DeckScene({ onBack }) {
               </span>
             </button>
           ))}
+            </div>
           </div>
 
           <p className="tr-status">{status}</p>

@@ -24,8 +24,15 @@ export default function RoomScene({ onEnter }) {
     setTimeout(onEnter, ZOOM_MS)
   }
 
+  function enterFromRoom() {
+    if (typeof window !== 'undefined' && window.innerWidth <= 640) enter()
+  }
+
   return (
-    <section className={`tr-room${zooming ? ' tr-room--zoom' : ''}`}>
+    <section
+      className={`tr-room${zooming ? ' tr-room--zoom' : ''}`}
+      onClick={enterFromRoom}
+    >
       <div className="tr-room__frame">
         <picture className="tr-room__picture">
           <source

@@ -7,17 +7,30 @@
 // намеренно — без Tailwind-токенов (правило проекта после 24.07).
 // ──────────────────────────────────────────────────────────
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import RoomScene from './RoomScene'
 import DeckScene from './DeckScene'
 
 export default function TapeRoom() {
   const [scene, setScene] = useState('room') // 'room' | 'deck'
 
+  useEffect(() => {
+    if (window.innerWidth <= 640 && window.sessionStorage.getItem('tr-mobile-room-entered') === '1') {
+      setScene('deck')
+    }
+  }, [])
+
+  function enterDeck() {
+    if (typeof window !== 'undefined' && window.innerWidth <= 640) {
+      window.sessionStorage.setItem('tr-mobile-room-entered', '1')
+    }
+    setScene('deck')
+  }
+
   return (
     <div className="tr-root">
       {scene === 'room' ? (
-        <RoomScene onEnter={() => setScene('deck')} />
+        <RoomScene onEnter={enterDeck} />
       ) : (
         <DeckScene onBack={() => setScene('room')} />
       )}
@@ -191,6 +204,7 @@ const css = `
 .tr-back:hover { color: #f0dfb2; border-color: rgba(201, 168, 76, .72); background: rgba(32, 22, 12, .72); }
 
 .tr-deck-workbench { position: relative; max-width: 1040px; margin: 0 auto; }
+.tr-deck-frame { position: relative; }
 .tr-deck-workbench::before {
   content: ''; position: absolute; left: 4%; right: 4%; bottom: 1%; height: 34%; z-index: -1;
   background:
@@ -776,6 +790,7 @@ const css = `
   .tr-tray__grid--hits { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 @media (max-width: 640px) {
+  .tr-room { cursor: pointer; }
   .tr-room__frame { transform-origin: 27% 54%; }
   .tr-room__img { object-position: center center; }
   .tr-room__hotspot { left: 4.5%; top: 47.5%; width: 45%; height: 12%; }
@@ -784,15 +799,28 @@ const css = `
   .tr-room__title h1 { font-size: clamp(34px, 11vw, 48px); }
   .tr-room__title p { max-width: 280px; margin-left: auto; margin-right: auto; line-height: 1.55; }
   .tr-deck-nav__title { display: none; }
-  .tr-deck-workbench { overflow: hidden; margin-left: -14px; margin-right: -14px; }
-  .tr-deck-wrap { width: 148%; max-width: none; margin-left: -24%; border-radius: 5px; }
+  .tr-deck-workbench { margin-left: -8px; margin-right: -8px; }
+  .tr-deck-frame {
+    overflow: hidden; border-radius: 8px;
+    border: 1px solid rgba(232, 190, 119, .3);
+    box-shadow:
+      0 0 0 2px rgba(12, 8, 5, .64),
+      0 0 0 3px rgba(226, 167, 94, .1),
+      0 18px 44px -22px rgba(0, 0, 0, .92);
+    background: #0d0a07;
+  }
+  .tr-deck-wrap { width: 122%; max-width: none; margin-left: -11%; border-radius: 0; box-shadow: none; }
+  .tr-audio-rail { width: 3px; top: 5%; bottom: 5%; }
+  .tr-audio-rail--left { left: 9.4%; }
+  .tr-audio-rail--right { right: 9.4%; }
+  .tr-hotspot { top: 66% !important; height: 30% !important; }
   .tr-hotspot__tip { font-size: 12px; padding: 7px 11px; letter-spacing: .12em; }
   .tr-hotspot--coach { z-index: 9; }
   .tr-hotspot--coach::after { inset: -8% -12%; }
-  .tr-hotspot[data-control='play'] { left: 22.2% !important; width: 6.4% !important; }
-  .tr-hotspot[data-control='rewind'] { left: 28.3% !important; width: 5.2% !important; }
-  .tr-hotspot[data-control='fastForward'] { left: 33.2% !important; width: 5.2% !important; }
-  .tr-hotspot[data-control='stop'] { left: 38% !important; width: 5.8% !important; }
+  .tr-hotspot[data-control='play'] { left: 22% !important; width: 6.3% !important; }
+  .tr-hotspot[data-control='rewind'] { left: 28.3% !important; width: 5% !important; }
+  .tr-hotspot[data-control='fastForward'] { left: 33.3% !important; width: 4.8% !important; }
+  .tr-hotspot[data-control='stop'] { left: 38.1% !important; width: 5.3% !important; }
   .tr-hotspot[data-control='pause'] { left: 43.4% !important; width: 6.2% !important; }
   .tr-shelf { padding: 18px 14px; border-radius: 14px; }
   .tr-shelf__head { align-items: start; flex-direction: column; gap: 9px; }
