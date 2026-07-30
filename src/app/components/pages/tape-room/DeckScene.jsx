@@ -100,6 +100,7 @@ export default function DeckScene({ onBack }) {
   const [insertOn, setInsertOn] = useState(false)
   const [audioError, setAudioError] = useState(false)
   const [mobileCoach, setMobileCoach] = useState(null)
+  const [mobileTransportHint, setMobileTransportHint] = useState(null)
 
   const deckRef = useRef(null)
   const frameRef = useRef(null)
@@ -128,24 +129,26 @@ export default function DeckScene({ onBack }) {
     [],
   )
 
-  function clearTransportCoach(markSeen = false) {
+  function clearTransportCoach() {
     transportCoachTimersRef.current.forEach(clearTimeout)
     transportCoachTimersRef.current = []
     setMobileCoach(null)
-    if (markSeen && typeof window !== 'undefined') {
-      window.sessionStorage.setItem('tr-mobile-controls-seen-v5', '1')
-    }
+    setMobileTransportHint(null)
   }
 
   function runMobileTransportCoach() {
     if (typeof window === 'undefined' || window.innerWidth > 640) return
-    if (window.sessionStorage.getItem('tr-mobile-controls-seen-v5') === '1') return
 
     clearTransportCoach()
     transportCoachTimersRef.current.push(
+      // PAUSE appears briefly, then STOP arrives quickly and stays until pressed.
       setTimeout(() => setMobileCoach('pause'), 1600),
-      setTimeout(() => setMobileCoach('stop'), 3900),
-      setTimeout(() => clearTransportCoach(true), 6200),
+      setTimeout(() => setMobileCoach((current) => (current === 'pause' ? null : current)), 2800),
+      setTimeout(() => setMobileCoach('stop'), 3200),
+      // Seek controls are only a one-second visual aside; STOP remains visible.
+      setTimeout(() => setMobileTransportHint('rewind'), 11000),
+      setTimeout(() => setMobileTransportHint('fastForward'), 12000),
+      setTimeout(() => setMobileTransportHint(null), 13000),
     )
   }
 
@@ -155,10 +158,8 @@ export default function DeckScene({ onBack }) {
     setMobileCoach(null)
 
     if (typeof window === 'undefined' || window.innerWidth > 640) return
-    if (window.sessionStorage.getItem('tr-mobile-controls-seen-v5') === '1') return
-
     if (deckState === 'ready' && track && !insertOn) {
-      coachTimersRef.current.push(setTimeout(() => setMobileCoach('play'), 1800))
+      coachTimersRef.current.push(setTimeout(() => setMobileCoach('play'), 850))
     }
 
     return () => {
@@ -525,6 +526,7 @@ export default function DeckScene({ onBack }) {
   function handleHotspot(id) {
     if (insertOn) return
     if (id === mobileCoach) setMobileCoach(null)
+    if (id === mobileTransportHint) setMobileTransportHint(null)
     if (id === 'play') {
       if (deckState === 'ready' && track) {
         unlockMeterAudio()
@@ -537,7 +539,6 @@ export default function DeckScene({ onBack }) {
         setDeckState('playing')
       }
     } else if (id === 'pause') {
-      clearTransportCoach(true)
       if (deckState === 'playing') {
         playSfx('pause')
         setDeckState('paused')
@@ -562,10 +563,13 @@ export default function DeckScene({ onBack }) {
         playSfx('rewind')
         ws.setTime(target)
         setDeckState(id === 'rewind' ? 'rewinding' : 'fastForwarding')
-        later(() => setDeckState('playing'), 1260)
+        later(() => {
+          setDeckState('playing')
+          if (typeof window !== 'undefined' && window.innerWidth <= 640) setMobileCoach('stop')
+        }, 1260)
       }
     } else if (id === 'stop') {
-      clearTransportCoach(true)
+      clearTransportCoach()
       if (transportOn) {
         playSfx('stop')
         // Звук и видео останавливаются сразу. На 160 мс показываем физически
@@ -689,7 +693,9 @@ export default function DeckScene({ onBack }) {
                   (deckState === 'playing' || deckState === 'paused'))
                   ? 'tr-hotspot--hint'
                   : '',
-                mobileCoach === h.id ? 'tr-hotspot--coach' : '',
+                mobileCoach === h.id || mobileTransportHint === h.id
+                  ? 'tr-hotspot--coach'
+                  : '',
               ]
                 .filter(Boolean)
                 .join(' ')}
@@ -704,7 +710,13 @@ export default function DeckScene({ onBack }) {
               aria-label={h.label}
             >
               <span className="tr-hotspot__tip">
-                {mobileCoach === h.id ? h.id.toUpperCase() : h.label}
+                {mobileTransportHint === h.id
+                  ? h.id === 'rewind'
+                    ? '«'
+                    : '»'
+                  : mobileCoach === h.id
+                    ? h.id.toUpperCase()
+                    : h.label}
               </span>
             </button>
           ))}

@@ -66,8 +66,6 @@ const ARTIST_LOGOS = {
 const BRANDS = ['sony', 'tdk', 'basf', 'maxell', 'denon', 'blank']
 
 function getArtistName(track) {
-  // Keep Olga in the existing unassigned bucket until its genre is decided.
-  if (track.slug === 'olga') return 'Other recordings'
   const caption = track.captionEn || track.captionPl || ''
   const captionName = caption.split('—')[0].trim()
   const rawName = captionName || BAND_NAMES[track.band] || 'SL Studio'
@@ -107,13 +105,14 @@ const BASE_GENRES = portfolioSections.map((section, sectionIndex) => {
 
 const ALL_TRACKS = BASE_GENRES.flatMap((genre) => genre.tracks)
 
-// Кураторская пятёрка. Состав меняется одной строкой без копирования MP3.
+// Кураторская шестёрка. Состав меняется одной строкой без копирования MP3.
 export const HIT_TRACK_IDS = [
-  'temperatura-nekhilo',
-  'bleuler-kapitan',
-  'idillia-adrenalin',
-  'red-sky-black-sun',
+  'bleuler-vodograi',
   'kofe-aromat',
+  'paradox-kholodno-navkolo',
+  'idillia-druzya',
+  'tuchka',
+  'red-sky-smert',
 ]
 
 const hitTracks = HIT_TRACK_IDS.map((id) => ALL_TRACKS.find((track) => track.id === id)).filter(Boolean)

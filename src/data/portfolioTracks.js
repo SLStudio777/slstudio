@@ -66,6 +66,16 @@ export const portfolioSections = [
         "captionPl": "SL Studio",
         "band": null,
         "cover": false
+      },
+      {
+        "slug": "olga",
+        "title": "\u041e\u043b\u044c\u0433\u0430",
+        "file": "/audio/portfolio/olga.mp3",
+        "duration": "3:32",
+        "captionEn": "SL Studio",
+        "captionPl": "SL Studio",
+        "band": null,
+        "cover": false
       }
     ]
   },
@@ -588,16 +598,6 @@ export const portfolioSections = [
         "captionPl": "SL Studio",
         "band": null,
         "cover": true
-      },
-      {
-        "slug": "olga",
-        "title": "\u041e\u043b\u044c\u0433\u0430",
-        "file": "/audio/portfolio/olga.mp3",
-        "duration": "3:32",
-        "captionEn": "",
-        "captionPl": "",
-        "band": null,
-        "cover": false
       },
       {
         "slug": "badinerie-bach",
