@@ -102,7 +102,9 @@ export default function DeckScene({ onBack }) {
   const [mobileCoach, setMobileCoach] = useState(null)
 
   const deckRef = useRef(null)
+  const frameRef = useRef(null)
   const insertRef = useRef(null)
+  const insertLatchPlayedRef = useRef(false)
   const loopRef = useRef(null)
   const waveRef = useRef(null)
   const trayRef = useRef(null)
@@ -131,13 +133,13 @@ export default function DeckScene({ onBack }) {
     transportCoachTimersRef.current = []
     setMobileCoach(null)
     if (markSeen && typeof window !== 'undefined') {
-      window.sessionStorage.setItem('tr-mobile-controls-seen-v3', '1')
+      window.sessionStorage.setItem('tr-mobile-controls-seen-v4', '1')
     }
   }
 
   function runMobileTransportCoach() {
     if (typeof window === 'undefined' || window.innerWidth > 640) return
-    if (window.sessionStorage.getItem('tr-mobile-controls-seen-v3') === '1') return
+    if (window.sessionStorage.getItem('tr-mobile-controls-seen-v4') === '1') return
 
     clearTransportCoach()
     transportCoachTimersRef.current.push(
@@ -153,7 +155,7 @@ export default function DeckScene({ onBack }) {
     setMobileCoach(null)
 
     if (typeof window === 'undefined' || window.innerWidth > 640) return
-    if (window.sessionStorage.getItem('tr-mobile-controls-seen-v3') === '1') return
+    if (window.sessionStorage.getItem('tr-mobile-controls-seen-v4') === '1') return
 
     if (deckState === 'ready' && track && !insertOn) {
       coachTimersRef.current.push(setTimeout(() => setMobileCoach('play'), 1800))
@@ -191,9 +193,34 @@ export default function DeckScene({ onBack }) {
     audio.play().catch(() => {})
   }
 
-  // iOS only allows Web Audio to start from a direct user gesture. Creating
-  // and resuming the meter context inside the physical PLAY click keeps the
-  // side indicators audio-reactive on phones instead of silently suspended.
+  // Unlock delayed mobile sounds during the original cassette tap.
+  function primeSfx(ids) {
+    ids.forEach((id) => {
+      const audio = sfxRef.current[id]
+      if (!audio) return
+      const volume = audio.volume
+      audio.volume = 0
+      audio.currentTime = 0
+      const promise = audio.play()
+      if (!promise?.then) {
+        audio.pause()
+        audio.currentTime = 0
+        audio.volume = volume
+        return
+      }
+      promise
+        .then(() => {
+          audio.pause()
+          audio.currentTime = 0
+          audio.volume = volume
+        })
+        .catch(() => {
+          audio.volume = volume
+        })
+    })
+  }
+
+  // iOS requires Web Audio to be created/resumed directly in the PLAY tap.
   function unlockMeterAudio() {
     if (typeof window === 'undefined') return
     const AudioContextClass = window.AudioContext || window.webkitAudioContext
@@ -215,6 +242,7 @@ export default function DeckScene({ onBack }) {
   // ── Выбор кассеты: открыть деку → положить кассету → видео вставки ──
   function pickCassette(genre, t, soundVariant) {
     if (insertOn) return
+    primeSfx(['insert', 'stop'])
     playSfx(soundVariant % 2 === 0 ? 'cassettePickup1' : 'cassettePickup2')
     setAudioError(false)
     setTrack({ ...t, genreName: t.genreName || genre.name })
@@ -223,6 +251,7 @@ export default function DeckScene({ onBack }) {
     deckRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
 
     const startInsert = () => {
+      insertLatchPlayedRef.current = false
       playSfx('insert')
       setInsertOn(true)
       later(() => {
@@ -292,9 +321,18 @@ export default function DeckScene({ onBack }) {
     return () => clearTimeout(timer)
   }, [activeGenre, activeArtist])
 
+  function onInsertTimeUpdate() {
+    const video = insertRef.current
+    if (!video?.duration || insertLatchPlayedRef.current) return
+    if (video.duration - video.currentTime <= 0.65) {
+      insertLatchPlayedRef.current = true
+      playSfx('stop')
+    }
+  }
+
   function onInsertEnded() {
-    // Финальный механический щелчок ровно в момент, когда крышка закрылась.
-    playSfx('stop')
+    if (!insertLatchPlayedRef.current) playSfx('stop')
+    insertLatchPlayedRef.current = true
     setInsertOn(false)
     // Кассета внутри, но ничего не зажато — ждём нажатия PLAY на деке
     setDeckState('ready')
@@ -323,9 +361,14 @@ export default function DeckScene({ onBack }) {
     const clamp = (value) => Math.min(1, Math.max(0, value))
     const setFrameEnergy = (left, right) => {
       const deck = deckRef.current
+      const frame = frameRef.current
       if (!deck) return
       deck.style.setProperty('--tr-audio-left', left.toFixed(3))
       deck.style.setProperty('--tr-audio-right', right.toFixed(3))
+      frame?.style.setProperty('--tr-audio-left', left.toFixed(3))
+      frame?.style.setProperty('--tr-audio-right', right.toFixed(3))
+      if (Math.max(left, right) > 0.025) frame?.classList.add('tr-deck-frame--meter-live')
+      else frame?.classList.remove('tr-deck-frame--meter-live')
     }
     const resetFrameEnergy = () => setFrameEnergy(0, 0)
 
@@ -538,7 +581,6 @@ export default function DeckScene({ onBack }) {
         playSfx('eject')
         setDeckState('open')
       } else if (deckState === 'open') {
-        // Closing the empty tray uses the same short mechanical latch as STOP.
         playSfx('stop')
         setDeckState('idle')
       }
@@ -587,7 +629,10 @@ export default function DeckScene({ onBack }) {
 
         {/* ── Дека на том же рабочем столе, что и в общей сцене ── */}
         <div className="tr-deck-workbench">
-          <div className="tr-deck-frame">
+          <div
+            ref={frameRef}
+            className={`tr-deck-frame${deckState === 'playing' ? ' tr-deck-frame--playing' : ''}`}
+          >
             <div
               className={`tr-deck-wrap${deckState === 'playing' ? ' tr-deck-wrap--playing' : ''}`}
             ref={deckRef}
@@ -615,6 +660,7 @@ export default function DeckScene({ onBack }) {
           muted
           playsInline
           preload="auto"
+          onTimeUpdate={onInsertTimeUpdate}
           onEnded={onInsertEnded}
         />
 
