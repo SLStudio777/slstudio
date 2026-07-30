@@ -646,6 +646,8 @@ export const portfolioSections = [
 export const portfolioBands = [
   {
     "badge": "TM",
+    "logo": "/images/bands/temperatura.webp",
+    "logoVariant": "light",
     "name": "Temperatura",
     "cityEn": "Dniprorudne",
     "cityPl": "Dniprorudne",
@@ -654,6 +656,8 @@ export const portfolioBands = [
   },
   {
     "badge": "BB",
+    "logo": "/images/bands/bleuler-band.webp",
+    "logoVariant": "dark",
     "name": "Bleuler Band",
     "cityEn": "Dniprorudne",
     "cityPl": "Dniprorudne",
@@ -662,6 +666,8 @@ export const portfolioBands = [
   },
   {
     "badge": "ID",
+    "logo": "/images/bands/idillia.webp",
+    "logoVariant": "dark",
     "name": "Idillia",
     "cityEn": "Vasylivka",
     "cityPl": "Wasyliwka",
@@ -670,6 +676,8 @@ export const portfolioBands = [
   },
   {
     "badge": "PX",
+    "logo": "/images/bands/paradox.webp",
+    "logoVariant": "color",
     "name": "Paradox",
     "cityEn": "Warsaw",
     "cityPl": "Warszawa",
@@ -678,6 +686,8 @@ export const portfolioBands = [
   },
   {
     "badge": "RS",
+    "logo": "/images/bands/red-sky-syndrome.webp",
+    "logoVariant": "dark",
     "name": "Red Sky Syndrome",
     "cityEn": "Warsaw",
     "cityPl": "Warszawa",

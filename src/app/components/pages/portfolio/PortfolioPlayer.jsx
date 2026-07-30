@@ -29,6 +29,10 @@ const LABELS = {
     copyLink: "Copy link",
     copied: "Copied!",
     seek: "Seek",
+    byGenre: "By genre",
+    byArtist: "By artist",
+    chooseGenre: "Choose a genre to open its tracks",
+    chooseArtist: "Choose an artist to see tracks from every genre",
   },
   pl: {
     tracks: "utwor\u00f3w",
@@ -44,6 +48,10 @@ const LABELS = {
     copyLink: "Kopiuj link",
     copied: "Skopiowano!",
     seek: "Przewiń",
+    byGenre: "Według gatunku",
+    byArtist: "Według wykonawcy",
+    chooseGenre: "Wybierz gatunek, aby rozwinąć utwory",
+    chooseArtist: "Wybierz wykonawcę, aby zobaczyć utwory ze wszystkich gatunków",
   },
 };
 
@@ -94,6 +102,7 @@ function EqBars({ playing }) {
 
 function BandCard({ band, lang }) {
   const ref = useRef(null);
+
   function onMove(e) {
     const el = ref.current;
     if (!el) return;
@@ -101,10 +110,10 @@ function BandCard({ band, lang }) {
     const r = el.getBoundingClientRect();
     const x = e.clientX - r.left;
     const y = e.clientY - r.top;
-    const rx = (y / r.height - 0.5) * -5;
-    const ry = (x / r.width - 0.5) * 5;
+    const rx = (y / r.height - 0.5) * -3.5;
+    const ry = (x / r.width - 0.5) * 3.5;
     el.style.transform =
-      "perspective(700px) rotateX(" +
+      "perspective(800px) rotateX(" +
       rx.toFixed(2) +
       "deg) rotateY(" +
       ry.toFixed(2) +
@@ -112,50 +121,126 @@ function BandCard({ band, lang }) {
     el.style.setProperty("--px", x + "px");
     el.style.setProperty("--py", y + "px");
   }
+
   function onLeave() {
     const el = ref.current;
     if (el) el.style.transform = "";
   }
+
+  const logoBackground =
+    band.logoVariant === "light"
+      ? "#ddd8cc"
+      : band.logoVariant === "color"
+        ? "#4e3d4c"
+        : "#050507";
+  const needsEdgeBlend = ["TM", "ID", "RS"].includes(band.badge);
+
   return (
-    <div
+    <article
       ref={ref}
       onMouseMove={onMove}
       onMouseLeave={onLeave}
-      className="group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.03] p-5 transition-transform duration-200 will-change-transform"
+      className="group relative overflow-hidden rounded-2xl border border-[#C9A84C]/20 bg-[#15120e] p-3 transition-transform duration-200 will-change-transform"
+      style={{
+        boxShadow:
+          "0 22px 45px -30px rgba(0,0,0,0.95), inset 0 1px rgba(255,230,180,0.04)",
+      }}
     >
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
         style={{
           background:
-            "radial-gradient(240px circle at var(--px, 50%) var(--py, 50%), rgba(201,168,76,0.10), transparent 70%)",
+            "radial-gradient(280px circle at var(--px, 50%) var(--py, 50%), rgba(201,168,76,0.12), transparent 72%)",
         }}
       />
+
       <div className="relative">
-        <div className="mb-2 flex items-center gap-3">
-          <span
-            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#C9A84C]/50 text-sm tracking-wider text-[#C9A84C]"
-            style={{
-              fontFamily: "var(--font-playfair)",
-              boxShadow: "inset 0 0 12px rgba(201,168,76,0.15)",
-            }}
-          >
-            {band.badge}
+        <div
+          className="relative flex h-24 items-center justify-center overflow-hidden rounded-xl border border-white/10"
+          style={{
+            background: logoBackground,
+            boxShadow:
+              "inset 0 0 22px rgba(0,0,0,0.22), 0 10px 22px -16px rgba(0,0,0,0.95)",
+          }}
+        >
+          {band.logo && needsEdgeBlend ? (
+            <span
+              aria-hidden
+              className="absolute inset-0"
+              style={{
+                backgroundImage: `url(${band.logo})`,
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+                filter:
+                  band.logoVariant === "light"
+                    ? "blur(12px) saturate(0.72)"
+                    : "blur(10px) saturate(0.9)",
+                opacity: band.logoVariant === "light" ? 0.92 : 0.84,
+                transform: "scale(1.16)",
+              }}
+            />
+          ) : null}
+          {band.logo && needsEdgeBlend ? (
+            <span
+              aria-hidden
+              className="absolute inset-0 bg-gradient-to-r from-black/10 via-transparent to-black/10"
+            />
+          ) : null}
+          {band.logo ? (
+            <img
+              src={band.logo}
+              alt={`${band.name} logo`}
+              loading="lazy"
+              className="relative z-[1] h-full w-full object-contain transition-transform duration-500 group-hover:scale-[1.015]"
+              style={
+                needsEdgeBlend
+                  ? {
+                      WebkitMaskImage:
+                        "linear-gradient(90deg, transparent 0%, #000 9%, #000 91%, transparent 100%)",
+                      maskImage:
+                        "linear-gradient(90deg, transparent 0%, #000 9%, #000 91%, transparent 100%)",
+                    }
+                  : undefined
+              }
+            />
+          ) : (
+            <span
+              className="text-2xl tracking-[0.18em] text-[#C9A84C]"
+              style={{ fontFamily: "var(--font-playfair)" }}
+            >
+              {band.badge}
+            </span>
+          )}
+          <span className="absolute left-3 top-3 z-[2] rounded-full border border-white/15 bg-black/45 px-2.5 py-1 text-xs tracking-[0.14em] text-white/75 backdrop-blur-sm">
+            ARCHIVE · {band.badge}
           </span>
-          <div>
-            <div className="text-sm font-semibold text-white/85">
-              {band.name}
-            </div>
-            <div className="text-xs text-white/75">
-              {lang === "pl" ? band.cityPl : band.cityEn}
-            </div>
-          </div>
         </div>
-        <p className="text-sm leading-relaxed text-white/70">
-          {lang === "pl" ? band.textPl : band.textEn}
-        </p>
+
+        <div className="px-2 pb-2 pt-4">
+          <div className="mb-3 flex items-start justify-between gap-4">
+            <div>
+              <h3
+                className="text-lg font-semibold text-white/90"
+                style={{ fontFamily: "var(--font-playfair)" }}
+              >
+                {band.name}
+              </h3>
+              <div className="mt-1 text-xs uppercase tracking-[0.16em] text-[#C9A84C]/80">
+                {lang === "pl" ? band.cityPl : band.cityEn}
+              </div>
+            </div>
+            <span className="rounded-full border border-[#C9A84C]/30 px-2.5 py-1 text-xs tracking-wider text-[#C9A84C]">
+              {band.badge}
+            </span>
+          </div>
+
+          <p className="text-sm leading-relaxed text-white/70">
+            {lang === "pl" ? band.textPl : band.textEn}
+          </p>
+        </div>
       </div>
-    </div>
+    </article>
   );
 }
 
@@ -165,8 +250,8 @@ export default function PortfolioPlayer({ lang = "en" }) {
   const [current, setCurrent] = useState(null);
   const [playing, setPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
-  const [expanded, setExpanded] = useState({});
-  const [activeGenre, setActiveGenre] = useState(null);
+  const [browseMode, setBrowseMode] = useState("genres");
+  const [openCollection, setOpenCollection] = useState(null);
   const [autoNext, setAutoNext] = useState(true);
   const [copiedSlug, setCopiedSlug] = useState(null);
 
@@ -175,23 +260,27 @@ export default function PortfolioPlayer({ lang = "en" }) {
     ? allTracks.find((tr) => tr.slug === current) || null
     : null;
 
-  // Scroll-spy for genre chips
-  useEffect(() => {
-    if (!("IntersectionObserver" in window)) return;
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) setActiveGenre(e.target.id.replace("pf-", ""));
-        });
-      },
-      { rootMargin: "-15% 0px -70% 0px" },
-    );
-    portfolioSections.forEach((s) => {
-      const el = document.getElementById(`pf-${s.genre}`);
-      if (el) io.observe(el);
+  const artistGroups = [];
+  const artistsByKey = new Map();
+  portfolioSections.forEach((section) => {
+    const genreLabel = lang === "pl" ? section.labelPl : section.labelEn;
+    section.tracks.forEach((track) => {
+      const caption = lang === "pl" ? track.captionPl : track.captionEn;
+      const captionArtist = (caption || "").split("—")[0].trim();
+      const artistName = track.band
+        ? SUBGROUP_NAMES[track.band] || track.band
+        : captionArtist || t.myOwn;
+      const artistKey = track.band ? `band-${track.band}` : `artist-${artistName}`;
+      let group = artistsByKey.get(artistKey);
+      if (!group) {
+        group = { key: artistKey, name: artistName, tracks: [], genres: [] };
+        artistsByKey.set(artistKey, group);
+        artistGroups.push(group);
+      }
+      group.tracks.push({ track, genreLabel });
+      if (!group.genres.includes(genreLabel)) group.genres.push(genreLabel);
     });
-    return () => io.disconnect();
-  }, []);
+  });
 
   // Spacebar = play/pause
   const toggleCurrent = useCallback(() => {
@@ -238,14 +327,18 @@ export default function PortfolioPlayer({ lang = "en" }) {
     audio.play();
     setCurrent(track.slug);
     setPlaying(true);
-    const el = document.getElementById(
-      `pf-${track.genre || allTracks[0]?.genre}`,
+    const section = portfolioSections.find((item) =>
+      item.tracks.some((candidate) => candidate.slug === track.slug),
     );
-    if (el)
-      setTimeout(
-        () => el.scrollIntoView({ behavior: "smooth", block: "start" }),
-        400,
-      );
+    if (section) {
+      setBrowseMode("genres");
+      setOpenCollection(`genre:${section.genre}`);
+      setTimeout(() => {
+        document
+          .getElementById(`pf-${section.genre}`)
+          ?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 400);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -324,6 +417,112 @@ export default function PortfolioPlayer({ lang = "en" }) {
     });
   }
 
+  function renderTrackRow(track, num, genreLabel = null) {
+    const caption = lang === "pl" ? track.captionPl : track.captionEn;
+    return (
+      <div
+        key={track.slug}
+        className={`group flex items-center gap-3 rounded-xl border px-3 py-2 transition ${
+          current === track.slug
+            ? "border-[#C9A84C]/40 bg-[#C9A84C]/[0.06]"
+            : "border-white/[0.06] bg-white/[0.02] hover:border-[#C9A84C]/25 hover:bg-white/[0.04]"
+        }`}
+      >
+        <span className="flex w-6 shrink-0 items-center justify-end text-xs tabular-nums text-white/75">
+          {current === track.slug ? (
+            <Vinyl spinning={playing} />
+          ) : (
+            String(num).padStart(2, "0")
+          )}
+        </span>
+        <button
+          type="button"
+          onClick={() => toggle(track)}
+          aria-label={track.title}
+          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition hover:opacity-90"
+          style={{
+            background: "linear-gradient(135deg, #C9A84C, #e8c97a)",
+            color: "#141414",
+          }}
+        >
+          {current === track.slug && playing ? (
+            <Pause size={15} />
+          ) : (
+            <Play size={15} className="ml-0.5" />
+          )}
+        </button>
+        <div className="min-w-0 flex-1">
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="min-w-0 truncate text-sm text-white/85">
+              {track.title}
+            </span>
+            {genreLabel ? (
+              <span className="shrink-0 rounded-full border border-[#C9A84C]/35 px-2 py-0.5 text-xs uppercase tracking-wider text-[#C9A84C]">
+                {genreLabel}
+              </span>
+            ) : null}
+            {track.band ? (
+              <span className="flex h-6 min-w-6 shrink-0 items-center justify-center rounded-full border border-[#C9A84C]/45 px-1 text-xs tracking-wider text-[#C9A84C]">
+                {track.band}
+              </span>
+            ) : null}
+            {track.cover ? (
+              <span className="shrink-0 rounded-full border border-white/20 px-2 py-0.5 text-xs uppercase tracking-wider text-white/75">
+                cover
+              </span>
+            ) : null}
+          </div>
+          {caption ? (
+            <div className="truncate text-xs text-white/75">{caption}</div>
+          ) : null}
+          <div
+            role={current === track.slug ? "slider" : undefined}
+            aria-label={current === track.slug ? t.seek : undefined}
+            aria-valuemin={current === track.slug ? 0 : undefined}
+            aria-valuemax={current === track.slug ? 100 : undefined}
+            aria-valuenow={
+              current === track.slug ? Math.round(progress) : undefined
+            }
+            aria-hidden={current === track.slug ? undefined : true}
+            tabIndex={current === track.slug ? 0 : undefined}
+            onKeyDown={current === track.slug ? seekKey : undefined}
+            className="mt-1.5 h-1 w-full cursor-pointer overflow-hidden rounded-full bg-white/[0.07]"
+            onClick={(e) => seek(track, e)}
+          >
+            <div
+              className="h-full rounded-full"
+              style={{
+                width: current === track.slug ? `${progress}%` : 0,
+                background: "linear-gradient(90deg, #C9A84C, #e8c97a)",
+              }}
+            />
+          </div>
+        </div>
+        <span className="shrink-0 text-xs tabular-nums text-white/75">
+          {track.duration}
+        </span>
+        <button
+          type="button"
+          onClick={() => copyLink(track)}
+          title={copiedSlug === track.slug ? t.copied : t.copyLink}
+          aria-label={t.copyLink}
+          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-white/65 opacity-0 transition hover:text-[#C9A84C] group-hover:opacity-100 focus:opacity-100"
+        >
+          <Link2 size={14} />
+        </button>
+        <a
+          href={track.file}
+          download
+          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-white/65 transition hover:text-[#C9A84C]"
+          aria-label={t.download}
+          title={t.download}
+        >
+          <Download size={16} />
+        </a>
+      </div>
+    );
+  }
+
   return (
     <div className={currentTrack ? "pb-24" : ""}>
       <audio
@@ -384,224 +583,200 @@ export default function PortfolioPlayer({ lang = "en" }) {
         </button>
       </div>
 
-      {/* Genre anchor chips */}
-      <div className="mb-10 flex flex-wrap gap-2">
-        {portfolioSections.map((s) => (
-          <a
-            key={s.genre}
-            href={`#pf-${s.genre}`}
-            className={`inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-sm transition ${
-              activeGenre === s.genre
-                ? "border-[#C9A84C]/60 bg-[#C9A84C]/10 text-[#C9A84C]"
-                : "border-white/10 bg-white/[0.03] text-white/70 hover:border-[#C9A84C]/40 hover:text-[#C9A84C]"
-            }`}
-          >
-            {lang === "pl" ? s.labelPl : s.labelEn}
-            <span className="text-xs text-[#f5b942]">{s.tracks.length}</span>
-          </a>
-        ))}
-      </div>
-
-      {portfolioSections.map((s) => {
-        const isExpandable = s.tracks.length > 10;
-        const isExpanded = !!expanded[s.genre];
-        const limit = isExpandable && !isExpanded ? 8 : s.tracks.length;
-        const shown = s.tracks.slice(0, limit);
-        const rows = [];
-        let prevBand = null;
-        shown.forEach((track, i) => {
-          if (s.genre === "rock") {
-            const key = track.band || "own";
-            if (key !== prevBand) {
-              rows.push({
-                type: "sub",
-                key: "sub-" + key + "-" + i,
-                label: track.band
-                  ? SUBGROUP_NAMES[track.band] || track.band
-                  : t.myOwn,
-              });
-              prevBand = key;
-            }
-          }
-          rows.push({ type: "track", key: track.slug, track, num: i + 1 });
-        });
-        return (
-          <ScrollReveal key={s.genre}>
-            <section
-              id={`pf-${s.genre}`}
-              className="mb-12"
-              style={{ scrollMarginTop: 90 }}
+      {/* Compact catalogue: one open drawer at a time */}
+      <ScrollReveal>
+        <section className="mb-14">
+          <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div
+              className="inline-flex w-fit rounded-full border border-white/10 bg-white/[0.03] p-1"
+              role="tablist"
+              aria-label="Portfolio catalogue mode"
             >
-              <h2
-                className="mb-4 text-xl md:text-2xl font-semibold tracking-wide"
-                style={{ fontFamily: "var(--font-playfair)" }}
+              <button
+                type="button"
+                role="tab"
+                aria-selected={browseMode === "genres"}
+                onClick={() => {
+                  setBrowseMode("genres");
+                  setOpenCollection(null);
+                }}
+                className={`min-h-10 rounded-full px-5 py-2 text-sm transition ${
+                  browseMode === "genres"
+                    ? "bg-[#C9A84C] text-[#15120e]"
+                    : "text-white/70 hover:text-[#C9A84C]"
+                }`}
               >
-                {lang === "pl" ? s.labelPl : s.labelEn}{" "}
-                <span className="text-sm text-white/65">
-                  {s.tracks.length} {t.tracks}
-                </span>
-              </h2>
-              <div className="space-y-1.5">
-                {rows.map((row) =>
-                  row.type === "sub" ? (
-                    <div
-                      key={row.key}
-                      className="flex items-center gap-3 pt-4 pb-1 first:pt-0"
-                    >
-                      <span className="text-xs uppercase tracking-[0.18em] text-[#C9A84C]/80">
-                        {row.label}
-                      </span>
-                      <span className="h-px flex-1 bg-gradient-to-r from-[#C9A84C]/25 to-transparent" />
-                    </div>
-                  ) : (
-                    <div
-                      key={row.key}
-                      className={`group flex items-center gap-3 rounded-xl border px-3 py-2 transition ${
-                        current === row.track.slug
-                          ? "border-[#C9A84C]/40 bg-[#C9A84C]/[0.06]"
-                          : "border-white/[0.06] bg-white/[0.02] hover:border-[#C9A84C]/25 hover:bg-white/[0.04]"
+                {t.byGenre}
+              </button>
+              <button
+                type="button"
+                role="tab"
+                aria-selected={browseMode === "artists"}
+                onClick={() => {
+                  setBrowseMode("artists");
+                  setOpenCollection(null);
+                }}
+                className={`min-h-10 rounded-full px-5 py-2 text-sm transition ${
+                  browseMode === "artists"
+                    ? "bg-[#C9A84C] text-[#15120e]"
+                    : "text-white/70 hover:text-[#C9A84C]"
+                }`}
+              >
+                {t.byArtist}
+              </button>
+            </div>
+            <p className="m-0 text-sm text-white/65">
+              {browseMode === "genres" ? t.chooseGenre : t.chooseArtist}
+            </p>
+          </div>
+
+          <div className="space-y-3">
+            {browseMode === "genres"
+              ? portfolioSections.map((section) => {
+                  const key = `genre:${section.genre}`;
+                  const isOpen = openCollection === key;
+                  const rows = [];
+                  let prevBand = null;
+                  section.tracks.forEach((track, i) => {
+                    if (section.genre === "rock") {
+                      const bandKey = track.band || "own";
+                      if (bandKey !== prevBand) {
+                        rows.push({
+                          type: "sub",
+                          key: `sub-${bandKey}-${i}`,
+                          label: track.band
+                            ? SUBGROUP_NAMES[track.band] || track.band
+                            : t.myOwn,
+                        });
+                        prevBand = bandKey;
+                      }
+                    }
+                    rows.push({ type: "track", key: track.slug, track, num: i + 1 });
+                  });
+
+                  return (
+                    <section
+                      id={`pf-${section.genre}`}
+                      key={section.genre}
+                      className={`overflow-hidden rounded-2xl border transition ${
+                        isOpen
+                          ? "border-[#C9A84C]/35 bg-[#C9A84C]/[0.035]"
+                          : "border-white/[0.07] bg-white/[0.02] hover:border-[#C9A84C]/20"
                       }`}
+                      style={{ scrollMarginTop: 90 }}
                     >
-                      <span className="flex w-6 shrink-0 items-center justify-end text-xs tabular-nums text-white/75">
-                        {current === row.track.slug ? (
-                          <Vinyl spinning={playing} />
-                        ) : (
-                          String(row.num).padStart(2, "0")
-                        )}
-                      </span>
                       <button
                         type="button"
-                        onClick={() => toggle(row.track)}
-                        aria-label={row.track.title}
-                        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition hover:opacity-90"
-                        style={{
-                          background:
-                            "linear-gradient(135deg, #C9A84C, #e8c97a)",
-                          color: "#141414",
-                        }}
+                        className="flex min-h-16 w-full items-center gap-4 px-5 py-4 text-left"
+                        onClick={() => setOpenCollection(isOpen ? null : key)}
+                        aria-expanded={isOpen}
+                        aria-controls={`panel-${section.genre}`}
                       >
-                        {current === row.track.slug && playing ? (
-                          <Pause size={15} />
-                        ) : (
-                          <Play size={15} className="ml-0.5" />
-                        )}
-                      </button>
-                      <div className="min-w-0 flex-1">
-                        <div className="flex items-center gap-2">
-                          <span className="truncate text-sm text-white/85">
-                            {row.track.title}
-                          </span>
-                          {row.track.band ? (
-                            <span className="flex h-6 min-w-6 shrink-0 items-center justify-center rounded-full border border-[#C9A84C]/45 px-1 text-xs tracking-wider text-[#C9A84C]">
-                              {row.track.band}
-                            </span>
-                          ) : null}
-                          {row.track.cover ? (
-                            <span className="shrink-0 rounded-full border border-white/20 px-2 py-0.5 text-xs uppercase tracking-wider text-white/75">
-                              cover
-                            </span>
-                          ) : null}
-                        </div>
-                        {(
-                          lang === "pl"
-                            ? row.track.captionPl
-                            : row.track.captionEn
-                        ) ? (
-                          <div className="truncate text-xs text-white/75">
-                            {lang === "pl"
-                              ? row.track.captionPl
-                              : row.track.captionEn}
-                          </div>
-                        ) : null}
-                        <div
-                          role={
-                            current === row.track.slug ? "slider" : undefined
-                          }
-                          aria-label={
-                            current === row.track.slug ? t.seek : undefined
-                          }
-                          aria-valuemin={
-                            current === row.track.slug ? 0 : undefined
-                          }
-                          aria-valuemax={
-                            current === row.track.slug ? 100 : undefined
-                          }
-                          aria-valuenow={
-                            current === row.track.slug
-                              ? Math.round(progress)
-                              : undefined
-                          }
-                          aria-hidden={
-                            current === row.track.slug ? undefined : true
-                          }
-                          tabIndex={current === row.track.slug ? 0 : undefined}
-                          onKeyDown={
-                            current === row.track.slug ? seekKey : undefined
-                          }
-                          className="mt-1.5 h-1 w-full cursor-pointer overflow-hidden rounded-full bg-white/[0.07]"
-                          onClick={(e) => seek(row.track, e)}
+                        <span
+                          className="min-w-0 flex-1 text-xl font-semibold tracking-wide text-white/90 md:text-2xl"
+                          style={{ fontFamily: "var(--font-playfair)" }}
                         >
-                          <div
-                            className="h-full rounded-full"
-                            style={{
-                              width:
-                                current === row.track.slug ? `${progress}%` : 0,
-                              background:
-                                "linear-gradient(90deg, #C9A84C, #e8c97a)",
-                            }}
-                          />
+                          {lang === "pl" ? section.labelPl : section.labelEn}
+                        </span>
+                        <span className="text-sm text-white/65">
+                          {section.tracks.length} {t.tracks}
+                        </span>
+                        <ChevronDown
+                          size={19}
+                          className={`shrink-0 text-[#C9A84C] transition-transform duration-300 ${
+                            isOpen ? "rotate-180" : ""
+                          }`}
+                        />
+                      </button>
+                      <div
+                        id={`panel-${section.genre}`}
+                        className={`grid transition-[grid-template-rows,opacity] duration-500 ease-out ${
+                          isOpen
+                            ? "grid-rows-[1fr] opacity-100"
+                            : "grid-rows-[0fr] opacity-0"
+                        }`}
+                      >
+                        <div className="overflow-hidden">
+                          <div className="space-y-1.5 border-t border-white/[0.06] p-3 sm:p-4">
+                            {rows.map((row) =>
+                              row.type === "sub" ? (
+                                <div
+                                  key={row.key}
+                                  className="flex items-center gap-3 pb-1 pt-4 first:pt-0"
+                                >
+                                  <span className="text-xs uppercase tracking-[0.18em] text-[#C9A84C]/80">
+                                    {row.label}
+                                  </span>
+                                  <span className="h-px flex-1 bg-gradient-to-r from-[#C9A84C]/25 to-transparent" />
+                                </div>
+                              ) : (
+                                renderTrackRow(row.track, row.num)
+                              ),
+                            )}
+                          </div>
                         </div>
                       </div>
-                      <span className="shrink-0 text-xs tabular-nums text-white/75">
-                        {row.track.duration}
-                      </span>
+                    </section>
+                  );
+                })
+              : artistGroups.map((artist) => {
+                  const key = `artist:${artist.key}`;
+                  const isOpen = openCollection === key;
+                  return (
+                    <section
+                      key={artist.key}
+                      className={`overflow-hidden rounded-2xl border transition ${
+                        isOpen
+                          ? "border-[#C9A84C]/35 bg-[#C9A84C]/[0.035]"
+                          : "border-white/[0.07] bg-white/[0.02] hover:border-[#C9A84C]/20"
+                      }`}
+                    >
                       <button
                         type="button"
-                        onClick={() => copyLink(row.track)}
-                        title={
-                          copiedSlug === row.track.slug ? t.copied : t.copyLink
-                        }
-                        aria-label={t.copyLink}
-                        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-white/65 transition hover:text-[#C9A84C] opacity-0 group-hover:opacity-100"
+                        className="flex min-h-16 w-full items-center gap-4 px-5 py-4 text-left"
+                        onClick={() => setOpenCollection(isOpen ? null : key)}
+                        aria-expanded={isOpen}
                       >
-                        <Link2 size={14} />
+                        <span
+                          className="min-w-0 flex-1 text-xl font-semibold tracking-wide text-white/90 md:text-2xl"
+                          style={{ fontFamily: "var(--font-playfair)" }}
+                        >
+                          {artist.name}
+                        </span>
+                        <span className="hidden text-xs uppercase tracking-[0.12em] text-white/65 sm:block">
+                          {artist.genres.join(" · ")}
+                        </span>
+                        <span className="text-sm text-white/65">
+                          {artist.tracks.length} {t.tracks}
+                        </span>
+                        <ChevronDown
+                          size={19}
+                          className={`shrink-0 text-[#C9A84C] transition-transform duration-300 ${
+                            isOpen ? "rotate-180" : ""
+                          }`}
+                        />
                       </button>
-                      <a
-                        href={row.track.file}
-                        download
-                        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-white/65 transition hover:text-[#C9A84C]"
-                        aria-label={t.download}
-                        title={t.download}
+                      <div
+                        className={`grid transition-[grid-template-rows,opacity] duration-500 ease-out ${
+                          isOpen
+                            ? "grid-rows-[1fr] opacity-100"
+                            : "grid-rows-[0fr] opacity-0"
+                        }`}
                       >
-                        <Download size={16} />
-                      </a>
-                    </div>
-                  ),
-                )}
-              </div>
-              {isExpandable ? (
-                <button
-                  type="button"
-                  onClick={() =>
-                    setExpanded((p) => ({ ...p, [s.genre]: !p[s.genre] }))
-                  }
-                  className="mt-3 inline-flex items-center gap-2 rounded-full border border-[#C9A84C]/35 px-4 py-1.5 text-xs text-[#C9A84C] transition hover:bg-[#C9A84C]/10"
-                >
-                  {isExpanded ? t.showLess : t.showAll + " " + s.tracks.length}
-                  <ChevronDown
-                    size={14}
-                    className={
-                      isExpanded
-                        ? "rotate-180 transition-transform"
-                        : "transition-transform"
-                    }
-                  />
-                </button>
-              ) : null}
-            </section>
-          </ScrollReveal>
-        );
-      })}
+                        <div className="overflow-hidden">
+                          <div className="space-y-1.5 border-t border-white/[0.06] p-3 sm:p-4">
+                            {artist.tracks.map((item, index) =>
+                              renderTrackRow(item.track, index + 1, item.genreLabel),
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                  );
+                })}
+          </div>
+        </section>
+      </ScrollReveal>
 
       {/* Bands */}
       <ScrollReveal>
