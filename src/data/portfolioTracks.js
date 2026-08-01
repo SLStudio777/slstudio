@@ -350,6 +350,26 @@ export const portfolioSections = [
         "captionPl": "SL Studio",
         "band": null,
         "cover": true
+      },
+      {
+        "slug": "bass-khan",
+        "title": "Bass Khan",
+        "file": "/audio/portfolio/bass-khan.mp3",
+        "duration": "4:43",
+        "captionEn": "SL Studio",
+        "captionPl": "SL Studio",
+        "band": null,
+        "cover": false
+      },
+      {
+        "slug": "narkoman",
+        "title": "\u041d\u0430\u0440\u043a\u043e\u043c\u0430\u043d",
+        "file": "/audio/portfolio/narkoman.mp3",
+        "duration": "4:52",
+        "captionEn": "Dniprorudne",
+        "captionPl": "Dniprorudne",
+        "band": null,
+        "cover": false
       }
     ]
   },

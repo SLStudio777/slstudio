@@ -3,7 +3,7 @@ import TapeRoom from '../components/pages/tape-room/TapeRoom'
 const SITE = 'https://www.slstudio.pro'
 const TITLE = 'The Tape Room — Interactive Music Archive'
 const DESCRIPTION =
-  'Explore 59 recordings through an interactive cassette deck, genre boxes and the bands behind the music.'
+  'Explore 61 recordings through an interactive cassette deck, genre boxes and the bands behind the music.'
 
 export const metadata = {
   title: TITLE,
