@@ -269,6 +269,32 @@ export default function DeckScene({ onBack }) {
     setContinuousEnabled(!continuousPlayRef.current)
   }
 
+  function scrollDeckIntoView() {
+    if (typeof window === 'undefined') return
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+    const placeDeck = (behavior) => {
+      const element = frameRef.current || deckRef.current
+      if (!element) return
+      if (window.innerWidth > 640) {
+        element.scrollIntoView({ behavior, block: 'center' })
+        return
+      }
+      const header = document.querySelector('nav.sticky')
+      const headerHeight = header?.getBoundingClientRect().height || 64
+      const top = element.getBoundingClientRect().top + window.scrollY - headerHeight - 10
+      window.scrollTo({ top: Math.max(0, top), behavior })
+    }
+
+    // First pass waits for the cassette tray to close in React. The exact
+    // second pass protects mobile browsers that interrupt smooth scrolling
+    // while the page height changes.
+    requestAnimationFrame(() =>
+      requestAnimationFrame(() => placeDeck(reducedMotion ? 'auto' : 'smooth')),
+    )
+    later(() => placeDeck('auto'), 520)
+  }
+
   function startQuickQueue(items, label, shuffle = false) {
     if (!items?.length || insertOn) return
     const queue = [...items]
@@ -291,7 +317,7 @@ export default function DeckScene({ onBack }) {
     setDeckState('playing')
     playSfx('play')
     runMobileTransportCoach()
-    deckRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    scrollDeckIntoView()
   }
 
   function advanceQuickQueue() {
@@ -353,7 +379,7 @@ export default function DeckScene({ onBack }) {
     setTrack({ ...t, genreName: t.genreName || genre.name })
     setActiveGenre(null)
     setActiveArtist(null)
-    deckRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    scrollDeckIntoView()
 
     const startInsert = () => {
       insertLatchPlayedRef.current = false

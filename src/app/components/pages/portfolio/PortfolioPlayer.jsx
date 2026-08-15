@@ -327,6 +327,49 @@ export default function PortfolioPlayer({ lang = "en" }) {
     window.setTimeout(() => placeArtistBelowHeader("auto"), 620);
   }
 
+  // Opera and some Chromium builds may need one retry after a source change.
+  // Keep the UI tied to the real play() result instead of assuming playback started.
+  function requestAudioPlay(audio) {
+    if (!audio) return Promise.resolve(false);
+
+    const markPlaying = () => {
+      setPlaying(true);
+      return true;
+    };
+    const markStopped = () => {
+      setPlaying(false);
+      return false;
+    };
+    const attempt = () => {
+      try {
+        const result = audio.play();
+        return result?.then ? result.then(markPlaying) : Promise.resolve(markPlaying());
+      } catch {
+        return Promise.resolve(false);
+      }
+    };
+
+    return attempt().then((started) => {
+      if (started || audio.readyState >= 3) return started;
+      return new Promise((resolve) => {
+        let settled = false;
+        const finish = (value) => {
+          if (settled) return;
+          settled = true;
+          window.clearTimeout(timeout);
+          audio.removeEventListener("canplay", retry);
+          audio.removeEventListener("error", fail);
+          resolve(value);
+        };
+        const retry = () => attempt().then(finish);
+        const fail = () => finish(markStopped());
+        const timeout = window.setTimeout(fail, 5000);
+        audio.addEventListener("canplay", retry, { once: true });
+        audio.addEventListener("error", fail, { once: true });
+      });
+    });
+  }
+
   // Spacebar = play/pause
   const toggleCurrent = useCallback(() => {
     const audio = audioRef.current;
@@ -335,8 +378,7 @@ export default function PortfolioPlayer({ lang = "en" }) {
       audio.pause();
       setPlaying(false);
     } else {
-      audio.play();
-      setPlaying(true);
+      requestAudioPlay(audio);
     }
   }, [current, playing]);
 
@@ -369,6 +411,7 @@ export default function PortfolioPlayer({ lang = "en" }) {
     const audio = audioRef.current;
     if (!audio) return;
     audio.src = track.file;
+    audio.load();
     setCurrent(track.slug);
     setPlaying(false);
     requestAudioPlay(audio);
@@ -391,6 +434,7 @@ export default function PortfolioPlayer({ lang = "en" }) {
     const audio = audioRef.current;
     if (!audio) return;
     audio.src = track.file;
+    audio.load();
     setCurrent(track.slug);
     setPlaying(false);
     setProgress(0);
@@ -583,6 +627,7 @@ export default function PortfolioPlayer({ lang = "en" }) {
           const next = i >= 0 ? allTracks[i + 1] : null;
           if (audio && next && autoNext) {
             audio.src = next.file;
+            audio.load();
             setCurrent(next.slug);
             setPlaying(false);
             setProgress(0);
