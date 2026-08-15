@@ -172,6 +172,16 @@ export const portfolioSections = [
         "cover": false
       },
       {
+        "slug": "bleuler-im-asking",
+        "title": "I\u2019m asking",
+        "file": "/audio/portfolio/bleuler-im-asking.mp3",
+        "duration": "4:11",
+        "captionEn": "Bleuler Band \u2014 Dniprorudne",
+        "captionPl": "Zesp\u00f3\u0142 Bleuler Band \u2014 Dniprorudne",
+        "band": "BB",
+        "cover": false
+      },
+      {
         "slug": "idillia-adrenalin",
         "title": "\u0410\u0434\u0440\u0435\u043d\u0430\u043b\u0438\u043d",
         "file": "/audio/portfolio/idillia-adrenalin.mp3",
