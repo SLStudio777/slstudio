@@ -14,6 +14,7 @@ import {
 import LangSwitch from "../../common/LangSwitch";
 import StepFlareCard from "../../common/StepFlareCard";
 import ScrollFaders from "../../common/ScrollFaders";
+import GoogleReviewCard from "../../common/GoogleReviewCard";
 
 const SERVICE_FROM_QUERY = {
   mastering: "Mastering Only",
@@ -704,6 +705,8 @@ export default function Hero() {
           </div>
         </div>
       </div>
+
+      <GoogleReviewCard lang="en" />
 
       {/* CTA — compact mirror of the final card on the free preview page */}
       <div className="mt-20 py-4">
