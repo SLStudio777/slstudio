@@ -211,12 +211,18 @@ export default function AiVsHumanMasteringBlindTestPage() {
           <div className="flex flex-col gap-5">
             <p>
               <strong className="text-white">
-                One of the two tracks below is the song exactly as an AI music
-                generator exported it - untouched. The other is the same song
-                after I - a human engineer - spent a focused session with
-                monitors, references and twenty years of listening. I won't tell
-                you which is which. That's the whole point.
+                One of the two tracks below is the original AI-generated export,
+                with no processing except gain adjustment for fair loudness
+                matching. The other is the same song after I - a human engineer
+                - spent a focused session with monitors, references and twenty
+                years of listening. I won't tell you which is which. That's the
+                whole point.
               </strong>
+            </p>
+            <p>
+              For clarity: this is not a separate LANDR-style AI mastering
+              service. It is Suno's own finished export - the version users
+              receive and often release as-is.
             </p>
             <p>
               You've seen the marketing from both sides. AI platforms say
@@ -291,8 +297,9 @@ export default function AiVsHumanMasteringBlindTestPage() {
             <SectionHeader number="2" title="Listen and Vote" />
             <p>
               Both clips are the same section of the same song - one is the
-              untouched AI export, one is my master. Listen to both, then cast
-              your vote. The reveal appears right after you choose.
+              original AI export, adjusted only for the loudness match, and one
+              is my master. Listen to both, then cast your vote. The reveal
+              appears right after you choose.
             </p>
             <BlindTestPlayer />
           </div>
@@ -370,9 +377,9 @@ export default function AiVsHumanMasteringBlindTestPage() {
               choruses physically open up, letting the kick punch through by
               managing the bass around it instead of just compressing both, and
               stopping the top end exactly at the point where "clear" would
-              become "sharp" on the third listen. Each of those choices is
-              invisible on a spectrum analyser and obvious to your ears over a
-              full playthrough.
+              become "sharp" on the third listen. A single spectrum snapshot
+              won't explain those choices, but your ears reveal them over a full
+              playthrough.
             </p>
             <ProTip>
               This is the one-sentence summary of the whole debate: AI masters
@@ -581,31 +588,6 @@ export default function AiVsHumanMasteringBlindTestPage() {
                 </div>
               ))}
             </div>
-          </div>
-
-          {/* ── CTA ── */}
-          <div
-            className="rounded-2xl p-8 text-center flex flex-col items-center gap-4"
-            style={{
-              background: "rgba(201,168,76,0.07)",
-              border: "1px solid rgba(201,168,76,0.25)",
-            }}
-          >
-            <h3 className="text-xl font-semibold text-white">
-              Run the blind test on your own track
-            </h3>
-            <p className="text-white/65 text-base max-w-md">
-              Send me your song and get a free processed preview - then compare
-              it against your AI master with your own ears. You listen first,
-              you decide. Mastering $39, mix &amp; master $89.
-            </p>
-            <a
-              href="/free-track-preview"
-              className="inline-flex items-center gap-2 text-black font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition text-sm"
-              style={{ backgroundColor: "#C9A84C" }}
-            >
-              Get a Free Preview →
-            </a>
           </div>
 
           <RelatedPosts slug="ai-vs-human-mastering-blind-test" />

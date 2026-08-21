@@ -212,13 +212,18 @@ export default function AiVsHumanMasteringBlindTestPagePl() {
           <div className="flex flex-col gap-5">
             <p>
               <strong className="text-white">
-                Jeden z dwóch utworów poniżej to piosenka dokładnie w takiej
-                postaci, w jakiej wyeksportował ją generator muzyki AI -
-                nietknięta. Drugi to ta sama piosenka po tym, jak ja - żywy
-                inżynier - spędziłem nad nią skupioną sesję z monitorami,
+                Jeden z dwóch utworów poniżej to oryginalny eksport z generatora
+                AI, bez obróbki poza zmianą poziomu na potrzeby uczciwego
+                wyrównania głośności. Drugi to ta sama piosenka po tym, jak ja -
+                żywy inżynier - spędziłem nad nią skupioną sesję z monitorami,
                 referencjami i dwudziestoma latami słuchania. Nie powiem ci,
                 który jest który. Właśnie o to chodzi.
               </strong>
+            </p>
+            <p>
+              Dla jasności: to nie jest osobna usługa masteringu AI w stylu
+              LANDR. To gotowy eksport z Suno - wersja, którą użytkownicy
+              otrzymują i często publikują bez dalszej obróbki.
             </p>
             <p>
               Znasz marketing obu stron. Platformy AI mówią, że algorytmy
@@ -295,8 +300,9 @@ export default function AiVsHumanMasteringBlindTestPagePl() {
             <SectionHeader number="2" title="Posłuchaj i zagłosuj" />
             <p>
               Oba fragmenty to ta sama część tej samej piosenki - jeden to
-              nietknięty eksport z AI, drugi to mój master. Posłuchaj obu, potem
-              oddaj głos. Odpowiedź pokaże się zaraz po wyborze.
+              oryginalny eksport z AI, ze zmienionym wyłącznie poziomem na
+              potrzeby wyrównania głośności, a drugi to mój master. Posłuchaj
+              obu, potem oddaj głos. Odpowiedź pokaże się zaraz po wyborze.
             </p>
             <BlindTestPlayer
               labels={{
@@ -308,7 +314,7 @@ export default function AiVsHumanMasteringBlindTestPagePl() {
                 correct: "Trafione - masz dobry słuch.",
                 wrong: "Tym razem nie - i to samo w sobie jest ciekawe.",
                 reveal:
-                  "Wersję B zmasterowałem ja, człowiek. Wersja A to nietknięty eksport z AI. Czytaj dalej - poniżej rozkładamy różnice na części.",
+                  "Wersję B zmasterowałem ja, człowiek. Wersja A to oryginalny eksport z AI, ze zmienionym wyłącznie poziomem na potrzeby wyrównania głośności. Czytaj dalej - poniżej rozkładamy różnice na części.",
               }}
             />
           </div>
@@ -384,9 +390,9 @@ export default function AiVsHumanMasteringBlindTestPagePl() {
               refreny fizycznie się otwierały, pozwala stopie się przebijać,
               zarządzając basem wokół niej zamiast kompresować oba, i zatrzymuje
               górę pasma dokładnie w punkcie, w którym "czysto" zamieniłoby się
-              w "ostro" przy trzecim odsłuchu. Każda z tych decyzji jest
-              niewidoczna na analizatorze widma i oczywista dla uszu przy pełnym
-              przesłuchaniu.
+              w "ostro" przy trzecim odsłuchu. Pojedynczy obraz analizatora
+              widma nie wyjaśni tych decyzji, ale uszy ujawniają je podczas
+              pełnego odsłuchu.
             </p>
             <ProTip>
               To jest streszczenie całej debaty w jednym zdaniu: AI masteruje{" "}
@@ -600,32 +606,6 @@ export default function AiVsHumanMasteringBlindTestPagePl() {
                 </div>
               ))}
             </div>
-          </div>
-
-          {/* ── CTA ── */}
-          <div
-            className="rounded-2xl p-8 text-center flex flex-col items-center gap-4"
-            style={{
-              background: "rgba(201,168,76,0.07)",
-              border: "1px solid rgba(201,168,76,0.25)",
-            }}
-          >
-            <h3 className="text-xl font-semibold text-white">
-              Zrób ślepy test na własnym utworze
-            </h3>
-            <p className="text-white/65 text-base max-w-md">
-              Wyślij mi swój utwór i odbierz darmową, przetworzoną próbkę -
-              potem porównaj ją ze swoim masterem AI własnymi uszami. Najpierw
-              słuchasz, potem decydujesz. Mastering 39 USD, miks i mastering 89
-              USD (ok. 330 zł).
-            </p>
-            <a
-              href="/pl/darmowy-fragment"
-              className="inline-flex items-center gap-2 text-black font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition text-sm"
-              style={{ backgroundColor: "#C9A84C" }}
-            >
-              Odbierz darmową próbkę →
-            </a>
           </div>
 
           <RelatedPosts slug="ai-vs-human-mastering-blind-test" lang="pl" />
