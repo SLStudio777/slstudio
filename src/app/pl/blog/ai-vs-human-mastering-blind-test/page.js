@@ -535,6 +535,35 @@ export default function AiVsHumanMasteringBlindTestPagePl() {
                 Za decyzje podjęte konkretnie dla twojej piosenki.
               </strong>
             </p>
+
+            <div
+              className="rounded-xl p-5 flex flex-col gap-2"
+              style={{
+                background: "rgba(201,168,76,0.07)",
+                border: "1px solid rgba(201,168,76,0.25)",
+              }}
+            >
+              <p className="text-white font-semibold">
+                Chcesz sprawdzić własne pliki?
+              </p>
+              <p className="text-white/70 text-base leading-relaxed">
+                Jakub Charkiewicz stworzył darmowy{" "}
+                <a
+                  href="https://theaudiostuff.com/tools/abx-test/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline decoration-[rgba(201,168,76,0.4)] underline-offset-4 hover:text-white transition"
+                  style={{ color: "#C9A84C" }}
+                >
+                  ślepy test ABX na The Audio Stuff
+                </a>{" "}
+                z wyrównaniem poziomów i losową prezentacją. Załaduj dwie
+                dowolne wersje i sprawdź, czy naprawdę słyszysz różnicę, czy
+                tylko zgadujesz. Wszystko działa w przeglądarce - bez konta i
+                bez wysyłania plików na serwer.
+              </p>
+            </div>
+
             <p>
               Mój mastering to 39 USD za utwór, miks i mastering - 89 USD (ok.
               330 zł), a wszystkie ceny są publiczne - pełny przegląd rynku

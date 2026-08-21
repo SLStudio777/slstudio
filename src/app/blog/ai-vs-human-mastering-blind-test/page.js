@@ -518,6 +518,34 @@ export default function AiVsHumanMasteringBlindTestPage() {
                 Decisions made for your song specifically.
               </strong>
             </p>
+
+            <div
+              className="rounded-xl p-5 flex flex-col gap-2"
+              style={{
+                background: "rgba(201,168,76,0.07)",
+                border: "1px solid rgba(201,168,76,0.25)",
+              }}
+            >
+              <p className="text-white font-semibold">
+                Want to test your own files?
+              </p>
+              <p className="text-white/70 text-base leading-relaxed">
+                Jakub Charkiewicz built a free, level-matched{" "}
+                <a
+                  href="https://theaudiostuff.com/tools/abx-test/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline decoration-[rgba(201,168,76,0.4)] underline-offset-4 hover:text-white transition"
+                  style={{ color: "#C9A84C" }}
+                >
+                  ABX blind test at The Audio Stuff
+                </a>
+                . Load any two versions, listen without knowing which is which,
+                and see whether your score beats chance. It runs directly in
+                your browser - no signup, and your files stay on your device.
+              </p>
+            </div>
+
             <p>
               My mastering is $39 per track, mix &amp; master is $89, and every
               price is public - the full market breakdown is in{" "}

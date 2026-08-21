@@ -499,7 +499,7 @@ export default function AiVsHumanMasteringBlindTestPageRu() {
               </li>
             </ul>
             <p>
-              А человека зови, когда релиз действительно важен: сингл, который
+              А человека зови, когда релиз действительно важе��: сингл, который
               будешь продвигать, EP, который тебя представляет, всё, что должны
               услышать редакторы плейлистов или лейблы, и любой материал с
               настоящей динамикой - акустика, живые записи, оркестр или гитарная
@@ -526,6 +526,35 @@ export default function AiVsHumanMasteringBlindTestPageRu() {
                 За решения, принятые именно для твоей песни.
               </strong>
             </p>
+
+            <div
+              className="rounded-xl p-5 flex flex-col gap-2"
+              style={{
+                background: "rgba(201,168,76,0.07)",
+                border: "1px solid rgba(201,168,76,0.25)",
+              }}
+            >
+              <p className="text-white font-semibold">
+                Хочешь проверить собственные файлы?
+              </p>
+              <p className="text-white/70 text-base leading-relaxed">
+                Jakub Charkiewicz сделал бесплатный{" "}
+                <a
+                  href="https://theaudiostuff.com/tools/abx-test/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline decoration-[rgba(201,168,76,0.4)] underline-offset-4 hover:text-white transition"
+                  style={{ color: "#C9A84C" }}
+                >
+                  слепой ABX-тест на сайте The Audio Stuff
+                </a>{" "}
+                - он выравнивает громкость и скрывает, какой файл звучит.
+                Загрузи любые две версии и проверь, действительно ли слышишь
+                разницу или просто угадываешь. Всё работает прямо в браузере -
+                без регистрации и загрузки файлов на сервер.
+              </p>
+            </div>
+
             <p>
               Мой мастеринг стоит 39 долларов за трек, сведение и мастеринг -
               89, и все цены публичны - полный разбор рынка есть в{" "}
